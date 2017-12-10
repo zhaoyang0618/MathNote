@@ -1,0 +1,1885 @@
+\documentclass[12pt,a4paper]{book} %%,openany
+\usepackage{manfnt} 
+\usepackage{tipa}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{makeidx}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
+
+\usepackage{fontspec}
+\setromanfont{SimSun}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\makeatletter
+    \newcommand{\rmnum}[1]{\romannumeral #1}
+    \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother 
+    
+\newtheorem{theorem}{定理}
+\newtheorem{definition}[theorem]{定义}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注解}
+\theoremstyle{example}
+\newtheorem{example}[theorem]{例子}
+\theoremstyle{lemma}
+\newtheorem{lemma}[theorem]{引理}
+\theoremstyle{corollary}
+\newtheorem{corollary}[theorem]{推论}
+%\renewcommand{\thechapter}{\Rmnum{\thechapter}}
+\renewcommand{\chaptername}{}
+%\renewcommand{\chaptername}{\Rmnum{\thechapter}}
+%\renewcommand{\chaptertitle}{}
+\renewcommand{\proofname}{证明}
+\numberwithin{theorem}{chapter}
+
+%\renewcommand\refname{参~考~资~料}  % article
+\renewcommand\bibname{参~考~文~献}  % report/book
+\renewcommand\indexname{索~引}
+
+\makeindex
+
+\begin{document}
+\title{数论入门}
+\author{Weil.A}
+\maketitle
+
+\chapter{} \label{chapter:1}
+我们假定读者了解``集合''和``子集''的概念. $\in$表示``属于某个集合的元素''. 我们用$\mathbb{Z}$表示所有整数的集合, $\mathbb{Q}$表示所有有理数的集合. 我们假设整数和有理数的基本性质:
+\begin{enumerate}
+\item[($1$)] $x + (y + z) = (x + y) + z$.
+
+\item[($2$)] $x + y = y + x$.
+
+\item[($3$)] 方程$a + x = b$存在唯一解$x$ (如果$a$, $b$在$\mathbb{Z}$中, 那么$x \in \mathbb{Z}$, 如果$a$, $b$在$\mathbb{Q}$中, 那么$x \in \mathbb{Q}$).
+
+\item[($4$)] $0 + x = x$.
+
+\item[(1\textquotesingle)] $(xy)z = x(yz)$.
+
+\item[(2\textquotesingle)] $xy = yx$.
+
+\item[(3\textquotesingle)] 方程$ax = b$存在唯一解$x \in \mathbb{Q}$, 如果$a$, $b$在$\mathbb{Q}$中, 而且$a \neq 0$.
+
+\item[(4\textquotesingle)] $1 \cdot x = x$.
+
+\item[(5)] $x(y + z) = xy + xz$ (分配律).
+\end{enumerate}
+
+$a + x = b$的唯一解记为$b - a$, 对于$a \neq 0$, $ax = b$的唯一解记为$\frac{b}{a}$.
+
+有理数是正的($\ge 0$) 或者负的($\le 0$); 只有$0$是两者都是.\footnote{注意, 这里正负的定义和我们平常的是不一样的.} $b \ge a$ (或者$a \le b$)意味着$b - a \ge 0$; $b > a$ (或者$a < b$)意味着 $b \ge a$, $b \neq a$. 如果$x > 0$, $y > 0$, 那么$x + y > 0$以及$xy > 0$.
+
+如果$a$, $b$, $x$都是整数, $b = ax$, 则称$b$为$a$的倍数; 称$a$整除$b$或者是$b$的因子; 此时我们记之为$a | b$.
+
+最后, 我们有:
+
+\begin{enumerate}
+\item[(6)] 非空的正整数集合包含一个最小整数.
+\end{enumerate}
+
+事实上, 这样的集合中包含某个整数$n$; 于是$0, 1, \ldots, n - 1, n$中的第一个包含在这个集合中的整数即满足我们的要求. (6)的一个等价形式是``数学归纳原理'':
+
+\begin{enumerate}
+\item[(6\textquotesingle)] 如果关于正整数$x$的的断言对于$x = 0$是正确的, 并且对于所有的$x < n$成立可以推出$x = n$的时候这个断言也是正确的, 那么它对所有的$x$正确.
+\end{enumerate}
+
+\begin{proof}
+令$F$表示由使断言不成立的正整数构成的集合, 如果$F$不是空的, 应用(6); 可以推出与(6')中假设矛盾的结论.
+\end{proof}
+
+习题
+
+\begin{enumerate}
+\item 证明等式$(-1) \cdot (-1) = 1$是分配律的推论.
+
+\begin{proofname}
+\[
+\begin{aligned}
+0 &= (-1) \cdot 0 \\
+&= (-1)\cdot(-1 + 1) \\
+&= (-1)\cdot(-1) + (-1) \cdot 1 \\
+&= (-1)\cdot(-1) - 1
+\end{aligned}
+\]
+因此:
+\[
+(-1) \cdot(-1) = 1
+\]
+\end{proofname}
+
+\item 证明任何一个整数$x > 1$或者有一个$> 1$而且$\le \sqrt{x}$的因子, 或者不存在任何$> 1$而且$< x$的因子(在后一种情形下, 这个整数称为素数; 参考第\ref{chapter:4}节).
+
+\begin{proofname}
+
+假设$x$不是素数, 也就是说存在$a | x$, 这里$1 < a < x$, 不妨设$x = ab$, 因此可以知道$b$满足不等式
+\[
+1 < b < x,
+\]
+我们证明$\min(a, b)$满足题目中的条件$1 < \min(a, b) \le \sqrt{x}$, 为了讨论方便, 不妨设$a \le b$, 于是
+\[
+x = ab \ge a^2
+\]
+也就是说
+\[
+a \le \sqrt{x},
+\]
+结论成立.
+\end{proofname}
+
+\item 使用归纳法证明
+\[
+1^3 + 2^3 + \cdots + n^3 = [\frac{n(n + 1)}{2}]^2.
+\]
+
+这个证明比较简单, 这里不讨论了. 对于这个题目, 难点在于如何发现这个等式, 考虑如下等式:
+\[
+(k + 1)^4 = k^4 + 4k^3 + 6k^2 + 4k + 1, \quad k=1,2, \cdots, n.
+\]
+
+\item 使用归纳证明对于任何$n \ge 0$, $4^{2n+1} + 3^{n+2}$是13的倍数.
+
+这个证明也不难, 这里给出递推部分, 起点的验证省略. 令$a_n = 4^{2n+1} + 3^{n+2}$.
+\[
+\begin{aligned}
+a_{n+1} &= 4^{2n+3} + 3^{n+3} \\
+&= 4^2 \cdot 4^{2n+1} + 3 \cdot 3^{n+2} \\
+&= 13 \cdot 4^{2n+1} + 3(4^{2n+1} + 3^{n+2}) = 13M + 3a_n
+\end{aligned}
+\]
+
+
+\item 给定一个天平, 以及$n$个砝码: $1, 3, 3^2, \ldots, 3^{n-1}$ 克. 证明可以通过允许在两边同时放置砝码, 可以称出任何$N$ 克重量, 其中$N$为$\ge 1$以及$\le 1/2(3^n - 1)$的整数 (提示: 考虑所有如下形式的和式
+\[
+e_0 + 3e_1 + 3^2e_2 + \cdots 3^{n-1}e_{n-1},
+\]
+其中每一个$e_i$为$0$, $+1$, 或者$-1$).
+
+这里实际上涉及到了数的3进位制的表示.
+
+根据题目我们可以证明这些砝码能够表示的最大数为
+\[
+1 + 3 + \cdots + 3^{n-1} = \frac{1 - 3^n}{1-3} = \frac{3^n - 1}{2}.
+\]
+
+\item 证明任意一个$n$个变量的$d$次多项式, 最多包含$\frac{(n+d)!}{n!d!}$个项. (提示: 对$d$使用归纳法, 注意到下面的关系: $n$个变量的$d$次同类项多项式的项的数量, 和$n - 1$个变量的$d$次多项式的项的数量相等.)
+
+用$a_{n,d}$来表示$n$个变量的$d$次多项式包含的最多的项数, 那么$d = 0$时, 显然有
+\[
+\begin{aligned}
+a_{n,0} &= 1 \\
+a_{n,1} &= n + 1 = \frac{(n+1)!}{n!1!} \\
+a_{1,d} &= d + 1 = \frac{(1 + d)!}{1!d!}
+\end{aligned}
+\]
+
+对于一般的$n$个变量, 我们记其中某个变量为$x$, 那么把多项式按照$x^k$合并各个项, 这里$k=1,2,\cdots, d$. 那么$x^k$这里面包含的项数为$a_{n-1, d-k}$, 由此可以得出如下等式:
+\[
+\begin{aligned}
+a_{n,d} &= \sum_{k=0}^{d}{a_{n-1, d-k}} \\
+&= \sum_{k=0}^{d}{a_{n-1, k}} \\
+&= \sum_{k=0}^{d}{\binom{k}{n+k-1}} 
+\end{aligned}
+\]
+
+下面根据这个等式证明$a_{n,d} = \frac{(n+d)!}{n!d!} + \binom{d}{n+d}$. 使用归纳法即可, 并且注意到如下几个等式:
+\[
+\binom{0}{n-1} = 1 = \binom{0}{n},
+\]
+以及
+\[
+\binom{k-1}{n} + \binom{k}{n} = \binom{k}{n+1}.
+\]
+
+也可以使用组合方法来获取上述等式: 满足要求的每一个项满足
+\[
+x_1^{i_1} \cdots x_n^{i_n}, \quad 0 \le i_k \le n
+\]
+那么应该$i_1, i_2, \cdots, i_n$满足
+\[
+i_1 + i_2 + \cdots + i_n \le d.
+\]
+于是应该通过
+\[
+i_1 + i_2 + \cdots + i_n = k
+\]
+并且对$k$遍历$0$到$d$来获取. 有$n+k$(我们需要把$i_k$的取值保证至少为1)个球排成一列, 使用$n-1$个木杆(这样得到的是$n$组)把这些球隔开, 不算两边, 一共有$n+k-1$个位置, 这里每一个的数量是$\binom{n-1}{n+k-1} = \binom{k}{n+k-1}$.
+\end{enumerate}
+
+\chapter{} \label{chapter:2}
+\begin{lemma}
+设$d$, $a$ 为整数, $d > 0$. 则存在唯一的$d$的最大倍数$dq \le a$; 它具有特征为: $dq \le a < d(q + 1)$, 或者$a = dq + r$, $0 \le r < d$.
+\end{lemma}
+
+(在这个关系中, $r$称为$a$被$d$除的余数; $d$称为除数, $q$称为商).
+
+\begin{proof}
+形如$a-dz$ ($z \in \mathbb{Z}$)的整数的集合包含正整数, 因为$z$可以取绝对值足够大的负数(例如, $z = -N$, $N$为足够大的正整数). 对于所有具有上述形式的正整数应用第$\ref{chapter:1}$节的性质(6); 取它的最小元素$r$, 写为$a - dq$: 于是$0 \le r < d$; 否则$a - d(q + 1)$属于同一个集合并且$< r$.
+\end{proof}
+
+\begin{theorem} \label{theorem:II_1}
+设$M$为非空的整数集, 对减法封闭. 那么存在唯一的$m \ge 0$, 使得$M$由$m$的所有倍数组成: $M = \{mz\}_{z \in \mathbb{Z}} = m\mathbb{Z}$.
+\end{theorem}
+
+\begin{proof}
+如果$x \in M$, 根据假设, $0 = x - x \in M$, $-x = 0 - x \in M$. 如果$y \in M$, 那么$y + x = y - (-x) \in M$, 因此$M$对于加法也是封闭的. 如果$x \in M$, $nx \in M$, 其中$n$为任意一个正整数, 于是$(n+1)x = nx + x \in M$; 于是根据归纳法, 对任意$n \ge 0$有$nx \in M$, 从而对于所有的$n \in Z$也成立. 最后, 所有的$M$中的元素的整数系数的线性组合也是$M$中的元素; $M$的这个性质可以得出$M$在加法和减法下封闭, 它和我们的假设是等价的.
+
+如果$M = \{0\}$, 定理是成立的, 取$m = 0$即可. 否则, $M$中大于0的元素组成的集合非空; 取$m$为其中的最小元素. $m$的所有倍数全部属于$M$. 任意$x \in M$, 根据引理有$x = my + r$, $0 \le r < m$; 于是$r = x - my$也是$M$的元素.根据$m$的定义, 应该有$r = 0$, $x = my$. 因此$M = m\mathbb{Z}$. 反过来, 既然$m$是$m\mathbb{Z}$中的最小的大于0的元素, 那么当给定$M$时, $m$也将被唯一确定.
+\end{proof}
+
+\begin{corollary} \label{corollary:II_1}
+设$a, b, \ldots, c$为有限个整数, 则存在唯一的整数$d \ge 0$, 使得所有$a, b, \ldots, c$的整数系数的线性组合$ax + by + \cdots + cz$组成的集合是由$d$的所有倍数组成的.
+\end{corollary}
+
+\begin{proof}
+应用定理\ref{theorem:II_1}于上述集合即可.
+\end{proof}
+
+\begin{corollary} \label{corollary:II_2}
+使用推论\ref{corollary:II_1}同样的假设和符号, 那么$d$是每一个整数$a, b, \ldots, c$的因子, 并且这些整数的公因子也是$d$的因子.
+\end{corollary}
+
+\begin{proof}
+注意整数$a, b, \ldots, c$本身也是它们的线性组合组成的集合的元素. 反过来, $a, b, \ldots, c$的公因子也是它们的每一个线性组合的因子, 特别的也是$d$的因子.
+\end{proof}
+
+\begin{definition}
+定理\ref{theorem:II_1}的推论中定义的整数$d$称为$a, b, \ldots, c$的最大公因子; 表示为$(a, b, \ldots, c)$.
+\end{definition}
+
+既然最大公因数$(a, b, \ldots, c)$属于$a, b, \ldots, c$的线性组合的集合 (它是大于0的元素中的最小者, 除非$a, b, \ldots, c$都为0), 它就应该可以表示为如下形式
+\[
+(a, b, \cdots, c) = ax_0 + by_0 + \cdots + cz_0
+\]
+其中$x_0, y_0, \ldots, z_0$都是整数.
+
+习题
+
+\begin{enumerate}
+\item \label{exercise:II_1} 证明$(a, b, c) = ((a, b), c) = (a, (b, c))$.
+\begin{proof}
+注意本书中最大公约数的定义方式, 这里应该使用这个定义来证明. 注意到$a,b,c$有对称性, 由于$(a, b) = (b, a)$后面的两个式子没有本质差别, 这里只证明第一个等式.
+
+设$d_1 = (a, b)$, 则存在$x_0, y_0$, 使得$d = ax_0 + by_0$. 我们证明集合$A = \{ax + by + cz\}$和集合$B = \{d_1w + cz\}$是相等的, 那么根据定义等式成立.
+
+(1) $A \subset B$, $\forall d \in A$, 则$d = ax + by + cz$, 根据$d_1$的定义(推论2.3), 应该有$ax + by = wd_1 = w(ax_0 + by_0)$, 于是有$d = ax + by + cz = wd_1 + cz \in B$.
+
+(2) $B \subset A$, $\forall d \in B$, 则$d = d_1w + cz = (ax_0 + by_0)w + cz = awx_0 + bwy_0 + cz \in A$.
+\end{proof}
+
+\item \label{exercise:II_2} 证明Fibonacci数列(1, 2, 3, 5, 8, 13, \ldots, 数列中的第二项之后的每一项都是他前面的两个项之和) 中任何连续的两个项的最大公因数为1.
+
+\begin{proof}
+我们首先证明: $(a, b) = (a- b, b)$. 这只要注意到$ax + by = (a-b)x + b(x + y)$.
+
+根据Fibonacci数列的定义有: $a_{n+2} = a_{n+1} + a_n$, $a_n = a_{n+2} - a_{n+1}$, 因此
+\[
+\begin{aligned}
+(a_{n+2}, a_{n+1}) &= (a_{n+2} - a_{n+1}, a_{n+1})\\ 
+&= (a_n, a_{n+1}) = (a_{n+1}, a_n) \\
+&= \cdots = (a_2, a_1) = 1
+\end{aligned}
+\]
+
+\end{proof}
+
+\item \label{exercise:II_3} 如果$p$, $q$, $r$, $s$为整数, 满足$ps - qr = \pm 1$, 整数$a, b, a', b'$满足
+\[
+a' = pa + qb, b' = ra + sb,
+\]
+证明$(a, b) = (a', b')$ (提示: 从最后的两个方程种解出$a$, $b$).
+
+\begin{proof}
+我们对$ps - qr = 1$进行讨论, 至于$-1$的情形类似.
+
+首先我们可以从上述两个等式求出$a$, $b$的表达式:
+\[
+\begin{aligned}
+a &= sa' - qb'\\
+b &= -ra' + pb'
+\end{aligned}
+\]
+由此, 我们可以证明$A = \{ax + by\} = \{a'x + b'y\} = B$. 一方面:
+\[
+\begin{aligned}
+ax + by &= (sa' - qb')x + (-ra' + pb')y \\
+&= a'(sx-ry) + b'(-qx + py)
+\end{aligned}
+\]
+另一方面
+\[
+\begin{aligned}
+a'x + b'y &= (pa + qb)x + (ra + sb)y \\
+&= a(px+ry) + b(qx + sy)
+\end{aligned}
+\]
+$A = B$, 因而$(a, b) = (a', b')$.
+\end{proof}
+
+\item \label{exercise:II_4} $a$, $b$为大于0的整数, 令$a_0 = a$, $a_1 = b$; 当$n \ge 1$时, $a_{n+1}$使用如下方式定义$a_{n-1} = a_nq_n + a_{n+1}$, $0 \le a_{n+1} < a_n$, $a_n > 0$.证明存在$N \ge 1$使得$a_{N + 1} = 0$, 并且$a_N = (a, b)$.
+\begin{proof}
+只要注意到$a_0 > a_1 > a_2 > \cdots > a_n > \cdots$, 可知最多经过$a$次即可达到$a_n = 0$, 令$N = n-1$即可. 难点在于后面的结论: $a_N = (a, b)$. 这一点我们只要证明$(a_{n-1}, a_n) = (a_n, a_{n+1})$即可. 这样的话
+\[
+(a, b) = (a_0, a_1) = (a_1, a_2) = \cdots = (a_N, a_{N+1}) = (a_N, 0) = a_N.
+\]
+为了方便, 改变一下记号: $a =qb + r$, 然后需要证明$(a, b) = (b, r)$. 设$A = \{ax + by\}$, $B = \{bx + ry\}$.
+\begin{gather*}
+ax + by = (qb + r)x + by = b(qx + y) + rx \in B \\
+bx + ry = bx + (a - qb)y = ay + b(x - qy) \in A
+\end{gather*}
+\end{proof}
+
+\item \label{exercise:II_5} 使用习题\ref{exercise:II_4}中的符号, 证明$a_n$可以表示为$ax + by$, $x$, $y$为整数, $0 \le n \le N$.
+\begin{proof}
+使用归纳法即可. $a_0 = a \cdot 1 + b \cdot 0$, $a_1 = a \cdot 0 + b \cdot 1$, 对于$a_0 = a_1q_1 + a_2$, 
+\[
+a_2 = a_0 - a_1q_1 = a + b\cdot(-q_1).
+\]
+假若对于小于等于$n$的$a_k$能够由$a$和$b$表示出来, $a_k = ax_k + by_k$, 那么对于$a_{n+1}$.
+\[
+\begin{aligned}
+a_{n+1} &= a_{n-1} - a_nq_n \\
+&= ax_{n-1} + by_{n-1} - q_n(ax_n + by_n) \\
+&= a(x_{n-1} - q_nx_n) + b(y_{n-1} - q_ny_n)
+\end{aligned}
+\]
+$x_{n+1} = x_{n-1} - q_nx_n$, $y_{n+1} = y_{n-1} - q_ny_n$, 结论成立.
+\end{proof}
+
+\item \label{exercise:II_6} 使用习题\ref{exercise:II_4}, \ref{exercise:II_5}的方法给出下列情形中的$(a, b)$, 以及求解$ax + by = (a, b)$:
+\begin{enumerate}
+\item[(\rmnum{1})] a = 56, b = 35;
+\item[(\rmnum{2})] a = 309, b = 186;
+\item[(\rmnum{3})] a = 1024, b = 729.
+\end{enumerate}
+
+\begin{enumerate}
+\item[(\rmnum{1})] $7 = (a, b) = 56 \cdot 2 - 35 \cdot 3$;
+\item[(\rmnum{2})] $3 = (a, b) = 309 \cdot (-3) + 186 \cdot 5$;
+\item[(\rmnum{3})] $1 = (a, b) = 729 \cdot 361 - 1024 \cdot 257$.
+\end{enumerate}
+
+\item \label{exercise:II_7} $a, b, \ldots, c, m$为整数, $m > 0$, 证明
+\[
+(ma, mb, \ldots, mc) = m \cdot (a, b, \ldots, c).
+\]
+\begin{proof}
+令$d = (a, b, \ldots, c)$, 则$d | a$, $d | b$, $\cdots$, $d | c$, 于是$md | ma$, $md | mb$, $\cdots$, $md | mc$, $md$是它们的公因子, 于是$md | (ma, mb, \cdots, mc)$.
+
+$d=ax + by + \cdots + cz$, 于是$md = max + mby + \cdots + mcz$, 于是$(ma, mb, \cdots, mc) | md$.
+
+有了上面两个整除关系可以知道$(ma, mb, \cdots, mc) = md = m(a, b, \cdots, c)$.
+\end{proof}
+
+\item \label{exercise:II_8} 证明每一个有理数可以表示为$\frac{m}{n}$, $(m, n) = 1$, $n > 0$, 并且这种表示方式是唯一的.
+
+\begin{proof}
+所谓有理数, 是指整数的比例, 于是我们只需要证明$d = (a, b)$时, $(a/d, b/d) = 1$, 并且$m_1/n_1 = m_2 /n_2$,并且$m_i, n_i$满足题设条件时, 必有$m_1 = m_2$, $n_1 = n_2$.
+
+利用上一题的结论$(a/d, b/d) \cdot d = (a, b) = d$, 于是$(a/d, b/d) = 1$. 至于后面部分, 我们有$m_1n_2 = m_2n_1$. 我们证明结论$d | ab$, $(a, d) = 1$, 则必有$d | b$. 证明比较简单, $(a, d) = 1$可以得出: $ax + dy = 1$, 于是$abx + dby = b$, 因此$d | b$. $m_1 | m_2n_1$, $(m_1, n_1) = 1$可知$m_1 | m_2$, 不妨设$m_2 = km_1$, 于是有$n_2 = kn_1$, 注意$n_1 > 0$, $n_2 > 0$, 因此$k > 0$, 如果$k > 1$, 那么$(m_2, n_2) = (km_1, kn_1) = k > 1$, 这与我们的假设矛盾, 因此结论成立.
+\end{proof}
+\end{enumerate}
+
+\chapter{} \label{chapter:3}
+\begin{definition}
+整数$a$, $b$, $\ldots$, $c$称作是互素的, 如果他们的最大公因数为1.
+\end{definition}
+
+换句话说, 它们是互素的如果它们没有大于1的公因子.
+
+如果整数$a$, $b$是互素的, 那么就称$a$对于$b$不可约, $b$对于$a$不可约, 而且, $a$的每一个因子对于$b$不可约, $b$的每一个因子对于$a$不可约.
+
+\begin{theorem} \label{theorem:III_1}
+整数$a, b, \ldots, c$是互素的当且仅当方程$ax + by + \cdots + cz = 1$存在整数解$x, y, \ldots, z$.
+\end{theorem}
+
+事实上, 如果$(a, b, \ldots, c) = 1$, 根据定理\ref{theorem:II_1}的推论\ref{corollary:II_1}, 方程有解. 反过来, 如果方程有解, 那么每一个$a, b, \ldots, c$的公因子$d > 0$必然整除1, 因而必然是1.
+
+\begin{corollary}
+如果$d$是整数$a, b, \ldots, c$的最大公因数, 那么$\frac{a}{d}, \frac{b}{d}, \ldots, \frac{c}{d}$是互素的.
+\end{corollary}
+
+这一点立刻可以由这样一个事实得到: $d$可以表示为$ax_0 + by_0 + \cdots cz_0$.
+
+\begin{theorem} \label{theorem:III_2}
+如果$a$, $b$, $c$为整数, $a$和$b$互素, 并且可以整除$bc$, 那么$a$整除$c$.
+\end{theorem}
+
+既然$(a, b) = 1$, 我们有$ax + by = 1$. 于是有
+\[
+c = c(ax + by) = a(cx) + (bc)y.
+\]
+而$a$可以整除右边的每一项, 因而也整除$c$.
+
+\begin{corollary}
+如果$a$, $b$, $c$为整数, $a$分别与$b$, $c$互素, 那么$a$与$bc$互素.
+\end{corollary}
+
+令$d$为$a$和$bc$的正的公因子, 它和$b$互素(因为它整除$a$), 根据定理\ref{theorem:III_2}, $d$必然整除$c$, 而$(a, c) = 1$, $d$等于1.
+
+\begin{corollary} \label{corollary:III_2}
+如果一个整数和$a, b, \ldots, c$中的每一个整数互素, 那么它也和这些数的乘积互素.
+\end{corollary}
+
+这可以通过对乘积的因子个数进行归纳得到.
+
+习题
+
+\begin{enumerate}
+\item \label{exercise:III_1} 如果$(a, b) = 1$, $a$和$b$整除$c$, 证明$ab$整除$c$.
+
+\begin{proof}
+从$(a, b) = 1$,存在整数$x$,$y$,满足$1 = ax + by$,于是$c = acx + bcy$,注意到$ab | ac$,$ab | bc$,因此$ab | c$.
+\end{proof}
+
+另一个方法是: $a | c$,说明$c = aa_1$,根据$b | c$,可知$b|aa_1$, 而$(a,b)=1$,从而$b|a_1$, 因此$a_1=bb_1$,$c=aa_1=abb_1$,$ab|c$.
+
+\item \label{exercise:III_2} $m > 1$, $a$和$m$互素, 证明: $m$除$a, 2a, \ldots, (m - 1)a$得到的余数为$1, 2, \ldots, m - 1$的某个排序.
+
+\begin{proof}
+注意到$a, 2a, \ldots, (m-1)a$一共有$m-1$个数, 我们只要证明这些数中的任意两个数的余数不相同, 并且不会出现余数为0的情形, 那么结论成立.
+
+首先$m$不整除$ka$, 这里$1 \le k \le m-1$, 如果$m | ka$, 由于$(m, a) = 1$, 于是$m|k$, 这是不可能的.
+
+其次, 如果$ka$和$la$除以$m$的余数相同, 这里$1 \le k < l \le m-1$, 那么就有$m | (l-k)a$, 根据第一步证明的, 这是不可能的.
+\end{proof}
+
+\item \label{exercise:III_3} 证明: $N > 0$为整数,  $N$或者是完全平方数(即可以表示为$n^2$, 这里$n$为大于0的整数), 或者$\sqrt{N}$不是有理数 (提示: 利用习题\ref{exercise:II_8}).
+
+\begin{proof}
+假设$N$不是完全平方数, 我们证明$\sqrt{N}$不是有理数.
+
+假设$\sqrt{N}$是有理数, 于是存在$m, n > 0$, $(m, n) = 1$, $\sqrt{N} = m/n$, 两边平方, $N = m^2/n^2$,于是有
+\[
+n^2N = m^2,
+\]
+从$(m, n) = 1$可知$(m^2, n^2) = 1$, 于是$m|N$, $m^2|N$, 不妨设$N=m^2m_1$, 于是有
+\begin{gather*}
+n^2m^2m_1 = m^2 \\
+n^2m_1 = 1
+\end{gather*}
+由此得到$n=1$, $m_1 = 1$, 这与$N$不是完全平方数矛盾. 
+\end{proof}
+
+\item \label{exercise:III_4} 任何大于1的不是2的幂的整数可以表示为两个或者更多个连续整数的和.
+
+\begin{proof}
+首先每一个数$N > 1$都可以表示为$N = 2^ma$的形式, 这里$m \ge 0$,$a$为奇数. 根据题设, 应该是$a \ge 3$, 我们假设他能够表示成d个连续整数$b, b+1, \cdots, b + d - 1$的和, 则
+\[
+2^ma = \frac{(b+d)(b+d-1)}{2} - \frac{b(b-1)}{2} = \frac{d(2b-1+d)}{2},
+\]
+转化一下:
+\[
+d(2b-1 + d) = 2^{m+1}a
+\]
+注意到$d$与$2b-1+d$必然是一个为奇数, 另一个为偶数, 如果$a < 2^{m+1} + 1$, 那么令$d = a$, 此时$2b-1+d = 2^{m+1}$, $b = \frac{2^{m+1}+1-a}{2}$, 否则令$d = 2^{m+1}$, $b = \frac{a + 1 - 2^{m+1}}{2}$. 容易验证这是成立的, 并且$a \ge 3$, $2^{m+1} \ge 2$. 因此数量个数至少为2.
+\end{proof}
+
+\item \label{exercise:III_5} $a$, $b$为正整数, $(a, b) = 1$, 证明每一个$\ge ab$的整数可以表示为$ax + by$的形式, $x$, $y$为正整数.
+
+\begin{proof}
+从$(a, b) = 1$,存在$ax + by = 1$.问题在于找到方程$n = ax + by$的正整数解,这里$n \ge ab$, 华罗庚的《数论导引》中有一个更强的结论$n > ab - a - b$.
+
+首先根据前面讨论, 方程必然有解. 不妨设$x_0, y_0$是其中一个解, 则方程的所有解可以表示成如下形式:
+\[
+\left.
+\begin{cases}
+x = x_0 + bt \\
+y = y_0 - at
+\end{cases}
+\right. t \in Z,
+\]
+我们需要证明它有正整数解. 为此我们需要选择合适的$t \in Z$.
+
+首先选择$t$使得, $0 \le y_0 - at < a$, 这是可能的, 这实际上是带余除法的一个应用, 我们说这个$t$能够使得$x = x_0 + bt > 0$,因为此时$0 \le by_0 - abt \le ab$
+\[
+(x_0 + bt)a = ax_0 + abt > by_0 - ab + ax_0 = n - ab \ge ab - ab = 0
+\]
+获证. 这里注意的是本书中$0$包含在正整数之中.
+\end{proof}
+
+\item \label{exercise:III_6} 利用习题\ref{exercise:III_5}, 对$m$使用归纳法, 证明, 如果$a_1, a_2, \ldots, a_m$是正整数, $d = (a_1, a_2, \ldots, a_m)$, $d$的足够大的倍数可以表示为$a_1x_1 + a_2x_2 + \cdots + a_mx_m$的形式, 这里$x_i$都是正整数.
+\begin{proof}
+对于$m=2$, 对$a_1/d$和$a_2/d$应用上一道题目, 则当$N \ge (a_1a_2)/d$时, $ax + by = N$存在正整数解. 至于$m+1$来说, 
+\[
+d= ((a_1, \cdots, a_m), a_{m+1})
+\]
+令$d_1 = (a_1, \cdots, a_m)$, 对于足够大的$Kd_1$, 存在正整数$x_i$, 使得$a_1x_1 + \cdots + a_mx_m = Kd_1$, 对于足够大的$Md$, 存在正整数$y_1, y_2$使得, $d_1y_1 + a_{m+1}y_2 = Md$, 当$Nd \ge Kd_1 + Md$时, 我们来看看是否存在正整数解. 首先对于任意的$Nd$, 考虑$Nd-Kd_1 \ge Md$, 存在正整数$y_1, y_2$, 使得$d_1y_1 + a_{m+1}y_2 = Nd - Kd_1$, 而对于$(y_1 + K)d_1$来说, 存在正整数$x_i$, 使得$\sum{a_ix_i} = (y_1 + K)d_1$, 于是有$\sum{a_ix_i} = Nd$, 这里$x_{m+1} = y_2$. 获证. 对于这道题目, 只需要找到这个$Nd$, 它不一定是满足条件的最小整数.
+\end{proof}
+\end{enumerate}
+
+\chapter{} \label{chapter:4}
+\begin{definition}
+整数$p > 1$称为素数, 如果它除了自己和1之外没有其它的正因子.
+\end{definition}
+
+每一个大于1的整数至少有一个素因子, 也就是它的最小的大于1的因子. 如果$a$为整数, $p$是素数, 那么$p$或者整除$a$, 或者和$a$互素.
+
+\begin{theorem} \label{theorem:IV_1}
+如果一个素数整除某些整数的乘积, 那么它必然整除至少其中一个因子.
+\end{theorem}
+
+否则, 它将和所有的因子互素, 于是根据定理\ref{theorem:III_2}的推论\ref{corollary:III_2}, 它和这些数的乘积也是互素的.
+
+\begin{theorem} \label{theorem:IV_2}
+每一个大于1的整数可以表示为素数的乘积; 如果不考虑因子的顺序, 这个表示方式还是唯一的.
+\end{theorem}
+
+设$a > 1$; 令$p$为$a$的素因子. 如果$a = p$, 定理成立, 否则, $1 < \frac{a}{p} < a$; 如果定理中的第一个结论对于$\frac{a}{p}$成立, 那么对于$a$也成立. 对$a$使用归纳法, 即可得出结论成立.
+
+第二个结论可以通过归纳法加以证明. 假设$a$可以以两种方式表示为素数的乘积, 即$a = pq \ldots r$和$a = p'q' \ldots s'$; $p$整除$a$, 定理\ref{theorem:IV_1}表明$p$必整除素数$p', q', \ldots s'$之一, 假设为$p'$, 那么$p = p'$; 对$\frac{a}{p}$应用定理的第二部分, 我们可以证明除了顺序之外, $q', \ldots, s'$和$q, \ldots, r$一样的. 根据归纳原理, 就可以证明第二部分结论.
+
+下面给出第二个证明. 把$a$表示为素数的乘积, $a = pq \ldots r$; 令$P$为任一素数; $n$为$P$在$a$的因子$p, q, \ldots, r$中出现的次数. 即$a$是$P^n$的倍数; 另一方面, 由于$a \cdot P^{-n}$是不等于$P$的素数的乘积, 由定理\ref{theorem:IV_1}, 它不是$P$的倍数, 因而$a$不是$P^{n + 1}$的倍数. $n$可以唯一确定: $n$是满足$P^n$整除$a$的最大整数; 我们使用$n = \upsilon_{P}(a)$来表示. 于是, 任意的两种把$a$表示为素数乘积的方式中, 必然包含相同的素数, 以及相同的次数; 这再一次证明了我们的定理的第二个结论.
+
+2是素数; 它是唯一的偶素数, 所有其它的素数都是奇数. 前十个素数为
+\[
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29.
+\]
+
+设$p_1 = 2, p_2, p_3, \ldots$是所有的素数, 以它们的自然顺序(递增)排列. 令$a$为任一$\ge$1的整数, 对每一个$i \ge 1$, 在把$a$表示为素数乘积的时候, $\alpha_i$为$a$的素因子中的$p_i$的次数(如果$p_i$不能整除$a$, 则令$\alpha_i = 0$). 于是我们有
+\[
+a = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_r^{\alpha_r}
+\]
+这里$r$足够大(也就是说$a$的所有的素因子都在$p_1, p_2, \ldots, p_r$之中).
+
+\begin{theorem} \label{theorem:IV_3}
+存在无限多的素数.
+\end{theorem}
+
+事实上, 如果只有有限个素数$p, q, \ldots, r$, 那么$pq \ldots r + 1$的素因子显然不等于$p, q, \ldots, r$中的任意一个. (这是Euclid的证明, 其它的证明方法可以参考习题).
+
+习题
+
+\begin{enumerate}
+\item \label{exercise:IV_1} $n$为大于等于1的整数, $p$是素数. 对于任意的有理数$x$, 我们用$[x]$表示小于或者等于$x$的最大整数, 证明使得$p^N$整除$n!$的最大整数$N$可以由下式给出
+\[
+N = \big{[}\frac{n}{p}\big{]} + \big{[}\frac{n}{p^2}\big{]} + \big{[}\frac{n}{p^3}\big{]} + \cdots
+\]
+
+\begin{proof}
+首先$[\frac{n}{m}]$表示的是不超过$n$的正整数中$m$的倍数的个数.
+\[
+\frac{n}{m} - 1 < [\frac{n}{m}] \le \frac{n}{m},
+\]
+如果我们用$A_k$表示$1$到$n$之间的$p^k$的倍数组成的集合,那么有$A_{k+1} \subset A_{k}$,如果用$|A_k|$表示集合中元素个数,那么$|A_k| = [n/p^k]$,并且有结论,能被$p^k$整除但不能被$p^{k+1}$整除的数的个数应该是$|A_k|-|A_{k+1}|$.这样$n!$中$p$的因子的个数(N)等于
+\[
+\sum_{k=1}^{\infty}{k(|A_k| - |A_{k+1}|)},
+\]
+注意到一定程度之后必有$[n/p^k]=0$,把上式展开即可得到结论.
+\end{proof}
+
+\item \label{exercise:IV_2} 证明, $a, b, \ldots, c$为大于等于1的整数, 那么
+\[
+\frac{(a + b + \cdots + c)!}{a!b! \cdots c!}
+\]
+是整数. (提示: 使用习题\ref{exercise:IV_1}, 证明每一个素数在分子中的次数不小于它在分母中的次数.)
+
+\begin{proof}
+根据上一道题目,我们考察每一个素数$p$在分子分母中的次数,在分子中的次数为
+\[
+\sum{[\frac{a+b+\cdots+c}{p^k}]},
+\]
+在分母中的次数为
+\[
+\begin{aligned}
+&\sum{[\frac{a}{p^k}]} + \sum{[\frac{b}{p^k}]} + \cdots + \sum{[\frac{c}{p^k}]} \\
+&\ = \sum{([\frac{a}{p^k}] + [\frac{b}{p^k}] + \cdots + [\frac{c}{p^k}])},
+\end{aligned}
+\]
+我们只要证明结论
+\[
+[\frac{a+b}{m}] \ge [\frac{a}{m}] + [\frac{b}{m}]
+\]
+即可.而它是成立的,因为
+\[
+[\frac{a}{m}] \le \frac{a}{m}, \quad [\frac{b}{m}] \le \frac{b}{m}
+\]
+于是$[\frac{a}{m}] + [\frac{a}{m}] \le \frac{a+b}{m}$,而$[\frac{a+b}{m}]$是不超过$\frac{a+b}{m}$的最大整数,所以前面的不等式成立.
+\end{proof}
+
+\item \label{exercise:IV_3} $a$, $m$, $n$为正整数, $m \neq n$, 证明$a^{2^m} + 1$和$a^{2^n} + 1$的最大公因数或者是1, 当$a$为偶数时; 或者是2, 当$a$为奇数时(提示: 使用这样一个事实, 当$n > m$时, $a^{2^n} - 1$是$a^{2^m} + 1$的倍数). 并依据此推出存在无限多的素数.
+
+\begin{proof}
+这里需要一个结论:
+\[
+(a,b) = (a - kb,b),
+\]
+$m \neq n$,我们不妨设$m>n$,那么根据提示有
+\[
+(a^{2^m}+1, a^{2^n}+1)=(a^{2^m}+1-(a^{2^m}-1), a^{2^n}+1)=(2, a^{2^n}+1),
+\]
+当$a$为偶数的时候,$a^{2^n}+1$为奇数,最大公约数为1,否则为偶数,最大公约数等于2.
+
+后一个结论可以这样来证明:我们直接取$a=2$,那么序列
+\[
+\{2^{2^n}+1\}
+\]
+任意两个数都是互素的.那么他们的素因子也是互不相同的,因此素数必然有无限多个.
+\end{proof}
+
+\item 如果$a = p^{\alpha}q^{\beta} \cdots r^{\gamma}$, $p, q, \ldots, r$为不同的素数, $\alpha, \beta, \ldots, \gamma$是正整数, 证明$a$的不同的因子(包括$a$和1)的个数是
+\[
+(\alpha + 1)(\beta + 1) \cdots (\gamma + 1),
+\]
+它们的和为
+\[
+\frac{p^{\alpha + 1} - 1}{p - 1} \cdot \frac{q^{\beta + 1} - 1}{q - 1} \cdots \frac{r^{\gamma + 1} - 1}{r - 1}.
+\]
+
+\begin{proof}
+我们需要结论:$a$的每个因子由乘积给出
+\[
+p^{\alpha_1}q^{\beta_1} \cdots r^{\gamma_1},
+\]
+这里$0 \le \alpha_1 \le \alpha$,$0 \le \beta_1 \le \beta$,$0 \le \gamma_1 \le \gamma$.使用组合学的乘积原理可知不同的因子的个数就是
+\[
+(\alpha + 1)(\beta + 1) \cdots (\gamma + 1).
+\]
+它们的和等于
+\[
+\begin{aligned}
+&\ \sum_{\alpha_1,\beta_1,\gamma_1}{p^{\alpha_1}q^{\beta_1} \cdots r^{\gamma_1}} \\
+&= \sum_{\beta_1,\gamma_1}{q^{\beta_1} \cdots r^{\gamma_1} \sum_{\alpha_1}{p^{\alpha_1}}} \\
+&= \sum_{\alpha_1}{p^{\alpha_1}} \cdot \sum_{\beta_1}{q^{\beta_1}} \cdots \sum_{\gamma_1}{r^{\gamma_1}} \\
+&= \frac{p^{\alpha + 1} - 1}{p - 1} \cdot \frac{q^{\beta + 1} - 1}{q - 1} \cdots \frac{r^{\gamma + 1} - 1}{r - 1}.
+\end{aligned}
+\]
+\end{proof}
+
+\item 证明, 如果$D$是$a$的不同的因子的个数, 这些因子的乘积为$a^{D/2}$.
+
+\begin{proof}
+令$A = \{a_1,a_2,\cdots,a_D\}$为$a$的不同的因子的集合,只要注意到
+\[
+B=\{\frac{a}{a_1},\frac{a}{a_2},\cdots,\frac{a}{a_D}\}
+\]
+恰好也遍历了$a$的不同的因子,那么就有素因子乘积的平方等于
+\[
+\prod{(a_i \cdot \frac{a}{a_i})} = a^D
+\]
+结论成立.
+\end{proof}
+
+\item $n, a, b, \ldots, c$为大于1的整数, 不大于$n$的具有形式$a^{\alpha}b^{\beta} \cdots c^{\gamma}$的不同的数的个数满足
+\[
+\le (1 + \frac{\log{n}}{\log{a}})(1 + \frac{\log{n}}{\log{b}}) \cdots (1 + \frac{\log{n}}{\log{c}}).
+\]
+使用这个结论, 以及
+\[
+\lim_{n \rightarrow +\infty}{\frac{(\log{n})^r}{n}} = 0
+\]
+对任意$r > 0$, 证明素数个数是无限的(提示: 假设它是有限的, $a, b, \ldots, c$为所有的不同的素数).
+
+\begin{proof}
+具有上述形式的数的个数等于
+\[
+(1 + \alpha)(1 + \beta)\cdots(1+\gamma),
+\]
+注意到$a^{\alpha}\le n$,因此$\alpha < \log{n}/\log{a}$,因此不等式部分成立.
+
+至于后面部分,假设素数只有有限个($k$个),它们就是$a,b,\cdots,c$,并且$a$是最小的,那么根据基本定理,每一个数都能够表示为上述形式,于是
+\[
+n \le (1 + \frac{\log{n}}{\log{a}})(1 + \frac{\log{n}}{\log{b}}) \cdots (1 + \frac{\log{n}}{\log{c}}),
+\]
+另一方面,
+\[
+\begin{aligned}
+&(1 + \frac{\log{n}}{\log{a}})(1 + \frac{\log{n}}{\log{b}}) \cdots (1 + \frac{\log{n}}{\log{c}}) < (1 + \frac{\log{n}}{\log{a}})^k \\
+&=\sum_{i=0}^{k}{C_k^i(\frac{\log{n}}{\log{a}})^i}
+\end{aligned}
+\]
+于是
+\[
+1 < \sum_{i=0}^{k}{\frac{C_k^i}{\log^i{a}} \cdot \frac{(\log{n})^i}{n}}
+\]
+令$n \rightarrow$,而不等式右边是有限项,并且每一项趋于0,于是得到矛盾
+\[
+1 \le 0.
+\]
+\end{proof}
+
+\item $(a, b) = 1$, $a^2 - b^2$为完全平方数(参考习题\ref{exercise:III_3}), 证明, 或者$a + b$和$a - b$都是完全平方数, 或者每一个都是一个完全平方数的二倍数(提示: 证明$a + b$和$a - b$的最大公约数是1或者2).
+
+\begin{proof}
+首先有
+\[
+(a+b,a-b) = (a+b-(a-b),a-b)=(2a,a-b)=(2a,b)=(2,b),
+\]
+当$b$为偶数的时候最大公约数为2,否则为1.
+
+其次我们有结论:如果$(m,n)=1$,那么如果$mn$是完全平方数,必有$m$和$n$都是完全平方数.
+
+于是根据$(a+b,a-b)=1$和$(a+b,a-b)=2$分情形讨论,第一种情形对应的就是$a+b$和$a-b$都是完全平方数.至于后一情形,只要注意到$((a+b)/2,(a-b)/2)=1$,并且$(a^2-b^2)/4$仍旧是完全平方数即可.
+\end{proof}
+
+\end{enumerate}
+
+\chapter{} \label{chapter:5}
+\begin{definition}
+交换群(Abel群) \index{Abel群} 是指集合$G$, 以及$G$上的元素的二元运算, 满足以下公理(在这里把群的运算表示为$+$):
+\begin{enumerate}
+\item[\Rmnum{1}] (结合律). $(x + y) + z = x + (y + z)$, $\forall x, y, z \in G$.
+
+\item[\Rmnum{2}] (交换律). $x + y = y + x$, $\forall x, y \in G$.
+
+\item[\Rmnum{3}] $x, y \in G$, 方程$x + z = y$存在唯一解$z \in G$ (记$z = y - x$).
+
+\item[\Rmnum{4}] 存在一个元素属于$G$, 称为中性元(记之为$0$), 满足$0 + x = x$, $\forall x \in G$.
+
+\end{enumerate}
+\end{definition}
+
+举例来说, 整数集, 有理数集(以及实数集)在加法下构成交换群. 很多时候交换群的运算不一定是加法, 也就是可以不表示为$+$; 此时\Rmnum{3}中的$y - x$, \Rmnum{4}中的$0$都应该作相应的修改. 如果这个运算以乘法表示, 那么在\Rmnum{3}中的$z$通常表示为$\frac{y}{x}$, 或者$y / x$, 或者$yx^{-1}$. 用1表示\Rmnum{4}中的中性元. 非零的有理数在乘法下构成了一个交换群.
+
+在本书中, 除了交换群之外, 不会出现其它的群; 因此``交换''一词通常就省略了. $G$的子集如果在同一个运算下仍旧构成一个群, 那么该子集就称为$G$的子群. 如果$G$表示为加法, $G$的子集是一个子群当且仅当它对加法和减法封闭, 甚至可以仅仅对减法封闭(参考定理\ref{theorem:II_1}的证明). 定理\ref{theorem:II_1}可以更加简洁地表述为$Z$的每一个子群具有形式$mZ$, $m \ge 0$.
+
+下面给出有限群的例子.
+
+\begin{definition}
+$m$, $x$, $y$为整数, $m > 0$, 称$x$和$y$模$m$同余, 如果$x - y$是$m$的倍数; 可以表示为$x \equiv y (\mod m)$, 或更简洁表示为$x \equiv y(m)$.
+\end{definition}
+
+第2章中的引理说明每一个整数必和$0, 1, \ldots, m - 1$之一, 而且只和其中的一个模$m$同余, 两个整数模$m$同余当且仅当它们除$m$的余数相同.
+
+模$m$的同余关系具有下列性质:
+
+\begin{enumerate}
+\item[(A)] (自反性) $x \equiv x (\mod m)$;
+
+\item[(B)] (传递性) 如果$x \equiv y$, $y \equiv z (\mod m)$, 则$x \equiv z (\mod m)$;
+
+\item[(C)] (对称性) 若$x \equiv y (\mod m)$, 则$y \equiv x (\mod m)$.
+
+\item[(D)] $x \equiv y$, $x' \equiv y' (\mod m)$, $x \pm x' \equiv y \pm y' (\mod m)$. 
+
+\item[(E)] $x \equiv y$, $x' \equiv y' (\mod m)$, $xx' \equiv yy' (\mod m)$.
+
+\item[(F)] $d > 0$, 整除$m$, $x$和$y$;那么$x \equiv y (\mod m)$当且仅当$\frac{x}{d} \equiv \frac{y}{d} (\mod \frac{m}{d})$.
+\end{enumerate}
+
+对于(E), 它是下面等式的推论
+\[
+xx' - yy' = x(x' - y') + (x - y)y';
+\]
+其它结论的验证也是比较简单的.
+
+性质(A), (B), (C)可以表述为: 模$m$同余关系是整数之间的一个等价关系.
+
+\begin{definition}
+整数模$m$的同余类是所有这样的整数的集合, 这些整数和某个给定的整数模$m$同余.
+\end{definition}
+
+$x$为任一整数, 我们用$(x \mod m)$ (或更简单的$(x)$, 如果不会引起歧义的话)来表示与$x$模$m$同余的整数组成的同余类. 从(A)知$x$属于$(x \mod m)$; 它称为这个同余类的代表. 从(A), (B), (C)可知, 两个同余类$(x \mod m)$, $(y \mod m)$或者是相等的, 如果$x \equiv y (\mod m)$; 或者是不相交的(也就是说没有公共元素). 因而所有整数的集合被分成了$m$个不相交的同余类$(0 \mod m)$, $(1 \mod m)$, $\ldots$, ($m - 1 \mod m$).
+
+我们使用如下方式定义同余类的加法:
+\[
+(x \mod m) + (y \mod m) = (x + y \mod m);
+\]
+这样做是允许的, 因为(D)表明等式右边仅仅依赖于左边的两个同余类, 而不依赖这些同余类的代表$x$, $y$的选择.
+
+\begin{theorem}
+对任一整数$m > 0$, 模$m$的同余类在加法下构成一个$m$个元素的交换群.
+\end{theorem}
+
+这是显然的, 事实上, 对于给定的$x$, $y$, 方程
+\[
+(x \mod m) + (z \mod m) = (y \mod m),
+\]
+有唯一的解$(y - x \mod m)$, 而$(0 \mod m)$就是中性元.
+
+习题
+
+\begin{enumerate}
+\item 如果$x_1, \ldots, x_m$为$m$个整数, 证明存在一个合适的非空子集, 使得这个子集中的元素的和是$m$的倍数 (提示: 考虑模$m$的由$0$, $x_1$, $x_1 + x_2$, $\ldots$, $x_1 + x_2 + \cdots + x_m$决定的不同的同余类).
+
+\begin{proof}
+考虑$m$个数$y_1=x_1$, $y_2=x_1 + x_2$, $\ldots$, $y_m=x_1 + x_2 + \cdots + x_m$,如果这些数中有$m$的倍数,那么选择其中一个即可,否则,根据鸽笼原理,至少有两个数模$m$同余,不妨设为$y_i$,$y_j$,$1 \le i < j \le m$,于是数$x_i, \cdots,x_j$组成的集合满足条件.
+\end{proof}
+
+\item 证明每一个完全平方数(参考III的习题3)和0, 1, 或者4之一模8同余.
+
+\begin{proof}
+把整数按照模4同余进行讨论即可:
+\begin{gather*}
+(4m)^2 =16m^2 \equiv 0 \mod{8}\\
+(4m+1)^2=16m^2+8m+1 \equiv 1 \mod{8} \\
+(4m+2)^2=16m^2+16m+4 \equiv 4 \mod{8} \\
+(4m+3)^2=16m^2+24m+9 \equiv 1 \mod{8}
+\end{gather*}
+结论成立.
+\end{proof}
+
+\item 使用归纳法证明, 如果$n$是正整数, 那么
+\[
+2^{2n + 1} \equiv 9n^2 - 3n + 2 (\mod 54).
+\]
+
+\begin{proof}
+既然题目中已经说明使用归纳法,这里试试:
+
+$n=1$时,$2^{2n+1}=2^3=8$,$9n^2 - 3n + 2=8$,显然有$2^{2n + 1} \equiv 9n^2 - 3n + 2 (\mod 54)$.
+
+假设结论对于$n$成立,那么对于$n+1$来说,把$2^{2n+3}$分解并使用归纳假设有:
+\[
+\begin{aligned}
+2^{2n + 3} &= 2^{2n+1} \cdot 2^2 \equiv 4(9n^2 - 3n + 2) \\
+&= 4(9n^2 - 3n + 2)-(9(n+1)^2 - 3(n+1)  + 2) \\
+&\ + (9(n+1)^2 - 3(n+1)  + 2)\\
+&= (9(n+1)^2 - 3(n+1)  + 2) + (27n^2 -27n) \\
+&= (9(n+1)^2 - 3(n+1)  + 2) + 27n(n-1) \\
+&\equiv (9(n+1)^2 - 3(n+1)  + 2) \mod{54}
+\end{aligned}
+\]
+由此可知结论成立,这里使用了$2|n(n-1)$,并且$(27,2)=1$,因此必有$27n(n-1) \equiv 0 \mod{54}$.
+\end{proof}
+
+\item 证明, 如果$x$, $y$, $z$是整数, $x^2 + y^2 = z^2$, 那么$xyz \equiv 0 (\mod 60)$.
+
+\begin{proof}
+首先我们可以假设$(x,y,z)=1$.其次如果$x$,$y$为偶数,那么$z$必为偶数,因此按照我们的假设,$x$,$y$不可能都是偶数,第三,根据完全平方数模4的结果,我们可以证明$x$和$y$必然是一个为偶数,另一个为奇数.不妨设$x$为偶数,$y$为奇数,于是$z$也是奇数.如果$(x,y)=d>1$,必有$d|z$,因此在我们的假设下,必有$(x,y)=1$.
+
+通过模8可以得到$x$必然被4整除,否则$x=4m+2$,此时和$y$为奇数进行讨论,$x^2+y^2\equiv5\mod{8}$,此时不可能是完全平方数.另一个思路,展开:
+\begin{gather*}
+x_1^2 + y_1^2 + y_1=z_1^2+z_1 \\
+x_1^2=(z_1-y_1)(z_1+y_1+1)
+\end{gather*}
+而$z_1-y_1$和$z_1+y_1$有相同的奇偶性,因此$z_1-y_1$和$z_1+y_1+1$至少有一个偶数,于是$2|x_1^2$,$2|x_1$,因此$4|x$.于是必有$4|xyz$.
+
+通过模3的讨论,我们证明$3|x$和$3|y$至少有一个成立.首先在于整数的完全平方数模3的余数只能是0和1.如果3无法整除$x$和$y$,那么$x^2+y^2\equiv2\mod{3}$,不可能.因此必有$3|xyz$.
+
+通过模5的讨论,我们证明它必有$5|x$,$5|y$,$5|z$至少有一个成立,从而$5|xyz$.首先是整数的完全平方数模5的余数只能是0,1和4.如果$5|x$和$5|y$都不成立,那么$x^2$和$y^2$模5的余数只能是$1$和$4$,但是两者不能同余,如果同余,此时$x^2+y^2$模5的余数或者是2,或者是3,都不可能让$z$成为完全平方数,于是两者不同余,此时$5|(x^2+y^2)=z^2$,$5|z$
+
+综合上述的讨论,并注意到3,4,5两两互素,可知$3\cdot4\cdot5=60|xyz$.
+\end{proof}
+
+\item $x_0, x_1, \ldots, x_n$是整数, 证明
+\[
+x_0 + 10x_1 + \cdots + 10^nx_n \equiv x_0 + x_1 + \cdots + x_n (\mod 9).
+\]
+
+\begin{proof}
+这个问题极为简单,原因在于$10^k \equiv 1 \mod{9}$,这是所谓弃九法的依据.使用这个方法就很容易判断一个整数能否被9整除.关于$10^k \equiv 1 \mod{9}$的证明,可以使用归纳法或者二项式定理完成,$10^k = (9 + 1)^k$.
+\end{proof}
+
+\item 证明: 同余组$x \equiv a (\mod m)$, $x \equiv b (\mod n)$有一个解的充分必要条件是$a \equiv b (\mod d)$, 其中$d = (m, n)$. 如果$d = 1$, 证明这个解模$mn$唯一.
+
+\begin{proof}
+如果同余组有解,那么有$m|(x-a)$,$n|(x-b)$,于是$x-a=ma_1$,$x-b=nb_1$,$a-b=nb_1-ma_1$,显然有$d|(a-b)$,也就是$a \equiv b \mod{d}$.
+
+反之,如果$a \equiv b \mod{d}$,那么$d|(a-b)$,$a-b=kd$.另一方面,$d=(m,n)$,那么存在$u$,$v$使得$d=mu+nv$,于是$kmu+knv=a-b$,令$x=-kmu+a=knv+b$.显然$x$满足同余组.也就是同余组有解.
+
+如果$d=1$,设$x_1$和$x_2$都是同余组的任意两个解,我们需要证明$x_1 \equiv x_2 \mod{mn}$.只要注意到此时有$x_1 \equiv x_2 \mod{m}$和$x_1 \equiv x_2 \mod{n}$.当$d=1$时,有$x_1 \equiv x_2 \mod{mn}$.它只是前面出现过的一个习题的另一种表示方式:如果$(m,n)=1$,$m|c$,$n|c$,必有$mn|c$.这里的$c=x_1-x_2$.
+\end{proof}
+
+\item $n$是大于0的整数, 证明前面的$2n$个整数中的任意$n + 1$个整数包含两个数$x$, $y$, 使得$\frac{y}{x}$是2的幂 (提示: 对于任意给定的整数$x_0, x_1, \ldots, x_n$, 令$x_{i}^{'}$为$x_i$的最大的奇因子, 证明它们之中至少有两个是相等).
+
+\begin{proof}
+首先应该注意前面$2n$个整数中只有$n$个奇数,其次,每一个整数都可以表示为$2^ka$的形式,这里$a$为奇数,那么对于任意的$n+1$个数$x_0, x_1, \ldots, x_n$来说,上述表达式的奇数部分最多只有$n$个,因此至少有两个的奇数部分相等,不妨假设$x_i$和$x_j$的奇数部分都是$a$,即$x_i=2^ka$,$x_j=2^la$,那么令$x$为两者之中较小的一个,$y$为较大的一个即可.
+\end{proof}
+
+\item 对于任意的$x$, $y$是大于0的整数, 记$x \sim y$如果$\frac{y}{x}$为2的幂, 也就是为$2^n$, $n \in Z$; 证明这是一个等价关系, $x \sim y$当且仅当$x$的奇因子和$y$的奇因子是相同的.
+
+\begin{proof}
+等价关系主要是三个关系:自反性,对称性,传递性.
+
+自反性:$\frac{x}{x} = 1 = 2^0$,因此$x \sim x$;
+
+对称性:$x \sim y$意味着$\frac{y}{x} = 2^n$,于是$\frac{x}{y}=2^{-n}$,$-n \in Z$,因此$y \sim x$.
+
+传递性:$x \sim y$,$y \sim z$,这意味着$\frac{y}{x}=2^n$,$\frac{z}{y}=2^m$,于是$\frac{z}{x} = \frac{z}{y}\cdot\frac{y}{x}=2^m\cdot2^n=2^{m+n}$,因此$x \sim z$.
+
+如果$x$与$y$有相同的奇因子,那么最大的奇因子也是相同的,假设都是$a$,于是应该有$x=2^na$,$y=2^ma$,$\frac{y}{x}=2^{m-n}$,$x \sim y$.
+
+反之,如果$x \sim y$,那么$y = 2^nx$,如果$n < 0$,我们考虑$x = 2^{-n}y$,两者没有实质性差别.于是如果奇数$a|x$,显然有$a|y$,反之如果$a|y$,那么由于$(a,2^n)=1$,于是$a|x$,因此他们的奇因子相同.
+\end{proof}
+
+\end{enumerate}
+
+\chapter{} \label{chapter:6}
+设$m$为大于0的整数, 我们定义同余类的乘法如下
+\[
+(x \mod m) \cdot (y \mod m) = (xy \mod m);
+\]
+事实上, 第5章中的性质(E), 表明等式的右边仅仅依赖于左边的两个同余类, 而不依赖于它们的代表$x$, $y$的选择.
+
+\begin{definition}
+\emph{环}是集合$R$以及集合上的两个二元运算, 加法(记为$+$)和乘法(记为$\cdot$或者$\times$), 并且满足下列公理:
+\begin{enumerate}
+\item[\Rmnum{1}] 在加法下, $R$为一个群.
+
+\item[\Rmnum{2}] 乘法是结合的, 交换的, 以及对加法满足分配律: $(xy)z = x(yz)$, $xy = yx$, $x(y + z) = xy + xz$, $\forall x, y, z$.
+
+\end{enumerate}
+\end{definition}
+
+如果$R$是一个环, 根据分配律
+\[
+(x \cdot 0) + (xz) = x(0 + z) = xz,
+\]
+依据加法群的性质, 有$x \cdot 0 = 0$. 类似的有$x \cdot (-y) = -xy$.
+
+如果$R$中包含一个元素$e$满足对于任意$x$成立$ex = x$, 那么它是唯一的; 因为, 如果$f$也满足条件, 那么$ef = f$, $ef = fe = e$. 这样的元素称为单位元, 通常记为$1_R$或者$1$; 一个环称作是幺环如果它包含一个单位元.
+
+整数集, 有理数集都是幺环.
+
+\begin{theorem}  \label{theorem:VI_1}
+对任意大于0的整数$m$, 模$m$的同余类在加法和乘法下, 构成一个$m$元的幺环.
+\end{theorem}
+
+很容易验证这个结论. 单位元就是同余类$(1 \mod m)$; 这个同余类我们将记为1, 用0来表示同余类$(0 \mod m)$; 我们有$1 \neq 0$, 除非$m = 1$. $m = 6$的情形表明在幺环中, 即使$x$和$y$都不为0, 也可能成立$xy = 0$ (分别取$x$, $y$为2的模6同余类和3的模6同余类); 在这种情况下$x$, $y$称为\emph{零因子}. 环$Z$和$Q$中没有零因子.
+
+如果$a$与$m$互素, $a' = a + mt$, 那么$a'$和$m$的每一个公因子必然整除$a = a' - mt$; 这表明同余类$(a \mod m)$中的所有整数都和$m$互素. 此时称这个同余类和$m$互素. 如果$(a \mod m)$, $(b \mod m)$都和$m$互素, 根据定理\ref{theorem:III_2}的推论1表明$(ab \mod m)$也和$m$互素; 特别的, 模$m$的同余类环中这样的同余类不可能为零因子.
+
+\begin{theorem}  \label{theorem:VI_2}
+令$m$, $a$, $b$为整数, $m > 0$; $d = (a, m)$. 同余式$ax \equiv b (\mod m)$或者恰好有$d$个解模$m$, 或者没有解; 它有一个解当且仅当$b \equiv 0 (\mod d)$; 恰好有$\frac{m}{d}$个不同的$b$模$m$满足这个情况.
+\end{theorem}
+
+事实上, $x$为一个解当且仅当存在整数$y$使得$ax - b = my$, 即$b = ax - my$; 由定理\ref{theorem:II_1}的推论1, 这个方程有解当且仅当$d$整除$b$, 即$b = dz$; 我们可以通过分别令$z$取$0, 1, \ldots, \frac{m}{d} - 1$而得到$b$的模$m$不同的值. 如果$x$为$ax \equiv b(\mod m)$的解, 那么$x'$也是方程的解当且仅当$a(x' - x) \equiv 0 (\mod m)$; 由同余的性质(F), 它等价于$\frac{a}{d}(x' - x) \equiv 0 (\mod \frac{m}{d})$, 于是根据定理\ref{theorem:III_2}和定理\ref{theorem:III_1}的推论有$x' \equiv x (\mod \frac{m}{d})$.  这表明$ax' \equiv b (\mod m)$的所有的解可以被表示为$x' = x + \frac{m}{d}u$; 通过令$u$分别取$0, 1, \ldots, d - 1$可以得到模$m$的不同的解.
+
+\begin{corollary}
+与$m$互素的模$m$同余类在乘法下构成一个群.
+\end{corollary}
+
+这一点可以在定理\ref{theorem:III_2}的推论1, 定理\ref{theorem:VI_2}, 以及下面的事实获得: 同余类$(1 \mod m)$为模$m$同余类环的乘法的中性元.
+
+\begin{definition}
+对任意大于0的整数$m$, 与$m$互素的模$m$同余类的个数记为$\varphi(m)$, $\varphi$称为Euler函数.
+\end{definition}
+
+于是, 我们有
+\[
+\varphi(1) = \varphi(2) = 1, \varphi(3) = \varphi(4) = 2, \varphi(5) = 4, \text{等等}.
+\]
+
+如果$m \ge 2$, $\varphi(m)$也可以定义为与$m$互素的并且小于等于$m - 1$的正整数的个数. 如果$p$是素数, $\varphi(p) = p - 1$.
+
+\begin{definition}
+一个\emph{域}是这样的一个环, 它的非零元素在乘法下构成一个群.
+\end{definition}
+
+有理数环$Q$是一个域; 整数环$Z$不是域. 域中不存在零因子; 例子$Z$表明反过来是不成立的.
+
+\begin{theorem}
+对任意整数$m > 1$, 模$m$同余类环是一个域当且仅当$m$是一个素数.
+\end{theorem}
+
+如果$m$是素数, 除了$0$之外的所有的模$m$同余类都是和$m$互素的, 因而根据定理\ref{theorem:VI_2}的推论可知构成一个乘法群, 另一方面, 如果$m$不是素数, 它有一个因子$d$, $1 < d < m$; 从而$1 < \frac{m}{d} < m$, 因而同余类$(d \mod m)$, $(\frac{m}{d} \mod m)$不为0, 然而它们的乘积为0. 因此它们是零因子, 因而模$m$环不是一个域.
+
+如果$p$是素数, 模$p$的同余类域将被记为$\mathbb{F}_p$; 它包含$p$个元素.
+
+习题
+
+\begin{enumerate}
+\item 设$F(X)$是整系数多项式, 如果$x \equiv y (\mod m)$, 那么$F(x) \equiv F(y) (\mod m)$.
+
+\begin{proof}
+利用$x_1 \equiv y_1 (\mod m)$,$x_2 \equiv y_2 (\mod m)$时有$x_1x_2 \equiv y_1y_2 (\mod m)$,以及归纳法即可证明.
+\end{proof}
+
+这是上一节中的结论的简单应用.
+
+\item 解同余方程组
+\[
+5x - 7y \equiv 9 (\mod 12), 2x + 3y \equiv 10 (\mod 12);
+\]
+证明解对于模12是唯一的.
+
+和普通的线性方程组有点类似,只是需要注意模12.
+
+\item 对所有的$a$和$b$模2, 解
+\[
+x^2 + ax + b \equiv 0 (\mod 2).
+\]
+
+首先注意到$x^2 \pm x \equiv 0$.
+
+如果$a \equiv 1$,那么此时只有在$b \equiv 0$时有解(此时任意$x$都满足方程),其余时候无解.下面可以假设$a \equiv 0$.此时有
+\[
+x^2 + ax + b \equiv x^2 + b = x^2+x -x+b \equiv x-b \equiv 0,
+\]
+因此方程的解为$x \equiv b(\mod{2})$.
+
+\item 解$x^2 - 3x + 3 \equiv 0 (\mod 7)$.
+
+\item 设$m > 1$, 证明所有小于$m$的和$m$互素的正整数的算术平均值为$\frac{m}{2}$.
+
+\begin{proof}
+只要注意到$a$和$m$互素的时候,$m-a$也与$m$互素,假设$a_1$,$\cdots$,$a_r$是所有满足条件的整数,那么$m-a_1$,$\cdots$,$m-a_r$同样是所有满足条件的整数,求和得到
+\[
+\sum_{1}^{r}{a_i} = \frac{mr}{2},
+\]
+于是所求的算术平均值是$m/2$.
+\end{proof}
+
+\item 设$m$为奇数, 证明
+\[
+1^m + 2^m + \cdots + (m - 1)^m \equiv 0 (\mod m).
+\]
+
+\begin{proof}
+这只需要注意到$(m-k)^m \equiv (-k)^m = -k^m(\mod{m})$即可.两两分组.
+\end{proof}
+
+\item $m$, $n$为大于0的整数, $(m, n) = 1$, 证明$\varphi(mn) = \varphi(m) \varphi(n)$ (提示: 使用习题V.6).
+
+\begin{proof}
+需要使用前面证明过的结论:$(m,n)=1$,同余组$x \equiv a(\mod m)$和$x \equiv b(\mod n)$有解,并且在模$mn$下唯一.
+
+有了这个结论,可以这样来证明:对于每一个与$m$互素的$a$和与$n$互素的$b$，都存在唯一的一个与$mn$互素的$x$,并且不同的$a$和$b$的组合,对应不同的$x$.反证即可,如果不同的$a$和$b$组合,对应到了同一个$x$,将会发生矛盾.即$m|(x-a_1)$,$m|(x-a_2)$,于是$m|(a_1-a_2)$,也就是$a_1 \equiv a_2(\mod{m})$.
+
+反过来,由于当$(x,mn)=1$时,必有$(x,m)=1$和$(x,n)=1$.因此对于每一个与$mn$互素的$x$,必然对应与$m$互素的$a$和与$n$互素的$b$,显然一个$x$只能属于一个模$m$或者$n$的同余类.
+
+有了上述一一对应,根据乘法原理应该有$\varphi(m)\varphi(n) = \varphi(mn)$.
+\end{proof}
+
+\item 证明: $m > 1$, $p, q, \ldots, r$为$m$的所有的素因子, 那么有
+\[
+\varphi(m) = m \big{(} 1 - \frac{1}{p} \big{)} \big{(} 1 - \frac{1}{q} \big{)} \cdots \big{(} 1 - \frac{1}{r} \big{)}.
+\]
+
+\begin{proof}
+这将需要使用上一道题目的结论以及算术基本定理.首先要求出$p$为素数的时候,$\varphi(p^r)$的值,这里$r \ge 1$,我们发现除了$p$,$2p$,$\cdots$,$p^{r-1}p$和$p^r$不是互素之外,其余所有小于$p^r$的正整数都和$p^r$互素,因此$\varphi(p^r) = p^{r} - p^{r-1} = p^{r}(1 - 1/p)$.
+
+根据算术基本定理有$m=p^{\alpha}q^{\beta}\cdots r^{\gamma}$,于是
+\[
+\begin{aligned}
+\varphi(m) &= \varphi(p^{\alpha}) \cdot \varphi(q^{\beta}) \cdots \varphi(r^{\gamma}) \\
+&= p^{\alpha}(1 - \frac{1}{p}) \cdot q^{\beta}(1 - \frac{1}{q}) \cdots r^{\gamma}(1 - \frac{1}{r}) \\
+&= m(1 - \frac{1}{p})(1 - \frac{1}{q})\cdots(1 - \frac{1}{r}).
+\end{aligned}
+\]
+获证.
+\end{proof}
+
+\item $p$为任意素数, 利用二项式定理并对$n$使用归纳法证明: 对所有整数$n$成立$n^p \equiv n (\mod p)$.
+
+\begin{proof}
+这里只是给出递推部分:
+\[
+n^p = (n-1+1)^p \equiv (n-1)^p + 1 \equiv n-1+1=n.
+\]
+\end{proof}
+
+\item $p$为任意素数, $n \ge 0$, 对$n$使用归纳法证明: 如果$a \equiv b (\mod p)$, 那么$a^{p^n} \equiv b^{p^n} (\mod p^{n + 1})$.
+\begin{proof}
+这里只要注意到如果$A \equiv B$,必有
+\[
+\sum_{0}^{p-1}{A^kB^{p-1-k}} \equiv 0
+\]
+和展开式$A^p-B^p = (A-B)(\sum_{0}^{p-1}{A^kB^{p-1-k}})$即可.
+\end{proof}
+
+\item $p$为奇素数, $x^2 \equiv y^2(\mod p)$, 证明$x$或者和$y$模$p$同余, 或者和$-y$模$p$同余, 但是两者不能同时成立, 除非$p$整除$x$和$y$; 因此$x^2 \equiv a (\mod p)$恰好对于$1, 2, \ldots, p - 1$中的一半的整数$a$存在解$x$.
+
+\begin{proof}
+这里使用域的知识,当$p$为素数时,模$p$的同余类组成一个域,而$x^2 \equiv y^2(\mod{p})$等价于$(x-y)(x+y) \equiv 0(\mod{p})$,那么当$p$不整除$x$或者$y$时,只能有$x-y \equiv 0$或者$x+y \equiv 0$,如果两者同时成立,由于$p$是奇素数,将会得到$x \equiv 0$和$y \equiv 0$同时成立.
+
+由此结论,把$a$分成三部分,一部分只有一个元素$a \equiv 0$,其余的两部分拥有相等的数量,也就是说对于$a$来说,如果$x^2 \equiv a$有解,$x^2 \equiv -a = p-a$必然无解.
+\end{proof}
+
+\item 证明形如$x + y \sqrt{2}$ ($x$, $y$为整数)的数组成一个环; 如果$x$, $y$取遍所有的有理数, 它们组成一个域.
+
+这个只是验证环和域的各个条件,这里不讨论了,注意到$0=0+0\sqrt{2}$和$1=1+0\sqrt{2}$即可.
+\end{enumerate}
+
+\chapter{} \label{chapter:7}
+群以及子群的定义表明群$G$的任意个子群(无论是有限的还是无限的)的交集仍旧是$G$的子群.
+
+\begin{definition} \label{def:VII_1}
+$a, b, \ldots, c$为群$G$的元素. 那么所有包含$a, b, \ldots, c$的$G$的子群的交集$G'$称作是$a, b, \ldots, c$生成的, 它们被称为$G'$的生成元.
+\end{definition}
+
+另一种说法为$G'$是包含$a, b, \ldots, c$的$G$的最小子群; 有可能出现这样的情形: $G'$就是$G$本身.
+
+令$G$为一个群, $x$是$G$中元素, 用$G_x$表示由$x$生成的子群. 假设$G$是用加法来表示的. 同往常一样, 用$-x$来表示$0 - x$; 它必然属于$G_x$. 用$0 \cdot x$来表示$0$; 对每一个大于0的整数$n$, 用$nx$来表示$n$个都是$x$的项的和$x + x + \cdots + x$, $(-n)x$来表示$-(nx)$; 对$n$进行归纳可知, 所有这些元素都属于$G_x$. 同样使用归纳法, 我们立即可以验证如下公式
+\[
+mx + nx = (m + n)x, m(nx) = (mn)x.
+\]
+对于$Z$中的所有$m$, $n$成立. 第一个公式说明所有元素$nx$ ($n \in Z$)构成$G$的一个子群; 显然, 它就是$G_x$. 为了方便起见, 我们仅仅把它作为$G$在乘法群下的一个定理; 此时我们用$x^0$表示$G$中的中性元1, $x^{-1}$表示元素$x'$满足$x'x = 1$, 用$x^n$表示$n$个$x$的乘积$x \cdot x \cdot \ldots \cdot x$, $x^{-n}$表示$(x^n)^{-1}$.
+
+\begin{theorem} \label{theorem:VII_1}
+令$G$为乘法群; 那么对任何的$x \in G$, 由$x$生成的$G$的子群由元素$x^n$, $n \in Z$组成.
+\end{theorem}
+
+$G$和$x$的含义如定理\ref{theorem:VII_1}所示, $M_x$表示满足$x^a = 1$的整数$a$构成的集合. 由于$x^0 = 1$, 因而$M_x$是非空的. 对于所有整数$a$, $b$, 我们有
+\[
+x^{a - b} = x^a \cdot (x^b)^{-1},
+\]
+表明$x^a = x^b$成立当且仅当$a - b \in M_x$; 特别的, $M_x$在减法下封闭. 因此$M_x$满足定理\ref{theorem:II_1}的条件 (也就是说, 它是加法群$Z$的子群), 由某个整数$m \ge 0$的倍数组成; 如果$m$不是0, 它是最小的大于0的整数满足$x^m = 1$. 如果$m = 0$, 所有的元素$x^a$都是不同的; 如果$m > 0$, $x^a$等于$x^b$当且仅当$a \equiv b (\mod m)$.
+
+\begin{definition} \label{def:VII_2}
+两个群$G$, $G'$之间的同构是一个$G$到$G'$的一一对应(双射), 把$G$上的群运算映射到$G'$上的群运算.
+\end{definition}
+
+当存在这样的映射时, $G$和$G'$称作是同构的. 同构的概念可以以同样的方式推广到环和域.
+
+依据这个定义, 前面得到的结果可以按如下方式重新给出:
+
+\begin{theorem} \label{theorem:VII_2}
+令$G$为乘法群, 由单个元素$x$生成. 那么或者$G$是无限的, 映射$x^a \rightarrow a$是$G$到加法群$Z$的一个同构, 或者它由有限的$m$个元素组成, 此时映射$x^a \rightarrow (a \mod m)$ 是$G$到$Z$中模$m$同余类加法群的同构.
+\end{theorem}
+
+当然, 如果$G$是任一个群, $x$为$G$中元素, 定理\ref{theorem:VII_2}可以应用到由$x$生成的$G$的子群上.
+
+\begin{definition} \label{def:VII_3}
+有限群的元素个数称为它的阶数. 如果有限群是由单个元素生成的, 它就称为是循环的; 如果群中元素$x$生成一个$m$阶的群, 那么$m$称作元素$x$的阶.
+\end{definition}
+
+习题
+
+\begin{enumerate}
+\item $F$为有限域, 证明由1生成的$F$的加法群的子群具有素数$p$阶, 是$F$的子域, 同构于模$p$同余类域$F_p$.
+
+\begin{proof}
+如果用$S$表示这个子群,我们可以证明如果$m,n \in S$,那么$mn \in S$,如果$p$不是素数,设$p=mn$,则$mn=0$,由此必有$m=0$或者$n=0$,矛盾.至于它是子域,只需要证明$m \in S$,必有$n \in S$,使得$mn=1$即可,这里$m,n \neq 0$,由于$(m,p)=1$,存在整数$x,y$,使得$mx+py=1$,令$n=x$即可.
+\end{proof}
+
+上面论述过程对于整数$m$和子群中的元素不做区分,实际上就是因为最后的结论,他们之间存在同构关系.
+
+\item 证明群$G$的非空的有限子集$S$是$G$的子群, 当且仅当它在群运算下封闭 (提示: 如果$a \in S$, $a \rightarrow ax$是$S$到它自身的一个双射).
+
+\begin{proof}
+必要性显然,$S$是子群,自然在群运算下封闭.下面证明充分性,设$S$在群运算下封闭.
+
+由于$S$非空,存在$a \in S$,于是考虑映射$x \rightarrow ax$,这是一个双射(这里用到了有限这个条件,只有在有限集合中,单射同时是满射),于是$\{ax: x \in S\} = S$,也就是存在$x$使得$ax=a$.$x=1$,它说明$1 \in S$,同时说明存在$x$,满足$ax=1$.也就是$a^{-1} \in S$.
+\end{proof}
+
+\item 证明有限环是一个域当且仅当它没有零因子.
+
+\begin{proof}
+必要性显然,域中不存在零因子.至于充分性.设$F$是有限环,其中不存在零因子.我们证明它是一个域,也就是$F$的非零因子关于乘法构成一个群.我们只需要证明非零元素中存在乘法单位元和乘法逆元.设$a \in F$,$a \neq 0$,那么对于所有的$x \in F$,$x \neq 0$,有$ax \neq 0$,这是利用了不存在零因子这个条件.另一方面不存在零因子,也意味着$x \rightarrow ax$是一个单射,加上有限这个条件,从而是一个双射,和上一道题目类似,说明$F$中的非零元素构成乘法群.
+\end{proof}
+
+\item 如果$G$是一个(交换)群, $n$为整数, 证明元素$x^n$, $x \in G$构成$G$的一个子群.
+
+\begin{proof}
+令$S = \{x^n:n\in Z\}$,$x^0=1$是$S$的单位元,$x^n\cdot x^{-n}=x^{0}=1$,由此可知它们构成一个群.
+\end{proof}
+
+\item $G'$, $G''$为(交换)群$G$的子群, 证明元素$x'x''$, $x' \in G'$, $x'' \in G''$, 组成$G$的一个子群.
+
+\begin{proof}
+令$S = \{x'x'',x' \in G', x'' \in G''\}$.运算的封闭性很容易验证(需要交换性这个条件).$G'$和$G''$是子群,说明单位元$1 \in G'$,$1 \in G''$,于是$1 \in S$,而$(x'x'')((x')^{-1}(x'')^{-1})=1$,说明$x'x''$存在逆元,有了这些就足够说明$S$是一个子群了.
+\end{proof}
+
+\item $G$为(交换)群, $x$为$G$中$m$阶元素, $y$为$G$中$n$阶元素. 证明, 如果$(m, n) = 1$, 那么$x^ay^b = 1$当且仅当$x^a = y^b = 1$: 由此可以证明由$x$, $y$生成的群是$mn$阶的, 并且由$xy$生成.
+
+\begin{proof}
+充分性显然,$x^a=y^b=1$,显然有$x^ay^b=1$.
+
+必要性:设$x^ay^b=1$,我们需要证明$m|a$,$n|b$,或者说如果有$0 \le a < m$,$0 \le b < n$时,必有$a = b = 0$.显然如果$a = 0$,必有$b=0$.
+\[
+x^a=y^{-b} \Rightarrow x^{am}=y^{-bm}=1 \Rightarrow n|bm,
+\]
+而$(m,n)=1$,因此$n|b$,$b=0$,于是可得到$a=0$.
+
+有了前面的结论,显然$x$,$y$生成的子群可以$x^ay^b$的形式表示,另一方面$(xy)^{mn}=1$,任何小于$mn$的正整数$p>0$,都有$(xy)^p \neq 1$.
+\end{proof}
+
+\item 证明: $m > 2$, $n > 2$, $(m, n) = 1$, 和$mn$互素的模$mn$同余类乘法群不是循环的 (提示: 利用习题V.6, 以及这样一个事实: 每一个循环群至多有一个2阶子群).
+
+\begin{proof}
+首先说明:每一个循环群至多有一个2阶子群.循环群中的元素可以记为$\{1,a,a^2,\cdots,a^{n-1}\}$,其中$a^n=1$,当$n$为偶数的时候,$a^{n/2}$是一个2阶元素,$\{1,a^{n/2}\}$构成一个2阶子群.其余元素都不是2阶的,当$n$为奇数时,不存在2阶子群.
+
+根据习题V.6,方程组$x\equiv 1(\mod{m})$,$x \equiv -1(\mod{n})$存在模$mn$意义下的唯一解$x_1$,方程组$x\equiv -1(\mod{m})$,$x \equiv 1(\mod{n})$存在模$mn$意义下的唯一解$x_2$,显然$x_1 \neq x_2$,$x_1 \neq 1$,$x_2 \neq 1$,并且有$x_1^2 \equiv 1(\mod{m})$,$x_1^2 \equiv 1(\mod{n})$,由于$(m,n)=1$,于是$x_1^2 \equiv 1(\mod{mn})$,同理$x_2^2 \equiv 1(\mod{mn})$,这就是说这个群中至少存在两个2阶子群$\{1,x_1\},\{1,x_2\}$.因而不可能是循环群.
+\end{proof}
+
+\item 找出所有的$n$, 使得模$2^n$奇同余类乘法群是循环的.
+
+$n=1$,或者$x=2$,满足条件;当$x>2$时,模$2^n$奇同余类乘法群不可能是循环的,此时$2^n-1$和$2^{n-1}-1$都是2阶元素,这和循环群至多有一个2阶元素矛盾.
+
+\item 证明, 如果$G$是(交换)群, $n > 0$为整数, $G$中所有其阶数能整除$n$的元素构成$G$的子群.
+
+\begin{proof}
+记$G$中所有其阶数能整除$n$的元素组成的集合为$S$,于是如果$x \in S$,则存在$a$,使得$x^a =1$,且$a|n$.首先,$1 \in S$,如果$x,y\in S$,则$(xy)^n=1$,于是$xy$的阶能够整除$n$,$xy \in S$,其次$x^a=1$,则$(x^{-1})^a=1$,也就说,$x^{-1}$的阶也能整除$n$,从而$x^{-1} \in S$.剩余的条件容易验证,可知$S$构成一个群.
+\end{proof}
+
+\item 证明, 如果$G$是有限(交换)群, $G$中所有元素的乘积或者是1, 或者是一个2阶元素.
+
+\begin{proof}
+我们把$G$中元素分成两类,第一类是$a \neq a^{-1}$,记为$U$,第二类中元素满足$a = a^{-1}$,记作$V$,则$U \cap V = \emptyset$,$G=U \cup V$,$U$种元素的乘积必然等于1,而且必然是偶数个元素,但是$V$中元素的乘积不一定等于1,但是他们的乘积的平方必然等于1.
+\end{proof}
+
+\item 如果$p$是一个素数, 证明$(p - 1)! \equiv -1 (\mod p)$ (提示: 考虑模$p$乘法群, 以及利用习题VII.10的结论).
+
+\begin{proof}
+考虑模$p$乘法群,这是一个有限群,其元素恰好就是$1,2,\cdots,p-1$.那么根据上一道题目的结论,$(p-1)!\equiv 1(\mod{p})$,或者$[(p-1)!]^2 \equiv 1(\mod{p})$.我们如果说明不可能是前一个结论,那么必然有$(p-1)!\equiv -1(\mod{p})$.
+
+根据前面题目的证明方法,对于$1 \le x \le p-1$,如果$x^2 \equiv 1 (\mod{p})$,必有$(x-1)(x+1)\equiv0(\mod{p})$,此时$x=1$,或者$x=p-1$,除此之外的$x$都有$x \neq x^{-1}$,于是全部元素的乘积满足
+\[
+(p-1)! \equiv p-1 \equiv -1(\mod{p}).
+\]
+\end{proof}
+\end{enumerate}
+
+\chapter{} \label{chapter:8}
+定理\ref{theorem:II_1}表明$Z$的任何子群$M$或者是0, 或者由其中最小的大于0的元素$m$生成; 在后一种情形, 它由$m$生成的, 也可以由$-m$生成, 而不能由其它元素生成. 对于循环群, 我们有:
+
+\begin{theorem} \label{theorem:VIII_1}
+设$G$是一个$m$阶的循环群, 由元素$x$生成. $G'$是$G$的子群; 那么存在$m$的因子$d$使得$G'$是由$x^d$生成的$\frac{m}{d}$阶循环群.
+\end{theorem}
+
+令$M$为所有使得$x^a \in G'$的整数$a$组成的集合. 公式$x^{a - b} = (x^a) \cdot (x^b)^{-1}$表明$M$是$Z$的一个子群; 它包含$m$, 从而包含$m$的某个因子$d$的所有倍数. 因此$G'$由元素$x^{da}$, $a \in Z$组成, 也就是说由$x^d$生成. 我们有$x^{da} = x^{db}$当且仅当$da \equiv db (\mod m)$; 根据同余关系($\S$V)的性质(F), 这等价于$a \equiv b (\mod \frac{m}{d})$.
+
+\begin{corollary} \label{coro:VIII_1}
+对于$m$的每一个正因子$n$, $m$阶群有且仅有一个$n$阶子群.
+\end{corollary}
+
+设$G$的含义如定理VIII.1所示, 令$d = \frac{m}{n}$; 根据定理, 如果$G'$是$G$的$n$阶的子群, 它必然是由$x^d$生成, $x^d$也确实生成一个子群.
+
+\begin{corollary}
+$G$, $m$, $x$, $G'$的含义如定理VIII.1所示, $G$中的元素$x^a$可以生成$G'$当且仅当$(a, m) = d$.
+\end{corollary}
+
+如果$(a, m) = d$, $x^a \in G'$; 根据定理VI.2, 我们有$at \equiv d (\mod m)$, 于是有$x^d = (x^a)^t$, 因此由$x^a$生成的群包含$x^d$, 因此就是$G'$.
+
+\begin{corollary}
+$G$, $m$, $x$含义同上, $x^a$生成$G$当且仅当$(a, m) = 1$, $G$恰好有$\varphi(m)$个不同的生成元.
+\end{corollary}
+
+\begin{corollary}
+对每一个大于0的整数$m$, 我们有
+\[
+\sum_{d | m}{\varphi(d)} = m.
+\]
+\end{corollary}
+
+(在这里左边的求和是针对$m$的所有正因子$d$).
+
+考虑$m$阶循环群$G$ (例如模$m$同余类加法群), 根据推论1, 对于$m$的每个因子$d$, $G$恰好有一个$d$阶的子群$G_d$, $d \rightarrow G_d$是$m$的所有因子到$G$的所有子群之间的一一映射. 对每一个$d$, 用$H_d$表示$G_d$的所有的不同的生成元的集合, 根据推论3, 它有$\varphi(d)$个元素. $G$的每一个元素属于而且只属于一个集合$H_d$, 因为它能生成而且只能生成一个$G$的子群.
+
+$G$为一个群, $X$是$G$的子集; 对每一个$a \in G$, 我们用$aX$表示所有元素$ax$ ($x \in X$)组成的集合. 群的定义表明$x \rightarrow ax$是$X$到$aX$的一个双射, 因此, 如果$X$是有限的, 那么所有集合$aX$拥有和$X$相等数量的元素.
+
+\begin{definition}
+设$G$是一个群, $H$是$G$的子群, 任何一个形如$xH$ ($x \in G$)的集合称为$G$中的$H$的陪集(coset).
+\end{definition}
+
+\begin{lemma}
+设$xH$, $yH$为群$G$的子群$H$的两个陪集, 那么它们或者没有公共元素, 或者$xH = yH$.
+\end{lemma}
+
+如果它们有一个公共元素, 假设它可以表示为$xh$, $h \in H$, 也可以表示为$yh'$, $h' \in H$. 这可以得到$y^{-1}x = h' h^{-1} \in H$, 因此$xH = y \cdot (y^{-1}x)H = y \cdot (h' h^{-1}H) = yH$.
+
+\begin{theorem}
+如果$H$是有限群$G$的子群, 那么$H$的阶整除$G$的阶.
+\end{theorem}
+
+事实上, $G$中的每一个元素$x$属于某个$H$的陪集(例如$xH$), 根据引理, 只属于一个陪集.由于每一个陪集的元素个数都等于$H$的阶, $G$的阶必然是这个值的倍数.
+
+\begin{theorem}
+如果$x$是$m$阶群的元素, 它的阶整除$m$, $x^m = 1$.
+\end{theorem}
+
+由于$x$的阶$d$就是由$x$生成的$G$的子群的阶, 定理VIII.2表明它整除$m$, 因而$x^m = (x^d)^{m / d} = 1$.
+
+(上面的结论, 以及它们的证明, 对其他交换群也成立, 如前所述, 它们不在我们的处理范围之内).
+
+\begin{theorem}
+$m$为任意大于0的整数, $x$是一个与$m$互素的整数, 那么$x^{\varphi(m)} \equiv 1 (\mod m)$.
+\end{theorem}
+
+这是上述推论的一个特殊情形, 只要把它应用于与$m$互素的模$m$同余类乘法群 (或者, 简要的, 但是不那么准确的说法是模$m$乘法群).
+
+\begin{corollary}
+$p$为素数, 则对每一个和$p$互素的$x$有$x^{p - 1} \equiv 1 (\mod p)$; 对每一个$x$有$x^p \equiv x (\mod p)$.
+\end{corollary}
+
+第一个结论是定理VIII.3的特例, 第二个结论是其推论. 反过来, 从定理VI.2可知, 后一个结论也包含了前一个结论. 第二个结论的另外的证明参考习题VI.9.
+
+这个推论属于Fermat, 常称为Fermat定理; 第一个证明由Euler给出, 他同时给出了定理VIII.3的一个证明(基本上和上面给出的相同), 这个定理常称为Euler定理.
+
+习题
+
+\begin{enumerate}
+\item $G$是$m$阶群, $n$和$m$互素, 证明$G$的每一个元素可以表示为$x^n$ ($x \in G$)的形式.
+
+\begin{proof}
+首先对于$G$中元素$x$,有$x^m=1$,其次,由于$(m,n)=1$,存在整数$u$,$v$,使得$mu+nv=1$,于是
+\[
+x = x^{mu+nv}=x^{nv}=(x^v)^n.
+\]
+获证.
+\end{proof}
+
+\item $p$是素数, 证明每一个$p^n$ ($n > 0$)阶的群, 包含一个$p$阶元素, 每一个$p$阶群是循环群.
+
+\begin{proof}
+如果$x$的阶数为$k$,则$k|p^n$,由于$p$为素数,于是$k=p^m$,$0 \le m \le n$.所要证明的是存在$m=1$的情形,对于$m=0$,只有单位元是这个情形.
+
+我们使用归纳法来证明,当$n=1$时,群本身就是一个$p$阶的,任何一个不等于1的元素都是$p$阶元素,结论成立.假设对于小于等于$n$的整数都成立,那么对于$n+1$来说,如果群中存在$p^{n+1}$阶的元素$x$,那么群本身是一个循环群,可以由$x^k$来表示,于是$x^{n+1}$就是一个$p$阶的元素.如果不存在这样的元素,那么任取一个不等于1的元素$x$,$x$的阶为$p^m$,$m<n+1$,于是$m \le n$,这样由这个$x$生成的循环群中,存在一个$p$阶元素.获证.
+
+也可以直接证明,前面说明了$x$的阶为$p^m$,那么$x^{p^{m-1}}$的阶就是$p$.
+
+每一个$p$阶群来说,由于$p$是素数,它的任何一个不等于1的元素的阶必然等于$p$,任何一个不等于1的元素都可以生成这个元素,因而是循环群.
+\end{proof}
+
+\item 如果$p$是$a^{2^n} + 1$的奇素因子, $n \ge 1$, 证明$p \equiv 1 (\mod 2^{n + 1})$ (提示: 找出模$p$乘法群中的$(a \mod p)$的阶) (Euler用此来证明$2^{32} + 1$不是素数, 给出了Fermat猜想的一个反例: 所有的整数$2^{2^n} + 1$是素数).
+
+\begin{proof}
+根据条件,有$a^{2^n} + 1 \equiv 0(\mod{p})$,也就是$a^{2^n} \equiv -1(\mod{p})$,$a^{2^{n+1}} \equiv 1(\mod{p})$.由此可以知道$a \mod {p}$的阶为$2^{n+1}$,而模$p$乘法群的是$p-1$阶群,于是$2^{n+1}|(p-1)$,即$p-1 \equiv 0(\mod{2^{n+1}})$,$p \equiv 1 (\mod 2^{n + 1})$.
+
+有了这个结论,我们寻找奇素数$p$满足$p \equiv 1(\mod{2^6})$,通过计算机稍微试验几个,就可以发现$p=641$满足条件.$641|2^{32}+1$.
+\end{proof}
+
+\item 如果$a$, $b$为大于0的整数, $a = 2^{\alpha}5^{\beta}m$, $m$和10互素, 证明$\frac{b}{a}$的小数形式的数字的周期整除$\varphi(m)$; 证明, 如果它不存在小于$m - 1$个数字的周期, 那么$m$是素数.
+
+\begin{proof}
+我们假设循环节出现的时候,余数对应了模$m$的元素为$a$,那么,这里其实是元素$10^k(\mod{m})$,$k=0,1,2,\cdots,r-1$,$r$为循环节的长度.也就说$a10^r \equiv a (\mod{m})$.设$10$在模$m$同余乘法群中的阶为s,则$r \le s$,$s|\varphi(m)$,因为$10$是与$m$互素的模$m$的同余乘法群的元素(一共有$\varphi(m)$个).若能证明$r | s$,则$r | \varphi(m)$,首先对于所有$0 < t < r$,$a10^t\equiv a(\mod{m})$是不成立的.设$s = kr+t$,则
+\[
+a \equiv a10^s = a10^{kr+t} \equiv a10^{t}(\mod{m}),
+\]
+于是必须有$t=0$,$r|s$.
+
+注意到如果$m$为素数,那么$\varphi(m)=m-1$.我们使用反证法,如果$m$不是素数,$m=m_1m_2$,$(m_1,m_2)=1$,我们只要找到一个$a$,使得$r < m-1$即可.对于$a$,有$a10^{r_1} \equiv a \mod(m_1)$,$b10^{r_2} \equiv b(\mod{m_2})$,
+\[
+\begin{aligned}
+ab10^{r_1r_2} &\equiv ab (\mod{m_1}) \\
+ab10^{r_1r_2} &\equiv ab (\mod{m_2}) \\
+ab10^{r_1r_2} &\equiv ab (\mod{m_1m_2})
+\end{aligned}
+\]
+于是$r_1r_2\le\varphi(m_1)\varphi(m_2)\le(m_1-1)(m_2-1)<m-1$.与题设矛盾,$m$为素数.
+\end{proof}
+
+注意反过来不一定成立,也就是说$m$为素数的时候,可能出现循环节的长度小于$m-1$,例如$1/3$.
+\end{enumerate}
+
+\chapter{} \label{chapter:9}
+为了考虑系数在域$F_p$上的多项式, 以及该域上的方程, 我们先复习任意域$K$上的多项式的一些基本性质; 它们独立于域的性质, 它们类似于前面II, III, IV上描述的整数的性质.
+
+在这一节中, 域$K$始终保持不变. $K$上的一个不定元$X$的多项式$P$ (也就是说系数在$K$上), 由下列形式给出
+\[
+P(X) = a_0 + a_1X + \cdots + a_nX^n
+\]
+其中$a_0, a_1, \ldots, a_n$属于$K$. 如果$a_n \neq 0$, $P$称作是$n$次的,我们用$n = \deg(P)$表示; 任意非0多项式都有次数. 加法和乘法以往常的方式定义, 这些多项式构成一个环, 常表示为$K[X]$. 如果$P$, $Q$是非0多项式, 则$\deg(PQ) = \deg(P) + \deg(Q)$.
+
+\begin{lemma}
+$A$, $B$为两个多项式, $B \neq 0$; $m = \deg(B)$. 存在唯一的多项式$Q$使得$A - BQ$或者等于0, 或者是小于$m$次的多项式.
+\end{lemma}
+
+(可以和第II节的引理比较一下). 如果$A = 0$, 那是不证自明的; 我们对$n = \deg(A)$实施归纳法: 首先我们证明$Q$的存在性. 如果$n < m$, 我们取$Q = 0$. 否则, 令$bX^m$为$B$的$m$次项, $aX^n$为$A$的$n$次项; 由于多项式$A' = A - B \cdot (\frac{a}{b} X^{n - m})$的次数小于$n$, 利用归纳假设, 我们可以把它表示为$BQ' + R$, 这里或者$R = 0$, 或者$R$的次数小于$n$. 于是$A = BQ + R$, 这里$Q = Q' + \frac{a}{b}X^{n - m}$. 至于$Q$的唯一性, 令$A - BQ$和$A - BQ_1$为0或者其次数小于$m$; 因而这一点对于$B(Q - Q_1)$也是成立; 它的次数为$m + \deg(Q - Q_1)$, 除非$Q - Q_1 = 0$, 从而$Q$必须等于$Q_1$.
+
+如果$R = 0$, $A = BQ$, $A$就称为$B$的倍式, 而$B$为$A$的因式. 如果$B = X - a$, 那么$R$必然为0, 或者是0次多项式, 也就是说是常数($K$中元素), 因此我们有
+\[
+A = (X - a)Q + r
+\]
+$r \in K$. 用$a$代替两边的$X$, 我们有$A(a) = r$; 如果它是0, 就称$a$为$A$的根. 因此$A$是$X - a$的倍式当且仅当$a$是$A$的根.
+
+正如第2节中的引理推导出定理II.1一样, 我们有
+\begin{theorem}
+设$\mathfrak{M}$是(域$K$)上的非空的多项式集合,对加法封闭, 因此, 如果$A$属于$\mathfrak{M}$, 那么所有的$A$的倍式也属于$\mathfrak{M}$. 那么$\mathfrak{M}$由所有的某个多项式$D$的所有倍式成的, 在忽略乘以一个非零常数的情形下$D$是唯一决定的.
+\end{theorem}
+
+如果$\mathfrak{M} = \{0\}$, 定理成立, 取$D = 0$. 否则, 在$\mathfrak{M}$中选择具有最小次数$d$的非0多项式$D$. 如果$A$属于$\mathfrak{M}$, 我们应用引理于$A$和$D$, 有$A = DQ + R$, $R$或者是0, 或者次数小于$d$. 于是$R = A + D \cdot (-Q)$也属于$\mathfrak{M}$, 根据$D$的定义$R$等于0, $A = DQ$. 如果$D_1$也有和$D$一样的性质, 那么它是$D$的倍数, $D$是$D_1$的倍数, 因此它们有相同的次数; $D_1 = DE$, 我们可知$E$的次数是0, 是非零常数.
+
+称$aX^d$为$D$的$d$次项; 在这些和$D$只相差一个非零常数因子的所有多项式之中, 有且仅有一个多项式的最高项系数为1， 即$a^{-1}D$; 这样的多项式称为是规范化的.
+
+正如在第2节中的那样, 我们可以对所有多项式$A, B, \ldots, C$的线性组合组成的集合$\mathfrak{M}$应用定理IX.1; 这里$P, Q, \ldots, R$是任意的多项式.  如果$\mathfrak{M}$是由$D$的倍数组成的, $D$或者是0, 或者是一个规范化的多项式, $D$被称为$A, B, \ldots, C$的最大公因式, 并表示为$(A, B, \ldots, C)$. 和第2节一样, $D$是$A, B, \ldots, C$的因式, 并且$A, B, \ldots, C$的每一个公因式整除$D$. 如果$D = 1$, 则称$A, B, \ldots, C$互素; 它成立当且仅当存在多项式$P, Q, \ldots, R$满足
+\[
+AP + BQ + \cdots + CR = 1.
+\]
+如果$(A, B) = 1$, 则称$A$对$B$不可约, $B$对$A$不可约.
+
+一个$n > 0$次多项式$A$称为是素的, 或者不可约的, 如果它没有大于0次小于$n$次的因式.任何一个1次的多项式都是不可约的. 我们需要注意到多项式的不可约性会随着域的改变而有所不同: 例如$X^2 + 1$在$Q$上不可约, 在实数域上也不可约, 但是在复数域上是可约的, $X^2 + 1 = (X + i)(X - i)$.
+
+正如第4节一样, 我们可以证明每一个大于0次的多项式可以被唯一地表示为不可约多项式的乘积. 我们需要的是一个稍弱一点的结果:
+
+\begin{theorem}
+$A$是$K$上的$n > 0$次多项式, 它能够在不考虑因子次序的情况下被唯一地表示为如下形式
+\[
+A = (X - a_1)(X - a_2) \cdots (X - a_m)Q,
+\]
+这里$0 \le m \le n$, $a_1, a_2, \ldots, a_m \in K$, $Q$在$K$中没有根.
+\end{theorem}
+
+如果$A$没有根, 这是显然的; 否则, 我们对$n$使用归纳法. 如果$A$有一个根$a$, $A = (X - a) A'$; $A'$的次数为$n - 1$, 我们可以对它应用这个定理; 把$A'$表示为前面的形式, 我们得到类似的乘积. 如果$A$能够以上述方式表示, 并有如下形式
+\[
+A = (X - b_1)(X - b_2) \cdots (X - b_r)R
+\]
+其中$R$在$K$中没有根, 于是$A$的根$a$必然是$a_i$之一, 也是$b_j$之一, 除以$X - a$之后, 我们得到$A'$的两个乘积, 根据归纳假设, 它们必然相等.
+
+\begin{corollary}
+$n > 0$次多项式至多有$n$个不同的根.
+\end{corollary}
+
+习题
+
+\begin{enumerate}
+\item 给出$Q$上的多项式的最大公因式:
+\[
+X^5 - X^4 - 6X^3 - 2X^2 + 5X + 3, X^3 - 3X - 2.
+\]
+找出它们在域$F_3$上的最大公因式, 这里系数解释为模3同余类.
+
+使用辗转相除法:
+\[
+\begin{aligned}
+X^5 - X^4 - 6X^3 - 2X^2 + 5X + 3 &= (x^2-x-3)(x^3-3x-2)\\
+&+(-3x^2-6x-3) \\
+(x^3-3x-2)&=\frac{-1}{3}(x-2)(-3x^2-6x-3)
+\end{aligned}
+\]
+于是在$Q$上的最大公因式为$x^2+2x+1=(x+1)^2$.
+
+在$F_3$上的最大公因式也可以表示为上述形式.
+\item 证明$X^4 + 1$是$Q$上的素多项式, 但是在习题VI.12中定义的域上有2次因式.
+
+\begin{proof}
+$X^4+1$没有实数根,因此在$R$上没有一次因式,在$Q$上也没有,所以如果$X^4+1$可以分解,我们可以设
+\[
+X^4+1=(X^2+aX+b)(X^2+cX+d)
+\]
+展开,比较对应项可以得到
+\[
+\begin{aligned}
+a + c &= 0\\
+d + ac + b &= 0 \\
+ad + bc &= 0\\
+bd &= 1
+\end{aligned}
+\]
+如果$a=0$,那么$c=0$,$b=-d$,于是由$bd=1$,可知在$R$上无解.
+
+$a \neq 0$,$a=-c$,$b=d$,$-a^2+2b=0$,$b^2=1$,如果$b=-1$,无解,必须$b=d=1$,$a=\sqrt{2}$,$c=-\sqrt{2}$,或者$a=-\sqrt{2}$,$c=\sqrt{2}$,这是唯一的实数解.
+\[
+X^4+1=(X^2-\sqrt{2}X+1)(X^2+\sqrt{2}X+1).
+\]
+获证.
+\end{proof}
+
+\item Let $K$ be any field, and $R$ a subring of $K[X]$ containing $K$. Prove that there exists a finite set of polynomials $P_1$,$P_2$,$\cdots$,$P_N$ in $R$ such that $R$ consists of all the polynomials in $P_1$,$\cdots$,$P_N$ with coefficients in $K$ (Hint: call $d$ the g.c.d. of the degrees of all polynomials in $R$, take $P_1$,$\cdots$,$P_m$ in $R$ such that the g.c.d. of their degrees is $d$, and then apply the conclusion in exercise III.6).
+
+设$K$是任意的域, $R$是包含$K$的$K[X]$的子环, 证明存在$R$中的有限个多项式集合$P_1, P_2, \ldots, P_N$, 使得$R$由系数在$K$上$P_1, P_2, \ldots, P_N$的组合的多项式组成. (提示: 令$d$为$R$中所有的多项式的次数的最大公约数, 选择$R$中的$P_1, P_2, \ldots, P_m$使得它们的次数的最大公约数为$d$, 然后对习题III.6应用这个结论).
+
+这道题目不是很理解,首先,根据习题3.6,存在$L$,使得$l \ge L$时,对于每一个$ld$,存在正整数$x_1,\cdots,x_m$,使得
+\[
+\sum{x_i\deg(P_i)}=ld.
+\]
+是不是说把次数小于$Ld$的所有的$R$中的多项式取出来就是呢? 例如$X^n$,$n \le Ld$.需要证明能够取出有限个.
+
+\end{enumerate}
+
+\chapter{} \label{chapter:10}
+\begin{lemma}
+设$G$为$m$阶群. 如果对于$m$的每一个因子$d$, $G$中只有$d$个元素满足$x^d = 1$, 那么$G$是循环的.
+\end{lemma}
+
+对于$m$的每一个因子$d$, 令$\psi(d)$为$G$中$d$阶元素的个数; 我们需要证明$\psi(m) > 0$. 在每一种情形下, 由于$G$的每一个元素的阶整除$m$, 我们有
+\[
+m = \sum_{d | m}{\psi(d)}.
+\]
+
+如果对某个$d$, $\psi(d) > 0$, 于是$G$包含有$d$阶元素, 它生成$d$阶循环群$G'$. $G'$中的所有$d$个元素满足$x^d = 1$, 我们的假设说明$G$的所有$\psi(d)$个$d$阶的元素全部属于$G'$; 根据定理VIII.1的推论3, 它恰好有$\psi(d)$个这样的元素. 因此, 如果$\psi(d)$不是0, 它等于$\varphi(d)$. 既然$\sum{\psi(d)}$等于$m$, 根据定理VIII.1的推论4, $\sum{\varphi(d)}$也等于$m$, 这意味着对于所有的$d$, $\psi(d) = \varphi(d)$; 特别的, $\psi(m) = \varphi(m) > 0$.
+
+现在我们考虑任意一个域$K$, 用$K^{\times}$表示$K$的非零元素组成的乘法群, 我们来考虑$K^{\times}$的元素以及有限阶子群. 如果$x$是$K^{\times}$的$m$阶元素, 则$x^{m} = 1$, $x^a = x^b$当且仅当$a \equiv b (\mod m)$; 习惯上, $x$称作单位根, 或者更准确地说$m$次单位元根. 对每一个$n$, $K$中满足$x^n = 1$的元素$x$是单位根, 其阶整除$n$. 在复数域, 数
+\[
+e^{2 \pi i / m} = \cos{\frac{2\pi}{m}} + i \sin{\frac{2 \pi}{m}}
+\]
+是$m$次单位元根; 对于$(a, m) = 1$的时候$e^{2 \pi ia / m}$也是.
+
+\begin{theorem}
+如果$K$是任意的域, $K^{\times}$的每一个有限子群都是循环的.
+\end{theorem}
+
+对每一个$n > 0$, $K$中满足$x^n = 1$的元素是多项式$X^n - 1$的根; 根据定理IX.2的推论, $K$中至多只有$n$个这样的元素. 我们的定理立刻可以由引理得到.
+
+\begin{corollary}
+如果$K$是有限域, 则$K^{\times}$是循环的.
+\end{corollary}
+
+\begin{corollary}
+$K$是任意的域, $n$是大于0的整数, $K$中满足$x^n = 1$的元素组成一个循环群, 其阶整除$n$.
+\end{corollary}
+
+很显然它们构成$K^{\times}$的子群; 由定理X.1知它是循环的; 如果它是由$x$生成的, $x$的阶, 同时也就是这个群的阶, 整除$n$.
+
+\begin{theorem}
+$p$为任一素数, 存在和$p$互素的整数$r$, 使得$1, r, r^2, r^3, \ldots, r^{p - 2}$, 在某种顺序下, 分别模$p$同余于$1, 2, \ldots, p - 1$.
+\end{theorem}
+
+这只是以下事实的一个传统说法: 与$p$互素的模$p$同余类组成模$p$同余类域$F_p$的乘法群$F_p^{\times}$, 根据定理X.1的推论, 它是循环的; 如果$(r \mod p)$是这个群的生成元, $r$具有定理X.2所述的性质.
+
+设$m$为大于1的整数, 和$m$互素的模$m$同余类乘法群并不总是循环的 (参考习题VII.7和VII.8). 它是循环的, 当且仅当存在和$m$互素的整数$r$, 使得$(r \mod m)$在该群中是$\varphi(m)$阶的, 也就是说, 当且仅当满足$r^x \equiv 1 (\mod m)$的大于0的最小整数$x$等于$\varphi(m)$; 如果这一点成立,则称$r$为模$m$原根. 于是对于和$m$互素的每一个整数$a$, 存在整数$x$使得$r^x \equiv a (\mod m)$; 整数$x$仅仅由模$\varphi(m)$决定, 称为$a$的\emph{指标}, 并记之为${\text{ind}}_r(a)$. 根据定理VII.2, 如果$r$是模$m$原根, 映射
+\[
+(a \mod m) \rightarrow (\text{ind}_r(a) \mod \varphi(m))
+\]
+是与$m$互素的模$m$同余类乘法群到模$\varphi(m)$的同余类群的一个同构. 特别的, 对于和$m$互素的$a$和$b$, 我们有:
+\[
+\text{ind}_r(ab) \equiv \text{ind}_r(a) + \text{ind}_r(b) (\mod \varphi(m)).
+\]
+和对数法则类似.
+
+习题
+
+\begin{enumerate}
+\item $m$为大于1的整数, 证明模$m$的原根的个数或者等于0, 或者等于$\varphi(\varphi(m))$.
+
+\begin{proof}
+假设$r$为模$m$的原根,那么与$m$互素的模$m$同余类是循环的,并且可以由$r$生成,可以表示为
+\[
+r,r^2,\cdots,r^{\varphi(m)}=1,
+\]
+所有与$\varphi(m)$互素的$k$,$r^k$也是模$m$原根,于是一共有$\varphi(\varphi(m))$个.
+\end{proof}
+
+\item 找出模13的原根; 对于$1 \le a  \le 12$求出$\text{ind}_r(a)$; 利用这张表找出所有的模13原根, 以及模13的5次幂和29次幂.
+
+如果$r$为模13的原根,那么$r^{12}=1$,$r^n \neq 1$,$0 \le n<12$,另一方面,$r^k=1$,必有$k|12$,12的因子为$1,2,3,4,6,12$,逐个验证.
+
+\item 当$p$是素数时, 利用模$p$原根的存在性, 证明$1^n + 2^n + \cdots + (p - 1)^n$模$p$同余于$0$或者$-1$, 依据不同的整数$n \ge 0$.
+
+\begin{proof}
+存在与$p$互素的$r$,使得$1,r,r^2,\cdots,r^{p-2}$与$1,2,\cdots,p-1$模$p$同余,于是
+\[
+\begin{aligned}
+1^n + 2^n + \cdots + (p - 1)^n &\equiv 1^n+r^n+r^{2n}+\cdots + r^{(p-2)n}\\
+&\equiv \frac{1-(r^n)^{p-1}}{1-r^n}(\mod{p})
+\end{aligned}
+\]
+当$(p-1)|n$时,分子为零,需要特别考虑,此时
+\[
+1^n + 2^n + \cdots + (p - 1)^n \equiv 1 + 1 + \cdots + 1 = p-1 \equiv -1(\mod{p}).
+\]
+否则,根据前面的$1-(r^n)^{p-1}=0$,可知
+\[
+1^n + 2^n + \cdots + (p - 1)^n \equiv 0(\mod{p}).
+\]
+\end{proof}
+
+\item 证明一个模$m > 1$的原根同时也是模$m$的每一个因子的原根. (提示: 使用习题V.6)
+
+\item 使用二项式定理, 通过归纳法证明, 如果$p$是奇素数, 那么对所有的$n \ge 0$:
+\[
+(1 + px)^{p^n} \equiv 1 + p^{n + 1}x (\mod p^{n + 2})
+\]
+(参考习题VI.10). 并由此证明: 如果$r$是一个模$p$原根, 它是模$p^n$的原根的充要条件是$p^2$不能整除$r^{p - 1} - 1$, 此时, $r$和$r + p$都是模$p^n$原根.
+
+\begin{proof}
+$n=0$时,结论显然成立.
+
+$n=1$时,
+\[
+(1 + px)^p = 1 + p(px) + \frac{p(p-1)}{2}(px)^2+ \cdots + (px)^p \equiv 1+p^2x(\mod{p^3})
+\]
+
+假设结论对于$n$成立,对于$n+1$来说,
+由于
+\[
+(1+px)^{p^n} \equiv (1 + p^{n+1}x)(\mod{p^{n+2}}),
+\]
+于是
+\[
+(1 + px)^{p^{n+1}}=[(1+px)^{p^n}]^p \equiv (1 + p^{n+1}x)[(1+px)^{p^n}]^{p-1} (\mod{p^{n+2}}),
+\]
+另一方面
+\[
+(1 + p^{n+1}x)^p \equiv 1 + p^{n+2}x (\mod{p^{n+3}}),
+\]
+
+\end{proof}
+
+\item 求出所有的$m > 1$, 使得模$m$原根存在. (提示: 使用习题X.4, X.5, VII.7, VII.8, 以及这样的事实: 如果$r$是模某个奇数$m$的原根, 那么$r$和$r + m$均是模$2m$的原根).
+
+\item 整数$m > 0$称作是不含平方因子的, 如果它没有形如$n^2$的因子, 这里$n > 1$.对每一个$m > 0$, 令$\mu(m) = (-1)^r$, 如果$m$是不含平方因子的并且是$r$个素数的乘积(当$m = 1$时$r = 0$), 否则$\mu(m) = 0$. 证明当$a$$b$互素时有$\mu(ab) = \mu(a)\mu(b)$; 从而有$\sum_{d | m}{\mu(d)} = 1$, 在$m = 1$时, 而在$m > 1$时和式为$0$. (提示: 用习题IV.4的方式来表示$m$).
+
+\item 令$K$为包含$m$次单位原根$x$的域; 对于$m$的每一个因子$d$, $F_d(X)$为$X - x^a$($0 \le a < m$, $(a, m) = \frac{m}{d}$)的乘积. 证明$F_d$是$\varphi(d)$阶的, 并有
+\[
+X^m - 1 = \prod_{d | m}{F_d(X)};
+\]
+从而, 可以使用习题X.7证明
+\[
+F_m(X) = \prod_{d|m}{(X^{m/d} - 1)^{\mu(d)}}.
+\]
+
+\item $K$的含义同习题X.8, 证明$K$中所有的$m$次单位原根之和等于$\mu(m)$. 特别的请给出当$K = F_p$, $m = p - 1$时的结果.
+\end{enumerate}
+
+\chapter{} \label{chapter:11}
+现在我们考虑域$K$ (有时在环上)上的形如$x^m = a$的方程; $a = 1$的情形已经在第10节中讨论过了. 而$a = 0$的情形是平凡的, 故我们假定$a \neq 0$. 在域$K$中, $x$为$x^m = a$的解, 则$x'$也是它的一个解的充要条件是$(x' / x)^m = 1$. 因此如果$x^m = a$在$K$上有解, 那么它的解的个数和$K$中$m$次原根一样, 也就是$X^m - 1$的根的个数一样.
+
+这里我们主要考虑模$p$同余类域$F_p$.
+
+\begin{theorem}
+$p$为素数, 整数$m > 0$, 整数$a$和$p$互素; $d = (m, p - 1)$. 同余式$x^m \equiv a (\mod p)$或者恰好有$d$个模$p$的解, 或者没有解; 它有解当且仅当同余式$y^d \equiv a (\mod p)$有解; 这等价于$a^{(p - 1) / d} \equiv 1 (\mod p)$, 这样的$a$(模$p$)恰好有$\frac{p - 1}{d}$个.
+\end{theorem}
+
+我们使用这个事实: 群$F_{p}^{\times}$是循环群, 或者说存在模$p$的原根$r$(参考第10节). 令$a \equiv r^t, x \equiv r^u (\mod p)$, 即$t = \text{ind}_r(a)$, $u = \text{ind}_r(x)$. 于是同余式$x^m \equiv a (\mod p)$等价于$mu \equiv t (\mod p - 1)$, 我们的结论可以由定理VI.2得出, 只要我们注意到$t \equiv 0 (\mod d)$等价于$\frac{p - 1}{d}t \equiv 0 (\mod p - 1)$, 即$a^{(p - 1) / d} \equiv 1 (\mod p)$.
+
+举个例子, 考虑同余式$x^3 \equiv a (\mod p)$, $a$和$p$互素. 若$p = 3$, 它等价于$x \equiv a (\mod 3)$. 对于$p \equiv 1 (\mod 3)$的情形; 即$p \neq 2$, $p \equiv 1 (\mod 2)$, 因而可以表示为$6n + 1$; 我们有$d = 3$, $\frac{p - 1}{d} = 2n$; 同余式$x^3 \equiv a (\mod p)$有解的充要条件是$a$和$1, r^3, \ldots, r^{p - 4}$之一模$p$同余, 此时, 如果$x$是一个解, $xr^{2nz}$($z = 0, 1, 2$)模$p$给出所有的解. 如果$p \equiv 2 (\mod 3)$, 此时$p$或者是2, 或者为$6n - 1$, 同余式$x^3 \equiv a (\mod p)$对于和$p$互素的每一个$a$有且仅有一个解.
+
+从此开始, 我们只考虑$m = 2$的情形. 于是$x^2 \equiv 1 (\mod p)$在$p = 2$时, 只有一个解1, 而在$p > 2$时有两个解$\pm 1$.
+
+\begin{definition}
+$p$为奇素数(单质数), 整数$a$和$p$互素, 分别称作模$p$二次剩余或者二次非剩余, 如果同余式$x^2 \equiv a (\mod p)$有解或者无解.
+\end{definition}
+
+对于$m = 2$不会再有其它可能, 单词``二次''通常被省略; 对于$m = 3$常常被称作``三次剩余'', $m = 4$时称作``四次剩余'', 等等.
+
+$p$是一个奇素数; $p = 2n + 1$, $r$为模$p$原根. 定理XI.1说明存在$n$个模$p$二次剩余, 即$1, r^2, \ldots, r^{2n - 2}$, 以及$n$个二次非剩余, 即$r, r^3, \ldots, r^{2n - 1}$. 如果$x$是$x^2 \equiv a (\mod p)$的解, 同余式有两个解$\pm x$, 而没有其他解.
+
+\begin{theorem}
+令$p = 2n + 1$为奇素数, 整数$a$和$p$互素. 则$a^n$或者和$+1$模$p$同余, 或者和$-1$模$p$同余; 根据$a^n \equiv +1 (\mod p)$或者$a^n \equiv -1 (\mod p)$, $a$分别为模$p$二次剩余或者二次非剩余.
+\end{theorem}
+
+令$b = a^n$; 根据Fermat定理 (即定理VIII.3的推论), 我们有$b^2 \equiv 1 (\mod p)$, 因此$b \equiv \pm 1(\mod p)$. 至此我们可以运用定理XI.1了.
+
+\begin{corollary}
+对于奇素数$p$, 根据$p \equiv 1 (\mod 4)$, 或者$p \equiv -1 (\mod 4)$, -1分别是模$p$的二次剩余, 或者二次非剩余.
+\end{corollary}
+
+事实上, $(-1)^n = 1$当$n$为偶数的时候, $(-1)^n = -1$当$n$为奇数的时候.
+
+习题
+
+\begin{enumerate}
+\item $p$为$a^2 + b^2$的奇素数因子, $a$, $b$为整数, 证明$p$和1模4同余, 除非它整除$a$和$b$.
+
+\item $p$为奇素数, $a$和$p$互素, 证明同余式$ax^2 + bx + c \equiv 0 (\mod p)$分别有两个解, 一个解, 无解, 分别对应于$b^2 - 4ac$是模$p$二次剩余, 0, 或者二次非剩余.
+
+\item $m > 0$, $n > 0$是互素的整数, $F$是整系数多项式, 证明同余式$F(x) \equiv 0 (\mod mn)$有解的充要条件是$F(x) \equiv 0 (\mod m)$和$F(x) \equiv 0 (\mod n)$都有解. (提示: 使用习题V.6和VI.1)
+
+\item $p$是奇素数, $n > 0$, $a$和$p$互素, 通过对$n$使用归纳法证明: 同余式$x^2 \equiv a (\mod p^n)$有解的充要条件是$a$为模$p$二次剩余. 并证明, 如果$x$是一个解, 那么除了$\pm x$之外再没有其它解.
+
+\item 证明, $a$为一奇数, $n > 2$, 同余式$x^2 \equiv a (\mod 2^n)$有解当且仅当$a \equiv 1 (\mod 8)$. (提示: 对$n$进行归纳, 注意到, 如果$x$是一个解, 则$x$和$x + 2^{n - 1}$是$y^2 \equiv a (\mod 2^{n+1})$的解). 如果$x$是一个解, 找出其它的解.
+
+\item 使用习题XI.3, 4, 5, 给出同余式$x^2 \equiv a (\mod m)$有解的判断准则. 这里$m$为大于1的整数, $a$和$m$互素.
+
+\item 如果对于某个$m > 1$以及某个和$m$互素的$a$, 同余式$x^2 \equiv a (\mod m)$恰好有$n$个不同的解模$m$, 证明恰好存在$\frac{\varphi(m)}{n}$个不同的和$m$互素的$a$满足条件.
+
+\end{enumerate}
+
+\chapter{} \label{chapter:12}
+设$p$是一个奇素数; $p = 2n + 1$. 用$G$表示和$p$互素的模$p$同余类乘法群$F_{p}^{\times}$; 它包含一个由同余类$(\pm 1 \mod p)$组成的2阶子群$H$; 我们对$G$和$H$应用第VIII节的定义和引理. 如果$x \in G$, 那么它属于而且仅属于一个陪集$xH$; 它由两个元素$(\pm x \mod p)$组成; 存在$n$个这样的陪集, 即陪集$(\pm 1 \mod p), (\pm 2 \mod p), \ldots, (\pm n \mod p)$. 我们在每一个陪集中选择一个元素, 我们把它们表示为$u_1, \ldots, u_n$, 它就是$G$中$H$的陪集的代表集合; 于是每一个和$p$互素的整数和$\pm u_1, \ldots, \pm u_n$之一模$p$同余. 下面的引理属于Gauss, 常称作Gauss引理, 这样的集合$\{u_1, \ldots, u_n\}$称作模$p$``Gauss集''. 这样的集合中最简单的是$\{1, 2, \ldots, n\}$.
+
+\begin{lemma}
+$p = 2n + 1$为奇素数, $\{u_1, \ldots, u_n\}$是模$p$的Gauss集. $a$是和$p$互素的整数; $1 \le i \le n$, $e_i = \pm 1$, $i'$满足$au_i \equiv e_i u_{i'} (\mod p)$. 那么分别对应于乘积$e_1e_2 \cdots e_n$等于$+1$或者$-1$, $a$是模$p$的二次剩余或者二次非剩余.
+\end{lemma}
+
+在$n$个同余式$au_i \equiv e_i u_{i'} (\mod p)$中, 没有两个$i'$是相等的, 否则, 存在$i \neq k$, 有$au_i \equiv \pm au_k (\mod p)$, 因此$u_i \equiv \pm u_k (\mod p)$, 这和Gauss集的定义矛盾. 因此, 我们把所有这些同余式相乘, 可以得到
+\[
+a^n(u_1 u_2 \cdots u_n) \equiv (e_1 e_2 \cdots e_n) \cdot (u_1 u_2 \cdots u_n) (\mod p)
+\]
+既然所有的$u_i$和$p$互素, 因此
+\[
+a^n \equiv e_1 e_2 \cdots e_n (\mod p).
+\]
+根据定理XI.2可以得到我们的结论.
+
+\begin{theorem}
+$p$是奇素数, 在$p \equiv 1 (\mod 8)$或$p \equiv 7 (\mod 8)$时2是模$p$二次剩余, 而在$p \equiv 3 (\mod 8)$或$p \equiv 5 (\mod 8)$时是二次非剩余.
+\end{theorem}
+
+$p = 2n + 1$, 对$a = 2$和Gauss集$\{1, 2, \ldots, n\}$应用Gauss引理. 当$n = 4m$或者$4m + 1$时, $e_i$在$1 \le i \le 2m$时等于$1$, 其它情形等于$-1$; 于是$e_i$的乘积为$(-1)^{n - 2m} = (-1)^n$. 若$n = 4m + 2$或者$4m + 3$, $e_i$在$1 \le i \le 2m + 1$时等于$1$, 其它情形下为$-1$, $e_i$的乘积为$(-1)^{n - 2m - 1} = (-1)^{n - 1}$. 引理的一个简单的应用即可给出上述结论.
+
+\begin{definition}
+$p$是奇素数, 整数$a$和$p$互素, 我们定义$\big{(}\frac{a}{p}\big{)}$在$a$是模$p$二次剩余的时候等于$+ 1$, 而在$a$是模$p$的二次非剩余的时候等于$-1$; 这个符号称为Legendre符号.
+\end{definition}
+
+给定$p$, 符号$(\frac{a}{p})$仅仅依赖于$a$的模$p$同余类. 根据定义有对于和$p$互素的$a$有$(\frac{a^2}{p}) = 1$. 
+
+如果$r$是模$p$原根, 若$a \equiv r^x (\mod p)$, 即$x = \text{ind}_r(a)$, 我们有$(\frac{a}{p}) = (-1)^x$; 这里我们需要注意到它并不依赖于$x$的选择, $x$定义为模一个偶数$p - 1$. 从指标(参考第X节的最后一个公式)的基本性质可知, Legendre符号具有如下性质: 对于所有和$p$互素的$a$, $b$有
+\[
+(\frac{ab}{p}) = (\frac{a}{p}) \cdot (\frac{b}{p}).
+\]
+定理XI.2, 它的推论, 定理XII.1分别为
+\[
+a^{(p-1)/2} \equiv (\frac{a}{p}) (\mod p), (\frac{-1}{p}) = (-1)^{(p - 1) / 2}, (\frac{2}{p}) = (-1)^{(p^2 - 1) / 8}.
+\]
+(对于最后一个公式, 注意到$\frac{p^2 - 1}{8}$总是一个整数, $p \equiv 1, 7 (\mod 8)$时为偶数, 而$p \equiv 3, 5 (\mod 8)$时为奇数).
+
+下面的定理常称为``二次互反律'':
+
+\begin{theorem}
+$p$和$q$是不同的奇素数, 那么有
+\[
+(\frac{p}{q}) \cdot (\frac{q}{p}) = (-1)^{[(p - 1) / 2] \cdot [(q - 1) / 2]}
+\]
+\end{theorem}
+
+令$p = 2n + 1$, $q = 2m + 1$. 对$a = q$和模$p$的Gauss集$\{1, 2, \ldots, n\}$运用Gauss引理. 对于$1 \le x \le n$, 我们有$qx \equiv e_xu (\mod p)$, 这里$e_x = \pm 1$, $1 \le u \le n$; 这也可以表示为$qx = e_xu + py$, 这里$e_x$, $u$, $y$在$x$给定的时候由这些条件唯一确定. 特别的, $e_x = -1$当且仅当$qx = py - u$, 也就是$py = qx + u$, $1 \le u \le n$. 这意味着$y > 0$, 并有
+\[
+y \le \frac{1}{p}(q + 1)n < \frac{q + 1}{2} = m + 1.
+\]
+换句话说, $e_x = -1$的充要条件是能够找到$y$使得数对$(x, y)$满足条件
+\[
+1 \le x \le n, 1 \le y \le m, 1 \le py - qx \le n.
+\]
+因此, 如果数对$(x, y)$的数量是$N$, Gauss引理给出$(\frac{q}{p}) = (-1)^N$.
+
+类似的, $(\frac{p}{q}) = (-1)^M$, 如果$M$是满足如下条件的数对$(x, y)$的数量:
+\[
+1 \le x \le n, 1 \le y \le m, 1 \le qx - py \le m.
+\]
+由于当$x$和$p$互素的时候$qx - py$不可能等于0, 特别的, 若$1 \le x \le n$, 我们的定理中的等式的左边等于$(-1)^{M + N}$, 这里$M + N$是满足如下条件的数对$(x, y)$的数量:
+\[
+1 \le x \le n, 1 \le y \le m, -n \le qx - py \le m.
+\]
+现在用$S$表示满足如下条件的数对$(x, y)$的数量
+\[
+1 \le x \le n, 1 \le y \le m, qx - py < -n,
+\]
+用$T$表示满足如下条件的数对$(x', y')$的数量
+\[
+1 \le x' \le n, 1 \le y' \le m, qx' - py' > m.
+\]
+在最后面的两个集合之间, 存在一个一一映射
+\[
+x' = n + 1 - x, y' = m + 1 - y;
+\]
+事实上, 根据我们的定义, 我们有
+\[
+qx' - py' - m = - (qx - py + n).
+\]
+因此$S = T$. 另一方面, $M + N + S + T$是所有的数对$(x, y)$的数量, 这里$1 \le x \le n$, $1 \le y \le m$, 因此它等于$mn$. 最后我们有
+\[
+(\frac{p}{q}) \cdot (\frac{q}{p}) = (-1)^{M + N} = (-1)^{M + N + S + T} = (-1)^{mn},
+\]
+正是我们要证明的.
+
+习题
+
+\begin{enumerate}
+\item $p$为奇素数; 定义在和$p$互素的整数$a$上的函数$f(a)$如下: $f(a)$从$\pm 1$中取值, 并且
+\[
+f(ab) = f(a)f(b); f(a) = f(b) \text{如果} a \equiv b (\mod p).
+\]
+证明或者对所有的$a$有$f(a) = 1$; 或者对所有的$a$有$f(a) = (\frac{a}{p})$.
+
+\item $p$是$a^2 + 2b^2$的奇因子, $a$, $b$为整数, 证明$p$和1或者3模8同余, 除非它整除$a$和$b$.
+
+\item $p$, $q$是素数, $p = 2q + 1$, $q \equiv 1 (\mod 4)$, 证明2是模$p$原根.
+
+\item 仅使用Gauss引理, 找出所有的素数$p > 3$, 使得3是一个二次剩余.
+
+\item $a$为非零整数. 证明如果$p$, $q$是奇素数, 但不是$a$的因子, 使得$p \equiv q (\mod 4|a|)$, 那么$(\frac{a}{p}) = (\frac{a}{q})$. (提示: 令$a = \pm n^2b$, 这里$b$是不含平方因子的(参考习题X.7); 对$b$的每一个奇素因子和$p$, $q$应用二次互反律; 当$b$为偶数的时候应用定理XII.1, 当$a < 0$时运用定理XI.2的推论).
+
+\end{enumerate}
+
+\chapter{} \label{chapter:13}
+我们回忆一下复数的概念; 它是形如$x + iy$的数, 其中$x$, $y$是实数; $i$满足$i^2 = -1$, 加法和乘法规则正如我们已经了解的. 特别的, 乘法规则如下
+\[
+(x + iy)(x' + iy') = (xx' - yy') + i (yx' + xy').
+\]
+
+复数集$C$在加法和乘法下构成一个幺环, 它的单位元是$1 = 1 + i \cdot 0$ (参考第VI节). 如果$a = x + iy$, $\bar{a} = x - iy$称为$a$的共轭虚数; $\bar{a}$的共轭虚数就是$a$. 映射$a \rightarrow \bar{a}$是$C$到它自身的一个保持加法和乘法的一一映射; 因此它是一个$C$的自同构, 也就是$C$到它自身的一个同构.
+
+我们记$N(a) = a\bar{a}$, 并称之为$a$的\emph{范数}. 根据乘法规则, 如果$a = x + iy$, 则$N(a) = x^2 + y^2$; 从乘法的交换性有$N(ab) = N(a)N(b)$. $a$的范数等于0当且仅当$a = 0$; 否则它是大于0的实数. 因此对任意$a = x + iy \neq 0$, 我们有
+\[
+a' = {N(a)}^{-1}\bar{a} = \frac{x}{N(a)} - i\frac{y}{N(a)},
+\]
+则$aa' = 1$, 对每一个$b$, $a(a'b) = b$; 反过来, 如果$az = b$, 我们有$a'(az) = a'b$, 因此, 根据结合律有$z = a'b$. 这说明$C$实际上是一个域. 通常, 我们都把复数$a = x + iy$和平面上的点$(x, y)$联系起来; 它到原点0的Euclid距离为$|a| = {N(a)}^{1/2}$; 它也被称作是$a$的绝对值.
+
+我们的目的不是要考虑域$C$, 而是它的子集, 那些复数$x + iy$(其中$x, y \in Z$, 也就是为常规整数)组成的集合. 很容易验证它是一个环; 这个环称为Gauss环, 其元素称为Gauss整数. 显然$a \rightarrow \bar{a}$是这个环的一个自同构. 如果$a$是一个Gauss整数, $N(a) = a\bar{a}$是$Z$中的正整数. 我们偶尔也会考虑数$x + iy$($x, y \in Q$, 即$x$, $y$为有理数); 可以证明它们构成一个域 (Gauss域).
+
+$a$, $b$, $x$为Gauss整数, $b = ax$, $b$称为$a$的倍数, $a$整除$b$, 或者说$a$是$b$的因子; 此时$N(a)$整除$N(b)$. 每一个Gauss整数整除它的范数.
+
+1的因子称为是单元; 如果$a = x + iy$是一个单元, $N(a)$整除1因而必然等于1; 由于$x$, $y$是整数, 这意味着它们中的一个是$\pm 1$, 而另一个为0. 因此Gauss单元是$\pm 1$, $\pm i$.
+
+两个非零的Gauss整数$a$, $b$相互整除的充要条件是它们只相差一个单元因子, 即若$b = ea$, $e = \pm 1, \pm i$; 则称它们是联合的. 给定的Gauss整数$a \neq 0$的四个联合之中, 有且仅有一个$b = x + iy$满足$x > 0, y \ge 0$; 它称作是规范(normalized)的. 例如, $1 + i$的四个联合$\pm 1 \pm i$中, $1 + i$是唯一的规范的Gauss整数. 从几何意义上看, 平面上对应于$a$的联合的点, 可以通过点$a$绕着0分别旋转$\frac{\pi n}{2}$ (n = 0, 1, 2, 3)角度得到; 其中的规范整数或者在正实数轴上, 或者在第一象限.
+
+范数大于1的Gauss整数称为Gauss素数, 如果它除了单元以及它的联合之外没有其它因子. 一个等价的说法是$q$为Gauss素数, 如果它既不是0也不是单元, 并且没有一个因子其范数大于1而且小于$N(q)$. 通常意义上的普通的素数(参考第IV节)将被称作是有理素数 (或者常规素数). 如果$q$是Gauss整数, $N(q)$是有理素数, 那么$q$是Gauss素数; 正如我们将看到的, 它的逆命题不成立. Gauss素数的联合还是Gauss素数; 这些数中有且仅有一个在上述意义上是规范的. 如果$q$是Gauss素数, $\bar{q}$也是Gauss素数. $a$为一个既不是0也不是单元的Gauss整数, 它的最小范数大于1的因子必然是Gauss素数.
+
+Gauss把Gauss整数引入数论之中, 他发现Gauss整数可以唯一地分解为Gauss素数的乘积, 类似于通常的整数. 下面会给出这个证明; 证明方法类似第II, III, IV, IX节. 我们首先证明一个类似第II, IX节的引理.
+
+\begin{lemma}
+$a$, $b$为Gauss整数, $b \neq 0$, 那么存在$b$的倍数$bq$使得
+\[
+N(a - bq) \le \frac{1}{2}N(b).
+\]
+\end{lemma}
+
+对于任意实数$t$, 存在一个最大的整数$m \le t$, 有$m \le t < m + 1$; 对于离$t$最近的整数$m'$, 依$t - m$是否$\le m + 1 - t$而分别等于$m$或者$m + 1$; 于是有$|t - m'| \le \frac{1}{2}$. 令$z = x + iy$为任意的复数; $m$为最接近$x$的整数, $n$为最接近$y$的整数, $q = m + in$. 于是$q$是Gauss整数, 我们有
+\[
+N(z - q) = (x - m)^2 + (y - n)^2 \le \frac{1}{2}.
+\]
+对$z = \frac{a}{b}$应用此不等式, 这里$a$, $b$是引理中定义的Gauss整数. 于是按照如上方法构造的Gauss整数$q$满足条件.
+
+\begin{theorem}
+$\mathfrak{M}$为非空的Gauss整数集, 对加法下封闭, 于是若$a \in \mathfrak{M}$, 则所有的$a$的倍数都属于$\mathfrak{M}$. 那么$\mathfrak{M}$是由某个Gauss整数$d$的所有倍数组成, $d$在相差一个单元因子的情形下是唯一确定的.
+\end{theorem}
+
+若$\mathfrak{M} = \{0\}$, 定理成立, 只要取$d = 0$. 否则, 选择最小范数大于0的元素$d \in \mathfrak{M}$. 若$a \in \mathfrak{M}$, 我们应用引理有$a = dq + r$, $N(r) \le \frac{1}{2}N(d)$. 因而$r = a - dq \in \mathfrak{M}$, 这样会和$d$的定义产生矛盾, 除非$r = 0$, $a = dq$. 至于唯一性, 假设$d'$具有和$d$一样的性质, $d$和$d'$必然是相互的倍数, 因此$d'$是$d$的联合.
+
+和在第II, IX节一样, 我们可以对于给定的Gauss整数$a, b, \ldots, c$的所有的线性组合$ax + by + \cdots + cz$(这里$x, y, \ldots, z$是任意Gauss整数)的集合应用定理XIII.1, 并由此定义最大公约数$(a, b, \ldots, c)$; 如果我们规定它必须为规范的, 那么它是唯一确定的. 如果它等于1, 我们称$a, b, \ldots c$是互素的. 我们现在可以重复第III, IV节的主题了, 只是定理IV.2的证明是对整数$a$进行归纳, 而现在需要对$N(a)$进行归纳. 结论是
+
+\begin{theorem}
+每一个非零的Gauss整数能本质上唯一地表示为单元和Gauss素数的乘积.
+\end{theorem}
+
+在这里``本质上唯一''是以下意义. 令
+\[
+a = eq_1q_2 \cdots q_r = e' q_1' q_2' \cdots q_s'
+\]
+为两种乘积表示方式($a \neq 0$), 这里$e$, $e'$是单元, $q_j$和$q_k'$都是Gauss素数. 定理说明$r = s$, 并且可以通过重新排列$q_k'$使得$q_j'$是$q_j$的联合, $1 \le j \le r$; 若$a$为单元, 则$r = 0$. 如果规定$a$的素因子是规范的, 那么乘积在不要求因子的顺序的情形下是唯一确定的.
+
+常规整数也是Gauss整数; 为了把它们分解为Gauss素数的乘积, 只需要分解为常规素数即可.
+
+\begin{theorem}
+$p$是奇有理素数. 它或者是一个Gauss素数, 或者是某个Gauss素数$q$的范数; 在后一种情形, $p = q \bar{q}$, $q$, $\bar{q}$不是联合, $p$除了$q$, $\bar{q}$以及它们的联合之外没有Gauss素数因子.
+\end{theorem}
+
+如定理XIII.2, 令$p = eq_1q_2 \cdots q_r$. 对于范数, 我们发现$p^2$等于$N(q_j)$的乘积. 若有某个$N(q_j)$等于$p^2$, 那么$r = 1$, $p = eq_j$, $p$本身就是Gauss素数. 否则每一个$N(q_j)$等于$p$, 我们有$p = N(q) = q\bar{q}$, $q$为Gauss素数; $\bar{q}$也是Gauss素数.  令$q = x + iy$; 如果$\bar{q}$是$q$的联合, 那么它等于$\pm q$或者$\pm iq$; 这样或者有$y = 0$, $p = x^2$, 或者有$x = 0$, $p = y^2$, 或者有$y = \pm x$, $p = 2x^2$; 但是$p$是奇素数, 因而这是不可能的.
+
+对于$p = 2$, 它的分解方式为
+\[
+2 = N(1 + i) = (1 + i)(1 - i) = i^3(1 + i)^2;
+\]
+它的唯一的规范的素因子为$1 + i$.
+
+\begin{theorem}
+$p$是奇有理素数. 那么依$p$和3或者1模4同余, $p$分别是一个Gauss素数, 或者是某个Gauss素数的范数.
+\end{theorem}
+
+如果它是$q = x + iy$的范数, 我们有$p = x^2 + y^2$, 这里的$x$, $y$必然是一为奇数, 一为偶数. 平方数$x^2$和$y^2$有一个模4和1同余, 而另一个模4和0同余, 因此$p \equiv 1 (\mod 4)$. 反过来, 定理XI.2的推论说明$-1$是模$p$二次剩余, 因而存在$x$使得$x^2 + 1$是$p$的倍数. 而$x^2 + 1 = (x + i)(x - i)$, 如果$p$是Gauss素数, 这意味着$p$或者整除$x + i$, 或者整除$x - i$. 很显然这是不可能的.
+
+\begin{corollary}
+每一个Gauss素数或者是$\pm 1 \pm i$, 或者是和3模4同余的有理素数的联合, 或者它的范数是和1模4同余的有理素数.
+\end{corollary}
+
+事实上, 每一个Gauss素数$q$必然整除其范数$q \bar{q}$的某个有理素数因子$p$; 当$p$是奇数时应用定理XIII.4, 以及当$p = 2$时使用上述备注, 我们可以得到我们的结论.
+
+\begin{corollary}
+有理素数可以表示为两个平方数之和的充要条件为它等于2或者和1模4同余.
+\end{corollary}
+
+事实上, 若$p = x^2 + y^2$, 由于$p$有因子$x \pm iy$, 它不可能是Gauss素数.
+
+有必要指出这是一个已经在一个更大的环即Gauss整数中证明过的结论.
+
+习题
+
+\begin{enumerate}
+\item 如果一个正整数能够表示为形式$n^2a$, 这里$a > 1$并且无平方因子, 证明它能够表示为两个平方数之和的充要条件是$a$的每一个奇素数因子满足$\equiv 1 (\mod 4)$. 如果是这样, $a$有$r$个素因子, 找出把$a$表示为两个平方数之和的方式个数.
+
+\item 如果一个整数是两个互素的平方数之和, 证明该整数的每一个因子也是两个互素的平方数之和.
+
+\item 使用复数在平面上的点的表示, 证明, 如果$z$是任意的复数, 那么存在Gauss整数$q$到$z$的距离$\le \frac{\sqrt{2}}{2}$; 证明至少存在一个Gauss整数到$z$的距离最小, 同时最多不会超过4个具有这样的性质. (提示: 参考第XIII节的引理的证明)
+
+\item 和常规整数一样的定义在Gauss整数中的同余关系$f(m)$, 对于所有的Gauss整数$m \neq 0$, $f(m)$等于不同的模$m$Gauss同余类的个数; 证明对任意的非零Gauss整数$m$, $n$, $f(mn) = f(m) f(n)$. (提示: 在模$m$的同余类中选择代表$x_i$, $1 \le i \le f(m)$, 在模$n$的同余类中选择代表$y_j$, $1 \le j \le f(n)$, 然后证明$x_i + my_j$是模$mn$的同余类的代表).
+
+\item 使用习题XIII.4证明对每一个$m$, $f(m) = m\bar{m}$. (提示: 对$m$和$n = \bar{m}$应用习题XIII.4).
+
+\item 证明, $m$是范数大于1的Gauss整数, 模$m$的Gauss同余类组成一个域的充要条件是$m$是Gauss素数. 证明, 如果$N(m)$是有理素数, 每一个Gauss整数和某个有理整数模$m$同余.
+
+\item $\omega = -\frac{1}{2} + i \frac{\sqrt{3}}{2}$, 证明复数$x + y\omega$(其中$x$, $y$为常规整数)组成环$R$, 其中单元为$\pm 1$, $\pm \omega$, $\pm \omega^2$. 证明, 如果$z$是一个任意的复数, 存在环$R$中的元素$q$使得$N(z - q) \le \frac{1}{3}$. (提示: 参考习题XIII.3). 因此对环$R$证明定理XIII.1的一个类似结论, 以及唯一分解定理. \cite{鍵值一}
+
+\item 使用习题XIII.7证明大于3的有理素数可以表示为$x^2 + xy + y^2$($x$, $y$为整数)的充要条件是它$\equiv 1 (\mod 3)$.
+
+\end{enumerate}
+
+\begin{thebibliography}{99}  % 參考文獻印出之編號最寬為兩個字母寬
+\bibitem{鍵值一} 华罗庚 数论导引
+\bibitem{鍵值二} Hardy 数论导引
+\end{thebibliography}
+
+\printindex        % 一定要有這個指令才會印出索引
+%\addcontentsline{toc}{chapter}{索引}  % 把他加入目錄
+
+\end{document}
