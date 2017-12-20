@@ -1,0 +1,4972 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[mathscr]{eucal}
+%\usepackage{accents}
+%\usepackage{statex}
+
+\setromanfont{SimSun}
+\setmainfont{SimSun}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\newtheorem{example}{例} 
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{property}{性质}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+\newtheorem{exercise}{解答}[chapter]
+\newtheorem{answer}{解答}[chapter]
+
+\newcommand\relphantom[1]{\mathrel{\phantom{#1}}}
+\newcommand\num[1]{\left\Vert{#1}\right\Vert}
+\newcommand\Hom{\text{Hom\,}}
+\newcommand\Tr{\text{Tr\,}}
+\newcommand\Ker{\text{Ker\,}}
+\newcommand\Image{\text{Im\,}}
+\newcommand\rank{\text{rank\,}}
+\newcommand\tr{\text{tr\,}}
+
+\makeatletter
+\def\wideubar{\underaccent{{\cc@style\underline{\mskip10mu}}}}
+\def\Wideubar{\underaccent{{\cc@style\underline{\mskip8mu}}}}
+\def\diam{\text{diam}}
+\makeatother
+
+\makeatletter
+\def\widebar{\accentset{{\cc@style\underline{\mskip10mu}}}}
+\def\Widebar{\accentset{{\cc@style\underline{\mskip8mu}}}}
+\makeatother
+
+
+\title{实变函数}
+\author{周民强}
+
+\begin{document}
+
+\frontmatter
+\frontmatter
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\setcounter{page}{0}
+\chapter{前言}
+本文档是周民强老师的实变函数的读书笔记.
+
+\chapter{引言}
+这个引言非常值得一看, 里面给出了为什么需要扩展Riemann积分的原因. 鉴于此, 这里几乎全文录下.
+
+首先回顾一下Riemann积分的历史和定义, 下面给出Riemann积分的定义和条件.
+
+\begin{definition}
+设$f(x)$是定义在$[a, b]$上的有界函数. 作分划
+$$
+\Delta: a = x_0 < x_1 < \cdots < x_n = b,
+$$
+且令
+$$
+\left.
+\begin{aligned}
+M_i &= \sup\{f(x) : x_{i-1} \le x \le x_i \}, \\
+m_i &= \inf\{f(x) : x_{i-1} \le x \le x_i \}, \\
+\end{aligned}
+\right.
+(i=1,2,\cdots, n)
+$$
+$$
+\overline{S}_{\Delta} = \sum_{i=1}^{n}{M_i(x_i - x_{i-1})}, \quad \underline{S}_{\Delta} = \sum_{i=1}^{n}{m_i(x_i - x_{i-1})}.
+$$
+
+我们考虑Darboux上积分与下积分:
+$$
+\overline{\int}_{a}^{b}{f(x)dx} = \inf_{\Delta}\overline{S}_{\Delta}, \quad \underline{\int}_{a}^{b}{f(x)dx} = \sup_{\Delta}\underline{S}_{\Delta}. 
+$$
+如果这两个值相等, 则称$f(x)$在$[a, b]$上是Riemann可积的. 简记为$f \in R[a, b]$, 记其公共值为
+$$
+\int_{a}^{b}{f(x)dx},
+$$
+且称它为$f(x)$在$[a, b]$上的Riemann积分.
+\end{definition}
+
+若令$|\Delta| = \max\{x_i - x_{i-1}: i = 1, 2, \cdots, n\}$, 则$f(x)$在$[a, b]$上是Riemann可积的充分且必要条件是:
+$$
+\lim_{|\Delta| \rightarrow 0}{\sum_{i=1}^{n}{(M_i - m_i)(x_i - x_{i-1})}} = 0.
+$$
+
+Riemann积分在以下几个方面存在缺陷: (1) 可积函数的连续性; (2)极限与积分次序交换问题; (3) 关于微积分基本定理; (4) 可积函数空间的完备性.
+
+(1)可积函数的连续性
+
+前面指出的Riemann可积函数的充要条件说明可积函数必须是差不多连续的(可以证明必须是几乎处处连续的函数): 也就是说振幅$(M_i - m_i)$不能缩小的那些相应项的子区间的长度的总和可以很小.
+
+(2) 极限与积分次序交换问题
+
+在一般的微积分教科书中, 都是用函数列一致收敛的条件来保证极限运算与积分运算的次序可以交换, 这一要求过分强了.
+
+\begin{example}
+设$f_n(x) = x^n$($0 \le x \le 1$). 它是点收敛而不是一致收敛于
+$$
+f(x) = \left\{
+\begin{aligned}
+0, &\quad 0 \le x < 1, \\
+1, &\quad x = 1
+\end{aligned}
+\right.
+$$
+但仍有
+$$
+\lim_{n \rightarrow \infty}{\int_{0}^{1}{f_n(x)dx}} = 0 = \int_{0}^{1}{f(x)dx} = \int_{0}^{1}{\lim_{n \rightarrow}{f_n(x)}dx}.
+$$
+\end{example}
+
+在Riemann积分意义下, 存在下述有界收敛定理(其中一个证明参考Amer.Math.Monthly,78,1986)
+\begin{theorem}[有界收敛定理]
+设
+
+(i)$f_n(x)$($n=1,2,\cdots$)是定义在$[a, b]$上的可积函数;
+
+(ii) $|f_n(x)| \le M$($n = 1, 2, \cdots, x \in [a, b]$);
+
+(iii) $f(x)$是定义在$[a, b]$上的可积函数, 且有
+$$
+\lim_{n \rightarrow \infty}{f_n(x)} = f(x), \quad x \in [a, b],
+$$
+则
+$$
+\lim_{n \rightarrow \infty}{\int_{a}^{b}{f_n(x)dx}} = \int_{a}^{b}{f(x)dx}.
+$$
+\end{theorem}
+
+下面这个例子表明: 即使函数列是渐升的也不能保证其极限函数的可积性.
+
+\begin{example}
+设$r_n$是$[0, 1]$中前提有理数列, 作函数列
+$$
+f_n(x) = \left\{
+\begin{aligned}
+1, \quad & x = r_1, r_2, \cdots, r_n, \\
+0, \quad & \text{其他}
+\end{aligned}
+\right.
+(n = 1, 2, \cdots)
+$$
+显然有$f_1(x) \le f_2(x) \le \cdots \le f_n(x) \le f_{n+1}(x) \le \cdots \le 1$,且有
+$$
+\lim_{n \rightarrow \infty}{f_n(x)} = f(x) = \left\{
+\begin{aligned}
+1, \quad & x\text{为有理数}, \\
+0, \quad & x\text{为无理数}.
+\end{aligned}
+\right.
+$$
+\end{example}
+
+这里得到的$f(x)$不是Riemann可积的.
+
+\begin{proposition}
+若有定义在$[a, b]$上的可积函数列$f_n(x)$, $g_n(x)$, 而且满足$|f_n(x)| \le M$, $|g_n(x)| \le M$, $n=1, 2, \cdots$, $x \in [a, b]$,以及
+$$
+\lim_{n \rightarrow \infty}{f_n(x)} = f(x), \quad \lim_{n \rightarrow \infty}{g_n(x)} = f(x), \quad x \in [a, b],
+$$
+则必有
+$$
+\lim_{n \rightarrow \infty}{\int_{a}^{b}{f_n(x)dx}} = \lim_{n \rightarrow \infty}{\int_{a}^{b}{g_n(x)dx}}.
+$$
+\end{proposition}
+但$f(x)$之积分仍然可以不存在, 上述结论说明, 上述积分之极限值并不依赖于$f_n(x)$本身, 而依赖于$f(x)$. 既然如此, 就不妨定义其积分为
+$$
+\int_{a}^{b}{f(x)dx} = \lim_{n \rightarrow \infty}{\int_{a}^{b}{f_n(x)dx}}.
+$$
+这说明Riemann积分的定义太窄了.
+
+(3)关于微积分基本定理
+
+积分和微分之间的联系乃是微积分学的中枢: 设$f(x)$在$[a, b]$上是可微函数且$f'(x)$在$[a, b]$上是可积的, 则有
+$$
+\int_{a}^{x}{f'(t)dt} = f(x) - f(a), \quad x \in [a, b].
+$$
+也就是说$f'(x)$通过积分又获得了$f(x)$. 这里面要求$f'(x)$必须是可积的. 然而早在1881年, V.Volterra就做出了一个可微函数, 其导函数还是有界的, 但导函数不是Riemann可积的. 这就大大限制了微积分基本定理的使用范围. 
+
+\begin{proposition}
+$f' \in R([a, b])$的充分必要条件是, 存在$g \in R([a, b])$, 使得
+$$
+f(x) = f(a) + \int_{a}^{x}{g(t)dt}.
+$$
+\end{proposition}
+
+如果$f' \in R([a, b])$, 使用基本定理可知上述等式成立, 反过来, 首先需要证明$f$可微, 然后证明$f' \in R([a, b])$.
+
+(4) 可积函数空间的完备性
+
+在积分理论中, 可积函数类用距离
+$$
+d(f,g) = \int_{a}^{b}{|f(x) - g(x)|dx}
+$$
+或
+$$
+d(f,g) = \{ \int_{a}^{b}{|f(x) - g(x)|^2dx} \}^{1/2}
+$$
+作成距离空间是完备的这一事实具有重要意义. 可是在Riemann积分先它不是完备的. 下面给出一个例子.
+
+令$\{r_n\}$是$(0, 1)$中有理数的全体, 设$I_n$是$[0, 1]$中的开区间, $r_n \in I_n$, $I_n < 1 / 2^n$($n=1,2,\cdots$), 并作函数
+$$
+f(x) = \left\{
+\begin{aligned}
+1, \quad &\bigcup_{n=1}^{\infty}{I_n}, \\
+0, \quad &[0,1]\backslash \bigcup_{n=1}^{\infty}{I_n}.
+\end{aligned}
+\right.
+$$
+易知$f(x)$在$[0,1]\backslash\bigcup_{n=1}^{\infty}{I_n}$内的点上是不连续的, 它不是Riemann可积的, 且不存在Riemann可积函数$g(x)$, 使得$d(f,g) = 0$, 但若作函数列
+$$
+f_n(x) = \left\{
+\begin{aligned}
+1, \quad &\bigcup_{k=1}^{n}{I_k}, \\
+0, \quad &[0,1]\backslash \bigcup_{k=1}^{n}{I_k}.
+\end{aligned}
+\right.
+$$
+则$f_n \in R([0,1])$($n=1,2,\cdots$),且有
+$$
+\lim_{n \rightarrow \infty m \rightarrow \infty}{d(f_n, f_m)} = 0,
+$$
+以及$f_n(x) \rightarrow f(x)$($n \rightarrow \infty$), 故$R([0, 1])$按上述距离$d$是不完备的.
+
+下面给出了我们对积分理论的一个简要认识过程:
+
+首先需要认识到积分问题与函数的下方图形---点集的面积如何界定和度量有关.
+
+19世纪80年代, G.Peano提出点集内外容度(长度,面积概念的推广)的观念,
+
+1892年, C.Jordan扩展了G.Peano的工作, 建立起所谓Jordan可测集的理论, 且模拟Riemann积分的做法, 给出了新的积分思路. 然而, Jordan的测度论存在着严重的缺陷, 如存在不可测的开集, 有理数集也不可测等.
+
+E.Borel在1898年的著作中引进了现称之为Borel集的概念. 他从开集出发构造了一个$\sigma$-代数, 从而使他的测度理论具有可数可加的性质(这个对于积分论特别重要). 但是, Borel并没有把他的测度论与积分理论联系起来.
+
+1902年, H.L.Lebesgue在"积分, 长度与面积"的博士论文中所阐述的思想成为古典分析过渡到近代分析的转折点. 他证明了有界Lebesgue可测集类构成一个$\sigma$-环; Lebesgue测度是可数可加且是平移不变的; 也确实存在着非Jordan可测和非Norel可测的Lebesgue可测集, 并建立了Lebesgue可测集与Borel可测集的关系. 他还断定: 有非Lebesgue可测集存在(1905年Vitali给出一例).
+
+1914年F.Riesz进一步升华测度论思想, 放弃了在$\sigma$-环上建立测度的思想, 而直接从积分出发来导出整个理论, 且将其定义在环上. 同一年, C.Carath\'eodory进一步发展了外测度理论, 导致所谓测度的完备化, 特别是做出了从环到$\sigma$-环的扩张.
+
+对积分论做出重要贡献的, 还有Stieltjes, Radon等数学家. 使积分理论跳出欧氏空间背景并将其建立在$(X, \mathscr{R}, \mu)$上的首要工作是属于Fr\'echet(1915年)的, 而用更加一般的观点来考察积分的应归功于Daniell局部紧空间上的积分论.
+
+本书主要学习Lebesgue理论. 它的主要思想如下:
+
+对于定义在$[a, b]$上的有界正值函数, 为使$f(x)$在$[a, b]$上可积, 按照Riemann的积分思想, 必须使得在划分$[a, b]$后, $f(x)$在多数小区间$\Delta{x_i}$上的振幅足够小, 这迫使具有较多激烈振荡的函数被排除在可积函数类外. 对此, Lebesgue提出, 不从分割区间入手, 而是从分割函数值域着手, 即任给$\delta > 0$,作
+$$
+m = y_0 < y_1 < \cdots < y_{i-1} < y_i < \cdots < y_n = M,
+$$
+其中, $y_i - y_{i-1} < \delta$, $m$, $M$是$f(x)$在$[a, b]$上的下界与上界, 并作点集
+$$
+E_i = \{ x: y_{i-1} \le f(x) < y_i\}, \quad i = 1, 2, \cdots, n.
+$$
+这样, 在$E_i$上, $f(x)$的振幅就不会大于$\delta$. 再计算
+$$
+|I_i| = \text{"矩形面积"} = (\text{高})y_{i-1} \times \text{"底边长度"}|E_i|,
+$$
+并作和
+$$
+\sum_{i=1}^{n}{y_{i-1}|E_i|} = \sum_{i=1}^{n}{|I_i|}.
+$$
+它是$f(x)$在$[a, b]$上积分(面积)的近似值. 然后, 让$\delta \rightarrow 0$, 且定义
+$$
+\int_{[a, b]}{f(x)dx} = \lim_{\delta \rightarrow 0}{\sum_{i=1}^{n}{y_{i-1}|E_i|}}.
+$$
+(如果此极限存在)也就是说, 采取在$y$轴上的分划来限制函数值变动的振幅, 即按函数值的大小先加以归类. Lebesgue对这一设计作了生动的譬喻: 假定我欠人家许多钱, 现在要归还. 此时, 应先按照钞票的票面值的大小分类, 再计算每一类的面额总值, 然后相加, 这就是我的积分思想; 如果不管面值大小如何, 而是按某种先后次序(如顺手递出)来计算总数, 那就是Riemnn积分的思想.
+
+按照Lebesgue的积分构思, 会带来一系列的新问题, 主要是需要各种集合的测度问题. 首先, 分割函数值范围后, 所得的点集
+$$
+E_i = \{ x: y_{i-1} \le f(x) < y_i\}, i=1,2, \cdots, n
+$$
+不一定是一个区间, $[a, b]$也不一定是互不相交的有限个区间的并, 而可能是一个分散而杂乱无章的点集及其并集. 因此, 所谓"底边长度"$|E_i|$的说法是不清楚的, 即如何度量其"长度"以及是否存在"长度"的方案, 并称点集$E$的"长度"为测度, 记为$m(E)$. 当然, 这一方案必须满足一定条件, 才符合常理. 如$E = [0, 1]$时, 应有
+$$
+m([0, 1]) = 1;
+$$
+又如$E_1 \subset E_2$, 应满足
+$$
+m(E_1) \le m(E_2);
+$$
+特别是对$E_n$($n=1,2,\cdots$)且$E_i \cap E_j = \emptyset$($i \neq j$)时, 希望有
+$$
+m(\bigcup_{n=1}^{\infty}{E_n}) = \sum_{n=1}^{\infty}{m(E_n)}.
+$$
+然而, 这些限制使人们无法设计出一种测量方案, 能使一切点集都有度量. 因此, 欲使Lebesgue积分思想得以实现, 必须要求分割得出的点集$E_i$($i=1,2,\cdots, n$)是可测量的---可测集. 这一要求能否达到, 与所给函数$y = f(x)$的性质有关. 从而规定: 凡是对任意$t \in R^1$, 点集
+$$
+E = \{x: f(x) > t\}
+$$
+均为可测集时, 称$f(x)$为可测函数. 这就是说, 积分的对象必须属于可测函数范围.
+
+总的来说, Riemann积分要求可积函数是几乎处处连续的，这个要求比较高, 而Lebesgue积分把可积函数放宽到可测函数类。要研究Lebesgue积分，就要研究可测函数，而要研究可测函数，就需要了解点集的可测性。本书就按照这一顺序来讲解的。 当然, Lebesgue也还是存在不足之处的, 这里不说明了.
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{集合, 点集}
+书中的例子都有些难度，这个笔记的一个内容就是补全其证明。
+
+\section{集合和子集合}
+在概念上没有什么值得特别注意的，唯一需要明白：在这门学科中研究的集合，其元素都是确定的。
+
+\begin{example}
+设$r$, $s$, $t$是三个互不相同的数，且$A=\{r, s, t\}$, $B = \{r^2, s^2, t^2\}$, $C=\{rs, st, rt\}$, 若$A=B=C$, 则$\{r, s, t\} = \{1, \omega, \omega^2\}$.
+\end{example}
+
+在这道题目的证明中，使用了集合元素的互异性。$A$, $B$, $C$三个集合要相等, 必须都有三个元素, 且互不相等. 这里有一个技巧值得注意: 如果从元素本身去考虑, 就要区分各种情况($r = r^2$, $s = s^2$, $\cdots$); 但是一旦从集合整体上考虑, 难度大大降低. 原因在于我们不需要确定每个$r$, $s$, $t$, 而只需要确定集合的元素.
+
+令$k = r + s + t = r^2 + s^2 + t^2 = rs + st + tr$, 则
+$$
+\begin{aligned}
+k^2 &= (r + s + t)^2 = r^2 + s^2 + t^2 \\
+&= 2(rs  + st + tr) = 3k
+\end{aligned}
+$$
+故$k = 3$或者$0$, 又$rst = r^2s^2t^2$, 可以知道$rst = 1$或者$0$(这个不可能, 否则$C$中不能有3个元素), 接下来利用根和系数的关系, 可以知道$r$, $s$, $t$是方程$x^3 - 3x^2 + 3x - 1 = 0$或者$x^3 - 1= 0$的根, 前一个方程只有相等的根, 不可能, 只能是后者.
+
+\section{集合的运算}
+集合的运算包括并, 交, 余集(差与补集), 对称差. 不过对于分析课程来说, 有一个概念必须考虑: 极限. 正如在微积分中, 数的运算考虑加减乘除之外, 还要考虑极限.
+
+在这里, 对称差的概念一般书上没有, 需要注意一下.最值得注意的是De.Morgan法则和集合极限的定义.下面先总结概念, 然后说明各个概念之间的关系---公式. 从某种程度上说, 后者才是主要的, 概念在某种程度上只是一个助记符, 离开了关系, 孤立的概念是没有意义的.
+
+\begin{definition}
+并集: 
+$$
+\begin{aligned}
+A \cup B &= \{ x | x \in A \text{或} x \in B\} \\
+\bigcup_{\alpha \in I}{A_\alpha} &= \{ x | \exists \alpha \in I, x \in A_\alpha \},
+\end{aligned}
+$$
+交集:
+$$
+\begin{aligned}
+A \cap B &= \{ x | x \in A \text{且} x \in B\} \\
+\bigcap_{\alpha \in I}{A_\alpha} &= \{ x | \forall \alpha \in I, x \in A_\alpha \},
+\end{aligned}
+$$
+差集:
+$$
+A \backslash B = \{ x | x \in A \text{但} x \notin B \},
+$$
+如果把$A$换成确定的包含$B$的集合$X$, 此时称$X \backslash B$为$B$的补集, 记为$B^c$.
+
+对称差: $A \triangle B = (A \backslash B) \cup (B \backslash A)$, 由属于两个集合之一, 且只属于两个集合之一的元素组成.
+\end{definition}
+
+下面讨论集合列的极限, 它在这里极为重要. 它的定义可以和数列极限中上下极限相类比. 在数列中, 如果是任意数列, 是有可能不存在极限的, 但是对于单调数列来说, 一定存在广义极限(包括$+\infty$和$-\infty$), 下面回忆一下相关概念, 便于比较(数列极限的相关概念来自张筑生的<数学分析新讲>第三册).
+
+对于任意实数序列$\{x_n\}$, 可以构造出两个单调序列$y_n$和$z_n$.
+$$
+y_n = \inf_{k \ge n}{x_k}, \quad z_n = \sup_{k \ge n}{x_k}, \quad n = 1, 2, \cdots
+$$
+易知$y_n$单调上升, $z_n$单调下降. 于是$\lim{y_n}$和$\lim{z_n}$都存在. 又注意到对于单调上升的数列来说, 其极限就是其上确界, 即$\lim{y_n} = \sup\limits_{n}{y_n}$. 单调下降的数列的极限就是其下确界, 故$\lim{z_n} = \inf\limits_{n}{z_n}$. 对于$x_n$, 我们定义$\lim{y_n}$为其下极限, 定义$\lim{z_n}$为其上极限. 即
+$$
+\begin{aligned}
+\varliminf{x_n} = \lim{y_n} &= \sup\limits_{n}{\inf\limits_{k \ge n}{x_n}} \\
+\varlimsup{x_n} = \lim{z_n} &= \inf\limits_{n}{\sup\limits_{k \ge n}{x_n}}
+\end{aligned}
+$$
+这个名称是源于: 序列$x_n$的所有其他极限点介于$\varliminf{x_n}$和$\varlimsup{x_n}$之间.
+
+对于集合情形, 我们首先定义出单调集合序列的极限, 再考虑一般集合.
+
+对于集合列$\{A_k\}$有下列定义:
+
+递减集合及其极限: 
+$$
+A_1 \supset A_2 \supset \cdots \supset A_k \supset \cdots, \lim{A_k} = \bigcap_{k=1}^{\infty}{A_k}.
+$$
+
+递增集合及其极限:
+$$
+A_1 \subset A_2 \subset \cdots \subset A_k \subset \cdots, \lim{A_k} = \bigcup_{k=1}^{\infty}{A_k}.
+$$
+
+对于一般集合, 构造出单调递减序列和单调递增序列:
+$$
+B_n = \bigcup_{k=n}^{+\infty}{A_k}, \quad C_n = \bigcap_{k=n}^{\infty}{A_k}, \quad n = 1, 2, \cdots
+$$
+显然有$B_1 \supset B_2 \supset \cdots \supset B_n \supset \cdots$; $C_1 \subset C_2 \subset \cdots \subset C_n \subset \cdots$.
+
+利用单调集合列, 定义上极限集
+$$
+\varlimsup{A_n} = \lim{B_n} = \bigcap_{n=1}^{\infty}{\bigcup_{k=n}^{\infty}{A_k}}
+$$
+下极限集
+$$
+\varliminf{A_n} = \lim{C_n} = \bigcup_{n=1}^{\infty}{\bigcap_{k=n}^{\infty}{A_k}}
+$$
+
+现在把两个概念比较一下, 取$\inf$对应于$\bigcap$, 取$\sup$对应于$\bigcup$, 那么两者完全可以对应起来.
+
+如果下上限集相等, 则说$\{A_k\}$的极限存在: $\lim\limits_{n \rightarrow \infty}{A_n} = \varlimsup{A_n} = \varliminf{A_n}$.
+
+在数学中, 还有其他概念使用类似的方式来定义, 例如积分, 后面的测度等, 实际上就是两边夹逼方式.
+
+集合的直积概念(有些书称为笛卡尔积):
+$$
+X \times Y = \{(x, y) | x \in X, y \in Y \}.
+$$
+
+下面讨论这些概念之间的关系, 这是更重要的.
+
+(1)对于交集和并集, 满足交换律, 结合律和分配律.
+
+(2)关于补集, 差集与交, 并的关系, 最重要的就是De.Morgan法则:
+$$
+(\bigcup_{\alpha \in I}{A_{\alpha}})^c = \bigcap_{\alpha \in I}{A_{\alpha}^{c}}, \quad (\bigcap_{\alpha \in I}{A_{\alpha}})^c = \bigcup_{\alpha \in I}{A_{\alpha}^{c}}
+$$
+这是一个对偶关系, 其他还有:
+
+$A \supset B$, 则$A^c \subset B^c$; $A \cap B = \emptyset$, 则$A \subset B^c$; $(A^c)^c = A$(幂等的).
+
+(3)对称差的公式:
+
+(i) $A \cup B = (A \cap B) \cup (A \triangle B)$. 注意到$(A \cap B) \cap (A \triangle B) = \emptyset$.
+
+(ii) $A \triangle \emptyset = A$, $A \triangle A = \emptyset$, $A \triangle A^c = X$, $A \triangle X = A^c$.
+
+(iii) 交换律和结合律: $A \triangle B = B \triangle A$, $A \triangle (B \triangle C) = (A \triangle B) \triangle C$.
+
+(iv) 交与对称差满足分配律: $A \cap (B \triangle) = (A \cap B) \triangle (A \cap C)$.
+
+(v) $A^c \triangle B^c = A \triangle B$.
+
+(vi) 对于任意$A$与$B$, 存在唯一的集合$E$, 使得$E \triangle A = B$. ($E = B \triangle A$, 可以认为是某种程度的分解).
+
+(4) 对于集合极限, 上极限集和下极限集还有一个等价的说法.
+$$
+\begin{aligned}
+\varlimsup_{k \rightarrow \infty}{A_k} &= \{x | \forall n \in \mathbb{N}, \exists k, k \ge n, x \in A_k \} \\
+\varliminf_{k \rightarrow \infty}{A_k} &= \{x | \exists n_0 \in \mathbb{N}, \forall k \ge n_0, x \in A_k \}
+\end{aligned}
+$$
+证明比较简单,换成更通俗的说法: $\{A_k\}$的上限集是由属于$\{A_k\}$中无穷多个集合的元素组成, 而下限集由只不属于$\{A_k\}$中有限多个集合的元素构成, 易知
+$$
+\varliminf{A_k} \subset \varlimsup{A_k}.
+$$
+
+上,下限集有如下等式:
+$$
+\begin{aligned}
+E \backslash \varlimsup_{k \rightarrow \infty}{A_k} &= \varliminf_{k \rightarrow \infty}{(E \backslash A_k)} \\
+E \backslash \varliminf_{k \rightarrow \infty}{A_k} &= \varlimsup_{k \rightarrow \infty}{(E \backslash A_k)}
+\end{aligned}
+$$
+
+这一节的几个例子难度较大, 而且具有启发性:
+
+若$f(x)$是$R^1$上的实值函数, 则
+$$
+\{x | l \le f(x) \le k\} = \{x | f(x) \ge l\} \cap \{x | f(x) \le k\}.
+$$
+
+这个例子中集合的表示方法在测度论中经常使用, 因为可测函数定义是使用$\{x | f(x) \ge t\}$. 实际上, 我们写这样的式子的时候: $\{f(x) | l \le x \le k\}$和$\{x | l \le f(x) \le k\}$就已经开始涉及两种积分观念的差异了.
+
+$f(x)$是$[a, b]$上的实值函数, 则
+$$
+\begin{aligned}
+\bigcup_{n=1}^{\infty}{\{ x \in [a, b] | |f(x)| < n\}} &= [a, b], \\
+\bigcup_{n=1}^{\infty}{\{ x \in [a, b] | |f(x)| > \frac{1}{n}\}} &= \{ x \in [a, b]| |f(x)| > 0 \}.
+\end{aligned}
+$$
+
+这两个结论也是比较明显, 他们同样会在研究可测函数时用到.
+
+设在$R^1$上有渐升函数列: $f_1(x) \le f_2(x) \le \cdots \le f_n(x) \le \cdots$, 且$\lim\limits_{n \rightarrow \infty}{f_n(x)} = f(x)$, 对于给定的实数$t$, 令
+$$
+E_n = \{ x | f_n(x) > t \}
+$$
+则$E_1 \subset E_2 \subset \cdots \subset E_n \subset \cdots$, $\lim\limits_{n \rightarrow \infty}{E_n} = \bigcup\limits_{n=1}^{\infty}{\{x | f_n(x) > t \}} = \{ x | f(x) > t\}$.
+
+$\lim\limits_{n \rightarrow \infty}{f_n(x)} = f(x) \Rightarrow f(x) \ge f_n(x), \forall n$, 即可推到出此结论.
+
+设$E$, $F$是两个集合, 作集合列
+$$
+A_k = \left\{
+\begin{aligned}
+E, \quad &k \text{为奇数} \\
+F, \quad &k \text{为偶数}
+\end{aligned}
+\right.
+$$
+则$\varlimsup{A_k} = E \cup F$, $\varliminf{A_k} = E \cap F$, $\lim{A_k}$不存在.
+
+设$f_n(x)$和$f(x)$是定义在$R^1$上的实值函数, 则一切使$f_n(x)$不收敛于$f(x)$的点所组成的集合$D$可以表示为
+$$
+D = \bigcup_{k=1}^{\infty}{\bigcap_{N=1}^{\infty}{\bigcup_{n=N}^{\infty}{\{ x||f_n(x) - f(x)| \ge \frac{1}{k} \}}}}
+$$
+
+这个例子比较复杂,值得好好研究.
+
+这里涉及到了函数列的收敛性, $f_n(x) \rightarrow f(x)$的含义:
+
+$\forall \epsilon > 0$, $\exists N$, 当$n > N$时, $|f_n(x) - f(x)| < \epsilon$,
+
+反之, $f_n(x)$不收敛于$f(x)$的含义是: 存在一个$\epsilon$. $\forall N$, 都存在$n_0 > N$使得$|f_n(x) - f(x)| \ge \epsilon$.
+
+如果令$E_{\epsilon_n} = \{ x | |f_n(x) - f(x)| > \epsilon_n \}$, 那么上面的说法就是$\{E_{\epsilon_n}\}$的上极限集. 于是有
+$$
+\bigcap_{N=1}^{\infty}{\bigcup_{n=N}^{\infty}{\{ x||f_n(x) - f(x)| \ge \epsilon_k \}}}
+$$
+接下来需要对$\epsilon_k$求并集, 而$\epsilon_k$可以由$\epsilon_1 > \epsilon_2 > \cdots > \epsilon_k > \cdots$来构成, 令$\epsilon_k = \frac{1}{k}$即可得到结论.
+
+这里面把函数性质表示成集合的做法在现代数学应该比较常用.
+
+\section{映射, 基数}
+在高等数学中, 函数的概念在一步一步拓广, 最初微积分中研究的是连续函数, 可微函数, 在实分析中, 这个概念要推广到可测函数, 下面还要把函数概念推广到映射.
+
+在这一节, 可以认为要研究如何"数"集合中元素的个数, 其中概念中比较重要的是映射, 一一映射和集合的势, 同时应了解有限集和无限集的区别.
+
+仍然和1.2节一样, 先了解概念, 再了解它们之间的关系, 然后看几个例子.
+
+\begin{definition}
+映射$f: X \rightarrow Y$, 对每一个$x \in X$, $Y$中均存在唯一的$y = f(x)$.
+
+满射($X$到$Y$上的映射): $\forall y \in Y$, 存在$x \in X$, 使得$y = f(x)$.
+
+单射: 当$x_1$, $x_2 \in X$且$x_1 \neq x_2$时, 有$f(x_1) \neq f(x_2)$.
+
+一一映射(双射): 既是单射又是满射. 此时可以定义你映射$f^{-1}$.
+
+复合映射: $f: X \rightarrow Y$, $g: Y \rightarrow W$, 则有$X$到$W$的映射$h$: $h(x) = g[f(x)]$.
+
+集合的对等: 存在一个从$A$到$B$的一一映射, 则称$A$与$B$对等, 记作$A \sim B$.
+
+集合的基数(或者势): 如果$A$与$B$对等, 则说$A$与$B$的基数是相同的.
+\end{definition}
+
+有两个基数经常会用到: 全体自然数集的基数(用$\aleph_0$表示); 全体实数的基数(用$\aleph$表示). 有一个猜想是证明: $\aleph$和$\aleph_0$之间不存在其它基数.
+
+这一节的概念不多, 而且也不难理解, 但是在应用上却难度极大, 书中许多结论没有证明, 这里给出证明. 其中难度最大的是如何确定集合的势, 或者说如何构造对等关系.
+
+(1) 
+$$
+\begin{aligned}
+f(\bigcup_{\alpha \in I}{A_{\alpha}}) &= \bigcup_{\alpha \in I}{f(A_{\alpha})}, \\
+f(\bigcap_{\alpha \in I}{A_{\alpha}}) &\subset \bigcap_{\alpha \in I}{f(A_{\alpha})}.
+\end{aligned}
+$$.
+
+证明: $\forall y \in f(\bigcup\limits_{\alpha \in I}{A_{\alpha}})$, 则存在$x \in \bigcup\limits_{\alpha \in I}{A_{\alpha}}$, 使得$f(x) = y$. 于是存在某个$\alpha_0$, 使得$x \in A_{\alpha_0}$, $y = f(x)$, 即有$y \in f(A_{\alpha_0})$, 从而$y \in \bigcup\limits_{\alpha \in I}{f(A_{\alpha})}$, $f(\bigcup\limits_{\alpha \in I}{A_{\alpha}}) \subset \bigcup\limits_{\alpha \in I}{f(A_{\alpha})}$.
+
+反之, $\forall y \in \bigcup\limits_{\alpha \in I}{f(A_{\alpha})}$, 则存在$\alpha_0$, 使得$y \in f(A_{\alpha_0})$, 从而存在$x \in A_{\alpha_0}$, 使得$y = f(x)$, 也就是说, $x \in \bigcup\limits_{\alpha \in I}{A_{\alpha}}$, $y = f(x) \in f(\bigcup\limits_{\alpha \in I}{A_{\alpha}})$, 于是$\bigcup\limits_{\alpha \in I}{f(A_{\alpha})} \subset f(\bigcup\limits_{\alpha \in I}{A_{\alpha}})$, 第一个等式获证.
+
+关于第二个式子, $\forall y \in f(\bigcap\limits_{\alpha \in I}{A_{\alpha}})$, 于是存在$x \in \bigcap\limits_{\alpha \in I}{A_{\alpha}}$, 使得$f(x) = y$, 这意味着$\forall \alpha \in I$, $x \in A_{\alpha}$, $y \in f(A_{\alpha})$, 从而有$y \in \bigcap\limits_{\alpha \in I}{f(A_{\alpha})}$, 获证.
+
+必须注意后一个式子中的关系是"$\subset$", 而不是"$=$" 下面来看看为什么不是$=$, 要使$=$成立, 则应有$\forall y \in \bigcap\limits_{\alpha \in I}{f(A_{\alpha})}$, 由此$\forall \alpha \in I$, $y \in f(A_{\alpha})$, 意味着$\exists x_{\alpha} in A_{\alpha}$, 使得$y = f(x_{\alpha})$, 很遗憾, 在一般的映射中, $x_{\alpha}$不一定都相等, 从而就可能出现$y \notin f(\bigcap\limits_{\alpha \in I}{A_{\alpha}})$, 从这一个讨论中, 马上就可以构造一个例子: $f(0) = 0$, $f(1) = 1$, $f(2) = 0$, 考虑集合
+$$
+\begin{aligned}
+A & = \{0, 1\}, \\
+B &= \{1, 2\}.
+\end{aligned}
+$$
+则显然有$f(A \cap B) = \{f(1)\} = \{1\}$, $f(A) \cap f(B) = \{0, 1\}$, 于是$f(A \cap B) \neq f(A) \cap f(B)$.
+
+(2)记$f^{-1}(B) = \{x \in X: f(x) \in B, B \subset Y\}$, 则有下面的结论:
+
+(i) 若$B \subset A$, 则$f^{-1}(B) \subset f^{-1}(A)$;
+
+(ii) $f^{-1}(\bigcup\limits_{\alpha \in I}{B_{\alpha}}) = \bigcup\limits_{\alpha \in I}{f^{-1}(B_{\alpha})}$;
+
+(iii) $f^{-1}(\bigcap\limits_{\alpha \in I}{B_{\alpha}}) = \bigcap\limits_{\alpha \in I}{f^{-1}(B_{\alpha})}$;
+
+(iv) $f^{-1}(B^c) = (f^{-1}(B))^c$.
+
+证明: 注意比较这里的(ii), (iii)和前面的结论, 这里的两个式子全部都是等号($=$).
+
+(i) $\forall x \in f^{-1}(B)$, 则$f(x) \in B \subset A$, 于是$x \in f^{-1}(A)$.
+
+(ii) 由(i), $B_{\alpha} \subset \bigcup\limits_{\alpha \in I}{B_{\alpha}}$, 故$f^{-1}(B_{\alpha}) \subset f^{-1}(\bigcup\limits_{\alpha \in I}{B_{\alpha}})$. 于是$\bigcup\limits_{\alpha \in I}{f^{-1}(B_{\alpha})} \subset f^{-1}(\bigcup\limits_{\alpha \in I}{B_{\alpha}})$, 另一方面, $\forall x \in f^{-1}(\bigcup\limits_{\alpha \in I}{B_{\alpha}})$, 则$f(x) \in \bigcup\limits_{\alpha \in I}{B_{\alpha}}$, 不妨设$f(x) \in B_{\alpha_0}$, 则$x \in f^{-1}(B_{\alpha_0})$, 从而$x \in \bigcup\limits_{\alpha \in I}{f^{-1}(B_{\alpha})}$. 获证.
+
+(iii) 同样由(i), $\bigcap\limits_{\alpha \in I}{B_{\alpha}} \subset B_{\alpha}$, 则$f^{-1}(\bigcap\limits_{\alpha \in I}{B_{\alpha}}) \subset f^{-1}(B_{\alpha})$, 可以得到$f^{-1}(\bigcap\limits_{\alpha \in I}{B_{\alpha}}) \subset \bigcap\limits_{\alpha \in I}{f^{-1}(B_{\alpha})}$. 另一方面, $\forall x \in \bigcap\limits_{\alpha \in I}{f^{-1}(B_{\alpha})}$, 有$x \in f^{-1}(B_{\alpha})$, $\forall \alpha \in I$, 于是, $\forall \alpha$, $f(x) \in B_{\alpha}$, 即$f(x) \in \bigcap\limits_{\alpha \in I}{B_{\alpha}}$, $x \in f^{-1}(\bigcap\limits_{\alpha \in I}{B_{\alpha}})$. 获证.
+
+(iv) $\forall x \in f^{-1}(B^c)$, 则$f(x) \in B^c$ $\Rightarrow$ $x \notin f^{-1}(B)$, 即$x \in [f^{-1}(B)]^c$. 反过来, $\forall x \in [f^{-1}(B)]^c$, 则$x \notin f^{-1}(B)$ $\Rightarrow$ $f(x) \in B^c$, 即$x \in f^{-1}(B^c)$.
+
+对于集合关系来说, 文氏图是极其有用的辅助工具.
+
+(3) 令
+$$
+\chi_A(x) = \left\{
+\begin{aligned}
+1, \quad & x \in A \\
+0, \quad & x \notin A
+\end{aligned}
+\right.
+$$
+则有下列结论:
+
+(i) $\chi_{A \cup B}(x) = \chi_{A}(x) + \chi_{B}(x) - \chi_{A \cap B}(x)$;
+
+(ii) $\chi_{A \cap B}(x) = \chi_A(x) \cdot \chi_B(x)$;
+
+(iii) $\chi_{A \backslash B}(x) = \chi_A(x)[1 - \chi_B(x)]$;
+
+(iv) $\chi_{A \triangle B}(x) = |\chi_A(x) = \chi_B(x)|$.
+
+证明: 直接根据定义即可证明这些结论.
+
+(i) 若$x \in A \cap B$, 则有$x \in A$或$x \in B$, 如果$x \in A$, 则$\chi_A(x) = 1$, 如果同时有$x \in B$, $\chi_B(x) = 1$, 且$x \in A \cap B$, $\chi_{A \cap B}(x) = 1$, 于是$\chi_A(x) + \chi_B(x) - \chi_{A \cap B}(x) = 1$, 如果$x \notin B$, 则$\chi_B(x) = 0$, $\chi_{A \cap B}(x) = 0$, 同样成立等式. 而$A$和$B$是对称的, 因此$x \in A \cup B$时等式成立.
+
+当$x \notin A \cup B$时, $\chi_A(x) = \chi_B(x) = \chi_{A \cap B}(x) = 0$, 同样成立.
+
+(ii) 若$x \in A \cap B$, 则$x \in A$且$x \in B$, 有$\chi_A(x) \cdot \chi_B(x) = 1 \cdot 1 = 1$.
+
+若$x \notin A \cap B$, 则$\chi_A(x)$与$\chi_B(x)$中至少有一个等于$0$, 从而$\chi_A(x) \cdot \chi_B(x) = 0$.
+
+(iii) 若$x \in A \backslash B$, 则$x \in A$, $x \notin B$, 于是$\chi_A(x) = 1$, $\chi_B(x) = 0$, $\chi_A(x)[1 - \chi_B(x)] = 1$.
+
+若$x \notin A \backslash B$, 则有两种情形: (1) $x \notin A$, 显然有$\chi_A(x) = 0$, $\chi_A(x)[1 - \chi_B(x)] = 0$. (2) $x \in A$, 且$x \in B$, 则$\chi_A(x)[1 - \chi_B(x)] = 1\cdot[1-1] = 0$.
+
+(iv)若$x \in A \triangle B$, 则或者$x \in A$, 或者$x \in B$, 而且只能是其中之一, 由对称性, 不妨设$x \in A$, $x \notin B$, 则$\chi_A(x) = 1$, $\chi_B(x) = 0$, $|\chi_A(x) - \chi_B(x)| = 1$.
+
+若$x \notin A \triangle B$, 则有两种可能: (1)$x \in A$且$x \in B$; (2) $x \notin A$且$x \notin B$, 此时均有$\chi_A(x) = \chi_B(x)$.
+
+(4) 集合$A$与$B$之间的对等关系是一个等价关系, 即有: (i) $A \sim B$, (ii)若$A \sim B$, 则$B \sim A$, (iii)若$A \sim B$, $B \sim C$, 则$A \sim C$.
+
+证明: 注意到对等关系与一一对应之间的关系, 这实际上就是讨论一一对应.
+
+(i) $A \sim A$, 这可以通过恒等映射来完成: $f:A \rightarrow A$, $f(x) = x$, $\forall x \in A$.
+
+(ii) $A \sim B$, 存在一个一一映射$f: A \rightarrow B$, 其逆映射$f^{-1}:B \rightarrow A$也是一个一一映射, 从而$B \sim A$.
+
+(iii) 由$A \sim B$, $B \sim C$可知, 存在一一映射$f$, $g$, 使得$f: A \rightarrow B$, $g:B \rightarrow C$, 考虑映射$h = g \circ f: A \rightarrow C$, 下面证明$h$是一个一一映射, 也就是证明$h$既是满射又是单射.
+
+(a) 满射: $\forall z \in C$, $\exists y \in B$使$g(y) = z$, 对于$y \in B$, 存在$x \in A$, 使得$f(x) = y$, 于是$h(x) = z$.
+
+(b) 单射: $\forall x_1, x_2 \in A$, $x_1 \neq x_2$, 则$f(x_1) \neq f(x_2)$, 于是$g(f(x_1)) \neq g(f(x_2))$, 即$h(x_1) \neq h(x_2)$.
+
+(5) 要讨论集合的基数, 或者说集合之间的对应关系, 有极为重要的Cantor-Bernstein定理. 不过在证明这个定理之前, 先证明Banach的一个引理, 它涉及到集合在映射下的分解问题.
+
+若有$f: X \rightarrow Y$, $g: Y \rightarrow X$, 则存在分解$X = A \cup A^{\sim}$, $Y = B \cup B^{\sim}$, 其中$f(A) = B$, $g(B^{\sim}) = A^{\sim}$, $A \cap A^{\sim} = \emptyset$以及$B \cap B^{\sim} = \emptyset$.
+
+在证明之前先了解一下这个结论(下面部分内容是个人的一些推测过程, 原来是希望从中找出证明思路, 估计会比较混乱).
+
+设$x_0 \in A$, $y_0 \in B$, $y_0 = f(x_0)$, 设$x_1 = g(y_0)$, $y_1 = f(x_1)$, $\cdots$, $x_n = g(y_{n-1})$, $y_n = f(x_n)$, $\cdots$
+
+$x_n \in A$, $y_n \in B$, 如果$x_n \notin A$, 则$x_n \in A^{\sim}$, 而$g(B^{\sim}) = A^{\sim}$, 即存在$y' \in B^{\sim}$, 使得$x_n = g(y')$, 又$x_n = g(y_{n-1})$, 如果$y_{n-1} \in B$, 则$\exists x'$使得$f(x') = y_{n-1}$.
+
+设$x \in A$, $y \in B$, $y = f(x)$, 设$x' = g(y)$. 如果$x' \in A^{\sim}$, 则有$y'$使$x' = g(y')$, 于是$y \neq y'$, 即$g^{-1}(x')$至少有两个元素, 由$x' \in A^{\sim}$是否有$f(x') \in B^{\sim}$呢? 如果$x' \in A$, 则$x = x'$或$x \neq x'$.
+
+$X = A \cup g(B^{\sim})$, $Y = f(A) \cup B^{\sim}$.
+
+应该考虑$A$中元素有什么特性. $x \in A$, $f(x) \in B$, $g(f(x)) = x'$, 且$x \neq x'$的情形下进行讨论. 实际上, 对于$y = f(x)$, $x = g(y)$这类点可以任意归类. 所以只考虑$x \neq x'$的时候. 下面应考虑$x'$如何归类.
+
+如果把$x'$归入$A^{\sim}$, 则存在$y' \in B^{\sim}$, 使$x' = g(y')$, 必有$y \neq y'$.
+
+如果把$x'$归入$A$, 则考虑$f(x')$, 重复讨论.
+
+这个时候对$y' = f(x'')$, $x''$必然不属于$A$, 即$x'' \in A^{\sim}$.
+
+注: 当时笔记中对$X = \{1, 2, 3\}$和$Y = \{1, 2, 3\}$, 做了一些摸索, 比较乱, 这里省略.
+
+设$x \in A$, 令$y = f(x) \in B$, 设$x_1 = g(y)$, 我们把这样的$x_1$拉入$A$, 则可以继续$y_1 = f(x_1)$, $\cdots$, $x_n = g(y_{n-1})$, $y_n = f(x_n)$, 如此, 只要在这个序列中的$x_i$我们都属于$A$, 接下来看看$X$中剩下来的都是哪些元素? 如果这一部分成为$A$, $B = f(A)$, 对于$B^{\sim}$来说, 是无法满足$g(B^{\sim}) = A^{\sim}$. 或者说是不一定, 其中完全有可能有$x$, 使$x \notin g(B^{\sim})$, 对于这样的$x$, 我们继续扩展$A$, 扩展$A$的同时, 也在扩展$B$, 从而缩小$B^{\sim}$, 必须表明这个过程是可以穷尽的, 无穷递归.
+
+注意$x \notin g(B^{\sim})$, 说明$x \in g(B)$, 或者说$x \in g(f(A))$.
+
+我们这样来考虑集合$E$, $E \cap g(Y \backslash f(E)) = \emptyset$.
+
+(1)首先这样的集合是存在的. 上面构造的$x_i$组成的集合就是.
+
+(2)根据前面的讨论, 是要一直从$x$吸引元素, 那么最好的办法是考虑所有具有这种性质的元素的集合的并集. 令$A = \bigcup{A}$.
+
+下面证明$A$是满足$E \cap g(Y \backslash f(E)) = \emptyset$中的最大的集合. 显然只需要证明$A \cap (x \backslash g(f(A))) = \emptyset$即可. $\forall x \in A$, 则$f(x) \in f(A)\Rightarrow g(f(x))$, 存在某个$E_0$, 使得$x_0 \in E_0$, 即$x \notin X \backslash g(f(E_0))$, 从而$x \in g(f(E_0))$, 注意到$E \subset A$, 从而$f(E) \subset f(A)$, 于是$g(f(E)) \subset g(f(A))$, 于是$x \in g(f(A))$, $x \notin X \backslash g(f(A))$, 从而$A \cap [X \backslash g(f(A))] = \emptyset$.
+
+(3)令$B = f(A)$, $B^{\sim} = Y - B$, $A^{\sim} = X - A$, 下面需要证明$g(B^{\sim}) = A^{\sim}$.
+
+$\forall x \in A^{\sim}$, 则$x \notin A$, $f(x)$是否属于$B^{\sim}$呢? $A \cap [X \backslash g(f(A))] = \emptyset$, $A \cap [X \backslash g(B)] = \emptyset$.
+
+$\forall y \in B^{\sim}$, 则$g(y) \notin g(B)$, 于是$y \in X \backslash g(B)$, 又$A \cap (X \backslash g(B)) = \emptyset$, 从而$g(y) \notin A$, $g(y) \in A^{\sim}$ 于是$g(B^{\sim}) \subset A^{\sim}$.
+
+$x \in A^{\sim}$, $x \notin A$, 是否必有$x \in X \backslash g(B)$, $x \notin g(B)$, $x \in g(B^{\sim})$, 从而$A^{\sim} \subset g(B^{\sim})$, 于是$A^{\sim} = g(B^{\sim})$.
+
+$x \notin g(B^{\sim})$, 即$x \notin g(Y \backslash f(A))$.
+
+设$E$满足$E \cap g(Y \backslash f(X)) = \emptyset$, 令$A = \bigcup\{E: E \cap g(Y \backslash f(E)) = \emptyset\}$, 笔记中$g(Y \backslash f(E))$的$E$是$X$, 我觉得应该是$E$.
+
+$A \cap g(Y \backslash f(A)) = \emptyset\}$.
+
+$\forall x \in A$, 则$\exists E_0$, 使得$x \in E_0$, $x \notin g(Y \backslash f(E_0))$, 从而$x \in g(f(E_0))$, 而$E_0 \subset A$ $\Rightarrow$ $g(f(E_0)) \subset g(f(A))$ $\Rightarrow$ $x \in g(f(A))$, $A \cap g(Y \backslash f(A)) = \emptyset$.
+
+可惜终究没有自己想出来, 引用书中的证明:
+
+称$E$为隔离集, 如果$E$满足$E \cap g(Y \backslash f(E)) = \emptyset$. 并记隔离集之全体为$\Gamma$, 令$A = \bigcup\limits_{E \in \Gamma}{E}$, 应有$A \in \Gamma$, 证明如下:
+
+$\forall E \in \Gamma$, $E \subset A$, 有$E \cap g(Y \backslash f(E)) = \emptyset$, 而$f(E) \subset f(A)$, $Y \backslash f(E) \supset Y \backslash f(A)$ $\Rightarrow$ $g(Y \backslash f(E)) \supset g(Y \backslash f(A))$ $\Rightarrow$ $E \cap g(Y \backslash f(A)) = \emptyset$. $\forall E \in \Gamma$, 于是存在$(\bigcup E) \cap g(Y \backslash f(A)) = \emptyset$, 即$A \cap g(Y \backslash f(A)) = \emptyset$. 说明$A$是$\Gamma$中的极大值.
+
+令$f(A) = B$, $Y \backslash B = B^{\sim}$, 及$g(B^{\sim}) = A^{\sim}$, 则需要证明$A \cup A^{\sim} = X$.
+
+首先$A \cap A^{\sim} = \emptyset$, 可以从$A \cap g(Y \backslash f(A)) = \emptyset$得出, 因为$A^{\sim} = g(Y \backslash f(A))$.
+
+如果$A \cup A^{\sim} \neq X$, 那么存在$x_0$, $x_0 \in X$, 但$x_0 \notin A \cup A^{\sim}$, 设$A_0 = A \cup \{x_0\}$, 则$A \subset A_0$, 下面证明$A_0 \in \Gamma$, $B = f(A) \subset f(A_0)$ $\Rightarrow$ $B^{\sim} \supset Y \backslash f(A_0)$ $\Rightarrow$ $A^{\sim} \supset g(Y \backslash f(A_0))$, 而$A \cap A^{\sim} = \emptyset$, 于是$A \cap g(Y \backslash f(A_0)) = \emptyset$, 如果$x_0 \notin g(Y \backslash f(A_0))$, 那么$A_0 \cap g(Y \backslash f(A_0)) = \emptyset$. $x_0$显然不属于$g(Y \backslash f(A_0)) \subset A^{\sim}$. 否则$x_0 \in A^{\sim}$, 与$x_0 \notin A \cup A^{\sim}$矛盾. 可这时又有另一个矛盾, $A_0 \in \Gamma$, 与$A_0 \supset A$矛盾, 因为$A$是极大的.
+
+这里的证明使用了良序原理: 如果$S$是非空的良序集合, 则$S$中存在一个极大元.
+
+对于集合来说, 交集和并集都可以用来定义良序关系. 对于这道题目, $A$就是$\Gamma$中的极大元, 然后说明如果$A \cup A^{\sim} \neq X$, 那么还有一个比$A$更大的$A$, 引出矛盾.
+
+这里关键是$E$的构造, 从事后诸葛来看, 从原题本身有一些迹象表明$E$的构造.
+
+$f(A) = B$, $g(B^{\sim}) = A^{\sim}$, $A \cap A^{\sim} = \emptyset$, $B \cap B^{\sim} = \emptyset$.
+
+如果先构造$A$, 则应有$A \cap A^{\sim} = \emptyset$ $\Rightarrow$ $A \cap g(B^{\sim}) = \emptyset$ $\Rightarrow$ $A \cap g(Y \backslash B) = \emptyset$ $\Rightarrow$ $A \cap g(Y \backslash f(A)) = \emptyset$. 这时只与$A$有关了.
+
+这个思路可能还可以应用于其它地方.
+
+从这个引理出发, 可以证明Cantor-Bernstein定理: 若集合$A$与$Y$的某个真子集对等, $Y$与$X$的某个真子集对等, 则$X = Y$.
+
+设$f$是$X$与$Y$的某个真子集的一一映射, $g$是$Y$与$X$的某个真子集的一一映射. 根据引理, $\exists A, A^{\sim}, B, B^{\sim}$, 使得$f(A) = B$, $g(B^{\sim}) = A^{\sim}$, $A \cup A^{\sim} = X$, $A \cap A^{\sim} = \emptyset$, $B \cup B^{\sim} = Y$, $B \cap B^{\sim} = \emptyset$, 注意到$g$是$Y$到$X$的子集的一一映射, 从而也是$B^{\sim}$到$A^{\sim}$的一一映射, 存在$g^{-1}$.
+$$
+F(x) = \left\{
+\begin{aligned}
+f(x) &\quad x \in A \\
+g^{-1}(x) &\quad x \in A^{\sim}
+\end{aligned}
+\right.
+$$
+这个证明还提供了构造一一映射的方法.
+
+特别的, $C \subset A \subset B$, $B \sim C$ $\Rightarrow$ $A \sim C$.
+
+(6) 凡是和自然数集对等的集合称为可列集, 其基数为$\aleph_0$. 有结论: 任一无限集$X$必包含一个可列子集.
+
+证明极为简单, 从$X$中取出$x_1$, $\cdots$, $x_{n-1}$, 在$X - \{x_1, \cdots, x_{n-1}\}$中取出$x_n$即可. 这说明无限集的最小基数为$\aleph_0$.
+
+若$A_n(n=1, 2, \cdots)$为可列集, 则并集$A = \bigcup\limits_{n=1}^{\infty}{A_n}$也是可列集. ($\aleph_0 \times \aleph_0 = \aleph_0$)
+
+这里给出一个计数方法:
+$$
+\left.
+\begin{aligned}
+A_1 &= \{a_{11}, a_{12}, \cdots, a_{1j}, \cdots \} \\
+A_2 &= \{a_{21}, a_{22}, \cdots, a_{2j}, \cdots \} \\
+A_3 &= \{a_{31}, a_{32}, \cdots, a_{3j}, \cdots \} \\
+&\cdots
+\end{aligned}
+\right\}
+A = \{a_{11}, a_{21}, a_{12}, a_{31}, a_{22}, a_{13}, \cdots, a_{ij}, \cdots\}
+$$
+当$i + j > 2$时, $a_{ij}$排在第$n$位, $n = j + \sum\limits_{k=1}^{i+j-2}{k}$.
+
+由此可知有理数集是可列的, 而它在实数集上是稠密的.
+
+设$A$是无限集且其基数为$\alpha$, 若$B$是可数集(有限的或可列的), 则$A \cup B$的基数仍是$\alpha$. 
+
+设$A \cap B = \emptyset$, 在$A$中存在$A_1$与$B$对等, $A_1 \subset A$, $A_1 = \{a_1, a_2, \cdots \}$, $B = \{b_1, b_2, \cdots \}$, 设$A = A_1 \cup A_2$, 下面对$B$为可列集进行讨论, 为$A$与$A \cup B$建立一一映射(有相同的基数).
+$$
+a_1 = b_1, a_2 = a_1, a_3 = b_2, a_4 = a_2, \cdots
+$$
+即$a_{2i} = a_i$, $a_{2i-1} = b_i$, 当$a \in A_2$时, 使用恒等映射. 这就构造了一个一一映射.
+
+对于$B$为有限集情形, 注意$\overline{A \cup B} \ge \overline{A}$, 而$\overline{A \cup B}$又小于或等于$B$为可列集情形, 即为$\alpha$, 因此$A \cup B = \alpha$. 或者也可以直接构造映射如下: 当$B$为有限集时, 令$B = \{b_1, b_2, \cdots, b_n\}$.
+
+仍然从$A$中取出一个可列集$A_1 = \{a_1, a_2, \cdots \}$, 这样来构造一一映射:
+$$
+a_1 = b_1, \cdots, a_n = b_n, a_{n+1} = a_1, \cdots,
+$$
+其余元素采取恒等映射.
+
+下面刻画无限与有限的本质区别: 集合$A$为无限集的充分且必要条件为: $A$与其真子集对等.
+
+有了上面的结论, 这个结论的证明比较简单, 由于有限集不可能与其真子集对等. 故充分性成立. 对于必要性, 只要从$A$中取出一个有限集$B$, 则$A \sim A \backslash B$.
+
+(7) 自然数集的基数为$\aleph_0$, 那么实数集的基数呢? 实数集是不可数的. 由于$\tan(x): (-\frac{\pi}{2}, \frac{\pi}{2}) \rightarrow R^1$, 而$(0, 1) \leftrightarrow (-\frac{\pi}{2}, \frac{\pi}{2})$, 这几个对等关系, 我们只需要考虑$(0, 1)$或者$[0, 1]$. 而对于$[0, 1]$上的实数, 可以采用二进制表示法: $x = \sum\limits_{n=1}^{+\infty}{\frac{a_n}{2^n}}$, 再把$a_n = 0$的项舍去, 则$x = \sum\limits_{i=1}^{+\infty}{\frac{1}{2^{n_i}}}$, 这里$n_i$是严格上升的自然数序列. 令$k_1 = n$, $k_i =  n_i - n_{i-1}$, $i=1, 2, \cdots$, 则$k_i$是自然数序列, 它是不可列的.
+
+反证: 如果自然数序列可列, 则设为
+$$
+\begin{aligned}
+k_{1}^{(1)}, k_2^{(1)}, \cdots, k_i^{(1)}, \cdots \\
+k_{1}^{(2)}, k_2^{(2)}, \cdots, k_i^{(2)}, \cdots \\
+\cdots \\
+k_{1}^{(i)}, k_2^{(i)}, \cdots, k_i^{(i)}, \cdots \\
+\cdots
+\end{aligned}
+$$
+构造序列
+$$
+k_1^{(1)} + 1, k_2^{(2)} + 1, \cdots, k_i^{(i)} + 1, \cdots
+$$
+它不在这个排列之中, 矛盾, 说明它是不可数的.
+
+这同时给出了结论, 用$l^{(n)}$表示自然数序列, 则全体自然数序列构成的集合不可列. 这个证明中关键有: 首先是在自然数序列和$(0, 1)$之间建立一一对应; 其次是构造这个新的序列. 另一种方法直接构造. 设$(0, 1)$中数排列如下:
+$$
+\begin{aligned}
+&0.a_{11}a_{12}\cdots a_{1n}\cdots \\
+&0.a_{21}a_{22}\cdots a_{2n}\cdots \\
+&\cdots \\
+&0.a_{n1}a_{n2}\cdots a_{nn}\cdots \\
+&\cdots
+\end{aligned}
+$$
+令$l = 0.b_1b_2 \cdots b_n \cdots$, 这里
+$$
+b_i = 
+\begin{cases}
+1, &a_{ii} \neq 1 \\
+2, &a_{ii} = 1
+\end{cases}
+$$
+
+$R^1$的基数为连续基数, 记为$c$, 有些书记为$\aleph$. 对此有如下结论:
+
+设有集合列$\{A_k\}$, 若每个$A_k$的基数都是连续基数, 则其并集$\bigcup\limits_{1}^{\infty}{A_k}$的基数是连续基数.
+
+证明使用了: $A_k \sim [k, k+1)$, 则$\bigcup\limits_{1}^{\infty}{A_k} \sim [1, \infty) \sim R^1$
+
+$R^1$的基数比自然数集的基数大, 那么是否存在最大的基数呢? 下面的结论表明: 不存在最大基数.
+
+若$A$是非空集合, 则$A$与其幂集$\Gamma(A)$不对等.
+
+这个证明的方法也是反证法, 证明比较巧妙, 实际上涉及到了罗素悖论.
+
+设$A$与$\Gamma(A)$之间存在一一对应$f$, 那么对于集合$F = \{x | x \notin f(x) \}$就会引出矛盾:
+
+根据一一对应, 存在$y \in A$, 使得$f(y) = F$, 对于$y$会有矛盾.
+
+(1) 若$y \in F$, 则$y \notin f(y)$, 即$y \notin F$.
+
+(2) 若$y \notin F$, 则$y \in f(y)$, 即$y \in F$.
+
+%\subsubsection{基数之间的运算}
+(8) 基数之间的运算.
+对于基数$\alpha_1$和$\alpha_2$, 定义$\alpha_1 + \alpha_2$, $\alpha_1 \cdots \alpha_2$, $\alpha_1^{\alpha_2}$为如下集合的基数: 设$\bar{A} = \alpha_1$, $\bar{B} = \alpha_2$, $A \cap B = \emptyset$, 则$\alpha_1 + \alpha_2$为$A \cup B$的基数, $\alpha_1\cdot\alpha_2$为$A \times B$的基数, $\alpha_1^{\alpha_2}$为$B$到$A$的一切映射所构成的集合的基数. 对于本节的例子, 许多例子具有一定的难度, 而且极有价值.
+
+\begin{example}
+$N \times N \sim N$之间的一一映射$f$: $f(i, j) = 2^{i-1}(2j-1)$;
+
+$(-1, 1) \sim R^1$之间的一一映射$f$: $f(x) = \frac{x}{1 - x^2}$, 还有其他的, 例如$f(x) = \tan{\frac{\pi}{2}x}$.
+\end{example}
+
+\begin{example}
+$R^1$中互不相交的开区间族是可数集, 这个结论基于这样一个事实: 有理数集是可列的, 并且有理数又是稠密的. $R^1$上单调函数的不连续点为可数集, 这个结论可以从上一个结论推出. 问题在于构造这个互不相交的开区间集.
+
+设$x_0$为$f(x)$的不连续点, 那么$x_0$有哪些性质呢? 这需要了解不连续点的各种类型: (1) 左右极限都存在, 或者不相等, 或者虽然相等, 但是不等于$x_0$在此处的值.  (2)左右极限之一或者两者都不存在. 对于本题来说, 当$f(x)$是单调函数时, 根据有界集合必然存在上下确界, 那么$f(x)$的左右极限都是存在的, 而且必然有$\lim\limits_{x \rightarrow x_0-}{f(x)} < \lim\limits_{x \rightarrow x_0+}{f(x)}$, 这样就有一个开区间$(\lim\limits_{x \rightarrow x_0-}{f(x)}, \lim\limits_{x \rightarrow x_0+}{f(x)})$. 有了开区间, 还应证明对于不同的$x_1$, $x_2$, 对应的开区间不会相交, 即$(f(x_1-0), f(x_1+0)) \cap (f(x_2-0), f(x_2+0)) = \emptyset$, 这是明显的. 不妨设$x_1 < x_2$, 取出中点$\frac{x_1 + x_2}{2}$, 则应有$f(x_1 + 0) < f(\frac{x_1 + x_2}{2}) < f(x_2-0)$.
+\end{example}
+
+\begin{example}
+若$f(x)$是$R^1$上的实值函数, 则集合$\{x \in R^1: f$在$x$点不连续, 但右极限存在(有限)$\}$是可列集.
+
+这道题目应该和上一题有类似的地方, 这些问题中的概念都涉及到了微积分的基本概念.
+
+自己没有想出来, 下面的证明来自书本.
+
+令$S = \{x \in R^1: f(x+0)$存在(有限)$\}$.
+
+首先构造集合
+$$E_n = \{x \in R^1: \exists \delta > 0, \forall x', x'' \in (x - \delta, x + \delta), |f(x') - f(x'')| < \frac{1}{n} \}$$
+那么$\cap{E_n}$是$f(x)$的连续点集, 从而考虑$S \backslash E_n$即可.
+
+其次, 考虑$f(x+0)$的定义, $\forall n$, $\exists \delta > 0$, $|f(x') - f(x+0)| < \frac{1}{2n}$, $x' \in (x, x + \delta)$, 也就是说$x'$, $x'' \in (x, x+ \delta)$时, 有$|f(x') - f(x'')| < \frac{1}{n}$.
+
+故$(x, x  + \delta) \subset E_n$, 这就有一个对应关系: $S \backslash E_n$中每个点$x$是某个开区间$I_x = (x, x + \delta)$的左端点, 且$I_x$与$S \backslash E_n$不相交. 当$x_1, x_2 \in S \backslash E_n$, 且$x_1 \neq x_2$时, 有$I_{x_1} \cap I_{x_2} = \emptyset$, 因为若$I_{x_1} \cap I_{x_2} \neq \emptyset$, 则不妨设$x_1 < x_2$, 此时必有$x_2 \in I_{x_1}$, 不可能. 又区间族$\{I_x : x \in S \backslash E_n\}$是可数的. 故$S \backslash E_n$是可数的.
+
+当时我自己考虑到的只有下面这点, $f(x+0)$的定义: $\exists \delta > 0$, 当$x' \in (x, x + \delta)$时, $|f(x') - f(x)| < \epsilon$, 这样有一个小区间$(x, x + \delta)$, 可是进一步却不知道如何应用了.
+\end{example}
+
+\begin{example}
+设$\bar{A} = \alpha$, 则$\overline{\Gamma(A)} = 2^{\alpha}$.
+
+首先注意定义, $2^{\alpha}$是$A$到$\{0, 1\}$的所有映射的集合的基, 这个集合记为$\{0, 1\}^{A}$, 实际上就是$A$中集合的特征函数, 对于每一个$E \subset A$, 就对应了一个特征函数$\chi_E$, 反之亦然.
+
+$R^1$的基数$\aleph = 2^{\aleph_0}$.
+
+注意$2^{\aleph_0}$是$\{0, 1\}^{\aleph_0}$的基数. 也就是需要在$\{0, 1\}^{\aleph_0}$与$(0, 1]$之间建立对应关系. 这与$[0, 1]$中数的二进制表示有关, 设$\psi$是$N$到$\{0, 1\}$的一个映射, $\psi(n) = 0$或者$1$, $n=1,2, \cdots$, 则$\psi(n) \rightarrow 0.\psi(1)\psi(2)\cdots\psi(n)\cdots$, 刚好是$(0, 1]$间某个数的二进制表示. 反过来也成立. 当然这个映射可能不是单射, 那么可以考虑数的三进制表示.
+\end{example}
+
+\begin{example}
+设$f(x)$为$(a, b)$上实值函数, 则集合$\{x \in (a, b):$右导数$f_+'(x)$以及左导数$f_-'(x)$存在而不相等$\}$为可数集.
+
+首先需要把集合分解为两个集合$A = \{ x| f_+'(x) > f_-'(x)\}$和$B = \{x|f_+'(x) < f_-'(x)\}$.
+
+下面需要了解左导数和右导数的含义: $f(x)$在$x_0$点处的导数为
+$$
+f'(x_0) = \lim_{x \rightarrow x_0}\frac{f(x) - f(x_0)}{x - x_0} = \lim_{\Delta{x} \rightarrow 0}\frac{f(x_0 + \Delta{x}) - f(x_0)}{\Delta{x}}.
+$$
+左导数就是这个极限的左极限: $f_-'(x_0) = \lim\limits_{\substack{\Delta{x} \rightarrow 0 \\ \Delta{x} < 0}}\frac{f(x_0 + \Delta{x}) - f(x_0)}{\Delta{x}}$, 右导数$f_+'(x_0) = \lim\limits_{\substack{\Delta{x} \rightarrow 0 \\ \Delta{x} > 0}}\frac{f(x_0 + \Delta{x}) - f(x_0)}{\Delta{x}}$.
+
+$\forall \epsilon > 0$, $\exists \delta_1$ 当$\Delta{x} \in (-\delta_1, 0)$时, $|\frac{f(x_0 + \Delta{x}) - f(x_0)}{\Delta{x}} - f_-'| < \epsilon$.
+
+$\exists \delta_2$ 当$\Delta{x} \in (0, \delta_2)$时, $|\frac{f(x_0 + \Delta{x}) - f(x_0)}{\Delta{x}} - f_+'| < \epsilon$.
+
+(i) 对于左导数和右导数存在的点$x$, $f(x)$在$x$点必然是连续的.
+
+(ii) 能否找出一个开区间$I_x$包住$x$, 使$I_x$中没有任何点满足这个条件.
+
+假设对任意的开区间$I_x$, 存在一点$y$异于$x$满足条件
+$$
+f_+'(y) = \lim_{\substack{\Delta{y} \rightarrow 0 \\ \Delta{y} > 0}}{\frac{f(y + \Delta{y}) - f(y)}{\Delta{y}}}, \quad f_-'(y) = \lim_{\substack{\Delta{y} \rightarrow 0 \\ \Delta{y} < 0}}{\frac{f(y + \Delta{y}) - f(y)}{\Delta{y}}}
+$$
+
+A) 
+\begin{gather*}
+|\frac{f(y + \Delta{y}) - f(y)}{\Delta{y}} - f_+'| < \epsilon, \\
+-\epsilon < \frac{f(y + \Delta{y}) - f(y)}{\Delta{y}} - f_+' < \epsilon, \\
+-\epsilon(\Delta{y}) < f(y + \Delta{y}) - f(y) - f_+'\Delta{y} < \epsilon(\Delta{y}), \Delta{y} > 0. \\
+(f_+'-\epsilon)\Delta{y} < f(y + \Delta{y}) - f(y)< (f_+' + \epsilon)\Delta{y}.
+\end{gather*}
+
+B)
+\begin{gather*}
+|\frac{f(y + \Delta{y}) - f(y)}{\Delta{y}} - f_-'| < \epsilon,\\
+-\epsilon < \frac{f(y + \Delta{y}) - f(y)}{\Delta{y}} - f_-' < \epsilon,\\
+\epsilon(\Delta{y}) < f(y + \Delta{y}) - f(y) - f_-'\Delta{y} < -\epsilon(\Delta{y}),\\
+(f_-'+\epsilon)\Delta{y} < f(y + \Delta{y}) - f(y)< (f_-' - \epsilon)\Delta{y}.
+\end{gather*}
+
+对于上述讨论, $f_+' < r_x < f_-'$, 则应有(注意$\epsilon$的任意性):
+
+$$f(y + \Delta{y}) < r\Delta{y}$$ 
+
+$\Delta{y}$属于某个区间.
+
+注意这个$r$是关键, 虽然$r$可以是$(f_+', f_-')$之间的任一值.
+
+下面考虑$y$, $x$满足条件的, 则有$\Delta{y} = y - x$, $y > x$, 则
+$$
+f(y + \Delta{y}) - f(y) < r\Delta{y} \quad f(x + \Delta{y}) - f(x) < r\Delta{y},
+$$
+$$
+f(x) - f(y) < r(x - y) \quad f(y) - f(x) < r(y - x)
+$$
+矛盾.
+
+下面阐述这个构造过程: 证明集合$A$是可列集.
+
+(i) 首先从$f_+'(x)$与$f_-'(x)$的定义, 可知对于每一个$x$, 存在一个小区间$I_x$包围$x$, 使$\forall y \in I_x$有
+$$
+f(y) - f(x) < r(y - x), 
+$$
+注意$r$与$x$有关.
+
+(ii) 如果只是有这样的$I_x$存在, 还不足以确定可数性, 这里关键是其中还有一个$r_x$, 也就是在这个小区间中不可能有另外一个点$y$, 从而这样的$I_x$是不相交的.
+
+书中的构造是这样的:
+
+从$f_+'$和$f_-'$推出存在$s_x < y < t_x$, 使得$f(y) - f(x) < r_x(y - x)$, 令$x$与三维空间中的有理点$(r_x, s_x, t_x)$建立对应关系, 实际上, $(s_x, t_x)$可以认为是我的$I_x$, 注意我只选择有理点.
+\end{example}
+
+\begin{example}
+定义在$(a, b)$上的凸函数在至多除一可数集外的点上都可微.
+
+这个例子涉及到了凸函数的定义.
+
+$(a, b)$上的凸函数是指对$(a, b)$中的任意两点$x_1$, $x_2$, $x_1 < x_2$, 均有$f(x) \le \frac{(x_2 - x)f(x_1) + (x - x_1)f(x_2)}{x_2 - x_1}$, $x_1 < x < x_2$.
+
+$(x, y)$在过点$(x_1, f(x_1))$和点$(x_2, f(x_2))$的直线上:
+\begin{gather*}
+\frac{y - f(x_1)}{x - x_1} = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \\
+y = \frac{(x - x_1)(f(x_2) - f(x_1))}{x_2 - x_1} + f(x_1) \\
+y = \frac{(x - x_1)f(x_2) + (x_2 - x)f(x_1)}{x_2 - x_1}
+\end{gather*}
+把上述式子变换一下:
+\begin{gather*}
+(x_2 - x_1)f(x) \le (x_2 - x)f(x_1) + (x - x_1)f(x_2) \\
+(x_2 - x + x - x_1)f(x) \le (x_2 - x)f(x_1) + (x - x_1)f(x_2) \\
+(x_2 - x)(f(x) - f(x_1)) \le (x - x_1)(f(x_2) - f(x)) \\
+\frac{f(x) - f(x_1)}{x - x_1} \le \frac{f(x_2) - f(x)}{x_2 - x}
+\end{gather*}
+注意这是对任一的$x_1 < x < x_2$成立的, 固定$x_2$, 令$x_1 \rightarrow x$, 那么此时可有$f(x)$的左导数是存在的, 且为有限值, 另一方面, 固定$x_1$, 令$x_2 \rightarrow x$, 则$f(x)$的右导数存在, 那么$f(x)$只有在左右导数不相等的点不可微, 从而由前一个例子可知原题结论成立. 
+
+上面左右导数的存在利用了单调有界原则. 对于任一点$x$, $x < x' < x_2$, 则$\frac{f(x') - f(x)}{x'  - x} < \frac{f(x_2) - f(x)}{x_2 - x}$.
+
+A) 这说明$g(x') = \frac{f(x') - f(x)}{x' - x}$是一个递增函数且有界, 从而存在极限.
+
+B) $f_+'(x) = \lim\limits_{x' \rightarrow x}{g(x')}$存在.
+
+类似的可知右导数存在.
+\end{example}
+
+\begin{example}
+区间$[a, b]$上的连续函数全体$C[a, b]$的基数是$2^{\aleph_0}$.
+
+(1) $[a, b]$上的常数函数与$[a, b]$对等, 说明$C[a,b]$的势大于等于$2^{\aleph_0}$.
+
+(2) 对于每个$\varphi \in C[a, b]$: 平面有理点集$Q \times Q$.
+$$
+f(\varphi) = \{ (s, t) : s \in [a, b], t \le \varphi(s) \} \subset Q \times Q.
+$$
+下面证明当$\varphi_1 \neq \varphi_2$时, $f(\varphi_1) \neq f(\varphi_2)$. 注意, 若$f(\varphi_1) = f(\varphi_2)$, 则
+$$
+\forall t, t \le \varphi_1(s), t \le \varphi_2(s)
+$$
+其中$t \in f(\varphi_1) = f(\varphi_2)$, 此时必须有$\varphi_1 = \varphi_2$, 否则若$\varphi_1(s) < \varphi_2(s)$, 则存在有理数$t'$, $\varphi_1(s) < t' < \varphi_2(s)$, 矛盾.
+
+这个映射说明$C[a, b]$与$\Gamma(Q \times Q)$的一个子集可以建立一一对应, 而$\Gamma(Q \times Q)$的基数为$2^{\aleph_0}$. 故$C[a, b]$的基数小于等于$2^{\aleph_0}$. 获证.
+
+这里实际上是用到了有理数的稠密性和函数的连续性. 或者说两个连续函数如果在有理点相等, 它们是相等的.
+\end{example}
+
+注解: 从这几个例子看来, 关于基数和可列性问题, 主要有这样的思路:
+
+(1) 考虑一个一个列出集合中元素, 或者证明无法列出(通常在列出的元素之外构造一个不在其中的元素).
+
+(2) 使用Cantor-Bernstein定理, 建立两个单射, $A$到$B$的子集, $B$到$A$的子集.
+
+(3) 对于可列集, 考虑和有理数集建立一一对应, 也可以考虑不相交的开区间集.
+
+(4) 应用其他定理, 例如可列个可列集的并集还是可列的.
+
+(5) 对于$2^{\aleph_0}$, 考虑集合之间的映射.
+
+$$
+f(x) = 
+\begin{cases}
+-x^2, & \text{if} \\
+\alpha + x, & \text{if} \\
+x^2, &\text{other}
+\end{cases}
+$$
+
+\section{$n$维欧氏空间$R^n$}
+
+$R^n$空间从两方面定义: 代数的和拓扑的.
+
+代数: 是一个向量空间
+
+拓扑: 使用距离空间, 通过定义每个向量的模引入距离.
+
+注意分析中极限, 连续等概念和拓扑中的开集, 闭集等概念相关. 下面讨论的都是拓扑性质, 至于$R^n$中的代数性质, 见线性代数.
+
+在$n$维欧氏空间中, 取向量$x$的模为$|x| = (\xi_1^2 + \cdots + \xi_n^2)^{1/2}$.
+
+概念1: 点集$E$的直径 $\text{diam}(E) = \sup\{ |x - y|: x, y \in E \}$, 如$\text{diam}(E) < \infty$, 称$E$为有界集.
+
+概念2: 开球: $\{ x \in R^n : |x - x_0| < \delta\}$; 闭球: $\{ x \in R^n : |x - x_0| \le \delta \}$; 球面: $\{ x \in R^n : |x - x_0| = \delta \}$.
+
+概念3: 开矩体: $I = (a_1, b_1) \times \cdots \times (a_n, b_n)$, 体积$|I| = \prod\limits_{i=1}^{n}{(b_i - a_i)}$. $\diam(I) = [\sum{(b_i - a_i)^2}]^{1/2}$.
+
+概念4: 收敛. 序列$x_k \in R^n$, 存在$x \in R^n$, $\lim|x_k - x| = 0$, 则称$x_k$收敛于$x$.
+
+概念5: 极限点. $E \subset R^n$, $x \in R^n$, 若存在互异点列$x_k \in E$, 使得$\lim|x_k - x| = 0$, 则称$x$为$E$的极限点, $E$的极限点的全体记为$E'$, 称为$E$的导集.
+
+与此相对应的是孤立点: 点$x \in E$, 若不是$E$的极限点, 则称之为$E$的孤立点, 即$\exists \delta > 0$, $(B(x, \delta) \backslash \{x\}) \cap E = \emptyset$.
+
+下面应该了解这些概念的更深刻的关系:
+
+(1) Cauchy-Schwarz不等式, $x = (\xi_1, \xi_2, \cdots, \xi_n)$, $y = (\eta_1, \eta_2, \cdots, \eta_n)$, 则有
+\[
+(\xi_1\eta_1 + \xi_2\eta_2 + \cdots + \xi_n\eta_n) \le (\xi_1^2 + \xi_2^2 + \cdots + \xi_n^2)(\eta_1^2 + \eta_2^2 + \cdots + \eta_n^2)
+\]
+证明可以考虑二次方程: $(\xi_1x + \eta_1)^2 + (\xi_2x + \eta_2)^2 + \cdots + (\xi_nx + \eta_n)^2 = 0$.
+
+(2)若$E \subset R^n$, 则$x \in E'$, 当且仅当对任意的$\delta > 0$, 有$(B(x, \delta) \backslash \{x\}) \cap E \neq \emptyset$.
+
+证明: 若$x \in E'$, 则$\exists \{x_k\} \subset E$, 使$\lim{|x_k - x|} = 0$, $\forall \delta > 0$, $\exists N$, 当$n > N$时, $|x_n - x| < \delta$. 即$(B(x, \delta) \backslash \{x\}) \cap E \neq \emptyset$.
+
+反过来, $\forall \delta > 0$, $(B(x, \delta) \backslash \{x\}) \cap E \neq \emptyset$, 则对于$\delta = 1$, 可以取$x_1 \in (B(x, \delta) \backslash \{x\}) \cap E$. 对$\delta = \min(\frac{1}{2}, d(x, x_1))$, 取$x_2 \in (B(x, \delta) \backslash \{x\}) \cap E$, 这是存在的.
+
+一般的, 对于已有的点$x_1, x_2, \cdots, x_n$, 我们对$\delta = \min(\frac{1}{2^n}, d(x, x_n))$, 取点$x_{n+1} \in (B(x, \delta) \backslash \{x\}) \cap E$, 由此构成的序列$\{x_n\}$显然互不相同, 且$|x_n - x| < \frac{1}{2^n} \rightarrow 0$, 即$x$为极限点.
+
+(3) 设$E = \{\sqrt{m} - \sqrt{n}: m, n \in N\}$, 则$E' = R^1$.
+
+$\forall x \in R^1$, 取$x_n = \sqrt{[(x + n)^2]} - \sqrt{n^2}$, 则有$\sqrt{(x+n)^2-1} - n < x_n < x$, 可以证明$\lim\limits_{n \rightarrow \infty}{|x_n - x|} = 0$.
+\[
+x - \sqrt{(x + n)^2 - 1} + n = (x+n) - \sqrt{(x + n)^2 - 1} = \frac{1}{x + n + \sqrt{(x + n)^2 - 1}}.
+\]
+
+(4) $(E_1 \cup E_2)' = E_1' \cup E_2'$, 这是导集关于并的运算.
+
+(5) Bolzano-Weierstrass定理. $R^n$中任一有界无限点集$E$至少有一个极限点.
+
+$R^1$中的Bolzano-Weierstrass定理是实数系统的基础, 在分析中有极为重要的地位.
+
+$E$有界说明可以用一个矩体包住$E$, 即$E \subset I1 = (a_1, b_1) \times \cdots \times (a_n, b_n)$, 把$I_1$平均分成$2^n$部分, 即把$(a_i, b_i)$平分, 不妨设为$(a_i^{(1)}, b_i^{(1)})$, 则$I_2 = (a_1^{(1)}, b_1^{(1)}) \times \cdots \times (a_n^{(1)}, b_n^{(1)})$, 这里$I_2$中包含$E$的无穷多个点, 如此继续, 可以每个$I_n$包含$E$的无穷多个点. 而$I_1 \supset I_2 \supset \cdots \supset I_n \supset \cdots$, 由此可以选择出一系列点$\{x_n\}$, 而存在$x$属于所有的$I_n$, $x_n \rightarrow x$, 这个证明了闭区间套定理.
+
+书中的证明使用了$R^1$的Bolzano-Weierstrass定理: 先取$\{x_k\}$, 然后取出第1维, 接着是第2维, ..., 最后是第$n$维, 每一维的$x_k^i$都是收敛的.
+
+严格说来, 应该像书中那样.
+
+%$$
+%\bar{X}_i
+%\overline{X}_i
+%\widebar{X}_i
+%\Widebar{X}_i
+%\b{X_i}
+%\ol{X_i}
+%$$
+
+%$$
+%\underline{X}_i
+%\wideubar{X}_i
+%\Wideubar{X}_i
+%\ul{X}_i
+%$$
+
+\section{闭集, 开集, Borel集}
+开集和闭集是拓扑学中的基本概念, 在分析中, 在研究测度的时候, 需要研究点集的属性, 需要这些基本的拓扑概念. 更一般的拓扑概念参考凯莱的《一般拓扑学》.
+
+概念1. 闭集: 若$E' \subset E$, 则称$E$为闭集. $\bar{E} = E \cup E'$称为$E$的闭包. $E$为闭集时有$E = \bar{E}$.
+
+概念2. 开集: $G \subset R^n$, 若$G^c = R^n \backslash G$为闭集, 则称$G$为开集. 注意这里开集的定义使用了闭集的概念, 它们是一对对偶的概念.
+
+概念3. Borel集: 在$R^1$中, 最简单的点集就是区间了, 在$R^n$中, 最简单应该是矩体, 接下来并应该是开集和闭集, Borel集是开集和闭集的组合, 它是由一组概念组成:
+
+($F_{\sigma}$; $G_{\delta}$集) 若$E \subset R^n$是可数个闭集的并集, 则称$E$为$F_{\sigma}$集, 若$E \subset R^n$是可数个开集的交集, 则称$E$为$G_{\delta}$集. 由De.Morgan法则可知, 这也是一对对偶概念.
+
+($\sigma$-代数) 设$\Gamma$是由集合$X$中的一些子集所构成的集合族, 且满足下列条件, 则称$\Gamma$为一$\sigma$-代数.
+\begin{enumerate}
+\item[(i)] $\emptyset \in \Gamma$;
+\item[(ii)] 若$A \in \Gamma$, 则$A^c \in \Gamma$;
+\item[(iii)]若$A_n \in \Gamma$, $n=1,2,\cdots$, 则$\bigcup\limits_{n=1}^{\infty}{A_n} \in \Gamma$.
+\end{enumerate}
+
+(生成$\sigma$-代数) $\Sigma$是集合$X$中的一些子集构成的集合族, 对于包含$\Sigma$的$\sigma$-代数$\Gamma$, 记包含$\Sigma$的最小$\sigma$-代数为$\Gamma(\Sigma)$, 称之为由$\Sigma$生成的$\sigma$-代数.
+
+有了这些概念, 可以定义Borel集了: 由$R^n$中一切开集构成的开集族所生成的$\sigma$-代数称为Borel $\sigma$-代数, 其元素称为Borel集.
+
+后面还有一个关于Cantor三分集的概念, 不过不准备在这里讨论了. 下面先考虑开集, 闭集, Borel集之间的关系和性质.
+
+首先是开集和闭集的一些对偶性质:
+
+\begin{tabular}{ll}
+\hline 
+O1: $\emptyset$和$R^n$是开集 & C1: $R^n$和$\emptyset$是闭集 \\
+O2: 有限个开集的交集是开集 & C2: 有限个闭集的并集是闭集 \\
+O3: 无限个开集的并集是开集 & C3: 无限个闭集的交集是闭集 \\
+\hline
+\end{tabular}
+
+这两组结论是开集和闭集的基本性质, 实际上在拓扑学的公理化体系中, 这通常用来定义拓扑, 不过这里反过来, 先有了闭集的概念, 再有这些性质, 证明见课本.
+
+在前面讨论的概念中, 与闭集相联系的有一个闭包的概念, 对于开集, 与之相联系, 也有一个内核的概念: 内点和内核(对应于闭集的极限点, 导集)
+
+对于$x \in E$, $\exists \delta > 0$, 使$B(x, \delta) \subset E$, 则称$x$为$E$之内点, $E$的内点全体记为$\Dot{E}$, 称为$E$的内核.
+
+开集是集合中每个点都是内点的集合, $\forall x \in E$, $\exists \delta > 0$, 使$B(x, \delta) \subset E$, 证明见课本.
+
+对于开集和闭集, 下面的结论极为重要, 它涉及到开集和闭集的构造, 由两部分组成:
+\begin{enumerate}
+\item[(i)] $R^1$中的非空开集是可数个互不相交的开区间的并集;
+\item[(ii)] $R^n$中的非空开集$G$是可列个互不相交的半开闭方体的并集.
+\end{enumerate}
+
+(i)中提到的开区间是这样来构造的: $\forall x \in E$($R^1$中的开集), 存在$(a, b)$使得$x \in (a, b)$, 且$(a, b) \subset E$, 然后令$(a, b)$逐渐放大(膨胀), 往两边延伸, 一直到不能延伸为止, 延伸的方法是: $a = \inf\{x | (x, b) \subset E \}$, $b = \sup\{x|(a, x) \subset E\}$, 这样构成的区间称为构成区间, 最后有$E = \bigcup_{x \in E}{Ix}$.
+
+以这种方法分类, 实际上可以认为$I_x$是一个等价类: 当$a, b \in I_x$时, 认为$a \sim b$, 对于等价类有一个重要的性质: $I_a$与$I_b$要么相等, 要么不相交.
+
+对于(ii), 以如下方式构造这些半开闭方体.
+
+首先用格点将$R^n$分为可列个边长为1的半开闭方体, 其全体记为$\Gamma_0$.
+
+将$\Gamma_0$的每一边二等分, 则每个方体由$2^n$个边长为$1/2$的半开闭方体组成, 这些全体记为$\Gamma_1$.
+
+如此可以构造一个序列$\{\Gamma_k\}$, $\Gamma_k$中每一个方体的边长为$2^{-k}$, 而且是$\Gamma_{k+1}$中$2^n$个互不相交的的方体的并集.
+
+最后这样来取构成$G$的半开闭方体: 第一步从$\Gamma_0$中取, 要求是全部包含在$G$中的方体, 记为$H_0$, 第二步从$\Gamma_1$中取, 要求是完全包含在$G\backslash H_0$中, 记为$H_1$, ..., 如此继续即可.
+
+$R^n$中的开集还有一个重要的事实: $R^n$中存在由可列个开集构成的开集族$\Gamma$, 使得$R^n$中任一开集均是$\Gamma$中某些开集的并集. 
+\[
+\Gamma:\{B(x, \frac{1}{k}) : x\text{是}R^n\text{中的有理点}, R\text{是自然数}\}.
+\]
+
+由前面开集的性质, 任意个开集的并集还是开集, 这样来构造这些开集: $\forall x \in G$, $\exists \delta$, $B(x, \delta) \subset G$, 取$B(x', 1/k)$, 这里$k > 2/\delta$, $d(x, x') < 1/k$, 则有$B(x', 1/k) \subset B(x, \delta) \subset G$, $G = \cup{B(x', 1/k)}$.
+
+下面两个定理分别涉及到了闭集族和开集族, 是实数理论中的基本定理的推广.
+
+(i) Cantor闭区间套定理: 若$\{F_k\}$是$R^n$中的非空有界闭集列, 且满足$F_1 \supset F_2 \supset \cdots \supset F_k \supset \cdots$, 则$\cap{F_k} \neq \emptyset$.
+
+我在前面证明Bolzano-Weierstrass定理时使用闭区间套定理, 现在看来应该使用书中的证明方法(利用$R^1$的Bolzano-Weierstrass定理). 实际上, 在$R^1$中这两个定理是等价的, 在这里也应该是.下面从Bolzano-Weierstrass定理推导出这个Cantor闭区间套定理, 这里可能不容易利用$R^1$中闭区间套定理, 因为这里使用了闭集这个更一般的概念.
+
+首先: $F_k$是闭集, 因而$\cap{F_k}$也是闭集, 而且$\cap{F_k} = \lim_{k \rightarrow \infty}{F_k}$.
+
+其次: 在$F_k$中取点$x_k \in F_k$, 对于无穷点列$\{x_k\}$, 由Bolzano-Weierstrass定理, 存在极限点$x$, 为了方便, 不妨设$\lim{x_k} = x$, 下面证明$x \in \cap{F_k}$, 也就是说, $\forall k$, $x \in F_k$.
+
+事实上, 由$\lim{x_k} = x$, 可知点列$\{x_n\}_{n \ge k}$也是收敛于$x$的, 即可知$x \in F_k$, 因为$F_k$是闭集, 因而$\cap{F_k} \neq \emptyset$, 获证.
+
+书中的证明取点$x_k \in F_k - F_{k-1}$, 是为了有互异点列, 实际上是不必要的, 只不过需要对我的证明做更完整的讨论.
+
+(ii) Heine-Borel有限子覆盖定理: $R^n$中有界闭集的任一开覆盖均含有一个有限子覆盖.
+
+关于覆盖的定义见课本.
+
+$F$为有界闭集, $\Gamma$为一开覆盖: $\Gamma = \{G_{\alpha}\}$, 这样考虑:
+
+$G_1, \cdots, G_n \in \Gamma$, $F_n = F \cap (G_1 \cup \cdots \cup G_n)^c$, 则$F_1 \supset F_2 \supset \cdots \supset F_n \supset \cdots$
+
+原结论是证明: $\exists N$, 使得$F_N = \emptyset$. 否则这个过程可以一直继续下去.
+
+对于一般的点集, 需要把有限放宽为可数, 有结论:
+
+$R^n$中点集$E$的任一开覆盖$\Gamma$都含有一个可数子覆盖.
+
+利用前面构造的$\Gamma': \{B(x, 1/k) : x \in R^n, \text{为有理点}, k \in N\}$, 则$\Gamma'$是可列的, 而且任意点集$E$都可以由$\Gamma'$中的集合覆盖(因为有理点是稠密的), 另一方面, $\Gamma'$和开覆盖$\Gamma$之间可以建立一对多的对应关系: 即$\forall B(x, 1/k) \in \Gamma'$, 我们都找一个$G \in \Gamma$来与之对应, 要求很简单, $B(x, 1/k) \cap G \cap E \neq \emptyset$. 这样取出的所有$G$覆盖了$E$, 且是可数的.
+
+在这些地方的证明中, 有理数起了特殊的作用, 一个重要原因在于它既是可列的, 又是稠密的.
+
+上面的取法还有些问题:
+
+$\forall x\in E$, $x \in B(x', 1/k)$, 则$G_x$, $x \in G_x \cap B(x', 1/k)$.
+
+设$B_n$覆盖了$E$, 接下来这样选择$\Gamma$中的开集$G$.
+
+任取一个$G_1 \in \Gamma$, 使$B_1 \cap G_1 \cap E \neq \emptyset$, 这是存在的, 令$E_1 = E - G_1$, 接下来取$G_2 \in \Gamma$, 使$B_2' \cap G_2 \cap E_1 \neq \emptyset$, 这也是存在的, 不过这里$B_2'$不一定是$B_2$, $E_2 = E- G_1 - G_2$.
+
+这个证明思路有问题.
+
+$\forall x \in E$, $\exists G$, 使得$x \in G$, 从而存在$B(x', 1/k) \subset G$, 且$x \in B(x', 1/k)$, 然后考虑所有这些$B(x', 1/k)$, 这是一个可列集, 并且每个$B(x', 1/k)$包含于某个$G$中, 取所有的$G$即可, 获证.
+
+这个结论的威力在于我们把无限转化为有限, 对于有限的东西, 我们可以明确给出最大值和最小值. 它会经常用到. 对于这种从无限中包含有限的命题在泛函分析中还会出现, 事实上这些概念都已经推广.
+
+在泛函分析中引入了下列概念(具体见张恭庆等人著的《泛函分析讲义》).
+
+列紧集: 如果集合$H$中的任意点列在$X$中有一个收敛子列, 则称$H$为列紧集.
+
+紧集: 对于集合$M$, 如果$X$中每个覆盖$M$的开集族中有有限个个开集覆盖$M$, 则称$M$是紧集.
+
+这两个概念在泛函分析及拓扑学中极为重要.
+
+在$R^n$中: Heine-Borel定理的逆命题是成立的: 设$E \subset R^n$, 若$E$的任一开覆盖都包含有限子覆盖, 则$E$是有界闭集. (用泛函分析的概念就是: 在$R^n$中, 紧集和有界闭集是等价的, 对于一般的拓扑空间, 这个结论不成立.)
+
+有界性的证明就用了前面我提到的有限这个结论: 开集族$E_n = \{ x | |x| < n\}$是可以覆盖$E$的, 按照前提条件, 存在有限个开集就可以覆盖$E$, 不妨设为$E_{n_1}$, $\cdots$, $E_{n_k}$, 取$N = \max\{n_1, \cdots, n_k\}$, 则$E_N$就可以覆盖整个$E$, 有界.
+
+关于闭集的证明: 闭集是包含了所有极限点的集合, 详细证明见课本, 课本中的证明思路还是用到了有限性, 只不过构造开集族的方法不同: $\forall y \in E^c$($E$的余集), $\forall x in E$, $\exists \delta_x > 0$, 使得$B(x, \delta_x) \cap B(y, \delta_x) = \emptyset$, 这样的开集族$\{B(x, \delta_x)\}$可以覆盖$E$, 从有限性可知$B(y, \delta_x) \cap E = \emptyset$, $y \notin E'$, $E' \subset E$. 即说明$E$的极限点都属于$E$.
+
+有了开集, 闭集以及相关的定理, 可以推广连续函数的概念:
+
+$f(x)$是$E \subset R^n$上的实值函数, $x_0 \in E$, 如果对任意的$\epsilon > 0$, 存在$\delta > 0$, 使得当$x \in E \cap B(x_0, \delta)$时有$|f(x) - f(x_0)| < \epsilon$, 则称$f(x)$在$x = x_0$处连续, 若$E$中任一点皆为$f$的连续点, 则称$f$在$E$上连续.
+
+和连续函数相关的结论后面证明, 下面先了解和Borel集相关的Baire定理.
+
+设$E \subset R^n$是$F_{\delta}$集, 即$E = \bigcup\limits_{k=1}^{\infty}{F_k}$, $F_k$是闭集, 若每个$F_k$皆无内点, 则$E$也无内点.
+
+反证. 若$E$有内点, 设为$x_0$, 则存在$\delta_0$使$B(x_0, \delta_0) \subset E$, $F_1$没有内点, 于是存在$x_1$使$x_1 \in B(x_0, \delta_0)$, 但$x_1 \notin F_1$, 有$F_1$是闭集, $\exists \delta_1$使$B(x_1, \delta_1) \cap F_1 = \emptyset$, 且$B(x_1, \delta_1) \subset B(x_0, \delta_0)$, 因为$x_1$是$B(x_0, \delta_0)$的内点, 对$B(x_1, \delta_1)$应用于$F_2$, $B(x_2,\delta_2) \cap F_2 = \emptyset$, $B(x_2, \delta_2) \subset B(x_1, \delta_1)$, ..., 这时$\{x_n\}$构成一个基本列, 于是$x_n \rightarrow x$, 而且有$|x - x_k| < \delta_k$, $x \in \bar{B}(x_k, \delta_k)$, $\forall k$, 这个时候要想$x \notin F_k$, 我们应对前面的包含关系要求更高一些, 即要求$\bar{B}(x_k, \delta_k) \cap F_k = \emptyset$, 这样就会与$x \in E$引起矛盾, 原命题获证.
+
+前面证明过程中, $\bar{B}(x_k, \delta_k) \cap F_k = \emptyset$和$\bar{B}(x_k, \delta_k) \subset B(x_{k-1}, \delta_{k-1})$应该是存在的, 设$B(x, \delta) \cap F = \emptyset$, $B(x, \delta) \subset B(y, \delta')$, 则取$\frac{\delta}{2}$即有$\bar{B}(x, \frac{\delta}{2}) \cap F = \emptyset$, $\bar{B}(x, \frac{\delta}{2}) \subset B(y, \delta')$.
+
+这个证明还是充分利用了内点, 闭集的性质. 关于Baire定理可以参考《微积分的历程:从牛顿到勒贝格》.
+
+接下来证明书中出现的一些结论:
+
+(1) $f(x)$是定义在$R^n$上的连续函数, 则对任意$t \in R^1$, 点集$\{x | f(x) \ge t\}$和$\{x | f(x) \le t\}$都是闭集.
+
+(2) 函数$f(x)$在$B(x_0, \delta)$上有定义, 令$\omega(x_0) = \lim_{\delta \rightarrow 0}{\sup\{|f(x') - f(x'')| : x', x'' \in B(x_0, \delta)\}}$, 称$\omega(x_0)$为$f(x)$在$x_0$处的振幅. 若$G$是$R^n$中的开集且$f(x)$定义在$G$上, 则对任意的$t \in R^1$, 点集$H = \{ x \in G : \omega(x) < t\}$是开集. 证明见课本, 关键是一层一层展开$\omega(x)$的定义, 这个结论有一定用途, 对于$\omega(x) = 0$的点$x$应该是$f(x)$的连续点.
+
+(3) 对于Heine-Borel定理, 其中的有界和闭集两个条件, 有这样的例子:
+
+$R^1$中的自然数集是闭集, 但是无界, 对于开覆盖$\{(n - 1/2, n + 1/2)\}$不存在有限子覆盖.
+
+对于点集$\{1, 1/2, \cdots, 1/n, \cdots\}$, 是一个有界集合, 但不是闭集, 作开覆盖$\{(\frac{1}{n} - \frac{1}{2n}, \frac{1}{n} + \frac{1}{2n})\}$, 不存在有限子覆盖.
+
+(4) 设$F$是$R^n$中的有界闭集, $G$是开集且$F \subset G$, 则存在$\delta > 0$, 使得当$|x| < \delta$时, 有
+\[
+F + \{x\} \equiv \{ y + x: y \in F\} \subset G,
+\]
+$\forall x \in F$, $\exists \delta_x$, 使得$B(x, \delta_x) \subset G$, 则对于开覆盖$\{B(x, \delta_x)\}$可以覆盖$F$, 从而取出有限个可以覆盖$F$, 令$\delta$为这些$\delta_x$中最小的即可.
+
+(5) 下面的结论和连续函数有关: 设$F$是$R^n$中的紧集, $f \in C(F)$, 则
+\begin{enumerate}
+\item [(i)] $f(x)$是$F$上的有界函数, 即$f(F)$是$R^1$中的有界集;
+\item [(ii)] 存在$x_0 \in F$, $y_0 \in F$, 使得$f(x_0) = \sup\{f(x) : x \in F\}$, $f(y_0) = \inf\{f(x): x \in F\}$;
+\item [(iii)] $f(x)$在$F$上是一致连续的, 即对任给的$\epsilon > 0$, 存在$\delta > 0$, 当$x', x'' \in F$且$|x' - x''| < \delta$时有
+\[
+|f(x') - f(x'')| < \epsilon;
+\]
+\item [(iv)] 若$E \subset R^n$上的连续函数列$\{f_k(x)\}$一直收敛于$f(x)$, 则$f(x)$是$E$上的连续函数.
+\end{enumerate}
+
+刚好可以借这道题来复习数学分析中的内容.
+\begin{enumerate}
+\item[(i)] $f$是连续函数, 说明$\forall x \in F$, $\exists \delta_x > 0$, 使得当$x' \in F \cap B(x_0, \delta_x)$时, $|f(x') - f(x)| < 1$. 对于$F$的一个开覆盖$\{B(x, \delta_x)\}$, 由于$F$是紧集, 存在有限个开覆盖, 不妨设为
+\[
+B(x_1,\delta_1), B(x_2, \delta_2), \cdots, B(x_n, \delta_n),
+\]
+于是$\forall x \in F$, $x$属于某个$B(x_k, \delta_k)$, 从而$|f(x) - f(x_k)| < 1$, $|f(x)| < 1 + |f(x_k)|$, 令$M = \max\{|f(x_1)|, \cdots, |f(x_n)| \} + 1$, 则$|f(x)| < M$, 获证.
+
+\item[(ii)] $f(x)$在$F$上有界, 那么根据确界原理, $f(F)$存在上确界和下确界, 按照上确界的定义: $\forall \epsilon > 0$, $\exists x \in F$, 使$f(x) > \sup\{f(x)\} - \epsilon$, $f(x) < \sup\{f(x)\}$, 令$\epsilon = 1/n$, 则有$x_n \in F$, 且$\sup\{f(x)\} - f(x_n) < 1/n$, 显然我们可以假设$x_n$均不相同, 不管如何, $\{x_n\}$有界, 从而存在极限点$x_0$, 而$F$是闭集, 则有$x_0 \in F$, 显然有$f(x_0) = \sup\{f(x)\}$. 对于$\inf$可以做同样的讨论.
+
+\item[(iii)] 证明方法同(i), $\forall \epsilon > 0$, $\forall x \in F$, $\exists \delta_x$, 使$x' \in F \cap B(x, \delta_x)$时, $|f(x') - f(x)| < \epsilon/2$, 这样开集族$\{B(x, \delta_x)\}$覆盖$F$, 从而存在有限个$B(x_1, \delta_1)$, $\cdots$, $B(x_n, \delta_n)$覆盖$F$, 令$\delta = \min(\delta_1, \cdots, \delta_n)/2$, 则当$|x' - x''| < \delta$时, 没有这么简单.
+
+设$x' \in B(x_k, \delta_k)$, 则$|x' - x_k| < \delta_k$, 
+
+$x'' \in B(x_i, \delta_i)$, 则$|x'' - x_i| < \delta_i$.
+
+$|f(x') - f(x'')| < |f(x') - f(x_k)| + |f(x_k) - f(x_i)| + |f(x_i) - f(x'')| < 2\epsilon + |f(x_k) - f(x_i)|$.
+
+下面需要证明$|f(x_k) - f(x_i)|$可以任意小. 从这里可以发现上述思路有问题.
+
+仍然是使用上面的方法, 只不过开覆盖使用$\{B(x, \delta_x/2)\}$. 这个时候取$\delta = \min\{\delta_x/2\}$, 则有:当$|x' - x''| < \delta$时, $x' \in B(x_k, \delta_k/2)$, 则$|x' - x_k| < \delta_k/2$, $|x' - x''| < \delta < \delta_k/2$, 可以得到$|x'' - x_k| < |x' - x_k| + |x' - x''| < \delta_k$. 而根据我们的选择, 此时有$|f(x') - f(x'')| < |f(x') - f(x_k)| + |f(x_k) - f(x'')| < \epsilon$. 
+
+见鬼, 一步之差, 居然没有想到.
+
+\item[(iv)] 关于一致收敛, 首先应了解其定义:
+
+$f_n(x) \rightrightarrows f(x)$, $\forall \epsilon > 0$, $\exists N$, 当$n > N$时, $\forall x \in E$, 有$|f(x_n) - f(x)| < \epsilon$.
+
+$\forall x_0 \in E$, (1)$\forall \epsilon > 0$, $\exists N$, 当$n > n$时, $|f_n(x_0) - f(x_0)| < \epsilon / 3$, (2)$\forall \epsilon > 0$, $\exists \delta_1$, 当$x \in B(x_0, \delta_1) \cap E$时, $|f_n(x) - f_n(xx_0)| < \epsilon/3$, 结合(1)和(2), 当$x \in B(x_0, \delta_1)$时, 有
+\[
+\begin{aligned}
+|f(x) - f(x_0)| &< |f(x) - f_n(x)| + |f_n(x) - f_n(x_0)| + |f_n(x_0) - f(x_0)|\\ 
+&< \epsilon/3 + \epsilon/3 + \epsilon/3 = \epsilon.
+\end{aligned}
+\]
+即$f(x)$是连续的.
+\end{enumerate}
+
+例子: 设$f(x)$是定义在$E \subset R^n$上的连续函数, 对任意的$t \in R^1$, 令$E_t = \{x \in E: f(x) > t\}$, 则有在$R^n$中包含$E_t$的开集$G_t$, 使得$E_t = E \cap G_t$.
+
+如果$f(x)$是定义在$R^n$上的函数, 那么$E_t$是一个开集, 下面先从连续性和$E_t$的定义出发讨论:
+
+$f(x)$在$E$上连续, $\forall \epsilon > 0$, $\exists \delta$, 当$x \in E \cap B(x_0, \delta)$时, $|f(x) - f(x_0)| < \epsilon$.
+
+$x_0 \in E_t$ $\Rightarrow$ $f(x_0) > t$, 令$\epsilon = -t + f(x_0)$, 则$\exists \delta$, 当$x \in E \cap B(x_0, \delta)$时, $|f(x) - f(x_0)| < \epsilon$ $\Rightarrow$ $-\epsilon < |f(x) - f(x_0)| < \epsilon$ $\Rightarrow$ $f(x) > f(x_0) - \epsilon$, $f(x) < f(x_0) + \epsilon$, 由此可知, $f(x) > t$且$f(x) < 2f(x_0) - t$, 从而$x \in E_t$, 令$G_t = \cup{B(x, \delta)}$, 则$G_t$是开集, 显然有$E_t \subset G_t$, $E_t \subset E$, 从而$E_t \subset E \cap G_t$.
+
+$\forall x \in E \cap G_t$, 则存在$B(x_0, \delta_0)$, 使$x \in E \cap B(x_0, \delta_0)$, 按照我们的定义, 有$f(x) > t$, $x \in E_t$, 由此可知$E_t = E \cap G_t$.
+
+例: 有理点集$\bigcup_{k=1}^{+\infty}\{r_k\}$为$F_{\sigma}$集, 有理数集$Q$不是$G_{\delta}$集.
+
+后一个结论的证明使用了Baire定理.
+
+$Q = \{r_k, k=1,2,\cdots\}$为有理数集, 使用反证法, $Q = \bigcap_{1}^{\infty}{G_i}$. 
+\[
+R^1 = (R^1 \backslash Q) \cup Q = (\bigcup{G_i^c}) \bigcup (\bigcup_{1}^{\infty}{r_k}),
+\]
+而$\bar{G_i} = R^1$(因为$Q \subset G_i$), 于是$G_i^c$无内点. $R^1$为可列个无内点之闭集的并集, 由Baire定理, $R^1$无内点, 矛盾.
+
+例(函数连续点的结构): 若$f(x)$是定义在开集$G \subset R^n$上的实值函数, 则$f$的连续点集是$G_{\delta}$集.
+
+连续点应该就是振幅为0的点, 前面已经有例子表明$H_t = \{x \in G : \omega(x) < t\}$是开集, 而
+\[
+H = \bigcap_{n=1}^{\infty}\{x \in G: \omega(x) < \frac{1}{n}\}
+\]
+即为所求之连续点集, 为$G_{\delta}$集.
+
+例(连续函数可微点集的结构): 若$f(x)$是$R^1$上的连续函数, 则$f$的可微点集是$F_{\sigma\delta}$集, 这里$F_{\sigma\delta}$集是指可数个$F_{\sigma}$集的交集, 其补集就是可数个$G_{\delta}$集的并集.
+
+书中的证明使用了上下导数的概念.
+\[
+\begin{aligned}
+A &= \{ a | \varliminf_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} < \varlimsup_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} \}\\
+B &= \{ a | \varliminf_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} = -\infty \}\\
+C &= \{ a | \varlimsup_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} = +\infty \}
+\end{aligned}
+\]
+取有理点集$Q$, 则
+\[
+\begin{aligned}
+A &= \bigcup_{r,R \in Q}\{a | \varliminf_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} \le r < R \le \varlimsup_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}}\} \\
+&= \bigcup_{\substack{r,R \in Q \\R > r}}{(\{a | \varliminf_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} \le r\} \cap \{a | \varlimsup_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} \ge R\})}
+\end{aligned}
+\]
+\begin{gather*}
+\{a | \varliminf_{x \rightarrow a}{\frac{f(x) - f(a)}{x - a}} \le t\} = \bigcap_{n,k=1}^{\infty}{G_{n,k}},\\
+G_{n,k} = \{a | \exists x, 0 < |x - a| < 1/n, \frac{f(x)-f(a)}{x-a} > t - 1/k\},
+\end{gather*}
+上导数和下导数就是$\frac{f(x)-f(a)}{x-a}$当$x \rightarrow a$时的上极限和下极限.
+
+这里主要是要证明$G_{n,k}$是开集. 注意$f(x)$是连续的.
+
+设$a_0 \in G_{n,k}$, 即存在$x$, $0 < |x - a_0| < 1/n$, 使$\frac{f(x)-f(a)}{x-a} > t - \frac{1}{k}$.
+
+目标是找出$\delta$, 使$B(a_0, \delta) \subset G_{n,k}$, 若$a \in B(a_0, \delta)$, 即$|a - a_0| < \delta$. $\exists x_a$, 使$0 < |x_a - a| < 1/n$, $\frac{f(x_a) - f(a)}{x_a - a} > t - \frac{1}{k}$.
+
+记$F(x, a) = \frac{f(x) - f(a)}{x-a}$, 则$F(x, a)$是$x$与$a$的连续函数. $F(x, a) > t - 1/k$, 存在$\delta$, 使$a \in B(a_0, \delta)$时, $F(x,a) > t - 1/k$.
+
+这个例子需要再想想, 争取做到自己想出来.
+
+例: 若$\{f_n(x)\}$是定义在$R^1$上的连续函数列, 且有$\lim_{n \rightarrow}{f_n(x)} = f(x)$, $x \in R^1$, 则
+\begin{enumerate}
+\item[(i)] 若$G \subset R^1$是开集, 则$f^{-1}(G)$是$F_{\sigma}$集.
+\item[(ii)] $f(x)$的连续点集是$R^1$中的稠密集.
+\end{enumerate}
+
+\begin{enumerate}
+\item[(i)] $R^1$中的开集可以由可数个开区间组成, 对于任意的开区间$(a, b)$, 考察$f^{-1}(a, b)$.
+\[
+f^{-1}(a,b) = \{x | a < f(x) < b\} = \{x | f(x) > a\} \cap \{x | f(x) < b\}
+\]
+$\lim_{n \rightarrow \infty}{f_n(x)} = f(x)$意味着$\forall \epsilon > 0$, $\exists N$, 当$n > N$时, $|f_n(x) - f(x)| < \epsilon$.
+\[
+\{x | f(x) > t\} = \bigcap_{n=1}^{\infty}{\{ x | f_n(x) > t\}},
+\]
+而$\{ x | f_n(x) > t\}$是开集,
+\[
+\{x | f(x) > t\} = \bigcup_{\substack{\epsilon \in Q \\ \epsilon > 0}}{\bigcup_{k=1}^{\infty}{\bigcap_{n=k}^{\infty}{\{x : f_n(x) \ge a + \epsilon\}}}}
+\]
+闭集, $F_{\sigma}$集.
+
+\item[(ii)] 考察$f$的不连续点集: $a$为$f$的不连续点, $\exists p,q$使$p < f(a) < q$, $a_n \rightarrow a$, $f(a_n) \notin (p, q)$,
+\begin{gather*}
+O = \bigcup_{\substack{p,q \in Q\\ p < q}}{(\overline{f^{-1}(A_{pq})} \backslash f^{-1}(A_{p,q}))} \\
+A_{pq} = R^1 \backslash(p, q),
+\end{gather*}
+$f^{-1}(A_{pq})$是$G_{\delta}$集, $\overline{f^{-1}(A_{pq})} \backslash f^{-1}(A_{p,q})$为$F_{\sigma}$集, 下面证明它无内点, 这样由Baire定理, $O$无内点, 从而连续点集在$R^1$中稠密.
+
+$\overline{f^{-1}(A_{pq})} \backslash f^{-1}(A_{p,q})$实际上就是$\bar{A} \backslash A$无内点, $\bar{A} = A \cup A'$, 于是$\bar{A} \backslash A \subset A'$.
+
+设$x \in \bar{A}$, $x \notin A$, 于是存在$x_n \in A$, 使$x_n \rightarrow x$, 注意$x_n \notin \bar{A} \backslash A$, 于是$\forall \epsilon$, $B(x, \epsilon)$都存在点$x_n$不属于$\bar{A}$, 即$x$不是内点.
+\end{enumerate}
+
+下面进入Cantor三分集:
+
+$[0,1] \subset R^1$, 将$[0, a]$三等分, 移去中央三分开区间$I_{11} = (\frac{1}{3}, \frac{2}{3})$, 留下部分记为$F_1 = [0, \frac{1}{3}] \cup [\frac{2}{3}, 1]$, 把$F_1$中的两个区间各三等分, 去掉中央的三分开区间, ..., 剩余下来的$C = \bigcap_{1}^{\infty}{F_n}$, 称为Cantor三分集, 它有如下性质:
+\begin{enumerate}
+\item[(i)]$C$是非空有界闭集. (闭区间套定理)
+\item[(ii)]$C = C'$(完全集);
+\item[(iii)]$C$无内点;
+\item[(iv)]$C$的基数为$2^{\aleph_0}$, 事实上, $C$中的点与三进制小数展开$\sum{\frac{a_i}{3^i}}$($a_i = 0, 2$)对应.
+\item[(v)]$C$的长度为0, 另一方面,$[0,1] \backslash C$的长度为1.
+\end{enumerate}
+
+在$[0,1]$中可以作出总长度为$\delta$($0 < \delta < 1$)的稠密开集, $p = (2\delta + 1)/\delta$, 仍然是把$[0,1]$分成三份(不再等分), 只不过把在最中间的$1/p$移去, 第二次移去中间的$1/p^2$, $\cdots$, $1/p^n$, $\cdots$,则长度为: 
+\[
+\sum{2^{n-1}(\frac{1}{n})^n} = \frac{1}{p-2} = \delta.
+\]
+
+Cantor函数:
+
+$C$是$[0,1]$中的Cantor集, 其中的点用三进位小数$x = 2\sum{a_i/3^i}$表示:
+\begin{enumerate}
+\item[(i)]$x \in C$, $\varphi(x) - \varphi(2\sum{a_i/3^i}) = \sum_{1}^{\infty}{a_i/2^i}$, $\varphi(x)$单调上升, 且$\varphi(C) = [0,1]$;
+\item[(ii)]定义在$[0,1]$上的$\phi(x)$: $\phi(x) = \sup\{\varphi(y) : y \in C, y \le x\}$,
+
+(1)$\phi(x)$单调上升, (2)$\phi(x)$在移去的开区间内为常数, $\phi(x)$称为Cantor函数.
+\end{enumerate}
+
+这一章的许多证明使用了有理点的稠密性和可数性, 应该多加注意.
+
+\section{点集间的距离}
+这一节只有两个概念: 点和点集之间的距离, 点集和点集之间的距离, 他们都是利用了点和点之间的距离这一概念, 另外, 距离应该有最短性, 于是有
+\begin{gather*}
+d(x, E) = \inf\{|x - y| : y \in E\} \\
+d(E_1,E_2) = \inf\{|x - y| : x \in E_1, y \in E_2\}
+\end{gather*}
+
+\begin{enumerate}
+\item $A \cap B = \emptyset$不能推出$d(A, B) \neq 0$.
+\item $d(A, B) \neq 0$可以推出$A \cap B = \emptyset$.
+\item $x \notin E$, 但$d(x, E) = 0$, 则必有$x \in E'$.
+\end{enumerate}
+
+对于闭集, 有一些特殊之处:
+\begin{enumerate}
+\item 若$F$是非空闭集, 且$x_n \in R^n$, 则存在$y_0 \in F$, 使得$|x_0 - y_0| = d(x_0, F)$.
+
+令$f(x) = |x_0 - x|$, $x \in F$, 则$f(x)$是$F$上的连续函数, 接下来需要找一个有界集合. 以$x_0$为中心往外扩, $\overline{B(x_0, \delta)} \cap F \neq \emptyset$, 这个就是.
+
+\item 若$E$是$R^n$中非空点集, 则$d(x, E)$作为$x$的函数在$R^n$上一致连续.
+
+一致连续: $\forall \epsilon > 0$, $\exists \delta$, $|x - y| < \delta$, 则$|f(x) - f(y)| < \epsilon$.
+
+$|d(x, E) - d(y, E)| \le |x - y|$, 证明使用$d(x, y)$的$\inf$定义.
+
+\item 若$F_1, F_2$是$R^n$中的两个非空闭集, 且其中至少有一个是有界的, 则存在$x_1 \in F_1$, $x_2 \in F_2$, 使$|x_1 - x_2|  d(F_1, F_2)$.
+
+这只是前一道题的推论.
+
+\item 若$F_1$, $F_2$是$R^n$中两个互不相交的非空闭集, 则存在$R^n$上的连续函数$f(x)$, 使得
+\begin{enumerate}
+\item $0 \le f(x) \le 1$, $x \in R^n$;
+\item $F_1 = \{x | f(x) = 1\}$, $F_2 = \{x | f(x) = 0\}$.
+\end{enumerate}
+首先$d(x, F_2)$满足$F_2 = \{x | f(x) = 0\}$, 当$y \in 1 + d(x, F_1)$时, 满足$F_1 = \{x | f(x) = 1\}$, 在两者之间变化, $f(t) = td(x, F_2) + (1-t)d(x, F_1)$. $0 < t < 1$ 
+
+$d = d(F_1, F_2)$
+
+$f(t) = d(F_1, F_2)d(x, F_2) + (1 - d(F_1, F_2))d(x, F_1)$.
+
+$f(x) = \frac{d(x, F_2)}{d(x, F_1) + d(x, F_2)}$
+
+\item 连续函数延拓定理: 若$F$是$R^n$中的闭集, $f(x)$是定义在$F$上的连续函数, 且$|f(x)| \le M$, $x \in F$, 则存在$R^n$上的连续函数$g(x)$满足$g(x) \le M$, $g(x) = f(x)$, $x \in F$.
+
+函数延拓在数学中极为重要, 在泛函分析中也有一个关于线性泛函延拓的问题, 在复分析中也会有解析函数延拓的问题. 
+
+证明见书本, 因为目前想不出如何证明, 也不知道书中的证明是如何想出来的, 为什么要这样分成三个集合? 这个函数列的构造是如何想到的?
+
+对于这种函数的构造, 首先可考虑逐步逼近书中的证明, 实际上是一个迭代的过程.
+
+对于级数和, 要保证连续, 目前只能是要求一致收敛, 对于一致收敛, 最简单的判别法则是受限级数, $|f_n(x)| \le g_n$, $\sum{g_n}$收敛, 则$\sum{f_n(x)}$一致收敛.
+\end{enumerate}
+
+\chapter{Lebesgue测度}
+首先引进外测度的概念, 这是从$R^n$的开矩体开始的, 如果是公理化方法, 那么可以应用于抽象空间. 接着用外测度定义集合的可测性, 后面讨论了可测集和Borel集的关系, 同时讨论了不可测集.
+
+对于测度, 贯穿始终的是这样几个性质:
+\begin{enumerate}
+\item $m(E) \ge 0$;
+\item 可合同的点集具有相同的测度;
+\item 令$I = (a, b)$, 则$m(I) = b - a$;
+\item 若$E_1, E_2, \cdots, E_n, \cdots$是互不相交的点集, 则$m(\sum{E_i}) = \sum{m(E_i)}$.
+\end{enumerate}
+其中(4)最为重要, 称为可数可加性, 实际上表明极限与测度之间的可交换性, 如果把测度认为是面积, 体积的扩展, 而体积之类可用积分表示, 这可以认为是极限与积分的可交换性.
+
+\section{点集的Lebesgue外测度}
+这一节只有一个概念: 外测度.
+
+对于$R^n$空间来说, 外测度可以显式定义: 利用开矩体. 对于抽象空间来说, 不存在所谓开矩体, 而是使用公理化方法来定义的.
+
+外测度: $E \subset R^n$, $\{I_k\}$是可数个开矩体, $E \subset \cup{I_k}$, 称之为$E$的L-覆盖.
+\[
+m^*(E) = \inf\{\sum|I_k| : \{I_k\}\text{为}E的\text{L-覆盖} \},
+\]
+注意: $|I_k|$是有定义的, $|I_k| = \prod_{1}^{n}(b_i - a_i)$, $I_k = (a_1, b_1) \times \cdots \times (a_n, b_n)$.
+
+在这里$m^*(E)$可以取$+\infty$, 它是肯定存在的. 因为$|I_k| \ge 0$.
+
+还有一个注意点: 这里$I_k$的个数可以是有限, 也可以是可数的, 如果只能是有限, 基本上没有什么用, 书中讨论了有理点集的情形, 必须有限的话, 这个集合将是不可测的.
+
+\begin{enumerate}
+\item[(1)] $m^*(E) \ge 0$, 这是明显的.
+
+\item[(2)] $I = (a, b)$, $m^*(I) = b - a$, 这也是可以证明的.
+
+首先, $I$本身是$I$的一个覆盖, 于是$m^*(I) \le |I| = b - a$, 另一方面, 对于$I$的任一L-覆盖, $\sum{|I_k|} \ge |I|$, 于是$m^*(I) \ge |I|$, 获证.
+
+\item[(3)] 可合同的. 讨论在后面.
+
+\item[(4)] $\sum{m^*(E_k)} = m^*(\sum{E_k})$是不成立的, 它只能做到: 
+\[
+m^*(\sum{E_k}) \le \sum{m^*(E_k)}.
+\]
+
+\end{enumerate}
+
+下面讨论外测度的一些性质:
+\begin{enumerate}
+\item $m^*(E) \ge 0$, $m^*(\emptyset) = 0$;
+
+\item 单调性: 若$E_1 \subset E_2$,则$m^*(E_1) \le m^*(E_2)$;
+
+设$\{I_k\}$为$E_2$的L-覆盖, 则$\{I_k\}$同时也是$E_1$的L-覆盖, 即
+\[
+m^*(E_1) \le \sum{|I_k|}
+\]
+于是
+\[
+m^*(E_1) \le \inf\{\sum{|I_k|}\} = m^*(E_2).
+\]
+
+\item 次可加性: $m^*(\cup{E_n}) \le \sum{m^*(E_n)}$. 这里用$\cup$代替$\sum$来表示集合运算.
+
+$\forall \epsilon > 0$, 设$I_{nk}$为$E_n$的L-覆盖, 且使$m^*(E_n) \ge \sum{|I_{nk}|} - \epsilon/2^n$, 则$\{I_{nk}\}_{n,k=1}^{\infty}$为$\cup{E_n}$的L-覆盖, 而且有:
+\[
+\begin{aligned}
+m^*(\cup{E_n}) \le \sum_{n,k}{|I_{nk}|} &= \sum_{n}{\sum_{k}{|I_{nk}|}} \le \sum_{n}{(m^*(E_n) + \frac{\epsilon}{2^n})}\\
+&= \sum{m^*(E_n)} + \epsilon
+\end{aligned}
+\]
+由此可得: $m^*(\cup{E_n}) \le \sum{m^*(E_n)}$.
+
+\item 若$E \subset R^n$为可数点集, 则$M^*(E) = 0$. 对于$\{x_k\}$, $\forall \epsilon > 0$, 用$(x_k - \epsilon/2^{k+1}, x_k + \epsilon/2^{k+1})$覆盖之.
+
+有理点集外测度为0, 且处处稠密. 
+
+[0, 1]中的Cantor集$C$的外测度为0, $C = \cap{F_n}$, $F_n$为$2^n$个长度为$3^{-n}$的闭区间之并集, 注意这是一个不可数集.
+
+\item 令人遗憾的是外测度只能满足次可加性, 即使$E_1 \cap E_2 = \emptyset$, 仍可能有$m^*(E_1 \cup E_2) < m^*(E_1) + m^*(E_2)$, 不过如果把条件再加强: $d(E_1, E_2) > 0$, 则有$m^*(E_1 \cup E_2) = m^*(E_1) + m^*(E_2)$.
+
+这个结论的证明需要一个引理:
+
+设$E \subset R^n$, $\delta > 0$, 令$m_{\delta}^*(E) = \inf\{\sum{|I_k|} : \cup{I_k} \supset E, \text{每个开矩体}I_k\text{的边长}<\delta \}$, 则$m_{\delta}^*(E) = m^*(E)$.
+
+首先, $d(E_1, E_2) > 0$意味着什么呢? 意味着我们可以用两个开集$G_1$, $G_2$分别包住$E_1$, $E_2$(拓扑空间中一些所谓的分离公理), 我们就有可能把$E_1 \cup E_2$的L-覆盖分离成两部分, 一部分覆盖$E_1$, 另一部分覆盖$E_2$, 这样自然就是相等的.
+
+引理的证明见课本, 不过有一点不是很了解: 为什么要引入$\lambda$($1 < \lambda < 2$), 是不是把$I_k$分解成$l(k)$个互不相交的开矩体, 是不可能有$I_k = \bigcup_{i=1}^{l(k)}{I_{k,i}}$的, 所以把$I_{ki}$放大一点.
+
+这个引理就保证了前面把L-覆盖分成两组的可能性.
+
+\item 平移不变性: 这个结论对于测度论极为重要, 因为平移是一种合同变换: 设$E \subset R^n$, $x_0 \in R^n$, $E+\{x_0\} = \{x + x_0 : x \in E\}$, 则$m^*(E + \{x_0\}) = m^*(E)$.
+
+证明极为简单, $\{I_k\}$为$E$的L-覆盖, 则$\{I_k + \{x_0\}\}$是$E + \{x_0\}$的L-覆盖, 于是$m^*(E + \{x_0\}) \le m^*(E)$, 另一方面, 对于$E + \{x_0\}$移动$-x_0$, 则有$m^*(E) \le  m^*(E + \{x_0\})$.
+\end{enumerate}
+
+外测度的抽象定义使用公理化方法, 具体见课本, 还有一个概念:
+
+$(X, d)$是一个距离空间, 且其上外测度$\mu^*$满足: $\mu^*(E_1 \cup E_2) = \mu^*(E_1) + \mu^*(E_2)$当$d(E_1, E_2) > 0$时, 则称$\mu^*$为$X$上的一个距离外测度(利用距离外测度性质, 可以证明开集的可测性)
+
+注: 引理证明中引进$\lambda$, 可能是因为把$I_k$分成互不相交的$I_{ki}$时, $|I_k| = \sum{|I_{ki}|}$不一定成立, 或者在目前的定义下, 不能直接得出这个等式, 只有在后面证明$I_k$为可测集时才能使用? 似乎也不应该是这个理由?
+
+好像明白点了, 直接是无法把开矩体$I_k$分解成互不相交的开矩体的并集的, 所以需要一个因子, 放大这些开矩体, 从而能够包住$I_k$. 事实上可以这样来得到这些开矩体, 把$I_k$的每一个边等分, 使得小矩体的边长小于$\delta/2$, 这些开矩体的并集虽然不等于$I_k$, 但是稍微放大一点就可以包住$I_k$了.
+
+\section{可测集, 测度}
+这一节也只有一个概念: 可测集, Lebesgue测度. 前面提到过$m^*$不满足可数可加性, 因而不能作为我们的测度, 从$m^*$诱导出一个Lebesgue测度, 注意: 定义Lebesgue测度有多种途径, 这本书从外测度出发, 有些书直接定义测度, 也有的书使用外测度和内测度(有点类似上积分和下积分, 左极限和右极限). 应该去了解这些书中的方法.
+
+Lebesgue可测集(类$\mathcal{U}$, $\mathfrak{U}$, $\mathfrak{M}$,$\mathcal{N}$, $\mathcal{\mu}$): $E \subset R^n$, 若$\forall T \in R^n$, 有
+\[
+m^*(T) = m^*(T \cap E) + m^*(T \cap E^c),
+\]
+则称$E$为Lebesgue可测集. 所有Lebesgue可测集组成的集合称为Lebesgue可测集类, 记作$\mathcal{M}$.
+
+注意这个定义是使用可加性来定义的, 因为$m^*$不是总能满足这个性质, 那么我们就用这个属性来定义一个点集的集合,然后看看这个集合是否足够我们使用. 这恐怕也是引入新概念的方法之一吧.
+
+有了定义, 就应该了解: (1)如何判别一个集合是可测集; (2)可测集有哪些属性.
+
+(1) 判别一个集合是否可测, 就需要验证等式$m^*(T) = m^*(T \cap E) + m^*(T \cap E^c)$, 又$m^*(T) \le m^*(T \cap E) + m^*(T \cap E^c)$总是成立的, 故只需验证$m^*(T) \ge m^*(T \cap E) + m^*(T \cap E^c)$, 这又可以限制在$m^*(T) < \infty$的情况.
+
+(2)讨论可测集的属性是最重要的.
+\begin{enumerate}
+\item 可测集类的基数是$2^{\aleph}$, 因为Cantor集是一个零测集, 是可测的, 而它的基数为$\aleph$, 它的所有子集都是可测的(零测集), 说明可测集的基数大于等于$2^{\aleph}$, 又$R^n$的基数为$\aleph$, 故可测集类的基数不会超过$2^{\aleph}$, 因而其基数就是$2^{\aleph}$.
+
+\item 可测集类$\mathcal{M}$构成一个$\sigma$-代数:
+\begin{enumerate}
+\item $\emptyset \in \mathcal{M}$, $m^*(T \cap \emptyset) + m^*(T \cap X) = m^*(T)$, $\emptyset$可测.
+\item 若$E \in \mathcal{M}$, 则$E^c \in \mathcal{M}$; $m^*(T) = m^*(T \cap E) + m^*(T \cap E^c)$, 则由$(E^c)^c = E$, 可知$m^*(T) = m^*(T \cap (E^c)^c) + m^*(T \cap E^c)$, $E^c$可测.
+\item 若$E_1 \in \mathcal{M}$, $E_2 \in \mathcal{M}$, 则$E_1 \cup E_2$, $E_1 \cap E_2$, 以及$E_1 \backslash E_2$皆属于$\mathcal{M}$.
+
+根据条件有
+\begin{gather*}
+m^*(T \cap E_1) + m^*(T \cap E_1^c) = m^*(T)\\
+m^*(T \cap E_2) + m^*(T \cap E_2^c) = m^*(T)
+\end{gather*}
+欲证的是
+\[
+m^*(T \cap (E_1 \cup E_2)) + m^*(T \cap (E_1 \cup E_2)^c) \le m^*(T)
+\]
+试试:
+\begin{gather*}
+T(E_1 \cup E_2) = (T \cap E_1) \cup (T \cap E_2) \\
+T \cap (E_1 \cup E_2)^c = T \cap ((E_1^c \cap E_2^c) = (T \cap E_1^c) \cap (T \cap E_2^c) = T \cap E_1^c \cap E_2^c \\
+m^*(T \cap E_1^c \cap E_2) + m^*(T \cap E_1^c \cap E_2^c) = m^*(T \cap E_1^c) \\
+m^*(T \cap E_2 \cap E_1) + m^*(T \cap E_2 \cap E_1^c) = m^*(T \cap E_2) \\
+m^*(T \cap (E_1 \cap E_2)) - m^*(T \cap (E_1 \cup E_2)^c) = m^*(T \cap E_2) - m^*(T \cap E_1^c) \\
+m^*(T \cap (E_1 \cap E_2)) + m^*(T \cap E_1^c) = m^*(T \cap E_2) + m^*(T \cap E_1^c \cap E_2^c) 
+\end{gather*}
+都不大对头.
+
+$m^*(T \cap (E_1 \cup E_2)) = m^*(T \cap E_1) + m^*(T \cap E_2)$, 在$E_1 \cap E_2 = \emptyset$时成立, $E_1, E_2 \in \mathcal{M}$.
+
+先证明这个结论:
+
+第一步: 若两个集合由一个可测集分离, 则其外测度具有可加性. $E_1 \subset S$, $E_2 \subset S^c$, $S \in \mathcal{M}$, 则
+\[
+m^*(E_1 \cup E_2) = m^*(E_1) + m^*(E_2)
+\]
+取$T = E_1 \cup E_2$, $(E_1 \cup E_2) \cap S$, $(E_1 \cup E_2) \cap S^c$, 则
+\[
+m^*(E_1 \cup E_2) = m^*((E_1 \cup E_2) \cap S) + m^*((E_1 \cup E_2) \cap S^c) = m^*(E_1) + m^*(E_2),
+\]
+
+第二步: 当$E_1$与$E_2$是互不相交的可测集时, 对任一集合$T$有$m^*(T \cap (E_1 \cup E_2)) = m^*(T \cap E_1) + m^*(T \cap E_2)$.
+
+取$S \in \mathcal{M}$, 且$T \cap E_1 \subset S$, $T \cap E_2 \subset S^c$, 实际上$S = E_1$即满足条件. 即$T \cap E_1$和$T \cap E_2$为$E_1$分离开来, 从而有
+\[
+m^*[(T \cap E_1) \cup (T \cap E_2)] = m^*(T \cap E_1) + m^*(T \cap E_2) = m^*[T \cap (E_1 \cup E_2)].
+\]
+
+第三步证明原命题: $E_1 \in \mathcal{M}$, $E_2 \in \mathcal{M}$, 则$E_1 \cup E_2 \in \mathcal{M}$.
+
+把$E_1 \cup E_2$分为几部分:
+\[
+T \cap (E_1 \cup E_2) = (T \cap E_1 \cap E_2^c) \cup (T \cap E_1 \cap E_2) \cup (T \cap E_2 \cap E_1^c),
+\]
+首先: $(T \cap E_1 \cap E_2^c) \cup (T \cap E_1 \cap E_2)$和$T \cap E_2 \cap E_1^c$被$E_1$分割开来, 故有
+\[
+m^*[(T \cap E_1 \cap E_2^c) \cup (T \cap E_1 \cap E_2)] + m^*(T \cap E_2 \cap E_1^c) = m^*(T \cap (E_1 \cup E_2)),
+\]
+其次: $T \cap E_1 \cap E_2^c$和$T \cap E_1 \cap E_2$被$E_2$分割开来, 故有:
+\begin{gather*}
+m^*(T \cap (E_1 \cup E_2)) = m^*(T \cap E_1 \cap E_2^c) + m^*(T \cap E_1 \cap E_2) + m^*(T \cap E_2 \cap E_1^c) \\
+m^*(T \cap (E_1 \cup E_2)^c) = m^*(T \cap E_1^c \cap E_2^c)
+\end{gather*}
+由此
+\[
+\begin{aligned}
+m^*(T \cap (E_1 \cup E_2)) + &m^*(T \cap (E_1 \cup E_2)^c)\\
+&= m^*(T \cap E_1 \cap E_2^c) + m^*(T \cap E_1 \cap E_2)\\
+&+ m^*(T \cap E_1^c \cap E_2) + m^*(T \cap E_1^c \cap E_2^c)\\
+&= m^*(T \cap E_1) + m^*(T \cap E_1^c) \quad (E_2\text{的可测性})\\
+&= m^*(T) \quad (E_1\text{的可测性})
+\end{aligned}
+\]
+而$E_1 \cap E_2 = (E_1^c \cup E_2^c)^c$, $E_1 \backslash E_2 = E_1 \cap E_2^c$, 获证.
+\item $\sigma$-可加性: $E_i \in \mathcal{M}$, 则$\cup{E_i} \in \mathcal{M}$, 当$E_i \cap E_j = \emptyset$时, 
+\[
+m^*(\cup{E_i}) = \sum{m^*(E_i)}.
+\]
+首先在$E_i$互不相交的情况下证明这个结论, 对于一般情形, 这样构造:
+\[
+S_1 = E_1, \cdots, S_k = E_k \backslash \bigcup_{1}^{k-1}{E_i}, \cdots
+\]
+则$\bigcup{E_i} = \bigcup{S_i}$. 下面先证明不相交情形.
+
+注意这里涉及到了极限: $S = \bigcup{E_i}$, 则所求为$m^*(T \cap S) + m^*(T \cap S^c) = m^*(T)$.
+
+注意, 根据前面所证, $\bigcup_{k=1}^{n}{E_k}$是可测的, 并且在互不相交的情况下有
+\[
+m^*(\sum_{1}^{n}{E_k}) = \sum_{1}^{n}{m^*(E_k)},
+\]
+$S_k = \bigcup_{1}^{k}{E_i}$, 则有$S_k$是可测的, 且有上式, 即$m^*(S_k) = \sum_{1}^{k}{m^*(E_i)}$.
+\[
+\begin{aligned}
+m^*(T) &= m^*(T \cap E_i) + m^*(T \cap E_i^c) \\
+m^*(T) &= m^*(T \cap S_k) + m^*(T \cap S_k^c) \\
+&= m^*[\bigcup_{1}^{k}{T \cap E_i}] + m^*(T \cap S_k^c) \\
+&= \sum_{1}^{k}{m^*(T \cap E_i)} + m^*(T \cap S_k^c) \\
+&\ge \sum_{1}^{k}{m^*(T \cap E_i)} + m^*(T \cap S^c) \quad (T \cap S_k^c \supset T \cap S^c)
+\end{aligned}
+\]
+令$k \rightarrow \infty$, 则有$m^*(T) \ge \sum_{1}^{\infty}{m^*(T \cap E_i)} + m^*(T \cap S^c)$, 极限的保号性.
+
+又$T \cap S = \bigcup(T \cap E_i)$, 由$m^*$的性质:
+\[
+m^*(T \cap S) \le \sum_{1}^{\infty}{m^*(T \cap E_i)} 
+\]
+故有
+\[
+m^*(T) \ge m^*(T \cap S) + m^*(T \cap S^c)
+\]
+根据前面讨论可知, 这足够说明$S$可测了.
+
+上述式子对所有的$T$成立, 令$T = T \cap S$, 则有$T \cap S \cap E_i = T \cap E_i$.
+\[
+m^*(T \cap S) \ge \sum_{1}^{\infty}{m^*(T \cap E_i)},
+\]
+而$m^*(T \cap S) \le \sum_{1}^{\infty}{m^*(T \cap E_i)}$总成立. 因此
+\[
+m^*(T \cap S) = \sum{m^*(T \cap E_i)} \quad \forall T.
+\]
+取$T = R^n$即可, $m^*(S) = \sum{m^*(E_i)}$.
+
+满足了这个$\sigma$-可加性, 说明我们可以使用前面的方式定义测度了, 当集合$E$为可测集时, 其外测度称为测度, 记号上也去掉$*$号, 简单的记作$m(E)$. 对于抽象空间的测度, 一般使用公理化方法, 见课本即可.
+\end{enumerate}
+\end{enumerate}
+
+下面是关于集合序列的测度.
+\begin{enumerate}
+\item 若有递增可测集合列$E_1 \subset E_2 \subset \cdots \subset E_k \cdots$,则$m(\lim{E_k}) = \lim{m(E_k)}$.
+
+对于递增列来说, 
+\[\lim{E_k} = \bigcup_{k=1}^{\infty}{E_k} = E_1 \cup (E_2 - E_1) \cup \cdots \cup (E_k - E_{k-1} \cdots),\]
+而由$E_k$的可测性可知$E_k - E_{k-1}$可测, 并且
+\[
+(E_k - E_{k-1}) \cap (E_{k-1} - E_{k-2}) = \emptyset,
+\]
+于是有
+\[
+m(\lim{E_k}) = m(\bigcup(E_k - E_{k-1})) = \sum_{k=1}^{\infty}{m(E_k - E_{k-1})} \quad E_0 = \emptyset.
+\]
+又$m(E_k - E_{k-1}) + m(E_{k-1}) = m(E_k)$, 即$m(E_k - E_{k-1}) = m(E_k) - m(E_{k-1})$, 需要$m(E_k) < \infty$这个假设. 于是
+\[
+m(\lim{E_k}) = \sum_{1}^{\infty}{[m(E_k) - m(E_{k-1})]} = \lim{m(E_k)}.
+\]
+
+\item 作为一个推论, 若有递减可测集合列$E_1 \supset E_2 \supset \cdots E_k \cdots$, 则
+\[
+m(\lim{E_k}) = \lim{m(E_k)}.
+\]
+根据题设
+\begin{gather*}
+E_1^c \subset E_2^c \subset \cdots \subset E_k^c \cdots \\
+(E_1 \cap E_2^c) \subset \cdots \subset (E_1 \cap E_k^c) \subset \cdots
+\end{gather*}
+
+由此推出
+\[
+\begin{aligned}
+m[\lim{E_1 \cap E_k^c}] &= \lim{m(E_1 \cap E_k^c)} \\
+m[\lim{(E_1 \cap E_k^c)}] &= \lim{m(E_1 \cap E_k^c)} = m(E_1 \cap \lim{E_k^c})\\ 
+&= m(E_1) - m(\lim{E_k^c}) = m(E_1) - \lim{m(E_k^c)}
+\end{aligned}
+\]
+这就有$m(\lim{E_k}) = \lim{m(E_k)}$.
+
+\item 若可测集列$\{E_k\}$且有$\sum_{k=1}^{\infty}{m(E_k)} < \infty$, 则$m(\varlimsup_{k \rightarrow \infty}{E_k}) = 0$.
+
+这里需要了解$\varlimsup{E_k}$的定义: 
+\[
+\varlimsup{E_n} = \bigcap_{n=1}^{\infty}{\bigcup_{k=n}^{\infty}{E_k}} = \lim_{n \rightarrow \infty}{\bigcup_{k=n}^{\infty}{E_k}}
+\]
+我们有
+\[
+\begin{aligned}
+m(\varlimsup{E_n}) & = m(\lim_{n \rightarrow \infty}{\bigcup_{k=n}^{\infty}{E_k}}) \\
+&= \lim_{n \rightarrow \infty}{m(\bigcup_{k=n}^{\infty}{E_k})} \\
+&\le \lim_{n \rightarrow \infty}{[\sum_{k=n}^{\infty}{m(E_k)}]} = 0
+\end{aligned}
+\]
+对于收敛级数来说$\sum{b_k}$, $b_k$及余项$\sum_{n}^{\infty}{b_k}$趋向于0.
+
+\item 设$\{E_k\}$是可测集列, 则
+\[
+m(\varliminf_{k \rightarrow \infty}{E_k}) \le \varliminf_{k \rightarrow \infty}{m(E_k)}
+\]
+
+$\bigcap_{j=k}^{\infty}{E_j} \subset E_k$, 于是
+\[
+m(\bigcap_{j=k}^{\infty}{E_j}) \le m(E_k)
+\]
+令$k \rightarrow \infty$,
+\[
+m(\varliminf_{k \rightarrow \infty}{E_k}) = \lim_{k \rightarrow \infty}{m(\bigcap_{j=k}^{\infty}{E_j})} \le \varliminf_{k \rightarrow \infty}{m(E_k)}
+\]
+\end{enumerate}
+
+\section{可测集与Borel集}
+这一节讨论了Borel集和可测集的关系, 首先有Borel集都是可测集, 其次是可测集的一个结构.
+
+这一节虽然出现了两个概念, 却只是一个用于记忆的概念: 等测包和等测核.
+
+因为我们将会有结论: 对于每一个可测集$E$, 可以选择$G_{\delta}$集$H$, 使$m(H) = m(E)$, 且$E \subset H$. 同样存在含于$E$的$F_{sigma}$集$K$, 使$m(K) = m(E)$, 这里$H$称为等测包, $K$称为等测核.
+
+这个等测包和等测核有什么意义呢? 意义在于我们对于一般的可测集的了解极少, 可是对于Borel集的了解要丰富的多, 而Borel集又可由开集与闭集组合得到, 这又简单了一些, 对于开集和闭集又可以从区间开始讨论, 正好符合从简单到复杂的认识规律.
+
+(1) 区间(开矩体)是可测的, 由此, 从可测集是$\sigma$-代数可知: Borel集是可测的.
+
+根据书中的可测集的定义, 我们必须证明开矩体是可测的. 注意, 有些书中先从开矩体开始定义可测集, 这是两个思路, 最后殊途同归.
+
+证明需要利用外测度的距离外测度性质.
+\[
+d(T \cap T_k, T \cap I^c) \ge \delta_k > 0,
+\]
+$I_k$为包含于$I$内的开矩体.
+\begin{gather*}
+m^*(T) \ge m^*[(T \cap I_k) \cup (T \cap I^c)] = m^*(T \cap I_k) + m^*(T \cap I^c) \\
+\lim{m^*(T \cap I_k)} = m^*(T \cap I) \quad (I_k \rightarrow I, k \rightarrow \infty) \\
+m^*[(T \cap I) \backslash (T \cap I_k)] \ge m^*(T \cap I) - m^*(T \cap I_k) \ge 0
+\end{gather*}
+而$m^*[(T \cap I) \backslash (T \cap I_k)] \le 2n\cdot \delta_k(\eta + 2\delta_k)^{n-1}$, $\delta_k \rightarrow 0$.
+
+(2)若$E \in \mathcal{M}$, 则对任给的$\epsilon > 0$, 有
+
+(i) 存在包含$E$的开集$G$, 使得$m(G \backslash E) < \epsilon$.
+
+(ii)存在含于$E$的闭集$F$, 使得$m(E \backslash F) < \epsilon$.
+
+这说明可测集可以由一系列的开集和闭集来逼近.
+
+正明只需注意到对于可测集, 测度与外测度是一回事, 从而可以用L-覆盖来逼近, 这对于$m(E) < \infty$没有问题, 对于$m(E) = \infty$时, 令$E_k = E \cap B(0, k)$, 则$m(E_k) < \infty$, 对于(ii), 只需注意到(i)与(ii)是有一定的对偶关系的.
+
+(3) 若$E \in \mathcal{M}$, 则
+(i) $E = H \backslash Z_1$, $H$是$G_{\delta}$集, $m(Z_1) = 0$;
+(ii) $E = K \cup Z_2$, $K$是$F_{\sigma}$集, $m(Z_2) = 0$.
+
+这只需使用定义和前一个命题的结论即可. 正是这个结论引出等测包和等测核的概念.
+
+对于一般的集合$E$, 可以使用外测度有类似的结论.
+
+$E \subset R^n$, 存在包含$E$的$G_{\delta}$集$H$, 使得$m(H) = m^*(E)$. [$H$是可测的, $m(H) = m^*(H)$]
+
+这其实只需要使用外测度的定义即可.
+
+(4) 若有$R^n$中的集合列$E_1 \subset E_2 \subset \cdots \subset E_k \subset \cdots$, 则$\lim_{k \rightarrow \infty}{m^*(E_k)} = m^*(\lim_{k \rightarrow \infty}{E_k})$.
+
+在前一节中, 对于可测集已经证明了这样的结论, 现在是对于一般的集合.
+
+(i) $\lim{E_k} = \bigcup{E_k}$, $m^*(E_k) \le m^*(\lim{E_k})$, 由此得到$\lim{m^*(E_k)} \le m^*(\lim{E_k})$.
+
+(ii) 利用等测包: $m(H_k) = m^*(E_k)$, $H_k \supset E_k$, 令$S_k = \bigcap_{i=k}^{\infty}{H_i}$, 则
+\begin{gather*}
+m(\lim{S_k}) = \lim{m(S_k)} \\
+E_k \subset S_k \subset H_k \Rightarrow m^*(E_k) \le m(S_k) \le m(H_k) = m^*(E_k) \\
+\Rightarrow m(S_k) = m^*(E_k) \\
+\lim{(m^*(E_k))} = \lim{m(S_k)} = m(\lim{S_k}) \ge m^*(\lim{E_k}) \quad \lim{S_k} \supset \lim{E_k}
+\end{gather*}
+
+这里面的关键还是各个集合之间的包含关系.
+
+(5) 平移不变性, 即测度应具有平移不变性: 若$E \in \mathcal{M}$, $x_0 \in R^n$, 则$(E + \{x_0\}) \in \mathcal{M}$且
+\[
+m(E + \{x_0\}) = m(E).
+\]
+注意到外测度是满足平移不变性的, 故关键在于证明$E + \{x_0\} \in \mathcal{M}$.
+
+把$E + \{x_0\}$表示成可测集的$\sigma$-运算.
+\[
+E + \{x_0\} = (\bigcap_{k=1}^{\infty}{(G_k + \{x_0\})}) \backslash (Z + \{x_0\})
+\]
+使用了$E = H \backslash Z$, $H = \cap{G_k}$, 利用$G$为开集, 则$G + \{x_0\}$仍为开集, 而开集是可测的.
+
+定义(Borel测度): 在Borel $\sigma$-代数上定义了测度$\mu$, 且对紧集$K$有$\mu(K) < \infty$, 则称$\mu$为Borel测度. $R^n$上的Lebesgue测度是一种Borel测度.
+
+(6) 若$\mu$是$R^n$上的平移不变的Borel测度, 则存在常数$\lambda$, 使得对$R^n$中每一个Borel集合$B$, 均有$\mu(B) = \lambda{m(B)}$.
+
+也就是说, 除了一个常数因子, Lebesgue测度是$R^n$上平移不变的唯一的Borel测度.
+
+(i) 在$R^n$中紧集是有界闭集, 故$m(K) < \infty$.
+
+(ii) 对于$R^n$中的开集$G_0$, 有$m(G_0) \neq 0$, 令$\lambda = \frac{\mu(G_0)}{m(G_0)}$.
+
+不应局限在测度上, 是不是应该考虑更一般的函数?
+
+前面有结论, 对于$E \subset R^n$, 存在$H$, 使得$m(H) = m^*(E)$, $E \subset H$, 则$m^*(E) < \infty$时, $m(H) -m^*(E) = 0$, 如果$E$可测, 则必有$m(H \backslash E) = 0$.
+
+$m^*(H \backslash E)$不一定等于0, 但是对于$H \backslash E$的可测子集的测度等于0.
+
+这个结论同样需要证明.
+
+设$E_1 \subset H \backslash E$为可测集, 则$E_1 \cup E \subset H$, 于是$m^*(E_1) + m^*(E) \ge m^*(E_1 \cup E)$, $E_1 \cap E = \emptyset$, $E_1 \subset H$, $m(E) + m(H) \ge m^*(E_1 \cup E)$ (我需要一个反向的不等式)
+
+$E \subset H \backslash E_1$, $m(H \backslash E_1) = m(H) - m(E_1)$,
+
+$m^*(E) \le m(H \backslash E_1) = m(H) - m(E_1)$ $\Rightarrow$ $m(E_1) \le m(H) - m^*(E) = 0$, 获证.
+
+现在只剩下(6)了, Borel测度与Lebesgue测度之间的关系.
+
+\section{不可测集}
+书中不可测集的构造使用了等价类的概念, 同时需要选择公理, 其中的关键时一个引理, 有理数在这里又起了关键的作用, 尤其是其稠密性.
+
+这里先说明这个不可测集如何构造.
+
+设$Q^n$为$R^n$中的有理点集, 对$x, y \in R^n$, 若$x - y \in Q^n$, 则称$x \sim y$(等价), 可以证明这是一个等价关系, 这样我们可以划分$R^n$, 我们从每个等价类中取出一个点, 构成一个集合$W$, 应有这样的结论:
+
+(i) $W$是不可列的;
+
+(ii) 若$Q^n = \{r_1, r_2, \cdots, r_k, \cdots\}$, 则$\bigcup{(W + \{r_i\})} = R^n$.
+
+这一点将说明$W$是不可测的, 
+
+(i) $m(W + \{r_i\}) = 0$ $\Rightarrow$ $m(R^n) = 0$.
+
+(ii) $m(W) > 0$, 则需要注意书中的引理: 此时集合$(W - W)$中将包含内点, 这意味着$(W - W) \cap Q^n \neq \emptyset$. 而这说明$\exists x, y \in W$,使$x - y \in Q^n$, 这与$W$的选择矛盾. 这一步使用了$Q^n$的稠密性.
+
+对于$W-W$中包含内点, 即存在$B(0, \delta) \subset W-W$, 这一点的证明见课本.
+
+这个构造是如何想到的呢? 这个引理是否有直观意义?
+
+第一: 测度为0, 甚至外测度为0的集合来说, 它的所有子集都是可测的(测度为0).
+
+第二: 这样要找不可测集, 只需对测度或外测度大于0的集合, 引理说明对于可测集合, 如果其测度大于0, 那么存在一个测度大于0的开集作为它的子集.
+
+一个矩体进行平移, 如果移动之后的矩体仍然覆盖原矩体的中心, 则说明它们相交部分的边长仍然大于$1/2$边长, 这块区域的体积大于$(\frac{1}{2}\text{边长})^n = 2^{-n}|I|$.
+\[
+|I \cap (I + \{x_0\})| > 2^{-n}|I|.
+\]
+把$I \cup (I + \{x_0\})$分解, 并注意可测性有
+\[
+\begin{aligned}
+m[I \cup (I + \{x_0\})] &= |I| + |I + \{x_0\}| - |I \cap (I + \{x_0\})| \\
+&= 2|I| - |I \cap (I + \{x_0\})| \\
+&<2|I| - 2^{-n}|I| = 2|I|(1 - 2^{-(n+1)})
+\end{aligned}
+\]
+对于$1 - 2^{-(n+1)} < \lambda < 1$, 可以选择$I$, 使$\lambda|I| < m(I \cap E)$,
+\begin{equation}\label{eq2_4_1}
+m(I \cup (I + \{x_0\})) < 2\lambda|I|,
+\end{equation}
+但是$I \cap E \subset I$, $((I \cap E) + \{x_0\}) \subset I + \{x_0\}$, 由此, $(I \cap E) \cup (I \cap E + \{x_0\}) \subset (I \cup (I + \{x_0\}))$, 而
+\begin{equation}\label{eq2_4_2}
+m(I \cap E) + m((I \cap E) + \{x_0\}) = 2m(I \cap E) > 2\lambda|I|,
+\end{equation}
+要做到\eqref{eq2_4_1}与\eqref{eq2_4_2}同时成立, 只有$(I \cap E) \cap ((I \cap E) + \{x_0\}) \neq \emptyset$.
+
+设$y \in I \cap E$, $y \in (I \cap E) + \{x_0\}$, 则$y = x+ x_0$ $\Rightarrow$ $x_0 = y - x$, $x \in E$, $y \in E$.
+
+这个例子还应继续观察思考.
+
+\section{连续变换与可测集}
+目前数学一个重要的方向就是: 对于集合$A$, 考虑变换$f$, $f(A)$是否能保持$A$中的某些性质. 如果有些特性在两者之间保持不变, 这种性质通常是极为重要的. 例如在拓扑学中的同胚, 代数学中的同构等概念, 都是为了保持某种性质不会变化. 这一节研究的是$f$为特殊的变化---连续变换下, 可测集$A$由哪些性质.
+
+前面已经证明了平移不会改变可测性和测度. 这里更一般一些: 连续变换.
+
+概念1(连续变换): $T: R^n \rightarrow R^n$, 若对任一开集$G$, $T^{-1}(G)$是一个开集, 则称$T$是$R^n$到$R^n$的连续变换.
+
+注意这个概念可以推广到一般的拓扑空间.
+
+对于$R^n$中的变换来说, 它有一个等价的说法(常见的$\epsilon-\delta$语言版). 
+
+(1) 变换$T: R^n \rightarrow R^n$是连续变换的充分且必要条件是: 对任一点$x \in R^n$, 以及$\epsilon > 0$, 存在$\delta > 0$, 使得$|y - x| < \delta$时, $|T(y) - T(x)| < \epsilon$.
+
+注: 这里需要对前一节中的不可测集的讨论插入一点: 早上的时候想到无理点集是测度大于0的可测集, 可是却不存在内点(?), 这说明我前面提到的有问题:
+"引理说明对于可测集合, 如果其测度大于0, 那么存在一个测度大于0的开集作为它的子集." 我当时之所以会得出这个结论, 是由引理, 存在$\delta$, $B(0, \delta) \subset W - W$, 结果我认为对于$x_0 \in W$, $B(x_0, \delta) \subset W$了, 这是不对的. 目前唯一能做的只能是记住这个结论, 以后对于不可测集可能有用. 下面回到正道上来, 证明上述关于连续变换的结论.
+
+必要性: $\forall \epsilon > 0$, $\exists \delta > 0$, $|y - x| < \delta$时, $|T(y) - T(x)| < \epsilon$, 设$G$为一开集, $T^{-1}(G) = \{x | T(x) \in G\}$, $\forall x \in T^{-1}(G)$, 则$T(x) \in G$, 任取$\epsilon$, 存在$\delta$, 使$|y - T(x)| < \delta$时,$|T(y) - x| < \epsilon$, 我们令$\delta$足够小, 使$|y - T(x)| < \delta$包含在$G$中, 则有
+
+很遗憾, 上面的讨论有问题.
+
+把必要性和充分性搞乱了, 不过前面的证明也有问题:
+
+$A$的充分且必要条件(充要条件)是$B$, 或者说$B$是$A$的充分且必要条件.
+
+充分性: $B \Rightarrow A$; 必要性: $A \Rightarrow B$.
+
+必要性: $\forall x \in R^n$, $B(T(x), \epsilon)$是开集, $x \in T^{-1}(B(T(x), \epsilon))$是开集中的内点, 存在$\delta$, $B(x, \delta) \subset T^{-1}(B(T(x), \epsilon))$, 即$y \in B(x, \delta)$时, 有$T(y) \in B(T(x), \epsilon)$.
+
+充分性: $x \in T^{-1}(G)$, 则$T(x) \in G$, $\forall T(y) \in B(T(x), \epsilon)$, $\exists \delta$, $y \in B(x, \epsilon)$, 成立.
+
+由此可以推出, 线性函数是连续的.
+
+$T:R^n \rightarrow R^n$是线性变换, 即$T(\alpha{x} + \beta{y}) = \alpha{T(x)} + \beta{T(y)}$, $x, y \in R^n$.
+
+令$\{e_i\}$为$R^n$的一个基, $T(e_i) = w_i$, $e_i, w_i \in R^n$, 则
+\[
+T(x) = T(\sum{a_ie_i}) = \sum{a_iT(e_i)} = \sum{a_iw_i},
+\]
+于是
+\[
+\begin{aligned}
+|T(x) - T(y)| &= |T(x - y)| = |\sum{(a_i - b_i)w_i}|\\ 
+&\le [\sum{(a_i - b_i)^2}]^{1/2}[\sum{|w_i|^2}]^{1/2} \quad \text{Cauchy不等式}\\
+&= [\sum{|w_i|^2}]^{1/2}|x - y| \rightarrow 0.
+\end{aligned}
+\]
+
+(2)设$T: R^n \rightarrow R^n$是连续变换, 若$K$是$R^n$中的紧集, 则$T(K)$是$R^n$中的紧集.
+
+注意我们在第一章已经讨论过值域为$R^1$的情形, 那里证明$T(K)$是有界集, 这是使用一般的定义, 证明$T(K)$是紧集.
+
+$\{H_n\}$为$T(K)$的任意一个开覆盖, 则$\{T^{-1}(H_n)\}$也是$K$的一个开覆盖, 从而存在有限个$T^{-1}(H_1)$, $\cdots$, $T^{-1}(H_n)$覆盖$K$, 此时, 这些$H_1$, $\cdots$, $H_n$也覆盖了$T(K)$, 说明$T(K)$是紧集.
+
+作为推论有: $T: R^n \rightarrow R^n$为连续变换, 若$E$是$F_{\sigma}$集, 则$T(E)$是$F_{\sigma}$集.
+
+书中没有详细说明, 这里补充之:
+
+在$R^n$中, 紧集相当于有界闭集, 设$E = \bigcup_{i=1}^{\infty}{F_i}$, $F_i$为闭集, $T(E) = \bigcup{T(F_i)}$.
+
+设$F$为闭集, 对于$T(F)$而言, 设$y$为$T(F)$的极限点, 即存在$y_i$使$y_i \in T(F)$, 且$y_i \rightarrow y$, 对于$y$的任意$\epsilon$邻域, $B(y, \epsilon)$为开集, 设$y_i = T(x_i)$, $y_i \rightarrow y$ $\Rightarrow$ $\forall \epsilon > 0$, $\exists N$, 当$m, n > N$时, $|y_m - y_n| < \epsilon$. 则$y_i$是有界的, 从而$x_i$是有界的, $x_i$存在收敛子列. 设$x$为$x_i$的极限点之一, 即$\lim{x_{i_k}} \rightarrow x$, 下面需要了解$x$与$y$的关系, 是否有$y = f(x)$呢? 从$T$的连续性来看, 应该有这样的结论. 于是$y \in T(F)$, 即$T(F)$也是闭集.
+
+设$T: R^n \rightarrow R^n$是连续变换, 若对$R^n$中的任一零测集$Z$, $T(Z)$必为零测集, 则对$R^n$中的任一可测集$E$, $T(E)$必为可测集. 这只需注意到可测集与Borel集只相差一个零测集.
+
+对于线性变换, 有下述结论:
+
+$T: R^n \rightarrow R^n$是非奇异线性变换, $E \subset R^n$, 则$m^*(T(E)) = |\det{T}|m^*(E)$.
+
+这个证明我还没有完全看明白, 这里先不复述了. 不过, 如果注意到$m$或$m^*$是面积, 体积的推广, 那么会发现这个公式很熟悉, 应该在微积分课程中遇到过. 下面先了解一下这个结论的推论.
+
+如果$T$是奇异的线性变换, 则$\det{T} = 0$, 且$m^*(T(E)) = 0 =|\det{T}|\cdot m^*(E)$.
+
+如果$E$是可测的, 由$T$是连续的,可知$T(E)$也是可测的, 从而有
+\[
+m(T(E)) = |\det{T}| \cdot m(E).
+\]
+
+书中有一个附注, 构造了一个非Borel集的可测集, 构造中使用了Cantor集.
+
+书中证明的大致思路为: 先对区间(矩体)证明结论成立, 然后对开集证明结论成立, 最后就是一般点集. 原因在于: 开集可以由矩体构造而来, 一般点集的外测度等于$G_{\delta}$集.
+
+注意这个问题和微积分中关于二重积分的计算问题的联系, 很遗憾, 那部分知识已经忘记的差不多了, 应该复习了. 接下来先进入下一章.
+
+\chapter{可测函数}
+可测函数在极限运算下封闭, 这可能是我们对它进行研究的最重要的一点了.
+
+\section{可测函数的定义及其性质}
+首先还是来了解一下定义: 本节最重要的定义就是可测函数了.
+
+(1) $f(x)$定义在可测集$E \subset R^n$上, 若$\forall t \in R$, 有$\{x | f(x) > t\}$是可测的, 则称$f(x)$在$E$上可测.
+
+(2) 几乎处处: 设有一个与集合$E \subset R^n$中的点$x$有关的命题$P(x)$, 若除了$E$中的一个零测集以外, $P(x)$皆为真, 则称$P(x)$在$E$上几乎处处是真的. $P(x)$ a.e.(于$E$). (p.p)
+
+(3) 设$f(x)$是定义在$E \subset R^n$上的实值函数, 若$\{y : y = f(x), x \in E\}$是有限集. 则称$f(x)$为$E$上的简单函数.
+
+(4) 对于定义在$E \subset R^n$上的函数$f(x)$, 称点集$\{x:f(x) \neq 0\}$的闭包为$f(x)$的支集, 记为$\text{supp}(f)$. 若$f(x)$的支集是有界的, 则称$f(x)$是具有紧支集的函数.
+
+重要的还是这些概念背后的东西.
+
+(1)我们首先可以把可测函数定义中的$t$的范围缩小:
+
+$f(x)$定义在可测集$E$上, $D$为$R^1$的一个稠密集, 若对$\forall r \in D$, $\{x | f(x) > r\}$可测, 则$f(x)$可测.
+
+这只需注意到
+\[
+\{x | f(x) > t\} = \bigcup_{k=1}^{\infty}{\{ x | f(x) > r_k \}}
+\]
+即可, $\lim{r_k} = t$.
+
+(2) 我们还可以变换一下可测函数定义中的点集$\{x | f(x) > t\}$:
+
+$f(x)$为可测函数, 则下列等式中左端的点集皆可测.
+\begin{enumerate}
+\item[(i)] $\{x | f(x) \le t\} = E \backslash \{x | f(x) > t\}$, $t \in R^1$.
+\item[(ii)] $\{x | f(x) \ge t\} = \bigcap_{k=1}^{\infty}{\{x | f(x) > t - 1/k\}}$.
+\item[(iii)] $\{x | f(x) < t\} = E \backslash \{x | f(x) \ge t\}$.
+\item[(iv)] $\{x | f(x) = t\} = \{x | f(x) \ge t\} \cap \{x | f(x) \le t\}$.
+\item[(v)] $\{x | f(x) < \infty\} = \bigcup_{k=1}^{\infty}{\{x | f(x) < k\}}$.
+\item[(vi)] $\{x | f(x) = +\infty\} = E \backslash \{x | f(x) < \infty\}$.
+\item[(vii)] $\{x | f(x) > -\infty\} = \bigcup_{k=1}^{\infty}{\{x | f(x) > -k\}}$.
+\item[(viii)] $\{x | f(x) = -\infty\} = E \backslash \{x | f(x) > -\infty\}$.
+\end{enumerate}
+首先这些等式是明显的, 而其可测性可以从定义得出.
+
+可测函数的定义实际上可以换成(i), (ii), (iii)中的左边的集合.
+
+(3) $f(x)$在$E_1 \cup E_2$上有定义, $f(x)$在$E_1$上可测, 在$E_2$上也可测, 则在$E_1 \cup E_2$上也是可测的.
+\[
+\{x \in E_1 \cup E_2 | f(x) > t\} = \{x \in E_1 | f(x) > t\} \cup \{x \in E_2 | f(x) > t\}.
+\]
+$f(x)$在$E$上可测, $A$为$E$的可测子集, 则$f(x)$在$A$中可测.
+\[
+\{x \in A | f(x) > t\} = A \cap \{x \in E | f(x) > t\}.
+\]
+
+(4) 若$f(x)$, $g(x)$是$E$上的实值可测函数, 则函数$cf(x)$, $f(x) + g(x)$, $f(x) \cdot g(x)$均可测.
+\begin{gather*}
+\{x | f(x) > t\} = \{x | f(x) > c^{-1}t\} \text{或}\{x | f(x) < c^{-1}t\} (c > 0 \text{或} x < 0) \\
+\{x | f(x) + g(x) > t\} = \bigcup_{i=1}^{\infty}{(\{x | f(x) > r_i\} \cap \{x | g(x) > t - r_i\})} \\
+\{x | f^2(x) > t\} = 
+\begin{cases}
+E, &t < 0 \\
+\{x | f(x) > \sqrt{t}\} \cup \{x | f(x) < -\sqrt{t}\}, &t \ge 0.
+\end{cases} \\
+f(x)g(x) = [(f(x) + g(x))^2 - (f(x) - g(x))^2] / 4.
+\end{gather*}
+
+(5) 若$\{f_k(x)\}$是$E$上的可测函数列, 则函数$\sup\limits_{k \ge 1}{\{f_k(x)\}}$, $\inf\limits_{k \ge 1}{\{f_k(x)\}}$, $\varlimsup\limits_{k \rightarrow +\infty}{f_k(x)}$, $\varliminf\limits_{k \rightarrow +\infty}{f_k(x)}$在$E$上可测.
+
+这个结论极为重要, 因为它涉及到了无限.
+\[
+\begin{aligned}
+\{ x | \sup_{k \ge 1}{\{f_k(x)\}} > t\} &= \bigcup_{k=1}^{\infty}{\{x | f_k(x) > t\}};\\
+\inf_{k \ge 1}{\{f_k(x)\}} &= -\sup_{k \ge 1}{\{-f_k(x)\}}; \\
+\varlimsup{f_k(x)} &= \inf_{i \ge 1}(\sup_{k \ge i}{[f_k(x)]}); \\
+\varliminf{f_k(x)} &= -\varlimsup(-f_k(x)).
+\end{aligned}
+\]
+由此可知, 当$\lim{f_k(x)} = f(x)$时, $f(x)$是可测的, 说明可测函数在极限下封闭.
+
+目前为止, 关于可测函数的证明, 其关键在于构造集合.
+
+(6) 对于函数$f(x)$,我们经常会把这个函数进行分解,例如分解为两个正值函数, 奇偶函数等等.
+
+分解为奇偶函数的方法: $f(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2}$.
+
+分解为正值函数的方法: $f(x) = \max\{f(x), 0\} - \max\{-f(x), 0\} = f^+(x) - f^-(x)$.
+
+关于正值分解, 我们需要注意到:
+\[
+|f(x)| = f^+(x) + f^-(x).
+\]
+如果$f(x)$在$E$上可测, 则$f^+(x)$和$f^-(x)$在$E$上可测, 从而$|(fx)|$也是可测的.
+\[
+\begin{aligned}
+\{x | f^+(x) > t\} &= 
+\begin{cases}
+E &t \le 0,\\
+\{x | f(x) > t\}, &t > 0,
+\end{cases}
+\\
+\{x | f^-(x) > t\} &=
+\begin{cases}
+E &t \le 0,\\
+\{x | f(x) < -t\}, &t > 0,
+\end{cases}
+\end{aligned}
+\]
+反过来, 若$f(x)$可测, 则不能得出$f(x)$可测的结论.
+
+书中没有构造例子, 这里构造例子如下:
+
+对于可测集$E$, 取不可测集$E_1 \subset E$, 令
+\[
+f(x) = 
+\begin{cases}
+1, & x \in E \backslash E_1, \\
+-1, & x\in E_1,
+\end{cases}
+\]
+则$|f(x)| = 1$可测, 但是$f(x)$不可测.
+
+(7) 对于几乎处处这个概念, 有下列结论:
+
+设$f(x)$,$g(x)$是定义在$E$上的广义实值函数,$f(x)$在$E$上可测,$f(x)=g(x)$ a.e.,则$g(x)$在$E$上可测.也就是说改变一个零测集的值不影响函数的可测性.(有点类似于改变一个数列的有限项不影响数列的收敛性).
+\[
+\{x | g(x) > t\} = \{x \in E\backslash A | f(x) > t\} \cup \{x \in A | g(x) > t\}
+\]
+这一节最后一个结论实际上是关于函数逼近的.
+
+(8)可测函数可以用简单可测函数来逼近.
+
+(i) 若$f(x)$是$E$上的非负可测函数, 则存在非负可测的简单函数渐升列: $\varphi_k(x) \le \varphi_{k+1}(x)$, $k=1,2,\cdots$, 使得
+\[
+\lim_{k \rightarrow \infty}{
+\varphi_k(x)} = f(x)
+\]
+$f(x) = \sum{c_k\chi_{A_k}(x)}$, $x \in E$.
+
+(ii)若$f(x)$是$E$上的可测函数, 则存在可测简单函数列$\{\varphi_k(x)\}$, 使得$|\varphi_k(x)| \le |f(x)|$, 且有
+\[
+\lim_{k \rightarrow \infty}{\varphi_k(x)} = f(x), \quad x \in E.
+\]
+若$f(x)$还是有界的, 则上述收敛是一致的.
+
+在微积分课程中,对于连续函数是这样来逼近的:把$x$轴分隔成各个小区间,在每一个区间上用一个常数来替换$f(x)$在这一小区间的值,即令在$\{x| \alpha < x M< \beta\}$上$f(x)$为常数.
+
+现在换个角度看,既然我们的目标是逼近$f(x)$,我们直接把$f(x)$即$y$轴分成各个小区间,在每个小区间上我们选择一个常数来表示$f(x)$,即令$\{x|\alpha<f(x)<\beta\}$上$f(x)$为常数.
+
+这个结论的证明就是使用后一种想法.(对于前一种方法, 只能针对可微函数).这两个想法的差异基本上就是引言中提到的Riemann积分和Lebesgue积分的差异, 从这里可以大致看出后一种方法的逼近精度更高.
+
+另一方面结论中涉及到了极限, 那么对于足够大的$f(x)$,我们用一个变化的$k$值来替换.
+\[
+\varphi_k(x) = 
+\begin{cases}
+\frac{j-1}{2^k} & x \in \{x | \frac{j-1}{2^k} \le f(x) < \frac{j}{2^k}\}, \\
+k & x \in \{x | f(x) \ge k\},
+\end{cases}
+\]
+这里$j = 1,2,\cdots,k\cdot2^k$, $k=1,2,\cdots$.
+
+(i)$\varphi_k(x) \le k$, $\varphi_k(x) \ge 0$.
+
+(ii)$\varphi_k(x) \le \varphi_{k+1}(x) \le f(x)$, $\varphi_{k+1}(x) \le f(x)$是显然的,下面需要证明$\varphi_{k}(x) \le \varphi_{k+1}(x)$.
+
+$x \in E_{k+1}$时, $\varphi_k(x) = k < k+1 = \varphi_{k+1}(x)$
+
+$x \in E_k \backslash E_{k+1}$时,$\varphi_k(x) = k$,$\varphi_{k+1}(x)$, 这一段没有用.
+
+$\frac{j-1}{2^k} < f(x) < \frac{j}{2^k}$时, $\varphi_k(x) = \frac{j-1}{2^k}$, 此时有$\frac{2j-2}{2^{k+1}} < f(x) < \frac{2j}{2^{k+1}}$,$\varphi_{k+1} = \frac{2j-2}{2^{k+1}}$或$\frac{2j-1}{2^{k+1}}$, 均大于或等于$\varphi_k(x)$.
+
+(iii)$0 < f(x) - \varphi_k(x) < \frac{1}{2^k}$, 趋于0, $f(x)$有界.
+
+(iv)$f(x) > k$时,$f(x)\rightarrow \infty$,$\varphi_k(x) \rightarrow \infty$.
+
+注意: $\varphi_k(x)=0$的解在$\{x|0\le f(x) < \frac{1}{2^k}\}$上, $\{x | \varphi_k(x) \neq 0\}$是无界的,让它与$B(0,k)$作交集,则成了一个有界集,并且有
+\[
+\lim{\varphi_k(x)\chi_{B(0,k)}} = \lim{\varphi_k(x)} =f(x).
+\]
+对于$\varphi_k(x)$的支集来说, 它必定是闭集, 一旦有界, 就成了紧集了.
+\[
+\begin{aligned}
+\sup{|f^+(x) - \varphi_k^1(x)|} &\le \frac{1}{2^k} \\
+\sup{|f^-(x) - \varphi_k^2(x)|} &\le \frac{1}{2^k} \\
+|\varphi_k^1(x)-\varphi_k^2(x) - f(x)| &= |\varphi_k^1(x)- \varphi_k^2(x) - f^+(x) + f^-(x)| \\
+&\le|f^+(x) - \varphi_k^1(x)| + |f^-(x)-\varphi_k^2(x)| \\
+&\le \frac{1}{2^{k-1}} \rightarrow 0
+\end{aligned}
+\]
+
+\section{可测函数列的收敛}
+这一节的关键是叶果洛夫定理,它给出了几乎处处收敛与一致收敛的关系.在定义方面,则是引入了一种新的收敛.
+
+依测度收敛:设$f(x)$,$f_1(x)$,$\cdots$,$f_k(x)$,$\cdots$是$E$上几乎处处有界的函数,若对任给的$\epsilon>0$,有
+\[
+\lim_{k \rightarrow \infty}{m(\{x | |f_k(x) - f(x)| > \epsilon\})} = 0,
+\]
+则称$f_k(x)$在$E$上依测度收敛于$f(x)$.
+
+依测度基本列: 设$\{f_k(x)\}$是$E$上的几乎处处有限的可测函数列, 若对任给的$\epsilon > 0$, 有
+\[
+\lim_{\substack{k \rightarrow \infty \\ j\rightarrow \infty}}{m(\{x | |f_k(x)-f_j(x)| > \epsilon\})} = 0
+\]
+则称$\{f_k(x)\}$为$E$上的依测度基本列.
+
+依测度收敛在概率论中有具体含义.
+
+几乎处处收敛: 存在$Z \subset E$, $m(Z) = 0$, $\lim{f_k(x)} = f(x)$, $x \in E \backslash Z$.
+
+(1)若$\{f_k(x)\}$是$E$上的可测函数列, $\lim{f_k(x)} = f(x)$ a.e.,则$f(x)$是可测的.
+
+零测度集不影响函数的可测性.
+
+(2)设$f(x)$,$f_1(x)$,$\cdots$,$f_k(x)$,$\cdots$是$E$上几乎处处有限的可测函数, $m(E)<\infty$, 若$f_k\rightarrow f$,a.e.,则对任给的$\epsilon>0$, 令
+\[
+E_k(\epsilon) = \{x \in E: |f_k(x) - f(x)| \ge \epsilon \},
+\]
+我们有$\lim_{j \rightarrow \infty}{m(\bigcup_{k=j}^{\infty}{E_k(\epsilon)})} = 0$.
+
+$f_k \rightarrow f$ a.e.说明$\{x | f_k(x)\text{不收敛于}f(x)\}$的测度为0.
+
+上限集$\bigcap_{j=1}^{\infty}{\bigcup_{k=j}^{\infty}{E_k(\epsilon)}}$中的点不是收敛点 $\Rightarrow$ $m(\bigcap_{j=1}^{\infty}{\bigcup_{k=j}^{\infty}{E_k(\epsilon)}}) = 0$, $m(\bigcup_{k=j}^{\infty}{E_k(\epsilon)}) = 0$,原因在于:$T_j=\bigcup_{k=j}^{\infty}{E_k(\epsilon)}$是递减序列, $T_1 \supset T_2 \supset\cdots$ $\Rightarrow$ $m(\lim{T_j}) = \lim{m(T_j)} = 0$.
+
+
+(3)叶果洛夫定理:
+
+设$f(x)$,$f_1(x)$,$\cdots$,$f_k(x)$,$\cdots$是$E$上几乎处处有限的可测函数,且$m(E) < \infty$, 若$f_k(x) \rightarrow f(x)$ a.e.,则对任给的$\delta > 0$,存在$E$中的子集$E_{\delta}$, $m(E_{\delta})<\delta$,使得$\{f_k(x)\}$在$E\backslash E_{\delta}$上一致收敛于$f(x)$.
+
+下面把涉及到的一些概念搞清楚一些:
+
+(i)几乎处处有限:$m(\{x | |f(x)| = +\infty\}) = 0$, $m(\{x | f(x) = \infty\}) = 0$.
+
+(ii)$f_k(x) \rightarrow f(x)$ a.e: $\lim{f_k(x)} = f(x)$, $x \in E \backslash Z$, $m(Z) = 0$.
+
+记$F_j(\epsilon) = \bigcup_{k=j}^{\infty}{E_k(\epsilon)}$, 则$\lim_{j \rightarrow \infty}{m(F_j(\epsilon))} = 0$. 
+
+$\Rightarrow$ 对于$\delta/2^i$, $\exists N$,当$j > N$时,$m(F_j(\epsilon)) < \delta/2^i$,令$j_i=N$,$\epsilon=1/i$,
+
+$\Rightarrow$ $\forall \delta$, $\exists j_i$使$m(F_{j_i}(\frac{1}{i})) < \frac{\delta}{2^i}$,
+
+$E_{\delta} = \bigcup_{i=1}^{\infty}{F_{j_i}(\frac{1}{i})}$, 注意这时$\epsilon \rightarrow 0$,
+
+$m(E_\delta) \le \sum{m(F_{j_i}(\frac{1}{i}))} \le \sum{\frac{\delta}{2^i}} = \delta$,
+
+$E \backslash E_{\delta} = \bigcap_{i=1}^{\infty}{\bigcap_{k=}^{j_i}{\{x \in E | |f_k(x) - f(x)| < \frac{1}{i}\}}}$,
+
+$\frac{1}{i} < \epsilon$ $\Rightarrow$ $k \ge j_i$时, $|f_k(x) - f(x)| < \frac{1}{i} < \epsilon$.
+
+下面看看$E_{\delta}$中的点都有什么点:首先自然应该去掉不连续点,即$E_{\delta}$中含有不连续点, 回忆前面1.2节中$f_k(x)$不收敛于$f(x)$的点表示为
+\[
+D = \bigcup_{k=1}^{\infty}{\bigcap_{N=1}^{\infty}{\bigcup_{n=N}^{\infty}{\{x : |f_n(x) - f(x)| \ge \frac{1}{k}\}}}}
+\]
+试比较一下
+\[
+E_{\delta} = \bigcup_{i=1}^{\infty}{\bigcup_{k=j_i}^{\infty}{F_{k}(\frac{1}{i})}} = \bigcup_{i=1}^{\infty}{\bigcup_{k=j_i}^{\infty}{\{x:|f_k(x) - f(x)| \ge \frac{1}{i}\}}},
+\]
+剥离掉最外面一层有:
+\[
+\begin{aligned}
+D_k &= \bigcap_{N=1}^{\infty}{\bigcup_{n=N}^{\infty}{\{x : |f_n(x) - f(x)| \ge \frac{1}{k}\}}} \\
+E_{\delta_k} &= \bigcup_{n=j_k}^{\infty}{\{x:|f_n(x) - f(x)| \ge \frac{1}{k}\}} \supset D_k,
+\end{aligned}
+\]
+对于这个叶果洛夫定理的证明还要再看书,书中给出一个例子,说明$m(E) < \infty$不能去掉:
+
+$f_n(x) = \chi_{(0,n)}(x)$,$n=1,2,\cdots$,$x\in(0,\infty)$.
+
+(1)$f_n(x)$在$(0,\infty)$上处处收敛于$f(x)=1$.
+
+(2)在$(0,\infty)$中的任一个有限测度集外均不一致收敛于$f(x)=1$.
+
+一致收敛的含义是:$\forall \epsilon>0$,$\exists N$,对所有的$x$有$|f_n(x)-f(x)|<\epsilon$,$n > N$.
+
+对于有界集$E$,有$f_n(x)$一致收敛于$f(x)$.
+
+因为取$n$足够大,使$E\subset(0,n)$,则$|f_n(x)-f(x)|=0$,对所有的$x \in E$成立.
+
+但是若$E$无界,则$\epsilon=1/2$,$\forall N$,我们都可以取$x\notin (0,n)$,此时,$n>N$,
+\[
+|f_n(x)-f(x)|=1>\frac{1}{2},
+\]
+$f_n(x)$只是在有界集内是一致收敛于$f(x)$的.
+
+对于收敛,还需要研究依测度收敛.
+
+几乎处处收敛与依测度收敛.
+
+书中举了一个例子说明为什么要引入依测度收敛的概念. 我需要先理解这个例子:
+
+$n=2^k + i$,$0 \le i < 2^k$.
+
+$f_n(x) = \chi_{[\frac{i}{2^k}, \frac{i+1}{2^k}]}(x)$,$n=1,2,\cdots$,$x\in[0,1]$.
+
+$\frac{i}{2^k}=\frac{n-2^k}{2^k}=\frac{n}{2^k}-1$.
+
+若$x\in[\frac{i}{2^k}, \frac{i+1}{2^k}]$,则$[\frac{2^li}{2^{k+l}}, \frac{2^li+2^l}{2^{k+l}}]$ $\Rightarrow$ $[\frac{j}{2^{k+l}},\frac{j+1}{2^{k+l}}]$, $l=1,2,\cdots$.
+
+$f_{2^k+i}(x) = 1$ $\Rightarrow$ $f_{2^{k+l}+j}(x)=1$,这样的数有无穷多个,而另一方面,剩下的$n$,$f_n(x)$均为0?这后一句话成立吗?应该是成立的,对于$2^k$个$[\frac{i}{2^k},\frac{i+1}{2^k}]$,$x_0$只能属于其中之一,除非是在交点处.
+
+这说明$f_n(x)$在$[0,1]$中的每一个点上都是不收敛的.另一方面,每个$f_n(x)$可测,并且在频率的意义上说,$0$更频繁的出现,$1$只是偶尔出现:
+\[
+m(\{x \in [0,1]:|f_n(x)| \ge \epsilon\}) = \frac{1}{2^k}, \quad (\forall \epsilon > 0).
+\]
+
+(1)依测度收敛下的极限函数在函数对等意义下唯一:
+$\{f_k(x)\}$在$E$上同时依测度收敛于$f(x)$与$g(x)$,则$f(x)=g(x)$ a.e..
+\[
+|f(x) - g(x)| \le |f(x)-f_k(x)| + |g(x)-f_k(x)| a.e.
+\]
+或者说
+\[
+\{x:|f(x)-g(x)|>\epsilon\} \subset \{x:|f(x)-f_k(x)|>\frac{\epsilon}{2}\} \cup \{x:|g(x)-f_k(x)|>\frac{\epsilon}{2}\},
+\]
+注意到几乎处处收敛强调的是点态收敛,而依测度收敛是需要在点集上考虑的,带有一定的整体性.$\{x:|f_k(x)-f(x)|>\epsilon\}$,两者之间的关系在于:
+
+(2)$\{f_k(x)\}$是$E$上几乎处处有限的可测函数列,且$m(E)<\infty$,若$\{f_k(x)\}$几乎处处收敛于几乎处处有限的函数$f(x)$,则$f_k(x)$在$E$上依测度收敛于$f(x)$.
+\[
+\lim{m(\bigcup_{k=j}^{\infty}\{x: |f_k(x)-f(x)| \ge \epsilon\}) = 0}
+\]
+由此推出
+\[
+\lim{m(\{x: |f_k(x)-f(x)| \ge \epsilon\})} = 0.
+\]
+
+(3)设$f(x)$,$f_1(x)$,$\cdots$,$f_k(x)$,$\cdots$是$E$上几乎处处有限的函数,若对$\forall \delta>0$,$\exists E_{\delta} \subset E$,$m(E_{\delta})<\delta$,使得$\{f_k(x)\}$在$E\backslash E_{\delta}$上一致收敛于$f(x)$,则$\{f_k(x)\}$在$E$上依测度收敛于$f(x)$.
+
+$\forall \epsilon$,$|f_k(x)-f(x)|<\epsilon$,$\forall x \in E \backslash E_{\delta}$ $\Rightarrow$ $\{x:|f_k(x)-f(x)|\ge\epsilon\} \subset E_{\delta}$ $\Rightarrow$ $m(\{x:|f_k(x)-f(x)|\ge\epsilon\}) < \delta$,$\delta$是任意的.
+
+(4)对于依测度收敛来说,可测函数是完备的,即依测度基本列收敛:存在几乎处处有限的可测函数$f(x)$,使依测度基本列$\{f_k(x)\}$收敛于$f(x)$.
+
+文中的证明首先构造出了一个$f(x)$,然后证明$f_k(x)$依测度收敛于$f(x)$,而$f(x)$的构造却使用了几乎处处收敛.
+
+(i)从基本列可以得出
+\[
+m(\{x:|f_l(x) - f_j(x)| \ge \frac{1}{q^i}\}) < \frac{1}{q^2},
+\]
+即集合的测度可以任意小.
+
+把这些集合挑出来,$E_i = \{x: |f_l(x) - f_j(x)| \ge 1/2^i\}$, 则在这些$E_i$之外应有
+\[
+|f_l(x) - f_j(x)| < \frac{1}{2^i}
+\]
+从而说明$\sum{(f_l(x) - f_j(x))}$是一个绝对收敛的级数,(它们的通项受控于$1/2^i$), 而且是一致收敛的.
+
+(ii)前面的方法可以挑出一个列,$f_{k_i}\rightarrow f(x)$,然后证明$f_k(x)\rightarrow f(x)$即可.
+\[
+\begin{aligned}
+m(\{x:|f_k(x) - f(x)| \ge \epsilon\}) &\le m(\{x:|f_k(x) - f_{k_i}(x)| \ge \epsilon/2\}) \\
+&+m(\{x:|f_{k_i}(x) - f(x)| \ge \epsilon/2\}).
+\end{aligned}
+\]
+在这里的证明过程中,实际上是证明了对于依测度基本列中可以抽出一个子列,可以几乎处处收敛.
+
+由此有Riesz定理:
+
+若$\{f_k(x)\}$在$E$上依测度收敛于$f(x)$,则存在子列$\{f_{k_i}(x)\}$,使$f_{k_i}(x)\rightarrow f(x)$ a.e..
+
+$f_k(x)$依测度收敛于$f(x)$,则$f_k(x)$是依测度基本列.
+
+\section{可测函数与连续函数}
+对于连续函数,我们了解得比较多,而能够找出连续函数与可测函数的关系,那么对于研究可测函数是极为有利的.
+
+在这一节没有引入新概念.
+
+(1)鲁金定理
+
+若$f(x)$是$E$上几乎处处有限的可测函数,则对任给的$\delta>0$,存在$E$中的一个闭集$F$,$m(E\backslash F)<\delta$,使得$f(x)$在$F$上连续.
+
+证明分两步走,首先证明$f(x)$为可测简单函数情形,其次讨论$f(x)$为一般可测函数,同时需要用到前面测度的性质.$\forall E$可测,存在闭集$F \subset E$,使$m(E \backslash F)<\delta$.
+
+可测函数的性质: 可以用可测简单函数序列来逼近一个可测函数. 一致收敛的级数保持了连续性.一致收敛要求可测函数有界.
+
+(2)$f(x)$是$E$上几乎处处有限的可测函数,则对任给的$\delta>0$,存在$R^n$上的一个连续函数$g(x)$,使得$m(\{x \in E: f(x)\neq g(x)\})<\delta$,若$E$还是有界集,则可使上述$g(x)$具有紧支集.
+
+$g(x)$可以从$f(x)$通过延拓得到.
+
+对于$E$为有界集,则构造连续函数$\varphi(x)$使
+\[
+\varphi(x) = 
+\begin{cases}
+1 & x \in F \\
+0 & x \notin B(0,k)
+\end{cases}
+\]
+$E \subset B(0,k)$, 则$g(x)\varphi(x)$是具有紧支集的.
+
+(3)可测函数可以用连续函数来逼近:若$f(x)$是$E$上几乎处处有限的可测函数,则存在$R^n$上的连续函数列$\{g_k(x)\}$,使得$\lim{g_k(x)} = f(x)$ a.e.$x \in E$.
+
+$g_k(x)$满足
+\begin{gather*}
+m(\{x \in E: g_k(x) \neq f(x)\})<\frac{1}{2^k},\\
+m(\{x \in E: |g_k(x) - f(x)| > \frac{1}{2^k}\})<\frac{1}{2^k},
+\end{gather*}
+
+说明$g_k(x)$是依测度收敛于$f(x)$,从而存在子列$g_{k_i}(x)$几乎处处收敛于$f(x)$.
+
+(4)若$f(x)$是$R^1$上的实值可测函数,且对任意的$x,y\in R^1$,有$f(x+y)=f(x)+f(y)$,则$f(x)$是连续函数.
+
+这是一个函数方程,$f(x)=x$为方程的一个解.
+
+令$x=y=0$,则有$f(0)=2f(0)$,$f(0)=0$.
+
+$f(x)$连续是指$\lim_{h \rightarrow 0}{f(x+h)} = f(x)$,或者$\lim_{h \rightarrow 0}{f(x+h)-f(x)} = \lim_{h \rightarrow 0}{f(h)} = 0$,证明$\lim_{h \rightarrow 0}{f(h)} = 0$, 即为$\forall \epsilon > 0$, $\exists \delta$,$|x|<\delta$,$|f(x)|<\epsilon$.
+
+从鲁金定理出发,可作有界闭集$F$:$m(F)>0$,使$f(x)$在$F$上连续,从而是一致连续的.
+
+$\forall \epsilon$,$\exists \delta$,有$|f(x)-f(y)|<\epsilon$,$|x-y|<\delta$,
+
+对于可测集$F-F$,存在$\delta_2>0$,使$F-F \supset [-\delta_2,\delta_2]$.
+
+$\delta=\min\{\delta_1,\delta_2\}$,则有$z \in (-\delta,\delta)$时,存在$x,y \in F$,使$x=x-y$,
+\[
+|f(z)|=|f(x-y)|=|f(x)-f(y)|<\epsilon,
+\]
+获证.
+
+如果没有书本,能否自己想到这个证明思路?
+
+(1)找到函数的连续的部分
+
+(2)找到这个区间$[-\delta,\delta]$.
+
+复合函数的可测性:
+
+首先修改了可测性的定义,推广到了更一般的情况.
+
+(5)$f(x)$为$R^n$上实值函数,$f(x)$可测$\Leftrightarrow$对于$R^1$中任一开集$f^{-1}(G)$是可测集.
+
+$\Leftarrow$:$(t,+\infty)$是开集,$\{x:f(x)>t\}=f^{-1}(t,\infty)$,由定义知成立.
+
+$\Rightarrow$:首先是可以得出区间$(a,b)$,$f^{-1}(a,b)$是可测,其次是开集$G$可以由区间构成,从而有$f^{-1}(G)$是可测的结论.
+\[
+f^{-1}(a,b)=f^{-1}(a,\infty) \backslash f^{-1}[b,\infty].
+\]
+
+关于复合函数有下列结论:
+
+(6)$f(x)$是$R^1$上的连续函数,$g(x)$是$R^1$上的实值可测函数,则$h(x)=f(g(x))$是$R^1$上的可测函数.
+
+注意到对于连续函数有,$G$为开集,则$f^{-1}(G)$也是开集.
+
+对于这个结论,$f$和$g$交换一下就不再成立,$f(x)$为可测,而$g(x)$连续,此时有可能出现$f(g(x))$不可测的情形.书中举了一个例子:
+
+(i)$\phi(x)$为$[0,1]$上的Cantor函数,$\psi(x)=\frac{x+\phi(x)}{2}$,$g(x)=\psi^{-1}(x)$,$\phi(x)$为单调函数,但不是严格单调的,$\psi(x)$是严格单调上升的连续函数,存在逆函数.
+
+(ii)$C$为$[0,1]$中的Cantor集,$W$是$\psi(C)$中的不可测子集.
+
+注意$m(C) = 0$,$\psi(C)$是可测的吗?如果$m^*(\psi(C))=0$,那么它就不应该有不可测子集.
+
+(iii)$\psi^{-1}(W)$是一个什么集合呢?是$C$的一个子集,那么$\psi^{-1}(W)$是可测的,$f(x)$为$\psi^{-1}(W)$上的特征函数,它是一个可测函数,注意到$m(\psi^{-1}(W)) = 0$,故$f(x)=0$ a.e.,$g(x)$是严格单调上升的连续函数,对于$f[g(x)]$呢?
+
+$\{x: f(g(x)) > 0\}$是一个什么集合呢?
+
+$\{x : f(g(x)) > 0\} = \{x: g(x) \in \psi^{-1}(W)\}=W$,不可测.
+
+这里(i)和(ii)都没有疑问,但是(ii)中的$W$是否存在呢?
+
+如果$E$为可测集,$f$为连续函数,$f(E)$是一个什么样的集合呢?
+
+$C$为Cantor集,$\psi(C)=[0,1]$,注意前面Cantor集的讨论.
+
+(7)设$T:R^n\rightarrow R^n$是连续变换,当$Z \subset R^n$且$m(Z) = 0$时,$T^{-1}(Z)$是零测集,若$f(x)$是$R^n$上的实值可测函数,则$f(T(x))$是$R^n$上的可测函数.
+
+开集$G \subset R^n$, $f^{-1}(G)$可测,$f^{-1}(G) = H \backslash Z$,$H$为$G_{\delta}$型集,$m(Z)=0$.
+
+$T^{-1}(Z)$为零测集,$T^{-1}(H)$为$G_{\delta}$集,$T^{-1}{(f^{-1}(G))}=T^{-1}(H) \backslash T^{-1}(Z)$,可测.
+
+由此推出:$f(x)$是$R^n$中的实值可测函数,$T:R^n \rightarrow R^n$是非奇异线性变换,则$f(T(x))$是$R^n$上的可测函数.
+
+$T$为非奇异线性变换说明存在$T^{-1}$,并且有$m(T^{-1}(Z)) = |\det{T}^{-1}| \cdot m(Z)=0$.
+
+书中的附录给出了一些值得注意的地方,应仔细阅读.
+
+(一)叶果洛夫定理对连续指标函数族一般不成立.
+
+(二)鲁金定理的结论不能改为:$m(E \backslash F)=0$,$f(x)$在$F$上连续.
+
+(三)复合函数的可测性有:
+
+若$f(x)$是定义在$[0,1]$上的实值函数,则存在$[0,1]$上的可测函数$g(x)$和$h(x)$,使得
+\[
+f(x) = g[h(x)].
+\]
+
+\chapter{Lebesgue积分}
+书中引入Lebesgue积分是通过以下方式:首先定义简单可测函数的定义,然后定义非负可测函数的定义,最后引入一般可测函数的积分定义.这样做的意图很明显,这是一个从简单到复杂的过程,可测函数可以用简单可测函数逼近,对于简单可测函数的积分,有着直观意义.
+
+\section{非负可测函数的积分}
+概念方面自然是几个关于函数的积分定义.
+
+概念1:非负可测简单函数的积分:
+\[
+h(x)=\sum_{i=1}^{p}{c_i\chi_{A_i}{(x)}},
+\]
+$E \in \mathcal{M}$,定义$h$在$E$上的积分为
+\[
+\int_{E}{h(x)dx} = \sum_{i=1}^{p}{c_im(E \cap A_i)}.
+\]
+注意,对于可测函数来说,定义域已经是一个非常一般的点集,不一定是区间了,另一方面,这里$dx$是$R^n$上Lebesgue测度的标志,暂时没有什么含义(至少我目前只能理解到此).
+
+概念2:非负可测函数的积分:$f(x)$是$E$上的非负可测函数,$f$在$E$上的积分为
+\[
+\int_{E}{f(x)dx}=\sup_{\substack{h(x) \le g(x) \\ x\in E}}\{\int_{E}{h(x)dx}:h(x)\text{是}R^n\text{上的非负简单可测函数}\},
+\]
+这里$\int_{E}{f(x)dx}$可以是$\infty$,若$\int_{E}{f(x)dx}<\infty$,则称$f(x)$在$E$上是可积的.
+
+正如一直以来指出的,最重要的是这几个概念所具有的各种性质:
+
+(1)线性性质:在泛函分析中,可积函数可以组成一个线性空间.
+
+书中首先证明了简单可测函数的积分具有线性性质,而后推广到非负可测函数:
+
+设$f(x)$,$g(x)$是$E$上的非负可测函数,$\alpha$,$\beta$是非负常数,则
+\[
+\int_{E}{(\alpha{f(x)} + \beta{g(x)})dx} = \alpha\int_{E}{f(x)dx} + \beta\int_{E}{g(x)dx}.
+\]
+
+首先,对非负简单可测函数作证明,分几步.
+
+第一步:
+\[
+\int_{E}{\alpha{f(x)}dx} = \alpha\int_{E}{f(x)dx}.
+\]
+设$f(x)=\sum_{i=1}^{p}{c_i\chi_{A_i}(x)}$,则$\alpha{f(x)}=\sum_{i=1}^{p}{\alpha{c_i}\chi_{A_i}(x)}$.于是
+\[
+\int_{E}{\alpha{f(x)}dx} = \sum_{i=1}^{p}{\alpha{}c_im(E \cap A_i)}=\alpha\sum_{i=1}^{p}{c_im(E \cap A_i)}=\alpha\int_{E}{f(x)dx}.
+\]
+第二步:
+\[
+\int_{E}{(f(x)+g(x))dx} = \int_{E}{f(x)dx} + \int_{E}{g(x)dx},
+\]
+设$f(x)=\sum_{i=1}^{p}{c_i\chi_{A_i}(x)}$,$f(x)=\sum_{i=1}^{q}{d_i\chi_{B_i}(x)}$,则$f(x)+g(x)$在$A_i \cap B_j$上的值是$c_i+d_j$.
+\[
+\begin{aligned}
+\int_{E}{(f(x)+g(x))dx}&=\sum_{i=1}^{p}{\sum_{j=1}^{q}{(c_i+d_j)m(E \cap A_i \cap B_j)}} \\
+&= \sum_{i=1}^{p}{c_i\sum_{j=1}^{q}{m(A \cap A_i \cap B_j)}} + \sum_{j=1}^{q}{d_j\sum_{i=1}^{p}{m(E \cap A_i \cap B_j)}} \\
+&= \sum_{i=1}^{p}{c_im(A \cap A_i)} + \sum_{j=1}^{q}{d_jm(E \cap B_j)}
+\end{aligned}
+\]
+这里必须注意到:
+\[
+\begin{aligned}
+E \cap A_i &= E \cap A_i \cap R^n = E \cap A_i \cap (\cup{B_j})\\
+E \cap B_j &= E \cap B_j \cap R^n = E \cap B_j \cap (\cup{A_i})
+\end{aligned}
+\]
+$E \cap A_i$之间互不相交,$E \cap B_j$之间互不相交.
+
+对于非负可测函数来说,同样分这样几步:
+
+第一步:
+\[
+\int_{E}{cf(x)dx} = c\int_{E}{f(x)dx}, \quad x \ge 0
+\]
+根据定义:
+\[
+\int_{E}{f(x)dx} = \sup_{\substack{h(x) \le f(x)\\ x \in E}}{\{\int_{E}{h(x)dx}\}}
+\]
+于是
+\[
+\begin{aligned}
+\int_{E}{cf(x)dx} &= \sup_{\substack{h(x) \le cf(x)\\ x \in E}}{\{\int_{E}{ch(x)dx}\}} = \sup_{\substack{\frac{1}{c}h(x) \le f(x)\\ x \in E}}{\{\int_{E}{h(x)dx}\}} \\
+&= \sup_{\substack{\frac{1}{c}h(x) \le f(x)\\ x \in E}}{\{c\int_{E}{\frac{h(x)}{c}dx}\}} = c\sup_{\substack{\frac{1}{c}h(x) \le f(x)\\ x \in E}}{\{\int_{E}{\frac{h(x)}{c}dx}\}}
+\end{aligned}
+\]
+
+第二步:
+\[
+\int_{E}{(f(x)+g(x))dx} = \int_{E}{f(x)dx} + \int_{E}{g(x)dx},
+\]
+
+在证明这个结论之前,先证明Levi渐升列积分定理:一个关于函数列极限的积分问题.
+
+设定义在$E$上的非负可测函数列:
+\[
+f_1(x) \le f_2(x) \le \cdots \le f_k(x) \le \cdots,
+\]
+且有$\lim{f_k(x)} = f(x)$, $x \in E$,则
+\[
+\lim{\int_{E}{f_k(x)dx}} = \int_{E}{f(x)dx}.
+\]
+也就是说积分和极限可以交换顺序(这也是前面提到的Riemann积分要求太严格的地方之一).
+
+有了这个定理,那么我们可以用简单可测函数逼近可测函数,从而从简单可测函数的积分线性性质可以推出非负可测函数的积分线性性质.
+
+要证明Levi渐升列积分定理,书中首先讨论了几个辅助命题.
+
+(A)若$\{E_k\}$是$R^n$中的递增可测集合列,$h(x)$是$R^n$上的非负可测简单函数,则$\int_{E}{h(x)dx} = \lim{\int_{E_k}{h(x)dx}}$,$E=\cup{E_k}=\lim{E_k}$.
+
+设$h(x)=\sum{c_i\chi_{A_i}{(x)}}$,则
+\[
+\begin{aligned}
+\int_{E}{h(x)dx} &= \sum{c_im(E \cap A_i)} \\
+&=\sum{c_i\lim{m(E_k \cap A_i)}} = \lim{\sum{c_im(E_k \cap A_i)}} \\
+&=\lim{\int_{E_k}{h(x)dx}}.
+\end{aligned}
+\]
+这里使用了可测集的性质:$\lim{m(E_k \cap A)} = m(E \cap A)$.
+
+(B)设$f(x)$,$g(x)$是$E$上的非负可测函数,若$f(x) \le g(x)$,$x\in E$,则$\int_{E}{f(x)dx} \le \int_{E}{g(x)dx}$.
+
+$h(x) \le f(x)$,$h(x) \le g(x)$, 可以得出$\int_{E}{h(x)dx} \le \int_{E}{g(x)dx}$
+\begin{gather*}
+\sup\{\int_{E}{h(x)dx}\} \le \int_{E}{g(x)dx} \\
+\int_{E}{f(x)dx} \le \int_{E}{g(x)dx}
+\end{gather*}
+
+(C)若$f(x)$是$E$上的非负可测函数,$A$是$E$中的可测子集,则$\int_{A}{f(x)dx} = \int_{E}{f(x)\chi_{A}{(x)}dx}$.
+
+$h(x) \le f(x)$,$x \in A$,变换一下集合有$h(x)\le f(x)\chi_{A}(x)$,$x\in E$.
+
+接下来回到Levi渐升列积分定理:
+
+根据(B)有$\int_{E}{f_k(x)dx} \le \int_{E}{f_{k+1}(x)dx} \le \int_{E}{f(x)dx}$,这里递增的存在极限,
+\[
+\lim_{k \rightarrow \infty}{\int_{E}{f_k(x)dx}} \le \int_{E}{f(x)dx},
+\]
+下面需要证明反向不等式:
+
+$0 < c < 1$,设$h(x) \le f(x)$,令$E_k=\{x \in E:f_k(x) \ge ch(x)\}$,则$\lim{E_k} = E$,(因为$\lim_{k \rightarrow \infty}{f_k} = f$,$f_k(x) \ge h(x)>ch(x)$)
+
+于是有$\lim{\int_{E_k}{ch(x)dx}} = \int_{E}{ch(x)dx}$,$\lim{\int_{E}{f_k(x)dx}} \ge c\int_{E}{h(x)dx}$,可得结论.
+
+容易证明:
+
+当$E$为可测集时,$\int_{E}{f(x)dx}=0$,根据定义即可.因为此时显然有$\int_{E}{h(x)dx}=0$.
+
+若$f(x)=g(x)$ a.e.,$x \in E$,则有$\int_{E}{f(x)dx}=\int_{E}{g(x)dx}$.
+
+令$E_1=\{x \in E:f(x) \neq g(x)\}$,$E_2=E\backslash E_1$,则$m(E_1)=0$.
+\[
+\begin{aligned}
+\int_{E}{f(x)dx} &= \int_{E}{f(x)(\chi_{E_1}(x) + \chi_{E_2}(x))dx} \\
+&= \int_{E_1}{f(x)dx} + \int_{E_2}{f(x)dx} = \int_{E_2}{g(x)dx} \\
+&= \int_{E}{g(x)dx}
+\end{aligned}
+\]
+若$f(x)$是$E$上的非负可积函数,则$f(x)$在$E$上是几乎处处有限的.
+
+$E_k = \{x \in E: f(x) \ge k\}$,则
+\begin{gather*}
+\{x \in E: f(x) = +\infty\}=\cap{E_k},\\
+k \cdot m(E_k) \le \int_{E_k}{f(x)dx} \le \int_{E}{f(x)dx} < +\infty,
+\end{gather*}
+因此$\lim{m(E_k)}=0$.
+
+(逐项积分):对于积分与级数的可交换性问题,现在条件基本上没有了(不需要什么条件了).
+
+$\{f_k(x)\}$为$E$上的非负可测函数列,则$\int_{E}{\sum{f_k(x)}dx} = \sum{\int_{E}{f_k(x)dx}}$.
+
+证明只需要利用前面的Levi渐升列积分定理即可
+\[
+S_n(x) = \sum_{1}^{n}{f_k(x)},
+\]
+则$S_n(x)$成立一个递增列.
+
+作为推论有:(把集合划分):
+
+$E_k \in \mathcal{M}$,$E_i \cap E_j = \emptyset$,($i \neq j$),若$f(x)$是$E=\cap{E_k}$上的非负可测函数,则
+\[
+\int_{E}{f(x)dx} = \int_{\bigcup{E_k}}{f(x)dx}=\sum{\int_{E_k}{f(x)dx}}.
+\]
+这只需使用特征函数即可:
+\[
+f(x)=\sum_{k=1}^{\infty}{f(x)\chi_{E_k}(x)},
+\]
+即可得出结论.
+
+这里有一个观点需要注意:通过点集的特征函数,积分与测度问题是可以相互转化的,也就是说积分问题可以转化为测度问题,而测度问题又可转化为积分问题.
+
+书中给出了一个例子:
+
+若$E_1$,$E_2$,$\cdots$,$E_n$是$[0,1]$中的可测集,$[0,1]$中每一点至少属于上述集合中的$k$($k \le n$)个,则在$E_1$,$E_2$,$\cdots$,$E_n$中必有一个点集的测度大于或等于$k/n$.(这类似于鸽笼源里).
+
+本节最后是极为重要的Fatou引理:
+
+若$\{f_k(x)\}$是$E$上的非负可测函数列,则$\int_{E}{\underline{\lim}{f_k(x)dx}} \le \underline{\lim}{\int_{E}{f_k(x)dx}}$.
+
+注意这里用的是下极限,而不是极限,因为$\{f_k\}$的极限不一定存在.
+
+证明还是比较简单的,只要利用上下极限的定义,构造出单调的函数列即可.
+
+$\underline{\lim}{f_k(x)}$的定义为:$\underline{\lim}{f_k(x)} = \lim_{n \rightarrow \infty}{\{\inf_{k \ge n}{f_k(x)}\}}$.
+
+令$g_n(x) = \inf_{k \ge n}\{f_k(x)\}$,则$g_n(x)$单调递增,于是有
+\[
+\begin{aligned}
+\int_{E}{\underline{\lim}{f_k(x)dx}}&=\int_{E}{\lim{g_n(x)}dx} = \lim{\int_{E}{g_n(x)dx}} \\
+&=\lim_{n \rightarrow \infty}{\int_{E}{\inf_{k \ge n}\{f_k(x)\}dx}} \\
+&\le \lim_{n \rightarrow \infty}{(\inf_{k \ge n}{\int_{E}{f_k(x)}})} = \underline{\lim}{\int_{E}{f_k(x)dx}}
+\end{aligned}
+\]
+Fatou引理的应用在于判断极限函数的可积性.若$\int_{E}{f_k(x)dx} \le M$,则$\int_{E}{\underline{\lim}{f_k(x)}dx} \le M$.其中的不等式是可以成立的,书中提供了一个例子:
+\[
+f_n(x)=\begin{cases}
+0, &x=0 \\
+n, &0<x<\frac{1}{n},\\
+0, &\frac{1}{n} \le x \le 1.
+\end{cases}
+\]
+则
+\[
+\int_{[0,1]}{f_n(x)dx} = n \cdot \frac{1}{n} = 1,
+\]
+注意到$\lim{f_n(x)} = 0$,因此
+\[
+\int_{[0,1]}{\lim{f_n(x)}dx} = 0 < 1 = \int_{[0,1]}{f_n(x)dx}.
+\]
+
+注意到在微积分课程中,我们是用划分$x$轴的方法来定义Riemann积分的,下面的定理说明我们可以用划分$y$轴的方法来定义Lebesgue积分.
+
+设$f(x)$是$E$上的几乎处处有限的非负可测函数,$m(E)<\infty$,在$[0,\infty)$上作如下划分:
+\[
+0 = y_0 < y_1 < \cdots < y_k < y_{k+1} < \cdots \rightarrow \infty
+\]
+其中$y_{k+1}-y_k < \delta$,$k=0,1,\cdots$,若令$E_k = \{x \in E: y_k \le f(x) < y_{k+1}\}$, $k=0,1,\cdots$,则$f(x)$在$E$上可积的,当且仅当级数$\sum_{k=0}^{\infty}{y_km(E_k)}<\infty$,此时有
+\[
+\lim_{\delta \rightarrow 0}{\sum_{k=0}^{\infty}{y_km(E_k)}} = \int_{E}{f(x)dx}.
+\]
+
+证明:根据$E_k$的定义,显然有
+\[
+\begin{aligned}
+\sum{y_km(E_k)} &\le \int_{E}{f(x)dx} \le \sum{y_{k+1}m(E_k)} \\
+&< \sum{\delta{}m(E_k)} + \sum{y_km(E_k)} = \delta{}m(E) + \sum{y_km(E_k)}
+\end{aligned}
+\]
+$\int_{E}{f(x)dx}$总是存在的,只不过当$\int_{E}{f(x)dx} < \infty$时认为$f(x)$可积,有了这个夹逼的不等式易知结论成立,而$\delta \rightarrow 0$时,$\delta{}m(E) \rightarrow 0$.
+
+\section{一般可测函数的积分}
+这一节的主要概念自然就是一般可测函数的积分,它是使用非负可测函数的积分来定义的,注意前面曾经讨论过函数$f(x)$可以分解为两个非负函数的差:$f(x)=f^+(x)-f^-(x)$.
+
+如果$\int_{E}{f^+(x)dx}$与$\int_{E}{f^-(x)dx}$中有一个为有限的,则定义$f(x)$的积分为
+\[
+\int_{E}{f(x)dx} = \int_{E}{f^+(x)dx} - \int_{E}{f^-(x)dx},
+\]
+如果两个都是有限的,则称$f(x)$为可积的.
+
+这里之所以要求$\int_{E}{f^+(x)dx}$和$\int_{E}{f^-(x)dx}$至少有一个为有限,是因为$\infty-\infty$是没有定义的,它可以有各种情形,用$L(E)$表示Lebesgue函数的全体.
+\[
+|f(x)|=f^+(x)+f^-(x), \quad \int_{E}{|f(x)|dx} = \int_{E}{f^+(x)dx} + \int_{E}{f^-(x)dx},
+\]
+由此可知,$f(x)$的可积性与$|f(x)|$的可积性是一致的.(有一个前提,$f(x)$为可测函数)
+\[
+|\int_{E}{f(x)dx}| \le \int_{E}{|f(x)|dx},
+\]
+
+下面开始讨论可积函数的各种性质:
+\begin{enumerate}
+\item 有界可测函数$f(x)$,对$m(E)<\infty$的$E$有$f \in L(E)$.
+\[
+\int_{E}{|f(x)|dx} < Mm(E) < \infty
+\]
+
+\item 若$f \in L(E)$,则$f(x)$在$E$上是几乎处处有限的.
+\[
+f \in L(E) \Rightarrow |f| \in L(E) \Rightarrow \int_{E}{|f(x)|dx} < \infty
+\]
+由此得到$|f(x)|$几乎处处有限.
+
+\item 若$E \in \mathcal{M}$,且$f(x)=0$ a.e.则$\int_{E}{f(x)dx}=0$.
+
+$f(x)=0$ a.e.,可知$|f(x)|=0$a.e.对于非负函数,这是成立的,$\int_{E}{|f(x)|dx} = 0$.
+
+\item 若$f(x)$是$E$上的可测函数,$g \in L(E)$,且$|f(x)| \le g(x)$,则$f \in L(E)$.
+\[
+\int_{E}{|f(x)|dx} < \int_{E}{g(x)dx} < \infty.
+\]
+
+\item 从简单可测函数积分的线性性质,推广到非负可测函数的积分线性性质,现在可以讨论一般可测函数的积分线性性质了.
+
+若$f,g \in L(E)$,$c \in R^1$,则
+\begin{enumerate}
+\item $\int_{E}{cf(x)dx} = c\int_{E}{f(x)dx}$;
+\item $\int_{E}{(f(x)+g(x))dx} = \int_{E}{f(x)dx} + \int_{E}{g(x)dx}$.
+\end{enumerate}
+证明方法是应用非负可测函数的积分线性性质,这样需要对$c$讨论,把$f(x)$分解为$f^+(x)$和$f^-(x)$.
+
+\item 若$f \in L(E)$,$g(x)$是$E$上的有界可测函数时,则$fg \in L(E)$.
+\[
+|fg| \le |f(x)| \cdot \sup|g(x)|.
+\]
+
+\item (积分的绝对连续性)若$f \in L(E)$,则对任给的$\epsilon>0$,存在$\delta>0$,使得当$E$中子集$e$的测度$m(e)<\delta$时,有
+\[
+|\int_{e}{f(x)dx}| \le \int_{e}{|f(x)|dx} < \epsilon.
+\]
+
+证明思路是分解$\int_{E}{f(x)dx}$的值为两部分.
+\[
+\int_{E}{f(x)dx} = \int_{E}{(f(x)-\varphi(x))dx} + \int_{E}{\varphi(x)dx}.
+\]
+这里$\varphi(x)$为一可测简单函数,由于它是只有有限个值,可设$|\varphi(x)|\le M$,而对于$\varphi(x)$与$f(x)$,我们可以取得这样的$\varphi(x)$,使
+\[
+\int_{E}{[f(x)-\varphi(x)]dx} \le \frac{\epsilon}{2},
+\]
+$0 \le \varphi(x) \le f(x)$,这样,当$e \subset E$,$m(e)<\delta$时有
+\[
+\begin{aligned}
+\int_{e}{f(x)dx} &= \int_{e}{f(x)dx} - \int_{e}{\varphi(x)dx} + \int_{e}{\varphi(x)dx} \\
+&\le \int_{E}{(f(x)-\varphi(x))dx} + \int_{e}{\varphi(x)dx} \\
+&<\frac{\epsilon}{2} + M \cdot m(e) \le \epsilon,
+\end{aligned}
+\]
+这里还是各种逼近问题,注意这里的分解方法,这种分解方法会经常用到:
+\[
+\int_{A}{f(x)dx} + \int_{B}{g(x)dx},
+\]
+$f(x)$任意小,$m(B)$可以任意小,从而两者之和也可以任意小.
+
+\item 设$E_k \in \mathcal{M}$,$k=1,2,\cdots$,$E_i \cap E_j = \emptyset$,($i \neq j$),若$f(x)$在$E = \bigcup_{1}^{\infty}{E_k}$上可积.则
+\[
+\sum_{k=1}^{\infty}{\int_{E_k}{f(x)dx}} = \int_{E}{f(x)dx}.
+\]
+注意对于非负可测函数我们已经证明了类似的结论.
+
+$f(x)$在$E$上可积,从而$|f(x)|$在$E$上也是可积的.
+
+$f(x)=f^+(x)+f^-(x)$,则
+\[
+\begin{aligned}
+\int_{E}{|f(x)|dx} &= \int_{E}{(f^+(x) + f^-(x))dx} = \int_{E}{f^+(x)dx} + \int_{E}{f^-(x)dx} \\
+&= \sum{\int_{E_k}{f^+(x)dx}} + \sum{\int_{E_k}{f^-(x)dx}}
+\end{aligned}
+\]
+这两个级数是收敛的,现在对于$f(x)$来说,有这样一个问题
+\[
+\sum{\int_{E_k}{[f^+(x)-f^-(x)]dx}} = \sum{(\int_{E_k}{f^+(x)dx} - \int_{E_k}{f^-(x)dx})}
+\]
+这是无穷级数,能否进行移项呢?这是可以的,因为这个级数是绝对收敛的(即前面的$|f(x)|$可积),于是有
+\[
+\begin{aligned}
+&\sum{(\int_{E_k}{f^+(x)dx} - \int_{E_k}{f^-(x)dx})} \\
+=&\sum{\int_{E_k}{f^+(x)dx}} - \sum{\int_{E_k}{f^-(x)dx}} \\
+=&\int_{E}{f^+(x)dx} - \int_{E}{f^-(x)dx} = \int_{E}{f(x)dx}.
+\end{aligned}
+\]
+不需要考虑这么复杂(即不必考虑所谓移项问题):$\sum{a_i}$和$\sum{b_i}$收敛,则$\sum{a_i+b_i}$是收敛的.并且有
+\[
+\sum{a_i+b_i} = \sum{a_i} + \sum{b_i}.
+\]
+
+\item 可积函数几乎处处为零的判别法.设$f(x) \in L[a,b]$,若对任意的$c \in [a,b]$,有$\int_{a}^{c}{f(x)dx}=0$,则$f(x)=0$ a.e..
+
+证明:$f(x)=0$ a.e. $\Leftrightarrow$ $m(\{x \in [a,b] : f(x) \neq 0\})=0$.
+
+记$E = \{x \in [a,b]: f(x) \neq 0\}$, $E_k = \{ x \in [a,b] : \frac{1}{k+1} < f(x) \le \frac{1}{k}\}$,则$E_i \cap E_j = \emptyset$,$E=\bigcup{E_k}$
+\[
+\int_{E}{f(x)dx} = \sum{\int_{E_k}{f(x)dx}},
+\]
+这里面不对,不能这么做.
+
+证明思路是使用可测集$E$的分解.把$E$分解为闭集$F$和另一个集合,$f(x)$在$F$上是$m(F)>0$,$f(x)>0$,先想到这儿吧.
+
+(1)考虑集合:$E = \{x \in [a,b]: f(x)>0\}$.如果$m(E)>0$,则存在闭集$F$,使得$m(F)>0$,且$f(x)$在$F$上连续,从而是有界的,事实上有最大值和最小值,注意到$f(x)>0$,$x \in F$.
+\[
+\int_{F}{f(x)dx} + \int_{G \backslash F}{f(x)dx} = \int_{G}{f(x)dx} = 0
+\]
+而$\int_{F}{f(x)}>0$,故$\int_{G \backslash F}{f(x)dx} \neq 0$,而$G \backslash F$可以由构成区间表示出来,
+\[
+\int_{G \backslash F}{f(x)dx} = \sum{\int_{a_i}^{b_i}{f(x)dx}} \neq 0,
+\]
+由此可知至少存在一个$\int_{a_i}^{b_i}{f(x)dx} \neq 0$,而
+\[
+\int_{a}^{b_i}{f(x)dx} = \int_{a}^{a_i}{f(x)dx} + \int_{a_i}^{b_i}{f(x)dx} \neq 0
+\]
+矛盾.这似乎不大对?上面最后的推理似乎不对?应该是$\int_{a}^{a_i}{f(x)dx}$和$\int_{a}^{b_i}{f(x)dx}$至少有一个不为0.
+
+\item 设$g(x)$是$E$上的可测函数,若对任意的$f \in L^1(E)$,都有$fg \in L^1(E)$,则除一个零测集外,$g(x)$是有界函数.
+
+书中构造了一个$f(x)$:先作集合
+\[
+E_i = \{x \in E: k_i \le |g(x)| < k_{i+1}\}
+\]
+然后令
+\[
+f(x) = \begin{cases}
+\frac{\text{sign}(g(x))}{i^{1 + \frac{1}{2}} \cdot m(E_i)} & x \in E_i \\
+0 x \notin E_i
+\end{cases}
+\]
+为什么这么构造呢?分子部分是有迹可循的:
+
+(1) $f(x) \in L(E)$, 则
+\[
+\sum|\frac{\text{sign}(g(x))}{i^{1 + 1/2}m(E_i)} \cdot m(E_i)| = \sum{\frac{1}{i^{1 + 1/2}}} < \infty
+\]
+
+(2)$f(x)g(x)$,$\text{sign}(g(x))g(x) = |g(x)| \ge k_i \ge i$,于是有
+\[
+\sum{\frac{\text{sign}(g(x)) \cdot g(x)}{i^{1+1/2} \cdot m(E_i)} \cdot m(E_i)} \ge \sum{\frac{1}{i^{1/2}}} > \infty.
+\]
+
+\item 类似于测度的平移不变性,有关于积分变量的平移不变性:
+
+若$f \in L(R^n)$,则对任意的$y \in R^n$,$f(x+y) \in L(R^n)$,且有
+\[
+\int_{R^n}{f(x+y)dx} = \int_{R^n}{f(x)dx}.
+\]
+首先注意前面提过积分与测度可以通过特征函数相联系.
+
+$f(x) = \chi(x)$,则$f(x+y) = \chi(x+y)$,
+\[
+\int_{R^n}{\chi(x+y)dx} = \int_{R^n}{\chi(x)dx}.
+\]
+证明过程分为几步:(1)对简单可测函数成立;(2)对非负可测函数成立;(3)对可测函数成立.
+
+(1)$f(x) = \sum_{i=1}^{p}{c_i\chi_{E_i}(x)}$;
+\[
+f(x + y) = \sum_{i=0}^{p}{c_i\chi_{E_i}(x+y)} = \sum_{i=1}^{p}{c_i\chi_{E_i - \{y\}}(x)},
+\]
+这样就有
+\[
+\int_{R^n}{f(x+y)dx} = \sum{c_im(E_i - \{y\})} = \sum{c_im(E_i)} = \int_{R^n}{f(x)dx}.
+\]
+
+(2)可测简单函数列逼近之.
+
+(3)$f(x) = f^+(x) - f^-(x)$,$f(x+y)=f^+(x+y)-f^-(x+y)$.
+\[
+\begin{aligned}
+\int_{R^n}{f(x+y)dx} &= \int_{R^n}{f^+(x+y)dx} - \int_{R^n}{f^-(x+y)dx} \\
+&=\int_{R^n}{f^+(x)dx} - \int_{R^n}{f^-(x)dx} \\
+&=\int_{R^n}{f(x)dx}.
+\end{aligned}
+\]
+
+\item 下面介绍的Lebesgue控制收敛定理极为重要,应仔细推敲,它给出了积分与极限交换的一个充分条件.
+
+设$f_k \in L(E)$,且有$\lim{f_k(x)}=f(x)$ a.e.,若存在$E$上的可积函数$F(x)$,使得$|f_k(x)| \le F(x)$ a.e.,则$\lim{\int_{E}{f_k(x)dx}} = \int_{E}{f(x)dx}$.
+
+有几个结论是很容易推出的:
+
+(1)从$|f_k(x)|\le F(x)$可知$|f(x)| \le F(x)$;
+
+(2)$F(x)$可积可以得到$f(x)$可积;
+
+(3)
+\[
+\begin{aligned}
+&\lim_{k \rightarrow \infty}{\int_{E}{f_k(x)dx}} = \int_{E}{f(x)dx} \\
+\Leftrightarrow &\lim_{k \rightarrow \infty}{[\int_{E}{f_k(x)dx} - \int_{E}{f(x)dx}]} = 0 \\
+\Leftrightarrow &\lim_{k \rightarrow \infty}{\int_{E}{(f_k(x) - f(x))dx}} = 0
+\end{aligned}
+\]
+令$g_k(x) = |f_k(x) - f(x)|$,则$g_k(x) \ge 0$,$0 \le g_k(x) \le 2F(x)$,$g_k \in L(E)$.
+
+使用Fatou引理(这种问题应该首先想到Fatou引理):
+\begin{gather*}
+\int_{E}{\lim_{k \rightarrow \infty}{(2F(x) - g_k(x))}dx} \le \underline{\lim}\int_{E}{(2F(x)-g_k(x))dx} \\
+2\int_{E}{F(x)dx} - \int_{E}{\lim{g_k(x)}dx} \le 2\int_{E}{F(x)dx} - \overline{\lim}\int_{E}{g_k(x)dx}
+\end{gather*}
+由此推出
+\[
+\overline{\lim}{\int_{E}{g_k(x)dx}} \le \int_{E}{\lim{g_k(x)}dx}
+\]
+而$\lim{g_k(x)} = 0$ a.e.,于是
+\[
+\overline{\lim}{\int_{E}{g_k(x)dx}} = 0,
+\]
+于是
+\[
+\lim_{k \rightarrow \infty}{|\int_{E}{(f_k(x) - f(x))dx}|} \le \lim_{k \rightarrow \infty}{\int_{E}{|f_k(x) - f(x)|dx}} = 0.
+\]
+
+作为一个推论,我们有逐项积分方面的结论:
+
+设$f_k(x) \in L(E)$,若有$\sum{\int_{E}{|f_k(x)|dx}} < \infty$,则$\sum{f_k(x)}$在$E$上几乎处处收敛,若记其和为$f(x)$,则$f \in L(E)$,且有
+\[
+\sum{\int_{E}{f_k(x)dx}} = \int_{E}{f(x)dx}.
+\]
+
+取$F(x) = \sum{|f_k(x)|}$为上一题中的$F(x)$,$g_m(x) = \sum_{1}^{m}{f_k(x)}$,为上一题中的$f_k(x)$.
+
+利用非负可测函数关于逐项积分的定理可知,$F(x) \in L(E)$,从而$\sum{f_k(x)}$几乎处处收敛,绝对收敛的级数是收敛的.
+
+最后一个结论是关于积分号下求导的:
+
+$f(x,y)$是定义在$E \times (a,b)$上的函数,它作为$x$的函数在$E$上是可积的,作为$y$的函数在$(a,b)$上是可微的,若存在$F \in L(E)$使得
+\[
+|\frac{d}{dy}f(x,y)| \le F(x), \quad (x,y) \in E \times (a,b)
+\]
+则
+\[
+\frac{d}{dy}\int_{E}{f(x,y)dx} = \int_{E}{\frac{d}{dy}f(x,y)dx}.
+\]
+
+证明利用了控制收敛定理,$h_k \rightarrow 0$,$\frac{d}{dy}f(x,y) = \lim_{k \rightarrow \infty}{\frac{f(x,y+h_k) - f(x,y)}{h_k}}$.
+\[
+|\frac{d}{dy}f(x,y)| \le F(x) \Rightarrow |\frac{f(x,y+h_k) - f(x,y)}{h_k}| \le F(x)
+\]
+
+这几个结论涉及到了积分,极限,微分,在以后会经常用到,需要多加琢磨.
+\end{enumerate}
+
+\section{可积函数与连续函数}
+这一节没有引入新的概念,继续讨论可积函数的各种性质,最主要的结论是关于可积函数与连续函数的关系.对于可测函数来说,我们可以用连续函数来逼近,对于可积函数有类似的结论.
+
+\begin{enumerate}
+\item 若$f \in L(E)$,则对任给$\epsilon>0$,存在$R^n$上具有紧支集的连续函数$g(x)$,使得$\int_{E}{|f(x)-g(x)|dx}<\epsilon$.
+
+第一步,存在$R^n$上的具有紧支集的可测简单函数$\varphi(x)$,使得
+\[\int_{E}{|f(x)-\varphi(x)|dx} < \epsilon/2.\]
+
+第二步,存在$R^n$上具有紧支集的连续函数$g(x)$使得
+\[
+m\{x : |\varphi(x) - g(x)|>0\} < \frac{\epsilon}{4M}.
+\]
+
+这实际上把$f(x)$分解成里两部分:$f(x) = g(x) + f(x)-g(x) = f_1(x) + f_2(x)$,$f_1(x)$是$R^n$上具有紧支集的连续函数,$|f_2(x)|$在$E$上的积分小于$\epsilon$(可以足够小).
+
+\item (平移连续性)若$f \in L(R^n)$,则$\lim\limits_{h \rightarrow 0}{\int_{R^n}{|f(x+h) - f(x)|dx}} = 0$.
+
+把$f(x)$分解为$f_1(x) + f_2(x)$,而$f_1(x)$是连续的,$f_2(x)$在$R^n$上积分可以任意小.
+
+注意到积分与测度的关系,我们有:$E \subset R^n$为有界可测集,则
+\[
+\lim_{h \rightarrow 0}{m(E \cap (E + \{h\}))=m(E)}, \quad h \in R^n
+\]
+应用平移连续性于$\chi_{E}(x)$即可,$\chi_{E + \{h\}}(x) = \chi_{E}(x-h)$.
+
+\item 若$f \in L(E)$,则存在具有紧支集的阶梯函数列$\{\varphi_k(x)\}$,使得
+
+(i)$\lim\limits_{k \rightarrow \infty}{\varphi_k(x)} = f(x)$ a.e.,$x \in E$;
+
+(ii)$\lim\limits_{k \rightarrow \infty}{\int_{E}{|f(x)-\varphi_k(x)|dx}} = 0$.
+
+第一步:使用连续函数$g(x)$来逼近:$\forall \epsilon>0$,存在$R^n$上具有紧支集的连续函数$g(x)$,使得
+\[
+\int_{E}{|f(x)-g(x)|dx} < \frac{\epsilon}{2}.
+\]
+
+第二步:用阶梯函数逼近连续函数$g(x)$.设$g(x)$的支集含于某个闭方体内$I=\{x=(\xi_1, \cdots,\xi_n):-k_0 \le \xi_i \le k_0\}$,
+\[
+\varphi(x) = \sum{c_i\chi_{I_i}(x)},\int_{I}{|g(x) - \varphi(x)|dx} < \frac{\epsilon}{2},
+\]
+其中每个$I_i$可以是含于$I$内的二进方体.
+
+然后对$\epsilon = 1/k$取出一个阶梯函数子列$\{\varphi_k(x)\}$,$\lim{\int_{E}{|f(x) - \varphi_k(x)|dx}} = 0$.
+
+至于收敛性,想办法证明$\varphi_k(x)$是依测度收敛的,这要用到测度与积分的联系.
+
+例子(Riemann-Lebesgue引理的推广):若$\{g_n(x)\}$是$[a,b]$上的可测函数列,且满足
+\begin{enumerate}
+\item[(i)]$|g_n(x)| \le M$,$x \in [a,b]$,$n=1,2,\cdots$;
+\item[(ii)]对任意的$c \in [a,b]$,有$\lim_{n \rightarrow \infty}{\int_{a}^{c}{g_n(x)dx}} = 0$.
+\end{enumerate}
+则对任意的$f \in L([a,b])$有
+\[
+\lim_{n \rightarrow \infty}{\int_{a}^{b}{f(x)g_n(x)dx}} = 0.
+\]
+
+$\varphi(x)$为阶梯函数
+\[
+|\int_{a}^{b}{f(x)g_n(x)dx}| \le |\int_{a}^{b}{[f(x) - \varphi(x)]g_n(x)dx}| + |\int_{a}^{b}{\varphi(x)g_n(x)dx}|,
+\]
+$\varphi(x) = \sum{y_i\chi_{[x_{i-1}, x_i)}(x)}$,展开.
+\end{enumerate}
+
+本节还有一些例子见书本.
+
+\section{Lebesgue积分与Riemann积分}
+这一节说明Lebesgue积分正是Riemann积分的推广.不过只讨论了一维的情形.这一节没有引入新的概念.
+
+\begin{enumerate}
+\item 设$f(x)$是定义在$I=[a,b]$上的有界函数,记$w(x)$是$f(x)$在$[a,b]$上的振幅(函数),我们有
+\[
+\int_{I}{w(x)dx} = \overline{\int}_{a}^{b}{f(x)dx} - \underline{\int}_{a}^{b}{f(x)dx},
+\]
+左端是$w(x)$在$I$上的Lebesgue积分.
+
+这里涉及到了这样一些以往的概念:
+
+(a)振幅函数$w(x)$:
+\[
+w(x) = \lim_{\delta \rightarrow 0}{\sup\{|f(x') - f(x'')|: x',x'' \in B(x, \delta)\}},
+\]
+
+(b)Darboux上下积分:$\overline{\int}_{a}^{b}{f(x)dx}$和$\underline{\int}_{a}^{b}{f(x)dx}$.
+
+对于分割$\Delta$来说,$m_i$和$M_i$分别表示$f(x)$在$[x_i,x_{i+1}]$中的下确界和上确界.则
+\[
+s = \sum{m_i\Delta{x_i}}, S = \sum{M_i\Delta{x_i}}
+\]
+分别称为下和与上和.
+\[
+\overline{\int}_{a}^{b}{f(x)dx} = \lim_{|\Delta| \rightarrow 0}{S}, \underline{\int}_{a}^{b}{f(x)dx}=\lim_{|\Delta| \rightarrow 0}{s}
+\]
+这两个值是必然存在的,只不过可能为$+\infty$或$-\infty$.
+
+这个结论的证明分两步:(1)$w(x) \in L([a,b])$;(2)等式成立.
+
+关于等式的证明,关键在于构造了
+\[
+w_{\Delta^{(n)}}(x) = \begin{cases}
+M_i^{(n)} - m_i^{(n)}, &x \in (x_{i-1}^{(n)}, x_{i}^{(n)}),\\
+0, &x \text{为}\Delta^{(n)}\text{的分点}.
+\end{cases}
+\]
+$\lim_{n \rightarrow \infty}{w_{\Delta^{(n)}}(x)} = w(x)$,控制收敛.
+
+有了这个结论,便有了Lebusgue积分和Riemann积分的关系.
+
+\item $f(x)$是$[a,b]$上的有界函数,则$f(x)$在$[a,b]$上是Riemann可积的充分且必要条件是:$f(x)$在$[a,b]$上的不连续点集是零测集(几乎处处连续).
+
+(1)如果$f(x)$在$[a,b]$上的不连续点集是零测集,则意味着$\{x : w(x) \neq 0\}$的测度为0,于是
+\[
+\overline{\int}_{a}^{b}{f(x)dx} - \underline{\int}_{a}^{b}{f(x)dx} = \int_{I}{w(x)dx} = 0,
+\]
+从而$f(x)$是Riemann可积的.
+
+(2)如果$f(x)$是Riemann可积的,则$\int_{I}{w(x)dx} = 0$,而$w(x)\ge 0$,于是$w(x) \neq 0$的$x$构成的集合的测度为0,即$f(x)$的不连续点集是零测集.
+
+下一个定理说明Lebesgue积分确实是Riemann积分的推广.
+
+\item 若$f(x)$在$I=[a,b]$上是Riemann可积的,则$f(x)$在$[a,b]$上是Lebesgue可积的,其积分值相同.
+
+$f(x)$是Riemann可积,说明$f(x)$是几乎处处连续的,从而$f(x)$为有界可测函数,从而可知$f(x)$Lebesgue可积.(这里说明判断一个函数Lebesgue可积极为简单)
+
+把$[a,b]$分解:$a=x_0<x_1<\cdots<x_n=b$,利用可数可加性有
+\[
+\int_{I}{f(x)dx} = \sum{\int_{[x_{i-1}, x_i]}{f(x)dx}},
+\]
+这后一个积分可用Draboux上下积分逼近.
+
+\item 对于无界函数的积分或者函数在无穷区间的积分,Riemann积分是作为广义积分来定义的,那么使用Lebesgue积分的概念是什么情形呢>
+
+设$\{E_k\}$是递增可测集合列,其并集为$E$,$f \in L(E_k)$,$k=1,2,\cdots$,若极限$\lim_{k \rightarrow \infty}{|f(x)|dx}$存在(有限),则$f \in L(E)$,且有
+\[
+\int_{E}{f(x)dx} = \lim_{k \rightarrow \infty}{\int_{E_k}{f(x)dx}}.
+\]
+
+$f(x)\chi_{E_k}(x) \in L(E_k)$,$\lim_{k \rightarrow \infty}{f(x)\chi_{E_k}(x)} = f(x)$,$|f(x)\chi_{E_k}(x)| \le |f(x)|$,于是
+\[
+\lim_{k \rightarrow \infty}{\int_{E}{|f(x)|\chi_{E_k}(x)dx}} = \int_{E}{|f(x)|\chi_{E}(x)dx}=\int_{E}{|f(x)|dx}.
+\]
+说明$\int_{E}{|f(x)|dx}$有限,$f(x) \in L(E)$.
+
+$\int_{E}{f(x)dx} = \lim_{k \rightarrow \infty}{\int_{E_k}{f(x)dx}}$可以由控制收敛定理获得.
+
+不过令人惊奇的是在广义积分下,Riemann广义积分和Lebesgue积分没有必然的联系.书中给出两个例子.
+
+(1)$f(x)=\sin{x}/x$,$\int_{0}^{\infty}{\frac{\sin{x}}{x}dx} = \pi/2$,这是广义Riemann积分的值,另一方面,$\int_{0}^{\infty}{|\frac{\sin{x}}{x}|dx} = +\infty$,说明$f \notin L([0, \infty))$,因为对于Lebesgue可积函数来说,$f(x)$与$|f(x)|$是同时成立的.
+
+(2)在$[0,1]$上定义函数
+\[
+f(x) = \begin{cases}
+0, & x=0 \\
+(-1)^{n+1}n & \frac{1}{n+1} < x \le \frac{1}{n}
+\end{cases}
+\]
+广义Riemann积分:$\int_{0}^{1}{f(x)dx} = 1 - \ln{2}$,另一方面,$\int_{0}^{1}{f(x)dx} = +\infty$,说明$f \notin L([0,1])$.
+\[
+\begin{aligned}
+\int_{0}^{1}{f(x)dx} &=1 \cdot \frac{1}{2} - 2(\frac{1}{2} - \frac{1}{3}) + 3(\frac{1}{3} - \frac{1}{4}) + \cdots + (-1)^{n+1}n(\frac{1}{n} - \frac{1}{n+1}) \\
+&=\sum{(-1)^{n+1}\frac{n}{n(n+1)}}=\sum_{1}^{\infty}{\frac{(-1)^{n+1}}{n+1}}
+\end{aligned}
+\]
+注意到$\ln{(1+x)}$的展开式为:$\ln{(1+x)} = \sum_{0}^{\infty}{\frac{(-1)^n}{n}x^n}$,
+\[
+\int_{0}^{1}{f(x)dx} = 1 - \ln{2}.
+\]
+
+为什么会有这样的情形呢?
+
+应注意到Lebesgue积分的定义中要求$\int_{E}{f^+(x)dx}$与$\int_{E}{f^-(x)dx}$都是有限的时候才能要求$f(x)$可积,而$\int_{E}{f(x)dx} = \int_{E}{f^+(x)dx} - \int_{E}{f^-(x)dx}$,另一方面完全有可能$\int_{E}{f^+(x)dx}$为$\infty$,$\int_{E}{f^-(x)dx}$为$\infty$,可是$\int_{E}{f^+(x)dx} - \int_{E}{f^-(x)dx}$却是有限的情形(注意这些是使用极限的情形).
+
+对于无界函数与无穷区间的情形,Lebesgue积分与广义Riemann积分会有不同的考虑.
+
+\end{enumerate}
+
+\section{重积分与累次积分}
+在多元微积分课程中,(Riemann积分)有下列结论:如果$f(x,y)$在$I=[a,b]\times[c,d]$上连续,那么等式
+\[
+\int_{I}{f(x,y)dxdy} = \int_{a}^{b}{\{\int_{c}^{d}{f(x,y)dy}\}dx}
+\]
+成立.把重积分转化成为累次积分,在Lebesgue积分理论下,有类似的结论:Fubini定理.
+
+这一节分两部分,首先证明了Fubini定理,然后通过Fubini定理讨论了积分的几何意义.
+
+令$n=p+q$,$p,q$为正整数,$R^n=R^p \times R^q$,$(x,y)=(\xi_1,\cdots, \xi_p,\xi_{p+1}, \cdots,\xi_n)$.定义在$R^n$上的函数$f$的积分为
+\[
+\int_{R^p \times R^q}{f(x,y)dxdy} = \int_{R^n}{f(x,y)dxdy},
+\]
+Fubini定理的结论是:
+\[
+\int_{R^n}{f(x,y)dxdy} = \int_{R^p}{dx}\int_{R^q}{f(x,y)dy}.
+\]
+
+整个过程分几步完成:
+
+\begin{enumerate}
+\item 非负可测函数情形的Tonelli定理,设$f(x,y)$是$R^n=R^p \times R^q$上的非负可测函数,我们有
+\begin{enumerate}
+\item[(A)] 对于几乎处处的$x \in R^p$,$f(x,y)$作为$y$的函数是$R^q$上的非负可测函数;
+\item[(B)] 记$F_f(x)=\int_{R^q}{f(x,y)dy}$,则$F_f(x)$是$R^p$上的非负可测函数;
+\item[(C)] $\int_{R^p}{F_f(x)dx} = \int_{R^p}{dx}\int_{R^q}{f(x,y)dy} = \int_{R^n}{f(x,y)dxdy}$.
+\end{enumerate}
+
+请注意接下来的证明过程,书中并没有直接进入定理的证明,而是首先引入了一个引理,这个引理研究了满足(A),(B),(C)三个条件的可测函数有哪些性质,然后来证明定理中的函数也是这样的函数,记满足(A),(B),(C)的非负可测函数的全体为$\mathcal{F}$.
+
+我们要证明命题$p(x)$,可以先研究空间$\{x: p(x)\}$,然后从一些特殊的$x$来说明$p(x)$,因为通常特殊的$x$更容易证明$p(x)$.
+
+\begin{lemma}
+\begin{enumerate}
+\item[(i)]若$f \in \mathcal{F}$,$a \ge 0$,则$af \in \mathcal{F}$;
+\item[(ii)]若$f_1,f_2 \in \mathcal{F}$,则$f_1 + f_2 \in \mathcal{F}$;
+\item[(iii)]若$f,g \in \mathcal{F}$,$f(x,y) - g(x,y) \ge 0$,且$g \in L(R^n)$,则$f-g \in \mathcal{F}$;
+\item[(iv)]若$f_k \in \mathcal{F}$,$k=1,2,\cdots$,$f_k(x,y) \le f_{k+1}(x,y)$,且有$\lim{f_k(x,y)} = f(x,y)$,则$f \in \mathcal{F}$.
+\end{enumerate}
+\end{lemma}
+
+有了这个引理,我们只需要对一小部分函数证明定理:可测函数可以通过简单可测函数来逼近,故只需要对非负可测简单函数证明结论即可,而简单可测函数又可以表示为可测集的特征函数,故最后归结为对任一可测集$E$上的特征函数$\chi_{E}(x,y)$.
+
+具体证明见课本,总的思路还是走了一遍可测集的定义,先考虑矩体,然后是开集,接下来是可测集,这同样是因为集合的逼近的原因.
+
+\item 完成非负可测函数的证明之后,就有了针对一般可积函数的Fubini定理.
+
+若$f \in L(R^n)$,$(x,y) \in R^n = R^p \times R^q$,则
+\begin{enumerate}
+\item[(A)]对于几乎处处的$x \in R^p$,$f(x,y)$是$R^q$上的可积函数;
+\item[(B)]积分$\int_{R^q}{f(x,y)dy}$是$R^p$上的可积函数;
+\item[(C)]$\int_{R^n}{f(x,y)dxdy} = \int_{R^p}{dx}\int_{R^q}{f(x,y)dy} = \int_{R^q}{dy}\int_{R^p}{f(x,y)dx}$.
+\end{enumerate}
+
+书中有一个注解:即使$f(x,y)$的两个累次积分存在且相等,$f(x,y)$在$R^n$上也可能是不可积的,也就是说,(C)中后一个等式成立不能得出$f \in L(R^n)$.
+\end{enumerate}
+
+注意积分与测度是相通的,本节第二部分就是讨论低维欧氏空间中点集与高维欧氏空间中点集之间的测度关系.
+
+有必要回忆一下微积分的情形:
+
+$\int_{a}^{b}{f(x)dx}$表示的是二维点集的面积,它与一维点集$[a,b]$之间是有关系的,一个简单的关系是所谓积分中值定理:
+\[
+\int_{a}^{b}{f(x)dx} = f(\xi)(b-a).
+\]
+
+\begin{enumerate}
+\item 设$E$是$R^n = R^p \times R^q$中的可测集,对任意的$x \in R^p$,令$E(x) = \{y \in R^q : (x,y) \in E\}$,称它为点集$E$在$x$处的截断集,则对几乎处处的$x$,$E(x)$是$R^q$中的可测集,$m(E(x))$是$R^p$上的可测函数,且有
+\[
+m(E) = \int_{R^p}{m(E(x))dx}.
+\]
+
+对$f = \chi_{E}$使用Tonelli定理即可.
+
+\item 若$E_1$与$E_2$是$R^p$与$R^q$中的可测集,则$E_1 \times E_2$是$R^p \times R^q$中的可测集,且有$m(E_1 \times E_2) = m(E_1) \cdot m(E_2)$.
+
+$\chi_{E_1}(x) \cdot \chi_{E_2}(x) = \chi_{E_1 \times E_2}(x)$.
+
+这可以使用Tonelli定理得出等式,关键是证明$E_1 \times E_2$可测,而可测集可以表示为有界闭集的极限,故$E_1 \times E_2$可以由可数个$A \times B$并集得到,$A,B$是有界闭集或零测集,剩下来就是证明$A \times B$可测,当$A$为零测集时,$A \times B$为零测集,否则$A \times B$为闭集,可测.
+
+\item (可测函数图形的测度)设$f(x)$是$E$上的非负实值可测函数,作点集
+\[
+G_E(f) = \{(x, y) \in R^{n+1} : x\ in E, y = f(x)\},
+\]
+称之为$f$在$E$上的图形.$m(G_E(f)) = 0$.
+
+$E_k = \{x : k\delta \le f(x) < (k+1)\delta\}$,可测的,$G_E(f) = \bigcup_{k=0}^{\infty}{G_{E_k}(f)}$.
+
+\item 积分的几何意义:设$f(x)$是$E$上的非负实值函数,记
+\[
+\underline{G}(f) = \underline{G}_{E}(f) = \{(x,y) \in R^{n+1}:x \in E, 0 \le y \le f(x)\},
+\]
+称它为$f$在$E$上的下方图形集,则有
+\begin{enumerate}
+\item 若$f(x)$是可测函数,则$\underline{G}(f)$是$R^{n+1}$上的可测集,且
+\[
+m(\underline{G}(f)) = \int_{E}{f(x)dx}.
+\]
+
+\item 若$E$是可测集,$\underline{G}(f)$是$R^{n+1}$的可测集,则$f(x)$是可测函数,且有
+\[
+m(\underline{G}(f)) = \int_{E}{f(x)dx}.
+\]
+\end{enumerate}
+
+推断过程:特征函数$\longrightarrow$非负可测简单函数$\longrightarrow$非负可测函数.
+
+$\underline{G}(f)$的截断集$H(y) = \{x: f(x) \ge y\}$,详细的讨论见课本.
+\end{enumerate}
+
+Fubini定理的应用:
+
+设$f(x)$与$g(x)$为$R^n$上的可积函数,若积分$\int_{R^n}{f(x-y)g(y)dy}$存在, 则称此积分为$f$与$g$的卷积,记为$(f*g)(x)$.
+\begin{enumerate}
+\item $(f*g)(x)$是$R^n$上的可积函数,且有
+\[
+\int_{R^n}{|(f*g)(x)|dx} \le (\int_{R^n}{|f(x)|dx})(\int_{R^n}{|g(x)|dx}),
+\]
+
+\item $f(x)$是$E$上的可测函数,$\forall \lambda > 0$,$\{x \in E: |f(x)| > \lambda\}$,它是可测集,令
+\[
+f_*(\lambda)=m(\{x \in E: |f(x)| > \lambda\})
+\]
+为$f$的分布函数,$f_*(x)$是$(0, \infty)$上的单调下降函数,我们有
+\[
+\int_{E}{|f(x)|^pdx} = p\int_{0}^{\infty}{\lambda^{p-1}f_*(\lambda)d\lambda}, 1 \le p < \infty.
+\]
+
+令$F(\lambda, x)$为$\{x \in E: |f(x)| > \lambda\}$的特征函数,使用Tonelli定理.
+\end{enumerate}
+
+附录:
+
+这一章的附录也应加以注意,分两部分,第一部分讨论了复值函数的积分,第二部分是积分号下取极限的充要条件.
+
+复值函数的积分是通过实部与虚部来定义的.$f(x) = \varphi(x) + i\psi(x)$,定义
+\[
+\int_{E}{f(x)dx} = \int_{E}{\varphi(x)dx} + i\int_{E}{\psi(x)dx}.
+\]
+一个主要的结论是:
+\[
+|\int_{E}{f(x)dx}| \le \int_{E}{|f(x)|dx}.
+\]
+类似于$|\sum{a_i}| \le \sum{|a_i|}$.
+
+至于积分号下取极限的问题,引入了一个一致(或等度)可积函数列的概念:
+
+设$f_k \in L(E)$,$\forall \epsilon>0$,存在非负函数$g \in L(E)$,使得
+\[
+\int_{\{x\in E:|f_k(x)|\ge g(x)\}}{|f(x)dx|dx} \le \epsilon,k=1,2,\cdots
+\]
+则称$\{f_k\}$是$E$上的一致(或等度)可积函数列.
+
+若$|f_k(x)| \le F(x)$,且$F \in L(E)$,则可以取$g(x)>F(x)$,此时$\{x\in E: |f_k(x)| \ge g(x)\}$为空集,任意积分都为0,也就是说她是一个一致可积函数列.
+
+这里一致是指$\epsilon$和$g(x)$对所有的$k=1,2,\cdots$都成立.
+
+$\{f_k\}$是$E$上的一致可积函数列的充要条件是:
+\begin{enumerate}
+\item[(i)] $\sup_{k>1}{\{\int_{E}{|f_k(x)|dx}\}} < \infty$;
+\item[(ii)] 对任意的$\epsilon>0$,存在非负函数$h \in L^1(E)$,以及$\delta>0$,使得满足$\int_{e}{h(x)dx}\le \delta$的可测集$e$必有
+\[
+\int_{e}{|f_k(x)|dx} \le \epsilon,\quad k=1,2,\cdots
+\]
+\end{enumerate}
+
+充分性:(i)和(ii)成立,证明$\{f_k\}$为一致收敛列,可以先假设$f_k(x)$是非负可测函数,Fatou引理有
+\[
+\int_{E}{\underline{\lim}f_k(x)dx} \le \underline{\lim}{\int_{E}{f_k(x)dx}}<\sup\{\int_{E}{f_k(x)dx}\}<\infty
+\]
+说明$\underline{\lim}{f_k(x)}$是可积的.
+
+如果记$e = \{x \in E: f_k(x) \ge g(x)\}$,则所证即为$\int_{e}{f_k(x)dx} \le \epsilon$,这与(ii)极为相似,根据(ii),$\forall \epsilon>0$,$\exists h(x)$及$\delta$,使$e$满足$\int_{e}{h(x)dx} \le \delta$时有$\int_{e}{f_k(x)dx} \le \epsilon$.
+
+$h_1(x) = \underline{\lim}{f_k(x)}$,$g(x)=\max(h_1(x), h(x))$,则当$\int_{e}{g(x)dx} \le \delta$时有$\int_{e}{h(x)dx} \le \delta$.
+
+见鬼,一点思路都没有,先放在这儿,继续读下去吧.
+
+\chapter{微分与不定积分}
+这一章主要讨论微积分基本定理.$F(x) = \int_{a}^{x}{f(t)dt} = \int_{a}^{x}{f^+(t)dt} - \int_{a}^{x}{f^-(t)dt}$,为单调函数之差,所以书中首先研究单调函数.
+
+\section{单调函数的可微性}
+
+这一节主要讨论了Vitalli覆盖定理和单调函数的可微性,这里先介绍概念:
+
+\begin{enumerate}
+\item Vitalli覆盖:设$E \subset R^1$,$\Gamma=\{I_{\alpha}\}$是一个区间族,若对任意$x\in E$,以及$\epsilon>0$,存在$I_{\alpha} \in \Gamma$,使得$x \in I_{\alpha}$,$|I_{\alpha}|<\epsilon$,则称$\Gamma$是$E$在Vitalli意义下的一个覆盖.
+
+\item Dini导数:设$f(x)$是定义在$R^1$中点$x_0$的一个邻域上的实值函数,令
+\[
+\begin{aligned}
+D^+f(x_0) &= \overline{lim}_{h \rightarrow 0^+}{\frac{f(x_0 + h) - f(x_0)}{h}}\\
+D_+f(x_0) &= \underline{lim}_{h \rightarrow 0^+}{\frac{f(x_0 + h) - f(x_0)}{h}}\\
+D^-f(x_0) &= \overline{lim}_{h \rightarrow 0^-}{\frac{f(x_0 + h) - f(x_0)}{h}}\\
+D_-f(x_0) &= \underline{lim}_{h \rightarrow 0^-}{\frac{f(x_0 + h) - f(x_0)}{h}}
+\end{aligned}
+\]
+分别称它们为$f(x)$在$x_0$点的右上导数,右下导数,左上导数,左下导数,这个概念实际上是把导数概念中的极限拆分成几个部分,以一种更细的角度来考虑了.
+\end{enumerate}
+
+接下来是讨论相关的定理的时候了:
+\begin{enumerate}
+\item Vitalli覆盖定理:设$E \subset R^1$,且$m^*(E)<\infty$,若$\Gamma$是$E$的Vitalli覆盖,则对于任意的$\epsilon>0$,存在有限个互不相交的$I_j \in \Gamma$($j=1,2,\cdots,n$)使得$m^*(E \backslash \bigcup_{j=1}^{n}{I_j}) < \epsilon$.
+
+这个结论中关键的是它的覆盖变成了有限个(子集),有限对于许多问题的解决通常有帮助,注意这个结论与有限覆盖定理的区别.
+
+选择$I_n$的原则如下:
+
+(i)任取一区间$I_1 \in \Gamma$;
+
+(ii)设已选出互不相交的区间$I_1,\cdots, I_k$,若$E \subset \bigcup_{j=1}^{k}{I_j}$,则不需要继续,否则,令
+\[
+\delta_k = \sup\{|I|:I \in \Gamma, I \cap I_j = \emptyset,j=1,\cdots,k\},
+\]
+则$\delta_k < \infty$,可以从$\Gamma$中选择出区间$I_{k+1}$满足$|I_{k+1}|>\frac{1}{2}\delta_k$,$I_{k+1} \cap I_j = \emptyset$,如此继续,可以得到一系列不相交区间$\{I_j\}$,且有$\sum|I_j|<\infty$,收敛的.
+
+$S = E \backslash \bigcup_{1}^{n}{I_j}$,然后用$I_j$($j=n+1,n+2,\cdots$)的5倍大小的区间来覆盖$S$,从而可知$m^*(S)<\epsilon$.
+
+\item 单调函数的可微性(Lebesgue定理) 若$f(x)$是定义在$[a,b]$上的单调上升实值函数,则$f(x)$的不可微点集为零测集,且有
+\[
+\int_{a}^{b}{f'(x)dx} = f(b) - f(a).
+\]
+
+证明这个定理用到了Dini导数,所以先研究一下Dini导数.
+
+根据定义以及上下极限的定义,立即有结论:(1)$D^+f(x_0) \ge D_+f(x_0)$;(2)$D^-f(x_0) \ge D_-f(x_0)$.
+
+下面的两个结论不是很明显,却也是很容易证明的:$D^+(-f) = -D_+(f)$;$D^-(-f) = -D_-(f)$.
+
+这里给出证明:
+
+用$F$表示$-f$,则
+\[
+\begin{aligned}
+D^+(-f) &= D^+(F) = \overline{\lim}_{h \rightarrow 0}{\frac{F(x_0 + h) - F(x_0)}{h}} \\
+&=\overline{\lim}_{h \rightarrow 0}{\frac{-f(x_0+h) + f(x_0)}{h}} = -\underline{\lim}_{h \rightarrow 0}{\frac{f(x_0 + h) - f(x_0)}{h}} \\
+&=-D_+(f).
+\end{aligned}
+\]
+只需要注意上极限和$\sup$有关,下极限与$\inf$有关.
+
+$f(x)$在$x_0$点可微,当且仅当四个Dini导数等于某个有限值.其他情形$f(x)$在$x_0$点都是不可导的.若$D^+(f)=D_+(f)$为有限值,则右导数存在,$D^-(f)=D_-(f)$为有限值,则左导数存在.
+
+Lebesgue定理实际上就是要证明:对于$(a,b)$中几乎处处$x$,有$D_-f(x)=D^-f(x)=D_+f(x)=D^+f(x)$,问题只需要作进一步转化:
+\[
+\begin{aligned}
+E_1 &= \{x : D^+f(x) > D_-f(x)\}\\
+E_2 &= \{x : D^-f(x) > D_-+(x)\}
+\end{aligned}
+\]
+当$x \notin E_1 \cup E_2$时,$D^+f(x) \le D_-f(x)$,$D^-f(x) \le D_+f(x)$,即
+\[
+D^+f(x) \le D_-f(x) \le D^-f(x) \le D_+f(x),
+\]
+而$D_+f(x) \le D^+f(x)$,故有$D_-f(x)=D^-f(x)=D_+f(x)=D^+f(x)$.
+
+若能证明$E_1$与$E_2$为零测集,则结论成立.
+
+而$E_1$与$E_2$可以通过$-f$与$f$之间的关系来相连,故只需要证明其中之一即可.
+
+$E_1$进一步分解:
+\[
+E_1 = \bigcup_{r,s \in Q_+}{\{x : D^+f(x) > r > s > D_-f(x)\}},
+\]
+$A = A_{r,s}=\{x : D^+f(x) > r > s > D_-f(x)\}$,则只需证明$m(A_{r,s}) = 0$即可.
+
+这里唯一值得注意的是这里集合转换的方式.剩下的详细证明见课本,证明之中用到了Vitalli覆盖定理.
+\[
+\begin{aligned}
+&\int_{a}^{b}{[f(x + \frac{1}{n}) - f(x)]dx} \\
+=&\int_{a}^{b}{f(x + \frac{1}{n})dx} - \int_{a}^{b}{f(x)dx} \\
+=&\int_{a + \frac{1}{n}}^{b + \frac{1}{n}}{f(x)dx} - \int_{a}^{b}{f(x)dx} \\
+=&-(\int_{a}^{a + \frac{1}{n}}{f(x)dx} + \int_{a + \frac{1}{n}}^{b}{f(x)dx}) + \int_{a + \frac{1}{n}}^{b}{f(x)dx} + \int_{b}^{b + \frac{1}{n}}{f(x)dx} \\
+=&\int_{b}^{b+\frac{1}{n}}{f(x)dx} - \int_{a}^{a + \frac{1}{n}}{f(x)dx}.
+\end{aligned}
+\]
+书中给出了一个例子,说明"单调函数几乎处处可微"是不能改进的.这里不能改进是什么含义?首先完全可微的单调函数是存在的,例如$f(x)=x$,而这里已经说明单调函数几乎处处可微,也就是说,存在单调函数,它在某个零测集上是不可微的,而在其他地方是可微的.
+
+这个例子的构造还是有一点典型性的,使用函数级数的方法.
+
+$E \subset (a,b)$,$m(E)=0$,取$G_n \supset E$,且$m(G_n) < 1/2^n$,
+\[
+f_n(x) =m([a,x] \cap G_n),
+\]
+则$f_a(x)$单调且连续,令$f(x) = \sum{f_n(x)}$,则由于$|f_n(x)|<\frac{1}{2^n}$,故$f(x)$是存在的,而且是连续的.
+
+在高等数学中,许多例子都是通过函数级数的方式构造的.
+
+\item (Fubini逐项微分)设$\{f_n(x)\}$是$[a,b]$上的递增函数列,且$\sum_{n=1}^{\infty}{f_n(x)}$在$[a,b]$上收敛,则
+\[
+\frac{d}{dx}(\sum_{n=1}^{\infty}{f_n(x)}) = \sum_{n=1}^{\infty}{\frac{d}{dx}f_n(x)}, \quad a.e.x\in [a,b].
+\]
+
+当时没有做这个定理的相关笔记,证明见课本.
+\end{enumerate}
+
+\section{有界变差函数}
+这一节最重要的概念自然就是有界变差函数了,它是什么?它具有什么样的性质?
+
+概念:设$f(x)$是定义在$[a,b]$上的实值函数,作分划:
+\[
+\Delta:a = x_0 <x_1<\cdots<x_n=b,
+\]
+及相应的和
+\[
+v_{\Delta} = \sum_{i=1}^{n}{|f(x_i) - f(x_{i-1})|},
+\]
+令$V_{a}^{b}{f} = \sup\{v_{\Delta}\}$,称之为$f$在$[a,b]$上的全变差,若$V_{a}^{b}{f}<\infty$,则称$f(x)$是$[a,b]$上的有界变差函数.其全体为$BV[a,b]$.
+
+例子:
+
+\begin{enumerate}
+\item[(1)]单调函数必为有界变差函数,$f(x) \in BV[a,b]$,$V_{a}^{b}{f} = |f(b)-f(a)|$.
+
+\item[(2)]若$f(x)$是定义在$[a,b]$上的可微函数,且$|f'(x)|\le M$,则$f(x)$是$[a,b]$上的有界变差函数.
+
+这需要使用微分中值定理,
+\[
+\sum{|f(x_i) - f(x_{i-1})|} = \sum{|f'(\xi_i)|(x_i-x_{i-1})} \le M\sum{(x_i-x_{i-1})}=M(b-a).
+\]
+
+\item[(3)]$[0,1]$上定义的函数:
+\[
+f(x) = \begin{cases}
+x\sin{\frac{\pi}{x}}, &1 \ge x > 0 \\
+0, &x=0
+\end{cases}
+\]
+则$f(x)$不是有界变差函数.
+
+考虑分割:
+\[\Delta:0<\frac{2}{2n-1} < \frac{2}{2n-3}<\cdots<\frac{2}{3}<1,\]
+于是
+\[
+v_{\Delta} = \frac{2}{2n-1} + (\frac{2}{2n-1} + \frac{2}{2n-3}) + \cdots + (\frac{2}{5} + \frac{2}{3}) + \frac{2}{3} = 2\sum{\frac{2}{2k-1}} \rightarrow \infty.
+\]
+\end{enumerate}
+
+下面讨论有界变差函数的各种性质:
+\begin{enumerate}
+\item 设$f \in BV([a,b])$,则$f(x)$是$[a,b]$上的有界函数;$BV([a,b])$构成一个线性空间.
+
+证明如下:(1)考虑特殊的分划:$a<x<b$,则$v_{\Delta} = |f(x)-f(a)| + |f(b)-f(x)| < \infty$,这说明$|f(x)|$是有限的,
+\[
+\begin{aligned}
+|2f(x)|&\le|2f(x)-f(a)-f(b)| + |f(a)+f(b)|\\
+&\le|f(x)-f(a)|+|f(b)-f(x)|+|f(a)+f(b)|\\
+&<M+|f(a)+f(b)|\\
+|f(x)|&< \frac{1}{2}(M+|f(a)+f(b)|).
+\end{aligned}
+\]
+
+(2)设$f,g\in BV([a,b])$,$h=\alpha{f}+\beta{g}$,$\alpha,\beta \in R$,下面证明$h \in BV([a,b])$.
+
+分两步,第一步$\alpha{f} \in BV([a,b])$,这只需注意到$V_{a}^{b}{(\alpha{f})}=|\alpha|V_{a}^{b}{(f)}$即可.第二步,$f+g\in BV([a,b])$,这只需注意到$V_{a}^{b}{(f+g)} \le V_{a}^{b}{(f)} + V_{a}^{b}{(g)}$即可.至此获证.
+
+\item 若$f(x)$是$[a,b]$上的实值函数,$a<c<b$,则$V_{a}^{b}{(f)} = V_{a}^{c}{(f)} + V_{c}^{b}{(f)}$.
+
+证明比较简单.对于$[a,b]$的任一分划$\Delta$,若$c$是$\Delta$的分点,则有$v_{\Delta} \le V_{a}^{c}(f) + V_{c}^{b}(f)$,如果不是$\Delta$的分点,把$c$作为分点插入,记这个新的分划为$\Delta'$,则$v_{\Delta}\le v_{\Delta'}$,利用三角不等式,这些可以得出$V_{a}^{b}(f)\le V_{a}^{c}(f) + V_{c}^{b}(f)$.
+
+反向不等式的证明利用$V_{a}^{b}(f)$的定义,对于$\sup$有一个反向的不等式,只不过需要一个$\epsilon$,详细证明见课本.
+
+\item (Jordan分解)$f \in BV([a,b])$,当且仅当$f(x)=g(x)-h(x)$,其中$g(x)$与$h(x)$是$[a,b]$上的单调上升函数.
+
+(1)$g(x)=\frac{1}{2}V_{a}^{x}(f) + \frac{1}{2}f(x)$,$g(x)=\frac{1}{2}V_{a}^{x}(f) - \frac{1}{2}f(x)$.$V_{a}^{x}(f)$是单调上升的,因为$V_{a}^{x_1}(f) = V_{a}^{x}(f) + V_{x}^{x_1}(f) > V_{a}^{x}(f)$.
+
+(2)单调函数是有界变差函数,$BV([a,b])$是线性空间.
+
+这个分解揭示了有界变差函数与单调函数的关系,而单调函数是几乎处处可微的,因而有界变差函数是几乎处处可微的,且$f'(x)$是可积的.
+
+\item 若$f\in L([a,b])$,则其不定积分$F(x)=\int_{a}^{x}{f(t)dt}$是$[a,b]$上的有界变差函数,其全变差为$V_{a}^{b}(F) = \int_{a}^{b}{|f(t)|dt}$.
+
+$\Delta:a=x_0<x_1<\cdots<x_n=b$;
+\[
+\begin{aligned}
+v_{\Delta} &= \sum{|F(x_i) - F(x_{i-1})|} = \sum{|\int_{a}^{x_i}{f(t)dt} - \int_{a}^{x_{i-1}}{f(t)dt}|}\\
+&=\sum{|\int_{x_{i-1}}^{x_i}{f(t)dt}|} \le \sum_{x_{i-1}}^{x_i}{|f(t)|dt} = \int_{a}^{b}{|f(t)dt|}
+\end{aligned}
+\]
+因此$V_{a}^{b}{(F)} \le \int_{a}^{b}{|f(t)|dt}$.
+
+反向不等式的证明见课本,证明思路以前很少见到,需要仔细领会.
+
+$v_{\Delta} = \sum{|\int_{a_{i-1}}^{x_i}{f(t)dt}|} \le V_{a}^{b}{(F)}$,这是定义.
+
+$\sum{|\int_{x_{i-1}}^{x_i}{f(t)dt}| \ge \sum{c_i\int_{x_{i-1}}^{x_i}{f(t)dt}}}$,$c_i$为$\pm1$.
+\end{enumerate}
+
+\section{不定积分的微分}
+这一节没有新概念,主要是回答$F(x)=\int_{a}^{x}{f(t)dt}$的可微性问题,在微积分基本定理中,它有$F'(x)=f(x)$,但是那里的$f(x)$是连续的,现在$f \in L([a,b])$,是否仍然成立?注意修改一个零测集上的函数值不会影响其积分,故一般的结论也只好能期望$F'(x)=f(x)$ a.e.,这个结论确实是成立的.
+\begin{enumerate}
+\item $F_h(x) = \frac{1}{h}\int_{x}^{x+h}{f(t)dt}$,则$F'(x)=\lim_{h \rightarrow 0}{F_h(x)}$.
+
+设$f \in L([a,b])$,令$F_h(x)=\frac{1}{h}\int_{x}^{x+h}{f(t)dt}$,(当$x \notin [a,b]$时,$f(x)=0$)我们有$\int_{a}^{b}{|F_h(x)-f(x)|dx}$.即$F_h(x)$平均收敛于$f(x)$.
+
+这里需要用到一个变换,$\int_{x}^{x+h}{f(t)dt}=\int_{0}^{h}{f(x+t)dt}$,$\int_{a+t}^{b+t}{f(x)dx} = \int_{a}^{b}{f(x+t)dx}$.
+
+令$g(x)=f(x)$,$x \in [a,b]$,$g(x)=0$,$x \notin [a,b]$,则
+\[
+\int_{a}^{b}{f(x)dx} = \int_{a}^{b}{g(x)dx} = \int_{R^1}{g(x)dx}=\int_{R^1}{g(x+t)dx}.
+\]
+$g(x)=f(x)$,$x \in [a+t,b+t]$,$g(x)=0$,$x \notin [a+t,b+t]$,则
+\[
+\begin{aligned}
+\int_{a+t}^{b+t}{f(x)dx}&=\int_{a+t}^{b+t}{g(x)dx}=\int_{R^1}{g(x)dx}\\
+&=\int_{R^1}{g(x+t)dx}=\int_{a}^{b}{g(x+t)dx}=\int_{a}^{b}{f(x+t)dx}\\
+F_h(x)-f(x)&=\frac{1}{h}\int_{x}^{x+h}{f(t)dt}-f(x)=\frac{1}{h}\int_{0}^{h}{f(x+t)dt} - f(x)\\
+&=\frac{1}{h}\int_{0}^{h}{(f(x+t)-f(x))dt} \\
+\int_{a}^{b}{|F_h(x)-f(x)|dx} &\le \int_{-\infty}^{+\infty}{[\frac{1}{h}\int_{0}^{h}{|f(x+t)-f(x)|dt}]dx} \\
+&=\int_{0}^{h}{\frac{1}{h}dt}\int_{-\infty}^{+\infty}{|f(x+t)-f(x)|dx}
+\end{aligned}
+\]
+这是可以任意小的,$\int_{-\infty}^{+\infty}{|f(x+t)-f(x)|dx} < \epsilon$.
+
+\item 设$f \in L([a,b])$,令$F(x)=\int_{a}^{x}{f(t)dt}$,$t \in [a,b]$,则$F'(x)=f(x)$ a.e..
+
+这就是本节一开始给出的结论,它说明$f(x)$为可积函数时,可以找到不定积分$F(x)$,前一节已经证明$F(x)$是有界变差函数,从而是几乎处处可微的,故可设$\lim_{h \rightarrow 0}{F_h(x)}=g(x)$,利用前一个结论,可证明$f(x)=g(x)$ a.e..$\int_{a}^{b}{|f(x)-g(x)|dx}=0$,放缩不等式的过程中需要用到Fatou引理.
+
+$\frac{d}{dx}\int_{a}^{x}{f(t)dt}=f(x)$ a.e.或者说$\lim_{h \rightarrow 0}{\frac{1}{h}\int_{0}^{h}{|f(x+t)-f(x)|dt}}=0$,称满足这一等式的$x$为$f$的Lebesgue点,那么原结论就变为:$f \in L([a,b])$,则$[a,b]$中几乎所有点是Lebesgue点.
+
+书中举了一个例子:$[0,1]$中的Dirichlet函数$\chi_{Q}(x)$.
+\end{enumerate}
+
+\section{绝对连续函数与微积分基本定理}
+这一节要解决这样的问题:$f(x)$是定义在$[a,b]$上的实值函数,$f(x)-f(a)=\int_{a}^{x}{f'(t)dt}$何时成立?
+\begin{enumerate}
+\item $f(x)$是有界变差的连续函数;
+\item $h(x)=f(x)-\int_{a}^{x}{f'(t)dt}$,则$h'(x)=0$ a.e..$h(a)=f(a)$,$h(x)$几乎处处是常数,本来要使等式成立,$h(x)$必须恒为常数,但是这不一定成立:Cantor函数$\phi(x)$,$\phi'(x)=0$ a.e.,而$\phi(x)$不是常数.
+\end{enumerate}
+
+这就需要研究$f(x)$不满足条件的情况,它实际上就是我们引入绝对连续函数的依据.
+
+设$f(x)$在$[a,b]$上几乎处处可微且$f'(x)=0$ a.e.,若$f(x)$在$[a,b]$上不是常数函数,则必存在$\epsilon>0$,使得对任意的$\delta>0$,$[a,b]$内存在有限个互不相交的区间$(x_1,y_1)$,$(x_2,y_2)$,$\cdots$,$(x_n,y_n)$,其长度的总和小于$\delta$,使得$\sum{|f(y_i)-f(x_i)|}>\epsilon$.
+
+(1)$f(c) \neq f(a)$,$E_c = \{x\in(a,c):f'(x)\neq 0\}$,注意$m(E_c)=m((a,c))=c-a$.
+
+(2)从$f'(x)=0$可以得到$\forall r>0$,
+\[
+|f(x+h)-f(x)|<rh,
+\]
+$h$足够小.
+
+(3)$[x,x+h]$构成$E_c$的一个Vitalli覆盖,$\forall \delta>0$,存在互不相交的区间组
+\[
+[x_1,x_1+h_1],\cdots,[x_n,x_n+h_n],
+\]
+满足
+\[
+m(E_c \backslash \bigcup{[x_i,x_i+h_i]}) = m([a,c) \backslash \bigcup{[x_i,x_i+h_i)}) < \delta.
+\]
+由于互不相交,可以作如下的排列:
+\[
+a = x_0<x_1<x_1+h_1<x_2<x_2+h_2<\cdots<x_n<x_n+h_n<x_{n+1}=c,
+\]
+此时
+\[
+\begin{aligned}
+|f(c)-f(a)| &\le \sum{|f(x_{i+1}) - f(x_i+h_i)|} + \sum{|f(x_i+h_i) - f(x_i)|} \\
+&\le \sum{|f(x_{i+1}) - f(x_i+h)|} + r(b-a).
+\end{aligned}
+\]
+令$2\epsilon<|f(c)-f(a)|$,$r(b-a)<\epsilon$,于是$\epsilon>\sum{|f(x_{i+1}) - f(x_i+h_i)|}$,
+\[
+\sum{(x_{i+1} - (x_i+h_i))} = m(E_c - \sum{(x_i,x_i+h_i)}) <\delta.
+\]
+从这个结论可以引出绝对连续函数(也称全连续函数)的定义.
+
+设$f(x)$是$[a,b]$上的实值函数,若对任给$\epsilon>0$,存在$\delta>0$,使得当$[a,b]$中任意有限个互不相交的开区间$(x_i,y_i)$满足$\sum(y_i-x_i)<\delta$时有
+\[
+\sum|f(y_i)-f(x_i)|<\epsilon.
+\]
+
+它有如下性质:
+\begin{enumerate}
+\item 绝对连续函数一定是连续函数;
+
+这只要取特殊的一个区间$(x,y)$即可,$|y-x|<\epsilon$,可以得到$|f(y)-f(x)|<\epsilon$.
+
+\item 在$[a,b]$上的绝对连续函数全体构成一个线性空间;
+
+这只需要注意到
+\[
+|(\alpha{f}+\beta{g})(y_i) - (\alpha{f}+\beta{g})(x_i)| \le |\alpha||f(y_i)-f(x_i)| + |\beta||g(y_i)-g(x_i)|.
+\]
+即可.
+
+例子:$f(x)$满足Lipschitz条件:$|f(x)-f(y)|\le M|x-y|$,则$f(x)$为绝对连续函数.
+
+\item 若$f \in L([a,b])$,则其不定积分$F(x)=\int_{a}^{x}{f(t)dt}$是$[a,b]$上的绝对连续函数.
+
+证明过程使用了积分的绝对连续性:$\forall \epsilon>0$,当$m(e)<\delta$时有
+\[
+|\int_{e}{f(x)dx}|\le\int_{e}{|f(x)|dx}<\epsilon.
+\]
+$F(x)$的$n$个互不相交的开区间
+\[
+(x_1,y_1),\cdots,(x_n,y_n),
+\]
+当$\sum(y_i-x_i) < \delta$时
+\[
+\begin{aligned}
+\sum|F(y_i) - F(x_i)| &= \sum{|\int_{x_i}^{y_i}{f(t)dt}|} \le \int_{x_i}^{y_i}{|f(t)dt|} \\
+&= \int_{\bigcup(x_i,y_i)}{|f(t)|dt} < \epsilon.
+\end{aligned}
+\]
+
+\item 若$f(x)$是$[a,b]$上的绝对连续函数,则$f(x)$是$[a,b]$上的有界变差函数.
+
+要求分点小于$\epsilon$,则$V(f)<\epsilon$.
+
+\item 若$f(x)$是$[a,b]$上的绝对连续函数,则$f(x)$在$[a,b]$上是几乎处处可微的,且$f'(x)$是$[a,b]$上的可积函数.
+
+这只是前一道题的推论,因为有界变差函数有这样的结论.
+
+\item 若$f(x)$是$[a,b]$上的绝对连续函数,且$f'(x)=0$,a.e.,则$f(x)$在$[a,b]$上等于一个常数.
+
+这只需要从我们为什么需要引入绝对连续函数的理由就可以看出.
+
+\item (微积分基本定理)若$f(x)$是$[a,b]$上的绝对连续函数,则
+\[
+f(x)-f(a) = \int_{a}^{x}{f'(t)dt}.
+\]
+
+只要综合利用前面的结论是很容易给出证明的.
+
+它实际上是说,一个定义在$[a,b]$上的函数$f(x)$具有形式$f(x)=f(a)+\int_{a}^{x}{g(t)dt}$,$g(t) \in L([a,b])$的充分必要条件是:$f(x)$是$[a,b]$上的绝对连续函数,此时有$g(x)=f'(x)$ a.e..
+
+书中给出了一个例子:设$g_k(x)$是$[a,b]$上的绝对连续函数,若(i)存在$c$,$a\le c \le b$,使得$\sum{g_k(c)}$收敛,(ii)$\sum{\int_{a}^{b}{|g_k'(x)|dx}}<\infty$,则级数$\sum{g_k(x)}$在$[a,b]$上收敛.设其极限为$f(x)$,则$f(x)$为$[a,b]$上的绝对连续函数.且有$f'(x)=\sum{g_k'(x)}$ a.e..
+
+证明需要使用逐项积分的结论和上面总结的充要条件.
+\[
+\sum{g_k(x)} = \int_{c}^{x}{\sum{g_k'(x)}dx} + \sum{g_k(c)}.
+\]
+
+\item (分部积分公式)设$f(x)$,$g(x)$为$[a,b]$上的可积函数,$\alpha,\beta \in R^1$,令$F(x)=\alpha+\int_{a}^{x}{f(t)dt}$,$G(x)=\beta+\int_{a}^{x}{g(t)dt}$,则
+\[
+\int_{a}^{b}{G(x)f(x)dx}+\int_{a}^{b}{g(x)F(x)dx} = F(b)G(b)-F(a)G(a).
+\]
+
+$(F(x)G(x))'=F(x)G'(x)+F'(x)G(x)$ a.e.,而$G'(x)=g(x)$,$F'(x)=f(x)$.
+
+可以转化为微积分中常用的形式:
+
+设$f(x)$,$g(x)$是$[a,b]$上的绝对连续函数,则
+\[
+\int_{a}^{b}{f(x)g'(x)dx} + \int_{a}^{b}{f'(x)g(x)dx} = f(b)g(b)-f(a)g(a).
+\]
+
+举了一个例子:设$f \in L([a,b])$,且有$\int_{a}^{b}{x^nf(x)dx}=0$,$n=1,2,\cdots$,则$f(x)=0$ a.e.
+
+$F(x)=\int_{a}^{x}{f(t)dt}$,$\int_{a}^{b}{x^nF(x)dx}=0$,$\int_{a}^{b}{F^2(x)dx}=\int_{a}^{b}{F(x)[F(x)-p(x)]dx}$,这里$p(x) \rightarrow F(x)$,因此$\int_{a}^{b}{F^2(x)dx}=0$,$F(x)=0$,于是$f(x)=0$ a.e..
+
+注意$F(x)$是绝对连续的.
+
+\item (积分第一中值公式)若$f(x)$是$[a,b]$上的连续函数,$g(x)$是$[a,b]$上的非负可积函数.则存在$\xi \in [a,b]$,使得
+\[
+\int_{a}^{b}{f(x)g(x)dx}=f(\xi)\int_{a}^{b}{g(x)dx}.
+\]
+
+(积分第二中值公式)若$f \in L([a,b])$,$g(x)$是$[a,b]$上的单调函数,则存在$\xi \in [a,b]$,使得
+\[
+\int_{a}^{b}{f(x)g(x)dx} = g(a)\int_{a}^{\xi}{f(x)dx} + g(b)\int_{\xi}^{b}{f(x)dx}.
+\]
+
+前一个证明简单:
+\[
+c \le \frac{\int_{a}^{b}{f(x)g(x)dx}}{\int_{a}^{b}{g(x)dx}} \le d, \quad c \le f(x) \le d.
+\]
+
+后一个结论的证明稍微复杂一些:
+
+令$F(x)=\int_{a}^{x}{f(t)dt}$,则$F(x)$就成了连续函数,使用分部积分法,$g(x)$单调,可以取单调上升来讨论,则$g'(x) \ge 0$.
+
+只不过使用分部积分法要求$g(x)$为绝对连续函数,对于其它函数使用绝对连续函数来逼近它即可.
+
+\end{enumerate}
+
+\section{积分换元公式}
+这一节解决以下问题:$g:[a,b]\rightarrow[c,d]$几乎处处可微,$f(x)$是$[c,d]$上的可积函数,是否成立
+\[
+\int_{g(\alpha)}^{g(\beta)}{f(x)dx} = \int_{\alpha}^{\beta}{f(g(t))g'(t)dt},\quad [\alpha,\beta] \subset [a,b].
+\]
+
+(1)这里涉及到了复合函数;
+
+(2)如果$f(x) \equiv 1$,则等式变为$g(\beta) - g(\alpha) = \int_{\alpha}^{\beta}{g'(t)dt}$,这在$g(x)$为绝对连续函数时成立.
+
+这一节没有任何新概念,我们主要考虑上述等式成立的条件.
+
+\begin{enumerate}
+\item $f(x)$是$[a,b]$上的绝对连续函数,$E \subset [a,b]$,且$m(E)=0$,则$m(f(E))=0$.
+
+证明过程:从$f(x)$为绝对连续函数,使用其定义:$\forall \epsilon>0$,$\exists \delta>0$,使$[a,b]$中互不相交的区间$(x_i,y_i)$满足$\sum{(y_i-x_i)}<\delta$时,$\sum{|f(y_i)-f(x_i)|}<\epsilon$.
+
+令$G=\bigcup{[x_i,y_i]}$,且$[a,b] \supset G \supset E\backslash\{a,b\}$,这样的$G$是存在的,另一方面,$f(x)$为$[x_i,y_i]$上的连续函数,存在最小值和最大值,可设$f([x_i,y_i]) \subset [f(c_i),f(d_i)]$,$[c_i,d_i] \subset [x_i,y_i]$,而$m(f(E))=m(f(E \backslash \{a,b\}))$,
+\[
+m(f(G)) = m(f(\bigcup{[x_i,y_i]})) \le \sum{m(f([x_i,y_i]))} = \sum{(f(d_i) - f(c_i))}<\epsilon.
+\]
+
+如果$E$是$[a,b]$中的可测集,则$f(E)$是可测的,这只需要利用前面第二章的定理2.20即可.$f$为绝对连续函数意味着$f$为连续函数.
+
+\item 设$f(x)$是$[a,b]$上的实值函数,$E \subset [a,b]$,如果$f'(x)$在$E$上存在,且$|f'(x)|\le M$,则
+\[
+m^*(f(E)) \le M \cdot m^*(E).
+\]
+
+(1)把$f'(x)$存在表示为集合语言:$\forall \epsilon>0$,做
+\[
+E_n=\{x \in E: \text{当}[a,b]\text{中的点}y\text{满足}|y-x|<\frac{1}{n}\text{时},|f(y)-f(x)|\le(M+\epsilon)|x-y|\}
+\]
+于是$E_n \subset E_{n+1}$,$f(E_n) \subset f(E_{n+1})$,递增,于是有$\lim{m^*(E_n)} = m^*(E)$,$\lim{m^*(f(E_n))}=m^*(f(E))$.(第二章推论2.13)
+
+(2)若能证明$m^*(f(E_n))<(M+\epsilon)(m^*(E_n)+\epsilon)$,则结论成立.
+
+使用$m^*(E_n)$的定义,用$\{I_{n,k}\}$覆盖$E_n$,且$\sum|I_{n,k}|<m^*(E) + \epsilon$,$|I_{n,k}|<1/n$.而$s,t \in E_N \cap I_{n,k}$时有
+\[
+|f(s)-f(t)|<(M+s)|I_{n,k}|
+\]
+这是根据$E_n$的定义.
+\[
+\begin{aligned}
+m^*(f(E_n))&=m^*(f(E \cap (\bigcup{I_{n,k}}))) \le \sum{m^*(f(E \cap I_{n,k}))} \\
+&\le \sum\text{diam}(f(E_n \cap I_{n,k})) \le (M+\epsilon)\sum{|I_{n,k}|}<(M+\epsilon)(m^*(E_n)+\epsilon)
+\end{aligned}
+\]
+当$f(x)$为$[a,b]$上可测函数时,$E$为$[a,b]$上的可测集,$f(x)$在$E$上可微,此时有
+\[
+m^*(f(E)) \le M\cdot m(E),
+\]
+我们需要找到这个$M$.
+\[
+|\int_{E}{f'(x)dx}| \le \int_{E}{|f'(x)|dx}
+\]
+还是需要把$E$分解
+\[
+E_n = \{x \in E: (n-1)\epsilon \le |f'(x)| \le n\epsilon\},
+\]
+于是
+\[
+m^*(f(E_n))\le n\epsilon m(E_n) \le (n-1)\epsilon m(E_n) + \epsilon m(E_n) \le int_{E_n}{|f'(x)|dx} + \epsilon m(E_n),
+\]
+而$\sum{m(E_n)} = m(E)$,$\bigcup{E_n} =  E$.
+\[
+\begin{aligned}
+m^*(f(E)) &\le \sum{m^*(f(E_n))} \le \sum{\int_{E_n}{|f'(x)|dx}}+\epsilon\sum{m(E_n)}\\
+&=\int_{E}{|f'(x)|dx} + \epsilon m(E).
+\end{aligned}
+\]
+可得
+\[
+m^*(f(E)) \le \int_{E}{|f'(x)|dx}.
+\]
+
+\item 设$f(x)$在$[a,b]$上是处处可微的,且$f'(x)$是$[a,b]$上的可积函数,则
+\[
+\int_{a}^{b}{f'(x)dx}=f(b)-f(a).
+\]
+
+对于$f(x)$为绝对连续函数,这个结论是成立的.于是若能证明$f(x)$为绝对连续函数,命题得证.
+
+利用积分的连续性:$\forall \epsilon>0$,$\exists \delta>0$,当$e \subset [a,b]$且$m(e)<\delta$时$\int_{e}{|f'(x)dx|dx}<\epsilon$.
+\[
+\sum{|f(y_i)-f(x_i)|}\le \sum{m(f([x_i,y_i]))}\le\sum{\int_{[x_i,y_i]}{|f'(x)|dx}}=\int_{\bigcup{[x_i,y_i]}}{|f'(x)|dx}<\epsilon
+\]
+这里因为$f(x)$连续,故$[f(x_i),f(y_i)] \subset f([x_i,y_i])$.
+
+\item 若$f(x)$是$[a,b]$上的实值函数,在$[a,b]$的子集$E$上是可微的,我们有
+\begin{enumerate}
+\item[(i)] 若在$E$上$f'(x)=0$ a.e.,则$m(f(E))=0$.
+\item[(ii)] 若$m(f(E))=0$,则在$E$上$f'(x)=0$ a.e..
+\end{enumerate}
+
+(i)$E_n=\{x \in E: n-1<f'(x)<n\}$,则
+\[
+m^*(f(E))\le \sum{m^*(f(E_n))}\le\sum{n\cdot m^*(E_n)}=0
+\]
+
+(ii)$B_n=\{x \in E: |y-x|<1/n,|f(y)-f(x)|\ge\frac{|y-x|}{n}\}$,$B=\bigcup{B_n}=\{x \in E: |f'(x)|>0\}$.
+
+$I$为任一长度小于$1/n$的区间,$A=I\cap B_n \subset E$,可以得出$m(f(A))=0$.
+
+$\forall \epsilon>0$,$\exists \{I_k\}$,$\bigcup{I_k} \supset f(A)$,$\sum{|I_k|}<\epsilon$.
+
+$A_k=A \cap f^{-1}(I_k)$,$A_k \subset A$,$A_k \subset I \cap B_n$,$f(A_k) \subset I_k$,
+
+$\bigcup{A_k}=\bigcup{A\cap f^{-1}(I_k)}=A \cap (\bigcup{f^{-1}(I_k)}) = A$,$A \subset \bigcup{f^{-1}(I_k)}$.
+
+$m^*(A) \le \sum{m^*(A_k)} \le \sum{\text{diam}(A_k)} \le \sum{n \cdot \text{diam}(f(A_k))} \le n\sum{m(I_k)} \le n\epsilon$.
+
+这一步师什么原因?这是从$B_n$的定义得出的,$A_k \subset B_n$
+
+$|y-x| \le n|f(y)-f(x)|$,可以得出$\sup{|y-x|} \le n \sup{|f(y)-f(x)|}$.
+
+\item (复合函数的微分)设$g:[a,b]\rightarrow [c,d]$是几乎处处可微的函数,$F(x)$时候$[c,d]$上几乎处处可微的函数,且$F'(x)=f(x)$ a.e..$F(g(x))$在$[a,b]$上是几乎处处可微的,若对于$[c,d]$中的任一零测集$Z$,总有$m(F(Z))=0$,则
+\[
+[F(g(t))]'=f(g(t))g'(t) a.e. \quad (t \in [a,b]).
+\]
+
+$Z = \{x \in [c,d]: F\text{在}x\text{点不可微}\}$,$A=g^{-1}(Z)$,$B=[a,b]\backslash A$,则在$B$中有等式成立,注意这时还是有$A$中的点,对于$A$中的点有:
+
+$m(g(A)) \le m(Z) = 0$ $\Rightarrow$ $m(F(g(A)))=0$,
+
+前者可以推出$g'(x)=0$,后者能够推出$[F(g(x))]'=0$,于是$[F(g(t))]'=f(g(t))g'(t)$.
+
+书中举了一个例子,说明"$F$将零测集映为零测集"这个条件不能缺少.
+
+推论:设$g(t)$以及$f(g(t))$在$[a,b]$上几乎处处可微,其中$f(x)$在$[c,d]$上绝对连续,$g([a,b]) \subset [c,d]$,则
+\[
+[f(g(t))]'=f'(g(t))g'(t) a.e..
+\]
+
+差别在于$f(x)$与$F(x)$,当$f(x)$为绝对连续函数时,$f(x)$几乎处处可微,$f(x)$把零测集映为零测集.
+
+这里关注一下它的例子:
+
+设$g$为$[0,1]$上的严格单调上升的连续函数且$g'(t)=0$ a.e.,令$F=g^{-1}$.易知$F(x)$是单调且几乎处处可微的函数,$[F(g(t))]'=(t)'=1$,$g'(t)=0$,$[F(g(t))]' \neq F'(g(t))g'(t)$.
+
+问题是这样的$g$存在吗?对于严格单调上升的函数不是应有$g'(t)>0$吗?
+
+\item (换元积分法)假设$g(x)$在$[a,b]$上是几乎处处可微的,$f(x)$是$[c,d]$上的可积函数,且$g([a,b])\subset[c,d]$,记$F(x)=\int_{c}^{x}{f(t)dt}$,则下述两个命题是等价的:
+\begin{enumerate}
+\item[(i)] $F(g(t))$是$[a,b]$上的绝对连续函数;
+\item[(ii)] $f(g(t))g'(t)$是$[a,b]$上的可积函数且有
+\[
+\int_{g(\alpha)}^{g(\beta)}{f(x)dx}=\int_{\alpha}^{\beta}{f(g(t))g'(t)dt}.
+\]
+\end{enumerate}
+
+(i)$\forall \alpha,\beta$,$F(g(\beta)) - F(g(\alpha)) = \int_{\alpha}^{\beta}{f(g(t))g'(t)dt}$,而$\int_{\alpha}^{\beta}{f(g(t))g'(t)dt}$可以随$\alpha$,$\beta$足够接近而任意小,即$F(g(t))$是绝对连续函数.
+
+(ii)$[F(g(t))]'=f(g(t))g'(t)$可积,
+\[
+\int_{g(\alpha)}^{g(\beta)}{f(x)dx}=F(g(\beta)) - F(g(\alpha))=\int_{\alpha}^{\beta}{[F(g(t))]'dt}=\int_{\alpha}^{\beta}{f(g(t))g'(t)dt}.
+\]
+这里$g(t)$不一定是绝对连续函数,书中给出了一个例子.
+
+推论:设$g:[a,b] \rightarrow [c,d]$是绝对连续函数,$f \in L([c,d])$,则下述条件之一都是等式
+\[
+\int_{g(\alpha)}^{g(\beta)}{f(x)dx}=\int_{\alpha}^{\beta}{f(g(t))g'(t)dt}
+\]
+成立的充分条件.
+\begin{enumerate}
+\item[(i)]$g(t)$在$[a,b]$上是单调函数;
+\item[(ii)]$f(x)$在$[c,d]$上是有界函数;
+\item[(iii)]$f(g(t))g'(t)$在$[a,b]$上是可积函数.
+\end{enumerate}
+
+$f \in L([c,d])$,可令$F(x)=\int_{c}^{x}{f(u)du}$.$g(t)$绝对连续,可以得出$g(t)$几乎处处可微,两者结合,如果$F(g(t))$是绝对连续的,则等式成立.
+
+(i)不妨设$g(t)$单调上升,$F(g(\beta)) - F(g(\alpha))=\int_{g(\alpha)}^{g(\beta)}{f(t)dt}$,注意$g(t)$是绝对连续的,$[\alpha,\beta]$足够小时,$[g(\alpha),g(\beta)]$可以任意小,从而$\int_{g(\alpha)}^{g(\beta)}{f(t)dt}$可以任意小.
+
+(ii)$f(x)$有界,则有
+\[
+|F(g(\beta))-F(g(\alpha))| \le M|g(\beta)-g(\alpha)|,
+\]
+可以任意小.
+
+(iii)$f_n(x)=f(x)$,当$x \in [c,d]$且$|f(x)|<n$时,否则$f(x)=n$.此时有$|f_n(x)|\le|f(x)|$,且$\lim_{n \rightarrow \infty}{f_n(x)}=f(x)$ a.e.于是
+\[
+\lim_{n \rightarrow \infty}{\int_{[c,d]}{f_n(x)dx}} = \int_{[c,d]}{f(x)dx}.
+\]
+
+$f_n(x)$有界,因此$\int_{g(\alpha)}^{g(\beta)}{f_n(x)dx}=\int_{\alpha}^{\beta}{f_n(g(t))g'(t)dt}$,令$n \rightarrow \infty$有
+\[
+\int_{g(\alpha)}^{g(\beta)}{f(x)dx}=\int_{\alpha}^{\beta}{f(g(t))g'(t)dt}.
+\]
+\end{enumerate}
+
+\section{$R^n$上积分的微分定理与积分换元公式}
+对于$R^n$上的函数,首先要定义不定积分,然后再讨论其微分问题:
+
+一种方法是类似于$R^1$情形,把不定积分定义为点函数,例如:$F(x,y)=\int_{a}^{x}{\int_{c}^{y}{f(s,t)dsdt}}$,
+
+另一种方法是采用集合函数的观点来定义:设$f \in L(A)$,$F(E)=\int_{E}{f(y)dy}$为$f$的不定积分,其中$E$是$A$中的任一可测集.这包含了前一种情形:$E=[a,x] \times [c,y]$.
+
+在一维情形,$F(x)$的微分满足:
+\[
+\lim_{h \rightarrow 0}{\frac{1}{h}\int_{x}^{x+h}{f(t)dt}}=\frac{d}{dx}\int_{a}^{x}{f(t)dt}=f(x) a.e.
+\]
+对于多维情形,通常需要考察:
+\[
+\lim_{r \rightarrow 0}{\frac{1}{|B(x,r)|}\int_{B(x,r)}{f(y)dy}} = f(x) \text{a.e.} \quad (\text{圆球})
+\]
+或者
+\[
+\lim_{r \rightarrow 0}{\frac{1}{|I_r(x)|}\int_{I_r(x)}{f(y)dy}} = f(x) \text{a.e.} \quad (\text{立体})
+\]
+
+下面是具体讨论过程:
+
+\begin{enumerate}
+\item $E \subset R^n$,$\Gamma$是一个覆盖$E$的球族$\{B_{\alpha}\}$,即对每个$x \in E$,存在$\Gamma$中的球$B(x,r(x))$,记$r(B)$为球$B(x,r(x))$的半径,若$\sup{\{r(B):B\in \Gamma\}} < \infty$,则$\Gamma$中存在互不相交的$B_1$,$B_2$,$\cdots$,(可数个)使得
+\[
+m^*(E) \le 5^{n}\sum_{k \ge 1}{|B_k|}.
+\]
+
+证明过程使用了归纳法,带有构造性质.
+
+$B_1 = B(x_1,r(x_1))$,$r(B_1) \ge \frac{1}{2}\sup{\{r(B):B \in \Gamma\}}$.
+
+假设已经取定$B_1$,$\cdots$,$B_k$,按如下规则取$B_{k+1}$,
+\[
+r(B_{k+1}) \ge \frac{1}{2}\sup\{r(B): B \in \Gamma, B \cap B_j=\emptyset, 1 \le j \le k\},
+\]
+对每个$B_k$,作与$B_k$同心的球$B_k^*$,$r(B_k^*)=5r(B_k)$.
+
+然后只需证明$E \subset \bigcup{B_k^*}$即可.
+
+这里先说明$B_k^*$为什么是外扩5倍的半径.
+
+对于球$B$来说,要使得另一球$B'$与$B$不相交,我们会发现,使用$r(B)+2r(B')$的大球的时候是无法包住$B$与$B'$的,反过来,若$B$与$B'$相交,使用$r(B)+2r(B')$的半径的球肯定可以包住$B$与$B'$,此时$r(B)+2r(B')=r(B)+2\cdot2r(B)=5r(B)$.
+
+对于$\sum|B_k|=\infty$,这是平凡情形,可以不予考虑.
+
+而$\sum{|B_k|}<\infty$,说明级数收敛,$\lim_{k\rightarrow \infty}{|B_k|}=0$.
+
+$\forall B \in \Gamma$,存在$k$,使$r(B_{k+1})<r(B)/2$,从而$B$与$B_1$,$\cdots$,$B_k$中的某些相交,否则的话,我们可以继续取该$B$为这个序列中的一个.$B$与$B_{k_0}$相交,则$B \subset B_{k_0}^*$.
+
+令
+\[
+L_rf(x)=\frac{1}{|B(x,r)|}\int_{B(x,r)}{f(y)dy}.
+\]
+
+\item 若$f \in L(R^n)$,则$\lim_{r \rightarrow 0}{\int_{R^n}{|L_rf(x)-f(x)|dx}}=0$,即$L_rf(x)$平均收敛于$f(x)$.
+
+证明过程基本上是积分顺序的转化.
+\[
+\int_{R^n}{|\frac{1}{|B(x,r)|}\int_{B(x,r)}{f(y)dy} - f(x)|dx} \le \frac{1}{|B(x,r)|}\int_{R^n}{[\int_{B(0,r)}{|f(x-y)-f(x)|dy}]dx}.
+\]
+这里使用了变换:
+\[
+\int_{B(x,r)}{(f(y)-f(x))dy} = \int_{B(0,r)}{[f(x-y)-f(x)]dy}.
+\]
+
+根据平均收敛,存在子列$\{r_k\}$,使得
+\[
+\lim_{k \rightarrow \infty}{L_{r_k}f(x)} = f(x) a.e.
+\]
+为证$L_rf(x) \rightarrow f(x)$ a.e.只需指出当$r \rightarrow 0$时,$L_rf(x)$的极限几乎处处存在即可.
+
+考虑上下极限,
+\[
+(\Omega{f})(x)=|\overline{\lim}_{r \rightarrow 0}{L_rf(x)} - \underline{\lim}_{r \rightarrow 0}{L_rf(x)}|=0\ a.e.
+\]
+或者$\forall \lambda>0$有
+\[
+m(\{x: (\Omega{f})(x) > \lambda\})=0
+\]
+或者
+\[
+m(\{x: (\Omega{f})(x)>\lambda\})<\epsilon,
+\]
+其中$\epsilon$可以任意小.
+
+把$f$分解为$f(x)=g(x)+h(x)$,其中$g(x)$是具有紧支集的连续函数,$h(x)$满足
+\[
+\int_{R^n}{|h(x)|dx} < \epsilon.
+\]
+
+对于$g(x)$有$\lim_{r \rightarrow 0}{L_rg(x)} = g(x)$,$x \in R^n$,即$(\Omega{g})(x)=0$,
+\[
+(\Omega{f})(x) \le (\Omega{g})(x)+(\Omega{h})(x)=(\Omega{h})(x),
+\]
+问题转化为$m(\{x: (\Omega{h})(x)>\lambda\})<\epsilon$.
+
+从这个讨论中引入了极大函数的概念.
+
+设$f(x)$是$R^n$上的可测函数,令
+\[
+(Mf)(x)=\sup_{r>0}{\frac{1}{|B(x,r)|}\int_{B(x,r)}{|f(y)|dy}},
+\]
+称之为$f$的Hardy-Littlewood(球)极大函数(H-L极大函数).$\sup_{r \ge 0}{|L_rf(x)|} \le (Mf)(x)$.
+
+若$f(x)$是局部可积函数(即在任一有界可测集上均可积),则$(Mf)(x)$是下半连续,从而是可测的.
+
+\item (极大函数的分布函数的估计)若$f \in L(R^n)$,则对任意$\lambda>0$有
+\[
+m(\{x:(Mf)(x)>\lambda\}) \le \frac{A}{\lambda}\int_{R^n}{|f(x)|dx}.
+\]
+其中$A$只与$R^n$的维数$n$有关,而与$f$无关.
+
+$E_{\lambda}=\{x: (Mf)(x)> \lambda\}$.$\forall x \in E_{\lambda}$,$(Mf)(x)>\lambda$,则存在$B_x=B(x,r)$使
+\[
+\frac{1}{|B_x|}\int_{B_x}{|f(t)|dt}>\lambda,
+\]
+($(Mf)(x)$的定义),即有
+\[
+|B_x| \le \frac{1}{\lambda}\int_{B_x}{|f(t)|dt}\le \frac{1}{\lambda}\int_{R^n}{|f(t)|dt}<\infty
+\]
+于是$\{B_x\}$构成$E_{\lambda}$的覆盖族,且满足前面的条件,于是存在互不相交的球列$\{B_k\}$,使
+\[
+m(E_n)\le 5^n \sum{|B_k|} \le \frac{5^n}{\lambda}\int_{\bigcup{B_k}}{|f(x)|dx} \le \frac{5^n}{\lambda}\int_{R^n}{|f(x)|dx},\quad A = 5^n.
+\]
+
+\item ($R^n$上不定积分的微分定理)若$f \in L(R^n)$,则
+\[
+\lim_{r \rightarrow 0}{\frac{1}{|B(x,r)|}\int_{B(x,r)}{f(y)dy}} = f(x) a.e.
+\]
+
+若能证明$\forall \lambda>0$,$m(\{x:(\Omega{h})(x)>\lambda\})<\epsilon$,其中$\int_{R^n}{|h(x)|dx}<\epsilon$,则结论成立.
+\begin{gather*}
+(\Omega{h})(x)=|\overline{\lim}{L_rh(x)} - \underline{\lim}{L_rh(x)}| \le 2\sup{|L_rh(x)|} \le 2(Mh)(x)\\
+m(\{x:(\Omega{h})(x)>\lambda\}) \le m(\{x:(Mh)(x)>\frac{\lambda}{2}\}) \le \frac{2A}{\lambda}\int_{R^n}{|h(x)|dx}<\frac{2A}{\lambda}\epsilon.
+\end{gather*}
+或者有
+\[
+\lim_{r \rightarrow 0}{\frac{1}{r^n}\int_{|y|<r}{[f(x-y)-f(x)]dy}}=0 a.e.
+\]
+微分是一种局部性质,故对局部可积函数也成立上述结论.
+
+若$f(x)$是局部可积函数,则
+\[
+\lim_{r \rightarrow 0}{\frac{1}{r^n}\int_{|y|<r}{[f(x-y)-f(x)]dy}}=0 a.e.
+\]
+\end{enumerate}
+
+积分换元公式:
+
+概念上先引入了微分同胚的概念,它是微分几何和微分拓扑的研究对象.
+
+$U$是$R^n$上开集,$\varphi:U \rightarrow R^n$,$t_0 \in U$,若存在线性变换$T:R^n \rightarrow R^n$,以及$\delta>0$,使得当$t \in U \cap B(t_0,\delta)$时,有$\varphi(t)=\varphi(t_0)+T(t-t_0)+o(t-t_0)$,其中$o(t-t_0)$是一个从$U$到$R^n$的函数,且有$\lim_{t \rightarrow t_0}{\frac{o(t-t_0)}{|t-t_0|}}=0$,则称$\varphi$在$t_0$点是可微的,此时线性变换$T$用$\varphi'(t_0)$表示,称为$\varphi$在$t_0$点的微商.
+
+在这个定义中,一定要注意微商是一种线性变换,$T(t-t_0)=T(t)-T(t_0)$.
+
+$\varphi(t)=(\varphi_1(t),\cdots,\varphi_n(t))$时,$\varphi$可微,意味着偏导数$\frac{\partial{\varphi_j}}{\partial{t_i}}=\lim_{h \rightarrow 0}{\frac{\varphi_j(t+he_i)-\varphi_j(t)}{h}}$存在.
+\[
+\begin{pmatrix}
+\frac{\partial{\varphi_1}}{\partial{t_1}} & \cdots & \frac{\partial{\varphi_1}}{\partial{t_n}} \\
+\cdots & \cdots & \cdots \\
+\frac{\partial{\varphi_n}}{\partial{t_1}} & \cdots & \frac{\partial{\varphi_n}}{\partial{t_n}}
+\end{pmatrix}
+\]
+为$\varphi$的Jacobi矩阵,其行列式记为$J_{\varphi}(t)$.
+
+$\varphi$在$U$上可微,且它的一切偏导数连续,则称$\varphi$为$C^1$变换.
+
+\begin{enumerate}
+\item 设$\varphi:U \rightarrow R^n$是$C^1$变换,若$Z$是$U$中零测集,则$m(\varphi(Z))=0$,即把零测集变为零测集.
+
+详细证明见课本.整个证明分两步:第一步讨论$\frac{\partial{\varphi_j(t)}}{\partial{t_i}}$有界的情形.然后对于一般情形.
+
+把$U$分解,$U=\bigcup_{1}^{\infty}{B_k}$,其中$B_k$为开球,$\bar{B_k}$为紧集.
+
+对于后一情形,关键在于$m(\varphi(Z))=m(\bigcup{\varphi(Z \cap B_k)})=0$.
+
+有了这个结论,说明$\varphi$把可测集变为可测集.
+
+假设$\varphi:U \rightarrow V$,$U$,$V$为$R^n$中开集,满足条件:(i)$\varphi$是一一变换,(ii)$\varphi$是$C^1$变换,(iii)$J_{\varphi}(t) \neq 0$,$t \in U$,此时逆映射$\psi=\varphi^{-1}$同样满足这三个条件,且有$J_{\varphi}(\psi(x))J_{\varphi}(x)=1$,$x \in V$.
+
+\item 若$f(x)$是$V$上的非负连续函数,则
+\[
+\int_{\varphi(Z)}{f(x)dx} \le \int_{Z}{f(\varphi(t))|J_{\varphi}(t)|dt}.
+\]
+
+$I$为$R^n$中二进方体,$\bar{I} \subset U$.
+
+证明比较长,暂时看不明白,总的思路是使用反证法.
+
+设$f(x)$是$V$上的非负连续函数,$K \subset U$是紧集,则
+\[
+\int_{\varphi(K)}{f(x)dx}=\int_{K}{f(\varphi(t))|J_{\varphi}(t)|dt}.
+\]
+证明使用了前一个结论.
+
+记$g(x)=f(\varphi(t))|J_{\varphi}(t)|$,$\forall i \in Z$,令$G_i$为所有与$K$相交的$i$级二进方体$I$的并,且满足
+\[
+G_1 \supset G_2 \supset \cdots, \quad \bigcap{G_i}=K.
+\]
+(原书中为$\bigcup{G_i}=K$,应该是不对的)
+\[
+\int_{\varphi(K)}{f(x)dx} \le \int_{\varphi(G_i)}{f(x)dx} = \sum_{I \in G_i}{\int_{\varphi(I)}{f(x)dx}} \le \sum_{I \in G_i}{\int_{I}{g(t)dt}} = \int_{G_i}{g(t)dt}.
+\]
+而$\lim{\int_{G_i}{g(t)dt}} = \int_{K}{g(t)dt}$,因此
+\[
+\int_{\varphi(K)}{f(x)dx} \le \int_{K}{g(t)dt}.
+\]
+
+反向不等式:考虑$\varphi$的逆映射$\psi=\varphi^{-1}$,$H=\varphi(K)$,$g$与$f$互换.
+\[
+\int_{\psi(H)}{g(x)dx} \le \int_{H}{g(\psi(t))|J_{\psi}(t)|dt}.
+\]
+$\psi(H)=\psi(\varphi(K))=K$,
+\[
+\begin{aligned}
+g(\psi(t))|J_{\psi}(t)|&=f(\varphi(\psi(t)))|J_{\varphi}(\psi(t))||J_{\psi}(t)|\\
+&=f(t)|J_{\varphi}(\psi(t))J_{\psi}(t)| = f(t)
+\end{aligned}
+\]
+这里使用了$|J_{\varphi}(\psi(t))J_{\psi}(t)|=1$,于是
+\[
+\int_{K}{g(x)dx} \le \int_{\varphi(K)}{f(t)dt},
+\]
+获证.
+
+若$E \subset U$是可测集,则$m(\varphi(E))=\int_{E}{|J_{\varphi}(t)|dt}$.
+
+把可测集$E$分解:$E=K \cup Z$,$m(Z)=0$,$K=\bigcup{K_i}$,$K_i \subset K_{i+1}$,每个$K_i$为紧集,应用上一结论.
+
+(换元积分公式)$f(x)$是$V$上的可测函数,我们有
+\begin{enumerate}
+\item[(i)] $f(\varphi(t))$是$U$上的可测函数;
+\item[(ii)] $f \in L(V)$,当且仅当$f(\varphi(t))|J_{\varphi}(t)|$是$U$上的可积函数;
+\item[(iii)] 若$f \in L(V)$,或$f(x) \ge 0$,则
+\[
+\int_{V}{f(x)dx} = \int_{U}{f(\varphi(t))|J_{\varphi}(t)|dt}.
+\]
+\end{enumerate}
+
+这里第三点的"或"恐怕应该是"且".
+
+如像本书中的可测函数一直是值域为$R^1$的函数,不过在第三章最后一节给出了一个思路,$f(x):U \rightarrow V$,对于$V$中任一开集$G$,$f^{-1}(G)$是可测集,则$f$是可测的.
+
+这对于(i)是成立的:$g=f \circ \varphi$,则对$G \subset U$,$G$为可测集,$f^{-1}(G)$为可测集,从而$\varphi^{-1}(f^{-1}(G))$为可测集,即$g^{-1}(G)$为可测集.
+
+对于(ii)和(iii),可以同时证明,证明分两步,首先对集合特征函数,然后对简单函数,接下来对非负可测函数,详细证明还是见课本.
+
+球极坐标变量替换公式:$\varphi:R^n \rightarrow R^n$:
+\[
+\begin{cases}
+x_1 = r\cos{\theta_1}, \\
+x_2 = r\sin{\theta_1}\cos{\theta_2}, \\
+\cdots\cdots\cdots\cdots\cdots\\
+x_j=r\sin{\theta_1}\sin{\theta_2}\cdots\sin{\theta_{j-1}}\cos{\theta_j},2 \le j \le n-1,\\
+\cdots\cdots\cdots\cdots\cdots\cdots\cdots\\
+x_n=r\sin{\theta_1}\sin{\theta_2}\cdots\sin{\theta_{n-2}}\sin{\theta_{n-1}}
+\end{cases}
+\]
+其中$0 \le \theta_j < \pi$($j=1,2,\cdots,n-2$),$0 \le \theta_{n-1} \le 2\pi$.
+
+单位球面的向量就是:
+\[
+\omega=(\cos{\theta_1},\sin{\theta_1}\cos{\theta_2}, \cdots, \sin{\theta_1}\cdots\sin{\theta_{n-2}}\cos{\theta_{n-1}},\sin{\theta_1}\cdots\sin{\theta_{n-1}}).
+\]
+\[
+\begin{aligned}
+\frac{\partial{x_j}}{\partial{r}} &= \sin{\theta_1}\sin{\theta_2}\cdots\sin{\theta_{j-1}}\cos{\theta_j} \\
+\frac{\partial{x_j}}{\partial{\theta_i}} &= r\sin{\theta_1}\sin{\theta_2}\cdots\sin{\theta_{i-1}}\cos{\theta_i}\sin{\theta_{i+1}}\cdots\sin{\theta_{j-1}}\cos{\theta_j}
+\end{aligned}
+\]
+\[
+\int_{R^n}{f(x)dx}=\int_{0}^{2\pi}\int_{0}^{\pi}\cdots\int_{0}^{\pi}\int_{0}^{\infty}{r^{n-1}f(e\omega)\sin^{n-2}{\theta_1}\cdots\sin{\theta_{n-2}}drd{\theta_1}\cdots d{\theta_{n-1}}}
+\]
+
+$R^n$中单位球面记为
+\[
+\Sigma_n = \{\omega:0 \le \theta_j < \pi,0 \le \theta_{n-1} \le 2\pi,j=1,2,\cdots,n-2\},
+\]
+$\int_{0}^{2\pi}\int_{0}^{\pi}\cdots\int_{0}^{\pi}{\cdots d{\theta_1}\cdots d{\theta_{n-1}}}=\int_{\Sigma_n}{\cdots d\omega_n}$.
+
+包含$\Sigma_n$中的开集的最小$\sigma-$代数,当$A$是其中一元时,(此时$A$为Borel集)
+\[
+\int_{0}^{2\pi}\int_{0}^{\pi}\cdots\int_{0}^{\pi}{\chi_{A}{\omega} d{\theta_1}\cdots d{\theta_{n-1}}}=\int_{\Sigma_n}{\chi_{A}{\omega} d\omega_n}.
+\]
+而$\omega_n(A) = \int_{\Sigma_n}{\chi_{A}(\omega)d\omega_n}$可以被定义为在$\Sigma_n$上的Borel集的测度,称$\omega_n$为$\Sigma_n$的面测度.
+\[
+\int_{R^n}{f(x)dx}=\int_{\Sigma_n}{\int_{0}^{\infty}{r^{n-1}f(r\omega)drd\omega_n}}
+\]
+
+例:$\omega_n(\Sigma_n)=\int_{\Sigma_n}{d\omega_n} = 2\pi^{n/2}\Gamma(\frac{n}{2})^{-1}$,证明时使用了函数$f(x)=e^{-|x|^2}$.
+
+这里关于$d\omega_n$等概念还不是很明白,需要先了解多元微积分的相关内容.
+
+\end{enumerate}
+
+\chapter{$L^p$($p \ge 1$)空间}
+这一章的内容和泛函分析关系密切,经常作为例子出现在泛函分析的教材中.
+
+本章最主要的结果应是$L^p$空间的完备性.
+
+\section{$L^p$空间的定义与不等式}
+这一节最重要的是几个不等式:H\"older不等式和Minkouski不等式.先介绍几个定义.
+
+\begin{enumerate}
+\item $L^p$空间和$L^{\infty}$空间
+
+设$f(x)$是$E$上的可测函数,记$\Vert{f}\Vert_p = (\int_{E}{|f(x)|^pdx})^{1/p}$,$0 \le p < \infty$,用$L^p(E)$表示使$\Vert{f}\Vert_p<\infty$的$f$的全体,称其为$L^p$空间.
+
+设$f(x)$是$E$上的可测函数,$m(E)>0$,若存在$M$,使得$|f(x)| \le M$ a.e.,则对一切如此之$M$取下确界,记为$\Vert{f}\Vert_{\infty}$,称它为$|f(x)|$的本性上界,称$f(x)$为本性有界的,用$L^{\infty}(E)$表示$E$上本性有界的函数之全体.
+
+\item 共轭指标
+
+若$p$,$p'>1$,且$\frac{1}{p} + \frac{1}{p'} = 1$,则称$p$与$p'$为共轭指数,当$p=2$时,$p'=2$,当$p=\infty$时,$p'=1$,当$p=1$时,$p'=\infty$.
+\end{enumerate}
+
+下面几个结论比较重要.
+
+\begin{enumerate}
+\item $L^{\infty}(E)$可以认为$p \rightarrow \infty$时$L^p(E)$的极限:
+\[
+\lim_{p \rightarrow \infty}{\Vert{f}\Vert_p} = \Vert{f}\Vert_{\infty}.
+\]
+
+证明只需使用$\Vert{f}\Vert_{\infty}$的定义即可.$\Vert{f}\Vert_{\infty}=M$为上确界,则$\forall M'<M$,$A = \{x: |f(x)|>M'\}$的测度大于0,从而
+\[
+\Vert{f}\Vert_p \ge (\int_{A}{|f(x)|^pdx})^{1/p}>M'(m(A))^{1/p},
+\]
+另一方面,$\Vert{f}\Vert_p \le (\int_{E}{M^pdx})^{1/p}=M(m(E))^{1/p}$.
+
+\item $L^p(E)$构成一个线性空间:即若$f,g \in L^p(E)$,$\alpha$,$\beta$为实数,则$\alpha{f}+\beta{g} \in L^p(E)$.
+
+\begin{gather*}
+|\alpha{}f(x)+\beta{}g(x)|^p \le 2^p(|\alpha|^p|f(x)|^p + |\beta|^p|g(x)|^p) \\
+|\alpha{}f(x) + \beta{}g(x)| \le |\alpha|\Vert{f}\Vert_{\infty} + |\beta|\Vert{g}\Vert_{\infty} \\
+(a + b)^p \le 2^p(a^p + b^p) \quad (\frac{a+b}{2})^p \le (a^p + b^p)/2.
+\end{gather*}
+
+接下来是两个重要的不等式.
+
+\item (H\"older不等式)设$p$与$p'$为共轭指标,若$f \in L^p(E)$,$g \in L^{p'}(E)$,则有
+\[
+\Vert{fg}\Vert_1 \le \Vert{f}\Vert_p\Vert{g}\Vert_{p'},\quad 0 \le p \le \infty.
+\]
+
+证明的关键是一个初等不等式:
+\[
+a^{1/p}b^{1/p'} \le \frac{a}{p} + \frac{b}{p'}, \quad a>0,b>0.
+\]
+令$a = \frac{|f(x)|^p}{\Vert{f}\Vert_p^p}$,$b = \frac{|g(x)|^{p'}}{\Vert{g}\Vert_{p'}^{p'}}$即可.
+\[
+\int{\frac{|f(x)g(x)|}{\Vert{f}\Vert_{p}\Vert{g}\Vert_{p'}}dx} \le \frac{1}{p}\int{\frac{|f(x)|^p}{\Vert{f}\Vert_p^p}dx} + \frac{1}{p'}\int{\frac{|g(x)|^{p'}}{\Vert{g}\Vert_{p'}^{p'}}dx} = \frac{1}{p} + \frac{1}{p'} = 1.
+\]
+
+这是如何想到的呢?
+
+$f''(x) > 0$时,$f(x)$为凹函数,此时
+\[
+f(x) \le \frac{b-x}{b-a}f(a) + \frac{x-a}{b-a}f(b).
+\]
+令$f(x)=-\ln{x}$,$\theta=(b-x)/(b-a)$,$x=\theta{}a + (1-\theta)b$,则
+\[
+-\ln{(\theta{}a + (1 - \theta)b)} \le \ln(a^{-\theta}b^{-(1 - \theta)})
+\]
+由此得到
+\[
+a^{\theta}b^{1-\theta} \le \theta{}a + (1 - \theta)b,
+\]
+令$\theta = 1/p$即可.
+
+当$p=p'=2$时,通常称为Schwartz不等式:
+\[
+\int_{E}{|f(x)g(x)|dx} \le (\int_{E}{|f(x)|^2dx})^{1/2}(int_{E}{|g(x)|^2dx})^{1/2},
+\]
+对于离散情形,即为Cauchy不等式:
+\[
+(\sum{a_ib_i})^2 \le (\sum{a_i^2})(\sum{b_i^2}).
+\]
+证明使用二次方程根的判别式:
+\[
+(\sum{a_i^2})x^2 + 2(\sum{a_ib_i})x + (\sum{b_i^2}) \ge 0.
+\]
+
+接下来是H\"older不等式的一些应用.
+
+\begin{enumerate}
+\item 若$m(E) < \infty$,且$p_1 < p_2 \le \infty$,则$L^{p_2}(E) \subset L^{p_1}(E)$,且有
+\[
+\Vert{f}\Vert_{p_1} \le [m(E)]^{(1/p_1) - (1/p_2)}\Vert{f}\Vert_{p_2}.
+\]
+
+$r = p_2/p_1>1$,$r'$为$r$的共轭指标,由H\"older不等式
+\[
+\begin{aligned}
+\int_{E}{|f(x)|^{p_1}dx} &= \int_{E}{[|f(x)|^{p_1} \cdot 1]dx} \\
+&\le(\int_{E}{|f(x)|^{p_1 \cdot r}dx})^{1/r}(\int_{E}{1^{r'}dx})^{1/r'} \\
+&=(\int_{E}{|f(x)|^{p_2}dx})^{1/r}[m(E)]^{1/r'}
+\end{aligned}
+\]
+
+\item 若$f \in L^r(E) \cap L^{s}(E)$,且令$0<r<p<s\le\infty$,
+\[
+0 < \lambda < 1,\quad \frac{1}{p} = \frac{\lambda}{r} + \frac{1 - \lambda}{s},
+\]
+则
+\[
+\Vert{f}\Vert_{p} \le \Vert{f}\Vert_{r}^{\lambda} \cdot \Vert{f}\Vert_{s}^{1 - \lambda}.
+\]
+
+\[
+\begin{aligned}
+\int_{E}{|f(x)|^pdx} &= \int_{E}{|f(x)|^{\lambda{}p}|f(x)|^{(1 - \lambda)p}dx} \\
+&\le (\int_{E}{|f(x)|^rdx})^{\lambda{p}/r}(\int_{E}{|f(x)|^sdx})^{(1-\lambda)p/s}
+\end{aligned}
+\]
+
+还应对$s = \infty$时进行讨论.
+
+\end{enumerate}
+
+下面是另一个重要的不等式:
+
+\item Minkowski不等式:若$f, g \in L^p(E)$,$0 \le p \le \infty$,则
+\[
+\Vert{f+g}\Vert_p \le \Vert{f}\Vert_p + \Vert{g}\Vert_p.
+\]
+
+这是所谓的三角不等式,有了这个不等式,以及前面$L^p(E)$为线性空间的结论,可知$L^p(E)$是一个距离空间,距离可以用$\Vert{f-g}\Vert_p$来定义.
+
+证明使用了H\"older不等式:首先把几种平凡的情形加以讨论,如$p=0$,$p=\infty$等.
+\[
+\begin{aligned}
+\int_{E}{|f(x)+g(x)|^pdx} &= \int_{E}{|f(x)+g(x)|^{p-1}|f(x)+g(x)|dx} \\
+&\le \int_{E}{|f(x)+g(x)|^{p-1}|f(x)|dx} + \int_{E}{|f(x)+g(x)|^{p-1}|g(x)|dx},
+\end{aligned}
+\]
+对两个积分分别运用H\"older不等式:($p'=p/(p-1)$)
+\[
+\begin{aligned}
+\int_{E}{|f(x)+g(x)|^{p-1}|f(x)|dx} &\le [\int_{E}{(|f(x)+g(x)|^{p-1})^{p'}dx}]^{1/p'}[\int_{E}{|f(x)|^pdx}]^{1/p} \\
+&=[\int_{E}{|f(x)+g(x)|d^px}]^{(p-1)/p} \Vert{f}\Vert_p = \Vert{f+g}\Vert_{p}^{p-1}\Vert{f}\Vert_p,
+\end{aligned}
+\]
+或者说
+\[
+\begin{aligned}
+\int_{E}{|f(x)+g(x)|^{p-1}|f(x)|dx} &\le \Vert{f+g}\Vert_{p}^{p-1} \cdot \Vert{f}\Vert_p \\
+\int_{E}{|f(x)+g(x)|^{p-1}|g(x)|dx} &\le \Vert{f+g}\Vert_{p}^{p-1} \cdot \Vert{g}\Vert_p
+\end{aligned}
+\]
+由此得到
+\[
+\Vert{f+g}\Vert_{p}^{p} \le \Vert{f+g}\Vert_{p}^{p-1}(\Vert{f}\Vert_p + \Vert{g}\Vert_p)
+\]
+即可得到结论.
+
+有一个推论:设$1 \le p \le \infty$,若$f_k \in L^p(E)$,且级数$\sum{f_k(x)}$在$E$上几乎处处收敛,则
+\[
+\Vert{\sum{f_k}}\Vert_p \le \sum{\Vert{f_k}\Vert_p}.
+\]
+
+\end{enumerate}
+
+\section{$L^p$空间的性质(I)}
+本节主要是两个结论:(1)$L^p(E)$是完备的距离空间;(2)$L^p(E)$是可分的.
+
+在这里首先引入了$L^p(E)$中的距离,收敛,基本列等概念,后面又需要可分空间的概念,下面先说明这些定义.
+
+\begin{enumerate}
+\item 极限:设$f_k \in L^p(E)$,若存在$f \in L^p(E)$,使得
+\[
+\lim_{k \rightarrow \infty}{d(f_k,f)} = \lim_{k \rightarrow \infty}{\Vert{f_k - f}\Vert_p} = 0,
+\]
+则称$\{f_k\}$依$L^p$的意义收敛于$f$,$\{f_k\}$为$L^p(E)$中的收敛列,$f$为$\{f_k\}$的极限.
+
+\item 基本列(Cauchy列):设$\{f_k\} \subset L^p(E)$,若$\lim_{k,j \rightarrow \infty}{\Vert{f_k - f_j}\Vert_{p}}=0$,则称$\{f_k\}$是$L^{p}(E)$中的基本列.
+
+\item 可分空间:设$\Gamma$是$|^p(E)$中的子集,若对任意的$f \in L^p(E)$,以及$\epsilon > 0$,存在$g \in \Gamma$,使得$\Vert{f-g}\Vert_p<\epsilon$,则称$\Gamma$在$L^p(E)$中稠密,若$L^p(E)$中存在可数稠密子集,则称$L^p(E)$是可分的.
+\end{enumerate}
+
+在这里需要注意:$f,g \in L^p(E)$,$f=g$定义为$f(x)=g(x)$ a.e..
+
+接下来首先引入距离,从而证明$L^p(E)$构成一个距离空间.
+
+\begin{enumerate}
+\item 对于$f,g\in L^p(E)$,定义$d(f,g)=\Vert{f-g}\Vert_p$,$1 \le p \le \infty$,则$(L^p(E), d)$是一个距离空间.
+
+证明比较简单,关于三角不等式的证明,使用Minkowski不等式即可.
+
+然后是定义收敛,极限等概念,其中提到了关于极限,收敛的几个性质,这几个性质比较简单,实际上在距离空间中普遍成立.
+
+所谓完备:就是所有的基本列都是收敛的.(反过来是显然成立的)
+
+\item $L^p(E)$是完备的距离空间.
+
+这个证明的关键是找到极限$f$.
+
+(1)$\{f_k\} \subset L^p(E)$为基本列:$\lim_{k,j \rightarrow \infty}{\Vert{f_j - f_k}\Vert_p} = 0$.
+
+$\forall \sigma >0$,令$E_{j,k}(\sigma)=\{x \in E: |f_j(x)-f_k(x)| \ge \sigma\}$,
+\[
+\begin{aligned}
+\sigma[m(E_{j,k}(\sigma))]^{1/p} & \le [\int_{E_{j,k}(\sigma)}{|f_j(x)-f_k(x)|^pdx}]^{1/p}\\
+&\le [\int_{E}{|f_j(x)-f_k(x)|^pdx}]^{1/p}=\Vert{f_j - f_k}\Vert_{p}
+\end{aligned}
+\]
+由此得到$lim_{j,k \rightarrow \infty}{E_{j,k}(\sigma)}=0$,$\{f_k\}$在$E$上是依测度收敛的,存在$E$上的几乎处处有限的可测函数$f(x)$,使得$\{f_k(x)\}$依测度收敛于$f(x)$,又可从$f_k$中选出子列$\{f_{k_i}(x)\}$使$f_{k_i}(x)$几乎处处收敛于$f(x)$,即$\lim_{i \rightarrow \infty}{f_{k_i}(x)}=f(x)$ a.e..
+\[
+\begin{aligned}
+\int_{E}{|f_k(x)-f(x)|^pdx} &= \int_{E}{\lim_{i \rightarrow \infty}{|f_k(x)-f_{k_i}(x)|^p}dx} \\
+&\le \underline{\lim}{\int_{E}{|f_k(x)-f_{k_i}(x)|^pdx}}
+\end{aligned}
+\]
+由此得到$\lim_{k \rightarrow \infty}{\int_{E}{|f_k(x)-f(x)|^pdx}}=0$,即$\lim_{k \rightarrow \infty}{\Vert{f_k-f}\Vert_p}=0$,而$\Vert{f}\Vert_p \le \Vert{f-f_k}\Vert_p + \Vert{f_k}\Vert_p$,可知$f \in L^p(E)$.($1 \le p < \infty$时成立).
+
+$p = \infty$,$\lim_{j,k \rightarrow \infty}{\Vert{f_j-f_k}\Vert_{\infty}}=0$,$|f_k(x)-f_j(x)| \le \Vert{f_k-f_j}\Vert_{\infty}$ a.e.
+
+存在零测集$Z$使得对一切自然数$k,j$有$|f_k(x)-f_j(x)| \le \Vert{f_k-f_j}\Vert_{\infty}$,$x \notin Z$.
+
+存在$f(x)$使$\lim_{k \rightarrow \infty}{f_k(x)}=f(x)$,$x \in E \backslash Z$,$f \in L^{\infty}(E)$,然后要证明$\Vert{f_k-f}\Vert_{\infty} \rightarrow 0$,见课本.
+
+\item 关于$L^p$空间的可分性
+
+先证明了一个引理.
+
+$f \in L^p(E)$,则对任意的$\epsilon>0$,有
+\begin{enumerate}
+\item 存在$R^n$上具有紧支集的连续函数$g(x)$,使$\int_{E}{|f(x)-g(x)|^pdx}<\epsilon$.
+\item 存在$R^n$上具有紧支集的阶梯函数$\varphi$:$\varphi(x)=\sum_{1}^{k}{c_i\chi_{I_i}(x)}$使$\int_{E}{|f(x)-\varphi(x)|^pdx}<\epsilon$,其中每个$I_i$都是二进方体.
+\end{enumerate}
+
+$L^p$($1 \le p < \infty$)是可分空间
+
+设$E=R^n$,uejiushi需要找到一个可数集合$\Gamma$,使得$\forall f \in L^p(E)$,存在$g \in \Gamma$,使得$\Vert{f-g}\Vert_p<\epsilon$.
+
+书中使用阶梯函数构造了$\Gamma$.
+
+对于一般的可测集$E$,令$f_1(x)=f(x)$,$x \in E$,$f_1(x)=0$,$x \notin E$.
+
+首先对于阶梯函数$\varphi(x)=\sum{c_i\chi_{I_i}(x)}$,有$\Vert{f-\varphi}\Vert_p \le \epsilon/2$,对于$c_i$,我们选择有理数$r_i$,然后令$\psi(x)=\sum{r_i\chi_{I_i}(x)}$,这样构造的$\psi(x)$是可数的.
+
+若$1 \le p <\infty$,$1 \le r \le \infty$,则$L^p(E) \cap L^r(E)$在$L^p(E)$中稠密.
+
+是不是有阶梯函数属于$\bigcap_{1}^{\infty}{L^k(E)}$,如果是这样,自然是稠密的.
+
+注意$L^{\infty}(E)$是不可分的,这里$m(E)>0$,书中给出了一个例子.
+\[
+L^{\infty}((0,1)),f_t(x)=\chi_{(0,t)}(x),0<t<1.
+\]
+
+\item 若$f \in L^p(R^n)$,$1 \le p < \infty$,则有
+\[
+\lim_{t \rightarrow 0}{\int_{R^n}{|f(x+t)-f(x)|^pdx}} = 0.
+\]
+
+令$g_t(x)=f(x+t)$,则所求为$\Vert{g_t-g_0}\Vert_p=0$,$t \rightarrow 0$,也就是连续性方面的结论,平均连续性.
+
+若$f \in L^p(R^n)$,$1 \le p < \infty$,则
+\[
+\lim_{t \rightarrow 0}{\int_{R^n}{|f(x)+f(x-t)|^pdx}}=2\int_{R^n}{|f(x)|^pdx}.
+\]
+
+前面关于可分性的引理表明存在$f(x)$的分解:$f(x)=g(x)+h(x)$,$g(x)$为具有紧支集的连续函数,而$\Vert{h}\Vert_p<\epsilon/4$.
+
+紧支集意味着$g(x)$在某个有界区域内值不为零,而在此区域之外值为零,于是$g(x)$与$g(x-t)$有可能出现支集不相交,于是$t$足够大时
+\[
+\int_{R^n}{|g(x)+g(x-t)|^pdx}=\int_{R^n}{|g(x)|^pdx}+\int_{R^n}{|g(x-t)|^pdx}=2\int_{R^n}{|g(x)|^pdx}.
+\]
+
+\[
+\begin{aligned}
+|\Vert{f + f_t}\Vert_p - \Vert{g + g_t}\Vert_p|&<\epsilon/2 \\
+|\Vert{f + f_t}\Vert_p - 2^{1/p}\Vert{g}\Vert_p|&<\epsilon/2 \\
+|\Vert{f + f_t}\Vert_p - 2^{1/p}\Vert{f}\Vert_p| &< |\Vert{f+f_t}\Vert_p-2^{1/p}\Vert{g}\Vert_p| + |2^{1/p}\Vert{g}\Vert_p - 2^{1/p}\Vert{f}\Vert_p| \\
+&< \epsilon/2 + \epsilon/2=\epsilon
+\end{aligned}
+\]
+\end{enumerate}
+
+\section{$L^2$空间}
+本节在$L^2(E)$中引入了内积m角度等概念,这一切表明$L^2(E)$是一个Hilbert空间.
+
+这一节有不少概念,下面先介绍概念:
+
+\begin{enumerate}
+\item 内积:对于$f,g \in L^2(E)$,$fg \in L^1$,令$<f,g>=\int_{E}{f(x)g(x)dx}$.
+
+\item 正交系:若$f,g \in L^2(E)$,且$<f,g>=0$,则称$f$与$g$正交;若$\{\varphi_{\alpha}\} \subset L^2(E)$,中任意的两个元都正交,则称$\{\varphi_{\alpha}\}$是正交系.若还有$\Vert{\varphi_{\alpha}}\Vert_2=1$,则称$\{\varphi_{\alpha}\}$为规一正交系.
+
+若$\{\varphi_{\alpha}\} \subset L^2(E)$,$\Vert{\varphi_{\alpha}}\Vert_2 \neq 0$,则$\{\varphi_{\alpha}/\Vert{\varphi_{\alpha}}\Vert_2\}$即为规一化正交系
+
+\item Fourier级数与Fourier系数:设$\varphi_k$是$L^2(E)$中的规一化正交系,$f \in L^2(E)$,称
+\[
+c_k=<f, \varphi_k>=\int_{E}{f(x)\varphi_k(x)dx}
+\]
+为$f$(关于$\{\varphi_k\}$)的Fourier系数.称$\sum_{1}^{\infty}{c_k\varphi_k(x)}$为$f$(关于$\{\varphi_k\}$)的广义Fourier级数,记为$f \sim \sum_{1}^{\infty}{c_k\varphi_k}$.
+
+\item 完全系:设$\{\varphi_k\}$是$L^2(E)$中的正交系,若$L^2(E)$中不再存在非零元能与一切$\varphi_k$正交,则称此$\{\varphi_k\}$是$L^2$中的完全系.即若$f \in L^2(E)$,且$<f, \varphi_k>=0$,$k=1,2,\cdots$,则必有$f(x)=0$ a.e..
+
+\item 线性无关:设$\varphi_1(x),\varphi_2(x),\cdots, \varphi_k(x)$是定义在$E$上的函数,如果从$a_1\varphi_1(x)+a_2\varphi_2(x)+\cdots+a_k\varphi_k(x)=0$ a.e.,可推出$a_i=0$,则称函数$\varphi_i$是线性无关的,对于由无限个函数组成的函数系,如果其中任意有限个函数都是线性无关的,那么称此函数系是线性无关的.
+\end{enumerate}
+
+这一节的内容完全可以用于泛函分析,下面讨论$L^2(E)$的一些性质.
+
+\begin{enumerate}
+\item 内积的连续性:若在$L^2(E)$中有$\lim{\Vert{f_k-f}\Vert_2}=0$,则对任意$g \in L^2(E)$,有$\lim{<f_k,g>}=<f,g>$.
+
+使用Schwartz不等式:
+\[
+|<f_k,g> - <f,g>|=|<f_k-f,g>| \le \Vert{f_k-f}\Vert_2\Vert{g}\Vert_2.
+\]
+
+\item $L^2(E)$中任一规一化正交系都是可数的.
+
+$\{\varphi_{\alpha}\}$为规一化正交系,则$\Vert{\varphi_{\alpha}-\varphi_{\beta}}\Vert_2^2=2$,而$L^2(E)$是可分空间,存在可数稠密集,故$\{\varphi_{\alpha}\}$是可数的,这里的证明有些不明白,$\{\varphi_{\alpha}\}$与可数稠密集是什么关系?
+
+\item 设$\{\varphi_{i}\}$是$L^2(E)$中的规一化正交系,$f \in L^2(E)$,取定$k$,作$f_k(x)=\sum_{1}^{k}{a_i\varphi_i(x)}$,$a_i \in R$,则当$a_i=c_i=<f,\varphi_i>$时,使得$\Vert{f-f_k}\Vert_2$达到最小值.
+
+(最小二乘法)$\Vert{f}\Vert_2^2=\sum{a_i^2}$,
+
+$\Vert{f-f_k}\Vert_2^2 = \Vert{f}\Vert_2^2-\sum_{1}^{k}{(c_i-a_i)^2} - \sum_{1}^{k}{c_i^2}$.
+
+令$S_k(x)=\sum_{1}^{k}{c_i\varphi_i(x)}$,则$\Vert{f-S_k}\Vert_2^2=\Vert{f}\Vert_2^2-\sum_{1}^{k}{c_i^2}$.
+
+\item Bessel不等式:设$\{\varphi_k\}$是$L^2(E)$中的规一化正交系,且$f \in L^2(E)$,则$f(x)$的广义Fourier系数$\{c_k\}$满足
+\[
+\sum_{1}^{\infty}{c_i^2} \le \Vert{f}\Vert_2^2.
+\]
+
+由前面结论可以得出此不等式.
+
+\item Rieze-Fischer定理:设$\{\varphi_k\}$是$L^2(E)$中的规一化正交系,若$\{c_k\}$是满足$\sum_{1}^{\infty}{c_k^2}<\infty$的任一实数列,则存在$f \in L^2(E)$,使得$<f,\varphi_k>=c_k$,$k=1,2,\cdots$.
+
+令$S_k(x)=\sum_{1}^{k}{c_i\varphi_i(x)}$,则$\{S_k\}$为$L^2(E)$中基本列,存在$f \in L^2(E)$,$\lim{\Vert{f - S_k}\Vert_2}=0$,由此可得$\langle{f,\varphi_k}\rangle=c_k$.
+
+由此可以得出如下结论:
+
+(1)$L^2(E)$中的元$f$的广义Fourier级数总是在$L^2$中收敛于某个$g \in L^2$.
+
+(2)$g$不一定是$f$,书中给出了一个例子.
+
+这一情形类似于三维欧氏空间中只取两个正交向量组成正交系,但不组成正交基一样,使得不同的向量可能具有相同的坐标.这段话如何理解?
+
+为排除这一情形,引入完全系的概念.
+
+对于$R^3$,$\vec{a} \perp \vec{b}$,
+\[
+\begin{aligned}
+\vec{v_1} &= x\vec{a} + y\vec{b} + z_1\vec{c}\\
+\vec{v_2} &= x\vec{a} + y\vec{b} + z_2\vec{c}
+\end{aligned}
+\]
+这里$\vec{c} \perp \vec{a}$,$\vec{c} \perp \vec{b}$,$\vec{v_1}$对$(\vec{a},\vec{b})$的广义Fourier级数为$x\vec{a}+y\vec{b}$.$\vec{v_2}$也是,有了$\vec{c}$,就不一样了,$\vec{v_1} \neq \vec{v_2}$,必有$(x,y,z_1) \neq (x,y,z_2)$.
+
+\item 设$\{\varphi_k\}$是$L^2(E)$中的规一化的完全系,$f \in L^2(E)$,令$c_k=\langle{f,\varphi_k}\rangle$,则
+\[
+\lim_{k \rightarrow \infty}{\Vert{\sum_{1}^{k}{c_i\varphi_i} - f}\Vert_2}=0.
+\]
+也就说在$L^2(E)$中,$f$的广义Fourier级数收敛于$f$,当$\{\varphi_i\}$为完全系时.
+\begin{gather*}
+\langle{g,\varphi_i}\rangle=c_i,\\
+\langle{f-g,\varphi_i}\rangle=\langle{f,\varphi_i}\rangle-\langle{g,\varphi_i}\rangle=0,\\
+f(x)=g(x) a.e.
+\end{gather*}
+
+作为一个例子,三角函数系是完全系:设$E=[-\pi,\pi]$,则三角函数系$1, \cos{x}, \sin{x},\cdots, \cos{kx}, \sin{kx}, \cdots$是$L^2(E)$中的完全系.
+
+这意味着在微积分课程中,$f=\sum_{0}^{\infty}{(a_k\cos{kx} + b_k\sin{kx})}$时,$f$在$L^2(E)$意义下是可以取等号的.
+
+首先应证明该函数系是一个线性无关的,正交的.$\int_{-\pi}^{\pi}{\cos{kx}\sin{kx}dx}=0$应该没有问题.接下来证明$f \in L^2(E)$.$\langle{f,\varphi_k}\rangle=0$,则$f=0$ a.e.,分两步,首先是$f$为连续的,然后是$f \in L^2(E)$.
+
+(i)$f(x)$是$[-\pi,\pi]$上的连续函数,一切Fourier系数都是0,意味着$\langle{f, \varphi_k}\rangle=0$,需证明$f \equiv 0$.
+
+开集上的连续函数存在最大值$f(x_0)=M$,$x \in (x_0-\delta,x_0+\delta)$时,$f(x)>\frac{1}{2}M$.
+\[
+t(x)=1 + \cos{(x - x_0)}-\cos{\delta},
+\]
+则$t^n(x)$是一个三角多项式(关于$\cos{x}$,$\sin{x}$的多项式),从而
+\[
+\int_{-\pi}^{\pi}{f(x)t^n(x)dx}=0.
+\]
+但是$x \in (x_0 - \frac{\delta}{2},x_0+\frac{\delta}{2})$时,$\exists r>1$,使$t(x) \ge r$,于是
+\[
+\int_{-\pi}^{\pi}{f(x)t^n(x)dx} \ge \int_{x_0-\frac{\delta}{2}}^{x_0+\frac{\delta}{2}}{f(x)t^n(x)dx} \ge \frac{M}{2} \cdot r^n \cdot \delta \rightarrow \infty.
+\]
+
+(ii)$f \in L^2(E)$时,$g(x)=\int_{-\pi}^{x}{f(t)dt}$为$[-\pi,\pi]$上的绝对连续函数,$g(-\pi)=g(\pi)=0$,
+\[
+G(x)=g(x)-\frac{1}{2\pi}\int_{-\pi}^{\pi}{g(x)dx},
+\]
+然后证明$G(x)$的一切Fourier系数为0,从而$G(x) \equiv 0$,$f(x)=g'(x)$ a.e..
+\[
+\int_{-\pi}^{\pi}{g(x)\sin{kx}dx} = g(x)\frac{-\cos{kx}}{k}|_{-\pi}^{\pi}-\frac{1}{k}\int_{-\pi}^{\pi}{g'(x)(-\cos{kx})dx}=0.
+\]
+
+分部积分法:$(fg)'=f'g+fg'$,$fg = \int{f'g}+\int{fg'}$.
+
+\item $L^2(E)$中的正交系$\{\varphi_k\}$一定是线性无关的,这对于一般的赋范线性空间也是成立的.
+
+对于一般的线性无关系,可以通过Gram-Schmidt方法进行正交化.
+
+$\psi_i$为线性无关函数系.
+
+$\varphi_1=\psi_1$,对于$\varphi_2$,$\langle{\varphi_1,\varphi_2}\rangle=0$,令$\varphi_2=a\psi_1+b\psi_2$,由此得到$\langle{a\psi,\varphi_1}\rangle+\langle{b\psi_2,\varphi_1}\rangle=0$,$\frac{a}{b}=-\frac{\langle{\psi_2,\varphi_1}\rangle}{\langle{\varphi_1,\varphi_1}\rangle}$,令$\lambda=-\frac{\langle{\psi_2,\varphi_1}\rangle}{\langle{\varphi_1,\varphi_1}\rangle}$,则
+\[
+\varphi_2 = \psi_2 - \frac{\langle{\psi_2,\varphi_1}\rangle}{\langle{\varphi_1,\varphi_1}\rangle}\psi_2.
+\]
+依次类推,$\varphi_k=a_1\varphi_1+\cdots+a_{k-1}\varphi_{k-1}+\psi_k$,通过$\langle{\varphi_k,\varphi_i}\rangle=0$,依次求得$a_i$.
+
+\item 设$\{\varphi_i\}$是$L^2(E)$中的规一化正交系,若对任意的$f \in L^2(E)$以及$\epsilon>0$,存在$\{\varphi_i\}$中的线性组合.
+\[
+g(x)=\sum_{j=1}^{k}{a_j\varphi_{i_j}(x)},
+\]
+使得$\Vert{f-g}\Vert_2 < \epsilon$,则$\{\varphi_i\}$是完全系.
+
+反证法,$f \neq 0$,$\langle{f,\varphi_i}\rangle=0$,$\Vert{f}\Vert_2>0$.
+
+一方面,
+\[
+|\langle{f,f-\sum{a_j\varphi_{i_j}}}\rangle| \le \Vert{f}\Vert_2\Vert{f-\sum{a_j\varphi_{i_j}}}\Vert_2
+\]
+可以任意小,另一方面,
+\[
+|\langle{f,f-\sum{a_j\varphi_{i_j}}}\rangle|=|\langle{f,f}\rangle - \sum{a_j\langle{f,\varphi_{i_j}}\rangle}|=\langle{f,f}\rangle=\Vert{f}\Vert_2^2.
+\]
+矛盾.
+
+注意到$L^2(E)$中存在可数稠密集$\Gamma$,在$\Gamma$中取出线性无关的向量,然后进行正交化,按照这个定理,就可以获得$L^2(E)$的一个完全正交系.
+
+\end{enumerate}
+
+\section{$L^p$空间的性质}
+还是先来了解概念上的东西.
+
+先回忆一下卷积的概念:$f*g=\int_{E}{f(x-y)g(y)dy}$,剩下的内容中只引入一个新概念.
+
+设$K(x)$是定义在$R^n$上的函数,$\epsilon>0$,令
+\[
+K_{\epsilon}(x)=\epsilon^{-n}K(\frac{x}{\epsilon})=\epsilon^{-n}K(\frac{x_1}{\epsilon},\frac{x_2}{\epsilon},\cdots,\frac{x_n}{\epsilon}),
+\]
+称$K_{\epsilon}(x)$为$K(x)$的展缩函数.
+
+下面研究的是$L^p(E)$空间的一些性质.
+
+\begin{enumerate}
+\item 关于$L^p$的范数$\Vert\cdot\Vert$.
+
+若$f \in L^p(E)$,($1 \le p < \infty$),则存在$g \in L^{p'}(E)$,且$\Vert{g}\Vert_{p'}=1$,使得
+\[
+\Vert{f}\Vert_p=\int_{E}{f(x)g(x)dx},
+\]
+注意这里$p'$与$p$是共轭指数的关系:$\frac{1}{p} + \frac{1}{p'} = 1$.
+
+根据H\"older不等式:
+\[
+|\int_{E}{f(x)g(x)dx}| \le \Vert{f}\Vert_p\Vert{g}\Vert_{p'}
+\]
+
+证明是使用了构造法,直接构造出了$g(x)$.
+
+当$p=1$,取$g(x)=\text{sign}{f(x)}$,当$1<p<\infty$,设$\Vert{f}\Vert_p \neq 0$,$g(x)=(\frac{|f(x)|}{\Vert{f}\Vert_p})^{p-1}\cdot\text{sign}{f(x)}$.
+
+对于$p=\infty$,有下列结论:
+\[
+\Vert{f}\Vert_{\infty}=\sup_{\Vert{g}\Vert_1=1}{\{|\int_{E}{f(x)g(x)dx}|\}},
+\]
+书中的证明充分利用$\Vert{f}\Vert_{\infty}$的定义,注意$g(x)$的构造
+\[
+g(x)=\frac{1}{a}\chi_{A}(x)\text{sign}{f(x)}.
+\]
+
+另外,当$p=\infty$时,$f \in L^p(E)$,可能不存在$g \in L^1(E)$,$\Vert{g}\Vert_1=1$,使得$\Vert{f}\Vert_{\infty}=\int_{E}{f(x)g(x)dx}$.书中给出了一个例子.$f(x)=x$,$x \in [0,1]$.
+
+\item H\"older不等式的逆命题
+设$g(x)$是$E$上的可测函数,若存在$M>0$,使得对一切在$E$上可积的简单函数$\varphi(x)$,都有
+\[
+|\int_{E}{g(x)\varphi(x)dx}| \le M\Vert{\varphi}\Vert_p,
+\]
+则$g \in L^{p'}(E)$,$p'$是$p$的共轭指标,且$\Vert{g}\Vert_{p'} \le M$.
+
+$g \in L^{p'}(E)$,即要证明$|g(x)|^{p'}$可积.
+
+令$\{\varphi_k(x)\}$逼近$|g(x)|^{p'}$,$\varphi_k(x)$单调上升.
+\begin{gather*}
+\psi_k(x)=[\varphi_k(x)]^{1/p}\text{sign}{g(x)},\\
+\Vert{\psi_k}\Vert_p=[\int_{E}{\varphi_k(x)dx}]^{1/p} \\
+0 \le \varphi_k(x) = [\varphi_k(x)]^{1/p}[\varphi_k(x)]^{1/p'}\le \psi_k(x)g(x) \\
+\int_{E}{\varphi_k(x)dx} \le \int_{E}{\psi_k(x)g(x)dx} \le M\Vert{\psi_k}\Vert_p
+\end{gather*}
+由此得到:$\int_{E}{\varphi_k(x)dx} \le M^{p'}$,令$k \rightarrow \infty$,$\int_{E}{|g(x)|^{p'}dx} \le M^{p'}$,可积.
+
+对于$p=1$,书中采取了反证法,那么$g*L^{\infty}(E)$意味着什么呢?
+
+存在$E$中的可测集列$\{A_k\}$,$\infty > m(A_k) > 0$,使得$g(x) \ge k$,$x \in A_k$, $k=1,2,\cdots$.$\varphi_k(x)=\chi_{A_k}(x)$,则
+\[
+\frac{\int{\varphi_k(x)g(x)dx}}{\Vert{\varphi_k}\Vert_1} \ge \frac{km(A_k)}{m(A_k)}=k,
+\]
+矛盾.
+
+\item 关于卷积$f*g$,我们已经证明:
+\[
+\Vert{f*g}\Vert_1 \le \Vert{f}\Vert_1\Vert{g}\Vert_1,
+\]
+即书中的定理4.31.
+\[
+\int_{R^n}{|(f*g)(x)|dx}  \le \int_{R^n}{|f(x)|dx}\int_{R^n}{|g(x)|dx}.
+\]
+对于$L^p(R^n)$,我们有类似的Young不等式.
+
+设$f \in L^1(R^n)$,$g \in L^p(R^n)$,($1 < p < \infty$),则$\Vert{f \* g}\Vert_p \le \Vert{f}\Vert_1\Vert{g}\Vert_p$.
+
+证明过程先用H\"older不等式,后用Fubini定理.
+\[
+\begin{aligned}
+|(f*g)(x)| &\le \int_{R^n}{|f(x-y)||g(y)|dy}\\
+&=\int_{R^n}{|f(x-y)|^{1/p}|g(y)||f(x-y)|^{1/p'}dy}\\
+&\le [\int_{R^n}{|f(x-y)||g(y)|^pdy}]^{1/p}[\int_{R^n}{|f(x-y)|dy}]^{1/p'}\\
+\int_{R^n}{|(f*g)(x)|^pdx} &\le \int_{R^n}{(\int_{R^n}{|f(x-y)||g(y)|^pdy})(\int_{R^n}{|f(x-y)|dy})^{p/p'}dx} \\
+&= \Vert{f}\Vert_1^{p/p'}\int_{R^n}{[\int_{R^n}{|f(x-y)||g(y)|^pdy}]dx} \\
+&= \Vert{f}\Vert_1^{p/p'}\int_{R^n}{|g(y)|^p[\int_{R^n}{|f(x-y)|dx}]dy} \\
+&= \Vert{f}\Vert_1^{p/p'+1}\int_{R^n}{|g(y)|^pdy}=\Vert{f}\Vert_1^p\Vert{g}\Vert_p^p
+\end{aligned}
+\]
+这里主要应注意$\int_{R^n}{|f(x-y)|dy}=\Vert{f}\Vert_1$,即
+\[
+\int_{R^n}{|f(x-y)|dy} =\int_{R^n}{||f(y)dy}.
+\]
+变量替换.
+
+这说明$f*g$是属于$L^p(R^n)$的.
+
+\item 广义Minkowski不等式:设$f(x,y)$是$R^n \times R^n$上的可测函数,若对几乎处处的$y \in R^n$,$f(x,y)$属于$L^p(R^n)$($1 \le p < \infty$),且有$\int_{R^n}{[\int_{R^n}{|f(x,y)|^pdx}]^{1/p}dy}=M<\infty$,则
+\[
+[\int_{R^n}{|\int_{R^n}{f(x,y)dy}|^pdx}]^{1/p} \le \int_{R^n}{[\int_{R^n}{|f(x,y)|^pdx}]^{1/p}dy}.
+\]
+
+证明过程中使用了前面的结论,对于$p=1$它是显然的.
+
+$F(x)=\int_{R^n}{f(x,y)dy}$,则左边即为$\Vert{F}\Vert_p$,右边为$M$.
+
+对任意的简单可积函数$\varphi(x)$有
+\[
+\begin{aligned}
+|\int_{R^n}{F(x)\varphi(x)dx}| &\le \int_{R^n}{|F(x)\varphi(x)|dx}\\
+&\le \int_{R^n}{[\int_{R^n}{|f(x,y))||\varphi(x)|dx}]dy}\\
+&\le\int_{R^n}{[\int_{R^n}{|f(x,y)|^pdx}]^{1/p}[\int_{R^n}{|\varphi(x)|^{p'}}]^{1/p'}dy} \\
+&=M\Vert{\varphi}\Vert_{p'}
+\end{aligned}
+\]
+由此$\Vert{F}\Vert_p \le M$.
+
+\item 对前面提到的概念:展缩函数进行简单的讨论:
+
+$K(x)=\chi_{B(0,1)}(x)$,则
+\[
+K_{\epsilon}(x)=\begin{cases}
+\epsilon^{-n}, &|x|<\epsilon\\
+0,&|x|\ge \epsilon.
+\end{cases}
+\]
+
+设$K \in L^1(R^n)$,则有
+\begin{enumerate}
+\item[(i)]$\int_{R^n}{K_{\epsilon}(x)dx}=\int_{R^n}{K(x)dx}$.
+\item[(ii)]对于固定的$\delta>0$,有
+\[
+\lim_{\epsilon \rightarrow 0}{\int_{|x|>\delta}{|K_{\epsilon}(x)|dx}}=0.
+\]
+\end{enumerate}
+
+(i)简单的积分换元:$y = \frac{x}{\epsilon}$,则
+\[
+J=\begin{pmatrix}
+\frac{1}{\epsilon} && \\
+&\ddots&\\
+&&\frac{1}{\epsilon}
+\end{pmatrix}=\epsilon^{-n}.
+\]
+
+\[
+\int_{R^n}{K(x)dx}=\int_{R^n}{K(\frac{x}{\epsilon})|J|dx}=\int_{R^n}{\epsilon^{-n}K(\frac{x}{\epsilon})dx}=\int_{R^n}{K_{\epsilon}(x)dx}.
+\]
+
+(ii)$K_{\epsilon}(x)=\epsilon^{-n}K(\frac{x}{\epsilon})$,当$|x|>\delta$时,$|\frac{x}{\epsilon}|>\frac{\delta}{\epsilon}$,$x=\epsilon{}t$,则$J=\epsilon^n$.
+\[
+\begin{aligned}
+int_{|x|>\delta}{|K_{\epsilon}(x)|dx} &= \int_{|x|>\delta}{\epsilon^{-n}|K(\frac{x}{\epsilon})|dx} \\
+&=\int_{|t|>\frac{\delta}{\epsilon}}{\epsilon^{-n}|K(t)|\epsilon^ndt}\\
+&=\int_{|t|>\frac{\delta}{\epsilon}}{|K(t)|dt}
+\end{aligned}
+\]
+当$\epsilon \rightarrow 0$时,$\frac{\delta}{\epsilon} \rightarrow \infty$,故有
+\[
+\int_{|t|>\frac{\delta}{\epsilon}}{|K(t)|dt}=0.
+\]
+
+\item 设$K \in L^1(R^n)$,且$\Vert{K}\Vert_1=1$,若$f \in L^p(R^n)$,$1 \le p < \infty$,则有
+\[
+\lim_{\epsilon \rightarrow 0}{\Vert{K_{\epsilon}*f-f}\Vert_p}=0.
+\]
+
+证明中使用了广义Minkowski不等式和Lebesgue控制收敛定理.
+\[
+\begin{aligned}
+(K_{\epsilon}*f)(x)-f(x) &= \int_{R^n}{[f(x-y)-f(x)]K_{}(y)dy}\\
+&=\int_{R^n}{[f(x-\epsilon{}y)-f(x)]K(y)dy}\quad ?
+\end{aligned}
+\]
+这只有在$K(x)\ge0$时成立.
+\[
+\Vert{K(x)}\Vert_1=\int_{R^n}{|K(x)|dx}=1=\int_{R^n}{K(x)dx}=\int_{R^n}{K_{\epsilon}(y)dy},
+\]
+\begin{gather*}
+F_{\epsilon}(y)=[\int_{R^n}{|f(x-\epsilon{}y)-f(x)|^pdx}]^{1/p},\\
+0 \le F_{\epsilon}(y)|K(y)|\le 2\Vert{f}\Vert_p|K(y)|,
+\end{gather*}
+当$\epsilon \rightarrow 0$时,$F_{\epsilon}(y) \rightarrow 0$.
+
+\[
+\rho(x)=\begin{cases}
+c\exp(-\frac{1}{1-|x|^2}) &|x|<1\\
+0&|x| \ge 1,
+\end{cases}
+\]
+这里$c$使得$\Vert{\rho}\Vert_1=1$.当$f(x)$是具有紧支集$F$且属于$L^p(R^n)$时,$(\rho_{\epsilon}*f)(x)$也具有紧支集.
+\[
+(\rho_{\epsilon}*f)(x)=\int_{|x|\le 1}{f(x-\epsilon{}t)\rho(t)dt},
+\]
+$(\rho_{\epsilon}*f)(x)$的紧支集是$F$的$\epsilon$-邻域.即$F$与$B(x,\epsilon)$不相交时,必有$f(x-\epsilon{}t)\rho(t)=0$.只要支集是有界的,必然就是紧支集.
+
+\item 具有紧支集且无限次可微的函数类$C_c^{\infty}(R^n)$在$L^p(R^n)$中稠密.
+
+证明是构造性的.
+
+设$f(x) \in L^p(R^n)$,令
+\[
+\left.
+f_N(x)=\begin{cases}
+f(x), &|x| \le N, \\
+0,&|x|>N,
+\end{cases}
+\right.
+\quad (\rho_{\epsilon}*f_N)(x) \in C_c^{\infty}(R^n)
+\]
+则从$f \in L^p(R^n)$可得$\Vert{f-f_N}\Vert_p<\epsilon$.从前一个定理的结论可得
+\[
+\Vert{\rho_{\epsilon}*f_N-f_N}\Vert_p<\epsilon.
+\]
+
+\item Hardy-Littlewood极大函数
+$f \in L^p(R^n)$,
+\[
+(Mf)(x)=\sup_{r>0}{\frac{1}{|B(x,r)|}\int_{B(x,r)}{|f(y)|dy}},
+\]
+该函数对于$L^1(R^n)$已经有结论了,估计式5.22,下面对于$f \in L^p(R^n)$的情形讨论.
+
+设$f \in L^p(R^n)$($1 < p \le \infty$),则$(Mf) \in L^p(R^n)$,且有$\Vert{Mf}\Vert_p \le A_p\Vert{f}\Vert_p$.
+
+(1)$p=\infty$时,
+\begin{gather*}
+\Vert{f}\Vert_p=\sup_{m(E)=0}{\{f(x):x\in R^n \backslash E\}} \\
+|f(y)|\le M \quad \frac{1}{|B(x,r)|}\int_{B(x,r)}{|f(y)|dy} \le \frac{M}{|B(x,r)|}\int_{B(x,r)}{dy}\\
+|Mf| \le \Vert{f}\Vert_{\infty} \Rightarrow \Vert{Mf}\Vert_{\infty} \le \Vert{f}\Vert_{\infty},A_{\infty}=1.
+\end{gather*}
+
+(2)$1<p<\infty$时,书中存在印刷错误.
+
+$E_{\lambda} = \{x : |f(x)|>\frac{\lambda}{2}\}$,令
+\[
+f^{\lambda}(x)=\begin{cases}
+f(x),&x \in E_{\lambda} \\
+0,&x \notin E_{\lambda}
+\end{cases}
+\]
+\begin{gather*}
+|f(x)| \le |f^{\lambda}(x)| + \frac{\lambda}{2} \\
+(Mf)(x) \le (Mf^{\lambda})(x) + \frac{\lambda}{2} \\
+\{x: (Mf)(x) > \lambda\} \subset \{x : (Mf^{\lambda})(x) > \frac{\lambda}{2}\}
+\end{gather*}
+由$f^{\lambda} \in L^1(R)$可得
+\[
+m(\{x:(Mf)(x) > \lambda\}) \le \frac{2A}{\lambda}\int_{R^n}{|f^{\lambda}(x)|dx}=\frac{2A}{\lambda}\int_{E_{\lambda}}{|f(x)|dx},
+\]
+$m(\{x:(Mf)(x)>\lambda\})$为$(Mf)(x)$的分布函数,记为$(Mf)_*(\lambda)$,则有(4.32)
+\[
+\begin{aligned}
+\int_{R^n}{|(Mf)(x)|^pdx} &= p\int_{0}^{\infty}{\lambda^{p-1}(Mf)_*(\lambda)d\lambda} \\
+&\le p\int_{0}^{\infty}{\lambda^{p-1}[\frac{2A}{\lambda}\int_{E_{\lambda}}{|f(x)|dx}]d\lambda}\\
+&=2A\int_{0}^{\infty}{\lambda^{p-2}[\int_{R^n}{|f(x)|\chi_{E_{\lambda}}(x)dx}]d\lambda} \\
+&=2A\int_{R^n}{|f(x)|[\int_{0}^{\infty}{\lambda^{p-2}\chi_{E_{\lambda}}(x)dlambda}]dx}
+\end{aligned}
+\]
+而
+\[
+\int_{0}^{\infty}{\lambda^{p-2}\chi_{E_{\lambda}}(x)d\lambda} = \int_{0}^{2|f(x)|}{\lambda^{p-2}d\lambda}=\frac{2^{p-1}}{p-1}|f(x)|^{p-1},
+\]
+因此
+\[
+\int_{R^n}{|(Mf)(x)|^pdx} \le \frac{2^pA_p}{p-1}\int_{R^n}{|f(x)|dx}, \quad A_p=2(\frac{A}{p-1})^{1/p}.
+\]
+
+\end{enumerate}
+
+\end{document}
