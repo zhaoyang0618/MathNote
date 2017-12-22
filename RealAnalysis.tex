@@ -1225,7 +1225,7 @@ $\forall x \in E$, $\exists G$, 使得$x \in G$, 从而存在$B(x', 1/k) \subset
 
 有界性的证明就用了前面我提到的有限这个结论: 开集族$E_n = \{ x | |x| < n\}$是可以覆盖$E$的, 按照前提条件, 存在有限个开集就可以覆盖$E$, 不妨设为$E_{n_1}$, $\cdots$, $E_{n_k}$, 取$N = \max\{n_1, \cdots, n_k\}$, 则$E_N$就可以覆盖整个$E$, 有界.
 
-关于闭集的证明: 闭集是包含了所有极限点的集合, 详细证明见课本, 课本中的证明思路还是用到了有限性, 只不过构造开集族的方法不同: $\forall y \in E^c$($E$的余集), $\forall x in E$, $\exists \delta_x > 0$, 使得$B(x, \delta_x) \cap B(y, \delta_x) = \emptyset$, 这样的开集族$\{B(x, \delta_x)\}$可以覆盖$E$, 从有限性可知$B(y, \delta_x) \cap E = \emptyset$, $y \notin E'$, $E' \subset E$. 即说明$E$的极限点都属于$E$.
+关于闭集的证明: 闭集是包含了所有极限点的集合, 详细证明见课本, 课本中的证明思路还是用到了有限性, 只不过构造开集族的方法不同: $\forall y \in E^c$($E$的余集), $\forall x \in E$, $\exists \delta_x > 0$, 使得$B(x, \delta_x) \cap B(y, \delta_x) = \emptyset$, 这样的开集族$\{B(x, \delta_x)\}$可以覆盖$E$, 从有限性可知$B(y, \delta_x) \cap E = \emptyset$, $y \notin E'$, $E' \subset E$. 即说明$E$的极限点都属于$E$.
 
 有了开集, 闭集以及相关的定理, 可以推广连续函数的概念:
 
