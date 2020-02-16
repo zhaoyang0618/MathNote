@@ -11,8 +11,8 @@
 \contentsline {subsection}{\numberline {1.1.7}欧几里得算法}{10}{subsection.1.1.7}% 
 \contentsline {subsection}{\numberline {1.1.8}算术基本定理}{13}{subsection.1.1.8}% 
 \contentsline {subsection}{\numberline {1.1.9}同余式}{13}{subsection.1.1.9}% 
-\contentsline {chapter}{\numberline {2}基础代数}{15}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}代数}{16}{chapter.3}% 
-\contentsline {part}{II\hspace {1em}分析}{17}{part.2}% 
-\contentsline {chapter}{\numberline {4}数学分析}{18}{chapter.4}% 
-\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{19}{chapter.5}% 
+\contentsline {chapter}{\numberline {2}基础代数}{17}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}代数}{18}{chapter.3}% 
+\contentsline {part}{II\hspace {1em}分析}{19}{part.2}% 
+\contentsline {chapter}{\numberline {4}数学分析}{20}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{21}{chapter.5}% 

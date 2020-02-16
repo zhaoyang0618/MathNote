@@ -476,7 +476,63 @@ a+x \equiv b+1, \quad ax \equiv bx, \quad  -a \equiv -b \quad (\mod{m})
 
 同样使用定义即可证明。
 
-对于方程成立的消去律对于同余式不一定成立。
+对于方程成立的消去律对于同余式不一定成立。例如，由$2 \cdot 7 \equiv 2 \cdot 1(\mod{12})$不能推出$7 \equiv 1(\mod{12})$。之所以不能这样推断，是因为被消去的$2$是模的一个因子。对于同余，最好也只能得到修改的消去律：
+\begin{theorem}{}{theorem0025}
+当$c$与$m$互素时，由$ca \equiv cb(\mod{m})$可推出$a \equiv b(\mod{m})$。
+\end{theorem}
+
+这实际上是定理\ref{thm:theorem0020}的一个应用。
+
+线性方程的讨论可以扩展到同余式上：
+\begin{theorem}{}{theorem0026}
+如果$c$与$m$互素，那同余式
+\[
+cx \equiv b(\mod{m})
+\]
+有整数解$x$，任意两个解$x_1$和$x_2$对模$m$同余。
+\end{theorem}
+
+证明提要：$(c,m)=1$，说明存在整数$s$,$t$使得$1 = sc+tm$，从而$b = bsc + btm$，于是$b \equiv (bs)c(\mod{m})$，也就是$x=bs$是一个解。第二个结论，通过使用同余式的传递律和对称律，由$cx_1 \equiv b$和$cx_2 \equiv b$可推出$cx_1 \equiv cx_2$，使用定理\ref{thm:theorem0025}可得$x_1 \equiv x_2$。
+
+当模$m$为素数时，出现重要的特殊情形，此时，不能被$m$整除的一切整数都与$m$互素，由此得出
+\begin{corollary}{}{corollary0026}
+如果$p$为素数，并且$c \not\equiv 0(\mod{p})$，那么$cx \equiv b(\mod{p})$有模$p$的唯一解。
+\end{corollary}
+
+这里所谓模$p$唯一解，就是指任意两个解模$p$同余（相等）。
+
+也可以解联立同余式。
+\begin{theorem}{}{theorem0027}
+如果$m_1$与$m_2$互素，那么同余式
+\begin{gather}
+\begin{aligned}
+x &\equiv b_1 (\mod{m_1}) \\
+x &\equiv b_2 (\mod{m_2})
+\end{aligned}
+\end{gather}
+有公共解$x$，任意两个解$x_1$和$x_2$对模$m_1m_2$同余。
+\end{theorem}
+
+证明摘要：对任意整数$y$，$x = b_1 + ym_1$是第一个同余式的解，这样的$x$又要满足 第二个同余式，当且仅当$b_1+ym_1 \equiv b_2(\mod{m_2})$，或者说$ym_1 \equiv b_2-b_1 (\mod{m_2})$，根据定理\ref{thm:theorem0026}，这个方程有解$y$，从而$x$存在。第二部分，只需要注意到，对于任意两个解$x_1$和$x_2$，有$x_1-x_2 \equiv 0(\mod{m_1})$，$x_1-x_2 \equiv 0 (\mod{m_2})$，而$（m_1, m_2) = 1$，于是$x_1-x_2$必然可以被$m_1m_2$整除。
+
+上面同样的方法应用于形为
+\[
+a_ix \equiv b_i (\mod{m_i})
+\]
+的两个或多个同余式，其中$(a_i, m_i)=1$，并且各个不同的模两两互素。
+
+书中没有这个过程，这里简单对两个同余式的情形说明一下：对于$a_1x \equiv b_1(\mod{m_1})$来说，从$(a_1, m_1)=1$可知存在$s_1,t_1$使得$s_1a_1+t_1m_1=1$，从而可知$x = b_1s_1$是同余式的一个解，对于任意整数$y$，$b_1s_1+ym_1$都是其解，代入第二个同余式$a_2x \equiv b_2(\mod{m_2})$，有$a_2(b_1s_1 + ym_1) \equiv b_2(\mod{m_2})$，或者$a_2m_1y \equiv b_2 - b_1s_1a_2 (\mod{m_2})$，而$(a_2, m_2)=1$，$(m_1, m_2)=1$，必有$(a_2m_1, m_2)=1$,最后一个同余式有解$y$，从而存在$x$。
+
+\begin{theorem}{费马(Fermat)小定理}{theorem0028}
+如果$a$为整数，$p$为素数，那么
+\[
+a^p \equiv a(\mod{p})
+\]
+\end{theorem}
+
+是用数学归纳法以及二项式公式，二项式公式$(n+1)^p$中，除了第一项和最后一项，其余每一项都能被$p$整除（这个结论并不显然，需要证明），于是$(n+1)^p \equiv n^p + 1(\mod{p})$。
+
+
 
 
 
