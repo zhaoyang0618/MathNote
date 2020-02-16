@@ -1898,7 +1898,7 @@ $m^*(E) \le m(H \backslash E_1) = m(H) - m(E_1)$ $\Rightarrow$ $m(E_1) \le m(H) 
 现在只剩下(6)了, Borel测度与Lebesgue测度之间的关系.
 
 \section{不可测集}
-书中不可测集的构造使用了等价类的概念, 同时需要选择公理, 其中的关键时一个引理, 有理数在这里又起了关键的作用, 尤其是其稠密性.
+书中不可测集的构造使用了等价类的概念, 同时需要选择公理, 其中的关键是一个引理, 有理数在这里又起了关键的作用, 尤其是其稠密性.
 
 这里先说明这个不可测集如何构造.
 
@@ -2905,7 +2905,7 @@ E_i = \{x \in E: k_i \le |g(x)| < k_{i+1}\}
 \[
 f(x) = \begin{cases}
 \frac{\text{sign}(g(x))}{i^{1 + \frac{1}{2}} \cdot m(E_i)} & x \in E_i \\
-0 x \notin E_i
+0& x \notin E_i
 \end{cases}
 \]
 为什么这么构造呢?分子部分是有迹可循的:
@@ -3152,7 +3152,7 @@ $f(x)$是Riemann可积,说明$f(x)$是几乎处处连续的,从而$f(x)$为有�
 \]
 这后一个积分可用Draboux上下积分逼近.
 
-\item 对于无界函数的积分或者函数在无穷区间的积分,Riemann积分是作为广义积分来定义的,那么使用Lebesgue积分的概念是什么情形呢>
+\item 对于无界函数的积分或者函数在无穷区间的积分,Riemann积分是作为广义积分来定义的,那么使用Lebesgue积分的概念是什么情形呢？
 
 设$\{E_k\}$是递增可测集合列,其并集为$E$,$f \in L(E_k)$,$k=1,2,\cdots$,若极限$\lim_{k \rightarrow \infty}{|f(x)|dx}$存在(有限),则$f \in L(E)$,且有
 \[
@@ -4499,7 +4499,7 @@ $f \in L^p(E)$,则对任意的$\epsilon>0$,有
 
 $L^p$($1 \le p < \infty$)是可分空间
 
-设$E=R^n$,uejiushi需要找到一个可数集合$\Gamma$,使得$\forall f \in L^p(E)$,存在$g \in \Gamma$,使得$\Vert{f-g}\Vert_p<\epsilon$.
+设$E=R^n$,也就是需要找到一个可数集合$\Gamma$,使得$\forall f \in L^p(E)$,存在$g \in \Gamma$,使得$\Vert{f-g}\Vert_p<\epsilon$.
 
 书中使用阶梯函数构造了$\Gamma$.
 

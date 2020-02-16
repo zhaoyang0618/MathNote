@@ -1,0 +1,1269 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2016.7.14)  31 DEC 2017 21:05
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./MathGraduateExam.tex
+(./MathGraduateExam.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(d:/texlive/2016/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(d:/texlive/2016/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.sty
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
+
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/05/18 v6512 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
+L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
+L3 Module: l3str 2016/03/24 v6441 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/03/24 v6441 L3 Integers
+\c_max_int=\count88
+\l_tmpa_int=\count89
+\l_tmpb_int=\count90
+\g_tmpa_int=\count91
+\g_tmpb_int=\count92
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count93
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2016/03/26 v6464 L3 Messages
+L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
+\l_iow_line_count_int=\count94
+\l__iow_target_count_int=\count95
+\l__iow_current_line_int=\count96
+\l__iow_current_word_int=\count97
+\l__iow_current_indentation_int=\count98
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
+\c_zero_dim=\dimen103
+\c_max_dim=\dimen104
+\l_tmpa_dim=\dimen105
+\l_tmpb_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
+\g__keyval_level_int=\count99
+\l_keys_choice_int=\count100
+L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
+\c__fp_leading_shift_int=\count101
+\c__fp_middle_shift_int=\count102
+\c__fp_trailing_shift_int=\count103
+\c__fp_big_leading_shift_int=\count104
+\c__fp_big_middle_shift_int=\count105
+\c__fp_big_trailing_shift_int=\count106
+\c__fp_Bigg_leading_shift_int=\count107
+\c__fp_Bigg_middle_shift_int=\count108
+\c__fp_Bigg_trailing_shift_int=\count109
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box26
+\l_tmpa_box=\box27
+\l_tmpb_box=\box28
+\g_tmpa_box=\box29
+\g_tmpb_box=\box30
+L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
+\l__coffin_internal_box=\box31
+\l__coffin_internal_dim=\dimen109
+\l__coffin_offset_x_dim=\dimen110
+\l__coffin_offset_y_dim=\dimen111
+\l__coffin_x_dim=\dimen112
+\l__coffin_y_dim=\dimen113
+\l__coffin_x_prime_dim=\dimen114
+\l__coffin_y_prime_dim=\dimen115
+\c_empty_coffin=\box32
+\l__coffin_aligned_coffin=\box33
+\l__coffin_aligned_internal_coffin=\box34
+\l_tmpa_coffin=\box35
+\l_tmpb_coffin=\box36
+\l__coffin_display_coffin=\box37
+\l__coffin_display_coord_coffin=\box38
+\l__coffin_display_pole_coffin=\box39
+\l__coffin_display_offset_dim=\dimen116
+\l__coffin_display_x_dim=\dimen117
+\l__coffin_display_y_dim=\dimen118
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen119
+\l__box_bottom_dim=\dimen120
+\l__box_left_dim=\dimen121
+\l__box_right_dim=\dimen122
+\l__box_top_new_dim=\dimen123
+\l__box_bottom_new_dim=\dimen124
+\l__box_left_new_dim=\dimen125
+\l__box_right_new_dim=\dimen126
+\l__box_internal_box=\box40
+\l__coffin_bounding_shift_dim=\dimen127
+\l__coffin_left_corner_dim=\dimen128
+\l__coffin_right_corner_dim=\dimen129
+\l__coffin_bottom_corner_dim=\dimen130
+\l__coffin_top_corner_dim=\dimen131
+\l__coffin_scaled_total_height_dim=\dimen132
+\l__coffin_scaled_width_dim=\dimen133
+L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
+)
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2016/03/26 v6465 L3 Experimental driver: xdvipdfmx
+\l__driver_tmp_box=\box41
+))
+(d:/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count110
+\l__xparse_m_args_int=\count111
+\l__xparse_mandatory_args_int=\count112
+\l__xparse_processor_int=\count113
+\l__xparse_v_nesting_int=\count114
+)
+Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
+
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
+X
+\l_fontspec_script_int=\count115
+\l_fontspec_language_int=\count116
+\l_fontspec_strnum_int=\count117
+\l__fontspec_tmpa_dim=\dimen134
+\l__fontspec_tmpb_dim=\dimen135
+\l__fontspec_tmpc_dim=\dimen136
+\g__file_internal_ior=\read1
+
+(d:/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 105.
+
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(d:/texlive/2016/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(d:/texlive/2016/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count118
+\tipasavetokens=\toks15
+\tipachecktokens=\toks16
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(d:/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 96.
+
+(d:/texlive/2016/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2016/04/06 v4.08 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+(d:/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(d:/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 355.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 365.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 375.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 385.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 415.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 423.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 437.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 453.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 467.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 529.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 540.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 548.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 556.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 577.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
+.................................................
+\l__fontspec_tmp_int=\count119
+
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 2705.
+LaTeX Info: Redefining \slshape on input line 2710.
+LaTeX Info: Redefining \scshape on input line 2715.
+LaTeX Info: Redefining \upshape on input line 2720.
+\l__fontspec_em_int=\count120
+\l__fontspec_emdef_int=\count121
+LaTeX Info: Redefining \em on input line 2736.
+LaTeX Info: Redefining \emph on input line 2742.
+LaTeX Info: Redefining \- on input line 2746.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 2841.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 2845.
+.................................................
+))
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen139
+))
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+)
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count122
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count123
+\leftroot@=\count124
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count125
+\DOTSCASE@=\count126
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count127
+\c@MaxMatrixCols=\count128
+\dotsspace@=\muskip16
+\c@parentequation=\count129
+\dspbrk@lvl=\count130
+\tag@help=\toks19
+\row@=\count131
+\column@=\count132
+\maxfields@=\count133
+\andhelp@=\toks20
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(d:/texlive/2016/texmf-dist/tex/latex/harpoon/harpoon.sty
+Package: harpoon 1994/11/02 Harpoon drawing package by Tobias Kuipers
+\argwd=\skip52
+\arght=\skip53
+)
+(d:/texlive/2016/texmf-dist/tex/latex/extarrows/extarrows.sty
+Package: extarrows 2008/05/15 v1.0b Some extensible arrows
+)
+(d:/texlive/2016/texmf-dist/tex/latex/hhtensor/hhtensor.sty
+Package: hhtensor 2011/12/29 v0.61 Print vectors and tensors
+
+(d:/texlive/2016/texmf-dist/tex/latex/ushort/ushort.sty
+ushort.sty by M. Vaeth: Release: 2.2 
+Package: ushort 2001/06/13 v2.2
+)) (d:/texlive/2016/texmf-dist/tex/latex/esvect/esvect.sty
+Package: esvect 
+\symesvector=\mathgroup6
+)
+(d:/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+)
+(d:/texlive/2016/texmf-dist/tex/generic/mathabx/mathabx.sty
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup10
+\symmathb=\mathgroup11
+\symmathx=\mathgroup12
+
+(d:/texlive/2016/texmf-dist/tex/generic/mathabx/mathabx.dcl
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
+.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
+.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+\mayacnter=\count134
+\mayacnta=\count135
+\mayacntb=\count136
+\mayacntc=\count137
+\mayawidth=\dimen148
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+(d:/texlive/2016/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box44
+\beforetitleunit=\skip54
+\aftertitleunit=\skip55
+\ttl@plus=\dimen149
+\ttl@minus=\dimen150
+\ttl@toksa=\toks23
+\titlewidth=\dimen151
+\titlewidthlast=\dimen152
+\titlewidthfirst=\dimen153
+
+(d:/texlive/2016/texmf-dist/tex/latex/titlesec/ttlps.def
+File: ttlps.def 2016/03/15
+))
+(d:/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip56
+\subfigcapskip=\skip57
+\subfigcaptopadj=\dimen154
+\subfigbottomskip=\skip58
+\subfigcapmargin=\dimen155
+\subfiglabelskip=\skip59
+\c@subfigure=\count138
+\c@lofdepth=\count139
+\c@subtable=\count140
+\c@lotdepth=\count141
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(d:/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip60
+\subfig@bottom=\skip61
+)
+\g__fontspec_family_SimSun_int=\count142
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.:
+. <->"SimSun/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+\c@example=\count143
+\c@theorem=\count144
+\c@definition=\count145
+\c@axiom=\count146
+\c@property=\count147
+\c@proposition=\count148
+\c@lemma=\count149
+\c@corollary=\count150
+\c@remark=\count151
+\c@condition=\count152
+\c@conclusion=\count153
+\c@assumption=\count154
+
+(./MathGraduateExam.aux)
+\openout1 = `MathGraduateExam.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 47.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 47.
+ (d:/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 47.
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup13
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 47.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 47.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 47.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 47.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 47.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 47.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 47.
+LaTeX Font Info:    Redeclaring math accent \check on input line 47.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 47.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 47.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 47.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 47.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 47.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/SimSun(0)/m/n on input line 47.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 47.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/SimSun(0)/m/n on input line 47.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU1/SimSun(0)/m/n --> EU1/SimSun(0)/m/n on input line 4
+7.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/SimSun(0)/m/it on input line 47.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/SimSun(0)/bx/n on input line 47.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 47.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 47.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU1/SimSun(0)/m/n --> EU1/SimSun(0)/bx/n on input line 
+47.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> EU1/SimSun(0)/bx/it on input line 47.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 47.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+esvect on input line 64.
+
+
+(d:/texlive/2016/texmf-dist/tex/latex/esvect/uesvect.fd
+File: uesvect.fd 
+) [1
+
+
+
+
+]
+
+LaTeX Font Warning: Font shape `EU1/SimSun(0)/bx/n' undefined
+(Font)              using `EU1/SimSun(0)/m/n' instead on input line 67.
+
+[0
+
+] (./MathGraduateExam.toc [1
+
+])
+\tf@toc=\write3
+\openout3 = `MathGraduateExam.toc'.
+
+
+
+LaTeX Font Warning: Font shape `EU1/SimSun(0)/m/sl' undefined
+(Font)              using `EU1/SimSun(0)/m/n' instead on input line 71.
+
+[2]
+第\nobreakspace {}1\nobreakspace {}章 1.
+[1
+
+
+]
+Overfull \hbox (0.4145pt too wide) in paragraph at lines 141--142
+[]\EU1/SimSun(0)/bx/n/12 求$[]$在$\OML/cmm/m/it/12 V$\EU1/SimSun(0)/bx/n/12 的 一 组
+ 基$\OML/cmm/m/it/12 E[]; E[]; E[]; E[]$\EU1/SimSun(0)/bx/n/12 下 的 矩 阵, 其 中$\OML
+/cmm/m/it/12 E[]$\EU1/SimSun(0)/bx/n/12 表 示$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i
+; j\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/bx/n/12 元
+ []
+
+[2] [3] [4] [5] [6]
+Overfull \hbox (6.0768pt too wide) in paragraph at lines 375--376
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 (\U/matha/m/n/12 ^^
+A8\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 +\U/matha/m/n/12 8\OT1/cmr/m/n/12 )$\EU1/S
+imSun(0)/m/sl/12 上 有 任 意 阶 导 数$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 且 对 任 意 有 限 闭 区 间$\OT1/cmr/m/
+n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[7] [8] [9] [10] [11]
+Overfull \hbox (22.33138pt too wide) in paragraph at lines 643--644
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 是 实 数 域 上 
+的 3 维 线 性 空 间, $\OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 上 的 一 个 双 线 性 函 数$\OM
+L/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K; ^^L\OT1/cmr/m/n/12 )$\EU1
+/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 的
+ []
+
+[12]
+Overfull \hbox (3.58879pt too wide) in paragraph at lines 689--690
+[]\EU1/SimSun(0)/m/sl/12 设$\U/matha/m/n/12 t\OML/cmm/m/it/12 a[]\U/matha/m/n/12
+ u$\EU1/SimSun(0)/m/sl/12 是 一 个 数 列. 若 在 任 一 子 列$\U/matha/m/n/12 t\OML/cmm/m/it
+/12 a[]\U/matha/m/n/12 u$\EU1/SimSun(0)/m/sl/12 中 均 存 在 收 敛 子 列$\U/matha/m/n/12
+ t\OML/cmm/m/it/12 a[]\U/matha/m/n/12 u$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+
+Overfull \hbox (5.8931pt too wide) in paragraph at lines 699--700
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , $\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 [
+0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 上 的 瑕 积 分 均 存 在, 
+则 乘 积$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \U
+/matha/m/n/12 ^^D \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr
+/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cm
+r/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+[13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (13.82224pt too wide) detected at line 1091
+\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) = \U/mat
+ha/m/n/12 |\OML/cmm/m/it/12 x[]\U/matha/m/n/12 | \OT1/cmr/m/n/12 + [] + \U/math
+a/m/n/12 |\OML/cmm/m/it/12 x[]\U/matha/m/n/12 | ^^A |\OML/cmm/m/it/12 x[]\U/mat
+ha/m/n/12 | ^^A [] ^^A |\OML/cmm/m/it/12 x[]\U/matha/m/n/12 |\OML/cmm/m/it/12 ;
+  \U/matha/m/n/12 @\OML/cmm/m/it/12 X \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 x[]; 
+x[]; []  ; x[]\OT1/cmr/m/n/12 )[] \U/matha/m/n/12 P \OML/cmm/m/it/12 R[];
+ []
+
+[21]
+Overfull \hbox (13.58174pt too wide) in paragraph at lines 1125--1126
+[]\EU1/SimSun(0)/m/sl/12 计 算 三 重 积 分$[] []$, 其 中$\OML/cmm/m/it/12 
+$\EU1/SimSun(0)/m/sl/12 是 曲 面$\OML/cmm/m/it/12 z \OT1/cmr/m/n/12 = []$\EU1/SimS
+un(0)/m/sl/12 与$\OML/cmm/m/it/12 z \OT1/cmr/m/n/12 =
+ []
+
+[22]
+Overfull \hbox (9.71571pt too wide) in paragraph at lines 1154--1155
+[]$\EU1/SimSun(0)/m/sl/12 称 为 循 环 矩 阵. 用$\OML/cmm/m/it/12 U$\EU1/SimSun(0)/m/sl
+/12 表 示$\OML/cmm/m/it/12 K$\EU1/SimSun(0)/m/sl/12 上 所 有$\OML/cmm/m/it/12 n$\EU1
+/SimSun(0)/m/sl/12 级
+ []
+
+[23] [24]
+Overfull \hbox (11.22957pt too wide) in paragraph at lines 1242--1243
+\EU1/SimSun(0)/m/sl/12 值$[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
+$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
+\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在 标 准 正 交 基$\OML/cmm/m/it/12 p[]\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; p[]\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []  ; p[]\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 下 的 坐 标 的 第$\
+OML/cmm/m/it/12 k$\EU1/SimSun(0)/m/sl/12 个
+ []
+
+[25]
+Overfull \hbox (8.18515pt too wide) in paragraph at lines 1246--1247
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 是 域$\OML/c
+mm/m/it/12 K$\EU1/SimSun(0)/m/sl/12 上 的$\OML/cmm/m/it/12 n$\EU1/SimSun(0)/m/sl/
+12 维 线 性 空 间, $\OML/cmm/m/it/12 A[]; A[]; []  ; A[]$\EU1/SimSun(0)/m/sl/12 为$\O
+ML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 上 的 线 性 变 换, 令$\OML/cmm/m/it/12 A \OT1/
+cmr/m/n/12 =
+ []
+
+[26]
+Overfull \hbox (3.1378pt too wide) in paragraph at lines 1279--1280
+[]\EU1/SimSun(0)/m/sl/12 设 存 在 一 区 间$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1
+/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 使 得 两 个 Fourier 级 数$[] \OT1/cmr/m/n/12 + [
+] []$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+
+Overfull \hbox (4.74168pt too wide) in paragraph at lines 1279--1280
+[] \OT1/cmr/m/n/12 + [] []$\EU1/SimSun(0)/m/sl/12 都 在$\OT1/cmr/m/n/12 [\OML/cmm
+/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 收 敛, 并 且 其 和 函 数 在$\OT1
+/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+[27]
+Overfull \hbox (19.67912pt too wide) in paragraph at lines 1297--1298
+\EU1/SimSun(0)/m/sl/12 的$\OML/cmm/m/it/12 p; q; r \U/matha/m/n/12 P \OML/cmm/m/
+it/12 Q$\EU1/SimSun(0)/m/sl/12 是 互 不 相 同 的 素 数, 判 断 向 量 组$\OT1/cmr/m/n/12 1\OML
+/cmm/m/it/12 ; []; []; []  ; []$\EU1/SimSun(0)/m/sl/12 是
+ []
+
+
+Overfull \hbox (22.97005pt too wide) in paragraph at lines 1302--1303
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/12 为 双 线 性 函 
+数, 且 对 任 意 的$\OML/cmm/m/it/12 ^^K; ^^L; ^^M$\EU1/SimSun(0)/m/sl/12 都 有$\OML/cmm
+/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K; ^^L\OT1/cmr/m/n/12 )\OML/cmm/m
+/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^M; ^^K\OT1/cmr/m/n/12 ) = \OML/cmm/
+m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L; ^^K\OT1/cmr/m/n/12 )\OML/cmm/m/
+it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K; ^^M\OT1/cmr/m/n/12 )$\EU1/SimSun(
+0)/m/sl/12 .
+ []
+
+[28]
+Overfull \hbox (81.58572pt too wide) in paragraph at lines 1344--1345
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 D \OT1/cmr/m/n/12 = [0\OML/cmm/m/it
+/12 ; \OT1/cmr/m/n/12 1] \U/matha/m/n/12 ^^B \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12
+ ; \OT1/cmr/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 , $\OML/cmm/m/it/12 f\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/
+it/12 D$\EU1/SimSun(0)/m/sl/12 上 的 连 续 函 数, 证 明: 满 足$[] []$的
+ []
+
+[29]
+Overfull \hbox (1.873pt too wide) in paragraph at lines 1373--1374
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 A; C$\EU1/SimSun(0)/m/sl/12 分 别 为$\
+OML/cmm/m/it/12 n; m$\EU1/SimSun(0)/m/sl/12 阶 实 对 称 矩 阵, $\OML/cmm/m/it/12 B$\E
+U1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 n \U/matha/m/n/12 ^^B \OML/cmm/m/it/12 
+m$\EU1/SimSun(0)/m/sl/12 实 矩 阵, $[]$是
+ []
+
+[30]
+Overfull \hbox (77.66544pt too wide) in paragraph at lines 1411--1412
+[]$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/
+SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 +\U/ma
+tha/m/n/12 8\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 上 内 闭 Riemann 可 积, 且$[][] 
+[]$收 敛, 求 证$[] [] \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (13.21103pt too wide) in paragraph at lines 1413--1414
+[]$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/
+SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12 (\U/matha/m/n/12 ^^A8\OML/cmm/m/it/12 ; \OT
+1/cmr/m/n/12 +\U/matha/m/n/12 8\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 上 的 二 阶
+ 连 续 可 导 函 数, 满 足: 1)$[] [] \OT1/cmr/m/n/12 =
+ []
+
+[31]
+Overfull \hbox (4.42763pt too wide) in paragraph at lines 1425--1426
+[]\EU1/SimSun(0)/m/sl/12 设 多 项 式$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 的 所 有 复 根 都 是 实 数, 证 明: 如 果$\OM
+L/cmm/m/it/12 a$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 的 导 数$\OML/cmm/m/it/12 
+f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 
+的
+ []
+
+
+Overfull \hbox (161.35597pt too wide) in paragraph at lines 1433--1434
+\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L[]; []  ; ^^L[]; ^^L[]; 
+^^L[]; []  ; ^^L[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 ^^L[]; []  ; ^^L[]; ^^L; ^^L[]; []  ; ^^L[]\OT1/cmr/m/n/12 )$\EU1/Si
+mSun(0)/m/sl/12 和$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L[]; []
+  ; ^^L[]; k^^L[]; ^^L[]; []  ; ^^L[]\OT1/cmr/m/n/12 ) =
+ []
+
+[32]
+Overfull \hbox (56.44194pt too wide) in paragraph at lines 1460--1461
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 周 期 为$\OT1/cmr/m/n/12 2\OML/cmm/m/i
+t/12 ^^Y$\EU1/SimSun(0)/m/sl/12 的 连 续 函 数, 且 其 Fourier 级 数$[] \OT1/cmr/m/n/12 +
+ [] []$\EU1/SimSun(0)/m/sl/12 处
+ []
+
+[33]
+Overfull \hbox (4.46173pt too wide) in paragraph at lines 1486--1487
+\EU1/SimSun(0)/m/sl/12 出, 证 明 必 存 在 某 个 向 量$\OML/cmm/m/it/12 ^^L[]$\EU1/SimSun(
+0)/m/sl/12 ($\OML/cmm/m/it/12 j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; \OT1/cmr/
+m/n/12 2\OML/cmm/m/it/12 ; []  ; t$\EU1/SimSun(0)/m/sl/12 ) 使 得 向 量 组$\OML/cmm/
+m/it/12 ^^L[]; ^^K[]; []  ; ^^K[]$\EU1/SimSun(0)/m/sl/12 线
+ []
+
+[34] [35]
+Overfull \hbox (0.52774pt too wide) in paragraph at lines 1523--1524
+\EU1/SimSun(0)/m/sl/12 数 序 列$\U/matha/m/n/12 t\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\U/matha/m/n/12 u$\EU1/SimSun(0)/m/sl/12
+ 在$\OML/cmm/m/it/12 I$\EU1/SimSun(0)/m/sl/12 上 一 致 收 敛. 如 果$\OML/cmm/m/it/12 I$
+\EU1/SimSun(0)/m/sl/12 是 有 界 开 区 间, 问$\U/matha/m/n/12 t\OML/cmm/m/it/12 F[]\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\U/matha/m/n/12 u$\EU1/SimSun(0
+)/m/sl/12 在$\OML/cmm/m/it/12 I$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (67.41867pt too wide) in paragraph at lines 1527--1528
+[]\EU1/SimSun(0)/m/sl/12 广 义 积 分$[][] []$与$[][] []$均 收 敛, 证 明$\OML/cmm/m/it/12 
+I\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/
+m/sl/12 在$\OT1/cmr/m/n/12 (\U/matha/m/n/12 ^^A\OT1/cmr/m/n/12 1\OML/cmm/m/it/12
+ ; \OT1/cmr/m/n/12 1)$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (51.68509pt too wide) in paragraph at lines 1537--1538
+[]$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/c
+mm/m/it/12 ; g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(
+0)/m/sl/12 是$\OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 +\U/matha/m/n
+/12 8\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 上 的 非 负 单 调 递 减 连 续 函 数, 且$[][] [
+]$和$[][] []$均
+ []
+
+[36]
+Overfull \hbox (0.60551pt too wide) in paragraph at lines 1555--1556
+[]$\OML/cmm/m/it/12 V[]$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 V$\EU1/SimSun
+(0)/m/sl/12 的 对 称 空 间, $\OML/cmm/m/it/12 W$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/
+it/12 V$\EU1/SimSun(0)/m/sl/12 的 真 子 空 间, 则 存 在$\OML/cmm/m/it/12 f \U/matha/m/n
+/12 P \OML/cmm/m/it/12 V[]$\EU1/SimSun(0)/m/sl/12 使$\OML/cmm/m/it/12 f\OT1/cmr/
+m/n/12 (\OML/cmm/m/it/12 W\OT1/cmr/m/n/12 ) =
+ []
+
+[37]
+Overfull \hbox (32.4552pt too wide) in paragraph at lines 1588--1589
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 ^^[[]$\EU1/SimSun(0)/m/sl/12 为$[]\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 W; U\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 到$
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W; V\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/1
+2 上 线 性 映 射, 则 存 在 单 射$\OML/cmm/m/it/12 ^^[$\EU1/SimSun(0)/m/sl/12 , 使$\OML/cmm
+/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 )\OML/cmm/m/it
+/12 w \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (21.37106pt too wide) in paragraph at lines 1602--1603
+[]\EU1/SimSun(0)/m/sl/12 同 上 过$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 外 侧 另 
+一 点$\OML/cmm/m/it/12 q$\EU1/SimSun(0)/m/sl/12 向$\OML/cmm/m/it/12 E$\EU1/SimSun(
+0)/m/sl/12 作 切 线, 切 点 落 在 平 面$\OML/cmm/m/it/12 ^^E[]$\EU1/SimSun(0)/m/sl/12 上, 
+如 果$\OML/cmm/m/it/12 q$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 Oq$\EU1/SimSun
+(0)/m/sl/12 连
+ []
+
+
+Overfull \hbox (9.5667pt too wide) in paragraph at lines 1613--1614
+[]\EU1/SimSun(0)/m/sl/12 函 数$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 (0\OML/cmm/m/it/1
+2 ; \OT1/cmr/m/n/12 1)$\EU1/SimSun(0)/m/sl/12 可 导, $\OML/cmm/m/it/12 f[]$\EU1/S
+imSun(0)/m/sl/12 有 界, $[] []$不 存 在, 求 证 存 在 数 列$\U/matha/m/n/12 t\OML/cmm/m/it/
+12 x[]\U/matha/m/n/12 u$\EU1/SimSun(0)/m/sl/12 满
+ []
+
+[38] [39] [40]
+第\nobreakspace {}2\nobreakspace {}章 2.
+[41
+
+]
+Overfull \hbox (4.17525pt too wide) in paragraph at lines 1722--1723
+[]\EU1/SimSun(0)/m/sl/12 计 算 曲 面 积 分$[] []$, 其 中$\OML/cmm/m/it/12 ^^F$\EU1/SimS
+un(0)/m/sl/12 为 曲 面$\OT1/cmr/m/n/12 4 \U/matha/m/n/12 ^^A
+ []
+
+
+Overfull \hbox (1.41524pt too wide) in paragraph at lines 1730--1731
+[]\EU1/SimSun(0)/m/sl/12 设 级 数$[] []$收 敛, 且$[] []$绝 对 收 敛. 证 明: 级 数$[] []$收
+ []
+
+[42] [43]
+Overfull \hbox (18.70657pt too wide) in paragraph at lines 1808--1809
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 x \U/matha/m/n/12 ¡ \OT1/cmr/m/n/12
+ 0$\EU1/SimSun(0)/m/sl/12 , 证 明$[] \U/matha/m/n/12 ^^A [] \OT1/cmr/m/n/12 = []$
+\EU1/SimSun(0)/m/sl/12 , 其 中$\OML/cmm/m/it/12 ^^R \OT1/cmr/m/n/12 = \OML/cmm/m/
+it/12 ^^R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \U/matha/m/n/12 ¡
+ \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 , 并 且$[][] [] \OT1/cmr/m/n/12 =
+ []
+
+[44] [45]
+第\nobreakspace {}3\nobreakspace {}章 3.
+
+Overfull \hbox (12.29092pt too wide) in paragraph at lines 1848--1849
+[]\EU1/SimSun(0)/m/sl/12 已 知 区 域$\OML/cmm/m/it/12 D \OT1/cmr/m/n/12 = \U/matha/
+m/n/12 t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )\U/matha/m/n/12 
+|\OML/cmm/m/it/12 x \U/matha/m/n/12 ¥ \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; y \U/
+matha/m/n/12 ¥ \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; x \OT1/cmr/m/n/12 + 2\OML/cm
+m/m/it/12 y \U/matha/m/n/12 ¤ \OT1/cmr/m/n/12 1\U/matha/m/n/12 u$\EU1/SimSun(0)
+/m/sl/12 , 求 二 重 积 分$[][] []$. 
+ []
+
+[46
+
+]
+第\nobreakspace {}4\nobreakspace {}章 4.
+[47
+
+]
+Overfull \hbox (12.6198pt too wide) in paragraph at lines 1895--1896
+[]\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 Oxy$\EU1/SimSun(0)/m/sl/12 平 面 上, 光
+ 滑 曲 线$\OML/cmm/m/it/12 L$\EU1/SimSun(0)/m/sl/12 过$\OT1/cmr/m/n/12 (1\OML/cmm/m
+/it/12 ; \OT1/cmr/m/n/12 0)$\EU1/SimSun(0)/m/sl/12 点, 并 且 曲 线$\OML/cmm/m/it/12 
+L$\EU1/SimSun(0)/m/sl/12 上 任 意 一 点$\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 x; y\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \U/matha/m/n/12 ^^X
+ []
+
+[48]
+第\nobreakspace {}5\nobreakspace {}章 5.
+[49
+
+] [50] (./MathGraduateExam.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 15664 strings out of 493591
+ 296025 string characters out of 6146794
+ 292617 words of memory out of 5000000
+ 18932 multiletter control sequences out of 15000+600000
+ 23324 words of font info for 100 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 48i,13n,61p,10378b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on MathGraduateExam.pdf (54 pages).

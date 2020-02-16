@@ -1,0 +1,1742 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2016.7.14)  30 DEC 2017 14:35
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./RealAnalysis.tex
+(./RealAnalysis.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(d:/texlive/2016/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(d:/texlive/2016/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.sty
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
+
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/05/18 v6512 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
+L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
+L3 Module: l3str 2016/03/24 v6441 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/03/24 v6441 L3 Integers
+\c_max_int=\count88
+\l_tmpa_int=\count89
+\l_tmpb_int=\count90
+\g_tmpa_int=\count91
+\g_tmpb_int=\count92
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count93
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2016/03/26 v6464 L3 Messages
+L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
+\l_iow_line_count_int=\count94
+\l__iow_target_count_int=\count95
+\l__iow_current_line_int=\count96
+\l__iow_current_word_int=\count97
+\l__iow_current_indentation_int=\count98
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
+\c_zero_dim=\dimen103
+\c_max_dim=\dimen104
+\l_tmpa_dim=\dimen105
+\l_tmpb_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
+\g__keyval_level_int=\count99
+\l_keys_choice_int=\count100
+L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
+\c__fp_leading_shift_int=\count101
+\c__fp_middle_shift_int=\count102
+\c__fp_trailing_shift_int=\count103
+\c__fp_big_leading_shift_int=\count104
+\c__fp_big_middle_shift_int=\count105
+\c__fp_big_trailing_shift_int=\count106
+\c__fp_Bigg_leading_shift_int=\count107
+\c__fp_Bigg_middle_shift_int=\count108
+\c__fp_Bigg_trailing_shift_int=\count109
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box26
+\l_tmpa_box=\box27
+\l_tmpb_box=\box28
+\g_tmpa_box=\box29
+\g_tmpb_box=\box30
+L3 Module: l3coffins 2016/05/17 v6508 L3 Coffin code layer
+\l__coffin_internal_box=\box31
+\l__coffin_internal_dim=\dimen109
+\l__coffin_offset_x_dim=\dimen110
+\l__coffin_offset_y_dim=\dimen111
+\l__coffin_x_dim=\dimen112
+\l__coffin_y_dim=\dimen113
+\l__coffin_x_prime_dim=\dimen114
+\l__coffin_y_prime_dim=\dimen115
+\c_empty_coffin=\box32
+\l__coffin_aligned_coffin=\box33
+\l__coffin_aligned_internal_coffin=\box34
+\l_tmpa_coffin=\box35
+\l_tmpb_coffin=\box36
+\l__coffin_display_coffin=\box37
+\l__coffin_display_coord_coffin=\box38
+\l__coffin_display_pole_coffin=\box39
+\l__coffin_display_offset_dim=\dimen116
+\l__coffin_display_x_dim=\dimen117
+\l__coffin_display_y_dim=\dimen118
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen119
+\l__box_bottom_dim=\dimen120
+\l__box_left_dim=\dimen121
+\l__box_right_dim=\dimen122
+\l__box_top_new_dim=\dimen123
+\l__box_bottom_new_dim=\dimen124
+\l__box_left_new_dim=\dimen125
+\l__box_right_new_dim=\dimen126
+\l__box_internal_box=\box40
+\l__coffin_bounding_shift_dim=\dimen127
+\l__coffin_left_corner_dim=\dimen128
+\l__coffin_right_corner_dim=\dimen129
+\l__coffin_bottom_corner_dim=\dimen130
+\l__coffin_top_corner_dim=\dimen131
+\l__coffin_scaled_total_height_dim=\dimen132
+\l__coffin_scaled_width_dim=\dimen133
+L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
+)
+(d:/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2016/03/26 v6465 L3 Experimental driver: xdvipdfmx
+\l__driver_tmp_box=\box41
+))
+(d:/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count110
+\l__xparse_m_args_int=\count111
+\l__xparse_mandatory_args_int=\count112
+\l__xparse_processor_int=\count113
+\l__xparse_v_nesting_int=\count114
+)
+Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
+
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
+X
+\l_fontspec_script_int=\count115
+\l_fontspec_language_int=\count116
+\l_fontspec_strnum_int=\count117
+\l__fontspec_tmpa_dim=\dimen134
+\l__fontspec_tmpb_dim=\dimen135
+\l__fontspec_tmpc_dim=\dimen136
+\g__file_internal_ior=\read1
+
+(d:/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 105.
+
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(d:/texlive/2016/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(d:/texlive/2016/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(d:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count118
+\tipasavetokens=\toks15
+\tipachecktokens=\toks16
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(d:/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 96.
+
+(d:/texlive/2016/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2016/04/06 v4.08 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+(d:/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(d:/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 355.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 365.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 375.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 385.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 415.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 423.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 437.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 453.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 467.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 529.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 540.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 548.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 556.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 577.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
+.................................................
+\l__fontspec_tmp_int=\count119
+
+(d:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 2705.
+LaTeX Info: Redefining \slshape on input line 2710.
+LaTeX Info: Redefining \scshape on input line 2715.
+LaTeX Info: Redefining \upshape on input line 2720.
+\l__fontspec_em_int=\count120
+\l__fontspec_emdef_int=\count121
+LaTeX Info: Redefining \em on input line 2736.
+LaTeX Info: Redefining \emph on input line 2742.
+LaTeX Info: Redefining \- on input line 2746.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 2841.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 2845.
+.................................................
+))
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen139
+))
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+)
+(d:/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count122
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count123
+\leftroot@=\count124
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count125
+\DOTSCASE@=\count126
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count127
+\c@MaxMatrixCols=\count128
+\dotsspace@=\muskip16
+\c@parentequation=\count129
+\dspbrk@lvl=\count130
+\tag@help=\toks19
+\row@=\count131
+\column@=\count132
+\maxfields@=\count133
+\andhelp@=\toks20
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/eucal.sty
+Package: eucal 2009/06/22 v3.00 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+\g__fontspec_family_SimSun_int=\count134
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.:
+. <->"SimSun/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+\c@example=\count135
+\c@theorem=\count136
+\c@definition=\count137
+\c@axiom=\count138
+\c@property=\count139
+\c@proposition=\count140
+\c@lemma=\count141
+\c@corollary=\count142
+\c@remark=\count143
+\c@condition=\count144
+\c@conclusion=\count145
+\c@assumption=\count146
+\c@exercise=\count147
+\c@answer=\count148
+ (./RealAnalysis.aux)
+\openout1 = `RealAnalysis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 55.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 55.
+
+(d:/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 55.
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 55.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 55.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 55.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 55.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 55.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 55.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 55.
+LaTeX Font Info:    Redeclaring math accent \check on input line 55.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 55.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 55.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 55.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 55.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 55.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/SimSun(0)/m/n on input line 55.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 55.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/SimSun(0)/m/n on input line 55.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU1/SimSun(0)/m/n --> EU1/SimSun(0)/m/n on input line 5
+5.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/SimSun(0)/m/it on input line 55.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/SimSun(0)/bx/n on input line 55.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 55.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 55.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU1/SimSun(0)/m/n --> EU1/SimSun(0)/bx/n on input line 
+55.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> EU1/SimSun(0)/bx/it on input line 55.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 55.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 55.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+
+(d:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+
+
+
+]
+
+LaTeX Font Warning: Font shape `EU1/SimSun(0)/bx/n' undefined
+(Font)              using `EU1/SimSun(0)/m/n' instead on input line 63.
+
+[0
+
+]
+
+LaTeX Font Warning: Font shape `EU1/SimSun(0)/m/it' undefined
+(Font)              using `EU1/SimSun(0)/m/n' instead on input line 72.
+
+[1
+
+]
+
+LaTeX Font Warning: Font shape `EU1/SimSun(0)/m/sl' undefined
+(Font)              using `EU1/SimSun(0)/m/n' instead on input line 177.
+
+[2]
+Overfull \hbox (12.59303pt too wide) in paragraph at lines 177--178
+[]\EU1/SimSun(0)/m/it/12 若 有 定 义 在$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/c
+mr/m/n/12 ]$\EU1/SimSun(0)/m/it/12 上 的 可 积 函 数 列$\OML/cmm/m/it/12 f[]\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/it/12 , $\OML/cmm/m
+/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m
+/it/12 , 而 且 满 足$\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^T
+ []
+
+[3] [4]
+LaTeX Font Info:    Try loading font information for U+eus on input line 259.
+ (d:/texlive/2016/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+) [5] [6]
+(./RealAnalysis.toc [7
+
+])
+\tf@toc=\write3
+\openout3 = `RealAnalysis.toc'.
+
+ [8]
+Chapter 1.
+[1
+
+
+] [2] [3] [4]
+Overfull \hbox (22.69142pt too wide) in paragraph at lines 483--484
+[]\EU1/SimSun(0)/m/sl/12 设 在$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 上 有 渐 
+升 函 数 列: $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/1
+2 ) \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T [] ^^T \OML/cmm/m/it/12 f[]\OT1/cmr/m/n
+/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T [] $\EU1/SimSun(0
+)/m/sl/12 , 且$[] [] \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (4.1244pt too wide) in paragraph at lines 502--503
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 和$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 定 义 在$\OML/cmm/m
+/it/12 R[]$\EU1/SimSun(0)/m/sl/12 上 的 实 值 函 数, 则 一 切 使$\OML/cmm/m/it/12 f[]\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 不 收 敛 于
+$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/Si
+mSun(0)/m/sl/12 的
+ []
+
+[5] [6]
+Overfull \hbox (9.87907pt too wide) in paragraph at lines 587--588
+[]\EU1/SimSun(0)/m/sl/12 (ii) 由 (i), $\OML/cmm/m/it/12 B[] \OMS/cmsy/m/n/12 ^^Z
+ [] []$\EU1/SimSun(0)/m/sl/12 , 故$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 B[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 f[]\OT1/cmr
+/m/n/12 ([] [])$\EU1/SimSun(0)/m/sl/12 . 于 是$[] [] \OMS/cmsy/m/n/12 ^^Z
+ []
+
+[7] [8] [9] [10] [11] [12] [13]
+Overfull \hbox (10.02985pt too wide) in paragraph at lines 885--886
+[]\EU1/SimSun(0)/m/sl/12 首 先 需 要 把 集 合 分 解 为 两 个 集 合$\OML/cmm/m/it/12 A \OT1/cm
+r/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j\OML/cmm/m/it/
+12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 > f
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/S
+imSun(0)/m/sl/12 和$\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/
+cmm/m/it/12 x\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 <
+ []
+
+
+Overfull \hbox (15.77968pt too wide) in paragraph at lines 890--892
+\EU1/SimSun(0)/m/sl/12 左 导 数 就 是 这 个 极 限 的 左 极 限: $\OML/cmm/m/it/12 f[]\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = [] []$\EU1/SimSun(0)/m/sl/12 ,
+ 右 导 数$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12
+ ) =
+ []
+
+[14] [15] [16]
+Overfull \hbox (5.50505pt too wide) in paragraph at lines 1009--1010
+[]\EU1/SimSun(0)/m/sl/12 (2) 使 用 Cantor-Bernstein 定 理, 建 立 两 个 单 射, $\OML/cmm/m
+/it/12 A$\EU1/SimSun(0)/m/sl/12 到$\OML/cmm/m/it/12 B$\EU1/SimSun(0)/m/sl/12 的 子
+ 集, $\OML/cmm/m/it/12 B$\EU1/SimSun(0)/m/sl/12 到$\OML/cmm/m/it/12 A$\EU1/SimSun
+(0)/m/sl/12 的
+ []
+
+[17] [18]
+Overfull \hbox (18.66783pt too wide) in paragraph at lines 1079--1080
+\EU1/SimSun(0)/m/sl/12 把$\OML/cmm/m/it/12 I[]$\EU1/SimSun(0)/m/sl/12 平 均 分 成$\O
+T1/cmr/m/n/12 2[]$\EU1/SimSun(0)/m/sl/12 部 分, 即 把$\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 a[]; b[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 平 分, 不 妨 设 为$\OT1/cmr/m/n
+/12 (\OML/cmm/m/it/12 a[]; b[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 则$\OML
+/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 a[]; b[]\OT1/cmr/m/n/12 ) 
+\OMS/cmsy/m/n/12 ^^B
+ []
+
+[19] [20]
+Overfull \hbox (7.2137pt too wide) in paragraph at lines 1178--1179
+[]\EU1/SimSun(0)/m/sl/12 其 次: 在$\OML/cmm/m/it/12 F[]$\EU1/SimSun(0)/m/sl/12 中 取
+ 点$\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 F[]$\EU1/SimSun(0)/
+m/sl/12 , 对 于 无 穷 点 列$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 g$
+\EU1/SimSun(0)/m/sl/12 , 由 Bolzano-Weierstrass
+ []
+
+[21]
+Overfull \hbox (0.61166pt too wide) in paragraph at lines 1226--1227
+[]\EU1/SimSun(0)/m/sl/12 有 界 性 的 证 明 就 用 了 前 面 我 提 到 的 有 限 这 个 结 论: 开 集 族$\OML/
+cmm/m/it/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x\OMS/cmsy
+/m/n/12 jj\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 <
+ []
+
+[22]
+Overfull \hbox (104.53342pt too wide) in paragraph at lines 1248--1249
+[]\EU1/SimSun(0)/m/sl/12 (2) 函 数$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 B\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x[]; ^^N\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 上 有 定 义
+, 令$\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = 
+[][] []$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[23] [24] [25] [26] [27] [28] [29]
+Chapter 2.
+[30
+
+]
+Overfull \hbox (61.6718pt too wide) in paragraph at lines 1546--1547
+[]$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^O > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/
+sl/12 , 设$\OML/cmm/m/it/12 I[]$\EU1/SimSun(0)/m/sl/12 为$\OML/cmm/m/it/12 E[]$\E
+U1/SimSun(0)/m/sl/12 的 L-覆 盖, 且 使$\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U [] [] ^^@ \OML/cmm/m/it/12 ^
+^O\OT1/cmr/m/n/12 /2[]$\EU1/SimSun(0)/m/sl/12 , 则$\OMS/cmsy/m/n/12 f\OML/cmm/m/
+it/12 I[]\OMS/cmsy/m/n/12 g[]$\EU1/SimSun(0)/m/sl/12 为$\OMS/cmsy/m/n/12 [[]$\EU
+1/SimSun(0)/m/sl/12 的
+ []
+
+[31]
+Overfull \hbox (34.3478pt too wide) in paragraph at lines 1565--1566
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/i
+t/12 R[]$\EU1/SimSun(0)/m/sl/12 , $\OML/cmm/m/it/12 ^^N > \OT1/cmr/m/n/12 0$\EU
+1/SimSun(0)/m/sl/12 , 令$\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E
+\OT1/cmr/m/n/12 ) = []\OMS/cmsy/m/n/12 f[] [] \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/1
+2 [[] ^^[ \OML/cmm/m/it/12 E; []I[][] <
+ []
+
+[32]
+LaTeX Font Info:    Try loading font information for U+euf on input line 1589.
+ (d:/texlive/2016/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [33]
+Overfull \hbox (25.10132pt too wide) detected at line 1642
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ \O
+ML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 ((\OM
+L/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS
+/cmsy/m/n/12 \ \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 m[]\OT1/c
+mr/m/n/12 ((\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 E[]\OT1/cm
+r/m/n/12 ) \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 ) = \OML/cmm/
+m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
+it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12
+ ;
+ []
+
+
+Overfull \hbox (12.15463pt too wide) in paragraph at lines 1644--1645
+[]\EU1/SimSun(0)/m/sl/12 第 二 步: 当$\OML/cmm/m/it/12 E[]$\EU1/SimSun(0)/m/sl/12 与
+$\OML/cmm/m/it/12 E[]$\EU1/SimSun(0)/m/sl/12 是 互 不 相 交 的 可 测 集 时, 对 任 一 集 合$\OM
+L/cmm/m/it/12 T$\EU1/SimSun(0)/m/sl/12 有$\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\
+OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \
+ []
+
+
+Overfull \hbox (7.3788pt too wide) detected at line 1649
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OM
+L/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 [ \OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 T \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )] = \OML/cmm
+/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OML/cmm/m/i
+t/12 E[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 T \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/1
+2 m[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )]\OM
+L/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (4.66505pt too wide) detected at line 1660
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OM
+L/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS
+/cmsy/m/n/12 [ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OML/cmm/
+m/it/12 E[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )] + \OML/cm
+m/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OML/cmm/m/
+it/12 E[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) = \OML/cmm/m
+/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T \OMS/cmsy/m/n/12 \ \OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 
+))\OML/cmm/m/it/12 ;
+ []
+
+
+Overfull \hbox (9.14813pt too wide) in paragraph at lines 1665--1665
+[] 
+ []
+
+
+Overfull \hbox (3.68115pt too wide) detected at line 1675
+[] []
+ []
+
+[34]
+Overfull \hbox (12.59213pt too wide) in paragraph at lines 1692--1694
+$\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = [][] []$\EU1/SimSun(0)/m/sl/12 , 则 有$\O
+ML/cmm/m/it/12 S[]$\EU1/SimSun(0)/m/sl/12 是 可 测 的, 且 有 上 式, 即$\OML/cmm/m/it/12 
+m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun
+(0)/m/sl/12 . 
+ []
+
+[35]
+Overfull \hbox (14.41867pt too wide) in paragraph at lines 1731--1732
+[]\EU1/SimSun(0)/m/sl/12 若 有 递 增 可 测 集 合 列$\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/1
+2 ^^Z \OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 ^^Z [] ^^Z \OML/cmm/m/it/12 E[] [] 
+$\EU1/SimSun(0)/m/sl/12 , 则$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 ([] []) = [] []$\
+EU1/SimSun(0)/m/sl/12 . 
+ []
+
+[36] [37]
+Overfull \hbox (13.86897pt too wide) in paragraph at lines 1804--1805
+[]\EU1/SimSun(0)/m/sl/12 因 为 我 们 将 会 有 结 论: 对 于 每 一 个 可 测 集$\OML/cmm/m/it/12 E$
+\EU1/SimSun(0)/m/sl/12 , 可 以 选 择$\OML/cmm/m/it/12 G[]$\EU1/SimSun(0)/m/sl/12 集$
+\OML/cmm/m/it/12 H$\EU1/SimSun(0)/m/sl/12 , 使$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 ) =
+ []
+
+[38]
+Overfull \hbox (13.59991pt too wide) in paragraph at lines 1874--1875
+[]\EU1/SimSun(0)/m/sl/12 定 义 (Borel 测 度): 在 Borel $\OML/cmm/m/it/12 ^^[$\EU1/Si
+mSun(0)/m/sl/12 -代 数 上 定 义 了 测 度$\OML/cmm/m/it/12 ^^V$\EU1/SimSun(0)/m/sl/12 , 
+且 对 紧 集$\OML/cmm/m/it/12 K$\EU1/SimSun(0)/m/sl/12 有$\OML/cmm/m/it/12 ^^V\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 K\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 <
+ []
+
+[39] [40] [41] [42]
+Overfull \hbox (6.8248pt too wide) in paragraph at lines 2016--2017
+[]$\OML/cmm/m/it/12 T \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 R[] \OMS/cmsy/m/n/12 !
+ \OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 是 非 奇 异 线 性 变 换, $\OML/cmm/m/it/12
+ E \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 , 则$\OML/cm
+m/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 E\OT1/cmr/m/n/12 )) = \OMS/cmsy/m/n/12 j [] \OML/cmm/m/it/12 T\OMS/cmsy/m/n/
+12 j\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\E
+U1/SimSun(0)/m/sl/12 . 
+ []
+
+[43]
+Chapter 3.
+[44
+
+] [45]
+Overfull \hbox (1.17915pt too wide) in paragraph at lines 2116--2117
+[]\EU1/SimSun(0)/m/sl/12 分 解 为 正 值 函 数 的 方 法: $\OML/cmm/m/it/12 f\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr
+/m/n/12 0\OMS/cmsy/m/n/12 g ^^@ []f^^@\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OMS/cmsy/m/n/
+12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\
+OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@
+ []
+
+[46] [47]
+Overfull \hbox (6.70845pt too wide) in paragraph at lines 2243--2244
+[]\EU1/SimSun(0)/m/sl/12 (2) 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 f[]\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$[] $,$\OML/c
+mm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(
+0)/m/sl/12 ,$[] $是$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 上 几 乎 处 处 有 限 的 可 
+测 函 数, $\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 ) 
+\OML/cmm/m/it/12 <
+ []
+
+[48] [49]
+Overfull \hbox (5.69608pt too wide) in paragraph at lines 2329--2330
+[]\EU1/SimSun(0)/m/sl/12 这 说 明$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 [0\OML/cmm/m/
+it/12 ; \OT1/cmr/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 中 的 每 一 个 点 上 都 是 不 收 敛 的. 另 
+一 方 面, 每 个$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/
+12 )$\EU1/SimSun(0)/m/sl/12 可
+ []
+
+
+Overfull \hbox (5.14214pt too wide) in paragraph at lines 2345--2346
+[]\EU1/SimSun(0)/m/sl/12 (2)$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OT1/cmr/m/n
+/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/
+12 是$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 上 几 乎 处 处 有 限 的 可 测 函 数 列, 且$\OM
+L/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 ) \OML/cmm/m/
+it/12 < \OMS/cmsy/m/n/12 1$\EU1/SimSun(0)/m/sl/12 , 若$\OMS/cmsy/m/n/12 f\OML/cm
+m/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/
+12 g$\EU1/SimSun(0)/m/sl/12 几
+ []
+
+
+Overfull \hbox (21.77988pt too wide) in paragraph at lines 2354--2355
+\OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 ,$\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 E
+[] \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/
+it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 
+< ^^N$\EU1/SimSun(0)/m/sl/12 , 使 得$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)
+/m/sl/12 在$\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 n\OML/cmm/m/it/12 E[]$\EU1/SimSun
+(0)/m/sl/12 上 一 致 收 敛 于$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\O
+T1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 则$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/S
+imSun(0)/m/sl/12 在$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+[50]
+Overfull \hbox (8.2363pt too wide) in paragraph at lines 2371--2373
+\EU1/SimSun(0)/m/sl/12 从 而 说 明$[] []$是 一 个 绝 对 收 敛 的 级 数, (它 们 的 通 项 受 控 于$\OT1
+/cmr/m/n/12 1/2[]$\EU1/SimSun(0)/m/sl/12 ),
+ []
+
+
+Overfull \hbox (3.63065pt too wide) in paragraph at lines 2385--2386
+[]\EU1/SimSun(0)/m/sl/12 若$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12
+ 在$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 上 依 测 度 收 敛 于$\OML/cmm/m/it/12 f\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 则 存
+ 在 子 列$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 , 使$\OML/cmm/m/it/1
+2 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \O
+ML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$
+ []
+
+[51]
+Overfull \hbox (5.52504pt too wide) in paragraph at lines 2424--2425
+[]\EU1/SimSun(0)/m/sl/12 说 明$\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 依 测 度 收 敛 于$\OML/cmm/m/it/12 f\
+OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 从 
+而 存 在 子 列$\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/1
+2 )$\EU1/SimSun(0)/m/sl/12 几 乎 处 处 收 敛 于$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 . 
+ []
+
+[52]
+Overfull \hbox (48.23267pt too wide) in paragraph at lines 2467--2468
+[]\EU1/SimSun(0)/m/sl/12 (6)$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 R[]$\EU1/SimSun(
+0)/m/sl/12 上 的 连 续 函 数,$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\O
+T1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/
+sl/12 上 的 实 值 可 测 函 数, 则$\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\
+OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$\EU1/SimSun(0)/m/sl/12 是$\OML/cm
+m/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (4.32744pt too wide) in paragraph at lines 2495--2496
+[]$\OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 )$\EU
+1/SimSun(0)/m/sl/12 为 零 测 集,$\OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 H\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 为$\OML/cmm/m/it/12 G[]$\EU1/SimSu
+n(0)/m/sl/12 集,$\OML/cmm/m/it/12 T[][] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[]\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 n\OML/cmm/m/
+it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/
+sl/12 , 可 测. 
+ []
+
+
+Overfull \hbox (7.84055pt too wide) in paragraph at lines 2499--2500
+[]$\OML/cmm/m/it/12 T$\EU1/SimSun(0)/m/sl/12 为 非 奇 异 线 性 变 换 说 明 存 在$\OML/cmm/m
+/it/12 T[]$\EU1/SimSun(0)/m/sl/12 , 并 且 有$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 )) = \OMS/
+cmsy/m/n/12 j [] \OML/cmm/m/it/12 T[]\OMS/cmsy/m/n/12 j ^^A \OML/cmm/m/it/12 m\
+OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 ) =
+ []
+
+[53]
+Overfull \hbox (6.04869pt too wide) in paragraph at lines 2509--2510
+[]\EU1/SimSun(0)/m/sl/12 若$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 定 义 在$\OT1/cmr/m/n/12 [0\OML/cmm/m/
+it/12 ; \OT1/cmr/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 上 的 实 值 函 数, 则 存 在$\OT1/cmr/m
+/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$\EU1/SimSun(0)/m/sl/12 上 的 可 测 函 
+数$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/S
+imSun(0)/m/sl/12 和$\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cm
+r/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[54]
+Chapter 4.
+[55
+
+]
+Overfull \hbox (0.99458pt too wide) detected at line 2568
+[] []
+ []
+
+[56]
+Overfull \hbox (22.47612pt too wide) in paragraph at lines 2629--2630
+[]\EU1/SimSun(0)/m/sl/12 (B) 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 g\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/
+12 E$\EU1/SimSun(0)/m/sl/12 上 的 非 负 可 测 函 数, 若$\OML/cmm/m/it/12 f\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 g\
+OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\O
+ML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 ,
+ 则$[][] [] \OMS/cmsy/m/n/12 ^^T
+ []
+
+[57]
+Overfull \hbox (17.9009pt too wide) in paragraph at lines 2655--2656
+[]\EU1/SimSun(0)/m/sl/12 当$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 为 可 测 集 时,
+$[][] [] \OT1/cmr/m/n/12 = 0$\EU1/SimSun(0)/m/sl/12 , 根 据 定 义 即 可. 因 为 此 时 显 然 
+有$[][] [] \OT1/cmr/m/n/12 =
+ []
+
+[58]
+Overfull \hbox (48.03418pt too wide) in paragraph at lines 2721--2723
+\EU1/SimSun(0)/m/sl/12 Fatou 引 理 的 应 用 在 于 判 断 极 限 函 数 的 可 积 性. 若$[][] [] \OMS/
+cmsy/m/n/12 ^^T \OML/cmm/m/it/12 M$\EU1/SimSun(0)/m/sl/12 , 则$[][] [] \OMS/cmsy
+/m/n/12 ^^T
+ []
+
+[59] [60]
+Overfull \hbox (30.83383pt too wide) in paragraph at lines 2792--2793
+[]$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = 0$ 
+\EU1/SimSun(0)/m/sl/12 a.e., 可 知$\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = 
+0$\EU1/SimSun(0)/m/sl/12 a.e. 对 于 非 负 函 数, 这 是 成 立 的,$[][] [] \OT1/cmr/m/n/12 =
+
+ []
+
+[61] [62]
+Overfull \hbox (35.54225pt too wide) in paragraph at lines 2882--2883
+[]\EU1/SimSun(0)/m/sl/12 证 明 思 路 是 使 用 可 测 集$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/
+m/sl/12 的 分 解. 把$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 分 解 为 闭 集$\OML/cmm/m
+/it/12 F$\EU1/SimSun(0)/m/sl/12 和 另 一 个 集 合,$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 
+F$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+[63]
+Overfull \hbox (52.21538pt too wide) in paragraph at lines 2895--2897
+\EU1/SimSun(0)/m/sl/12 矛 盾. 这 似 乎 不 大 对? 上 面 最 后 的 推 理 似 乎 不 对? 应 该 是$[][] []$和
+$[][] []$至
+ []
+
+[64]
+Overfull \hbox (1.402pt too wide) in paragraph at lines 2959--2960
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/i
+t/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/
+12 , 且 有$[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$ \EU1/SimSun(0)/m/sl/12 a.e., 若 存 在$\OML/cmm/m/it/12 E
+$\EU1/SimSun(0)/m/sl/12 上 的 可 积 函 数$\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[65]
+Overfull \hbox (23.04277pt too wide) in paragraph at lines 3004--3005
+[]\EU1/SimSun(0)/m/sl/12 利 用 非 负 可 测 函 数 关 于 逐 项 积 分 的 定 理 可 知,$\OML/cmm/m/it/1
+2 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML
+/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(
+0)/m/sl/12 , 从 而$[] []$几
+ []
+
+[66]
+Overfull \hbox (0.87051pt too wide) in paragraph at lines 3017--3018
+[]\EU1/SimSun(0)/m/sl/12 证 明 利 用 了 控 制 收 敛 定 理,$\OML/cmm/m/it/12 h[] \OMS/cmsy/
+m/n/12 ! \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 ,$[]\OML/cmm/m/it/12 f\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/m/sl/
+12 . 
+ []
+
+
+Overfull \hbox (11.9594pt too wide) in paragraph at lines 3039--3040
+\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/S
+imSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/
+cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/
+12 上 具 有 紧 支 集 的 连 续 函 数,$\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j$\EU1/SimSun(0)/m/sl/12 
+在$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/sl/12 上 的 积 分 小 于$\OML/cmm/m/it/12 ^^O$\E
+U1/SimSun(0)/m/sl/12 (可
+ []
+
+[67]
+Overfull \hbox (13.81303pt too wide) in paragraph at lines 3068--3069
+[]\EU1/SimSun(0)/m/sl/12 然 后 对$\OML/cmm/m/it/12 ^^O \OT1/cmr/m/n/12 = 1/\OML/cm
+m/m/it/12 k$\EU1/SimSun(0)/m/sl/12 取 出 一 个 阶 梯 函 数 子 列$\OMS/cmsy/m/n/12 f\OML/c
+mm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n
+/12 g$\EU1/SimSun(0)/m/sl/12 ,$[] [] \OT1/cmr/m/n/12 =
+ []
+
+[68] [69]
+Overfull \hbox (15.1634pt too wide) in paragraph at lines 3141--3142
+[]\EU1/SimSun(0)/m/sl/12 (2) 如 果$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 Riemann 可 积 的, 则$[][] [] \OT1
+/cmr/m/n/12 = 0$\EU1/SimSun(0)/m/sl/12 , 而$\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 (\
+OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 0$\EU1/
+SimSun(0)/m/sl/12 , 于 是$\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (4.26338pt too wide) in paragraph at lines 3147--3148
+\EU1/SimSun(0)/m/sl/12 测 函 数, 从 而 可 知$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 Lebesgue 可 积. (这 里 说 明 判 断
+ 一 个 函 数 Lebesgue
+ []
+
+
+Overfull \hbox (8.22157pt too wide) in paragraph at lines 3162--3163
+[]$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/c
+mm/m/it/12 ^^_[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/cmsy/
+m/n/12 2 \OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12
+ )$\EU1/SimSun(0)/m/sl/12 ,$[][] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 f\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OMS/cms
+y/m/n/12 j\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 
+)\OML/cmm/m/it/12 ^^_[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS
+/cmsy/m/n/12 j ^^T j\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/c
+mr/m/n/12 )\OMS/cmsy/m/n/12 j$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[70]
+Overfull \hbox (9.82054pt too wide) detected at line 3187
+[] []
+ []
+
+
+Overfull \hbox (13.58888pt too wide) in paragraph at lines 3195--3196
+\EU1/SimSun(0)/m/sl/12 另 一 方 面 完 全 有 可 能$[][] []$为$\OMS/cmsy/m/n/12 1$\EU1/SimS
+un(0)/m/sl/12 ,$[][] []$为$\OMS/cmsy/m/n/12 1$\EU1/SimSun(0)/m/sl/12 , 可 是$[][] 
+[] \OMS/cmsy/m/n/12 ^^@
+ []
+
+[71]
+Overfull \hbox (5.06155pt too wide) in paragraph at lines 3210--3211
+[]\EU1/SimSun(0)/m/sl/12 令$\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 = \OML/cmm/m/it/1
+2 p \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 q$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it
+/12 p; q$\EU1/SimSun(0)/m/sl/12 为 正 整 数,$\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 =
+ \OML/cmm/m/it/12 R[] \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/
+m/sl/12 ,$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = (\OML/cmm/m
+/it/12 ^^X[]; []  ; ^^X[]; ^^X[]; []  ; ^^X[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m
+/sl/12 .
+ []
+
+[72]
+Overfull \hbox (10.69879pt too wide) in paragraph at lines 3255--3256
+[]\EU1/SimSun(0)/m/sl/12 书 中 有 一 个 注 解: 即 使$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 的 两 个 累 次 积 分 存 在
+ 且 相 等,$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12
+ )$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (16.2787pt too wide) in paragraph at lines 3268--3269
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML
+/cmm/m/it/12 E\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 , 称 它 为 点 集$\OML/cmm/m/
+it/12 E$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 x$\EU1/SimSun(0)/m/sl/12 处 的 
+截 断 集, 则 对 几 乎 处 处 的$\OML/cmm/m/it/12 x$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/
+12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12
+ 是$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 中
+ []
+
+[73] [74]
+Overfull \hbox (15.98727pt too wide) in paragraph at lines 3361--3362
+[]\EU1/SimSun(0)/m/sl/12 对 任 意 的$\OML/cmm/m/it/12 ^^O > \OT1/cmr/m/n/12 0$\EU1/
+SimSun(0)/m/sl/12 , 存 在 非 负 函 数$\OML/cmm/m/it/12 h \OMS/cmsy/m/n/12 2 \OML/cmm/
+m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/
+m/sl/12 , 以 及$\OML/cmm/m/it/12 ^^N > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 ,
+ 使 得 满 足$[][] [] \OMS/cmsy/m/n/12 ^^T
+ []
+
+[75]
+Overfull \hbox (8.86884pt too wide) in paragraph at lines 3373--3374
+\EU1/SimSun(0)/m/sl/12 极 为 相 似, 根 据 (ii),$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^
+O > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 ,$\OMS/cmsy/m/n/12 9\OML/cmm/m/it/
+12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12
+ 及$\OML/cmm/m/it/12 ^^N$\EU1/SimSun(0)/m/sl/12 , 使$\OML/cmm/m/it/12 e$\EU1/SimS
+un(0)/m/sl/12 满 足$[][] [] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 ^^N$\EU1/SimSun
+(0)/m/sl/12 时 有$[][] [] \OMS/cmsy/m/n/12 ^^T
+ []
+
+
+Overfull \hbox (24.05391pt too wide) in paragraph at lines 3375--3376
+[]$\OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [
+][]$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/
+cmr/m/n/12 ))$\EU1/SimSun(0)/m/sl/12 , 则 当$[][] [] \OMS/cmsy/m/n/12 ^^T \OML/cm
+m/m/it/12 ^^N$\EU1/SimSun(0)/m/sl/12 时 有$[][] [] \OMS/cmsy/m/n/12 ^^T
+ []
+
+[76]
+Chapter 5.
+
+Overfull \hbox (8.48425pt too wide) in paragraph at lines 3380--3381
+\EU1/SimSun(0)/m/sl/12 这 一 章 主 要 讨 论 微 积 分 基 本 定 理.$\OML/cmm/m/it/12 F\OT1/cmr/
+m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [][] [] = [][] [] \OMS/cmsy/m/n/1
+2 ^^@ [][] []$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[77
+
+]
+Overfull \hbox (65.54082pt too wide) in paragraph at lines 3428--3429
+[]\EU1/SimSun(0)/m/sl/12 下 面 的 两 个 结 论 不 是 很 明 显, 却 也 是 很 容 易 证 明 的:$\OML/cmm/m
+/it/12 D[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f\OT1/cmr/m/n/1
+2 ) = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ f\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ;$\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/1
+2 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) =
+ []
+
+[78] [79]
+Overfull \hbox (29.00053pt too wide) in paragraph at lines 3489--3490
+[]\EU1/SimSun(0)/m/sl/12 (Fubini 逐 项 微 分) 设$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 
+f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/
+SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU
+1/SimSun(0)/m/sl/12 上 的 递 增 函 数 列, 且$[][] []$在$\OT1/cmr/m/n/12 [\OML/cmm/m/it/1
+2 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (12.08688pt too wide) in paragraph at lines 3507--3509
+\EU1/SimSun(0)/m/sl/12 令$\OML/cmm/m/it/12 V[]f \OT1/cmr/m/n/12 = []\OMS/cmsy/m/
+n/12 f\OML/cmm/m/it/12 v[]\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 , 称 之 为$\OM
+L/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/12 在$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b
+\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 全 变 差, 若$\OML/cmm/m/it/12 V[]f < \
+OMS/cmsy/m/n/12 1$\EU1/SimSun(0)/m/sl/12 , 则 称$\OML/cmm/m/it/12 f\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12
+ [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (33.71347pt too wide) detected at line 3520
+[] [] \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 M [] [] \OT
+1/cmr/m/n/12 = \OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b \OMS/cmsy/
+m/n/12 ^^@ \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+ []
+
+[80]
+Overfull \hbox (0.14438pt too wide) detected at line 3536
+\OML/cmm/m/it/12 v[] \OT1/cmr/m/n/12 = [] + ([] + []) + [] + ([] + []) + [] = 2
+ [] [] \OMS/cmsy/m/n/12 ! 1\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (0.89372pt too wide) in paragraph at lines 3553--3554
+[]\EU1/SimSun(0)/m/sl/12 (2) 设$\OML/cmm/m/it/12 f; g \OMS/cmsy/m/n/12 2 \OML/cm
+m/m/it/12 BV\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])$\EU1/SimS
+un(0)/m/sl/12 ,$\OML/cmm/m/it/12 h \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Kf \OT1
+/cmr/m/n/12 + \OML/cmm/m/it/12 ^^Lg$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 ^
+^K; ^^L \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R$\EU1/SimSun(0)/m/sl/12 , 下 面 证 明$
+\OML/cmm/m/it/12 h \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 BV\OT1/cmr/m/n/12 ([\OML
+/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])$\EU1/SimSun(0)/m/sl/12 . 
+ []
+
+
+Overfull \hbox (13.2268pt too wide) in paragraph at lines 3559--3560
+[]\EU1/SimSun(0)/m/sl/12 证 明 比 较 简 单. 对 于$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; 
+b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 的 任 一 分 划$\OT1/cmr/m/n/12 ^^A$\EU1/Si
+mSun(0)/m/sl/12 , 若$\OML/cmm/m/it/12 c$\EU1/SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12
+ ^^A$\EU1/SimSun(0)/m/sl/12 的 分 点, 则 有$\OML/cmm/m/it/12 v[] \OMS/cmsy/m/n/12 ^^
+T \OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) +
+ []
+
+
+Overfull \hbox (64.08849pt too wide) in paragraph at lines 3563--3564
+[]\EU1/SimSun(0)/m/sl/12 (Jordan 分 解)$\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OM
+L/cmm/m/it/12 BV\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])$\EU1/
+SimSun(0)/m/sl/12 , 当 且 仅 当$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1
+/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 其 中$\OML/cmm/m/it/12 g\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 与$\OML/c
+mm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)
+/m/sl/12 是$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(
+0)/m/sl/12 上
+ []
+
+[81]
+Overfull \hbox (9.93561pt too wide) detected at line 3612
+[] []
+ []
+
+[82]
+Overfull \hbox (8.95247pt too wide) in paragraph at lines 3619--3620
+\EU1/SimSun(0)/m/sl/12 称 满 足 这 一 等 式 的$\OML/cmm/m/it/12 x$\EU1/SimSun(0)/m/sl/1
+2 为$\OML/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/12 的 Lebesgue 点, 那 么 原 结 论 就 变 为:$\O
+ML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L\OT1/cmr/m/n/12 ([\OML/cm
+m/m/it/12 a; b\OT1/cmr/m/n/12 ])$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[83]
+Overfull \hbox (16.48482pt too wide) in paragraph at lines 3633--3634
+\EU1/SimSun(0)/m/sl/12 区 间$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m
+/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1
+/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$[] $,$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x[]; y[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 其 长 度 的 总 和 小 于$\OML/cmm/m/i
+t/12 ^^N$\EU1/SimSun(0)/m/sl/12 , 使 得$[] [] \OML/cmm/m/it/12 >
+ []
+
+[84] [85]
+Overfull \hbox (12.80257pt too wide) in paragraph at lines 3728--3729
+[]\EU1/SimSun(0)/m/sl/12 书 中 给 出 了 一 个 例 子: 设$\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/1
+2 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 绝 对 连 续 函 
+数, 若 (i) 存 在$\OML/cmm/m/it/12 c$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 a \OM
+S/cmsy/m/n/12 ^^T
+ []
+
+
+Overfull \hbox (21.89644pt too wide) in paragraph at lines 3728--3729
+\OML/cmm/m/it/12 c \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 b$\EU1/SimSun(0)/m/sl/
+12 , 使 得$[] []$收 敛, (ii)$[] [] \OML/cmm/m/it/12 < \OMS/cmsy/m/n/12 1$\EU1/SimSu
+n(0)/m/sl/12 , 则 级 数$[] []$在$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n
+/12 ]$\EU1/SimSun(0)/m/sl/12 上
+ []
+
+
+Overfull \hbox (3.18863pt too wide) in paragraph at lines 3735--3736
+[]\EU1/SimSun(0)/m/sl/12 (分 部 积 分 公 式) 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 g\OT
+1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 为$\OT1
+/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 
+可 积 函 数,$\OML/cmm/m/it/12 ^^K; ^^L \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R[]$\EU1
+/SimSun(0)/m/sl/12 , 令$\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT
+1/cmr/m/n/12 ) =
+ []
+
+
+Overfull \hbox (22.77136pt too wide) in paragraph at lines 3751--3752
+[]$\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [][
+] []$\EU1/SimSun(0)/m/sl/12 ,$[][] [] \OT1/cmr/m/n/12 = 0$\EU1/SimSun(0)/m/sl/1
+2 ,$[][] [] \OT1/cmr/m/n/12 = [][] []$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[86]
+Overfull \hbox (10.3111pt too wide) in paragraph at lines 3793--3794
+[]\EU1/SimSun(0)/m/sl/12 证 明 过 程: 从$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 为 绝 对 连 续 函 数, 使 用 其 定 义:$\O
+MS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^O > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12
+ ,$\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 ^^N > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/
+sl/12 , 使$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0
+)/m/sl/12 中
+ []
+
+
+Overfull \hbox (17.10168pt too wide) detected at line 3798
+\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 G\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 f\OT1/cmr/m/n/12 ([] [])) \OMS/cmsy/m/n/12 ^^T [] [] \OT1/cmr/m/n/12 = [] []
+ \OML/cmm/m/it/12 < ^^O:
+ []
+
+[87]
+Overfull \hbox (11.69829pt too wide) in paragraph at lines 3802--3803
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a
+; b\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 实 值 函 数,$\OML/cmm/m/it/12 E \OM
+S/cmsy/m/n/12 ^^Z \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/
+SimSun(0)/m/sl/12 , 如 果$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
+\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 在$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m/
+sl/12 上 存 在, 且$\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^T
+ []
+
+
+Overfull \hbox (36.38481pt too wide) detected at line 3810
+\OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x \OM
+S/cmsy/m/n/12 2 \OML/cmm/m/it/12 E \OT1/cmr/m/n/12 : [][\OML/cmm/m/it/12 a; b\O
+T1/cmr/m/n/12 ][]\OML/cmm/m/it/12 y[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 y \OMS/
+cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 < [][]; \
+OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/
+m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^T \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M
+ \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^O\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/
+cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 y\OMS/cmsy/m/n/12 jg
+ []
+
+
+Overfull \hbox (86.04208pt too wide) in paragraph at lines 3810--3812
+\EU1/SimSun(0)/m/sl/12 于 是$\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m
+/it/12 E[]$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^Z \OML/cmm/m/it/12 f\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 递 增, 于 是 
+有$[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$[] [] \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (52.79439pt too wide) detected at line 3825
+[] []
+ []
+
+
+Overfull \hbox (28.3447pt too wide) detected at line 3841
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 E[]\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 n^^Om\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/
+it/12 ^^Om\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/i
+t/12 ^^Om\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/1
+2 ^^T \OML/cmm/m/it/12 int[][] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^Om\OT1/cmr/
+m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
+ []
+
+[88]
+Overfull \hbox (29.69762pt too wide) in paragraph at lines 3861--3862
+[]\EU1/SimSun(0)/m/sl/12 利 用 积 分 的 连 续 性:$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 ^^
+O > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 ,$\OMS/cmsy/m/n/12 9\OML/cmm/m/it/
+12 ^^N > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 , 当$\OML/cmm/m/it/12 e \OMS/c
+msy/m/n/12 ^^Z \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]$\EU1/Sim
+Sun(0)/m/sl/12 且$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e\OT1/cmr/
+m/n/12 ) \OML/cmm/m/it/12 < ^^N$\EU1/SimSun(0)/m/sl/12 时$[][] [] \OML/cmm/m/it/
+12 <
+ []
+
+
+Overfull \hbox (67.24814pt too wide) detected at line 3864
+[] [] \OMS/cmsy/m/n/12 ^^T [] [] ^^T [] [] \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m
+/it/12 < ^^O
+ []
+
+
+Overfull \hbox (10.61165pt too wide) in paragraph at lines 3888--3889
+[]$\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) \OM
+S/cmsy/m/n/12 ^^T [] [] ^^T [] [] ^^T [] [] ^^T \OML/cmm/m/it/12 n [] [] \OMS/c
+msy/m/n/12 ^^T
+ []
+
+[89]
+Overfull \hbox (25.9834pt too wide) in paragraph at lines 3912--3913
+[]\EU1/SimSun(0)/m/sl/12 差 别 在 于$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 与$\OML/cmm/m/it/12 F\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 当$\OML/cmm/m
+/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/s
+l/12 为 绝 对 连 续 函 数 时,$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1
+/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 几 乎 处 处 可 微,$\OML/cmm/m/it/12 f\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 把
+ []
+
+[90]
+Overfull \hbox (12.77838pt too wide) detected at line 3934
+[][] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ^^@ \O
+ML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 ^^K\OT1/cmr/m/n/12 )) = [][] [] = [][] []\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (2.47302pt too wide) in paragraph at lines 3950--3951
+\EU1/SimSun(0)/m/sl/12 绝 对 连 续 的,$\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^K; ^^L\OT
+1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 足 够 小 时,$\OT1/cmr/m/n/12 [\OML/cmm/m/it/1
+2 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; g\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L\OT1/cmr/m/n/12 )]$\EU1/SimSun(0)/m/sl/12 可 
+以 任 意 小, 从 而$[][] []$可
+ []
+
+[91]
+Overfull \hbox (39.44307pt too wide) in paragraph at lines 3974--3975
+[]\EU1/SimSun(0)/m/sl/12 另 一 种 方 法 是 采 用 集 合 函 数 的 观 点 来 定 义: 设$\OML/cmm/m/it/1
+2 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT
+1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 E\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/m/sl/12 为$\OML/cmm/m/i
+t/12 f$\EU1/SimSun(0)/m/sl/12 的
+ []
+
+
+Overfull \hbox (7.33243pt too wide) in paragraph at lines 3992--3993
+\EU1/SimSun(0)/m/sl/12 球$\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x;
+ r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$\EU1/SimSun(0)/m/sl/12 
+, 记$\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )$\EU1
+/SimSun(0)/m/sl/12 为 球$\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; r
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))$\EU1/SimSun(0)/m/sl/12 的 
+半 径, 若$[] [] \OML/cmm/m/it/12 < \OMS/cmsy/m/n/12 1$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+[92]
+Overfull \hbox (72.93108pt too wide) detected at line 4029
+[][] [] \OMS/cmsy/m/n/12 ^^T [] [][] []\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (11.18512pt too wide) in paragraph at lines 4055--4056
+[]\EU1/SimSun(0)/m/sl/12 把$\OML/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/12 分 解 为$\OML
+/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m
+/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12
+ h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,
+ 其 中$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU
+1/SimSun(0)/m/sl/12 是 具 有 紧 支 集 的 连 续 函 数,$\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\
+OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 满
+ []
+
+[93]
+Overfull \hbox (36.6688pt too wide) in paragraph at lines 4071--4073
+\EU1/SimSun(0)/m/sl/12 称 之 为$\OML/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/12 的 Hardy-
+Littlewood(球) 极 大 函 数 (H-L 极 大 函 数).$[][] [] \OMS/cmsy/m/n/12 ^^T
+ []
+
+
+Overfull \hbox (0.91162pt too wide) in paragraph at lines 4074--4075
+[]\EU1/SimSun(0)/m/sl/12 若$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 局 部 可 积 函 数 (即 在 任 一 有 界 可 测 集 上 均 
+可 积), 则$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Mf\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是
+ []
+
+[94]
+Overfull \hbox (31.10956pt too wide) in paragraph at lines 4125--4126
+[]$\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = (\O
+ML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/
+m/it/12 ; []  ; '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ))$\EU1/S
+imSun(0)/m/sl/12 时,$\OML/cmm/m/it/12 '$\EU1/SimSun(0)/m/sl/12 可 微, 意 味 着 偏 导 数$
+[] \OT1/cmr/m/n/12 = [][] []$\EU1/SimSun(0)/m/sl/12 存
+ []
+
+[95]
+Overfull \hbox (33.17021pt too wide) in paragraph at lines 4148--4149
+[]\EU1/SimSun(0)/m/sl/12 假 设$\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 : \OML/cmm/m/it
+/12 U \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m
+/it/12 U$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 V$\EU1/SimSun(0)/m/sl/12 为$\
+OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 中 开 集, 满 足 条 件: (i)$\OML/cmm/m/it/12
+ '$\EU1/SimSun(0)/m/sl/12 是 一 一 变 换, (ii)$\OML/cmm/m/it/12 '$\EU1/SimSun(0)/m/s
+l/12 是$\OML/cmm/m/it/12 C[]$\EU1/SimSun(0)/m/sl/12 变
+ []
+
+
+Overfull \hbox (34.61504pt too wide) detected at line 4172
+[][] [] \OMS/cmsy/m/n/12 ^^T [][] [] \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ^
+^T [] [] \OT1/cmr/m/n/12 = [][] []\OML/cmm/m/it/12 :
+ []
+
+[96]
+Overfull \hbox (31.49612pt too wide) detected at line 4233
+\OML/cmm/m/it/12 ! \OT1/cmr/m/n/12 = ([] []\OML/cmm/m/it/12 ; [] [] [] []; []  
+; [] [] [] [] [] [] []; [] [] [] [] []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+ []
+
+[97]
+Overfull \hbox (48.28325pt too wide) detected at line 4242
+[][] [] \OT1/cmr/m/n/12 = [][] [][] [] [][] [][] []
+ []
+
+
+Overfull \hbox (36.9791pt too wide) in paragraph at lines 4253--4255
+\EU1/SimSun(0)/m/sl/12 而$\OML/cmm/m/it/12 ![]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+A\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/m/sl/12 可 以 被 定 义 为 在$\OT1/cmr/m/n/
+12 ^^F[]$\EU1/SimSun(0)/m/sl/12 上 的 Borel 集 的 测 度, 称$\OML/cmm/m/it/12 ![]$\EU1/
+SimSun(0)/m/sl/12 为$\OT1/cmr/m/n/12 ^^F[]$\EU1/SimSun(0)/m/sl/12 的
+ []
+
+[98]
+Chapter 6.
+
+Overfull \hbox (0.95956pt too wide) in paragraph at lines 4278--4279
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 E$\EU1/SimSun(0)/m
+/sl/12 上 的 可 测 函 数,$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/c
+mr/m/n/12 ) \OML/cmm/m/it/12 > \OT1/cmr/m/n/12 0$\EU1/SimSun(0)/m/sl/12 , 若 存 在
+$\OML/cmm/m/it/12 M$\EU1/SimSun(0)/m/sl/12 , 使 得$\OMS/cmsy/m/n/12 j\OML/cmm/m/i
+t/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^
+T \OML/cmm/m/it/12 M$ \EU1/SimSun(0)/m/sl/12 a.e.,
+ []
+
+
+Overfull \hbox (5.74628pt too wide) in paragraph at lines 4293--4294
+[]\EU1/SimSun(0)/m/sl/12 证 明 只 需 使 用$\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f\OMS/c
+msy/m/n/12 k[]$\EU1/SimSun(0)/m/sl/12 的 定 义 即 可.$\OMS/cmsy/m/n/12 k\OML/cmm/m/i
+t/12 f\OMS/cmsy/m/n/12 k[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 M$\EU1/SimSun(0)/
+m/sl/12 为 上 确 界, 则$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 M[] < M$\EU1/SimSun(0)/m/
+sl/12 ,$\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 =
+ []
+
+[99
+
+] [100] [101]
+Overfull \hbox (52.84561pt too wide) detected at line 4404
+[] []
+ []
+
+
+Overfull \hbox (55.53069pt too wide) detected at line 4411
+[] []
+ []
+
+[102]
+Overfull \hbox (13.18137pt too wide) in paragraph at lines 4474--4476
+\EU1/SimSun(0)/m/sl/12 从$\OML/cmm/m/it/12 f[]$\EU1/SimSun(0)/m/sl/12 中 选 出 子 列$
+\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/c
+mr/m/n/12 )\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 使$\OML/cmm/m/it/12 f[]\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 几 乎 处 处
+ 收 敛 于$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\
+EU1/SimSun(0)/m/sl/12 , 即$[][] [] \OT1/cmr/m/n/12 =
+ []
+
+[103]
+Overfull \hbox (72.34476pt too wide) in paragraph at lines 4497--4498
+[]\EU1/SimSun(0)/m/sl/12 存 在$\OML/cmm/m/it/12 R[]$\EU1/SimSun(0)/m/sl/12 上 具 有 
+紧 支 集 的 阶 梯 函 数$\OML/cmm/m/it/12 '$\EU1/SimSun(0)/m/sl/12 :$\OML/cmm/m/it/12 '\
+OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/m/
+sl/12 使$[][] [] \OML/cmm/m/it/12 <
+ []
+
+
+Overfull \hbox (4.4213pt too wide) in paragraph at lines 4531--4532
+[]\EU1/SimSun(0)/m/sl/12 前 面 关 于 可 分 性 的 引 理 表 明 存 在$\OML/cmm/m/it/12 f\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 的 分 解:$\OML
+/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m
+/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12
+ h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,
+$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/Si
+mSun(0)/m/sl/12 为
+ []
+
+[104]
+Overfull \hbox (32.77432pt too wide) detected at line 4536
+[][] [] \OT1/cmr/m/n/12 = [][] [] + [][] [] = 2 [][] []\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (4.50961pt too wide) detected at line 4545
+[] []
+ []
+
+
+Overfull \hbox (18.51926pt too wide) in paragraph at lines 4560--4561
+[]\EU1/SimSun(0)/m/sl/12 Fourier 级 数 与 Fourier 系 数: 设$\OML/cmm/m/it/12 '[]$\EU1
+/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT
+1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 中 的 规 一 化 正 交 系,$\OML/cmm/m/it/12 f \OMS/
+cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m
+/n/12 )$\EU1/SimSun(0)/m/sl/12 ,
+ []
+
+
+Overfull \hbox (11.41817pt too wide) in paragraph at lines 4566--4567
+\EU1/SimSun(0)/m/sl/12 一 切$\OML/cmm/m/it/12 '[]$\EU1/SimSun(0)/m/sl/12 正 交, 则 称
+ 此$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl
+/12 是$\OML/cmm/m/it/12 L[]$\EU1/SimSun(0)/m/sl/12 中 的 完 全 系. 即 若$\OML/cmm/m/it/
+12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E
+\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 且$\OML/cmm/m/it/12 < f; '[] >\OT1/cm
+r/m/n/12 =
+ []
+
+
+Overfull \hbox (20.06511pt too wide) in paragraph at lines 4568--4569
+[]\EU1/SimSun(0)/m/sl/12 线 性 无 关: 设$\OML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; '[]\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []  ; '[]\OT1/cmr/m/n/12 (\OML/cmm/m
+/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 定 义 在$\OML/cmm/m/it/12 E$\EU
+1/SimSun(0)/m/sl/12 上 的 函 数, 如 果 从$\OML/cmm/m/it/12 a[]'[]\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 x\OT1/cmr/m/n/12 ) +
+ []
+
+[105]
+Overfull \hbox (53.00957pt too wide) in paragraph at lines 4585--4586
+[]\EU1/SimSun(0)/m/sl/12 设$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/
+12 g$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 中 的 规 一 化 正 交 系,$\OML/cmm/m/it/1
+2 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\
+OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 取 定$\OML/cmm/m/it/12 k$\EU1/SimSun(0)
+/m/sl/12 , 作$\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/
+n/12 ) = [][] []$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12
+ 2
+ []
+
+
+Overfull \hbox (17.40797pt too wide) in paragraph at lines 4593--4594
+[]\EU1/SimSun(0)/m/sl/12 Bessel 不 等 式: 设$\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 '[]
+\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 是$\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 中 的 规 一 化 正 交 系, 且
+$\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 , 则$\OML/cmm/m/it/12 f\
+OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 的
+ []
+
+
+Overfull \hbox (56.52519pt too wide) in paragraph at lines 4602--4603
+[]\EU1/SimSun(0)/m/sl/12 令$\OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 ) = [][] []$\EU1/SimSun(0)/m/sl/12 , 则$\OMS/cmsy/m/n/12 f\OM
+L/cmm/m/it/12 S[]\OMS/cmsy/m/n/12 g$\EU1/SimSun(0)/m/sl/12 为$\OML/cmm/m/it/12 L
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 中
+ 基 本 列, 存 在$\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/
+m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ,$[] [] \OT1
+/cmr/m/n/12 =
+ []
+
+[106]
+Overfull \hbox (19.7112pt too wide) in paragraph at lines 4636--4637
+[]\EU1/SimSun(0)/m/sl/12 这 意 味 着 在 微 积 分 课 程 中,$\OML/cmm/m/it/12 f \OT1/cmr/m/n
+/12 = [][] []$\EU1/SimSun(0)/m/sl/12 时,$\OML/cmm/m/it/12 f$\EU1/SimSun(0)/m/sl/
+12 在$\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\
+EU1/SimSun(0)/m/sl/12 意
+ []
+
+
+Overfull \hbox (4.95692pt too wide) in paragraph at lines 4638--4639
+[]\EU1/SimSun(0)/m/sl/12 首 先 应 证 明 该 函 数 系 是 一 个 线 性 无 关 的, 正 交 的.$[][] [] \OT1
+/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (13.90523pt too wide) in paragraph at lines 4640--4641
+[]\EU1/SimSun(0)/m/sl/12 (i)$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是$\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12
+ ^^@\OML/cmm/m/it/12 ^^Y; ^^Y\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 连 续 函
+ 数, 一 切 Fourier 系 数 都 是 0, 意 味 着$\OMS/cmsy/m/n/12 h[]i \OT1/cmr/m/n/12 =
+ []
+
+[107]
+Overfull \hbox (16.23923pt too wide) in paragraph at lines 4655--4656
+[]\EU1/SimSun(0)/m/sl/12 (ii)$\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/
+it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/
+sl/12 时,$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )
+ = [][] []$\EU1/SimSun(0)/m/sl/12 为$\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 ^^@\OML/c
+mm/m/it/12 ^^Y; ^^Y\OT1/cmr/m/n/12 ]$\EU1/SimSun(0)/m/sl/12 上 的 绝 对 连 续 函 数,$\O
+ML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ^^Y\OT1/c
+mr/m/n/12 ) =
+ []
+
+[108] [109] [110]
+Overfull \hbox (19.12129pt too wide) detected at line 4791
+[] []
+ []
+
+
+Overfull \hbox (39.9582pt too wide) in paragraph at lines 4800--4801
+\EU1/SimSun(0)/m/sl/12 处 的$\OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/
+12 R[]$\EU1/SimSun(0)/m/sl/12 ,$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 x; y\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 属 于$\OML/cmm/m/it/12 L[]\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 R[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 ($\OT1
+/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 p < \OMS/cmsy/m/n/12 1$\EU1
+/SimSun(0)/m/sl/12 ), 且 有$[][] [] \OT1/cmr/m/n/12 =
+ []
+
+[111] [112]
+Overfull \hbox (9.68484pt too wide) in paragraph at lines 4892--4894
+\EU1/SimSun(0)/m/sl/12 这 里$\OML/cmm/m/it/12 c$\EU1/SimSun(0)/m/sl/12 使 得$\OMS/c
+msy/m/n/12 k\OML/cmm/m/it/12 ^^Z\OMS/cmsy/m/n/12 k[] \OT1/cmr/m/n/12 = 1$\EU1/S
+imSun(0)/m/sl/12 . 当$\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/
+cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 是 具 有 紧 支 集$\OML/cmm/m/it/12 F$\EU1/SimSun(
+0)/m/sl/12 且 属 于$\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 R[]\OT1/
+cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 时,$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^Z[] 
+\OMS/cmsy/m/n/12 ^^C \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x\OT1
+/cmr/m/n/12 )$\EU1/SimSun(0)/m/sl/12 也
+ []
+
+[113]
+Overfull \hbox (1.32494pt too wide) in paragraph at lines 4925--4926
+[]\EU1/SimSun(0)/m/sl/12 设$\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/
+12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 R[]\OT1/cmr/m/n/12 )$\EU1/SimSun(0)/m/s
+l/12 ($\OT1/cmr/m/n/12 1 \OML/cmm/m/it/12 < p \OMS/cmsy/m/n/12 ^^T 1$\EU1/SimSu
+n(0)/m/sl/12 ), 则$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Mf\OT1/cmr/m/n/12 ) \OMS/cm
+sy/m/n/12 2 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 R[]\OT1/cmr/m
+/n/12 )$\EU1/SimSun(0)/m/sl/12 , 且 有$\OMS/cmsy/m/n/12 k[]k[] ^^T \OML/cmm/m/it/
+12 A[]\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 k[]$\EU1/SimSun(0)/m
+/sl/12 . 
+ []
+
+[114] [115] (./RealAnalysis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14597 strings out of 493591
+ 282747 string characters out of 6146794
+ 281771 words of memory out of 5000000
+ 17924 multiletter control sequences out of 15000+600000
+ 18710 words of font info for 92 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 48i,14n,61p,10374b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on RealAnalysis.pdf (125 pages).

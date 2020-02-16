@@ -1,0 +1,10 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[S.麦克莱恩]{S.麦克莱恩}{1979}{surveyofmodernalgebra1979}
+{\bf S.麦克莱恩, G.伯克霍夫}, {\it 近世代数概论}, 北京:
+  人民教育出版社, 1979.
+
+\end{thebibliography}

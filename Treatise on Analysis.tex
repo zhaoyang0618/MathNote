@@ -1,0 +1,956 @@
+\documentclass[12pt,a4paper,openany]{book}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[mathscr]{eucal}
+%\usepackage{accents}
+%\usepackage{statex}
+
+\setromanfont{SimSun}
+\setmainfont{SimSun}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\newtheorem{example}{例} 
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{property}{性质}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+\newtheorem{exercise}{解答}[chapter]
+\newtheorem{answer}{解答}[chapter]
+
+\newcommand\relphantom[1]{\mathrel{\phantom{#1}}}
+\newcommand\num[1]{\left\Vert{#1}\right\Vert}
+\newcommand\Hom{\text{Hom\,}}
+\newcommand\Tr{\text{Tr\,}}
+\newcommand\Ker{\text{Ker\,}}
+\newcommand\Image{\text{Im\,}}
+\newcommand\rank{\text{rank\,}}
+\newcommand\tr{\text{tr\,}}
+
+\DeclareMathOperator{\esssup}{ess\,sup}
+
+\makeatletter
+\def\wideubar{\underaccent{{\cc@style\underline{\mskip10mu}}}}
+\def\Wideubar{\underaccent{{\cc@style\underline{\mskip8mu}}}}
+\def\diam{\text{diam}}
+\makeatother
+
+\makeatletter
+\def\widebar{\accentset{{\cc@style\underline{\mskip10mu}}}}
+\def\Widebar{\accentset{{\cc@style\underline{\mskip8mu}}}}
+\makeatother
+
+
+\title{Treatise on Analysis}
+\author{J.Dieudonne}
+
+\begin{document}
+
+\frontmatter
+\frontmatter
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\setcounter{page}{0}
+\chapter{前言}
+This book is the first volume of a treatise which will eventually consist of four volumes. It is also an enlarged and corrected printing, essentially without changed, of my "Foundations of Modern Abalysis," published in 1960. Many readers, colleagues, and friends have urged me to write a sequel to that book, and in the end I became convinced that there was a place for a survey of modern analysis, somewhere between the "minimum tool kit" of an elementary nature which I has intended to write, and specialist monographs leading ti the frontiers of research. My experience of teaching has also
+
+\tableofcontents
+
+\mainmatter
+\chapter{集合以及相关概念}
+集合是一个不加定义的概念.
+
+\section{集合运算}
+首先引入的概念是"属于"和"相等",这是集合论的两个基本关系.他们也是通过外延公理相互联系.
+
+\begin{axiom}[外延公理(Axiom of extension)]
+两个集合相等,当且仅当他们有相同的元素.
+\end{axiom}
+
+外延公理界定了一个集合的元素,它非常明显,却绝不寻常:
+
+我们考虑人类之间的关系:设$x \in A$,如果$x$是$A$的祖先,此时,"仅当(only if)"部分是成立的,"当(if)"部分不成立.也就是有相同的祖先,不一定能得出相同的$A$.
+
+属于是"元素"和集合之间的关系,不过应该注意,我们这里的元素是没有预先定义,足够宽泛.集合也可以作为元素.有了属于,我们可以考虑集合之间的关系:$x \in A \Rightarrow x \in B$,则称$A \subset B$.包含关系满足:
+
+(1)自反的:$A \subset A$;
+
+(2)传递的:$A \subset B$,$B \subset C$ $\Rightarrow$ $A \subset C$;
+
+(3)反对称的:$A \subset B$不能得出$B \subset A$,如果两者同时成立,必有$A = B$,这也可以认为是外延公理的等价描述.
+
+显然,"属于"和"包含"是完全不同的东西:"属于"一般来说不是自反的,也不满足传递性.对于满足$A \in A$这样的集合,一般情况不在我们的考虑之内.
+
+要想得到更多的集合,我们需要其他的公理,还需要一些基本的逻辑:"属于"和"等于"是两个基本的语句,其余的通过以下七个组合得到:and(且);or(或者,包括either ... or ...);nnot(非);if - then -(如果...就...);if and only if(当且仅当);for some(对某些...);for all(对所有...).
+
+\begin{axiom}[Axiom of specification]
+对于每一个集合$A$和条件$S(x)$,存在集合$B$,使得$B$中的元素$x$属于$A$,且$S(x)$成立.
+\end{axiom}
+
+我搜索了一下网络,大部分把"Axiom of specification"翻译为"分类公理".有此公理,通常把$B$记作$B=\{x \in A: S(x)\}$,这里有一个极为有趣也非常有意义的集合:$B=\{x \in A: x \notin x\}$.对于这个集合,必有$B \notin A$,证明比较简单,反证法即可,书中给出了详细讨论,这意味着:不存在万物之集,或者说,不存在包含一切的集合,这实际上就是罗素悖论的另一个说法.而哥德尔关于数学基础的一些结论,说明了存在缺陷是世界的本性,上帝也不是万能的,有阴才有阳.
+
+为了有具体的讨论对象,我们需要构造出一些集合.如果我们假设:存在一个集合,那么由axiom of specification可知,存在一个不包含任何元素的集合$\emptyset$,$\emptyset \subset A$对任意的集合$A$成立.这几个结论的证明有些意思,书中也给出了详细的描述,它涉及到了对于空集的处理:反证,如果不成立,那就是存在一个元素$x \in \emptyset$,但是$x \notin A$,但是这样的元素不存在.
+
+\begin{axiom}[Axiom of pairing]
+对任意两个集合,存在一个集合,使得这两个集合是该集合的元素.
+\end{axiom}
+
+用数学语言描述是:$\forall a,b$,$\exists A$,$a \in A$,$b \in A$.$B=\{a,b\}$.
+
+有了这个公理,我们可以构造出无限多个集合了:
+\begin{gather*}
+\emptyset,\{\emptyset\},\{\{\emptyset\}\},\cdots\\
+\{\{\emptyset\},\{\{\emptyset\}\}\},\cdots
+\end{gather*}
+
+这里面的任意两个集合互不相等.这是书中的一道习题,至于严格证明他们互不相等,目前还没有思路.我觉得至少应该证明:上述公理中的集合$A$和$a$,$b$是不相同.$\emptyset$和$\{\emptyset\}$不相等比较好说明:$\emptyset$不包含任何元素,而$\{\emptyset\}$包含了一个元素:$\emptyset$,两者自然不相等,习题中的,我觉得只能是通过外延公理,一层一层脱去花括号,最后归结到这个结论上.
+
+\section{2013年04月29日}
+并集和交集:
+
+前面无序对给出了拥有两个元素的集合,我们通过并集可以得到包含更多元素的集合.
+
+\begin{axiom}[并集公理-Axiom of unions]
+对任意一簇集合,存在一个集合,包含所有这样的元素,这个元素至少是这一簇集合中的某一个集合的元素.
+\end{axiom}
+
+使用数学符号表示为:$\forall \mathscr{C}$,$\exists \mathscr{U}$,若$x \in X$,$X \in \mathscr{C}$,则$x \in \mathscr{U}$.
+
+关于并集有如下公式:
+\begin{enumerate}
+\item $A \cup \emptyset = A$;
+\item $A \cup B = B \cup A$.交换律(commutativity)
+\item $A \cup (B \cup C) = (A \cup B) \cup C$.结合律(associativity)
+\item $A \cup A = A$.幂等(idempotence)
+\item $A \subset B$当且仅当$A \cup B = B$.
+\end{enumerate}
+
+注意到无序对只有两个元素,通过它和并集的关系:$\{a\} \cup \{b\} = \{a,b\}$,可以推广到三元集,四元集,...
+\[
+\{a,b,c\}=\{a\}\cup\{b\}\cup\{c\}.
+\]
+
+交集:
+\[
+A \cap B = \{x : x \in A \text{且} x \in B\}
+\]
+它可以推广到一簇集合$\mathscr{C}$的交集,此时$\mathscr{C} \neq \emptyset$;此时
+\[
+\cap\{X; X \in \mathscr{C}\} = \{x: x \in X, \forall X \in \mathscr{C}\}
+\]
+
+交集的性质:
+\begin{enumerate}
+\item $A \cap \emptyset = \emptyset$;
+\item $A \cap B = B \cap A$.交换律(commutativity)
+\item $A \cap (B \cap C) = (A \cap B) \cap C$.结合律(associativity)
+\item $A \cap A = A$.幂等(idempotence)
+\item $A \subset B$当且仅当$A \cap B = A$.
+\end{enumerate}
+
+特殊的,当$A \cap B = \emptyset$时,称$A$与$B$不相交(disjoint).两两不相交(pairwise disjoint).
+
+交与并的分配律(distributive law)
+\begin{gather*}
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\\
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+\end{gather*}
+
+习题:$(A \cap B) \cup C = A \cap (B \cup C)$的充要条件是$C \subset A$.
+
+若$(A \cap B) \cup C = A \cap (B \cup C)$,要证明$C \subset A$:$\forall x \in C$,则$x \in (A \cap B) \cup C$,由此得到,$x \in A \cap (B \cup C)$,因此$x \in A$,获证.
+
+反之,如果$C \subset A$,需要证明:$(A \cap B) \cup C = A \cap (B \cup C)$.
+
+$x \in (A \cap B) \cup C$,则或者$x \in (A \cap B)$,或者$x \in C$,若$x \in A \cap B$,则$x \in A$且$x \in B$,$x \in A$,且$x \in B \cup C$,于是$x \in A \cap (B \cup C)$.
+
+若$x \in C$,则$x \in A$,$x \in B \cup C$,于是$x \in A \cap (B \cup C)$.
+
+$x \in A \cap (B \cup C)$,$x \in A$,且$x \in B \cup C$,若$x \in B$,则$x \in A \cap B$,这样$x \in (A \cap B) \cup C$,若$x \in C$,则$x \in (A \cap B) \cup C$.
+
+补集和幂集:
+
+相对补集:$A - B = \{x \in A: x \notin B\}$,很多时候,我们考虑一种特殊情形下的补集,固定一个集合$E$,此时$E-A=A'$.
+
+补集的一些性质:$(A')'=A$;$\emptyset'=E$,$E'=\emptyset$;$A \cap A'=\emptyset$;$A \cup A'=E$;$A \subset B$当且仅当$B' \subset A'$.
+
+和补集相关的一个非常重要的性质(De morgan法则):
+\begin{gather*}
+(A \cup B)' = A' \cap B' \\
+(A \cap B)' = A' \cup B'
+\end{gather*}
+这一法则揭示了一个重要的现象,常称为对偶原理,在包含了并集,交集,以及补集的包含关系或者等式中,只要把每一个集合替换为它的补集,交换并与交的位置,把包含关系反向,则对应的关系仍旧成立.
+
+关于补集的一些结论:
+\begin{enumerate}
+\item $A - B = A \cap B'$;
+\item $A \subset B$当且仅当$A - B = \emptyset$;
+\item $A - (A - B) = A \cap B$;
+\item $A \cap (B - C) = (A \cap B) - (A \cap C)$;
+\item $A \cap B \subset (A \cap C) \cup (B \cap C')$;
+\item $(A \cup C) \cap (B \cup C') \subset A \cup B$;
+\end{enumerate}
+
+$A$与$B$的对称差(布尔和)定义为:$A + B = (A-B) \cup (B-A)$.
+
+对称差满足交换律;结合律以及$A + \emptyset = A$,$A + A = \emptyset$.
+
+关于一组集合的交集,有一点需要讨论一下,在定义中要求这一组集合中至少有一个集合,如果出现空的集合簇,即讨论:$x \in X$,对任意的$X \in \emptyset$,会引发出$\cap{\emptyset}$为一个万物之集,为了取消非空的集合簇这一限制,可以把所有的集合限制在一个所谓全集$E$上,此时$\cap{\emptyset}=E$,$\mathscr{C} \cup \{E\}$.
+
+\begin{axiom}[幂集公理:Axiom of powers]
+对每一个集合,存在一个集合簇,它包含所有这个给定集合的子集.
+\end{axiom}
+
+集合$E$的幂集常记作$P(E)$.
+
+对于有限集$E$,其中有$n$个元素,则$P(E)$中有$2^n$个元素,这也是幂集这个称谓的来源吧.这个结论可以使用归纳法证明,不过这里只能使用以前的关于自然数的信息,从更严格的角度来看,需要首先定义自然数的含义,也就是这里$n$和$2^n$的含义.
+
+习题:证明$P(E) \cap P(F) = P(E \cap F)$,$P(E) \cup P(F) \subset P(E \cup F)$,它们可以推广到
+\[
+\bigcap_{X \in \mathscr{C}}{P(X)} = P(\bigcap_{X \in \mathscr{C}}{X}),\quad \bigcup_{X \in \mathscr{C}}{P(X)} \subset P(\bigcup_{X \in \mathscr{C}}{X}).
+\]
+
+$P(E) \cap P(F)$中的元素是集合$X$,$X \subset E$,$X \subset F$ $\Leftrightarrow$ $A \subset E \cap F$ $\Leftrightarrow$ $X \in P(E \cap F)$.
+
+$X \in P(E) \cup P(F)$ $\Rightarrow$ $X \in P(E)$或$X \in P(F)$ $\Rightarrow$ $X \subset E$或$X \subset F$ $\Rightarrow$ $X \subset E \cup F$, $\Rightarrow$ $X \in P(E \cup F)$.
+
+反过来为什么不一定成立?$X \in P(E \cup F)$ $\Rightarrow$ $X \subset E \cup F$;此时$X$中可能一部分属于$E$,一部分属于$F$,$X \notin P(E)$或$P(F)$.只要$E-F\neq \emptyset$,或$F-E \neq \emptyset$,上面的包含关系就是真包含.
+
+\section{2013年5月1日}
+有序对:对于$A=\{a,b,c,d\}$,如何来定义一个次序呢?对于一个次序$c,b,d,a$,和如下集合有一个一一对应关系:
+\[
+\{\{c\},\{c,b\},\{c,b,d\},\{c,b,d,a\}\}.
+\]
+
+$a$和$b$的有序对定义为$(a,b)=\{\{a\}, \{a,b\}\}$.这里需要证明这个定义的合理性,也就是,若$(a,b)=(x,y)$,必有$a=x$,$b=y$.书中给出了详细的证明.
+
+接下里的问题是:对于集合$A$,$B$,是否存在集合包含所有的$(a,b)$,其中$a \in A$,$b \in B$,通过说明$(a,b) \in P(P(a \cup B))$,可以证明这样的集合石存在的,由此引出了笛卡尔积的定义,反过来,对于任一笛卡尔积,都能表示为$A \times B$的形式,书中同样给出了讨论.
+
+习题:
+\begin{enumerate}
+\item $(A \cup B) \times X = (A \cup X) \cup (B \cup X)$;
+\item $(A \cap B) \times (X \cap Y) = (A \times X) \cap (B \times Y)$;
+\item $(A-B) \times X = (A \times X) - (B \times Y)$.
+\end{enumerate}
+
+\begin{enumerate}
+\item $\forall (a,b) \in (A \cup B) \times X$ $\Rightarrow$ $a \in A \cup B$,$b \in X$ $\Rightarrow$ $a \in A$或$a \in B$ $\Rightarrow$ $(a,b) \in A \times X$或$(a,b) \in B \times X$ $\Rightarrow$ $(a,b) \in (A \times X) \cup (B \times X)$;反之也是成立的.
+\item $(a,b) \in (A \cap B) \times (X \cap Y)$ $\Leftrightarrow$ $a \in A \cap B$,$b \in X \cap Y$ $\Leftrightarrow$ $(a,b) \in A \times X$,$(a,b) \in B \times Y$ $\Leftrightarrow$ $(a,b) \in (A \times X) \cap (B \times Y)$.
+\item $(a,b) \in (A-B) \times X$ $\Leftrightarrow$ $a \in A-B$,$b \in X$ $\Leftrightarrow$ $a \in A$,$a \notin B$ $\Leftrightarrow$ $(a,b) \in A \times X$,$(a,b) \notin B \times X$ $\Leftrightarrow$ $(A \times X)-(B \times X)$.
+\end{enumerate}
+
+我们看看:$(A \cap B) \times X = (A \times X) \cap (B \times X)$成立吗?
+
+$(a,b) \in (A \cap B) \times X$ $\Leftrightarrow$ $a \in A \cap B$,$b \in X$ $\Leftrightarrow$ $a \in A$且$a \in B$,$b \in X$ $\Leftrightarrow$ $(a,b) \in A \times X$, $(a,b) \in B \times X$ $\Leftrightarrow$ $(a,b) \in (A \times X) \cap (B \times X)$.
+
+关系:关系是一组有序对的集合,$a$和$b$有关系$R$是指$(a,b) \in R$.
+
+几个例子:相等关系$(x,x) \in X \times X$;属于关系$(x,A) \in X \times P(X)$.
+
+一种特殊的关系:等价关系是指满足自反,对称和传递三个性质的关系.所谓自反是指$aRa$,对称是指$aRb\Rightarrow bRa$;传递是指$aRb$,$bRc$ $\Rightarrow$ $aRc$.这里书中有一道题目,实际上是要求说明这三条性质不能从其中两条件性质推出第三条.这里试着做一下:
+
+(1)集合的包含关系满足自反和传递,不一定满足对称.
+
+(2)考虑$X=\{1,2,3\}$,$R=\{(1,1),(2,2),(3,3),(1,2),(2,3),(2,1),(3,2)\}$,那么自反成立,对称也是成立的,但是不满足传递:$1R2$,$2R3$,无法得到$1R3$.
+
+(3)接下来需要构造一个自反不成立,其他两个性质成立的关系,可是我们应该注意到,一旦有两个不同的$a$,$b$,满足$aRb$,那么根据对称$bRa$,根据传递,必有$aRa$和$bRb$.于是我们需要的是一个小队孤立的$a$.构造如下:$X=\{1,2,3\}$,R=\{(2,2),(2,3),(3,2),(3,3)\},注意到自反不成立,因为存在$1\in A$,$1R1$不成立.对称和传递是成立的.
+
+等价关系在数学中具有特殊重要性,尤其在抽象代数中.等价关系和集合的划分有着直接的联系,首先引进几个概念和记号.
+
+集合$X$的划分是指一簇集合$\mathscr{C}$,这簇集合的并集等于$X$,但是集合簇$\mathscr{C}$是两两不相交的.
+
+所谓等价关系$R$的$x$的等价类是指所有和$x$等价的元素组成的集合,记作$x/R$:$x/R=\{y \in X:xRy\}$.我们把$X$的所有等价类组成的集合记作$X/R$.
+
+我们说的等价类和集合划分的关系实际上可以用等式
+\[
+\mathscr{C} = X/R
+\]
+表示:等价关系$R$生成的等价类的集合是$X$的一个划分,同样任何一个划分$\mathscr{C}$都能够决定一个等价关系(记作$X/\mathscr{C}$).
+
+证明参考课本,难度不大.
+
+\section{2013年05月11日}
+首先讨论映射,书中使用的是函数(function),我在这里为了和其他书本相一致,采取映射这个术语.首先需要了解前面遗漏的两个符号或者术语:关系$R$的定义域和值域.
+\[
+\text{dom}{R}=\{x: \exists y (xRy)\};\quad \text{ran}{R}=\{y: \exists x(xRy)\}.
+\]
+
+集合$X$到$Y$的映射是一种特殊的关系$f$:$\text{dom}{f}=X$,对每一个$x \in X$,存在唯一的$y \in Y$,使$(x,y) \in f$,此时,满足$(x,y) \in f$的$y$记作$f(x)$.$X$到$Y$的所有映射组成的集合是$P(X \times Y)$的子集,记为$Y^X$.
+
+书中讨论了一些术语相关的知识,这里不叙述了.有时$\{(a,b)|(a,b) \in f\}$,称为$f$的图像(graph).
+
+如果$\text{ran}{f}=Y$,则称$f$是映上(onto)的($X$映到$Y$上的).
+
+设$A \subset X$,记号$f(A)$的含义如下:
+\[
+f(A)=\{y : y=f(x), \exists x \in A\},
+\]
+这里存在一个问题,我们考虑的集合中,可能出现$A \in X$这个情形,此时$f(A)$的含义具有歧义.这个问题以前从没想过,因为以前很少遇到,或者说几乎不会遇到.
+
+函数的限制与延拓.
+
+设$f$是$Y$到$Z$的函数,$X \subset Y$,对于如下方式构造的$X$到$Z$的函数$g$:
+\[
+g(x)=f(x),x \in X,
+\]
+称$g$为$f$在$X$上的限制,$f$为$g$在$Y$上的延拓.记$g=f|X$,$\text{ran}{(f|X)}=f(X)$.
+
+下面是几个映射的例子:
+
+(1)$X \times Y$到$X$的映射:$f(x,y)=x$;$X \times Y$到$Y$的映射:$f(x,y)=y$.
+
+(2)$R$是$X$上的等价关系,$X$到$X/R$的映射:$f(x)=x/R$,称为canonical map.
+
+对于映射$f$,可以定义$X$上的等价关系如下:
+\[
+x/R=\{y:f(y)=f(x)\},
+\]
+也就是说$aRb\Leftrightarrow f(a)=f(b)$.令$y \in Y$,$g(y)=\{x \in X:f(x)=y\}$,此时,$g(y)=x/R$.
+
+(3)$A \subset X$,$A$的特征函数:$\chi(x)=1$,$x \in A$,$\chi(x)=0$,$x \notin A$,对于$A \subset X$,或者$A \in P(X)$,则$A \to \chi_A$也是一个一一映射.
+
+习题:(i)$Y^{\emptyset}$恰好有一个元素,$\emptyset$,无论$Y$是否为空集;(ii)如果$X$不是$\emptyset$,则$\emptyset^X$为空.
+
+这里涉及到了空集,证明方法通常是反证.
+
+$Y^{\emptyset}$表示的是所有$\emptyset$到$Y$的映射,需要证明$\emptyset$是映射,而映射又是特殊的关系$R$,需要证明$\emptyset$是关系,或者说$\emptyset$是有序对的集合,反证,如果$\emptyset$不是关系,那么应该存在元素$\alpha$不是有序对,而这是不可能的.接下来,$\emptyset$是一个映射,也就是对每一个$x \in \emptyset$,存在唯一的$y \in Y$,使$x\emptyset{}y$,这是成立的,也就是如果$\emptyset$不是一个映射,也就是存在$x \in \emptyset$,或者不存在$y \in Y$,使得$x \emptyset y$,或者有两个以上的$y_1$,$y_2$,使得$x \emptyset y_1$,$x \emptyset y_2$,这都不可能.对于任何其他映射或者关系,都要求有元素$x \in \emptyset$,这是不可能的,因此,$\emptyset$是$Y^{\emptyset}$的唯一元素.
+
+假设存在$f \in \emptyset^X$,则对于$x \in X$,$\exists y \in \emptyset$使$f(x)=y$,这是不可能的.
+
+簇:从指标集$I$到$X$的映射.把并集和交集运算推广到集合簇,
+\begin{gather*}
+\bigcup_{i \in I}{A_i} \text{或} \bigcup_{i}{A_i}\\
+\bigcap_{i \in I}{A_i} \text{或} \bigcap_{i}{A_i}
+\end{gather*}
+$\{I_j\}$是$J$上的集合簇,$K=\bigcup_{j}{I_j}$,$\{A_k\}$为$K$上的集合簇,结合律就是
+\[
+\bigcup_{k \in K}{A_k} = \bigcup_{j \in J}{(\bigcup_{i \in I_j}{A_i})}.
+\]
+
+交换律的推广:
+\[
+(\bigcup_{i \in I}{A_i}) \cup (\bigcup_{j \in J}{A_j}) = (\bigcup_{j \in J}{A_j}) \cup (\bigcup_{i \in I}{A_i}).
+\]
+
+设$\{A_i\}$是$X$的子集簇,$B \subset X$,则
+\begin{gather*}
+B \cap \bigcup_{i}{A_i} = \bigcup_{i}{(B \cap A_i)} \\
+B \cup \bigcap_{i}{A_i} = \bigcap_{i}{(B \cup A_i)}
+\end{gather*}
+这是分配律.
+
+如果$\{A_i\}$和$\{B_j\}$均为集合簇,则
+\begin{gather*}
+(\bigcup_{i}{A_i}) \cap (\bigcup_{j}{B_j}) = \bigcup_{ij}{(A_i \cap B_j)} \\
+(\bigcap_{i}{A_i}) \cup (\bigcap_{j}{B_j}) = \bigcap_{ij}{(A_i \cup B_j)}
+\end{gather*}
+这里$\bigcup_{ij}$是指$\bigcup_{(i,j) \in I \times J}$.
+
+设$x \in (\bigcup_{i}{A_i}) \cap (\bigcup_{j}{B_j})$$\Leftrightarrow$$x \in \bigcup_{i}{A_i}$且$x \in \bigcup_{j}{B_j}$,$\exists i_0$,$j_0$,$x \in A_{i_0}$,$x \in B_{j_0}$$\Leftrightarrow$$x \in A_{i_0} \cap B_{j_0}$$\Leftrightarrow$$x \in \bigcup_{ij}{(A_i \cap B_j)}$.
+
+另一等式的证明方法类似.
+
+笛卡尔积的推广,笛卡尔积是集合
+\[
+X \times Y = \{(x,y)|x \in X, y \in Y\},
+\]
+考虑集合$\{a,b\}$,$a \neq b$;$Z$为$\{a,b\}$上的集合簇
+\[
+Z = \{\{z_a,z_b\}|z_a \in X, z_b \in Y\},
+\]
+于是$Z$到$X \times Y$有一个映射:$f(z)=(z_a,z_b)$.推广到一般情形,
+\[
+\times_{i \in I}{X_i} = \{\{x_i\}_{i \in I}|x_i \in X_i\},
+\]
+若$X_i=X$,则记号$\times_i{X_i}$变为$X^I$.
+
+设$\{X_i\}_{i \in I}$为集合簇,$X = \times_i{X_i}$,$J \subset I$,此时存在一个自然的映射,所谓的投影映射.$X \to \times_{i \in J}{X_i}$.
+
+$x \in X$,$f(x)=y \in \times_{i \in J}{X_i}$,其中$y_i=x_i$,$i \in J$.
+
+习题:证明$(\bigcup_{i}{A_i}) \times (\bigcup_{j}{B_j}) = \bigcup_{ij}{(A_i \times B_j)}$,对交也是成立的,另外,$\bigcap_{i}{X_i} \subset X_j \subset \bigcup_{i}{X_i}$,有这个结论,可以把交集和并集定义为包含关系的极大极小值.
+
+(1)设$(a,b) \in (\bigcup_{i}{A_i}) \times (\bigcup_{j}{B_j})$$\Leftrightarrow$$a \in \bigcup_{i}{A_i}$,$b \in \bigcup_{j}{B_j}$$\Leftrightarrow$$a \in A_{i_0}$,$b \in B_{j_0}$$\Leftrightarrow$$(a,b)\in A_{i_0} \times B_{j_0}$$\Leftrightarrow$$(a,b)\in \bigcup_{ij}{(A_i \times B_j)}$.
+
+(2)$\forall x \in \bigcap_{i}{X_i}$$\Rightarrow$$x \in X_j$$\Rightarrow$$\bigcap_{i}{X_i}\subset X_j$;$\forall x \in X_j$$\Rightarrow$$x \in \bigcup_{i}{X_i}$$\Rightarrow$$X_j \subset \bigcup_{i}{X_i}$.
+
+设$X_j \subset Y$,对任意$j$成立,则$\bigcup_{i}{X_i} \subset Y$成立;这意味着$\bigcup_{i}{X_i}$是满足对所有的$j$,$X_j \subset Y$的$Y$中的最小的.
+
+若对每一个$j$,$Y \subset X_j$,则$Y \subset \bigcap_{i}{X_i}$,这意味着$\bigcap_{i}{X_i}$是满足对所有的$j$,$Y \subset X_j$中的最大的集合.
+
+
+\section{2013年05月12日}
+反函数与复合函数
+
+首先是概念.
+
+(1)$f$为$X$到$Y$的映射,定义$f^{-1}$为$P(Y)$到$P(X)$的映射,即$B \subset Y$,
+\[
+f^{-1}(B) = \{x \in X:f(x) \in B\},
+\]
+这里$f^{-1}(B)$称为$B$在$f$下的逆像(inverse image).$f^{-1}$还有另一个含义:从$f$的值域到$X$的一个函数,$f^{-1}(y)=\{x\}$$\Leftrightarrow$$f(x)=y$,不过这只是对于一一对应成立.
+
+(2)$f$是$X$到$Y$的映射,$g$是$Y$到$Z$的映射,可以定义一个$X$到$Z$的映射$h$如下:$h(x)=g(f(x))$,$x \in X$,称$h$为$f$与$g$的复合映射.
+
+下面是一些重要的关系式:
+
+(1)$\{A_i\}$为$X$的子集簇,则
+\begin{gather*}
+f(\bigcup_{i}{A_i}) = \bigcup_{i}{f(A_i)} \\
+f(\bigcap_{i}{A_i}) \subset \bigcap_{i}{f(A_i)}
+\end{gather*}
+
+第一个关系式:$y \in f(\bigcup_{i}{A_i})$$\Leftrightarrow$$\exists x \in \bigcup_{i}{A_i}$,$f(x)=y$$\Leftrightarrow$$x \in A_{i_0}$,$f(x)=y$$\Leftrightarrow$$y \in f(A_{i_0})$$\Leftrightarrow$$y \in \bigcup_{i}{f(A_i)}$.
+
+第二个关系式:$y \in f(\bigcap_{i}{A_i})$$\exists x \in \bigcap_{i}{A_i}$,$f(x)=y$$\Rightarrow$$y \in f(A_i)$,$\forall i$$\Leftrightarrow$$y \in \bigcap_{i}{f(A_i)}$.
+
+第二个等式之所以不能成立等式,原因在于$y \in f(A_i)$,$\forall i$,是无法得出$\exists x \in \bigcap_{i}{A_i}$,$f(x)=y$.除非映射是一一的.下面是一个例子:$A_1=\{1,2\}$,$f(1)=1$,$f(2)=2$,$A_2=\{1,3\}$,$f(1)=1$,$f(3)=1$,此时$f(A_1)=\{1,2\}$,$f(A_2)=\{1,2\}$,这说明$2 \in f(A_2)$,但是不存在$x \in A_1 \cap A_2$,使$f(x)=2$.
+
+(2)$f$是$X$到$Y$上(onto)的函数的充要条件是$Y$的任一非空子集在$f$下的逆像是$X$的非空子集.
+
+$\Rightarrow$ 设$y$属于$Y$的任一非空子集B,则由于$f$是$X$到$Y$上(onto)的,则存在$x$,使得$f(x)=y$,于是$x \in f^{-1}(y)$,$f^{-1}(y) \subset f^{-1}(B)$,$f^{-1}(B)$非空.
+
+$\Leftarrow$ 考虑单元素集$\{y\}$,由于$f^{-1}(y)$非空,存在$x \in f^{-1}(y)$,则$f(x)=y$.
+
+$f$是一一对应(one-to-one)的充要条件是$f$的值域中的每一个单元素集合在$f$下的逆像是$X$的单元素集合.
+
+(3)$B \subset Y$,$f(f^{-1}(B)) \subset B$.$f$是$X$到$Y$上(onto)的函数,$f(f^{-1}(B))=B$.
+
+证明难度不大,书中给出详细的过程.
+
+(4)$A \subset X$,则$A \subset f^{-1}(f(A))$.$f$是一一对应,则$A = f^{-1}(f(A))$.
+
+证明难度不大,书中给出详细的过程.
+
+(5)$\{B_i\}$为$Y$的子集簇,则
+\[
+f^{-1}(\bigcup_{i}{B_i}) = \bigcup_{i}{f^{-1}(B_i)};\quad f^{-1}(\bigcap_{i}{B_i}) = \bigcap_{i}{f^{-1}(B_i)}.
+\]
+
+(6)$f^{-1}(Y-B) = X - f^{-1}(B)$;
+
+(7)函数的复合不满足交换律,但是满足结合律:$h(gf)=(hg)f$.
+
+(8)把逆映射和复合映射联系起来的等式特别重要.$f$是$X$到$Y$的映射,$g$是$Y$到$Z$的映射,此时,$f^{-1}$是$P(Y)$到$P(X)$的映射,$g^{-1}$映$P(Z)$到$P(Y)$,此时,$gf$与$f^{-1}g^{-1}$都有意义,且有$(gf)^{-1}=f^{-1}g^{-1}$.
+
+这里的一些关系可以推广到更一般的关系上去,书中给出了详细的过程,这里不叙述了.考虑$X$上的关系:$I$为$X$上的相等关系,此时$I$类似于乘法单位元的作用,$IR=RI=R$对于$X$中的每一个关系成立,使用代数形式来表示等价关系为:(i)自反:$I \subset R$;(ii)对称:$R \subset R^{-1}$;(iii)传递:$RR \subset R$.
+
+习题:$f$为$X$到$Y$的映射:(i)设$g$是$Y$到$X$的映射,若$gf$是$X$上的恒等映射,则$f$是一一对应,而$g$是$Y$到$X$上(onto)的.(ii)对$X$的任意子集$A$,$B$,$f(A \cap B)=f(A) \cap f(B)$成立的充要条件是$f$是一一对应;(iii)对$X$的任意子集$A$,$f(X-A) \subset Y-f(A)$成立的充要条件是$f$是一一对应;(iv)对$X$的任意子集$A$,$Y-f(A) \subset f(X-A)$成立的充要条件是$f$是$X$到$Y$上(onto)的映射.
+
+(i)设$f(x_1)=f(x_2)$ $\Rightarrow$ $gf(x_1)=gf(x_2)$ $\Rightarrow$ $x_1=x_2$,从而$f$是一一对应;对于$\forall x \in X$,令$y=f(x)$,则$g(y)=gf(x)=x$,即$g$是$Y$到$X$上的.
+
+(ii)设$f(A \cap B) = f(A) \cap f(B)$,对任意$A$,$B$成立,欲证$f$是一一对应,设$f(x_1)=f(x_2)$,令$A=\{x_1\}$,$B=\{x_2\}$,则$f(A) \cap f(B) \neq \emptyset$,设$y \in f(A) \cap f(B)$,这意味着$A \cap B \neq \emptyset$,这只有在$x_1=x_2$时才可能.
+
+反之,如果$f$是一一对应.$\forall y \in f(A \cap B)$ $\Leftrightarrow$ $\exists x \in A \cap B$,使$y=f(x)$ $\Leftrightarrow$ $\exists x \in A$且$x \in B$ $\Leftrightarrow$ $y \in f(A)$,且$y \in f(B)$(这一步使用了$f$是一一的)$\Leftrightarrow$ $y \in f(A) \cap f(B)$.
+
+(iii)设$f(X-A) \subset Y-f(A)$对任意$A \subset X$成立,欲证$f$是一一对应,设$f(x_1)=f(x_2)=y$,令$A=\{x_1\}$,我们要证明$x_2 \in A$,从而$x_1=x_2$,若$x_2 \neq A$,则$y \notin Y - f(x_1)$,$x_2 \in X-A$,从而$y \in f(X-A)$,矛盾.
+
+反之,若$f$是一一对应,$\forall y \in f(X-A)$ $\Rightarrow$ $\exists x \in X-A$,使$f(x)=y$ $\Rightarrow$ $x \notin A$ $\Rightarrow$ $f(x) \notin f(A)$ (这里面使用了$f$是一一的) $\Rightarrow$ $f(x) \in Y-f(A)$.
+
+(iv)$Y-f(A) \subset f(X-A)$,$\forall y \in Y$,我们要找一个$x$,使$f(x)=y$.对于$B=Y-\{y\}$,令$A=f^{-1}(B)$,则$f(A)=B$ $\Rightarrow$ $Y-f(A)=\{y\} \subset f(X-A)$ $\Rightarrow$ $\exists x \in X-A$,使$f(x)=y$.
+
+反之,$f$是$X$到$Y$上(onto)的,则$\forall y \in Y-f(A)$,设$f(x)=y$ $\Leftrightarrow$ $y \notin f(A)$ $\Rightarrow$ $x \notin A$ $\Leftrightarrow$ $x \in X-A$ $\Rightarrow$ $f(x) \in f(X-A)$.
+
+上面的推导过程中有几个$\Rightarrow$,这也是关系式为$\subset$而不是$=$的原因所在,这里简单讨论:$f(x) \notin f(A) \Rightarrow x \notin A$,若$x \in A \Rightarrow f(x) \in f(A)$.反过来是不一定成立的.也就是$f(x) \in f(A)$,不一定能够得出$x \in A$,因为有可能有另一个$x'$,使得$f(x')=f(x)$.
+
+\section{2013年5月18日}
+数是什么?这一节开始从集合论的角度建立起自然数体系,我个人的看法是:整个过程中有些思想方法值得学习,其余的可以仅仅做个了解,或者说类似书中引言的说法(read it,absorb it, and forget it),掌握之后,就可以把它忘记了,我们在使用的时候,继续遵循我们一致接收的中小学教育即可.北师大郇中丹老师的一个网络课程(数学分析,强烈推荐,即使不看其他的,至少应该看看第一讲绪论,这一讲虽然不涉及任何数学知识,但是很精彩!)中表示过这样一个意思(在第二讲集合论初步中):数学就是把我们生活中的一些事实说明白(我稍微扩充了一下).那么这一节以及接下来的几节内容,就是为了把数说明白,为数建立更严密的逻辑基础.我认为它有理论上的重要性,对于应用基本上意义不大.书中作了一个类比,我觉得很能说明一些东西.我们如何来定义"米"这个单位呢?或者如何定义长度呢?我们是通过指定一个物体的长度作为基准,然后所有其他的长度与之作比较.这里面,其实我们还有一个疑问,长度本身又是什么含义?在这里,我们其实并没有给出长度或者"米"本身的明确的定义,我们通过比较来给出我们需要的.
+
+类似的,我们如何来定义自然数呢?我们其实无法说出自然数是什么?但是我们可以通过一些关系建立起自然数.例如,我们不知道2到底是什么?但是我们知道它是排在1后面的,在3前面的,2是1的后继,3是2的后继,这说明我们需要一个后继的概念,用什么方法来定义这个后继呢:$x^+=x \cup \{x\}$.这是目前常用的一个方法,首先这个方法只涉及集合的概念,需要的很少,我们再定义$0=\emptyset$,于是通过$\emptyset$,并集等就得到了自然数,这里我们需要一个公理:
+
+\begin{axiom}[无限公理(Axiom of infinity)]
+存在一个集合,包含0和它的每一个元素的后继(successor).
+\end{axiom}
+
+集合$A$称为successor set,如果$\emptyset \in A$,且$\forall x \in A$,必有$x^+ \in A$.于是无限公理可以描述为:存在一个successor set $A$.
+
+任一非空的successor簇的交集是一个successor set.证明如下:令$A=\bigcup_{i}{A_i}$,$i \in I$,$I$非空,由于$0 \in A_i$,$\forall i \in I$,于是$0 \in \bigcap_{i}{A_i}$,也就是$0 \in A$.设$x \in A$,则$x \in A_i$,$\forall i \in I$,于是$x^+ \in A_i$,$\forall i \in I$,故$x^+ \in \bigcap_{i}{A_i}$.
+
+由此我们可以令$\omega$为每一个successor set的子集,这样的$\omega$是存在的并且是唯一的.$\omega$中的元素就是自然数.
+
+书中的这一节的后面是定义了一个序列sequence,并且把交,并,笛卡尔积推广到序列上,这里不讨论了.
+
+\section{2013年05月25日}
+Peano公理
+
+这一节继续自然数的讨论.从上一节关于自然数的定义,可以得到如下结论:
+
+(I)$0 \in \omega$;
+
+(II)如果$n \in \omega$,则$n^+ \in \omega$;这里$n^+= n \cup \{n\}$.
+
+(III)(数学归纳原理)设$S \subset \omega$,若$0 \in \S$,并且当$n \in S$时必有$n^+ \in S$,则$S=\omega$;
+
+(IV)$n^+ \neq 0$,对所有$n \in \omega$成立;因为$n^+$包含$n$,非空,自然有$n^+ \neq 0$.
+
+(V)若$n,m \in \omega$,且$n^+=m^+$,则$n=m$.
+
+这一个结论的证明比较费劲,书中给出了详细的过程,由于这个过程是归纳法,反证法相关方法的典型应用,这里给出详细过程.它的证明需要两个辅助命题:(i)不存在自然数,它是其元素的子集,由此可以得到$n \notin n$.(ii)一个自然数的每一个元素都是它的子集.对于(ii),引入一个概念:transitive set.集合$E$称为transitive set,如果集合$E$包含所有它的元素,或者说:$x \in y$,$y \in E$,必有$x \in E$,也就是$y \subset E$.于是(ii)实际上是说每一个自然数都是transitive set.
+
+(i)我们实际上需要证明:对于每一个自然数$n$,$x \in n$,那么$n$不可能是$x$的子集.如果令$S=\{n \in \omega| \forall x\in n, n \subset x \text{不成立}\}$,我们需要证明$S = \omega$.使用归纳法:
+
+(a)$0 \in S$成立,因为不存在$x \in 0$,也就无所谓$0 \subset x$问题了.
+
+(b)若$n \in S$,要证明$n^+ \in S$.
+
+首先$n$本身是$n$的子集,这也就意味着不可能有$n \in n$,即$n \notin n$,于是$n^+$不是$n$的子集,因为$n \in n^+=n \cup \{n\}$.若$n^+ \subset x$,则$n \subset x$,而$n \in S$,故$x \notin n$,也就是说$n^+$也不可能是$n$的任一元素的子集,有了这两点,说明$n^+$不是$n^+$的元素的子集,$n^+ \in S$.获证.
+
+(ii)令$S = \{n \in \omega| n\text{为transitive set}\}$.需要证明$S = \omega$,同样使用归纳法.
+
+(a)首先$0 \in S$成立,否则意味着存在$y \in 0$,使得$y$不是$0$的子集,这是不可能的.
+
+(b)若$n \in S$,要证明$n^+ \in S$;要时刻注意$n^+ = n \cup \{n\}$,若$x \in n^+$,则或者$x \in n$,或者$x = n$,若$x \in n$,而$n \in S$,于是$x \subset n \subset n^+$,若$x=n$,则$x \subset n^+$也成立,这意味着$x$是$n^+$的子集.$n^+ \in S$.获证.
+
+有了这两个辅助命题的帮助,可以来证明(V)了.$n^+=m^+$,而$n \in n^+$,于是$n \in m^+$,于是$n \in m$或者$n=m$,由对称性,从另一方面推导将有$m \in n$或$m=n$,若$m \neq n$,则有$n \in m$和$m \in n$同时成立,根据(ii)每一个自然数满足transitive,有$n \in n$,注意到$n \subset n$总是成立,又和(i)发生矛盾.
+
+上述五条也常被称为Peano公理,这可能是用的最多的自然数的公理体系.德国数学家E.Landau写了一本《分析基础》(Foundations of Analysis),其中从Peano公理出发,完整推导了自然数到整数,到有理数,实数,复数的整个过程.
+
+数学归纳法不仅仅可以用于证明,还可以用作定义.
+
+设$f$是$X$到$X$的映射,$a \in X$,一个比较自然的想法是按如下方式定义一个序列$\{u(n)\}$(从$\omega$到$X$的映射):$u(0)=a$,$u(1)=f(u(0))$,$u(2)=f(u(1))$,...使用数学归纳法可以证明只要存在这样的$u(n)$,它就是唯一的,接下来还需要证明存在性,这就是下面的定理:
+
+\begin{theorem}[归纳定理(Recursion Theorem)]
+若$a$是$X$中的元素,$f$是$X$到$X$的映射,那么存在一个$\omega$到$X$的映射$u$,使得$u(0)=a$,且对所有$n \in \omega$,有$u(n^+)=f(n(n))$.
+\end{theorem}
+
+这个定理的应用就是所谓的递归定义,书中给出了详细的证明.这里复述如下:证明的总的思路是构造一个$u$,然后证明$u$是一个映射,并且满足条件.
+
+首先注意到$\omega$到$X$的映射是$\omega \times X$的一个特殊子集,令$\mathscr{C}$为所有满足如下条件的$A$的集合:$A$是有序对的集合,也就是$A \subset \omega \times X$,且$(0,a) \in A$,对于任意的$(n,x) \in A$,必有$(n^+,f(x)) \in A$.
+
+这个$\mathscr{C}$是非空的,因为$\omega \times X$本身满足条件,令$u$为所有$\mathscr{C}$中元素的交集,
+\[
+u = \bigcap_{A \in \mathscr{C}}{A}.
+\]
+下面证明$u \in \mathscr{C}$,首先$(0,a) \in A$,$\forall A \in \mathscr{C}$,故$(0,a) \in u$,其次,若$(n,x) \in u$,则$(n,x) \in A$,$\forall A \in \mathscr{C}$,故$(n^+,f(x)) \in A$,$\forall A \in \mathscr{C}$,于是$(n^+,f(x)) \in u$.
+
+接下来若能证明$u$是一个映射,那么$u$就是满足条件的,也就是说对于每一个自然数$n \in \omega$,都有一个唯一的$x \in X$,使得$(n,x) \in u$.从$u$的构造可以知道,$x$的存在是成立的,接下来只要证明唯一性,也就是如果$(n,x) \in u$,$(n,y) \in u$,那么必有$x=y$.同样使用归纳法来证明,先构造集合$S = \{n \in \omega : (n,x) \in u, (n,y) \in u \Rightarrow x=y\}$.证明中要使用$u$的一个在包含关系下的极小性质,需要一些反证技巧.
+
+(a)$0 \in S$,如果不成立,在存在$b$使得$(0,b) \in u$,于是考虑$u - \{(0,b)\}$,它同样是$\mathscr{C}$中的元素,这与$u$的定义矛盾.
+
+(b)设$n \in S$,欲证$n^+ \in S$.$n \in S$$\Rightarrow$$(n,x) \in u$,$x$是唯一的,于是$(n^+,f(x)) \in u$,(这是$u$的定义),若$n^+ \notin S$,$\exists y \neq f(x)$,$(n^+,y) \in u$,考虑$u-\{(n^+,y)\}$,此时再次得到一个$u$的真子集同样属于$\mathscr{C}$,从而引发矛盾.
+
+习题:(1)若$n$为自然数,则$n \neq n^+$;(2)若$n \neq 0$,则存在$m$使得$n=m^+$;(3)证明$\omega$是reansitive set.(4)若$E$是某个自然数的非空子集,则存在$k \in E$,使得对于任意的异于$k$的$m \in E$,有$k \in m$.
+
+(1)令$S = \{n \in \omega:n \neq n^+\}$,证明$S=\omega$.
+
+首先$0 \in S$,因为$0 \neq o^+$.
+
+其次,若$n \in S$,要证明$n^+ \in S$,否则,意味着$n^+=(n^+)^+$,于是$n=n^+$,与假设矛盾.
+
+(2)结论很明显,问题在于我们如何表示出这个$m$,$n \neq 0$,说明存在$x \in n$.我们令
+\[
+m = \bigcup_{A \in n}{A}.
+\]
+下面证明$n=m^+$.
+
+$\forall x \in n$$\Rightarrow$$x \subset m$$\Rightarrow$$x \in m^+$.
+
+$\forall x \in m^+$,意味着$x=m$或$x \in m$,若$x \in m$,$\exists A_0, x \in A_0$,$A_0 \in n$,$A_0 \subset n$(前面的辅助命题(ii)),于是$x \in n$.获证.
+
+这里似乎有问题:第一部分$x \subset m$$\Rightarrow$$x \in m^+$恐怕不严密,因为对于一般集合不成立,只是自然数满足,第二部分缺少$x=m$的情形.$m \in n$的证明并不轻松.
+
+(3)它实际上是要证明每一个自然数是$\omega$的子集.使用归纳法.$0$显然是$\omega$的子集;假设$n$是$\omega$的子集,欲证$n^+$是$\omega$的子集,$\forall \in n^+$,应该证明$x \in \omega$,此时$x=n$或者$x \in n$,$x=n \in \omega$;$x \in n \subset \omega$,同样有$x \in \omega$.获证.
+
+(4)实际上是寻找集合$E$中的最小自然数.令$k=\bigcap_{A \in E}{A}$即可.因为$E$非空,$k$的存在性不是问题.但是需要证明$k \in E$,以及$k \in m$,$m \in E$,且$m \neq k$.
+
+(2)和(4)的构造我觉得是没有问题的,可是严密的证明总是没有得到,想了几天没有太好的思路.
+
+\section{2013年05月26日}
+算术
+
+使用归纳定义,可以给出自然数的加法,乘法和幂的定义,减法和除法在自然数并不总是可行的,可以定义为加法和乘法的逆运算.
+
+加法:$s_m(0)=m$,$s_m(n^+)=(s_m(n))^+$;也就是$s_M(n)=m+n$.
+
+乘法:$p_m(0)=0$,$p_m(n^+)=p_m(n)+m$;也就是$p_M(n)=m \cdot n$.
+
+幂次:$e_m(0)=1$,$e_m(n^+)=e_m(n) \cdot m$;也就是$e_M(n)=m^n$.
+
+书中给出了加法结合律的证明,作为数学归纳法的典型应用,这里也记录之:
+
+要证明
+\[
+(k+m)+n=k+(m+n).
+\]
+对$n$作归纳.
+
+(i)$(k+m)+0=k+m=k+(m+0)$;
+
+(ii)假设对于$n$成立,对于$n^+$来说,
+\[
+(k+m)+n^+ = ((k+m)+n)^+=(k+(m+N))^+=k+(m+n)^+=k+(m+n^+).
+\]
+
+对于交换律:$m+n=n+m$,在使用归纳法的时候,需要一些技巧.直接对$m$或者$n$做归纳,都不容易成功,因为$m+0=0+m$这一步本身就很麻烦,于是我们分两步走:
+
+(1)$0+n=n+0$.
+
+(i)$n=0$显然成立:$0+0=0$.
+
+(ii)$0+n^+=(0+n)^+=(n+0)^+=n^+=n^++0$.最后一步自然数加法的定义.
+
+(2)$m^++n=(m+n)^+$.
+
+仍然是对$n$归纳:
+
+(i)$m^++0=m^+=(m+0)^+$;
+
+(ii)假设对$n$成立,$m^++n^+=(m^++n)^+=((m+n)^+)^+=(m+n^+)^+$.
+
+接下来证明交换律,对$m$进行归纳.(i)$m=0$已经成立,(ii)假设交换律对于$m$成立,对于$m^+$来说,$m^++n=(m+n)^+=(n+m)^+=n+m^+$.
+
+乘法的交换律和结合律可以用同样的方法证明.
+
+两个自然数$m$和$n$是可比较的(comparable),若$m \in n$,或$m=n$,或$n \in m$.我们有结论:任意两个自然数是可比较的.这个结论比较重要,书中给出了详细证明.令
+\[
+S(n)=\{m \in \omega: m \text{与} n\text{是可比较的}\},
+\]
+以及$S = \{n \in \omega:S(n)=\omega\}$.我们需要证明$S=\omega$,这里同样应用数学归纳法.
+
+(i)$0 \in S$,或者$S(0)=\omega$,使用归纳法:(a)$0 \in S(0)$,(b)$m \in S(0)$,则$m^+ \in S(0)$.
+
+(ii)若$n \in S$,则$n^+ \in S$,首先$0 \in S(n^+)$,因为$n^+ \in S(0)$.接下来需要从$m \in S(n^+)$出发推导出$m^+ \in S(n^+)$.$m \in S(n^+)$,意味着$m \in n^+$,或者$m=n^+$,或者$n^+ \in m$,后两者立即可以得到$n^+ \in m$,故只要讨论$m \in n^+=n \cup \{n\}$情形.于是$m=n$或$m \in n$,从$m=n$可以得到$m^+=n^+$.于是接下来讨论$m \in n$这一情形,从$S(n)=\omega$可知$m^+ \in S(n)$,于是$m^+ \in n$,或者$m^+=n$,或者$n \in m^+$.前面两个可以得到$m^+ \in n^+$,这就讨论一个情形:$n \in m^+$,但是它不能和$m \in n$同时成立.因为$n \in m^+$会得到$n=m$,或者$n \in m$,都有$n \subset m$,这与$m \in n$不能同时成立(前一节的结论).
+
+$m \in n$,$m=n$和$n \in m$有且仅有一个成立.
+
+若$m \in n$和$m=n$同时成立,$m=n$$\Rightarrow$$n \subset m$,不可能;若$m \in n$和$n \in m$$\Rightarrow$$m \in m$(transitive),$m \subset m$不可能.若$m=n$,$n \in m$,$\Rightarrow$$m \subset n$,同样不成立.
+
+任一自然数不可能是它的元素的子集,另一个结论是不相同的$m$,$n$满足$m \in n$的充要条件是$m \subset n$.$m \in n \Rightarrow m \subset n$可以同$n$的transitive性质得到;$m \subset n$,$n \in m$不可能,否则$m$是它的某个元素$m$的子集.
+
+$m \in n$定义为$m \subset n$,$m \in n$或者$m=n$定义为$m \le n$.
+
+习题:若$m<n$,则$m+k<n+k$,若$m<n$,$k \neq 0$,则$m \cdot k < n \cdot k$,若$E$是非空的自然数集,则存在$k \in E$,使得$k \le m$对所有的$m \in E$成立.
+
+(i)对$k$施加归纳法,(a)$k=0$时,就是题设本身,结论成立;(b)假设结论对于$k$成立,对于$k^+$来说,$m+k^+=(m+k)^+<(n+k)^+=n+k^+$.我们需要证明若$m<n$,则$m^+<n^+$,这里一点可以这样得到:$m<n$,可以得到$m \in n$$\Rightarrow$$m \subset n$$\Rightarrow$$m \subset n^+$,$m \in n$$\Rightarrow$$m \in n^+$$m \subset n^+$,因此$m^+ \in n^+$,$m^+ < n^+$.
+
+(ii)似乎不是很容易,我们换一个思路,我们证明,对于任意自然数$k$,有$mk^+<nk^+$.使用归纳法以及刚刚证明的关于加法的结论即可.
+
+(a)$k=0$,$mk^+=m<n=nk^+$;(b)$m(k^+)^+=mk^++m<nk^++m<nk^++n=n(k^+)^+$.
+
+(iii)这实际上是前一节已经出现过的题目.
+
+\section{2013年06月01日}
+继续上一节的算术.
+
+我们称集合$E$和$F$是对等(equivalent)的,如果存在一个$E$和$F$之间的一一对应,这是一个等价关系.
+
+自然数$n$的每一个真子集对等于某个比$n$小的自然数,或者说$n$的元素.证明使用归纳法.$n=0$是平凡的,如果对于$n$成立,那么对于$n^+$来说,对于$n^+$的真子集$E$,可能出现这样几个情形:$E$是$n$的真子集,此时根据归纳假设,结论成立;若$E=n$,那结论自然成立,$n$中恒等映射;最后一个情形是$n \in E$,此时,存在$k \in n$,但是$k \notin E$,定义$E$上的映射$f$如下:当$i \neq n$时,$f(i)=i$,否则$f(n)=k$,这个$f$是$E$到$n$的一一对应.再使用归纳假设,以及一一对应关系的传递性,可以知道结论成立.
+
+一个多少令人有些意味的事实是:一个集合可以和它的真子集对等.一个最好的例子就是$f(n)=n^+$,自然数集与非零自然数集之间的一个一一对应关系.但是对于自然数$n$,它不能和$n$的任一真子集对等.同样可以使用归纳法证明.从$n$到$n^+$这一步,分$n \in E$和$n \notin E$来讨论,$n \in E$时,取$E-\{n\}$.
+
+集合$E$称为有限(finite)的,如果它与某个自然数对等,否则就称为无限的(infinite),
+
+习题:用这个定义证明自然数集$\omega$是无限的.
+
+我们使用反证法,通过构造出一个自然数$n$和它的真子集之间的一一对应来得到矛盾.首先$\omega$显然不可能和$0$对等,于是假设$\omega \sim n$,那么$n \neq 0$,前面已经证明过,此时存在自然数$m$,$n=m^+$.
+
+假设$f$是$\omega$和$n$之间一一对应,设$f(0)=k$,则$k \le n$,我们构造$\omega-\{0\}$到$m$之间的映射$g$如下:若$x<k$,令$g(x)=f(x)$,当$x \ge m$时,$g(x)=f(x^+)$,那么这个$g$是一一的,于是我们有了$n \sim \omega \sim \omega-\{0\} \sim m$,于是自然数集和它的一个真子集对等了,发生矛盾.
+
+一个集合最多与一个自然数对等.
+
+任何两个不同的自然数$m$,$n$,必有$m \in n$或$n \in m$,无论如何其中一个是另一个的真子集,而自然数不可能与其真子集对等.由此可知有限集不可能和它的真子集对等,即对于有限集来说,整体大于部分成立.
+
+习题:使用有限的定义的这个推论证明$\omega$是无限的.
+
+因为$\omega$可以与$\omega-\{0\}$对等,从而不是有限的.
+
+一个自然数的每一个子集与某个自然数对等,自然说明有限集的每一个子集是有限的.
+
+有限集$E$的元素个数定义为与$E$对等的那个自然数,记为$\#E$,这个自然数是唯一的,$\#E$是$P(X)$到$\omega$的一个映射.
+
+(1)$E \subset F$,则$\#E \le \#F$,$E$,$F$都是有限集.
+
+$E \sim \#E$,$F \sim \#F$,$\#E$对等于$F$的某个子集,$\#E \le \#F$.
+
+(2)$E$,$F$为有限集,则$E \cup F$也是有限的,而且当$E$与$F$不相交时:$\#(E \cup F) = \#(E) + \#(F)$.
+
+若$m$与$n$为自然数,则$m$在$m+n$中的补集与$n$对等.对$n$使用归纳法.
+
+(3)$E$,$F$为有限集,则$E \times F$与$E^F$均为有限集,且$\#(E \times F) - \#(E) \cdot \#(F)$,$\#(E^F)=(\#(E))^{(\#(F))}$.
+
+习题:有限个有限集的并集是有限的,若$E$是有限的,则$P(E)$是有限的,$\#(P(E))=2^{\#(E)}$,若$E$是非空的自然数的有限集,则存在$k \in E$,使得$m \le k$,$\forall m \in E$.
+
+\section{2013年06月09日}
+次序(order)
+
+这一节主要是各种定义:
+
+(1)集合$X$中的关系$R$称为是反对称的(antisymmetric),如果$xRy$,$yRx$同时成立,必有$x=y$.
+
+(2)关系$R$称为偏序(partial order),如果关系$R$满足自反的(reflexive),反对称的(antisymmetric),传递的(transitive),此时通常使用符号$\le$.$\forall x,y,z \in X$,(i)$x \le x$;(ii)若$x \le y$,$y \le x$,必有$x=y$;(iii)若$x \le y$,$y \le z$,则$x \le z$.
+
+这里之所以使用偏序,是因为有可能在$X$中存在元素$x$,$y$,无法确定序关系,如果对于$X$中的每一个元素$x$和$y$,或者$x \le y$,或者$y \le x$,则称$\le$为全序(total order, simple order, linear order).一个全序集常称为链(chain).
+
+偏序集是指带有偏序关系的集合,记作$(X, \le)$.类似的,全序集是指带有全序关系的集合.
+
+(3)对于$X$中的偏序$\le$,我们称$y \ge x$,如果$x \le y$;$x < y$或者$y>x$,如果$x \le y$,且$x \neq y$,称$x$是predecessor of $y$,$y$是successor of $x$.
+
+对于关系$<$,有(i)$x<y$和$y<x$不能同时成立;(ii)$x<y$,$y<z$,则有$x<z$,也就是$<$是传递的.
+
+反过来,我们可以从$<$出发定义$\le$,如果关系$<$满足(i)和(ii),然后定义$x \le y$,如果$x<y$或者$x=y$,那么$\le$是一个偏序.
+
+可以把$\le$和$<$的这种关系推广到一半的关系,对于关系$R$和$S$,满足$xSy$,如果$xRy$,且$x \neq y$,此时称$S$是strict relation corresponding $R$.$R$是weak relation corresponding $S$.
+
+(4)对于偏序集$(X, \le)$,$a \in X$,集合$s(a)=\{x \in X: x < a\}$,称为the initial segment determined by $a$,$\bar{s}(a)=\{x \in X: x \le a\}$称为the weak initial segment determined by $a$.
+
+(5)若$x \le y$,$y \le z$,称$y$位于$x$和$z$之间(between $x$ and $z$),若$x<y$,$y<z$,称$y$是严格位于$x$和$z$之间(strictly between $x$ and $z$).若$x<y$,并且不存在元素严格位于$x$和$y$之间,称$x$是immediate predecessor of $y$,或者说$y$是immediate successor of $x$.
+
+(6)$X$为偏序集,若存在$a \in X$,使得$a \le x$,$\forall x \in X$,则称$a$为least (first,smallest) element of $X$,从反对称性可知这个元素是唯一的,类似,若存在元素$a \in X$,使得$x \le a$,$\forall x \in X$,称$a$为greatest (last, largest) element of $X$.对于自然数集,按照通常的次序,$0$是first element,而不存在last element,如果把次序颠倒过来,那么$0$是last element,而不存在first element.
+
+(7)对于偏序集$X$,$a \in X$称为minimal element,如果不存在$X$中的元素严格小于$a$ (strictly smaller than $a$),也就是从$x \le a$,将得到$x=a$;类似的,如果不存在元素严格大于$a$,称$a$为maximal element,于是从$a \le x$,必有$x=a$.
+
+必须注意least element和minimal element是有差别的,非空集合$X$的非空子集构成的集合$\mathscr{C}$,以包含关系作为偏序关系,此时每个单元素集合是minimal的,但是$\mathscr{C}$中一般情况下不存在least element,除非$X$中只有一个元素.
+
+(8)$X$为偏序集,$a \in X$,$E \subset X$,称$a$为$E$的下界(lower bound),若$\forall x \in E$,$a \le x$;称$a$为$E$的上界$upper bound$,若$\forall x \in E$,$x \le a$.注意,$E$中可以不存在上界或下界,也可以有多个上界或下界.后一种情况可以以自然数集作例子,$n$为$E$的上界,那么所有大于$n$的自然数都是$E$的上界.引入两个记号:
+\[
+\begin{aligned}
+E_*&=\{a \in X:\forall x \in E, a \le x\} \\
+E^*&=\{a \in X:\forall x \in E, x \le a\}
+\end{aligned}
+\]
+$E_*$以及$E_* \cap E$都可能是$\emptyset$,如果$E_* \cap E \neq \emptyset$,此时它必然只有一个元素.对于$E_*$来说,如果存在一个greatest element $a$,则称$a$为$E$的下确界(greatest lower bound或者infimum),记作g.l.b.或inf,类似,若$E^*$中包含一个least element $a$,则称$a$为$E$的上确界(least upper bound或supremum),记作l.u.b.或者sup.
+
+下面给出几个例子:
+
+(1)作为偏序的第一个例子,自然就是集合的包含关系,它是$P(X)$上的偏序,仅当$X$是单元素集的时候是全序.
+
+(2)全序的例子可以在自然数集中得到,
+
+(3)另一个偏序的例子是映射的扩张,给定集合$X$和$Y$,$F$为所有定义域在$X$中而值域在$Y$中的映射组成的集合.定义$F$上的关系$R$如下:$fRg$如果$\text{dom}{f} \subset \text{dom}{g}$,且$f(x)=g(x)$,$\forall x \in \text{dom}{f}$.也就是这意味着$f$是$g$的限制,而$g$是$f$的扩张.如果注意到映射是$X \times Y$的子集,那么$fRg$实际上就是$f \subset g$.
+
+(4)对于集合$\omega \times \omega$,我们可以定义不同的偏序:(i)$(a,b)R(x,y)$,如果$(2a+1)\cdot 2^y \le (2x+1) \cdot 2^b$,(ii)$(a,b)S(x,y)$,如果$a<x$,或者$a=x$且$b \le y$;这个次序称为字典序(lexicographical order).(iii)$(a,b)T(x,y)$,如果$a \le x$且$b \le y$.
+
+习题:使用$R$以及逆来表述关系$R$的反对称性和totality.
+
+$RR^{-1} \subset I$,$R = E \times E$.
+
+\section{2013年06月10日}
+选择公理
+
+对于很多有限情形下的操作,我们基本上不需要任何犹豫,但是在无限的情况下,很多操作需要精心考虑(其实在陶哲轩的《实分析》一书的第一章有不少例子).例如本节中出现的选择公理,它主要是针对无限的.
+
+一个集合,或者是空集,或者非空,对于非空集合,必然存在一个元素.对于两个集合$X$和$Y$,对于它们的笛卡尔积$X \times Y$,如果$X$和$Y$中至少有一个为$\emptyset$时,笛卡尔积为$\emptyset$,如果都不是空集,$X \times Y$必定不是空集.这个结论很容易推广到有限个$\{X_i\}$的情形.可以对于无限个$\{X_i\}$的情形,我们需要本节的选择公理(Axiom of choice).
+
+\begin{axiom}[选择公理]
+非空集合的非空簇的笛卡尔乘积是非空的(The Cartesian of a non-empty family of non-empty sets is non-empty).
+\end{axiom}
+
+用数学语言表示:考虑集合簇$\{X_i\}_{i \in I}$,这里每一个$X_i$都是非空集合,并且指标集$I$也是非空,此时存在一簇元素$\{x_i\}$,$i \in I$,使得$x_i \in X_i$,对每一个$i \in I$.
+
+设$\mathscr{C}$是非空集合簇,此时我们完全可以把$\mathscr{C}$作为指标集,于是可以应用选择公理,这样就存在一个定义在$\mathscr{C}$上的映射$f$,只要$A \in \mathscr{C}$,就有$f(A) \in A$.特别地,令$\mathscr{C}$为非空集$X$的所有非空子集组成的集合,也就是$P(X)-\{\emptyset\}$,于是存在映射$f$,$\forall A \in \mathscr{C}$,$f(A) \in A$,这个映射称为$X$上的选择映射(choice function).直观上说,我们的映射$f$能够从每一个集合中选择出一个元素,这里也是"选择公理"名称的由来.有限的情形是可以证明的,而对于无限情形,则有这个公理来保证.
+
+设$\mathscr{C}$是两两不相交的非空集合簇,此时存在集合$A$,使得$A \cap C$是单元素集合,$\forall C \in \mathscr{C}$.
+
+作为选择公理的应用,我们证明如下结论:若集合$X$是无限的,那么存在一个子集对等于$\omega$.直观的,既然$X$非空,那么存在$x_0 \in X$,由于$X$不与$1$对等,$X-\{x_0\}$是非空的,于是存在$x_1 \in X - \{x_0\}$,如此继续,存在$x_2 \in X - \{x_0,x_1\}$,等等,这将形成一个无限序列$\{x_n\}$,这里$x_n$互相不等.这里出现了一个需要无限选择的情形,需要依赖于选择公理.书中给出了完整的过程.作为选择公理的应用,这里也给出完整过程.
+
+考虑$X$中的选择映射$f$:$P(X)-\{\emptyset\} \to X$,$f(A) \in A$,$\forall A \in \text{dom}{f}$.令$\mathscr{C}$表示$X$中所有的有限子集组成的集合簇.由于$X$是无限的,$\forall A \in \mathscr{C}$,$X-A$非空,因而$X-A \in \text{dom}{f}$.接下来定义映射$g$:$\mathscr{C} \to \mathscr{C}$,$g(A)=A \cup \{f(X-A)\}$,我们从$\emptyset$出发,对于$g$使用归纳原理,存在$\omega$到$\mathscr{C}$的映射$U$,使得$U(0)=\emptyset$,$U(n^+)=U(n) \cup \{f(X-U(n))\}$,$\forall n \in \omega$.此时我们定义映射$v(n)=f(X-U(n))$,只要证明$v$是一个$\omega$到$X$的一个一一映射.那么$\omega$对等于$X$的一个子集($v$的值域).这只需要注意到:
+
+(i)$v(n) \notin U(n)$,$\forall n \in \omega$.理由:因为$f(X-U(n)) \in X-U(n)$,于是$v(n) \notin U(n)$.
+
+(ii)$v(n) \in U(n^+)$,$\forall n \in \omega$.$U(n^+)$的定义.
+
+(iii)对于自然数$n$,$m$,$n \le m$,则$U(n) \subset U(m)$.这同样可以由$U(n)$的定义得到,$U(m)$可以通过$U(n)$添加一个个元素得到的.
+
+(iv)对于自然数$n$,$m$,$n<m$,则$v(n) \neq v(m)$.因为根据(ii)和(iii),$v(n) \in U(m)$,而根据(i),$v(m) \notin U(m)$,因此两者不可能相等.
+
+这里最后的(iv)就是说明$v$把不同的自然数映射到$X$中不同的元素.因为任意两个不同的自然数,必有一个是严格小于另一个的.
+
+上述结论一个更重要的推论,它涉及到了无限的本质:一个集合是无限的,当且仅当它能够对等于一个真子集.前面已经证明过有限集合不能和真子集对等;下面假设$X$是无限的,设$v$是$\omega$到$X$的一一映射(单射),若$x$属于$v$的值域,即$x=v(n)$,令$h(x)=v(n^+)$,若$x$不属于$v$的值域,则令$h(x)=x$,此时$h$是$X$到$X$的一一映射,并且$h$的值域是$X$的真子集($v(0) \notin \text{ran}{(h)}$).Dedekind使用这个结论来定义无限集.
+
+\section{2013年06月11日}
+Zorn引理
+
+这一节只有一个主题:Zorn引理,证明过程很长!
+
+很多存在性定理,经常会归结到一个偏序集以及一个最大元的存在性,这其中Zorn引理是最重要的一个.
+
+\begin{lemma}[Zorn引理(Zorn's lemma)]
+若$X$是一个偏序集(partially set),它的每一个链(chain)都存在上界(upper bound),那么$X$中包含一个最大元(maximal element).
+\end{lemma}
+
+链(chain)是一个全序集,这里所谓$X$中的chain是指$X$的子集,它自身构成一个全序集.
+
+设$A$是$X$中的一个链,则根据题设要求,$X$中存在$A$的一个上界,这个上界不一定属于$A$,Zorn引理的结论是,存在一个元素$a \in X$,对于任意$x \in X$,如果$a \le x$,那么必有$a=x$.
+
+直观的,既然$X$非空,那么存在$x_0 \in X$,如果它是最大元,那就可以停止了.否则,存在$x_1$严格大于$x_0$,若$x_1$是最大元,停止,否则继续,Zorn引理是说,这个过程最终将能得到有一个最大元.
+
+这里面前面部分没有问题,问题在于最后一步,因为这里是可能是一个无限过程,它会停止吗?这也是这里的困难所在,因为完全可能出现,上面的过程永远得不到最大元,或者说得到是一个non-maximal elements序列,此时怎么办?其实此时这个序列本身是$X$中的链,从而有上界,于是从这个上界开始,继续上述过程,这个过程何时结束,会如何结束,在这里还是不清晰的,我们需要更明确的证明过程,书中的方法来自Zermelo.
+
+首先把抽象的偏序具体化:使用集合的包含关系.把问题进行转化,把抽象的变具体,通常是我们解决问题的思路所在.考虑weak initial segment $\bar{s}(x)$.用$\mathscr{S}$来表示$\bar{s}$的值域.$\mathscr{S}$是$P(X)$的子集.可以用包含关系形成一个偏序.$\bar{s}$是一个一一映射.并且$\bar{s}(x) \subset \bar{s}(y)$的充分必要条件是$x \le y$.于是寻找$X$中的最大元,实际上成了寻找$\mathscr{S}$中的最大元.关于$X$中的链的假设对应于$\mathscr{S}$中的链.
+
+用$\mathscr{X}$表示$X$中所有链的集合.这样的话$\mathscr{X}$也是$P(X)$的子集.$\mathscr{X}$中的每一个元素包含在某个$\bar{s}(x)$中,$\mathscr{X}$非空,我们以包含关系作偏序.若$\mathscr{C}$是$\mathscr{X}$中的一个链,那么$\bigcup_{A \in \mathscr{C}}{A}$属于$\mathscr{X}$,由于$\mathscr{X}$中的每一个集合包含在$\mathscr{S}$的某个集合中,从$\mathscr{S}$到$\mathscr{X}$这一个过程中没有引入新的最大元(maximal element).
+
+$\mathscr{X}$的好处:首先它把条件中关于链的假设更加具体化了,对于$\mathscr{S}$中的每一个链$\mathscr{C}$有上界,$\mathscr{C}$中集合的并集是$\mathscr{C}$的上界,它属于$\mathscr{X}$;另一方面,$\mathscr{X}$包含它的每一个元素的所有子集,这使得我们可以通过每次给non-maximal集合添加一个元素来逐步放大.
+
+至此,我们可以抛开$X$中的偏序,只需要考虑非空集合$X$的子集簇$\mathscr{X}$.根据上面的讨论$\mathscr{X}$满足两个条件:(1)$\mathscr{X}$的每一个元素的任一子集属于$\mathscr{X}$.它说明$\emptyset \in \mathscr{X}$;(2)$\mathscr{X}$中的每一个链中集合的并集属于$\mathscr{X}$.我们需要证明$\mathscr{X}$中存在最大元.
+
+设$f$为$X$上的选择函数,即$f:P(X)-\{\emptyset\}\to X$,并且$f(A) \in A$,$\forall A \in \text{dom}f$,对于$A \in \mathscr{X}$,我们定义$\Hat{A}=\{x \in X: A \cup \{x\} \in \mathscr{X}\}$,定义映射$g:\mathscr{X}\to\mathscr{X}$,
+\[
+g(A)=\begin{cases}
+A \cup \{f(\hat{A}-A)\},&\quad\hat{A}-A\neq\emptyset\\
+g(A)=A,&\quad\hat{A}-A=\emptyset
+\end{cases}
+\]
+若$\Hat{A}-A\neq\emptyset$,令$g(A)=A \cup \{f(\Hat{A}-A)\}$,若$\Hat{A}-A=\emptyset$,令$g(A)=A$.根据$\Hat{A}$的定义,$\Hat{A}-A=\emptyset$当且仅当$A$是一个最大元.也就是说我们需要证明存在$A \in \mathscr{X}$,使得$g(A)=A$.注意到$A \subset g(A)$,并且$g(A)$最多比$A$多一个元素.
+
+为方便,引入一个临时定义:称$\mathscr{X}$的一个子集$\mathscr{J}$是tower,如果
+\begin{enumerate}
+\item[(i)]$\emptyset \in \mathscr{J}$;
+\item[(ii)]若$A \in \mathscr{J}$,则$g(A) \in \mathscr{J}$;
+\item[(iii)]若$\mathscr{C}$是$\mathscr{J}$中的链,则并集$\bigcup_{A \in \mathscr{C}}{A} \in \mathscr{J}$.
+\end{enumerate}
+Tower是存在的,$\mathscr{X}$本身就是一个,并且Tower的交集还是一个Tower,于是令$\mathscr{J}_0$表示所有tower的交集.则$\mathscr{J}_0$是最小的tower,我们来证明$\mathscr{J}_0$是一个链.
+
+称$\mathscr{J}_0$中的集合$C$是comparable,如果它和$\mathscr{J}_0$中的任意元素都是comparable.于是$\forall A \in \mathscr{J}_0$,或者$A \subset C$,或者$C \subset A$.我们要证$\mathscr{J}_0$是一个链,意味着要证明$\mathscr{J}_0$中所有元素(集合)是comparable.comparable集合是存在的,$\emptyset$就是其中之一.下面的讨论暂时把注意力集中在一个任意的但是预先固定的comparable集合$C$.
+
+设$A \in \mathscr{J}_0$,$A$是$C$的真子集,我们有$g(A) \subset C$.由于$C$是comparable,于是或者$g(A) \subset C$,或者$C$是$g(A)$的真子集,对于后一情形,$A$是$g(A)$的真子集的真子集,$g(A)-A$将会超过1个元素,不可能.
+
+令$\mathscr{U}=\{A \in \mathscr{J}_0: A \subset C\text{或}g(C) \subset A\}$,$\mathscr{U}$中的所有元素和$g(C)$是comparable.因为若$A \in \mathscr{U}$,则由于$C \subset g(C)$,或者$A \subset g(C)$,或者$g(C) \subset A$.接下来证明$\mathscr{U}$是一个tower.
+\begin{enumerate}
+\item[(i)]$\emptyset \in \mathscr{U}$,因为$\emptyset \subset C$;
+
+\item[(ii)]欲证$A \in \mathscr{U}$,必有$g(A) \in \mathscr{U}$,分三步:(1)$A$是$C$的真子集;则$g(A) \subset C$,故$g(A) \in \mathscr{U}$;(2)$A=C$,则$g(A)=g(C)$,$g(C) \subset g(A)$,$g(A) \in \mathscr{U}$.(3)$g(C) \subset A$,则$g(C) \subset g(A)$,故$g(A) \in \mathscr{U}$.
+
+\item[(iii)]从$\mathscr{U}$的定义可知,$\mathscr{U}$中一个链的并集属于$\mathscr{U}$.
+
+\end{enumerate}
+
+于是$\mathscr{U}$是一个tower,它包含于$\mathscr{J}_0$中,而$\mathscr{J}_0$是最小的tower,于是$\mathscr{U}=\mathscr{J}_0$.
+
+上面的结论说明对于每一个comparable集合$C$,$g(C)$是comparable集合:给定$C$,按上述方式构造$\mathscr{U}$,从$\mathscr{U}=\mathscr{J}_0$说明若$A \in \mathscr{J}_0$,则或者$A \subset C$(从而$A \subset g(C)$),或者$g(C) \subset A$.
+
+我们已经知道$\emptyset$是comparable,$g$把comparable集合映射到comparable集合,comparable集合构成的链的并集还是comparable集合,这说明$\mathscr{J}_0$中的comparable集合构成一个tower,comparable集合穷尽了$\mathscr{J}_0$,于是$\mathscr{J}_0$是一个链.$\mathscr{J}_0$中任一集合是comparable.既然$\mathscr{J}_0$是一个链,$\mathscr{J}_0$中所有集合的并集$A$属于$\mathscr{J}_0$,于是$g(A) \subset A$,另一方面$A \subset g(A)$,故$A=g(A)$.Zorn引理证毕.
+
+习题:Zorn引理等价于选择公理.考察下面的结论,证明它们也等价于选择公理:(i)任一偏序集有一个最大链(maximal chain),也就是这个链不可能是其他链的真子集;(ii)偏序集的任一链包含在某个最大链中;(iii)每一个偏序集,如果任一链都有下界,那么这个偏序集必有一最大元(这里书中恐怕有问题,似乎应该是最小元).
+
+对于集合$X$,考虑映射$f$:$\text{dom}{f} \subset P(X)$,$\text{ran}{f} \subset X$,$f(A) \in A$,$\forall A \in \text{dom}{f}$.以映射的扩张作为偏序,使用Zorn引理寻找一个最大元,并且证明若$f$是最大元,必有$\text{dom}{f} = P(X)-\{\emptyset\}$.
+
+\section{2013年06月16日}
+良序(well ordering)
+
+一个偏序集可能不存在smallest element,即使存在,也可能对于某些子集不存在smallest element.若它的每一个子集有一个smallest element,则称该集合为良序集(well ordered set).它的order称为良序(well ordering).
+
+值得指出:每一个良序集必是全序的(totally order).因为$\{x,y\}$构成一个子集,那么无论是$x$为first element,还是$y$是first element,都有$x \le y$或者$y \le x$.
+
+例子:
+
+(i)每一个自然数$n$,$n$的所有predecessor组成的集合.即集合$n$是良序的,以大小关系为序.
+
+(ii)全体自然数组成的集合$\omega$是良序的,同样以大小为序.
+
+(iii)集合$\omega \times \omega$,序关系$(a,b) \le (x,y)$$\Leftrightarrow$$(2a+1)2^y \le (2x+1)2^b$,不是良序,$(a,b+1) \le (a,b)$$\forall a,b$,这意味着$\omega \times \omega$不存在least element.
+
+考察集合$\omega \times \omega$的子集$E = \{(a,b) | (1,1) \le (a,b)\}$,则$E$有least element $(1,1)$,但是$E$仍然不是良序的,因为$E$的某些子集不存在least element,所有$(a,b) \neq (1,1)$组成的集合不存在least element.
+
+(iv)$\omega \times \omega$对于字典序构成良序集.
+
+对于良序集,我们有类似于数学归纳法的过程:考察良序集$X$的子集$S$,若任意$X$中的元素$x$满足:entire initial segment $s(x)$包含在$S$中,则$x$本身属于$S$.于是Principle of transifinite induction (超限归纳法)断言:$S=X$.
+
+一般的归纳法与超限归纳法有两点明显的差异:(1)一般归纳法是从predecessor到当前元素,而超限归纳法要求当前元素的所有predecessor是一个集合.(2)超限归纳法没有要求归纳基础.对于(1),在良序集中,一个元素可能不存在直接前导(immediate predecessor).在自然数集$\omega$上,超限归纳法等价于数学归纳法,在一般的良序集上,两者不等价.
+
+例:令$X = \omega^+$,即$X=\omega \cup \{\omega\}$,序关系如下:$\omega$中元素的序保持不变,$\forall n \in \omega$,$n < \omega$,此时$X$是一个良序集,问:是否存在一个子集$S \subset X$,使得$0 \in S$,当$n \in S$时,有$n+1 \in S$,答:有,即$S=\omega$.
+
+第二个差异更多的是语言方面的,而不是概念上(本质的)的,或者说其实超限归纳法已经包含这部分内容.设$x_0$为$X$的smallest element,则$s(x_0)=\emptyset$,于是$s(x_0) \subset S$,根据超限归纳法的假设,$x_0 \in S$.
+
+需要证明这个超限归纳原理,证明不是很难:若$X-S$非空,则存在smallest element $x \in X-S$,这意味着它的initial segment $s(x)$中的每一个元素属于$S$,根据假设,$x \in S$,导致矛盾,故$X-S$只能是空集.
+
+\begin{definition}
+称良序集$A$为良序集$B$的continuation,如果满足:(1)$B$是$A$的子集,即$B$是$A$的一个initial segment;(2)$B$中元素的序和它们在$A$中元素的序一致.
+\end{definition}
+
+$X$为良序集,$a,b \in X$,$b<a$,则$s(a)$是$s(b)$的continuation,自然,$X$是$s(a)$和$s(b)$的continuation.
+
+设$\mathscr{C}$为某个良序集的initialsegments组成的集合,则$\mathscr{C}$相对于continuation是一个链(chain).
+
+$\mathscr{C}$中元素是良序集,任意两个不同的元素来说,其中一个是另一个的continuation.若一簇良序集构成的集合$\mathscr{C}$对于continuation构成一个chain,$U$是$\mathscr{C}$中集合的并集,那么存在一个唯一的$U$中的良序,使得$U$是$\mathscr{C}$中每一个不为$U$集合的continuation.或者说良序集的chain的并仍然是一个良序的,必须注意,这里的序必须是相对于continuation而言的,若order是inclusion,结论不成立.
+
+证明如下:$a,b \in U$,$\exists A, B \in \mathscr{C}$,使得$a \in A$,$b \in B$,于是,或者$A=B$,或者$A$和$B$中的一个是另一个的continuation.无论何种情形,$a,b$属于$\mathscr{C}$中某一个集合,定义$U$中order如下:对于每一对$\{a,b\}$,它的序取$G$中某个集合(它包含$a$和$b$)中的顺序,$\mathscr{C}$是一个chain,这个order是确定的.也就是说刚才定义的序确实是一个order,同时是一个well ordering.
+
+$U$的非空子集必有非空交集(因为这里面的集合非常特殊,一般的交集没有这种性质),必有first element,$\mathscr{C}$为一个continuation,可以得出:集合的first element同时是$U$的first element.
+
+习题:偏序集$X$的子集$A$称为在$X$中是共尾(cofinal)的.若$X$中每一个元素$x$,存在$A$中元素$a$,使得$x \le a$.证明每一个全序集含有一个cofinal well ordered subset.
+
+良序集之所以重要,是因为下面的结论:
+
+\begin{theorem}[Well ordering theorem]
+每一个集合可以良序化.
+\end{theorem}
+
+更好的说法是:对于每一个集合$X$,存在以$X$为domain的良序,必须注意,这里并没有说此良序和给定集合$X$上的原来的某些结构有关系.因此如果说偏序集或者全序集中的序不是一个良序时,并不意味着无法将它良序化.
+
+证明这个结论使用Zorn引理.给定集合$X$,考虑$X$中所有良序子集构成的集簇$W$,$W$中元素是$X$中的子集$A$和$A$中的良序,我们通过continuation定义$W$中的一个偏序.
+
+$W$非空,因为$\emptyset \in W$.若$X \neq \emptyset$,$\forall x \in X$,$\{(x,x)\}$.
+
+若$\mathscr{C}$是$W$中的一个chain,则$\mathscr{C}$中集合的并集$U$拥有唯一的良序,使得$U$大于或等于$\mathscr{C}$中的每一个集合.这意味着Zorn引理的假设成立,于是存在maximal well ordered set,设它为$M \in W$,集合$M$必然等于整个集合$X$.
+
+若存在$X$中元素$x \notin M$,那么$M$可以继续扩大,把$x$放在$M$中所有元素之后即可.
+
+习题:一个全序集是良序的,当且仅当每一个元素的严格前驱构成的集合是well ordered.这个条件能否用于偏序集?Well ordering theorem包含选择公理.$R$为集合$X$的一个偏序,存在$X$中的一个全序$S$,使得$R \subset S$,也就是任何一个偏序可以在不扩大定义域的情形下扩展为全序.
+
+
+
+\chapter{数的概念}
+超限递归(transfinite recursion)
+
+\[
+2 < 2\sqrt{2} - 6\sqrt{6}+4
+\]
+
+
+分情况讨论:
+
+如果$x > 0$,那么必然有$-b < 0 < \frac{1}{x}$,只需要考虑后半部分,此时有
+\[
+\frac{1}{a} < x,
+\]
+两者结合得到$x > \frac{1}{a}$;
+
+如果$x < 0$,那么必然有$\frac{1}{x} < a$,只需要考虑前半部分,此时有
+\[
+(-b)x > 1 \\
+x < -\frac{1}{b}
+\]
+这里面一定要注意两边乘以$x$的时候,$x<0$是需要改变不等号的方向的,后面一步同时除以$-b < 0$,不等号再次变号.两者结合得到
+\[
+x < -\frac{1}{b};
+\]
+最后的答案结合两个得到
+\[
+x < -\frac{1}{b} \text{或者} x > \frac{1}{a}
+\]
+
+首先是完全的排列一共有$6!=720$个数字.不过这个数字没有什么用途.
+
+下面使用条件(大于345012)逐个计算:
+
+首位数字只能是345中的一个:
+
+345021
+345102
+345120
+345201
+345210
+
+35开头的话,后面就是0124的任意排列一共有4!=24个.
+
+其余不存在了如果是4或者5开头,后面是5个数字的任意排列,一共2*5!=240个,所以总数为
+5 + 24 + 240 =149
+
+
+
+
+
+
+\end{document}

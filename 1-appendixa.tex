@@ -1,0 +1,148 @@
+
+\chapter{Tikz绘制的一些图形}
+\begin{center}
+\begin{tikzpicture}[transform shape]
+  %the multiplication with floats is not possible. Thus I split the loop in two.
+  \foreach \number in {1,...,8}{
+      % Computer angle:
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 0
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {9,...,16}{
+      % Computer angle:
+        \mycount=\number
+        \advance\mycount by -1
+  \multiply\mycount by 45
+        \advance\mycount by 22.5
+      \node[draw,circle,inner sep=0.25cm] (N-\number) at (\the\mycount:5.4cm) {};
+    }
+  \foreach \number in {1,...,15}{
+        \mycount=\number
+        \advance\mycount by 1
+  \foreach \numbera in {\the\mycount,...,16}{
+    \path (N-\number) edge[->,bend right=3] (N-\numbera)  edge[<-,bend
+      left=3] (N-\numbera);
+  }
+}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+ \definecolor{r1}{RGB}{0,129,188}
+ \definecolor{r2}{RGB}{252,177,49}
+ \definecolor{r3}{RGB}{35,34,35}
+ \definecolor{r4}{RGB}{0,157,87}
+ \definecolor{r5}{RGB}{238,50,78}
+ \begin{scope}
+   \clip (-6,2) rectangle (6,-.9);
+   \foreach \col/\xp/\yp in {
+     r5/4/0, r4/2/-1.8, r3/0/0,
+     r2/-2/-1.8, r1/-4/0
+   } {
+     \path[draw=white,line width=.08cm,
+     fill=\col,even odd rule]
+     (\xp, \yp) circle (1.9cm)
+     (\xp, \yp) circle (1.5cm);
+   }
+ \end{scope}
+ \begin{scope}
+   \clip (-6,-.9) rectangle (6,-3.8);
+   \foreach \col/\xp/\yp in {
+     r1/-4/0, r2/-2/-1.8, r3/0/0,
+     r4/2/-1.8, r5/4/0
+   } {
+     \path[draw=white,line width=.08cm,
+     fill=\col,even odd rule]
+     (\xp, \yp) circle (1.9cm)
+     (\xp, \yp) circle (1.5cm);
+   }
+ \end{scope}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[>=latex]
+
+% Draw the lines at multiples of pi/12
+\foreach \ang in {0,...,31} {
+  \draw [lightgray] (0,0) -- (\ang * 180 / 16:4);
+}
+
+% Concentric circles and radius labels
+\foreach \s in {0, 1, 2, 3} {
+  \draw [lightgray] (0,0) circle (\s + 0.5);
+  \draw (0,0) circle (\s);
+  \node [fill=white] at (\s, 0) [below] {\scriptsize $\s$};
+}
+
+% Add the labels at multiples of pi/4
+\foreach \ang/\lab/\dir in {
+  0/0/right,
+  1/{\pi/4}/{above right},
+  2/{\pi/2}/above,
+  3/{3\pi/4}/{above left},
+  4/{\pi}/left,
+  5/{5\pi/4}/{below left},
+  7/{7\pi/4}/{below right},
+  6/{3\pi/2}/below} {
+  \draw (0,0) -- (\ang * 180 / 4:4.1);
+  \node [fill=white] at (\ang * 180 / 4:4.2) [\dir] {\scriptsize $\lab$};
+}
+
+% The double-lined circle around the whole diagram
+\draw [style=double] (0,0) circle (4);
+
+\fill [fill=red!50!black, opacity=0.5] plot [domain=-pi/2:pi/2]
+  (xy polar cs:angle=\x r, radius= {2-2*sin(\x r)});
+\draw [thick, color=red, domain=0:2*pi, samples=200, smooth]
+  plot (xy polar cs:angle=\x r, radius={2-2*sin(\x r)});
+\node [fill=white] at (2,1) {$r=2-2\sin\theta$};
+
+\end{tikzpicture} 
+
+
+% definition de partial ellipse
+\tikzset{partial ellipse/.style args =
+  {#1:#2:#3}{insert path={+ (#1:#3) arc (#1:#2:#3)}}}
+\begin{tikzpicture}[>=latex]
+  %  ellipses
+  \draw [fill=white!90!red]    (3,-1.8) ellipse    (4cm and 1 cm);
+  \draw [fill=yellow!90!green] (3,-1.8) ellipse (3cm and 0.75 cm);
+  \draw [fill=white!90!green]  (3,-1.8) ellipse  (2cm and 0.5 cm);
+
+  % -- Soleil
+  \shade [ball color=gray!10!yellow] (3,-1.8) circle (1);
+  \node (soleil) at (3,-1.8) {\bf Soleil};
+  % partial ellipse pour tracé devant le Soleil
+  \draw (3,-1.8) [partial ellipse=220:320:2cm and 0.5cm]
+        (3,-1.8) [partial ellipse=220:320:3cm and 0.75cm];
+
+  % Venus
+  \shade [ball color=gray!10!orange] (1.6,-1.8) circle (.2);
+  \node (venus) at (1.5,-1.45) {Venus}; 
+
+  % ombre de Venus
+  \draw[color=white!70!black,fill=white!70!black]
+    (1.6,-2.3) ellipse (2mm and 0.5mm);
+
+  % Mercure
+  \shade [ball color=gray!10!orange] (5,-1.225) circle (.25);
+  \node (mercure) at (5,-0.8) {Mercure}; 
+
+  % Earth
+  \shade [ball color=white!50!blue] (5.75,-2.5) circle (.33);
+  \node (terre) at (6.6,-2.6) {\bf Terre};
+
+  % Lune
+  \shade [ball color=yellow] (5.25,-2.8) circle (.1);
+  \node (lune) at (5.25,-3) {Lune};
+     
+  % Mars
+  \draw (3,-1.8) [partial ellipse=45:120:9cm and 2.5cm];
+  \shade [ball color=black!50!red] (5,0.66) circle (.15);
+  \node (mars) at (5,1) {\bf Mars};   
+  % trajet
+  \draw [line width=2pt,blue,->,>=latex] (terre) to[out=0,in=0] (mars);   
+\end{tikzpicture}
+\end{center}
