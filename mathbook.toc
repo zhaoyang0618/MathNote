@@ -13,8 +13,11 @@
 \contentsline {subsection}{\numberline {1.1.9}同余式}{13}{subsection.1.1.9}% 
 \contentsline {subsection}{\numberline {1.1.10}环$\mathbb {Z}_n$}{16}{subsection.1.1.10}% 
 \contentsline {subsection}{\numberline {1.1.11}集合，函数，关系}{17}{subsection.1.1.11}% 
-\contentsline {chapter}{\numberline {2}基础代数}{18}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}代数}{19}{chapter.3}% 
-\contentsline {part}{II\hspace {1em}分析}{20}{part.2}% 
-\contentsline {chapter}{\numberline {4}数学分析}{21}{chapter.4}% 
-\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{22}{chapter.5}% 
+\contentsline {subsection}{\numberline {1.1.12}同构与自同构}{18}{subsection.1.1.12}% 
+\contentsline {section}{\numberline {1.2}有理数和域}{20}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}域的定义}{20}{subsection.1.2.1}% 
+\contentsline {chapter}{\numberline {2}基础代数}{21}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}代数}{22}{chapter.3}% 
+\contentsline {part}{II\hspace {1em}分析}{23}{part.2}% 
+\contentsline {chapter}{\numberline {4}数学分析}{24}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{25}{chapter.5}% 
