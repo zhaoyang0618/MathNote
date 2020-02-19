@@ -646,11 +646,97 @@ a=a'\text{且}b=b'\text{推出}a \circ b = a' \circ b'
 
 \section{有理数和域}
 \subsection{域的定义}
+全体有理数组成的整环$\mathbb{Q}$和全体实数组成的整环$\mathbb{R}$具有整数环$\mathbb{Z}$所不具备的极重要的代数特征：在它们之中，任何方程$ax=b$（$a \neq 0$）是可解的。具有这个性质的交换环称为域。我们现在将证明：在任何交换环中，如果所有非零元素有乘法逆，那么除法是可能的，并具有一些熟知性质。
+\begin{definition}{域}{defField}
+如果$F$是一个交换环，并且对每个元素$a \neq 0$，它都包含一个逆元素$a^{-1}$，满足方程$a^{-1}a=1$，那么$F$是域。
+\end{definition}
+
+在任何域中，消去律（ix）成立（证明难度不大，略），换句话说，每个域是一个整环。更一般的，是域的子整环（根据相同的理由）\footnote{这句话有点费解}。相反，我们将在本节和下一节指出，任何整环都能够按照唯一的最小路径被扩展成域。我们通过把分数表示为整数之商的标准表示法来说明扩展的方法。
+\begin{theorem}{}{theorem0030}
+在任何域中，除法（零除外）是可能的而且是唯一的。
+\end{theorem}
+实际上就是证明$a \neq 0$时，方程$ax=b$有唯一解：可以直接构造出这个解$x=a^{-1}b$，至于唯一性，通过消去律保证。
+
+我们用$\frac{b}{a}$（$a$除$b$所得的商）表示$ax=b$的唯一解，特别的，$\frac{1}{a}=a^{-1}$。下面证明通常的商的运算法则（可以使用域的公设来证明）：
+\begin{theorem}{}{theorem0031}
+在任何域中，商遵循下列法则（这里$b \neq 0$，$d \neq 0$）：
+\begin{enumerate}
+\item[(i)] $\frac{a}{b}=\frac{c}{d}$当且仅当$ad=bc$，
+\item[(ii)] $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd}$，
+\item[(iii)] $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$，
+\item[(iv)] $\frac{a}{b} + (-\frac{a}{b}) = 0$，
+\item[(v)] $\frac{a}{b} \cdot \frac{b}{a} = 1$，当$\frac{a}{b}\neq 0$。
+\end{enumerate}
+\end{theorem}
+
+证明不难，严格使用各个公设和定义。例如对于（i）$\frac{a}{b} = \frac{c}{d}$意味着：$ab^{-1}=cd^{-1}$。
+\[
+ad = a(b^{-1}b)d = cd^{-1}(bd) = cd^{-1}db=bc,
+\]
+反过来类似。
+
+(ii)的证明回到方程，$x=\frac{a}{b}$和$y=\frac{c}{d}$分别表示$bx=a$和$dy=c$的解，于是有
+\[
+dbx=da, bdy=bc, bd(x \pm y) = ad \pm bc,
+\]
+也就是$x \pm y$是方程$bdz = ad \pm bc$的唯一解$z = \frac{ad \pm bc}{bd}$。
+
+(iii)的证明和(ii)类似
+\[
+(bd)(xy) = (bx)(dy)=ac,
+\]
+
+（iv）的证明利用前面的(ii)，同时注意到$0 \cdot x = 0$。（v）的证明使用（iii），然后$x=1$是方程$bax = ab$的唯一解。
+
+还可以证明如下结论：
+\begin{gather}
+(bd)^{-1} = d^{-1}b^{-1},(-b)^{-1} = -(b^{-1}), b,d \neq 0\\
+a \pm\frac{b}{c} = \frac{ac \pm b}{c}, a\frac{b}{c} = \frac{ab}{c}, c \neq 0\\
+\frac{a}{b}/\frac{c}{d} = \frac{ad}{bc}, \frac{a}{b}/c = \frac{a}{bc}, \frac{a}{1}=a, b,c,d\neq 0\\
+-\frac{a}{b} = \frac{-a}{b} = \frac{a}{-b}, \frac{-a}{-b} = \frac{a}{b}, b \neq 0
+\end{gather}
+
+存在各种各样的域，例如对于任意素数$p$，整环$\mathbb{Z}_p$是一个域，这可由定理\ref{thm:theorem0016}的推论得到。如果我们假定全体实数构成一个域，那么我们利用子域的概念可以容易地构造出其他域的例子。
+\begin{definition}{}{defSubField}
+如果一个给定的域$F$的子集在$F$中的加法和乘法运算之下构成一个域，那么称这个子集为$F$的子域。
+\end{definition}
+
+只要问题中的运算能进行，那么所有在$F$中成立的恒等式（即交换律，结合律和分配律）在$F$的任意子集中自然成立，因此验证$F$的子集$S$是否是子域时，可以不管那些恒等式的证明，而只需要检验那些包含某个“存在性”的公设，比如逆元素的存在性。
+\begin{theorem}{}{theorem0032}
+如果域$F$的子集$S$包含着$F$中的零元素和单位元素，$S$在加法和乘法之下是封闭的，$S$中每个$a$在$S$中有它的负元素$-a$（加法逆元素）和乘法逆元素$a^{-1}$（假定$a \neq 0$），那么$S$是子域。
+\end{theorem}
+
+利用这个定理，可以证明所有形如$a+b\sqrt{2}$的实数的集合是实数域的一个子域，其中系数$a$和$b$是有理数，这个子域通常记为$\mathbb{Q}(\sqrt{2})$，这里$\mathbb{Q}$表示有理数域。证明稍微麻烦一点是乘法逆元素的存在性（通分，分子分母乘以$a-b\sqrt{2}$即可），而这依赖于结论$\sqrt{2}$是无理数，从而$a^2-2b^2$不能为零。具体过程参考书本。
+
+同样的可以证明，所有实数$a + b\sqrt[3]{5} + c\sqrt[3]{25}$的集合$\mathbb{Q}(\sqrt[3]{5})$是一个域。难点同样在于乘法逆元素的存在性，需要去解一个线性方程组。
+\[
+(a + b\sqrt[3]{5} + c\sqrt[3]{25})(x + y\sqrt[3]{5} + z\sqrt[3]{25}) = (1 + 0\sqrt[3]{5} + 0\sqrt[3]{25}).
+\]
+从这里可以得到方程组。
+
+如果我们假定存在一个由全体复数$a+bi$（这里$i=\sqrt{-1}$，$a$和$b$是实数）构成的域，那么我们还可以构造其他子域。二次方程
+\[
+\omega^2 + \omega + 1 = 0
+\]
+在复数中有根$\omega = \frac{-1 + \sqrt{-3}}{2}=-\frac{1}{2}+\frac{\sqrt{3}}{2}i$，它是一个虚的单位立方根。所有数$a+b\omega$（$a$，$b$为有理数）构成复数域的一个子域$\mathbb{Q}(\omega)$。验证不难，至于乘法的封闭，需要注意到$\omega^2 = -\omega-1$，
+\[
+\begin{aligned}
+(a+b\omega)(c+d\omega) &= ac + (bc+ad)\omega + bd\omega^2\\
+&=(ac-bd) + (bc+ad-bd)\omega.
+\end{aligned}
+\]
+至于乘法逆元素，同样可以通过求解线性方程组得到。这里直接给出
+\[
+(a+b\omega)[\frac{-(b-a+b\omega)}{a^2-ab+b^2}]=\frac{a^2-ab+b^2}{a^2-ab+b^2}=1
+\]
+分母$a^2-ab+b^2$不可能为零，除非$a=b=0$，
+\[
+a^2-ab+b^2 = \frac{a^2+b^2}{2} + \frac{(a-b)^2}{2}.
+\]
 
 
 
-
-
+\subsection{有理数域的构造}
 
 
 
