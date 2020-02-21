@@ -737,6 +737,227 @@ a^2-ab+b^2 = \frac{a^2+b^2}{2} + \frac{(a-b)^2}{2}.
 
 
 \subsection{有理数域的构造}
+在第一节中，假定了全体整数的良序整环$\mathbb{Z}$的存在，现在我们将严格地证明，有理数域$\mathbb{Q}$（有序的）能够由$\mathbb{Z}$构造出。实际上，更一般的，我们将证明，类似的构造可以应用到任何整环上。
+
+仅仅由全体整数不能构成域，由整数构造有理数在本质上恰是构造了包含全体整数在内的域。显然这个域还必须包含所有方程$bx=a$的解，其中系数$a,b,\neq 0$是整数。为了从这些方程抽象地构造“有理数”，我们引入某些新记号（或者数偶）$r=(a,b)$\footnote{其实分析中实数的构造有些类似，既然我要想有理数极限存在，我直接构造一个数作为极限，但是需要证明这个极限唯一，并且满足已有运算。}，每个记号代表一个方程$bx=a$的解，为此，我们必须说明，这些新记号完全像域中的商$\frac{a}{b}$那样可以相加，相乘和相等（定理\ref{thm:theorem0031}中的（i）（ii）（iii））。
+
+不管我们从整数环$\mathbb{Z}$，还是从其他一些整环$D$出发，上述说明是很有意义的，还可以确切地描述如下：
+\begin{definition}{商域}{def00020}
+设$D$是任意整环，$D$的商域$Q(D)$是由所有数偶组成。其中$a, b \in D$并且$b \neq 0$。这种数偶的相等由下面约定来确定：
+\begin{gather}\label{equation0025}
+(a,b) \equiv (a',b') \Leftrightarrow ab'=a'b,
+\end{gather}
+而数偶的和与积分别由下列约定来确定：
+\begin{gather}
+(a,b) + (a', b') = (ab'+a'b, bb'),\label{equation0026}\\
+(a, b) \cdot (a', b') = (aa', bb').\label{equation0027}
+\end{gather}
+\end{definition}
+
+注意，因为$D$不包含零因子（定理），在(\ref{equation0026})和(\ref{equation0027})中的乘积$bb' \neq 0$，所以$Q(D)$在加法和乘法之下是封闭的。
+
+我们希望数偶之间的“$\equiv$”关系和相等关系一致，其实，通过直接验证可以证明“$\equiv$”满足相等的三个性质（自反律，对称律和传递律），其次和与积在$\equiv$意义下是唯一确定的。例如，由$(a,b) \equiv (a', b')$可以推出$(a, b)+(a'', b'')=(a',b')+(a'', b'')$。这一点同样可以直接使用定义完成验证（参考书本）。类似的，对于乘法的唯一性断言也是成立的。我们得出结论，由(\ref{equation0025})式定义的相等具有所要求的性质。
+
+现在可以验证$Q(D)$中的各种代数定律。例如分配律，根据定义(\ref{equation0026})和(\ref{equation0027})，按照下列方法一步一步简化定律的每一边。设$r$，$r'$和$r'''$是任意三个数偶，
+\[
+\begin{aligned}
+&r(r'+r'')\quad  \quad && rr'+rr'' \\
+&(a,b)[(a',b')+(a'',b'')] \quad \quad && (a,b)(a',b')+(a,b)(a'',b'') \\
+&(a, b)(a'b''+a''b', b'b'') \quad \quad && (aa', bb')+(aa'', bb'')\\
+&(aa'b''+aa''b', bb'b'') \quad \quad && (aa'bb''+aa''bb', bb'bb'')
+\end{aligned}
+\]
+最后一行的两边给出了在（\ref{equation0025}）意义下相等的数偶，这是因为右边和左边的差别只是在右边所有项中多出现一个非零因子$b$，在数偶中这样一个额外银子使数偶总保持相等，即$(bx, by)=(x, y)$，因为根据（\ref{equation0025}）式这个等式相等于恒等式$bxy=bxy$。
+
+和分配律证明类似，我们可以证明结合律和交换律。加法单位元素（零）是数偶$(0, 1)$，因为
+\[
+(0, 1)+(a,b)=(0 \cdot b + 1 \cdot a, 1 \cdot b)=(a, b).
+\]
+同样消去律也成立，并且数偶$(1,1)$是乘法单位元素。$(a, b)$的负元素（加法逆元素）是$-(a, b) = (-a, b)$，这就验证了关于整环的一切公设。
+
+\begin{theorem}{}{theorem0033}
+对任意整环$D$，商域$Q(D)$是一个域。
+\end{theorem}
+ 剩下只需证明每个方程$rx=1$（）其中$r \neq 0$在$Q(D)$中有一个解。也就是说，对于每个$r \neq 0$，在$Q(D)$中存在$r$的乘法逆元素，这是容易证明的（$(a, b)$的乘法逆元素应该是$(b, a)$）。更一般的，任意方程
+\begin{gather}
+(a, b)(x, y)\equiv(c, d), \quad (a, b)\not\equiv(0, 1),\label{equation0028}
+\end{gather}
+都有解（可以转化为有理数进行思考，这样求解很方便）
+\[
+(x, y) = (bc, ad).
+\]
+条件$(a, b) \not\equiv (0, 1)$保证了$a \neq 0$，于是解$(x, y)$中的$ad \neq 0$，从而满足定义。
+
+我们现在希望证明，$Q(D)$实际上包含着原来的整环$D$作为它的子整环，换句话说，$Q(D)$实际上是$D$的扩展。严格说来这是不可能的\footnote{所以这个是同构意义下的，见后面的讨论。}，因为数偶$(a, b)$不像$D$中那样的元素，不过我们可以把每个$a \in D$与$(a, 1)$联系起来，在相等，加法和乘法之下，$(a, 1)$具有的性质完全像$a$一样。
+\begin{gather*}
+(a, 1)+(b,1)=(a \cdot 1 + b \cdot 1, 1 \cdot 1) = (a+b,1),\\
+(a,1)\cdot(b,1)=(a c\dot b, 1 \cdot 1)=(ab, 1),\\
+(a,1)\equiv(b,1) \Leftrightarrow a=b.
+\end{gather*}
+我们可以断言，一一对应$a \leftrightarrow (a,1)$是给定的整环$D$到域$Q(D)=F$的子整环上的一个同构。此外，方程（\ref{equation0028}）表明，任何数偶$r=(a,b) \in Q(D)$是方程$(b,1)r=(a,1)$或者$br=a$的解，因此$r=(a,b)$是商$\frac{a}{b}$，这就证明了
+\begin{theorem}{}{theorem0034}
+任何整环$D$能够同构地嵌入域$Q(D)$中，$Q(D)$的每个元素是$D$种两个元素的商。
+\end{theorem}
+
+特别的，把定理\ref{thm:theorem0034}用到整数环$\mathbb{Z}$上。事实上在上述论证中始终想到$D=\mathbb{Z}$这一特殊情形，因此$Q(D)=Q(\mathbb{Z})$是全体普通分数的集合。所以我们有
+\begin{corollary}{}{corollary0051}
+整数环$\mathbb{Z}$可以作为子整环嵌入域$\mathbb{Q}=Q(\mathbb{Z})$中，域$\mathbb{Q}$的每个元素是整数的商$\frac{a}{b}$，其中$b \neq 0$。
+\end{corollary}
+
+我们现在指出，有理数域$\mathbb{Q}=Q(\mathbb{Z})$实际上已通过前面的论述被精确地表征出来（精确到同构），因为$\mathbb{Z}$是由它的公设所定义（精确到同构），所以这像我们所希望的那样是完备的表征。事实上我们将证明，任何整环$D$都有类似的结果。
+\begin{theorem}{}{theorem0035}
+设整环$D$作为子整环包含在任意一个域$F$中，那么$F$中所有形为$\frac{a}{b}$（其中$a, b \in D$，$b \neq 0$）的元素组成的集合是$F$的一个子域$S$，并且在对应$\frac{a}{b} \leftrightarrow (a, b)$之下这个子域$S$与$Q(D)$同构。
+\end{theorem}
+两个域$F$和$F'$之间的同构是指，把$F$和$F'$看作交换环时它们之间的同构，特别，它是$F$和$F'$之间满足下列性质的一一对应，即如果$x \leftrightarrow x'$和$y \leftrightarrow y'$，那么
+\[
+(x+y) \leftrightarrow (x'+y'), \quad (xy) \leftrightarrow (x'y').
+\]
+
+证明：域$F$包含商$\frac{a}{b}$，这个商事方程$bx=a$的解，其系数$a$和$b \neq 0$在$D$中，所有这些商的集合$S$包含所有整数$\frac{a}{1}=a$。根据定理\ref{thm:theorem0031}中的法则，$S$在加法，减法，乘法和除法之下是封闭的，于是在$F$的这些运算之下，$S$可以描述成$D$的闭包。总之$S$是一个域（定理\ref{thm:theorem0032}）。
+
+这些商$\frac{a}{b}$以定理\ref{thm:theorem0031}的(i)-(iii)所描述的方式进行相加，相乘以及表示相等，完全相同的法则用到数偶$(a,b)$上，因此对应$\frac{a}{b} \leftrightarrow (a, b)$是$D$的闭包$S$到$Q(D)$上的一个同构。
+
+特别注意，这个对应把$D$中每个$a$映上到$\frac{a}{1} \leftrightarrow (a,1)=a$。
+
+联合定理\ref{thm:theorem0035}和前面的推论，我们得到
+\begin{theorem}{}{theorem0036}
+整数环$\mathbb{Z}$可以按照一种且只有一种方式被嵌入域$\mathbb{Q}=Q(\mathbb{Z})$中，使得$\mathbb{Q}$的每个元素是两个整数的商。
+\end{theorem}
+
+这就完成了由整数环$\mathbb{Z}$构造有理数域$\mathbb{Q}$。
+
+\subsection{联立线性方程}
+一个域不一定由通常的“数”组成，比如$p$为素数，则所有模$p$的整数就构成一个只包含有限多个不同元素的域。整环$\mathbb{Z}_p$是域这个事实是下面定理的推论。
+\begin{theorem}{}{theorem0037}
+任何有限整环$D$是一个域。
+\end{theorem}
+
+整环和域就差一个非零元素的乘法逆元素的存在性。$D$是有限的意味着$D$的元素全部可以列出来，排成$b_1,b_2,\cdots,b_n$，为证明$D$是域，我们只须证明$D$的任意指定的元素$a \neq 0$在$D$中有一个逆元素。考察所有的乘积
+\begin{gather}\label{equation0029}
+ab_1, ab_2, \cdots, ab_n,
+\end{gather}
+这给出了$D$中几个全不相同的元素，因为不然，如果对某$i \neq j$有$ab_i = ab_j$，则根据消去律，得到$b_i=b_j$，这与假定$b_i$是不同元素相违背。因为$D$中全部元素都在列表(\ref{equation0029})，$D$中单位元素1也必然出现在表中某个位置上，比如$1 = ab_i$，那么相应的元素$b_i$就是所要求的$a$的逆元素。
+
+根据上述证明，为在$\mathbb{Z}_p$中精确地找出逆元素，可以对$\mathbb{Z}_p$中所有可能的数$b_i$进行试验来得到。逆元素还可以直接计算出，这是因为$\mathbb{Z}_p$中方程$ax=1$（其中$a \neq 0$）就是同余方程$ax \equiv 1(\mod{p})$，后者可以根据欧几里得算法求出$x$。
+
+值得注意的是，联立线性方程组的整个理论应用到一般域。例如考虑两个联立方程
+\begin{gather} \label{equation0030}
+\begin{aligned}
+ax+by&=e,\\
+cx+dy&=f,
+\end{aligned}
+\end{gather}
+式中字母$a,\cdots,f$表示域$F$的任意元素。第一个方程乘以$d$，第二个方程乘以$b$，然后相减，我们得到$(ad-bc)x=de-bf$；第二个方程乘以$a$，第一个方程乘以$c$，然后相减得到$(ad-bc)y=af-ce$，因此我们定义（\ref{equation0030}）的系数行列式为
+\[
+\Delta=\left|\begin{array}{cc}
+a & b \\
+c & d
+\end{array}\right|=ad-bc,
+\]
+当$\Delta \neq 0$时，则方程（\ref{equation0030}）有解：
+\[
+x = \frac{de-bf}{\Delta}, \quad y = \frac{af-ce}{\Delta},
+\]
+而且没有其它解，当$\Delta=0$时，方程（\ref{equation0030}）或者没有解，或者有无穷多解（后者仅当$c=ka$，$d=kb$，$f=ke$时发生，也就是两个方程成比例）。
+
+\textbf{高斯（Gauss）消去法}\quad 前面消去法的方法可以推广到形为
+\begin{gather}\label{equation0031}
+\begin{aligned}
+&a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\
+&a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\
+&\cdots\cdots\cdots\\
+&a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m
+\end{aligned}
+\end{gather}
+的$n$个未知数的$m$个联立线性方程。这里$a_{ij}$，$b_i$，$x_i$全部被限制在指定的域$F$上。为求出已知方程组的全部解，我们现在将叙述称为高斯消去法的一般方法，其想法是用简单的方程组代替已知方程组，这个简单的方程组等价于已知方程组，即它们是同解方程组。
+
+采用缩写记号，我们只写下第$i$个方程，并把它表示成样本项$a_{ij}x_j$，对$j=1,\cdots,n$求和，即写成
+\[
+\sum_{j=1}^{n}{a_{ij}x_j}=b_i,\quad i=1,\cdots,m; a_{ij} \in F.
+\]
+
+我们分两种情况对未知数的个数$n$用归纳法进行论证。
+
+\textbf{情况1} \quad 每个$a_{i1}=0$。那么显然方程组等价于$n-1$个未知数$x_2,\cdots,x_n$的$m$个方程的一个“较小”的方程组；对于较小的方程组来说，$x_1$是任意的。
+
+\textbf{情况2} \quad 某一个$a_{i1} \neq 0$。通过两个方程的调换，我们得到等价的方程组，使得$a_{11} \neq 0$。当第一个方程乘以$a_{11}^{-1}$时，我们则得到一个等价的方程组，其中$a_{11}=1$，然后依次从第$i$个方程（$i=2,\cdots,m$）减去新的第一个方程的$a_{i1}$倍，我们便得到形如
+\begin{gather}\label{equation0032}
+\begin{aligned}
+x_1+&a_{12}'x_2+a_{13}'x_3+\cdots+a_{1n}'x_n=b_1',\\
+&a_{22}'x_2+a_{23}'x_3+\cdots+a_{2n}'x_n=b_2',\\
+&\cdots\cdots\cdots\cdots\\
+&a_{m2}'x_2+a_{m3}'x_3+\cdots+a_{mn}'x_n=b_m'
+\end{aligned}
+\end{gather}
+的等价方程组。例如在域$\mathbb{Z}_11$上，方程组
+\[
+\begin{array}{rcrcrcl}
+3x&+&5y&+&7z&\equiv&6,\\
+5x&+&9y&+&6z&\equiv&7,\\
+2x&+&y&+&4z&\equiv&3,
+\end{array}
+\]
+用这个方法转化为（第一个方程乘以4即可转化为$a_{11}=1$）
+\[
+\begin{array}{rcrcrcl}
+x&+&9y&+&6z&\equiv&2,\\
+&&8y&+&9z&\equiv&8,\\
+&&5y&+&3z&\equiv&10,
+\end{array}
+\]
+
+对$m$用归纳法进行论证，我们得到
+\begin{theorem}{}{theorem0038}
+任意$n$个未知数$m$个方程的联立线性方程组(\ref{equation0031})可化为一个等价的方程组。这个等价方程组的第$i$个方程具有形式
+\begin{equation}\label{equation0033}
+x_i + c_{i,i+1}x_{i+1}+c_{i,i+2}x_{i+2}+\cdots+c_{in}x_n=d_i,
+\end{equation}
+这里$i$属于$\{1,2,\cdots,m\}$中$r$个数组成的某个子集，然后再加上$m-r$个形为$0=d_k$的方程。
+\end{theorem}
+
+如果总是出现情况2，则我们得到形为（\ref{equation0032}）的$m$个方程，并且称原方程组是相容的。如果出现情况1，则我们可以得到形为$0=d_k$的一组退化方程。如果所有的$d_k=0$，则可以不必考虑$0=d_k$的那些方程，如果有一个$d_k \neq 0$，则原方程组（\ref{equation0031}）是不相容的（没有解）。
+
+详细写出方程组（\ref{equation0033}）如下
+\begin{equation}\label{equation0034}
+\begin{aligned}
+x_1+c_{12}x_2+c_{13}x_3+\cdots+c_{1n}x_n&=d_1,\\
+x_2+c_{23}x_3+\cdots+c_{2n}x_n&=d_2,\\
+\cdots\cdots&\cdots\cdots\\
+x_r+\cdots+c_{rn}x_n&=d_r\qquad(r \le m)
+\end{aligned}
+\end{equation}
+可称为梯形方程组。
+
+任何梯形方程组（\ref{equation0033}）的解法是容易描述的，逐次考虑$x_{n}, x_{n-1}, \cdots, x_1$。如果在该序列中出现的$x_i$是方程组（\ref{equation0033}）中某个方程的第一个变量，那么它可通过$x_n,\cdots, x_{i+1}$由下列关系确定出来
+\[
+x_i = d_i - c_{i,i+1}x_{i+1}-c_{i,i+2}x_{i+2}-\cdots-c_{in}x_n
+\]
+否则，这个$x_i$取任意值。这就证明了
+\begin{corollary}{}{corollary00191}
+在定理\ref{thm:theorem0038}所说的相容情况下，（\ref{equation0031}）的全部解确定如下，不出现在（\ref{equation0033}）各式首位的$m-r$个变量$x_k$可以任意取值（它们是自由变量）。任意选取这些$x_k$后，代入（\ref{equation0034}）式并可逐步地算出剩下的变量$x_i$。
+\end{corollary}
+
+前面$\mathbb{Z}_11$上的方程组可以通过消元法求解得出
+\[
+\left.
+\begin{array}{rcrcrcl}
+x&+&9y&+&6z&\equiv&2\\
+&&y&+&8z&\equiv&1\\
+&&&&z&\equiv&7
+\end{array}
+\right\}(\mod{11})
+\]
+最后得到$x=4,y=0,z=7$。
+
+
+如果方程（\ref{equation0031}）右边的常数$b_i$全都为零，则称方程组为齐次的。这类方程组总有（平凡）解$x_1=x_2=\cdots=x_n=0$，它可能不存在非平凡解，但是如果变量的个数超过方程的个数，那么方程组（\ref{equation0033}）的最后一个方程总还包含可任意取值的自由变量。此外，对于齐次方程组来说，绝不会出现可能矛盾的方程$0=d_i$，因此有
+\begin{theorem}{}{theorem0039}
+$n$个变量$m$个方程的齐次线性方程组，当$m < n$时，总有非全为零的解。
+\end{theorem}
+
+\subsection{有序域}
+
+
 
 
 

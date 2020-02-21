@@ -17,8 +17,10 @@
 \contentsline {section}{\numberline {1.2}有理数和域}{20}{section.1.2}% 
 \contentsline {subsection}{\numberline {1.2.1}域的定义}{20}{subsection.1.2.1}% 
 \contentsline {subsection}{\numberline {1.2.2}有理数域的构造}{22}{subsection.1.2.2}% 
-\contentsline {chapter}{\numberline {2}基础代数}{23}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}代数}{24}{chapter.3}% 
-\contentsline {part}{II\hspace {1em}分析}{25}{part.2}% 
-\contentsline {chapter}{\numberline {4}数学分析}{26}{chapter.4}% 
-\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{27}{chapter.5}% 
+\contentsline {subsection}{\numberline {1.2.3}联立线性方程}{25}{subsection.1.2.3}% 
+\contentsline {subsection}{\numberline {1.2.4}有序域}{29}{subsection.1.2.4}% 
+\contentsline {chapter}{\numberline {2}基础代数}{30}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}代数}{31}{chapter.3}% 
+\contentsline {part}{II\hspace {1em}分析}{32}{part.2}% 
+\contentsline {chapter}{\numberline {4}数学分析}{33}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{34}{chapter.5}% 
