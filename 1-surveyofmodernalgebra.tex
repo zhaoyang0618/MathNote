@@ -1,7 +1,7 @@
 \chapter{近世代数概论}
 《近世代数概论》的作者是G.伯克霍夫和S.麦克莱恩。参考：\cite{surveyofmodernalgebra1979}。
 
-\section{整数}
+\section{整数}\label{section001}
 \subsection{交换环, 整环}
 近世代数第一次揭示了数学系统的多变性和丰富性。本书从最基本也是最古老的正整数系统（整数系统，记为$\mathbb{Z}$）开始。
 
@@ -145,7 +145,7 @@ a + x = 0
 \item 对任意$a, b \in S$，有$a + b \in S$，$ab \in S$。
 \end{itemize}
 
-\subsection{有序整环的性质}
+\subsection{有序整环的性质}\label{subsection00103}
 所有整数组成的环$\mathbb{Z}$在数学中起着独特的作用，因此我们将研究它的特殊性质。乘法交换律和消去律仅仅是其中两个，许多其他性质都来源于整数有可能被排成通常的次序：
 \[
 \cdots,-4,-3,-2,-1,0,1,2,3,4,\cdots
@@ -735,8 +735,7 @@ a^2-ab+b^2 = \frac{a^2+b^2}{2} + \frac{(a-b)^2}{2}.
 \]
 
 
-
-\subsection{有理数域的构造}
+\subsection{有理数域的构造}\label{subsection00202}
 在第一节中，假定了全体整数的良序整环$\mathbb{Z}$的存在，现在我们将严格地证明，有理数域$\mathbb{Q}$（有序的）能够由$\mathbb{Z}$构造出。实际上，更一般的，我们将证明，类似的构造可以应用到任何整环上。
 
 仅仅由全体整数不能构成域，由整数构造有理数在本质上恰是构造了包含全体整数在内的域。显然这个域还必须包含所有方程$bx=a$的解，其中系数$a,b,\neq 0$是整数。为了从这些方程抽象地构造“有理数”，我们引入某些新记号（或者数偶）$r=(a,b)$\footnote{其实分析中实数的构造有些类似，既然我要想有理数极限存在，我直接构造一个数作为极限，但是需要证明这个极限唯一，并且满足已有运算。}，每个记号代表一个方程$bx=a$的解，为此，我们必须说明，这些新记号完全像域中的商$\frac{a}{b}$那样可以相加，相乘和相等（定理\ref{thm:theorem0031}中的（i）（ii）（iii））。
@@ -956,11 +955,152 @@ $n$个变量$m$个方程的齐次线性方程组，当$m < n$时，总有非全�
 \end{theorem}
 
 \subsection{有序域}
+如果域$F$包含“正”元素集合$P$，满足\ref{subsection00103}中所列出的加法律，乘法律和三分律，则称域$F$是有序的。换句话说，当把域看成一个整环时，它是一个有序整环，则这个域是有序域。根据经验知道，全体有理数就构成这样的有序域，现在我们从构造有理数为整数偶出发来证明这一点，并进一步指出，这种“自然”排序的方法，是把有理数域作成有序域的唯一方法。
+
+首先回忆一下，任何有序整环中，非零元素$b$的平方$b^2$总是正的。如果商$\frac{a}{b}$是正的，则乘积$(\frac{a}{b})^2=ab$也必是正的，反之也真。因此在任意有序域中
+\begin{equation}\label{equation0034}
+\frac{a}{b} > 0 \quad \Leftrightarrow \quad ab>0,
+\end{equation}
+而有理数$(a, b)$表示商$\frac{a}{b}$，因此我们定义有理数$(a,b)$是正的当且仅当在$\mathbb{Z}$中乘积$ab$是正的。
+\begin{theorem}{}{theorem0040}
+如果定义$(a, b)>0$意味着整数$ab$是正的，则全体有理数构成一个有序域。
+\end{theorem}
+我们按前面的习惯（\ref{subsection00202}）定义了相等之后，必须证明与正元素相等的元素是正的\footnote{这段话需要这样来理解：一个有理数其实可以有多种表示方法，他们之间是相等的，而前面正元素只对应其中一种表示方法。例如假设$\frac{1}{2}$是正的，我们需要证明和它相等的$\frac{2}{4}$，$\frac{3}{6}$之类都是正的，从而说明相等的定义对于正元素也是合理的，就是我们通常理解的相等}：由$(a, b)>0$和$(a, b) \equiv (c, d)$推出$(c, d)>0$。这是正确的，因为$cd$与$b^2cd$同号，$ab$与$abd^2$同号，根据假设$ad=bc$，有$abd^2=b^2cd$。所需的加法律、乘法律和三分律也成立。例如，两个正的数偶$(a, b)$与$(c, d)$的和是正的，这是因为，由$ab>0$和$cd>0$推出$d^2ab>0$和$b^2cd>0$，因此
+\[
+bd(ad+bc) = d^2ab + b^2cd > 0.
+\]
+这就是说和$(ad+bc, bd)$是正的。最后，分数“正”元素的定义同表示整数的特殊分数$(a, 1)$的自然顺序是一致的，这是因为，根据定义（\ref{equation0034}），只有当$a \cdot 1 > 0$时，$(a, 1)$才是正的。
+
+因为上述定理的证明中只用到“全体整数是有序整环”的假定，所以它实际上建立了更一般的结果：
+\begin{theorem}{}{theorem0041}
+在约定“$D$的元素$a, b$的商是正的当且仅当$ab$是正的”之下，有序整环$D$的商域$Q(D)$是有序的。只有按这种方法可以扩展$D$的次序使$Q$成为有序域。
+\end{theorem}
+
+存在很多其他有序域：实数域，形为$a+b\sqrt{2}$的域$\mathbb{Q}(\sqrt{2})$和实数域的其它子域。在任何这样的域中，绝对值可按\ref{subsection00103}那样定义，在那里所建立的不等式的性质在这里同样成立。在任何有序域上，除任意有序整环上成立的法则之外，我们还可以证明：
+\begin{gather}
+0 < \frac{1}{a} \quad \Leftrightarrow \quad a > 0 \label{equation0035}\\
+\frac{a}{b} < \frac{c}{d} \quad \Leftrightarrow \quad abd^2 < b^2cd \label{equation0036}\\
+0 < a < b \quad \Rightarrow \quad 0 < \frac{1}{b} < \frac{1}{a} \label{equation0037}\\
+a < b < 0 \quad\Rightarrow\quad 0 > \frac{1}{a} > \frac{1}{b} \label{equation0038}\\
+a_1^2+a_2^2+\cdots+a_n^2 \ge 0 \label{equation0039}
+\end{gather}
+（\ref{equation0037}）和（\ref{equation0038}）两个法则在不等式除法中是常见的。法则（\ref{equation0039}），即平方和永远非负，是特别有用的。例如，若$a \neq b$，则$(a-b)^2>0$，于是$a^2-2ab+b^2>0$，由此得出$a^2+b^2 > 2ab$，令$x=a^2$，$y=b^2$，并且两边除以2，那么
+\[
+\frac{x+y}{2} > \sqrt{xy}\quad(x \neq y).
+\]
+这表明，两个不同实数（正实数）的算术平均值$\frac{x+y}{2}$大于几何平均值$\sqrt{xy}$。
+
+\subsection{正整数公设}
+虽然我们用了全体整数的整环$\mathbb{Z}$作为我们考察基本数系的出发点，但是这一过程实际上很不严格，因为它假定负数存在。本节余下部分我们将指出怎样仅由我们熟悉的正整数的事实导出负整数及其性质。由此我们指出，负数存在性的假定如何可以避免。
+
+为一致起见，我们从列举所有正整数系$\mathbb{Z}^+$的一些基本性质开始，这些性质容易从Section\ref{section001}的结果推出。
+\begin{theorem}{正整数性质}{theorem0042}
+$\mathbb{Z}$中所有正整数系$\mathbb{Z}^+$具有下列性质：
+\begin{enumerate}
+\item[(i)] 在所定义的加法和乘法二元运算之下，$\mathbb{Z}^+$是封闭的，这两个运算满足结合律、交换律和分配律。
+\item[(ii)] 在$\mathbb{Z}^+$中存在乘法单位元素1，适合对$\mathbb{Z}^+$中一切$m$有$m \cdot 1 = m$。
+\item[(iii)] 在$\mathbb{Z}^+$中，消去律成立
+\begin{gather}\label{equation0040}
+mx=nx\quad\Rightarrow\quad m=n.
+\end{gather}
+\item[(iv)] 对$\mathbb{Z}^+$中任意两个元素$m$和$n$，下面三种关系恰有一个成立：或者$m=n$，或者$m+x=n$在$\mathbb{Z}^+$中有一个解，或者$m=n+y$在$\mathbb{Z}^+$中有一个解。
+\item[(v)] 在$\mathbb{Z}^+$中数学归纳法原理成立：$\mathbb{Z}^+$的任意子集如果包含1，并且当他包含$n$时也包含$n+1$，那么这个子集包含$\mathbb{Z}^+$中每一个元素。
+\end{enumerate}
+\end{theorem}
+
+书中没有给出证明，有机会尝试一下，主要是保证每一步都有公设或者已经证明的定理作为依据。
+
+相反的，如果把这个定理中指出的(i)\textasciitilde(v)看作公设，在下述意义下，它们完整地描述了正整数：我们先前定义过的正整数系具有这些性质，并且可以证明任何其他满足这些公设的系统与这个正整数系同构。特别注意，在$\mathbb{Z}^+$中如果$m+x=n$，那么
+\[
+\begin{aligned}
+n+z &= (m+x)+z = m+(x+z)\\
+&=m+(z+x) = (m+z)+x,
+\end{aligned}
+\]
+因此由(iv)知$m+z=n+z$是不可能的。类似的，$m=n+y$同$m+z=n+z$也是不相容的，因此我们可以得到
+\begin{gather}\label{equation0041}
+m+z=n+z \quad \Rightarrow\quad m=n.
+\end{gather}
+而且，方程$m+x=n$的三种可能性代替了正整数系的那些序的性质。
+
+从由这些公设给出的正整数系出发，我们可以重新构造整数系$\mathbb{Z}$。构造的目的是为了得到一个比$\mathbb{Z}^+$大的系统，在这个系统中减法总是可能的。因此，作为新元素，我们引进某正整数偶$(m,n)$\footnote{请和卡面有理数域构造那一节做个类比，其实思路是一致的。}，这里每个数偶表示方程$n+x=m$的解（如果是解的话）。这个构造的详细过程类似于整数环构造有理数域（\ref{subsection00202}）。
+\begin{definition}{}{defInteger}
+一个整数定义为正整数$m$和$n$的一个数偶$(m,n)$。数偶的相等定义为
+\begin{gather}\label{equation0042}
+(m,n)\equiv(r,s) \quad\Leftrightarrow\quad m+s = n+ r,
+\end{gather}
+而和与积分别定义为
+\begin{gather}
+(m,n)+(r, s) = (m+r, n+s), \label{equation0043}\\
+(m,n)\cdot(r,s)=(mr+ns, ms+nr),\label{equation0044}
+\end{gather}
+最后，$(m,n)$是“正”的当且仅当对某正整数$x$有$n+x=m$。
+\end{definition}
+
+由这些定义引进的数偶实际上满足我们已给出的所有关于整数的公设。我们首先必须验证，由（\ref{equation0042}）引进的“相等”满足自反律、对称律和传递律。在这个相等意义下，分别由（\ref{equation0043}）和（\ref{equation0044}）给出的和与积是唯一确定的。把定义（\ref{equation0043}）和（\ref{equation0044}）系统地应用到整环的各种形式的定律上，那么这些定律对于数偶也成立，这同有理数的讨论几乎一样。特别，对刚刚定义的系统，$(2,1)$是单位元素，$(1,1)$是零元素，并且加法逆元素存在，这是因为
+\[
+(m,n)+(n,m) \equiv (1,1),\quad \forall (m,n).
+\]
+下面只要证明数偶的乘法消去律，就知道全体数偶构成整环。乘法消去律的证明需要用到定理\ref{thm:theorem0042}的条件（iv）。
+
+由定理\ref{thm:theorem0042}的公设（iv），每个数偶恰好可写成下面三种形式之一：$(m,m)$，$(m+x, m)$，$(m, m+x)$。第一种形式的那些数偶等于零元素$(1,1)$；第二种形式的数偶$(m+x,m)$是正的数偶，并且可以证明，数偶具有有序整环的定义中所要求的加法律，乘法律和三分律。此外，
+\[
+(m+x, m) \equiv (n+y,n) \quad\Leftrightarrow\quad x=y.
+\] 
+因此，如果把“$\equiv$”的数偶看作同一数偶，那么对应$x \mapsto (m+x,m)$是全体给定的正整数$x$的集合到全体新的正数偶$(m+x, m)$的集合的一个单射。它甚至是一个单一同态，这因为由定义（\ref{equation0043}）和（\ref{equation0044}），
+\[
+\begin{aligned}
+&(m+x, m) + (n+y, n) = (m+n+x+y,m+n),\\
+&(m+x, m)\cdot(n+y, n)\\
+=&(mn+my+nx+mn+xy, mn+nx+mn+my).
+\end{aligned}
+\]
+因此新的“正”数偶满足数学归纳法原理。于是我们就粗略的给出了下面结果的一个证明。
+\begin{theorem}{}{theorem0043}
+通过定义$\mathbb{Z}$的任意元素为$\mathbb{Z}^+$中两个正整数之差这种方式，正整数系$\mathbb{Z}^+$可以嵌入较大的系统$\mathbb{Z}$中，在$\mathbb{Z}$中减法是可能的。这样构造的系统$\mathbb{Z}$是一个有序整环，它的正元素满足数学归纳法原理。
+\end{theorem}
+
+数学归纳法蕴含着良序原则。值得注意的是，上面粗略的证明只涉及到$\mathbb{Z}^+$的公设，反过来，在包含$\mathbb{Z}^+$的任意整环中，$\mathbb{Z}^+$的元素之差$(a-b)$必须满足定义（\ref{equation0042}）\textasciitilde（\ref{equation0044}），这就证明了
+\begin{theorem}{}{theorem0044}
+包含系统$\mathbb{Z}^+$的任意整环包含一个与整数环$\mathbb{Z}$同构的子整环。
+\end{theorem}
+
+\subsection{皮亚诺公设}
+在正整数集合$P=\mathbb{Z}^+$上，如果把加法和乘法当作未定义的运算，我们可以用后继函数
+\begin{gather}\label{equation0045}
+S(n)=n+1
+\end{gather}
+来定义它们。
+
+\begin{theorem}{}{theorem0045}
+正整数集合$P$和后继函数$S$具有下列性质：
+\begin{enumerate}
+\item[(i)] $1 \in P$，
+\item[(ii)] 若$n \in P$，则$S(n) \in P$，
+\item[(iii)] $P$中没有一个$n$，使得$S(n)=1$；
+\item[(iv)] 对$P$中$m$和$n$，由$S(m)=S(n)$可推出$m=n$；
+\item[(v)] $P$的一个子集如果包含1，并且当它包含$n$时，也包含$S(n)$，那么这个子集必等于$P$。
+\end{enumerate}
+\end{theorem}
+
+这些性质直接从定理\ref{thm:theorem0042}得到，特别注意，(v)是数学归纳法原理。
+
+性质（i）\textasciitilde（v）称为正整数集合的皮亚诺公设。正如下面指出的那样，它们足以证明正整数的所有性质。我们现在用它们来证明，原来的整数公设可确定整数集合（精确到同构）。
+
+\begin{theorem}{}{theorem0046}
+在任意有序整环$D$中，存在唯一的子集$P'$满足关于单位元素$1'$和后继函数$S'(a)=a+1'$的皮亚诺公设。
+\end{theorem}
+
+直观的，显然由$2'=1'+1'$，$3'=1'+1'+1'$，$\cdots$就是这样一个子集。不过我们希望一个以有序整环公设为依据的正式的证明。
+
+$D$的所有正元素的集合$D^+$显然包含$1'$，并且满足(i)和(ii)，现在令$\Sigma$是$D^+$的所有子集$T$组成的类，而$T$具有性质(i)和(ii)，我们定义$P'$是所有这些集合$T$的交集。
+
+由定义，对于$P'$，（i）和（ii）成立，因为$P'$只包含正元素，（iii）成立；因为$a+1'=b+1'$意味着$a=b$，所以（iv）成立。为证明（v），令$A$是$P'$的子集，它包含1，并且当它包含$a$时也包含$S(a)$。那么$A$是前面用到的集合$T$的一个，于是$P'$包含在$A$中，因此$P'=A$。对$P'$，这就证明了（v），同时（v）表明$P'$是唯一可能的这样的集合，因为$P'$满足（i）和（ii）。
+
+\begin{theorem}{}{theorem0047}
+定理\ref{thm:theorem0046}的子集$P'$对于加法、乘法和序而言，它同构于正整数集合$P$。
+\end{theorem}
 
 
-
-
-
-
-
+\section{多项式}
 
