@@ -990,7 +990,7 @@ a_1^2+a_2^2+\cdots+a_n^2 \ge 0 \label{equation0039}
 \]
 这表明，两个不同实数（正实数）的算术平均值$\frac{x+y}{2}$大于几何平均值$\sqrt{xy}$。
 
-\subsection{正整数公设}
+\subsection{正整数公设}\label{subsection00205}
 虽然我们用了全体整数的整环$\mathbb{Z}$作为我们考察基本数系的出发点，但是这一过程实际上很不严格，因为它假定负数存在。本节余下部分我们将指出怎样仅由我们熟悉的正整数的事实导出负整数及其性质。由此我们指出，负数存在性的假定如何可以避免。
 
 为一致起见，我们从列举所有正整数系$\mathbb{Z}^+$的一些基本性质开始，这些性质容易从Section\ref{section001}的结果推出。
@@ -1093,7 +1093,7 @@ S(n)=n+1
 
 直观的，显然由$2'=1'+1'$，$3'=1'+1'+1'$，$\cdots$就是这样一个子集。不过我们希望一个以有序整环公设为依据的正式的证明。
 
-$D$的所有正元素的集合$D^+$显然包含$1'$，并且满足(i)和(ii)，现在令$\Sigma$是$D^+$的所有子集$T$组成的类，而$T$具有性质(i)和(ii)，我们定义$P'$是所有这些集合$T$的交集。
+$D$的所有正元素的集合$D^+$显然包含$1'$，并且满足(i)和(ii)，现在令$\Sigma$是$D^+$的所有子集$T$组成的类，而$T$具有性质(i)和(ii)，我们定义$P'$是所有这些集合$T$的交集\footnote{请注意这种处理方式在数学中也是常见的，为了构造具备某种的集合，首先找出包含这种性质元素的集合，然后做交集。}。
 
 由定义，对于$P'$，（i）和（ii）成立，因为$P'$只包含正元素，（iii）成立；因为$a+1'=b+1'$意味着$a=b$，所以（iv）成立。为证明（v），令$A$是$P'$的子集，它包含1，并且当它包含$a$时也包含$S(a)$。那么$A$是前面用到的集合$T$的一个，于是$P'$包含在$A$中，因此$P'=A$。对$P'$，这就证明了（v），同时（v）表明$P'$是唯一可能的这样的集合，因为$P'$满足（i）和（ii）。
 
@@ -1101,6 +1101,182 @@ $D$的所有正元素的集合$D^+$显然包含$1'$，并且满足(i)和(ii)，�
 定理\ref{thm:theorem0046}的子集$P'$对于加法、乘法和序而言，它同构于正整数集合$P$。
 \end{theorem}
 
+非正式的，显然$1 \mapsto 1'$，$2 \mapsto 2'$，$\cdots$产生所要求的同构，因为$1' < 1'+1' < 1'+1'+1' < \cdots$，所以这个对应将保持次序。证明过程就是把这个对应明确化（对于自然数系来说，自然应该考虑归纳定义）。
+
+首先，令$Q(n)$是如下命题：$P$中整数$1 \le x \le n$和$P'$中元素$\phi_n(x)$之间存在唯一的对应$x \mapsto \phi_n(x)$，在这对应下：
+\begin{gather}\label{equation0045}
+\phi_n(1) = 1',\phi_n(S(x)) = S'(\phi_n(x)), 1 \le x < n.
+\end{gather}
+显然$Q(1)$成立，已知$Q(n)$成立，因此有一个$\phi_n$，我们可以通过
+\[
+\phi_{n+1}(x)=\phi_n(x), 1 \le x \le n; \phi_{n+1}(n+1) = S'(\phi_n(n)),
+\]
+构造唯一的$\phi_{n+1}$，因此由$Q(n)$成立推出$Q(n+1)$成立。由归纳法这就证明了$Q(n)$成立。
+
+再有，如果$a \le x \le n < m$，对$x$用归纳法，我们可以证明$\phi_n(x) = \phi_m(x)$，因此当$x \le n$时，$\phi_n(x)$是不依赖于$n$的。令$\phi(x)$表示$P'$的元素，这就给出了$P$到$P'$的对应$x \mapsto \phi(x)$，它具有性质：
+\begin{gather}\label{equation0046}
+\phi(1)=1',\phi(S(x)) = S'(\phi(x)).
+\end{gather}
+$P'$的每个元素是$P$的某个元素$x$的对应元素$\phi(x)$。因为元素$\phi(x)$的集合包含$1'$，并且如果包含任何$\phi(x)$也一定包含$\phi(x)$的后继，因此根据$P'$的性质（v），这个集合就是整个$P'$。
+
+在两个集合$P$和$P'$中，我们有
+\begin{align}
+n+1&=S(n), \quad n+S(m) = S(n+m), \label{equation0047}\\
+n \cdot 1 &= n,\quad n \cdot S(m) = n \cdot m + m,\label{equation0048}
+\end{align}
+从这些方程和（\ref{equation0046}）式，对$m$用归纳法，容易证明
+\[
+\begin{aligned}
+\phi(n+m)=\phi(n)+\phi(m),\\
+\phi(n \cdot m) = \phi(n)\cdot\phi(m),
+\end{aligned}
+\]
+换句话说，$\phi$关于加法和乘法是一个同构。
+
+其次，$\phi$保留次序，即由$m < n$，可推出$\phi(m) < \phi(n)$。实际上，由定义，$m<n$意味着$n-m$是正的，即
+\begin{gather}\label{equation0049}
+m < n \quad \Leftrightarrow\quad \exists k \in P, n=m+k.
+\end{gather}
+因此由$m<n$得出$n=m+k$，所以$\phi(n)=\phi(m)+\phi(k)$，因为$\phi(k)$在$D$中是正的，所以这就证明了$\phi(m)<\phi(n)$。
+
+最后$\phi$是$P$到$P'$的双射，因为已经知道$\phi(x)$的集合包含整个$P'$，所以只需证明，由$n \neq m$可推出$\phi(n) \neq \phi(m)$，但是$n \neq m$的意思是，比如说是$m < n$，于是$\phi(m) < \phi(n)$，因此
+\[
+\phi(n) \neq \phi(m).
+\]
+为概括我们的结论，我们定义两个有序整环之间的序-同构，即保留次序的同构。鉴于定理\ref{thm:theorem0044}，从定理\ref{thm:theorem0047}得出下列推论：
+\begin{corollary}{}{corollary0047}
+任意有序整环包含一个与$\mathbb{Z}$序-同构的子整环。
+\end{corollary}
+
+这个结果同定理\ref{thm:theorem0035}和定理\ref{thm:theorem0036}结合起来，我们有
+\begin{corollary}{}{corollary0048}
+任意有序域包含一个与有理数域$\mathbb{Q}$序-同构的子域。
+\end{corollary}
+
+这个结果给出作为最小有序域的有理数域的一个抽象特征。
+
+最后，在$D$中全体正元素集合是良序的情况下，容易证明，定理\ref{thm:theorem0046}的集合$P'$是由$D$的所有正元素组成。这就证明了
+\begin{corollary}{}{corollary0049}
+在序-同构意义下，只存在一个有序整环$Z$，它的正元素构成良序集合。
+\end{corollary}
+
+这就证明了，在同构意义下，整数公设唯一地确定整数集合。
+
+可以不从良序整环公设开始论述整数集合，而是从皮亚诺公设开始，其要点是注意到可用递归方程（\ref{equation0047}）和（\ref{equation0048}）定义完备的加法表和乘法表。同定理\ref{thm:theorem0044}的证明中几乎一样，我们可以正式地证明存在唯一的满足（\ref{equation0047}）的二元运算---加法，类似的，存在唯一的满足（\ref{equation0048}）的乘法，那么定理\ref{thm:theorem0042}中列举的各种性质可用归纳法证明。然后从皮亚诺公设出发，\ref{subsection00205}节中给出的数偶构造产生全体有理数\footnote{一般都是这个顺序，从皮亚诺公设出发，一步步构造整数，有理数，实数，复数。}。
 
 \section{多项式}
+\subsection{多项式形式}
+设$D$为任意整环，设$x$是较大的整环$E$的任意元素，$D$作为$E$的子整环包含在$E$中，在$E$中，我们能作$x$同$D$的元素或同$x$本身的和、差与积。
 
+反复进行这些运算，明显得到下面形式的一切表达式
+\begin{gather}\label{equ001030101}
+a_0+a_x+\cdots+a_nx^n\quad(a_0, \cdots, a_n \in D; a_n\neq 0, \text{当}n>0\text),
+\end{gather}
+这里$x^n$定义为$n$个因子的乘积$xx\cdots{}x$。而反过来，只用整环公设，我们可对形为（\ref{equ001030101}）的任意两个表达式进行加、减与乘，得到第三个这样的表达式。（书中后面举了一个乘法的例子，这里省略，毕竟很简单。）
+
+事实上，设
+\[
+\begin{aligned}
+p(x) &= a_0 + a_1x+\cdots+a_mx^m \\
+q(x) &= b_0 + b_1x + \cdots+b_nx^n
+\end{aligned}
+\]
+是形为（\ref{equ001030101}）的任意两个表达式。如果$m > n$，那么我们有
+\begin{align}\label{equ001030102}
+p(x)\pm{}q(x)=&(a_0\pm{}b_0)+\cdots+(a_n\pm{}b_n)x^n+a_{n+1}x^{n+1} \notag\\
+&+\cdots+a_mx^m.
+\end{align}
+如果$m<n$可得类似公式，根据分配律，
+\[
+p(x)q(x)=\sum_{i=0}^{m}{\sum_{j=0}^{n}{a_ib_jx^{i+j}}},
+\]
+然后把指数相同的项集中在一起，并将系数相加，我们有
+\begin{gather}\label{equ001030103}
+p(x)q(x)=a_0b_0+(a_0b_1+a_1b_0)x+\cdots+a_mb_nx^{m+n}
+\end{gather}
+这个公式中，$x^k$的系数为
+\[
+\sum_{i}{a_ib_{k-i}}
+\]
+这里对满足$0 \le i \le m$和$0 \le k-i \le n$的所有$i$求和。
+
+
+于是我们就证明了下面的结果：
+\begin{theorem}{}{thm001030101}
+假设存在一个整环$E$，包含一个与给定整环$D$同构的子整环，并有元素$x$不在$D$中，那么关于这个元素$x$的多项式（\ref{equ001030101}）根据公式（\ref{equ001030102}）和（\ref{equ001030103}）相加、相减和相乘，构成$E$的子整环。
+\end{theorem}
+
+为了证明这样的整环$E$总是存在的，需要建立下面的定义。
+\begin{definition}{}{def001030101}
+整环$D$上关于$x$的多项式是指形为（\ref{equ001030101}）的表达式，整数$n$成为多项式的次数。两个多项式相等是指它们具有相同的次数，并且对应的系数都相等。
+\end{definition}
+
+因为关于符号$x$并没有给出什么假定，所以表达式（\ref{equ001030101}）也常称为多项式形式（需要把它同多项式函数加以区别），符号$x$本身称为未定元。
+
+\begin{theorem}{}{thm001030102}
+如果加法和乘法分别由公式（\ref{equ001030102}）和（\ref{equ001030103}）定义，那么整环$D$上关于$x$的全体不同的多项式形式构成一个包含$D$在内的新整环$D[x]$。
+\end{theorem}
+
+证明过程只是去验证各个公设，这里抄录下来。
+
+由公式（\ref{equ001030103}）推出没有零因子（乘法消去律），这是因为，两个非零多项式形式乘积的首项系数$a_mb_n$是它相应因子的非零首项系数$a_m$和$b_n$的乘积（非零的）。0和1的性质及加法逆元素的存在性不难从公式（\ref{equ001030102}）和（\ref{equ001030103}）得出。
+
+为了证明交换律、结合律和分配律，引进“哑”零系数是方便的，这使得（\ref{equ001030102}）和（\ref{equ001030103}）变成简单形式
+\begin{gather}
+\begin{align}
+\sum_{k=0}^{\infty}{a_kx^k}+\sum_{k=}^{\infty}{b_kx^k} &= \sum_{k=0}^{\infty}{(a_k+b_k)x^k}, \tag{\ref{equ001030102}$'$} \\
+(\sum_{k=1}^{\infty}{x^k})(\sum_{k=0}^{\infty}{b_kx^k})&=\sum_{k=0}^{\infty}(\sum_{i+j=k}{a_ib_jx^k}), \tag{\ref{equ001030103}$'$}
+\end{align}
+\end{gather}
+这里除了有限多个系数之外全都是零。那么任何一个定律，比如分配律，只要把定律的两边按照法则（\ref{equ001030102}$'$）和（\ref{equ001030103}$'$）乘起来就可以验证，这因为，
+\begin{gather*}
+\begin{split}
+&(\sum_{k}{a_kx^k})(\sum_{k}{b_kx^k}+\sum_{k}{c_kx^k})\\
+&\quad =\sum_{k}{[\sum_{i+j=k}{a_i(b_j+c_j)}]x^k}
+\end{split}
+\end{gather*}
+\[
+\begin{split}
+&(\sum_{k}{a_kx^k})(\sum_{k}{b_kx^k})+(\sum_{k}{a_kx^k})(\sum_{k}{c_kx^k})\\
+&\quad =\sum_{k}{[(\sum_{i+j=k}{a_ib_j})+(\sum_{i+j=k}{a_ic_j})]x^k}
+\end{split}
+\]
+并证明这两个等式右边的$x$的每个幂$x_i^k$的系数相等。根据整环$D$的分配律，两个表达式中$x$的$k$次幂的系数是相同的。类似的论证可证其余定律，从而完成定理\ref{thm:thm001030102}的其他证明。
+
+现在回忆一下\ref{subsection00202}节的定理\ref{thm:theorem0036}，我们会看到，如果我们定义$D$上关于未定元$x$的有理形式为带有非零分母多项式形式的形式商，
+\begin{gather*}
+\frac{p(x)}{q(x)} = \frac{a_0+a_1x+\cdots+a_mx^m}{b_0+b_1x+\cdots+b_nx^n}, \\
+(a_i, b_j \in D; a_m \neq 0, \text{当}m>0; b_n \neq 0)
+\end{gather*}
+并由\ref{subsection00202}节的定义（\ref{equation0025}），（\ref{equation0026}）和（\ref{equation0027}）来分别定义相等，加法和乘法，这样我们便可得到一个域。
+\begin{corollary}{}{coro00103010201}
+任意整环$D$上关于未定元$x$的有理形式构成一个域，这个域记作$D(x)$。
+\end{corollary}
+
+这一节有几个习题是设计扩充知识：多项式的形式导数。
+\begin{exercise}\label{exer0010301001}
+$p(x)=a_0+a_1x+\cdots+a_nx^n$的“形式导数”定义为$p'(x)=a_1+2a_2x+\cdots+na_nx^{n-1}$。证明，在任意整环上，
+\begin{enumerate}
+\item[(a)] $(cp)'=cp'$（$c$为常数）；
+\item[(b)] $(p+q)'='p+q'$；
+\item[(c)] $(pq)'=p'q+pq'$；
+\item[(d)] $(p^n)'=np^{n-1}p'$。
+\end{enumerate}
+\end{exercise}
+\begin{exercise}\label{exer0010301002}
+设$p(y)$和$q(x)$分别是关于未定元$y$和$x$的多项式形式，证明：把$y=q(x)$代入$p(y)$，产生一个多项式$p(q(x))$。根据习题\ref{exer0010301001}中定义的形式导数，证明：$[p(q(x))]'=p'(q(x))q'(x)$。
+\end{exercise}
+
+%\begin{problemset}
+%  \item exercise 1
+%  \item exercise 2
+%  \item exercise 3
+%\end{problemset}
+
+
+\subsection{多项式函数}
+设$D$为任意整环，又设
+\[
+f(x)=a_0+a_1x+\cdots+a_mx^m
+\]
+是$D$上关于$x$的任意多项式形式。
