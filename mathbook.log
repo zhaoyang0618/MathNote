@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  2 MAR 2020 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  3 MAR 2020 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2190,7 +2190,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=187, 1027.84pt x 770.88pt>
+<cover.jpg, id=191, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 41.
@@ -2220,7 +2220,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 41.
-<logo.png, id=209, 345.20457pt x 135.31404pt>
+<logo.png, id=213, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 41.
@@ -3532,7 +3532,7 @@ m/n/12 ¼$\C70/rm/m/n/12/54 Œ
 
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [44]
-Overfull \hbox (5.29019pt too wide) in paragraph at lines 1474--1476
+Overfull \hbox (5.29019pt too wide) in paragraph at lines 1475--1477
 $\OML/ntxmi/m/it/12 b[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x\LMS/ntxsy/m/n/12
  º$\C70/rm/m/n/12/76 „ \C70/rm/m/n/12/6b ! \C70/rm/m/n/12/65 p \C70/rm/m/n/12/4
 f N \C70/rm/m/n/12/4e Ž$\OML/ntxmi/m/it/12 n$\C70/rm/m/n/12/62 ^^V \C70/rm/m/n/
@@ -3545,201 +3545,213 @@ M \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/4e ^^@ \C70/rm/m/n/12/8f Ç \C70/rm/m/n/12/
 /12/4f N \C70/rm/m/n/12/4e Ž$\OML/ntxmi/m/it/12 m$\C70/rm/m/n/12/4e :
  []
 
-(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[45]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
-
+(Font)              scaled to size 12.0pt on input line 1478.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1506.
+(Font)              scaled to size 12.0pt on input line 1478.
 
+[45]
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [46]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[47])
+[47]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [48]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 1611.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 1612.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 1612.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 1612.
+
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[49])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[50]
 ç¬¬ 2\tmspace +\thickmuskip {.2777em}ç«  2.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[49
+[51
 
 
 ]
 ç¬¬ 3\tmspace +\thickmuskip {.2777em}ç«  3.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[50
+[52
 
-] [51
+] [53
 
 ]
 ç¬¬ 4\tmspace +\thickmuskip {.2777em}ç«  4.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[52
+[54
 
 ]
 ç¬¬ 5\tmspace +\thickmuskip {.2777em}ç«  5.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-(./mathbook.bbl [53
+(./mathbook.bbl [55
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
@@ -3752,7 +3764,7 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[54
+[56
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
@@ -3761,7 +3773,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: 328815FA1A17B9FE5F922F8361860F7A;4520.
+(rerunfilecheck)             Checksum: 6EEDBE42455373EFE4507E539E7283DA;4678.
 
 
 LaTeX Warning: There were undefined references.
@@ -3771,34 +3783,34 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 53842 strings out of 494443
- 994934 string characters out of 6173253
+ 54127 strings out of 494443
+ 1000624 string characters out of 6173253
  1294555 words of memory out of 5000000
- 55084 multiletter control sequences out of 15000+600000
- 739157 words of font info for 578 fonts, out of 8000000 for 9000
+ 55284 multiletter control sequences out of 15000+600000
+ 773392 words of font info for 676 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/s
-imkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei
-.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Wind
-ows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2019/texmf-dist/f
-onts/enc/dvips/base/ec.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simka
-i.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fon
-ts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Win
-dows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
-><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/si
-mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
-Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
-ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts
-/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windo
-ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
-c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simk
-ai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fo
-nts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
+<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
+imhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows
+/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai
+.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
+s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Wind
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf>
+<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2019/texm
+f-dist/fonts/enc/dvips/base/ec.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
+ts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Win
+dows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf
+><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/
+Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
+Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
+ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
+/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windo
+ws/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><
+c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
+un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fo
+nts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wi
 ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
 c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows
@@ -3820,14 +3832,14 @@ dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
 mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
-ttc><c:/Windows/Fonts/simsun.ttc>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/ba
-se/8r.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
-.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}<c:/Windo
-ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><
-c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
+Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
+/simsun.ttc><c:/Windows/Fonts/simsun.ttc>{d:/texlive/2019/texmf-dist/fonts/enc/
+dvips/base/8r.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
+s/simhei.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}<
+c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sims
 un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
 ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
@@ -3839,34 +3851,36 @@ imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
-hei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
-onts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
+sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
+onts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
 indows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.t
 tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
 s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c
 :/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simka
 i.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fon
-ts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
+ts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Win
+dows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf
 ><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
-mhei.ttf><c:/Windows/Fonts/simhei.ttf><d:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/new
-tx/ntxsups-Regular.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/
-qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/t
-exlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/texlive/2019/t
-exmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texmf-dist/fonts
-/type1/public/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/
-txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.p
-fb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/2
-019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dist
-/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/tx
-sys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mathbook.pdf (58 pages, 1321307 bytes).
+mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
+Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><d:/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public
+/newtx/ntxsups-Regular.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-g
+yre/qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><
+d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/texlive/20
+19/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texmf-dist/f
+onts/type1/public/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
+lic/txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rt
+xr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texli
+ve/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-
+dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/typ
+e1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newt
+x/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mathbook.pdf (60 pages, 1353136 bytes).
 PDF statistics:
- 1773 PDF objects out of 2073 (max. 8388607)
- 1383 compressed objects within 14 object streams
- 263 named destinations out of 1000 (max. 500000)
- 25349 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1816 PDF objects out of 2073 (max. 8388607)
+ 1419 compressed objects within 15 object streams
+ 274 named destinations out of 1000 (max. 500000)
+ 30477 words of extra memory for PDF output out of 35830 (max. 10000000)
 
