@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  3 MAR 2020 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  4 MAR 2020 10:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2190,7 +2190,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=191, 1027.84pt x 770.88pt>
+<cover.jpg, id=195, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 41.
@@ -2220,7 +2220,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 41.
-<logo.png, id=213, 345.20457pt x 135.31404pt>
+<logo.png, id=217, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 41.
@@ -3728,30 +3728,58 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.1pt on input line 1612.
 
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[49])
+[49]
+Overfull \hbox (13.74944pt too wide) in paragraph at lines 1631--1632
+[]\C70/rm/m/n/12/67 ^^@ \C70/rm/m/n/12/59 ' \C70/rm/m/n/12/51 l \C70/rm/m/n/12/
+56 à \C70/rm/m/n/12/5b P$\OML/ntxmi/m/it/12 d\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it
+/12 x\LMS/ntxsy/m/n/12 º$\C70/rm/m/n/12/96 d \C70/rm/m/n/12/53 U \C70/rm/m/n/12
+/4f M \C70/rm/m/n/12/56 à \C70/rm/m/n/12/5b P \C70/rm/m/n/12/59 ^^V \C70/rm/m/n
+/12/66 / \C70/rm/m/n/12/55 / \C70/rm/m/n/12/4e ^^@ \C70/rm/m/n/12/76 „|\C70/rm/
+m/n/12/30 ^^B| \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/56 à \C70/rm/m/n/12/4e :|\C70
+/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/59 ‚ \C70/rm/m/n/12/67 œ$\OML/ntxmi/m/it/12 d
+$\C70/rm/m/n/12/54 Œ$\OML/ntxmi/m/it/12 d[]$\C70/rm/m/n/12/90 ý \C70/rm/m/n/12/
+66 / \C70/rm/m/n/12/59 ^^Z \C70/rm/m/n/12/98 y \C70/rm/m/n/12/5f ^^O$\OML/ntxmi
+/m/it/12 a$\C70/rm/m/n/12/54 Œ$\OML/ntxmi/m/it/12 b$\C70/rm/m/n/12/76 „
+ []
+
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [50]
+Overfull \hbox (0.72513pt too wide) in paragraph at lines 1682--1683
+[]\C70/rm/m/n/12/80 ^^C \C70/rm/m/n/12/86 Q \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/
+74 ^^F \C70/rm/m/n/12/65 p \C70/rm/m/n/12/57 ß$\U/ntxsym/m/n/12 Q$\C70/rm/m/n/1
+2/4e 
+ \C70/rm/m/n/12/51 s \C70/rm/m/n/12/4e Ž $ * \C70/rm/m/n/12/67 * \C70/rm/m/n/12
+/5b š \C70/rm/m/n/12/51 C \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/59 ^^Z \C70/rm/m/n
+/12/98 y \C70/rm/m/n/12/5f ^^O b ^^O \C70/rm/m/n/12/67 „ \C70/rm/m/n/12/62 ^^P 
+\C70/rm/m/n/12/76 „ \C70/rm/m/n/12/65 t \C70/rm/m/n/12/73 ¯$\U/ntxsym/m/n/12 Q\
+LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 x; y\LMS/ntxsy/m/n/12 ¼$|\C70/rm/m/n/12/30
+ ^^B| $\OML/ntxmi/m/it/12 a\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x; y\LMS/ntxsy
+/m/n/12 º \U/ntxmia/m/it/12 =
+ []
+
+) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
+) [51]
 ç¬¬ 2\tmspace +\thickmuskip {.2777em}ç«  2.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[51
+[52
 
 
 ]
 ç¬¬ 3\tmspace +\thickmuskip {.2777em}ç«  3.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[52
+[53
 
-] [53
+] [54
 
 ]
 ç¬¬ 4\tmspace +\thickmuskip {.2777em}ç«  4.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[54
+[55
 
 ]
 ç¬¬ 5\tmspace +\thickmuskip {.2777em}ç«  5.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-(./mathbook.bbl [55
+(./mathbook.bbl [56
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
@@ -3764,7 +3792,7 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[56
+[57
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
@@ -3773,7 +3801,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: 6EEDBE42455373EFE4507E539E7283DA;4678.
+(rerunfilecheck)             Checksum: 80C5290679AAC0A9D34BA679CAF8D98E;4852.
 
 
 LaTeX Warning: There were undefined references.
@@ -3783,11 +3811,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 54127 strings out of 494443
- 1000624 string characters out of 6173253
+ 54201 strings out of 494443
+ 1002171 string characters out of 6173253
  1294555 words of memory out of 5000000
- 55284 multiletter control sequences out of 15000+600000
- 773392 words of font info for 676 fonts, out of 8000000 for 9000
+ 55330 multiletter control sequences out of 15000+600000
+ 779194 words of font info for 698 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -3870,17 +3898,18 @@ blic/amsfonts/symbols/msam10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public
 yre/qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><
 d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/texlive/20
 19/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texmf-dist/f
-onts/type1/public/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
-lic/txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rt
-xr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texli
-ve/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-
-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/typ
-e1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newt
-x/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mathbook.pdf (60 pages, 1353136 bytes).
+onts/type1/public/newtx/rntxmi5.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
+lic/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rt
+xmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><d:/tex
+live/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/2019/texmf-
+dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dist/fonts/typ
+e1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfo
+nts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb><d
+:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mathbook.pdf (61 pages, 1369374 bytes).
 PDF statistics:
- 1816 PDF objects out of 2073 (max. 8388607)
- 1419 compressed objects within 15 object streams
- 274 named destinations out of 1000 (max. 500000)
- 30477 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1836 PDF objects out of 2073 (max. 8388607)
+ 1437 compressed objects within 15 object streams
+ 278 named destinations out of 1000 (max. 500000)
+ 30485 words of extra memory for PDF output out of 35830 (max. 10000000)
 
