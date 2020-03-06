@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  4 MAR 2020 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  6 MAR 2020 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2190,7 +2190,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=195, 1027.84pt x 770.88pt>
+<cover.jpg, id=199, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 41.
@@ -2220,7 +2220,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 41.
-<logo.png, id=217, 345.20457pt x 135.31404pt>
+<logo.png, id=221, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 41.
@@ -3757,29 +3757,178 @@ LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 x; y\LMS/ntxsy/m/n/12 ¼$|\C70/rm/m/n/12/30
 /m/n/12 º \U/ntxmia/m/it/12 =
  []
 
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[51]
+Overfull \hbox (48.26439pt too wide) in paragraph at lines 1707--1709
+\C70/rm/m/n/10.95/59 ‚ \C70/rm/m/n/10.95/67 œ \C70/rm/m/n/10.95/5b ƒ \C70/rm/m/
+n/10.95/4e ^^M \C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/67 , \C70/rm/m/n/10.95/
+53 Ÿ \C70/rm/m/n/10.95/59 ^^Z \C70/rm/m/n/10.95/98 y \C70/rm/m/n/10.95/5f ^^O|\
+C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/90 £ \C70/rm/m/n/10.95/4e H$\OML/ntx
+mi/m/it/10.95 G$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/67 Ð \C70/rm/m/n/10.95
+/7d   \C70/rm/m/n/10.95/51 C \C70/rm/m/n/10.95/7d  $\OML/ntxmi/m/it/10.95 p$\C7
+0/rm/m/n/10.95/5c ^^F \C70/rm/m/n/10.95/65 t \C70/rm/m/n/10.95/96 d \C70/rm/m/n
+/10.95/6b Ï \C70/rm/m/n/10.95/4e *$\OML/ntxmi/m/it/10.95 c[]$|\C70/rm/m/n/10.95
+/ff ^^L| \C70/rm/m/n/10.95/8b ¾$\OML/ntxmi/m/it/10.95 a[]$\C70/rm/m/n/10.95/54 
+Œ$\OML/ntxmi/m/it/10.95 b[]$\C70/rm/m/n/10.95/52 ^^F + \C70/rm/m/n/10.95/66 /$[
+][] []$\C70/rm/m/n/10.95/54 Œ$[][] []$\C70/rm/m/n/10.95/4e -
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 1716--1717
+[]$\OML/ntxmi/m/it/12 F\LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 x\LMS/ntxsy/m/n/12
+ ¼$\C70/rm/m/it/12/76 „ \C70/rm/m/it/12/4e û \C70/rm/m/it/12/61 ^^O \C70/rm/m/i
+t/12/97 ^ \C70/rm/m/it/12/96 ö \C70/rm/m/it/12/59 ^^Z \C70/rm/m/it/12/98 y \C70
+/rm/m/it/12/5f ^^O$\OML/ntxmi/m/it/12 f\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x\
+LMS/ntxsy/m/n/12 º$\C70/rm/m/it/12/53 ï \C70/rm/m/it/12/4e å \C70/rm/m/it/12/51
+ ™ \C70/rm/m/it/12/62 ^^P$\OML/ntxmi/m/it/12 f\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/i
+t/12 x\LMS/ntxsy/m/n/12 º \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 c[]f[]\LMS/ntx
+sy/m/n/12 ¹\OML/ntxmi/m/it/12 x\LMS/ntxsy/m/n/12 º$|\C70/rm/m/it/12/ff ^^L| \C7
+0/rm/m/it/12/51 v \C70/rm/m/it/12/4e -$\OML/ntxmi/m/it/12 c[]$\C70/rm/m/it/12/5
+7 ($\OML/ntxmi/m/it/12 F$\C70/rm/m/it/12/4e -|\C70/rm/m/it/12/ff ^^L|
+ []
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 1722.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 1722.
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[52]
+
+LaTeX Warning: Reference `lem:lem001030903' on page 53 undefined on input line 
+1744.
+
+
+Overfull \hbox (1.57318pt too wide) in paragraph at lines 1749--1751
+[]\C70/rm/bx/n/12/8b Á \C70/rm/bx/n/12/66 ^^N|\C70/rm/bx/n/12/ff ^^Z|  [][] \C7
+0/rm/m/n/10.95/75 1 \C70/rm/m/n/10.95/5f ^^U \C70/rm/m/n/10.95/74 ^^F[][]\T1/nt
+xtlf/m/n/10.95 (-20) 1.6[][]|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/4e û \
+C70/rm/m/n/10.95/4f U \C70/rm/m/n/10.95/59 ^^Z \C70/rm/m/n/10.95/98 y \C70/rm/m
+/n/10.95/5f ^^O$\OML/ntxmi/m/it/10.95 f\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10
+.95 x\LMS/ntxsy/m/n/10.95 º$\C70/rm/m/n/10.95/53 ï \C70/rm/m/n/10.95/52 ^^F \C7
+0/rm/m/n/10.95/89 ã \C70/rm/m/n/10.95/62 ^^P$\OML/ntxmi/m/it/10.95 f\LMS/ntxsy/
+m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 =
+ \OML/ntxmi/m/it/10.95 c[]f[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/
+ntxsy/m/n/10.95 º$|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/56 à \C70/rm/m/n
+/10.95/6b d$\OML/ntxmi/m/it/10.95 G\LMS/ntxsy/m/n/10.95 »\OML/ntxmi/m/it/10.95 
+x\LMS/ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/76 „ \C70/rm/m
+/n/10.95/7d   \C70/rm/m/n/10.95/51 C \C70/rm/m/n/10.95/7d  $\OML/ntxmi/m/it/10.
+95 f\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 º$\C70/rm
+/m/n/10.95/5f Å
+ []
+
+
+Overfull \hbox (2.2304pt too wide) in paragraph at lines 1749--1751
+\C70/rm/m/n/10.95/71 6 \C70/rm/m/n/10.95/67 	 \C70/rm/m/n/10.95/56 à \C70/rm/m/
+n/10.95/5b P$\OML/ntxmi/m/it/10.95 c[]$\C70/rm/m/n/10.95/62 ^^V \C70/rm/m/n/10.
+95/80 ^^E$\OML/ntxmi/m/it/10.95 f[]$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/76
+ „ \C70/rm/m/n/10.95/4e ^^@ * \C70/rm/m/n/10.95/66 /$\OML/ntxmi/m/it/10.95 G\LM
+S/ntxsy/m/n/10.95 »\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10
+.95/76 „ \C70/rm/m/n/10.95/53 U \C70/rm/m/n/10.95/4f M|\C70/rm/m/n/10.95/30 ^^B
+| \C70/rm/m/n/10.95/4e Ž \C70/rm/m/n/10.95/66 /$\OML/ntxmi/m/it/10.95 G\LMS/ntx
+sy/m/n/10.95 »\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10.95/7
+6 „ \C70/rm/m/n/10.95/7d   \C70/rm/m/n/10.95/51 C \C70/rm/m/n/10.95/7d   \C70/r
+m/m/n/10.95/52 ^^F \C70/rm/m/n/10.95/4e : $ \C70/rm/m/n/10.95/79 Í \C70/rm/m/n/
+10.95/7c { \C70/rm/m/n/10.95/57 ‹|\C70/rm/m/n/10.95/ff ^^Z| \C70/rm/m/n/10.95/4
+e ^^@ \C70/rm/m/n/10.95/7c { \C70/rm/m/n/10.95/66 /$\OML/ntxmi/m/it/10.95 G$\C7
+0/rm/m/n/10.95/76 „
+ []
+
+
+Overfull \hbox (7.97462pt too wide) in paragraph at lines 1749--1751
+\C70/rm/m/n/10.95/7d   \C70/rm/m/n/10.95/51 C \C70/rm/m/n/10.95/7d  $\OML/ntxmi
+/m/it/10.95 p$|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/4e ^^@ \C70/rm/m/n/1
+0.95/7c { \C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/67 , \C70/rm/m/n/10.95/53 Ÿ 
+\C70/rm/m/n/10.95/4e ^^M \C70/rm/m/n/10.95/53 ï \C70/rm/m/n/10.95/7e ¦ \C70/rm/
+m/n/10.95/59 ^^Z \C70/rm/m/n/10.95/98 y \C70/rm/m/n/10.95/5f ^^O|\C70/rm/m/n/10
+.95/ff ^^L| \C70/rm/m/n/10.95/5b ƒ \C70/rm/m/n/10.95/4e ^^M Å \C70/rm/m/n/10.95
+/57 ($\OML/ntxmi/m/it/10.95 G\LMS/ntxsy/m/n/10.95 »\OML/ntxmi/m/it/10.95 x\LMS/
+ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/80 ^^L \C70/rm/m/n/1
+0.95/4e ^^T \C70/rm/m/n/10.95/57 ($\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 
+»\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10.95/4e - \C70/rm/m
+/n/10.95/90 ý \C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/4e ^^M \C70/rm/m/n/10.95
+/53 ï \C70/rm/m/n/10.95/7e ¦ \C70/rm/m/n/10.95/76 „ |\C70/rm/m/n/10.95/ff ^^H|[
+][]\T1/ntxtlf/m/n/10.95 (-20) 1.53[][]|\C70/rm/m/n/10.95/ff 	||\C70/rm/m/n/10.9
+5/30 ^^B|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1751
+
+ []
+
+
+Overfull \hbox (6.76291pt too wide) in paragraph at lines 1752--1753
+\C70/rm/m/n/10.95/4e › \C70/rm/m/n/10.95/67 , \C70/rm/m/n/10.95/53 Ÿ \C70/rm/m/
+n/10.95/4e ^^M \C70/rm/m/n/10.95/53 ï \C70/rm/m/n/10.95/7e ¦ \C70/rm/m/n/10.95/
+59 ^^Z \C70/rm/m/n/10.95/98 y \C70/rm/m/n/10.95/5f ^^O \C70/rm/m/n/10.95/76 „ \
+C70/rm/m/n/10.95/4e X \C70/rm/m/n/10.95/79 ï \C70/rm/m/n/10.95/76 ø \C70/rm/m/n
+/10.95/4f 4|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/8b ° \C70/rm/m/n/10.95/
+4f \$\OML/ntxmi/m/it/10.95 f\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/n
+txsy/m/n/10.95 º ^^X \OML/ntxmi/m/it/10.95 q[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/
+m/it/10.95 x\LMS/ntxsy/m/n/10.95 º [] \OML/ntxmi/m/it/10.95 q[]\LMS/ntxsy/m/n/1
+0.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 º$|\C70/rm/m/n/10.95/30 ^^B| 
+\C70/rm/m/n/10.95/4e Ž \C70/rm/m/n/10.95/66 /$\OML/ntxmi/m/it/10.95 f\LMS/ntxsy
+/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 
+= \OML/ntxmi/m/it/10.95 dq[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/n
+txsy/m/n/10.95 º [] \OML/ntxmi/m/it/10.95 q[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m
+/it/10.95 x\LMS/ntxsy/m/n/10.95 º$|\C70/rm/m/n/10.95/ff ^^L|
+ []
+
+
+Overfull \hbox (9.46126pt too wide) in paragraph at lines 1758--1759
+\C70/rm/m/n/10.95/4e :$\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 »\OML/ntxmi/
+m/it/10.95 x\LMS/ntxsy/m/n/10.95 ¼$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/76 
+„$\OML/ntxmi/m/it/10.95 f\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxs
+y/m/n/10.95 º$\C70/rm/m/n/10.95/76 „ \C70/rm/m/n/10.95/55 / \C70/rm/m/n/10.95/4
+e ^^@ ^^M \C70/rm/m/n/10.95/53 ï \C70/rm/m/n/10.95/7e ¦ \C70/rm/m/n/10.95/56 à 
+\C70/rm/m/n/10.95/5b P \C70/rm/m/n/10.95/76 „ \C70/rm/m/n/10.95/67 , \C70/rm/m/
+n/10.95/53 Ÿ \C70/rm/m/n/10.95/90 è \C70/rm/m/n/10.95/52 ^^F|\C70/rm/m/n/10.95/
+30 ^^B| \C70/rm/m/n/10.95/56 à \C70/rm/m/n/10.95/4e :$\OML/ntxmi/m/it/10.95 q[]
+\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x\LMS/ntxsy/m/n/10.95 º$\C70/rm/m/n
+/10.95/90 ý \C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/67 , \C70/rm/m/n/10.95/53 
+Ÿ \C70/rm/m/n/10.95/76 „|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/62 @ \C70/
+rm/m/n/10.95/4e å X \C70/rm/m/n/10.95/79 ï$\OML/ntxmi/m/it/10.95 p[] [] p[]$\C7
+0/rm/m/n/10.95/5b ž
+ []
+
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[53]
+Overfull \hbox (2.33832pt too wide) in paragraph at lines 1777--1791
+[]\C70/rm/m/n/12/62 ^^Q \C70/rm/m/n/12/4e ì \C70/rm/m/n/12/73 ° \C70/rm/m/n/12/
+57 ( \C70/rm/m/n/12/8b Á \C70/rm/m/n/12/66 ^^N|\C70/rm/m/n/12/ff ^^L| \C70/rm/m
+/n/12/59 ‚ \C70/rm/m/n/12/67 œ$\OML/ntxmi/m/it/12 n \U/ntxmia/m/it/12 = \OML/nt
+xmi/m/it/12 p$\C70/rm/m/n/12/66 / \C70/rm/m/n/12/7d   \C70/rm/m/n/12/65 p|\C70/
+rm/m/n/12/ff ^^L| \C70/rm/m/n/12/90 £ \C70/rm/m/n/12/4e H \C70/rm/m/n/12/75 1 |
+\C70/rm/m/n/12/ff ^^H|[][]\T1/ntxtlf/m/n/12 (-20) 1.3.13[][]|\C70/rm/m/n/12/ff 
+	| \C70/rm/m/n/12/5b š \C70/rm/m/n/12/4e I \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/5
+2 ^^F \C70/rm/m/n/12/57 ^^F \C70/rm/m/n/12/59 ^^Z \C70/rm/m/n/12/98 y \C70/rm/m
+/n/12/5f ^^O$\OML/ntxmi/m/it/12 ^^^\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x\LMS/
+ntxsy/m/n/12 º$\C70/rm/m/n/12/66 /
+ []
+
 ) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [51]
+) [54]
 ç¬¬ 2\tmspace +\thickmuskip {.2777em}ç«  2.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[52
+[55
 
 
 ]
 ç¬¬ 3\tmspace +\thickmuskip {.2777em}ç«  3.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[53
+[56
 
-] [54
+] [57
 
 ]
 ç¬¬ 4\tmspace +\thickmuskip {.2777em}ç«  4.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[55
+[58
 
 ]
 ç¬¬ 5\tmspace +\thickmuskip {.2777em}ç«  5.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-(./mathbook.bbl [56
+(./mathbook.bbl [59
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
@@ -3792,7 +3941,7 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[57
+[60
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
@@ -3801,7 +3950,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: 80C5290679AAC0A9D34BA679CAF8D98E;4852.
+(rerunfilecheck)             Checksum: 3338ABA68CCF775257240183B06AEFF3;5040.
 
 
 LaTeX Warning: There were undefined references.
@@ -3811,64 +3960,64 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 54201 strings out of 494443
- 1002171 string characters out of 6173253
+ 54350 strings out of 494443
+ 1005129 string characters out of 6173253
  1294555 words of memory out of 5000000
- 55330 multiletter control sequences out of 15000+600000
- 779194 words of font info for 698 fonts, out of 8000000 for 9000
+ 55426 multiletter control sequences out of 15000+600000
+ 794557 words of font info for 731 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows
-/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai
-.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
-s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Wind
-ows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf>
-<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2019/texm
-f-dist/fonts/enc/dvips/base/ec.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf
-><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
-mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/
-Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
-ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
-/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windo
-ws/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><
-c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fo
-nts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
-c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows
-/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
-s/simkai.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}
-<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sim
+imkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:
+/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Wind
+ows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf>
+<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sim
+kai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2
+019/texmf-dist/fonts/enc/dvips/base/ec.enc}<c:/Windows/Fonts/simsun.ttc><c:/Win
+dows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf
+><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
+mkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
+Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/
+Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
+ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
+/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
+ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><
+c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simh
+ei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Wi
+ndows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.tt
+f><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:
+/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
+s/simkai.ttf><c:/Windows/Fonts/simkai.ttf>{d:/texlive/2019/texmf-dist/fonts/enc
+/dvips/newtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sim
 kai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
 onts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
 indows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.t
 tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
-s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c
+s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c
 :/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
 n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
-><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Win
+dows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
 mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
-ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
-/simsun.ttc><c:/Windows/Fonts/simsun.ttc>{d:/texlive/2019/texmf-dist/fonts/enc/
-dvips/base/8r.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
-s/simhei.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}<
-c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
+/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windo
+ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>{d:/texlive/2019/texmf-dist/fo
+nts/enc/dvips/base/8r.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Wind
+ows/Fonts/simhei.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-t
+lf.enc}<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
 ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
 c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
@@ -3880,36 +4029,37 @@ s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
 sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
-onts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
-indows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.t
+onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
+indows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.t
 tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
 s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c
 :/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simka
 i.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fon
 ts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Win
-dows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf
-><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+dows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf
+><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/si
 mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
-Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><d:/texlive/2019/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public
-/newtx/ntxsups-Regular.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-g
-yre/qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><
-d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/texlive/20
-19/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texmf-dist/f
-onts/type1/public/newtx/rntxmi5.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
-lic/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rt
-xmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><d:/tex
-live/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/2019/texmf-
-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dist/fonts/typ
-e1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfo
-nts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb><d
-:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mathbook.pdf (61 pages, 1369374 bytes).
+Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
+Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><d:/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2019/texmf-dist/fonts/type
+1/public/newtx/ntxsups-Regular.pfb><d:/texlive/2019/texmf-dist/fonts/type1/publ
+ic/tex-gyre/qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qt
+mr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/te
+xlive/2019/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texm
+f-dist/fonts/type1/public/newtx/rntxmi5.pfb><d:/texlive/2019/texmf-dist/fonts/t
+ype1/public/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tx
+fonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb
+><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/201
+9/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dist/f
+onts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
+lic/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsy
+s.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mathbook.pdf (64 pages, 1405251 bytes).
 PDF statistics:
- 1836 PDF objects out of 2073 (max. 8388607)
- 1437 compressed objects within 15 object streams
- 278 named destinations out of 1000 (max. 500000)
- 30485 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1891 PDF objects out of 2073 (max. 8388607)
+ 1486 compressed objects within 15 object streams
+ 291 named destinations out of 1000 (max. 500000)
+ 31517 words of extra memory for PDF output out of 35830 (max. 10000000)
 
