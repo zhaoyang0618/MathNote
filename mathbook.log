@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  7 MAR 2020 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  8 MAR 2020 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2190,7 +2190,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=215, 1027.84pt x 770.88pt>
+<cover.jpg, id=220, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 41.
@@ -2220,7 +2220,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 41.
-<logo.png, id=237, 345.20457pt x 135.31404pt>
+<logo.png, id=242, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 41.
@@ -3967,34 +3967,38 @@ n/12/90 � \C70/rm/m/n/12/4e H \C70/rm/m/n/12/71 g \C70/rm/m/n/12/5b � \C70/rm/m
 /n/12/74 ^^F[][]\T1/ntxtlf/m/n/12 (-20) 1.56[][]\C70/rm/m/n/12/8b �
  []
 
-) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [57]
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[57]
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[58])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[59]
 第 2\tmspace +\thickmuskip {.2777em}章 2.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[58
+[60
 
 
 ]
 第 3\tmspace +\thickmuskip {.2777em}章 3.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[59
+[61
 
-] [60
+] [62
 
 ]
 第 4\tmspace +\thickmuskip {.2777em}章 4.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[61
+[63
 
 ]
 第 5\tmspace +\thickmuskip {.2777em}章 5.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[62
+[64
 
 ]
 第 6\tmspace +\thickmuskip {.2777em}章 6.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-(./mathbook.bbl [63
+(./mathbook.bbl [65
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
@@ -4007,7 +4011,7 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[64
+[66
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
@@ -4016,7 +4020,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: F19656D766B8B17C5D713FC17E7E5D4D;5517.
+(rerunfilecheck)             Checksum: 21A70028388973FC1DAC55D7C51A2314;5651.
 
 
 LaTeX Warning: There were undefined references.
@@ -4026,40 +4030,40 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 54437 strings out of 494443
- 1007101 string characters out of 6173253
+ 54540 strings out of 494443
+ 1009025 string characters out of 6173253
  1294555 words of memory out of 5000000
- 55482 multiletter control sequences out of 15000+600000
- 795453 words of font info for 735 fonts, out of 8000000 for 9000
+ 55557 multiletter control sequences out of 15000+600000
+ 798693 words of font info for 747 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
-imhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei
-.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>
-<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
-hei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
-onts/simhei.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/base/ec.enc}<c:/Win
-dows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc
-><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
-msun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/
-Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
-Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
-ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts
-/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
+imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
+/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+s/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Wind
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>
+<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sim
+sun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
+onts/simkai.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2019/texmf-dist/fonts/
+enc/dvips/base/ec.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf
+><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+mhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/
+Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
+Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.
+ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
+/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
 ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><
-c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sims
-un.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simk
+ai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
 nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.tt
-f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.tt
+f><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:
+/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:
 /Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai
-.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
 s/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf>{d:/texl
 ive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/sim
 kai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
@@ -4077,14 +4081,14 @@ msun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
 Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.
 ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
-/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windo
-ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>{
-d:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
+/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
+ws/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
+c:/Windows/Fonts/simsun.ttc>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r
+.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>{d:/texlive/2019/texmf-dist/f
-onts/enc/dvips/newtx/ntx-ec-tlf.enc}<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
-nts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>
+{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}<c:/Windows/Fo
+nts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Wi
 ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.tt
 c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
@@ -4096,8 +4100,8 @@ ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
 sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
 onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
-indows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.t
-tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
+indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.t
+tf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
 s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c
 :/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simka
@@ -4105,28 +4109,28 @@ i.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fon
 ts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Win
 dows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf
 ><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/si
-mkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
+mkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
 Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
-ttf><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texli
-ve/2019/texmf-dist/fonts/type1/public/newtx/ntxsups-Regular.pfb><d:/texlive/201
-9/texmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb><d:/texlive/2019/texmf-dist/f
-onts/type1/public/tex-gyre/qtmr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pub
-lic/tex-gyre/qtmri.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/rnt
-xmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/rntxmi5.pfb><d:/te
-xlive/2019/texmf-dist/fonts/type1/public/newtx/rntxmi7.pfb><d:/texlive/2019/tex
-mf-dist/fonts/type1/public/txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/
-type1/public/txfonts/rtxr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/ne
-wtx/txexs.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb>
-<d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/20
-19/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/
-fonts/type1/public/newtx/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on mathbook.pdf (68 pages, 1434463 bytes).
+ttf><c:/Windows/Fonts/simhei.ttf><d:/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/ntxsup
+s-Regular.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb>
+<d:/texlive/2019/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/texlive/20
+19/texmf-dist/fonts/type1/public/tex-gyre/qtmri.pfb><d:/texlive/2019/texmf-dist
+/fonts/type1/public/newtx/rntxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/pu
+blic/newtx/rntxmi5.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/rnt
+xmi7.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><d:/t
+exlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><d:/texlive/2019/tex
+mf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/2019/texmf-dist/fonts/ty
+pe1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txf
+onts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
+><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txsys.pfb><d:/texlive/201
+9/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mathbook.pdf (70 pages, 1453929 bytes).
 PDF statistics:
- 1954 PDF objects out of 2073 (max. 8388607)
- 1543 compressed objects within 16 object streams
- 308 named destinations out of 1000 (max. 500000)
- 31549 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1983 PDF objects out of 2073 (max. 8388607)
+ 1569 compressed objects within 16 object streams
+ 319 named destinations out of 1000 (max. 500000)
+ 31557 words of extra memory for PDF output out of 35830 (max. 10000000)
 
