@@ -36,9 +36,10 @@
 \contentsline {section}{\numberline {1.4}实数}{57}{section.1.4}% 
 \contentsline {subsection}{\numberline {1.4.1}毕达哥拉斯二难推论}{57}{subsection.1.4.1}% 
 \contentsline {subsection}{\numberline {1.4.2}上界与下界}{59}{subsection.1.4.2}% 
-\contentsline {chapter}{\numberline {2}基础代数}{60}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}代数}{61}{chapter.3}% 
-\contentsline {part}{II\hspace {1em}分析}{62}{part.2}% 
-\contentsline {chapter}{\numberline {4}数学分析}{63}{chapter.4}% 
-\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{64}{chapter.5}% 
-\contentsline {chapter}{\numberline {6}积分论}{65}{chapter.6}% 
+\contentsline {subsection}{\numberline {1.4.3}实数公设}{60}{subsection.1.4.3}% 
+\contentsline {chapter}{\numberline {2}基础代数}{62}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}代数}{63}{chapter.3}% 
+\contentsline {part}{II\hspace {1em}分析}{64}{part.2}% 
+\contentsline {chapter}{\numberline {4}数学分析}{65}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{66}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}积分论}{67}{chapter.6}% 
