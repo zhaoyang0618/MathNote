@@ -43,3 +43,4 @@
 \contentsline {chapter}{\numberline {4}数学分析}{65}{chapter.4}% 
 \contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{66}{chapter.5}% 
 \contentsline {chapter}{\numberline {6}积分论}{67}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}单复变函数}{68}{chapter.7}% 

@@ -1990,9 +1990,21 @@ c = k + 0.d_1d_2d_3\cdots
 \begin{theorem}{阿基米德定律}{thm001040302}
 在所有实数组成的域$\mathbb{R}$（由实数公设定义的）中，对任意两个数$a > 0$和$b>0$，存在整数$n$使得$na > b$。
 \end{theorem}
+\begin{proof}
+假定对于两个特定的实数$a$和$b$，上述结论是错误的，因而对每个$n$，$b \ge na$。则所有倍数$na$的集合$S$有上界$b$，从而它也有最小上界$b^*$，所以对每个$n$，$b^* \ge na$，因此对每个$m$，也有$b^* \ge (m+1)a$。这推出$b^*-a \ge ma$，所以$b^*-a$也是$a$的所有倍数的集合的上界，但是它小于已知的最小上界，得出矛盾。
+\end{proof}
 
+\begin{corollary}{}{coro001040301}
+对已知实数$a$和$b$，$b > 0$，总存在整数$q$适合$a = bq + r$，$0 \le r < b$。
+\end{corollary}
 
+这是除法算式的推广。
 
+这样建立的“阿基米德性质”可以证明欧多克斯条件（参考\ref{subsection0010401}节的（\ref{equ001040103}））是合理的。
+
+\begin{theorem}{}{thm001040303}
+任意两个实数$c$和$d$之间（$c > d$），存在有理数$\frac{m}{n}$适合$c > \frac{m}{n} > d$。
+\end{theorem}
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  9 MAR 2020 10:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  19 MAR 2020 09:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2190,7 +2190,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=224, 1027.84pt x 770.88pt>
+<cover.jpg, id=228, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 41.
@@ -2220,7 +2220,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 41.
-<logo.png, id=246, 345.20457pt x 135.31404pt>
+<logo.png, id=250, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 41.
@@ -4140,9 +4140,21 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 1989.
 
-[60])
-(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[61]
+[60]
+Overfull \hbox (9.40587pt too wide) in paragraph at lines 2003--2004
+[]\C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/68 7 \C70/rm/m/n/12/5e ú \C70/rm/m/n/12/7a
+ Ë \C70/rm/m/n/12/76 „ |\C70/rm/m/n/12/20 ^^\|\C70/rm/m/n/12/96 ? \C70/rm/m/n/1
+2/57 ú \C70/rm/m/n/12/7c s \C70/rm/m/n/12/5f · \C70/rm/m/n/12/60 ' \C70/rm/m/n/
+12/8d (|\C70/rm/m/n/12/20 ^^]| \C70/rm/m/n/12/53 ï \C70/rm/m/n/12/4e å \C70/rm/
+m/n/12/8b Á \C70/rm/m/n/12/66 ^^N \C70/rm/m/n/12/6b ' \C70/rm/m/n/12/59 ^^Z \C7
+0/rm/m/n/12/51 K \C70/rm/m/n/12/65 ¯ \C70/rm/m/n/12/67 a \C70/rm/m/n/12/4e ö |\
+C70/rm/m/n/12/ff ^^H|\C70/rm/m/n/12/53 Â \C70/rm/m/n/12/80 ^^C[][]\T1/ntxtlf/m/
+n/12 (-20) 1.4.1[][]\C70/rm/m/n/12/82 ‚ \C70/rm/m/n/12/76 „ |\C70/rm/m/n/12/ff 
+^^H|[][]\T1/ntxtlf/m/n/12 (-20) 1.4.3[][]|\C70/rm/m/n/12/ff 	||	|
+ []
+
+) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
+) [61]
 ç¬¬ 2\tmspace +\thickmuskip {.2777em}ç«  2.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [62
@@ -4168,7 +4180,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 ]
 ç¬¬ 6\tmspace +\thickmuskip {.2777em}ç«  6.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-(./mathbook.bbl [67
+[67
+
+]
+ç¬¬ 7\tmspace +\thickmuskip {.2777em}ç«  7.
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+(./mathbook.bbl [68
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
@@ -4181,16 +4198,16 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[68
+[69
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
  (./mathbook.aux (./0-preface.aux) (./1-surveyofmodernalgebra.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: B280C3E7D724B6FF126651E5CEC6507C;5777.
+(rerunfilecheck)             Checksum: 9513FCF08BD728E88660256B1E168F0C;5879.
 
 
 LaTeX Warning: There were undefined references.
@@ -4200,11 +4217,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 54706 strings out of 494443
- 1011944 string characters out of 6173253
+ 54735 strings out of 494443
+ 1012622 string characters out of 6173253
  1294555 words of memory out of 5000000
- 55606 multiletter control sequences out of 15000+600000
- 806930 words of font info for 769 fonts, out of 8000000 for 9000
+ 55625 multiletter control sequences out of 15000+600000
+ 808010 words of font info for 773 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -4223,31 +4240,31 @@ mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/
 Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/
 Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.
 ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts
-/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
-ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><
-c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simk
-ai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
-nts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wi
-ndows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.tt
-f><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/s
-imhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai
-.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Wind
-ows/Fonts/simkai.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-
-tlf.enc}<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
+/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windo
+ws/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><
+c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simh
+ei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fo
+nts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Wi
+ndows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.tt
+f><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
+imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:
+/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun
+.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Font
+s/simkai.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}
+<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sim
+kai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
 onts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
 indows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.t
 tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
-s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c
-:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsu
+s/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c
+:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
 n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
-dows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
-><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/
+ts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
+dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
 Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.
 ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
@@ -4297,10 +4314,10 @@ live/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texm
 f-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/t
 ype1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/ne
 wtx/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mathbook.pdf (72 pages, 1475280 bytes).
+Output written on mathbook.pdf (73 pages, 1480322 bytes).
 PDF statistics:
- 2011 PDF objects out of 2073 (max. 8388607)
- 1594 compressed objects within 16 object streams
- 327 named destinations out of 1000 (max. 500000)
- 31565 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 2028 PDF objects out of 2073 (max. 8388607)
+ 1609 compressed objects within 17 object streams
+ 331 named destinations out of 1000 (max. 500000)
+ 31573 words of extra memory for PDF output out of 35830 (max. 10000000)
 
