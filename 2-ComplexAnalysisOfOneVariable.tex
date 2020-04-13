@@ -1,0 +1,173 @@
+\chapter{单复变函数}
+《单复变函数》（Functions of One Complex Variable）的作者是J.B.康威（John B. Conway）。参考：\cite{FunctionsofOneComplexVariable1978}。
+
+\section{复数系}\label{section00201}
+
+\subsection{实数}\label{subsection0020101}
+我们用$\mathbb{R}$表示所有实数组成的集。假定读者熟悉实数系及其性质，特别地，假定读者具备下面的知识：$\mathbb{R}$的序，上确界和下确界的定义和性质，以及$\mathbb{R}$的完备性（$\mathbb{R}$中的每一个有上界的集必有上确界）。我们也假定读者熟知$\mathbb{R}$中的序列的收敛性与无穷级数。最后，一个人只有在单变量实函数方面有了坚实的基础之后，才可以着手学习复变函数。虽然在学习解析函数理论之前，传统上是先学习多变数实函数。但是对于本书来说，本质上这不是必要的条件，因为本书中任何地方都不需要这个领域里深入的结果。
+
+\subsection{复数域}\label{subsection0020102}
+我们把复数集$\mathbb{C}$定义为所有有序数对$(a, b)$的集，其中$a,b$是实数。加法和乘法由下式定义：
+\begin{gather*}
+(a, b) + (c, d) = (a+c, b+d), \\
+(a, b)(c, d) = (ac-bd, bc + ad).
+\end{gather*}
+容易验证，这样定义后，$\mathbb{C}$满足域（field）的所有公理。这就是说，$\mathbb{C}$满足加法和乘法的结合律、交换律、分配了；$(0, 0)$和$(1,0)$分别是加法和乘法的单位元素，并且$\mathbb{C}$内的每一个非零元素有加法和乘法的逆元素。
+
+对于复数$(a, 0)$，我们将写为$a$，这个映照$a \mapsto (a, 0)$定义了一个$\mathbb{R}$到$\mathbb{C}$的域同构\footnote{这恐怕不能说是同构，因为明显不是一一映射，应该是$\mathbb{R}$和$\mathbb{C}$的一个子集同构}，所以我们可以把$\mathbb{R}$考虑为$\mathbb{C}$的一个子集。如果令$i=(0, 1)$，那么$(a, b) = a + ib$，从现在起，我们对复数就不再使用有序数对的记号了。
+
+注意到$i^2=-1$，所以方程$z^2+1=0$在$\mathbb{C}$内有根。事实上，对于$\mathbb{C}$内的每个$z$，$z^2+1=(z+i)(z-i)$。更一般地，如果$z$和$w$是复数，我们得到
+\[
+z^2+w^2 = (z+iw)(z-iw),
+\]
+令$z$和$w$是实数$a$和$b$（$a$和$b$都不为0\footnote{这里只需要$a$和$b$不全为0即可。}），我们得到
+\[
+\frac{1}{a+bi} = \frac{a-bi}{a^2+b^2} = \frac{a}{a^2+b^2} - i(\frac{b}{a^2+b^2}),
+\]
+这样我们就有了一个复数的倒数的公式。
+
+当我们写$z = a + bi$（$a, b \in \mathbb{R}$）时，我们称$a$，$b$为$z$的实部和虚部，并且用$a = \Re{z}$，$b=\Im{z}$表示。
+
+作为本节的结尾，我们在$\mathbb{C}$内引进两个运算。这两个运算不是域的运算。如果$z = x+iy$（$x, y \in \mathbb{R}$），那么我们定义$|z| = (x^2+y^2)^{\frac{1}{2}}$为$z$的绝对值，$\bar{z}=x-iy$为$z$的共轭数。注意：
+\begin{gather}\label{equ00202001}
+|z|^2=z\bar{z},
+\end{gather}
+特别地，如果$z \neq 0$，那么
+\[
+\frac{1}{z} = \frac{\bar{z}}{|z|^2}.
+\]
+
+下面是绝对值和共轭数的基本性质，其证明留给读者。
+\begin{gather}
+\Re{z} = \frac{1}{2}(z + \bar{z}), \quad \Im{z} = \frac{1}{2i}(z - \bar{z}). \label{equ00202002} \\
+(\bar{z+w}) = \bar{z} + \bar{w}, \quad \bar{zw} = \bar{z}\bar{w}. \label{equ00202003}\\
+|zw| = |z||w|. \label{equ00202004} \\
+|z/w| = |z|/|w|.\label{equ00202005}\\
+|\bar{z}| = |z|.\label{equ00202006}
+\end{gather}
+读者证明后面三个式子的时候，应当尽量避免将$z$和$w$展开为它们的实部和虚部，而最好利用（\ref{equ00202001}），（\ref{equ00202002}）和（\ref{equ00202003}）。
+
+\begin{exercise}
+求下列各复数的实部和虚部：
+\begin{gather*}
+\begin{aligned}
+&\frac{1}{z}; \frac{z-a}{z+a}(a \in \mathbb{R}); z^2; \frac{3+5i}{7i+1}; (\frac{-1+i\sqrt{3}}{2})^3;\\
+&(\frac{-1-i\sqrt{3}}{2})^6; i^n; (\frac{1+i}{\sqrt{2}})^n, 2 \le n \le 8.
+\end{aligned}
+\end{gather*}
+\end{exercise}
+
+\begin{exercise}
+求下列各复数的绝对值和共轭数：
+\[
+\begin{aligned}
+&-2+i; -3; (2+i)(4+3i);\frac{3-i}{\sqrt{2}+3i};\frac{i}{i+3}; \\
+&(1+i)^6; i^{17}.
+\end{aligned}
+\]
+\end{exercise}
+
+\begin{exercise}
+证明：当且仅当$z=\bar{z}$时，$z$才是实数。
+\end{exercise}
+
+\begin{exercise}\label{exer002010204}
+若$z$和$w$是复数，证明下列等式：
+\[
+\begin{aligned}
+&|z+w|^2 = |z|^2 + 2\Re{z\bar{w}} + |w|^2 \\
+&|z-w|^2 = |z|^2 - e\Re{z\bar{w}} + |w|^2 \\
+&|z+w|^2 + |z-w|^2 = 2(|z|^2+|w|^2)
+\end{aligned}
+\]
+\end{exercise}
+
+\begin{exercise}
+设$z=z_1+\cdots+z_n$，$w= w_1+\cdots+w_n$，利用归纳法证明：
+\[
+|w| = |w_1|\cdots|w_n|; \bar{z}=\bar{z_1}+\cdots+\bar{z_n}; \bar{w}=\bar{w_1}\cdots\bar{w_n}.
+\]
+\end{exercise}
+
+\begin{exercise}
+设$R(z)$是$z$的有理函数，如果$R(z)$的所有系数是实数，则$\overline{R(z)} = R(\bar{z})$。
+\end{exercise}
+
+\subsection{复平面}\label{subsection0020103}
+从复数的定义易见，$\mathbb{C}$中每一点$z$都可以和平面$\mathbb{R}^2$上唯一确定的点$(\Re{z}, \Im{z})$相等同。复数的加法恰好就是向量空间$\mathbb{R}^2$的加法，如果$z$和$w$是$\mathbb{C}$中的点，那么从$z$和$w$到$0(=(0,0))$画两条直线，这两条直线形成了以$0$、$z$、$w$为三个顶点的平行四边形的两条边，平行四边形的第四个顶点就是$z+w$。
+
+注意，$|z-w|$恰好是$z$和$w$之间的距离，理会到这一点，上节习题\ref{exer002010204}中的最后一个等式说的就是平行四边形法则：平行四边形各边长的平方和等于其对角线的平方和。
+
+距离函数的基本性质是它满足三角不等式（见下一章）。在这种情况下，对复数$z_1$，$z_2$，$z_3$，这个不等式变为
+\[
+|z_1-z_2| \le |z_1-z_3| + |z_3-z_2|.
+\]
+
+利用$z_1-z_2 = (z_1-z_3) + (z_3-z_2)$，容易看出，我们只需证明
+\begin{gather}\label{equ002010301}
+|z+w| \le |z| + |w| \quad (z, w \in \mathbb{C})
+\end{gather}
+为了证明这个不等式，首先看出，对于$\mathbb{C}$中任意$z$，
+\begin{gather}\label{equ002010302}
+\begin{aligned}
+&-|z| \le \Re{z} \le |z|, \\
+&-|z| \le \Im{z} \le |z|.
+\end{aligned}
+\end{gather}
+因此，$\Re{z\bar{w}} \le |z\bar{w}| = |z||w|$。于是
+\[
+\begin{aligned}
+|z+w|^2 &= |z|^2 + 2\Re{z\bar{w}} + |w|^2\\
+&\le |z|^2 + 2|z||w| + |w|^2 = (|z|+|w|)^2,
+\end{aligned}
+\]
+由此推出\ref{equ002010301}。（这个式子称为三角不等式，因为如果我们把$z$和$w$表示在平面上，（\ref{equ002010301}）式表明，三角形$[0,z,z+w]$的一边的长度小于另外两边长度的和。或者说两点间的最短距离是直线）。在遇到一个不等式时，人们总应当问一问等号成立的必要充分条件是什么，考察一个三角形并考虑到（\ref{equ002010301}）的几何意义，我们就引出条件$z=tw$，对某一$t \in \mathbb{R}$，$t \ge 0$。（或者如果$w=0$，则$w=tz$）。显然，当这两点和原点共线时，等号成立。事实上，如果我们看一下（\ref{equ002010301}）式的证明，便知道$|z+w|=|z|+|w|$成立的必要充分条件是$|z\bar{w}|=\Re(z\bar{w})$。这等价于$z\bar{w}\ge 0$（即$z\bar{w}$使非负实数）。如果$w \neq 0$，两边乘以$w/w$，我们得到$|w|^2(z/w) \ge 0$，令
+\[
+t = z/w = (\frac{1}{|w|^2})|w|^2(z/w),
+\]
+那么$z=tw$，$t \ge 0$。
+
+由归纳法，我们也有
+\begin{gather}\label{equ002010303}
+|z_1+z_2+\cdots+z_n| \le |z_1|+|z_2+\cdots+|z_n|,|
+\end{gather}
+不等式
+\begin{gather}\label{equ002010304}
+||z| - |w|| \le |z-w|
+\end{gather}
+也是有用的。
+
+既然我们给出了绝对值的几何解释，让我们再来看一看，平面上一点的共轭复数是什么，这是容易的，事实上，$\bar{z}$是$z$关于$x$轴（即实轴）的对称点。
+
+\begin{exercise}
+证明（\ref{equ002010304}）并给出等号成立的必要充分条件。
+\end{exercise}
+
+\begin{exercise}
+证明：（\ref{equ002010302}）中的等号成立，当且仅当，对任意整数$k$和$l$，$1 \le k,l \le n$，只要$z_l \neq 0$，就有$z_k/z_l \le 0$。
+\end{exercise}
+
+\begin{exercise}
+设$a \in \mathbb{R}$，$c > 0$是固定的。对于每个可能选取的$a$和$c$，试描画出满足条件
+\[
+|z-a| - |z+a|=2c
+\]
+的点集。现在设$a$施任意复数，利用平面的旋转画出满足上述方程的点的轨迹。
+\end{exercise}
+
+\subsection{复数的极坐标表示与复数的方根}\label{subsection0020104}
+考虑复平面$\mathbb{C}$的点$z=x+iy$。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

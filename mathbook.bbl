@@ -3,4 +3,12 @@
 \fi
 \begin{thebibliography}{xx}
 
+\harvarditem[J.B.康威]{J.B.康威}{1978}{FunctionsofOneComplexVariable1978}
+{\bf J.B.康威}, {\it 单复变函数}, 上海: 上海科学技术出版社,
+  1978.
+
+\harvarditem[S.麦克莱恩]{S.麦克莱恩}{1979}{surveyofmodernalgebra1979}
+{\bf S.麦克莱恩, G.伯克霍夫}, {\it 近世代数概论}, 北京:
+  人民教育出版社, 1979.
+
 \end{thebibliography}

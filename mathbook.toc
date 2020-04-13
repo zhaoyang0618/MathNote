@@ -44,3 +44,8 @@
 \contentsline {chapter}{\numberline {5}高等微积分:微分形式导引}{66}{chapter.5}% 
 \contentsline {chapter}{\numberline {6}积分论}{67}{chapter.6}% 
 \contentsline {chapter}{\numberline {7}单复变函数}{68}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}复数系}{68}{section.7.1}% 
+\contentsline {subsection}{\numberline {7.1.1}实数}{68}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {7.1.2}复数域}{68}{subsection.7.1.2}% 
+\contentsline {subsection}{\numberline {7.1.3}复平面}{70}{subsection.7.1.3}% 
+\contentsline {subsection}{\numberline {7.1.4}复数的极坐标表示与复数的方根}{72}{subsection.7.1.4}% 
