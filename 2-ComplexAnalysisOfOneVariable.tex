@@ -156,10 +156,221 @@ t = z/w = (\frac{1}{|w|^2})|w|^2(z/w),
 \end{exercise}
 
 \subsection{复数的极坐标表示与复数的方根}\label{subsection0020104}
-考虑复平面$\mathbb{C}$的点$z=x+iy$。
+考虑复平面$\mathbb{C}$的点$z=x+iy$。这个点有极坐标$(r, \theta)$：$x=r\cos{\theta}$，$y=r\sin{\theta}$。显然$r=|z|$，$\theta$是正实轴与从0到$z$的直线段的夹角。注意，在上述等式中的$\theta$可以代之以$\theta$加上$2\pi$的任意整数倍，角$\theta$称为$z$的幅(还是这个“辐)”角，记为$\theta=\arg{z}$。由于$\theta$的不确定性，“$\arg$”不是一个函数。我们引进记号
+\begin{gather}\label{equ002010401}
+\cis{\theta}=\cos{\theta}+i\sin{\theta}.
+\end{gather}
 
+设$z_1=r_1\cis{\theta_1}$，$z_2=r_2\cis{\theta_2}$，那么
+\[
+\begin{aligned}
+z_1z_2=r_1r_2\cis{\theta_1}\cis{\theta_2}&=r_1r_2[(\cos{\theta_1}\cos{\theta_2}-\sin{\theta_1}\sin{}\theta_2)\\
++i(\sin{\theta_1}\cos{\theta_2}+\sin{\theta_2}\cos{\theta_1})]
+\end{aligned}
+\]
+由正弦和余弦的和角公式，我们得到
+\begin{gather}\label{equ002010402}
+z_1z_2 = r_1r_2\cis(\theta_1+\theta_2).
+\end{gather}
+换句话说$\arg{z_1z_2} = \arg{z_1} + \arg{z_2}$（什么实函数把成绩变为和？\footnote{对数函数$\ln{(ab)}=\ln{a}+\ln{b}$}）。由归纳法，对于$z_k=r_k\cis{\theta_k}$，$1 \le k \le n$，我们有
+\begin{gather}\label{equ002010403}
+z_1z_2\cdots{}z_n=r_1r_2\cdots{}r_n\cis{(\theta_1+\theta_2+\cdots+\theta_n)}.
+\end{gather}
+特别地，对于每个整数$n \ge 0$，有
+\begin{gather}\label{equ002010404}
+z^n = r^n\cis(n\theta).
+\end{gather}
+进而若$z \neq 0$，则$z[r^{-1}\cis(-\theta)]=1$；所以如果$z \neq 0$，那么对于一切整数$n$，正的，负的。或0，（\ref{equ002010404}）也成立。作为（\ref{equ002010404}）的一个特别情形，我们得到棣莫佛（de Moivre）公式：
+\[
+(\cos{\theta}+i\sin{\theta})^n=\cos{n\theta} + i\sin{n\theta}.
+\]
 
+现在我们可以来考虑下面的问题了。对于给定的一个复数$a \neq 0$，和一个整数$n \ge 2$，你能否找到满足$z^n=a$的数$z$？这样的$z$你能找到多少个？由于（\ref{equ002010404}）式，解答这个问题是容易的。设$a=|a|\cis{\alpha}$；由（\ref{equ002010404}），$z=|a|^{\frac{1}{n}}\cis{(\alpha/n)}$就满足要求。但是这个解不是唯一解，因为$z'=|a|^{\frac{1}{n}}\cis{\frac{1}{n}(\alpha+2\pi)}$也满足$(z')^n=a$。事实上，每一个数
+\begin{gather}\label{equ002010405}
+|a|^{\frac{1}{n}}\cis{\frac{1}{n}(\alpha+2\pi{}k)}, \quad 0 \le k \le n-1.
+\end{gather}
+都是$a$的$n$次方根。借助（\ref{equ002010404}）我们得到下述结果：对于$\mathbb{C}$中的每一个不等于零的数$a$，都有$a$的$n$个不同的$n$次方根，它们由公式（\ref{equ002010405}）给出。
 
+\textbf{例子} \quad 计算$n$次单位根。由于$1=\cis{0}$，（\ref{equ002010405}）式给出如下这些根：
+\[
+1,\cis{\frac{2\pi}{n}},\cis{\frac{4\pi}{n}},\cdots\cis{\frac{2\pi}{n}(n-1)}.
+\]
+特别地，立方单位根是
+\[
+1, \frac{1}{2}(-1 + i\sqrt{3}),\frac{1}{2}(-1-i\sqrt{3}).
+\]
+
+\begin{exercise}
+求出6次单位根。
+\end{exercise}
+
+\begin{exercise}
+计算：
+\begin{enumerate}
+\item[(a)]$i$的平方根；
+\item[(b)]$i$的立方根；
+\item[(c)]$\sqrt{3}+3i$的平方根。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+$n$次单位原根是一复数$a$，使得$1,a,a^2,\cdots,a^{n-1}$是$n$个不同的$n$次单位根。证明：如果$a,b$分别是$n$次和$m$次单位原根，则$ab$是$k$次单位根，$k$是某一整数。$k$的最小值是什么？如果$a,b$是非单位原根，你能说些什么？
+\end{exercise}
+
+\begin{exercise}
+试利用二项式
+\[
+(a+b)^n=\sum_{k=0}^{n}{{n \choose k}a^{n-k}b^{k}},
+\]
+其中${n \choose k}=\frac{n!}{k!(n-k)!}$，并比较棣莫佛公式两边的实部和虚部，得到公式
+\[
+\begin{aligned}
+&\cos{n\theta} = \cos^{n}{\theta} - {n \choose 2}\cos^{n-2}{\theta}\sin^{2}{\theta} + {n \choose 4}\cos^{n-4}{\theta}\sin^{4}{\theta}-\cdots\\
+&\sin{n\theta} = {n \choose 1}\cos^{n-1}{\theta}\sin{theta}-{n \choose 3}\cos^{n-3}{\theta}\sin^{3}{\theta}+\cdots.
+\end{aligned}
+\]
+\end{exercise}
+
+\begin{exercise}
+设$z=\cis{\frac{2\pi}{n}}$，整数$n \ge 2$。证明：$1+z+\cdots+z^{n-1}=0$.
+\end{exercise}
+
+\begin{exercise}
+证明：$\phi(t)=\cis{t}$是加法群$\mathbb{R}$到乘法群$T=\{z:|z|=1\}$上的群同态。
+\end{exercise}
+
+\begin{exercise}
+如果$z \in \mathbb{C}$，并且对于每个正整数$n$，$\Re{z^n} \ge 0$，证明：$z$是正实数。
+\end{exercise}
+
+\subsection{复平面上的直线和半平面}\label{subsection0020105}
+设$L$表示$\mathbb{C}$中的直线。从初等解析几何知道，$L$是由$L$上的一个点和一个方向向量决定的。于是，如果$a$是$L$上任一点，$b$是它的方向向量，那么
+\[
+L = \{z = a+tb:-\infty < t < \infty\}.
+\]
+由于$b \neq 0$，这就给出，对于$L$上的$z$，有
+\[
+\Im{(\frac{z-a}{b})} = 0.
+\]
+事实上，如果$z$满足等式
+\[
+0 = \Im{(\frac{z-a}{b})},
+\]
+那么
+\[
+t = \frac{z-a}{b},
+\]
+蕴含$z = a + tb$，$-\infty < t < \infty$。这就是说
+\begin{gather}\label{equ002010501}
+L = \big{\{} z: \Im{(\frac{z-a}{b})} = 0 \big{\}}.
+\end{gather}
+集合
+\[
+\begin{aligned}
+&\big{\{} z: \Im{(\frac{z-a}{b})} > 0 \big{\}},\\
+&\big{\{} z: \Im{(\frac{z-a}{b})} < 0 \big{\}}.
+\end{aligned}
+\]
+的轨迹是什么呢？作为回答这个问题的第一步，注意到$b$是一个方向，我们可以假定$|b|=1$。我们暂时考虑$a=0$的情形。并且令$H_0=\{z:\Im{(z/b)}>0\}$，$b = \cis{\beta}$。如果$z = r\cis{\theta}$，那么$z/b = r\cis{(\theta-\beta)}$。于是$z$在$H_0$中，当且仅当$\sin(\theta-\beta)>0$，即$\beta < \theta < \pi + \beta$。所以，如果我们“按照$b$的方向沿着$L$前进”，$H_0$是位于$L$左边的半平面。如果我们令
+\[
+H_a = \big{\{} z: \Im{(\frac{z-a}{b})} > 0 \big{\}},
+\]
+那么容易看出，$H_a = a + H_0 \equiv \{ a + w: w \in H_0\}$；即$H_a$是由$H_0$平移$a$而得到的，因此，$H_a$是位于$L$的左边的半平面。类似地，
+\[
+K_a = \big{\{} z: \Im{(\frac{z-a}{b})} < 0 \big{\}}
+\]
+是位于$L$的右边的半平面。
+
+\begin{exercise}
+设$C$是圆周$\{z:|z-c|=r\}$，$r > 0$，$a = c + r\cis{\alpha}$；并且令
+\[
+L_{\beta} = \big{\{} z: \Im{(\frac{z-a}{b})} = 0 \big{\}},
+\]
+其中$b=\cis{\beta}$。找出$L_{\beta}$在$a$处切于圆周$C$的关于$\beta$的充分必要条件。
+\end{exercise}
+
+\subsection{扩充平面及其球面表示}\label{subsection0020106}
+在复分析中，我们常常涉及到这样一些函数，当自变量趋于给定点时，它们趋于无穷。为了讨论这种情形，我们引进扩充平面$\mathbb{C}_{\infty}\equiv \mathbb{C} \bigcup \{\infty\}$。同时为了讨论到取到无穷作为它的值的函数的连续性。我们也希望在$\mathbb{C}_{\infty}$内引进距离函数。为了这个目的以及为了给出$\mathbb{C}_{\infty}$的具体图像，我们把$\mathbb{C}_{\infty}$表示为$\mathbb{R}^3$中的单位球面
+\[
+S = \{(x_1,x_2,x_3) \in \mathbb{R}^3:x_1^2 + x_2^2 + x_3^2=1\}.
+\]
+
+设$N=(0, 0,1)$；即$N$是$S$上的北极。同时，把$\mathbb{C}$等同于$\{(x_1,x_2,0):x_1,x_2 \in \mathbb{R}\}$，于是$\mathbb{C}$沿赤道切割$\mathbb{C}$。现在对于$\mathbb{C}$中每个点$z$，考虑$\mathbb{R}^3$中通过$z$和$N$的直线。这条直线与球面恰好交于一点$Z \neq N$。如果$|z| > 1$，那么$Z$在北半球面上；如果$|z|<1$，那么$Z$在南半球面上；如果$|z|=1$，那么$Z = z$。当$|z| \to \infty$时，$Z$怎样呢？很清楚，$Z$趋于$N$。因此，我们就把$N$与$\mathbb{C}_{\infty}$中的$\infty$等同起来。这样一来，$\mathbb{C}_{\infty}$就被表示为球面$S$了。
+
+让我们来考察这种表示法。令$z=x+iy$,设$Z = (x_1, x_2, x_3)$是$S$上相应的点，我们要找出用$x$，$y$表示$x_1, x_2, x_3$的方程。在$\mathbb{R}^3$中通过$z$和$N$的直线由$\{tN + (1-t)z:-\infty<t<\infty\}$或
+\begin{gather}\label{equ002010601}
+\{((1-t)x, (1-t)y, t): -\infty < t < \infty\}
+\end{gather}
+给出。因此，如果能够找到直线和$S$的交点的$t$值，我们就能够找到$Z$的坐标。如果$t$是这个值，那么
+\[
+1 = (1-t)^2x^2 + (1-t)^2y^2 + t^2 = (1-t)^2|z|^2 + t^2.
+\]
+由此注意到
+\[
+1-t^2 = (1-t)^2|z|^2.
+\]
+因为$t \neq 1$（$z \neq \infty$），所以
+\[
+t = \frac{|z|^2-1}{|z|^2+1}.
+\]
+于是
+\begin{gather}\label{equ002010602}
+x_1 = \frac{2x}{|z|^2+1}, x_2 = \frac{2y}{|z|^2+1}, x_3 = \frac{|z|^2-1}{|z|^2+1}.
+\end{gather}
+这就给出
+\begin{gather}\label{equ002010603}
+x_1 = \frac{z + \bar{z}}{|z|^2+1}, x_2 = \frac{-i(z-\bar{z})}{|z|^2+1}, x_3 = \frac{|z|^2-1}{|z|^2+1}.
+\end{gather}
+
+如果$Z$是给定的（$Z \neq N$），我们希望找$z$。这时，通过令$t = x_3$并利用（\ref{equ002010601}），我们得到
+\begin{gather}\label{equ002010604}
+z = \frac{x_1 + ix_2}{1 - x_3}
+\end{gather}
+现在让我们用下面的方式定义扩充平面上点之间的距离函数：对于$\mathbb{C}_{\infty}$中的$z$，$z'$，定义$z$到$z'$的距离$d(z,z')$为它们在$\mathbb{R}^3$中相应两点$Z$和$Z'$的距离。如果$Z=(x_1,x_2,x_3)$，$Z'=(x_1',x_2',x_3')$，那么
+\begin{gather}\label{equ002010605}
+d(z,z') = [(x_1-x_1')^2 + (x_2-x_2')^2 + (x_3-x_3')^2]^{\frac{1}{2}}.
+\end{gather}
+利用$Z$和$Z'$在$S$上这一事实，（\ref{equ002010605}）给出
+\begin{gather}\label{equ002010606}
+[d(z,z')]^2 = 2 - 2(x_1x_1' + x_2x_2'+x_3x_3').
+\end{gather}
+由（\ref{equ002010603}），我们得到
+\begin{gather}\label{equ002010607}
+d(z,z') = \frac{2|z-z'|}{[(1+|z|^2)(1+|z'|^2)]^{\frac{1}{2}}}, \quad (z,z' \in \mathbb{C}).
+\end{gather}
+用类似的方法，对于$\mathbb{C}$中的$z$，我们得到
+\begin{gather}\label{equ002010608}
+d(z, \infty) = \frac{2}{(1 + |z|^2)^{\frac{1}{2}}},
+\end{gather}
+球面$S$和$\mathbb{C}_{\infty}$的点之间这种对应关系称为球极平面投影。
+
+\begin{exercise}
+给出（\ref{equ002010607}）和（\ref{equ002010608}）的详细推导。
+\end{exercise}
+
+\begin{exercise}
+对于下列$\mathbb{C}$中的点给出$S$上对应的点：$0, 1+i,3+2i$。
+\end{exercise}
+
+\begin{exercise}
+$S$上哪些子集对应$\mathbb{C}$中的实轴和虚轴。
+\end{exercise}
+
+\begin{exercise}
+设$\Lambda$是$S$上的一个圆周，那么在$\mathbb{R}^3$中有唯一的平面$P$，使得$P \bigcap S = \Lambda$。由解析几何知道
+\[
+P = \{(x_1,x_2,x_3):x_1\beta_1 + x_2\beta_2 + x_3\beta_3 = l\},
+\]
+其中$(\beta_1,\beta_2,\beta_3)$是与$P$正交的一个向量，$l$是某一实数。可以假设$\beta_1^2+\beta_2^2+\beta_3^2=1$。利用这一事实，证明：如果$\Lambda$包含点$N$，则它在$\mathbb{C}$上的投影是一直线。否则，$\Lambda$投影到$\mathbb{C}$中的一个圆周上。
+\end{exercise}
+
+\begin{exercise}
+设$Z$和$Z'$是$S$上分别与$z$和$z'$相应的两点。$W$是$S$上与$z+z'$对应的点。试用$Z$和$Z'$的坐标表示出$W$的坐标。
+\end{exercise}
+
+\section{度量空间与$\mathbb{C}$的拓扑}\label{section00202}
+
+\subsection{度量空间的定义和例子}\label{subsection0020201}
 
 
 
