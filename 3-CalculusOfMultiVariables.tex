@@ -6,6 +6,47 @@
 
 
 \subsection{向量空间}\label{subsection0030101}
+实数域$\mathbb{R}$上的\textbf{向量空间}是一个集合$S$，它带有映射
+\[
+g: S \times S \to S
+\]
+和
+\[
+v: \mathbb{R} \times S \to S,
+\]
+通常用记号$g(x,y) = x+y$和$v(a,x)=ax$记这两个映射，并假定下列条件成立：
+\begin{enumerate}
+\item[($a$)] $S$对于映射$g$成一Abel群。
+\item[($b_1$)]对于每个$x \in S$和$a, b \in \mathbb{R}$，$(ab)x = a(bx)$。
+\item[($b_2$)]对于每个$x \in S$和$a, b \in \mathbb{R}$，$(a+b)x=ax+bx$。
+\item[($b_3$)]对于每个$x, y \in S$和$a \in \mathbb{R}$，$a(x+y)=ax+ay$。
+\item[($b_4$)]对于每个$x \in S$，$1 \cdot x = x$。
+\end{enumerate}
+
+我们用记号$\theta$记$S$中群的恒等元。容易证明$0 \cdot x = \theta$对每个$x \in S$成立。不难看出，群的逆元是$(-1)x$，记为$-x$。我们把$y+(-x)$写为$y-x$。
+
+我们只给出向量空间的两个例子。
+\begin{example}
+设$S$是$n$-实数组的集合。对于
+\[
+\begin{aligned}
+x &= (x_1, \cdots, x_n) \in S,\\
+y &= (y_1, \cdots, y_n) \in S,
+\end{aligned}
+\]
+命
+\[
+x+y = (x_1+y_1, \cdots, x_n+y_n).
+\]
+对于
+\[
+x = (x_1, \cdots, x_n) \in S
+\]
+和$a \in R$，命
+\[
+ax = (ax_1, \cdots, ax_n).
+\]
+\end{example}
 
 
 

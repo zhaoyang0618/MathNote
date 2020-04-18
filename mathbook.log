@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  18 APR 2020 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  18 APR 2020 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4456,12 +4456,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
  (./3-CalculusOfMultiVariables.tex
 第 8\tmspace +\thickmuskip {.2777em}章 8.
-(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf))
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [82
 
 
 
-] (./mathbook.bbl
+])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[83] (./mathbook.bbl
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10> not available
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 7.
@@ -4471,7 +4473,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 7.
 ) 
 AED: lastpage setting LastPage
-[83
+[84
 
 
 ]
@@ -4492,11 +4494,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 55488 strings out of 494443
- 1027456 string characters out of 6173253
+ 55501 strings out of 494443
+ 1027812 string characters out of 6173253
  1294555 words of memory out of 5000000
- 56086 multiletter control sequences out of 15000+600000
- 840856 words of font info for 866 fonts, out of 8000000 for 9000
+ 56093 multiletter control sequences out of 15000+600000
+ 841396 words of font info for 868 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -4593,10 +4595,10 @@ fb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive
 /2019/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-di
 st/fonts/type1/public/newtx/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on mathbook.pdf (87 pages, 1620136 bytes).
+Output written on mathbook.pdf (88 pages, 1624782 bytes).
 PDF statistics:
- 2326 PDF objects out of 2487 (max. 8388607)
- 1880 compressed objects within 19 object streams
- 430 named destinations out of 1000 (max. 500000)
+ 2331 PDF objects out of 2487 (max. 8388607)
+ 1884 compressed objects within 19 object streams
+ 432 named destinations out of 1000 (max. 500000)
  35781 words of extra memory for PDF output out of 35830 (max. 10000000)
 
