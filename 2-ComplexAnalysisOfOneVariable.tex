@@ -371,6 +371,54 @@ P = \{(x_1,x_2,x_3):x_1\beta_1 + x_2\beta_2 + x_3\beta_3 = l\},
 \section{度量空间与$\mathbb{C}$的拓扑}\label{section00202}
 
 \subsection{度量空间的定义和例子}\label{subsection0020201}
+一个度量空间是一个序偶$(X, d)$，这里$X$是一个集，$d$是一个从$X \times X$到$\mathbb{R}$的函数，称之为距离函数或度量，它满足下列条件：
+\[
+d(x, y) \ge 0;
+\]
+当且仅当$x=y$时，$d(x, y)=0$；
+\begin{gather*}
+d(x, y) = d(y,x) \quad (\text{对称性});\\
+d(x, z) \le d(x, y) + d(y, z)\quad (\text{三角不等式}).
+\end{gather*}
+如果$x$和$r > 0$是固定的，那么定义
+\begin{gather*}
+B(x; r) = \{y \in X: d(x, y) < r\},\\
+\bar{B}(x; r) = \{y \in X: d(x, y) \le r\}.
+\end{gather*}
+$B(x; r)$和$\bar{B}(x; r)$分别称为以$x$为中心，$r$为半径的开球和闭球。
+
+\textbf{例子}
+
+\begin{example}
+设$X = \mathbb{R}$或$\mathbb{C}$，定义$d(z, w)=|z-w|$，这就使$(\mathbb{R}, d)$和$(\mathbb{C}, d)$都成为度量空间。事实上，$(\mathbb{C}, d)$将是我们最感兴趣的例子。如果读者在此以前从来未接触过度量空间的概念，那么在学习这一章的过程中应当时常想到$(\mathbb{C}, d)$。
+\end{example}
+
+\begin{example}
+设$(X, d)$是一个度量空间，$Y \subset X$；那么$(Y, d)$也是一个度量空间。
+\end{example}
+
+\begin{example}
+设$X = \mathbb{C}$，定义$d(x+iy, a+ib)=|x-a|+|y-b|$。那么$(\mathbb{C}, d)$是一个度量空间。
+\end{example}
+
+\begin{example}
+设$X = \mathbb{C}$，定义$d(x+iy, a+ib)=\max{|x-a|, |y-b|}$。
+\end{example}
+
+\begin{example}
+设$X$是任意一个集，定义$d(x, y) = 0$，如果$x=y$；$d(x, y)=1$，如果$x \neq y$。为了证明函数$d$满足三角不等式，只要考虑在$x,y,z$当中出现相等的各种可能情形。注意，如果$r \le 1$，则$B(x; r)$只由一个点$x$所组成；如果$r > 1$，则$B(x;r) = X$。这个度量空间在解析函数论的研究中并不出现。
+\end{example}
+
+\begin{example}
+设$X = \mathbb{R}^n$，对于$\mathbb{R}^n$中的$x=(x_1,\cdots, x_n)$和$y=(y_1,\cdots,y_n)$定义
+\[
+d(x, y) = [\sum_{j=1}^{n}{(x_j-y_j)^2}]^{\frac{1}{2}}.
+\]
+\end{example}
+
+\begin{example}
+设$S$是任意一个集，$B(S)$表示满足条件
+\end{example}
 
 
 
