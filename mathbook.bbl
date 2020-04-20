@@ -10,8 +10,17 @@
 {\bf J.B.康威}, {\it 单复变函数}, 上海: 上海科学技术出版社,
   1978.
 
+\harvarditem[Michael.Artin]{Michael.Artin}{2015}{AlgebraArtin2015}
+{\bf Michael.Artin}, {\it 代数}, 北京: 机械工业出版社, 2015.
+
+\harvarditem[N.Jacobson]{N.Jacobson}{1987}{BasicAlgebra1987}
+{\bf N.Jacobson}, {\it 基础代数}, 北京: 高等教育出版社, 1987.
+
 \harvarditem[S.麦克莱恩]{S.麦克莱恩}{1979}{surveyofmodernalgebra1979}
 {\bf S.麦克莱恩, G.伯克霍夫}, {\it 近世代数概论}, 北京:
   人民教育出版社, 1979.
+
+\harvarditem[Tom.M.Apostol]{Tom.M.Apostol}{2006}{MathematicalAnalysisApostol2006}
+{\bf Tom.M.Apostol}, {\it 数学分析}, 北京: 机械工业出版社, 2006.
 
 \end{thebibliography}

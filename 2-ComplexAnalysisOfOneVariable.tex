@@ -1,12 +1,12 @@
-\chapter{单复变函数}
+\part{单复变函数}
 《单复变函数》（Functions of One Complex Variable）的作者是J.B.康威（John B. Conway）。参考：\cite{FunctionsofOneComplexVariable1978}。
 
-\section{复数系}\label{section00201}
+\chapter{复数系}\label{section00201}
 
-\subsection{实数}\label{subsection0020101}
+\section{实数}\label{subsection0020101}
 我们用$\mathbb{R}$表示所有实数组成的集。假定读者熟悉实数系及其性质，特别地，假定读者具备下面的知识：$\mathbb{R}$的序，上确界和下确界的定义和性质，以及$\mathbb{R}$的完备性（$\mathbb{R}$中的每一个有上界的集必有上确界）。我们也假定读者熟知$\mathbb{R}$中的序列的收敛性与无穷级数。最后，一个人只有在单变量实函数方面有了坚实的基础之后，才可以着手学习复变函数。虽然在学习解析函数理论之前，传统上是先学习多变数实函数。但是对于本书来说，本质上这不是必要的条件，因为本书中任何地方都不需要这个领域里深入的结果。
 
-\subsection{复数域}\label{subsection0020102}
+\section{复数域}\label{subsection0020102}
 我们把复数集$\mathbb{C}$定义为所有有序数对$(a, b)$的集，其中$a,b$是实数。加法和乘法由下式定义：
 \begin{gather*}
 (a, b) + (c, d) = (a+c, b+d), \\
@@ -93,7 +93,7 @@ z^2+w^2 = (z+iw)(z-iw),
 设$R(z)$是$z$的有理函数，如果$R(z)$的所有系数是实数，则$\overline{R(z)} = R(\bar{z})$。
 \end{exercise}
 
-\subsection{复平面}\label{subsection0020103}
+\section{复平面}\label{subsection0020103}
 从复数的定义易见，$\mathbb{C}$中每一点$z$都可以和平面$\mathbb{R}^2$上唯一确定的点$(\Re{z}, \Im{z})$相等同。复数的加法恰好就是向量空间$\mathbb{R}^2$的加法，如果$z$和$w$是$\mathbb{C}$中的点，那么从$z$和$w$到$0(=(0,0))$画两条直线，这两条直线形成了以$0$、$z$、$w$为三个顶点的平行四边形的两条边，平行四边形的第四个顶点就是$z+w$。
 
 注意，$|z-w|$恰好是$z$和$w$之间的距离，理会到这一点，上节习题\ref{exer002010204}中的最后一个等式说的就是平行四边形法则：平行四边形各边长的平方和等于其对角线的平方和。
@@ -155,7 +155,7 @@ t = z/w = (\frac{1}{|w|^2})|w|^2(z/w),
 的点集。现在设$a$施任意复数，利用平面的旋转画出满足上述方程的点的轨迹。
 \end{exercise}
 
-\subsection{复数的极坐标表示与复数的方根}\label{subsection0020104}
+\section{复数的极坐标表示与复数的方根}\label{subsection0020104}
 考虑复平面$\mathbb{C}$的点$z=x+iy$。这个点有极坐标$(r, \theta)$：$x=r\cos{\theta}$，$y=r\sin{\theta}$。显然$r=|z|$，$\theta$是正实轴与从0到$z$的直线段的夹角。注意，在上述等式中的$\theta$可以代之以$\theta$加上$2\pi$的任意整数倍，角$\theta$称为$z$的幅(还是这个“辐)”角，记为$\theta=\arg{z}$。由于$\theta$的不确定性，“$\arg$”不是一个函数。我们引进记号
 \begin{gather}\label{equ002010401}
 \cis{\theta}=\cos{\theta}+i\sin{\theta}.
@@ -243,7 +243,7 @@ $n$次单位原根是一复数$a$，使得$1,a,a^2,\cdots,a^{n-1}$是$n$个不�
 如果$z \in \mathbb{C}$，并且对于每个正整数$n$，$\Re{z^n} \ge 0$，证明：$z$是正实数。
 \end{exercise}
 
-\subsection{复平面上的直线和半平面}\label{subsection0020105}
+\section{复平面上的直线和半平面}\label{subsection0020105}
 设$L$表示$\mathbb{C}$中的直线。从初等解析几何知道，$L$是由$L$上的一个点和一个方向向量决定的。于是，如果$a$是$L$上任一点，$b$是它的方向向量，那么
 \[
 L = \{z = a+tb:-\infty < t < \infty\}.
@@ -289,7 +289,7 @@ L_{\beta} = \big{\{} z: \Im{(\frac{z-a}{b})} = 0 \big{\}},
 其中$b=\cis{\beta}$。找出$L_{\beta}$在$a$处切于圆周$C$的关于$\beta$的充分必要条件。
 \end{exercise}
 
-\subsection{扩充平面及其球面表示}\label{subsection0020106}
+\section{扩充平面及其球面表示}\label{subsection0020106}
 在复分析中，我们常常涉及到这样一些函数，当自变量趋于给定点时，它们趋于无穷。为了讨论这种情形，我们引进扩充平面$\mathbb{C}_{\infty}\equiv \mathbb{C} \bigcup \{\infty\}$。同时为了讨论到取到无穷作为它的值的函数的连续性。我们也希望在$\mathbb{C}_{\infty}$内引进距离函数。为了这个目的以及为了给出$\mathbb{C}_{\infty}$的具体图像，我们把$\mathbb{C}_{\infty}$表示为$\mathbb{R}^3$中的单位球面
 \[
 S = \{(x_1,x_2,x_3) \in \mathbb{R}^3:x_1^2 + x_2^2 + x_3^2=1\}.
@@ -368,9 +368,9 @@ P = \{(x_1,x_2,x_3):x_1\beta_1 + x_2\beta_2 + x_3\beta_3 = l\},
 设$Z$和$Z'$是$S$上分别与$z$和$z'$相应的两点。$W$是$S$上与$z+z'$对应的点。试用$Z$和$Z'$的坐标表示出$W$的坐标。
 \end{exercise}
 
-\section{度量空间与$\mathbb{C}$的拓扑}\label{section00202}
+\chapter{度量空间与$\mathbb{C}$的拓扑}\label{section00202}
 
-\subsection{度量空间的定义和例子}\label{subsection0020201}
+\section{度量空间的定义和例子}\label{subsection0020201}
 一个度量空间是一个序偶$(X, d)$，这里$X$是一个集，$d$是一个从$X \times X$到$\mathbb{R}$的函数，称之为距离函数或度量，它满足下列条件：
 \[
 d(x, y) \ge 0;
@@ -389,37 +389,193 @@ $B(x; r)$和$\bar{B}(x; r)$分别称为以$x$为中心，$r$为半径的开球�
 
 \textbf{例子}
 
-\begin{example}
+\begin{example}\label{exam002020101}
 设$X = \mathbb{R}$或$\mathbb{C}$，定义$d(z, w)=|z-w|$，这就使$(\mathbb{R}, d)$和$(\mathbb{C}, d)$都成为度量空间。事实上，$(\mathbb{C}, d)$将是我们最感兴趣的例子。如果读者在此以前从来未接触过度量空间的概念，那么在学习这一章的过程中应当时常想到$(\mathbb{C}, d)$。
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020102}
 设$(X, d)$是一个度量空间，$Y \subset X$；那么$(Y, d)$也是一个度量空间。
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020103}
 设$X = \mathbb{C}$，定义$d(x+iy, a+ib)=|x-a|+|y-b|$。那么$(\mathbb{C}, d)$是一个度量空间。
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020104}
 设$X = \mathbb{C}$，定义$d(x+iy, a+ib)=\max{|x-a|, |y-b|}$。
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020105}
 设$X$是任意一个集，定义$d(x, y) = 0$，如果$x=y$；$d(x, y)=1$，如果$x \neq y$。为了证明函数$d$满足三角不等式，只要考虑在$x,y,z$当中出现相等的各种可能情形。注意，如果$r \le 1$，则$B(x; r)$只由一个点$x$所组成；如果$r > 1$，则$B(x;r) = X$。这个度量空间在解析函数论的研究中并不出现。
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020106}
 设$X = \mathbb{R}^n$，对于$\mathbb{R}^n$中的$x=(x_1,\cdots, x_n)$和$y=(y_1,\cdots,y_n)$定义
 \[
 d(x, y) = [\sum_{j=1}^{n}{(x_j-y_j)^2}]^{\frac{1}{2}}.
 \]
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam002020107}
 设$S$是任意一个集，$B(S)$表示满足条件
+\[
+\left\|f\right\|_{\infty} = \sup{\{\left|f(s)\right|: s \in S\}} < \infty
+\]
+的函数$f: S \to \mathbb{C}$的集。这就是说，$B(S)$由所有其值域位于某一有穷半径的圆内的复值函数所构成。对于$B(S)$中的$f$和$g$定义$d(f, g) = \left\|f-g\right\|_{\infty}$。我们来证明$d$满足三角不等式。事实上，如果$f$，$g$和$h$在$B(S)$中，$s$是$S$中的任意一点，那么$|f(s)-g(s)| = |f(s)-h(s)+h(s)-g(s)| \le |f(s)-h(s)| + |h(s)-g(s)| \le \left\|f-h\right\|_{\infty} + \left\|h - g\right\|_{\infty}$。于是若对于$S$中所有的$s$取上确界，则有$\left\|f-g\right\|_{infty} \le \left\|f-h\right\|_{\infty} + \left\|h - g\right\|_{\infty}$，这就是对于$d$的三角不等式。
 \end{example}
 
+\begin{definition}{开集}{def002020101}
+对于度量空间$(X, d)$，一个集$G \subset X$是开集，如果$G$内的每一个$x$，都存在一个$\epsilon > 0$，使得$B(x;\epsilon) \subset G$。
+\end{definition}
+
+于是，一个集在$\mathbb{C}$内是开的，如果它没有“边”。例如，
+\[
+G = \{z \in G: a < \Re{(z)} < b\}
+\]
+是开的；但是$\{z: \Re{(z)} < 0\} \bigcap \{0\}$不是开的，因为不管我们把$\epsilon$取得多么小，$B(0;\epsilon)$都不能包含在这个集内。
+
+我们用$\emptyset$表示空集，就是一个元素也没有的集。
+
+\begin{proposition}{}{prop002020101}
+设$(X, d)$是一个度量空间，那么:
+\begin{enumerate}
+\item[(a)]集$X$和$\emptyset$是开集。
+\item[(b)]如果$G_1,\cdots, G_n$是$X$中的开集，则$\bigcap_{k=1}^{n}{G_k}$也是$X$中的开集。
+\item[(c)]如果$\{G_j:j \in J\}$是$X$中的开集族，$J$是任一指标集，则$G = \bigcup\{G_j:j \in J\}$也是开集。
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a)的证明是平凡的。为了证明(b)，设$x \in G = \bigcap_{k=1}^{n}{G_k}$；那么$x \in G_k$，$k=1,2,\cdots,n$。于是由定义，对于每个$k$有$\epsilon_k > 0$，使得$B(x;\epsilon_k) \subset G_k$。如果取$\epsilon=\min(\epsilon_1,\epsilon_2,\cdots, \epsilon_n)$，那么，对于$1 \le k \le n$，$B(x;\epsilon) \subset B(x;\epsilon_k) \subset G_k$，于是$B(x; \epsilon) \subset G$，$G$是开集。
+
+(c)的证明留给读者作为习题。
+\end{proof}
+
+在度量空间里还有另一类著名的子集。这类子集包含它们的全部“边”，换一个说法，它们的余集没有“边”。
+
+\begin{definition}{闭集}{def002020102}
+一个集$F \subset X$是闭的，如果它的余集$X-F$是开的。
+\end{definition}
+
+下面的命题是命题\ref{pro:prop002020101}的补命题。对于前一命题应用Morgan法则便可完成其证明，我们把它留给读者。
+
+\begin{proposition}{}{prop002020102}
+设$(X, d)$是一个度量空间，那么：
+\begin{enumerate}
+\item[(a)]集$X$和$\emptyset$是闭的。
+\item[(b)]如果$F_1,\cdots, F_n$是$X$中的闭集，则$\bigcup_{k=1}^{n}{F_k}$也是$X$中的闭集。
+\item[(c)]如果$\{F_j:j \in J\}$是$X$中的闭集族，$J$是任一指标集，则$F = \bigcap\{F_j:j \in J\}$也是闭集。
+\end{enumerate}
+\end{proposition}
+
+在学习开集和闭集时，最普遍的错误是把闭集的定义解释为一个集不是开集便是闭集。这种理解当然是错误的。只要看集$\{z \in \mathbb{C} : \Re{(z)} > 0\} \cup \{0\}$就清楚了，这个集既不是开的，也不是闭的。
+
+\begin{definition}{}{def002020103}
+设$A$是$X$的子集，那么，$A$的内部$\intset{A}$就是集合$\bigcup\{G: G\text{是开集，且}G \subset A\}$。$A$的闭包$A^-$就是集$\bigcap\{F: F\text{是闭集，且}F \supset A\}$。注意，$\intset{A}$可以是空集，$A^-$可以是$X$。如果$A = \{a + ib : a\text{和}b\text{是有理数}\}$，那么同时有$A^-=\mathbb{C}$和$\intset{A} = \emptyset$。根据命题\ref{pro:prop002020101}和\ref{pro:prop002020102}，$A^-$是闭集，$\intset{A}$是开集。$A$的边界记为$\partial{A}$，定义为$\partial{A} = A^- \cap (X-A)^-$。
+\end{definition}
+
+\begin{proposition}{}{prop002020103}
+设$A$和$B$是度量空间$(X, d)$的子集，那么：
+\begin{enumerate}
+\item[(a)]当且仅当$A = \intset{A}$时$A$是开集。
+\item[(b)]当且仅当$A = A^-$时$A$是闭集。
+\item[(c)]$\intset{A} = X - (X-A)^-$；$A^- = X- \intset(X-A)$；$\partial{A} = A^- - \intset{A}$。
+\item[(d)]$(A \bigcup B)^- = A^- \bigcup B^-$。
+\item[(e)]当且仅当存在$\epsilon > 0$，使得$B(x_0; \epsilon) \subset A$时，$x_0 \in \intset{A}$。
+\item[(f)]当且仅当，对每一$\epsilon > 0$，$B(x_0; \epsilon) \cap A \neq \emptyset$时，$x_0 \in A^-$。
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(a)至(e)的证明留给读者。为了证明(f)，假设$x_0 \in A^- = X - \intset(X-A)$；于是，$x_0 \not\in \intset(X-A)$。由(e)，对于每一$\epsilon > 0$，$B(x_0; \epsilon)$不包含在$X-A$内，这就是说，存在一个点$y \in B(x_0; \epsilon)$，$y$不在$X-A$内。所以$y \in B(x_0;\epsilon) \cap A$。现在设$x_0 \not\in A^- = X - \intset{(X-A)}$，那么$x_0 \in \intset(X-A)$，由(e)，存在$\epsilon > 0$，使得$B(x_0; \epsilon) \subset X-A$。即$B(x_0; \epsilon) \cap A = \emptyset$，所以$x_0$不满足条件。
+\end{proof}
+
+最后，再定义一类著名的集合。
+
+\begin{definition}{稠密}{def002020104}
+度量空间$X$的一个子集$A$是稠密的，如果$A^- = X$。
+\end{definition}
+
+有理数集$\mathbb{Q}$在$\mathbb{R}$中是稠密的，$\{x + iy : x, y, \in \mathbb{Q}\}$在$\mathbb{C}$中是稠密的。
+
+\begin{exercise}
+证明：（\ref{exam002020102}）至（\ref{exam002020106}）中给出的那些例子都确实是度量空间，只有例子（\ref{exam002020106}）的证明可能会有些困难，对于这些例子给出$B(x;r)$。
+\end{exercise}
+
+\begin{exercise}
+$\mathbb{C}$的下列子集，哪些是开集，哪些是闭集？
+\begin{enumerate}
+\item[(a)]$\{z:|z|<1\}$；
+\item[(b)]实轴；
+\item[(c)]$\{z: z^n=1,\text{对某一整数}n \ge 1\}$；
+\item[(d)]$\{z \in \mathbb{C}: z\text{是实数，且}0 \le z <1\}$；
+\item[(e)]$\{z \in \mathbb{C}: z\text{是实数，且}0 \le z \le 1\}$。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+如果$(X, d)$是任一度量空间，证明：每一个开球是开集，每一个闭球是闭集。
+\end{exercise}
+
+\begin{exercise}
+给出（\ref{pro:prop002020101}c）的详细证明。
+\end{exercise}
+
+\begin{exercise}
+证明命题\ref{pro:prop002020102}。
+\end{exercise}
+
+\begin{exercise}
+证明：一个集$G \subset X$是开的，当且仅当$X-G$是闭的。
+\end{exercise}
+
+\begin{exercise}
+证明：$(\mathbb{C}_{\infty}, d)$是一度量空间，其中$d$是由第一章的（\ref{equ002010607}），（\ref{equ002010608}）给出的。
+\end{exercise}
+
+\begin{exercise}
+设$(X, d)$是一度量空间，$Y \subset X$，又设$G \subset X$是开的，证明$G \cap Y$是$(Y, d)$中的开集。反之，如果$G_1 \subset Y$是$(Y, d)$中的开集，则存在开集$G \subset X$，使得$G_1 = G \cap Y$。
+\end{exercise}
+
+\begin{exercise}
+在上题中用“闭的”代替“开的”。
+\end{exercise}
+
+\begin{exercise}
+证明命题\ref{pro:prop002020103}
+\end{exercise}
+
+\begin{exercise}
+证明：$\{\cis{k}:k \ge 0\}$在$T=\{z \in \mathbb{C}:|z|=1\}$中是稠密的。对于哪些$\theta$的值，$\{\cis(k\theta):k>0\}$在$T$中是稠密的？
+\end{exercise}
+
+\section{连通性}\label{subsection0020202}
+作为这一节的开始，让我们先给出一个例子。设$X = \{ x \in \mathbb{C} : |z| \le 1\} \cup \{z: |z-3| < 1\}$，并且把$\mathbb{C}$的度量赋于$X$（今后，当我们把$\mathbb{R}$或$\mathbb{C}$的子集$X$看作一个度量空间时，如果不作相反的声明，总假定$X$继承度量$d(z, w) = |z-w|$），那么集合$A = \{z:|z| \le 1\}$既是开的，又是闭的。它是闭的，因为它在$X$中的余集$B = X-A = \{z:|z-3| < 1\}$是开的；$A$是开的，因为如果$a \in A$，那么$B(a;1) \subset A$（注意：$\{z \in \mathbb{C}: |z-a| < 1\}$并不总包含在$A$中，当$a=1$时就是一例。但当按定义，$B(a;1)$是$z \in X: |z-a|<1$，它是包含在$A$中的）。类似的，$B$在$X$中也是既开又闭的。
+
+这是一个非连通空间的例子。
+
+\begin{definition}{连通}{def002020201}
+一个度量空间$(X, d)$是连通的，如果只有$\emptyset$和$X$既是开的又是闭的。设$A \subset X$，如果度量空间$(A, d)$是连通的，那么$A$是$X$的连通子集。
+\end{definition}
+
+连通性的一个等价说法是：$X$是不连通的，如果存在$X$中的互不相交的非空开集$A$和$B$，使得$X = A \cup B$。事实上，如果这个条件成立，那么$A = X-B$也是闭的。
+
+\begin{proposition}{}{prop002020201}
+一个集$X \subset \mathbb{R}$是连通的，当且仅当$X$是一个区间。
+\end{proposition}
+
+\begin{proof}
+设$X = [a, b]$，$a$，$b$是$\mathbb{R}$的元素。设$A \subset X$是$X$的开子集，满足$a \in A$，$A \neq X$。我们将证明$A$不可能也是闭的，因此$X$必是连通的。因为$A$是开的，$a \in A$，所以存在$\epsilon > 0$，使得$[a, a+\epsilon) \subset A$，设
+\[
+r = \sup\{\epsilon: [a, a+\epsilon) \subset A\}.
+\]
+则有断言：$[a, a+r) \subset A$。事实上，如果$a \le x < a+r$，令$h = a + r -x > 0$，由上确界的定义，存在$\epsilon$，$r - h < \epsilon < r$且$[a, a+\epsilon) \subset A$。但是$a \le x = a + (r-h) < a + \epsilon$蕴含$x \in A$。断言得证。
+
+但是$a + r \not\in A$\footnote{这里有两种可能：（1）$a+r=b$；（2）$a+r < b$.当$a+r=b$时，$a + r \in A$导致$A=X$，与原来的假定$A \neq X$矛盾；作者忽略了这种情况。}，因为在相反的情形，$a + r \in A$，那么由于$A$是开的，存在$\delta > 0$，使得$[a + r, a+r+\delta) \subset A$。但这就给出$[a, a+r+\delta) \subset A$。这与$r$的定义相矛盾。现在假定$A$也是闭的，那么$a + r \in B = X- A$，$B$是开的，因此我们可以找到$\delta > 0$，使得$(a+r-\delta, a+r] \subset B$。这和上述断言矛盾。
+
+其他类型的区间的连通性的证明是类似的，留给读者作为习题。
+
+$\mathbb{R}$中的连通集必是一区间，其证明留做习题。
+\end{proof}
 
 
 

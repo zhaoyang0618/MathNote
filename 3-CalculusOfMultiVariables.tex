@@ -1,11 +1,11 @@
-\chapter{多元微积分}
+\part{多元微积分}
 《多元微积分》的作者是C.Goffman。参考：\cite{CalculusOfMultiVariables1978}。
 
-\section{欧氏空间}\label{section00301}
+\chapter{欧氏空间}\label{section00301}
 欧氏空间是一个向量空间，它具有满足某些条件的距离函数。在这一章中，我们给出这些空间的定义和主要性质，还要讨论向量空间之间的线性映射及其性质，然后给出欧氏空间拓扑的一个简洁的处理。
 
 
-\subsection{向量空间}\label{subsection0030101}
+\section{向量空间}\label{subsection0030101}
 实数域$\mathbb{R}$上的\textbf{向量空间}是一个集合$S$，它带有映射
 \[
 g: S \times S \to S
@@ -48,7 +48,30 @@ ax = (ax_1, \cdots, ax_n).
 \]
 \end{example}
 
+\begin{example}
+设$A$是任一集合，$X$是一向量空间。命$X^A$是$A$到$X$的全体映射所成的集合。对于任意$f, g \in X^A$，定义$f+g$是这样的映射：对于每个$\alpha \in A$，
+\[
+(f+g)(\alpha)  = f(\alpha)+g(\alpha).
+\]
+对每个$f \in X^A$和$a \in \mathbb{R}$，定义$af$为这样的映射：对于每个$\alpha \in A$，
+\[
+(af)(\alpha) = af(\alpha).
+\]
+\end{example}
 
+设$A, B$是两个集合，映射$f: A \to B$叫做单射的（injective），如果它是一对一的；叫做满射的（surjective），如果它是$A$到整个$B$上的映射；叫做双射（bijective），如果它是$A$到整个$B$上的映射，而且是一对一的。这就是说，如果$x, y \in A$，只要$x \neq y$就有$f(x) \neq f(y)$，$f$就是单射的；如果对于每个$u \in B$，存在$x \in A$（可以多于一个），使得$u = f(x)$，$f$就是满射的。
+
+设$S, T$是两个向量空间，映射
+\[
+f: S \to T
+\]
+叫做一个同态映射，如果对任意$x, y \in S$有$f(x+y)=f(x)+f(y)$，对每个$x \in S$，$a \in \mathbb{R}$有$f(ax) = af(x)$。
+
+同态映射称为同构映射，如果它是双射的。向量空间$S$和$T$称为同构的，如果存在一个同构映射$f: S \to T$。
+
+\textbf{注意} \quad 向量空间之间的同态映射也叫做线性映射。今后我们就采用这后一术语。
+
+设$S$是一向量空间，子集$T \subset S$称为一个子空间，如果
 
 
 

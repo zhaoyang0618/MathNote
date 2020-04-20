@@ -16,6 +16,7 @@
 %\def\FcReluColor{rgb:blue,5;red,5;white,4}
 %\def\SoftmaxColor{rgb:magenta,5;black,7}
 \def\cis{\,\text{cis}\,}
+\def\intset{\operatorname{int}}
 
 %\newtheorem{lemma}{法则}
 % 方程编号以section为准
@@ -56,25 +57,13 @@
 \hypersetup{pageanchor=true}
 
 % add preface chapter here if needed
-\part{代数}
+
 \include{1-surveyofmodernalgebra}
-
-\chapter{基础代数}
-
-\chapter{代数}
- 《代数》的作者是M.阿廷。
-
-\part{分析}
-\chapter{数学分析}
-
-
-\chapter{高等微积分:微分形式导引}
-
-\chapter{积分论}
-
+\include{6-Algebra-Artin}
+\include{5-BasicAlgebra}
+\include{7-MathematicalAnalysis-Apostol}
 \include{2-ComplexAnalysisOfOneVariable}
 \include{3-CalculusOfMultiVariables}
-
 
 % \bibliographystyle{plain}
 \bibliography{mathreference}
