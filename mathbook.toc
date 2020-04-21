@@ -68,6 +68,9 @@
 \contentsline {chapter}{\numberline {19}度量空间与$\mathbb {C}$的拓扑}{99}{chapter.19}% 
 \contentsline {section}{\numberline {19.1}度量空间的定义和例子}{99}{section.19.1}% 
 \contentsline {section}{\numberline {19.2}连通性}{102}{section.19.2}% 
-\contentsline {part}{VI\hspace {1em}多元微积分}{104}{part.6}% 
-\contentsline {chapter}{\numberline {20}欧氏空间}{106}{chapter.20}% 
-\contentsline {section}{\numberline {20.1}向量空间}{106}{section.20.1}% 
+\contentsline {section}{\numberline {19.3}序列与完备性}{105}{section.19.3}% 
+\contentsline {section}{\numberline {19.4}紧性}{105}{section.19.4}% 
+\contentsline {section}{\numberline {19.5}连续性}{105}{section.19.5}% 
+\contentsline {part}{VI\hspace {1em}多元微积分}{106}{part.6}% 
+\contentsline {chapter}{\numberline {20}欧氏空间}{108}{chapter.20}% 
+\contentsline {section}{\numberline {20.1}向量空间}{108}{section.20.1}% 

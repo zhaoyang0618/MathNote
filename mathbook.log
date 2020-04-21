@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  20 APR 2020 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  21 APR 2020 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2193,7 +2193,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 51.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=336, 1027.84pt x 770.88pt>
+<cover.jpg, id=348, 1027.84pt x 770.88pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 51.
@@ -2223,7 +2223,7 @@ File: c70zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: use punctuation spaces for family 'zhkai' with punctstyl
 e (quanjiao) on input line 51.
-<logo.png, id=358, 345.20457pt x 135.31404pt>
+<logo.png, id=370, 345.20457pt x 135.31404pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 51.
@@ -4456,21 +4456,60 @@ Package microtype Info: Character `textexclamdown ' is missing
 Package microtype Info: Character `textquestiondown ' is missing
 (microtype)             in font `T1/ntxsups/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-)
+
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [103]
+Overfull \hbox (5.90625pt too wide) in paragraph at lines 598--599
+[]\C70/rm/m/n/10.95/73 ∞ \C70/rm/m/n/10.95/57 ( \C70/rm/m/n/10.95/8b æ$\OML/ntx
+mi/m/it/10.95 G$\C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/8f ﬁ \C70/rm/m/n/10.95
+/90 ^^Z \C70/rm/m/n/10.95/76 Ñ|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/5e v
+ \C70/rm/m/n/10.95/4e ^^T \C70/rm/m/n/10.95/57 ($\OML/ntxmi/m/it/10.95 G$\C70/r
+m/m/n/10.95/51 Ö \C70/rm/m/n/10.95/56 ˙ \C70/rm/m/n/10.95/5b ö \C70/rm/m/n/10.9
+5/4e ^^@ \C70/rm/m/n/10.95/70 π$\OML/ntxmi/m/it/10.95 a$|\C70/rm/m/n/10.95/ff ^
+^L| \C70/rm/m/n/10.95/89 Å \C70/rm/m/n/10.95/63 ^^G \C70/rm/m/n/10.95/51 ˙ \C70
+/rm/m/n/10.95/59 Ç \C70/rm/m/n/10.95/4f U \C70/rm/m/n/10.95/67 Ñ \C70/rm/m/n/10
+.95/90   \C70/rm/m/n/10.95/4e Œ$\OML/ntxmi/m/it/10.95 a$\C70/rm/m/n/10.95/52 0$
+\OML/ntxmi/m/it/10.95 b$\C70/rm/m/n/10.95/76 Ñ \C70/rm/m/n/10.95/62 ò \C70/rm/m
+/n/10.95/7e ø |\C70/rm/m/n/10.95/ff ^^H|\C70/rm/m/n/10.95/57 ($\OML/ntxmi/m/it/
+10.95 G$\C70/rm/m/n/10.95/51 Ö|\C70/rm/m/n/10.95/ff ^^A||	|
+ []
+
+
+Overfull \hbox (22.71013pt too wide) in paragraph at lines 606--607
+\OML/ntxmi/m/it/10.95 B\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 z\OT1/ntxtlf
+/m/n/10.95 (-20) ; \OML/ntxmi/m/it/10.95 ^^O\LMS/ntxsy/m/n/10.95 ∫$\C70/rm/m/n/
+10.95/51 Ö \C70/rm/m/n/10.95/5b X \C70/rm/m/n/10.95/57 ( \C70/rm/m/n/10.95/4e ^
+^@ \C70/rm/m/n/10.95/70 π$\OML/ntxmi/m/it/10.95 b$|\C70/rm/m/n/10.95/ff ^^L| \C
+70/rm/m/n/10.95/90 £ \C70/rm/m/n/10.95/4e H \C70/rm/m/n/10.95/59 Ç \C70/rm/m/n/
+10.95/4e 
+ \C70/rm/m/n/10.95/62 @ \C70/rm/m/n/10.95/8f |\C70/rm/m/n/10.95/ff ^^L| \C70/r
+m/m/n/10.95/62 ^^Q \C70/rm/m/n/10.95/4e Ï \C70/rm/m/n/10.95/80 ˝ \C70/rm/m/n/10
+.95/59 ^^_ \C70/rm/m/n/10.95/67 Ñ \C70/rm/m/n/10.95/90   \C70/rm/m/n/10.95/4e ^
+^@ \C70/rm/m/n/10.95/67 a \C70/rm/m/n/10.95/4e Œ$\OML/ntxmi/m/it/10.95 a$\C70/r
+m/m/n/10.95/52 0$\OML/ntxmi/m/it/10.95 z$\C70/rm/m/n/10.95/76 Ñ \C70/rm/m/n/10.
+95/62 ò \C70/rm/m/n/10.95/7e ø|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/4e é
+ \C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/62 ^^Q \C70/rm/m/n/10.95/4e Ï \C70/rm
+/m/n/10.95/5f ≈ \C70/rm/m/n/10.95/67 	$\OML/ntxmi/m/it/10.95 B\LMS/ntxsy/m/n/10
+.95 π\OML/ntxmi/m/it/10.95 z\OT1/ntxtlf/m/n/10.95 (-20) ; \OML/ntxmi/m/it/10.95
+ ^^O\LMS/ntxsy/m/n/10.95 ∫ \
+ []
+
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[104])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[105]
 \openout2 = `3-CalculusOfMultiVariables.aux'.
 
- (./3-CalculusOfMultiVariables.tex [104
+ (./3-CalculusOfMultiVariables.tex [106
 
 
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[105]
+[107]
 Á¨¨ 20\tmspace +\thickmuskip {.2777em}Á´† 20.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[106
+[108
 
 ]
 Overfull \hbox (8.14627pt too wide) in paragraph at lines 62--63
@@ -4487,7 +4526,7 @@ f ^^[| \C70/rm/m/n/12/53 Î \C70/rm/m/n/12/50 Z \C70/rm/m/n/12/53 Ã \C70/rm/m/n/
  []
 
 ) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [107] (./mathbook.bbl
+) [109] (./mathbook.bbl
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10> not available
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 7.
@@ -4497,7 +4536,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 7.
 ) 
 AED: lastpage setting LastPage
-[108
+[110
 
 
 ]
@@ -4510,7 +4549,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: 0A1CF595A510F90832AEF94013C53F91;8543.
+(rerunfilecheck)             Checksum: 61B7C73E86A77B64EDF174C22DDC978C;8883.
 
 
 LaTeX Warning: There were undefined references.
@@ -4520,11 +4559,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 55889 strings out of 494443
- 1037095 string characters out of 6173253
+ 55983 strings out of 494443
+ 1039019 string characters out of 6173253
  1295555 words of memory out of 5000000
- 56377 multiletter control sequences out of 15000+600000
- 858068 words of font info for 926 fonts, out of 8000000 for 9000
+ 56442 multiletter control sequences out of 15000+600000
+ 861664 words of font info for 940 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1551s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -4552,20 +4591,20 @@ ndows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.tt
 c><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows
 /Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai
-.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf>{d:/texlive/2019
-/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/simkai.ttf>
+/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai
+.ttf><c:/Windows/Fonts/simkai.ttf>{d:/texlive/2019/texmf-dist/fonts/enc/dvips/n
+ewtx/ntx-ot1-tlf.enc}<c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf>
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/sim
 kai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/F
 onts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/W
 indows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.t
 tf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/
 simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Window
-s/Fonts/simkai.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
-n.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
-ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
+:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhe
+i.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
+ts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
+dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
 mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/
 Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/
@@ -4623,10 +4662,10 @@ e/2019/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-d
 ist/fonts/type1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type
 1/public/newtx/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on mathbook.pdf (113 pages, 1722100 bytes).
+Output written on mathbook.pdf (115 pages, 1737960 bytes).
 PDF statistics:
- 2586 PDF objects out of 2984 (max. 8388607)
- 2106 compressed objects within 22 object streams
- 496 named destinations out of 1000 (max. 500000)
- 34869 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 2623 PDF objects out of 2984 (max. 8388607)
+ 2141 compressed objects within 22 object streams
+ 505 named destinations out of 1000 (max. 500000)
+ 34893 words of extra memory for PDF output out of 35830 (max. 10000000)
 

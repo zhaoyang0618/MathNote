@@ -577,10 +577,60 @@ r = \sup\{\epsilon: [a, a+\epsilon) \subset A\}.
 $\mathbb{R}$中的连通集必是一区间，其证明留做习题。
 \end{proof}
 
+如果$w$和$z$是$\mathbb{C}$中的两点，那么我们用
+\[
+[z, w] = \{tw + (1-t)z:0 \le t \le 1\}
+\]
+表示从$z$到$w$的直线段，从$a$到$b$的折线是集$P = \bigcup_{k=1}^{n}{[z_k, w_k]}$。其中$z_1 = a$，$w_n = b$，并且对于$1 \le k \le n-1$，$w_k = w_{k+1}$；或者写成$P=[a,z_1,\cdots, z_n, b]$。
+
+\begin{theorem}{}{thm002020201}
+一个开集$G \subset \mathbb{C}$是连通的，当且仅当，对于$G$的任意两点$a$，$b$，存在一条从$a$到$b$的折线，这一折线整个地位于$G$内。
+\end{theorem}
+
+\begin{proof}
+设$G$满足定理的条件，假定$G$不是连通的，我们将得到一个矛盾。由定义，$G = A \cup B$，其中$A$，$B$既是开集又是闭集，且$A \cap B = \emptyset$，$A$，$B$都是非空的，设$a \in A$，$b \in B$；按照假定，存在从$a$到$b$的一条折线$P$，$P \subset G$。稍加考虑，便可看出，在组成$P$的某一线段上， 有一点在$A$内，而另一点在$B$内，所以我们可以假定$P=[a, b]$。我们定义
+\begin{gather*}
+S = \{s \in [0, 1] : sb + (1-s)a \in A\},\\
+T = \{t \in [0, 1] : tb + (1-t)a \in B\}.
+\end{gather*}
+那么，$S \cap T = \emptyset$，$S \cup T = [0,1]$，$0 \in S$，$1 \in T$。但是能够证明$S$和$T$都是开集（习题\ref{exer002020202}），这就和$[0,1]$的连通性矛盾。于是$G$一定是连通的。
+
+现在设$G$是连通的，并且在$G$内固定一点$a$，要指出如何构造从$a$到$b$的折线（在$G$内！）是困难的，但是我们并不需要实现这种构造，而只要证明这一折线是存在的。对于$G$内固定的一点$a$，定义
+\[
+A = \{ b \in G: \text{存在}a\text{到}b\text{的折线}P \subset G\}.
+\]
+我们要证明$A$在$G$内既是开的又是闭的。由于$a \in A$和$G$是连通的，所以$A = G$，定理便得证。
+
+为了证明$A$是开的，设$b \in A$，$P = [a, z_1, \cdots, z_n, b]$是从$a$到$b$的折线，$P \subset G$。由于$G$是开的（这对于定理的前半部分并不需要），存在$\epsilon > 0$，使得$B(b; \epsilon) \subset G$，但是如果$z \in B(b; \epsilon)$，那么$[b, z] \subset B(b;\epsilon) \subset G$，因此，$Q = P \cup [b,z]$是$G$内从$a$到$z$的折线，这就表明$B(b; \epsilon) \subset A$，所以$A$是开的。
+
+为了证明$A$是闭的，假设在$G-A$内有一点$z$，及$\epsilon > 0$使得$B(z; \epsilon) \subset G$。如果$A \cap B(z; \epsilon)$内存在一点$b$，那么如上所述，我们能够构造一条从$a$到$z$的折线。于是我们必有$B(z;\epsilon) \cap A = \emptyset$，或者$B(z;\epsilon) \subset G-A$。即$G-A$是开的，所以$A$是闭的。
+\end{proof}
+
+\begin{corollary}{}{coro002020201}
+如果$G\subset{}\mathbb{C}$是开的，连通的，$a$，$b$是$G$内的点，那么在$G$内存在一条从$a$到$b$的折线，这一折线由平行于实轴和平行于虚轴的线段所组成。
+\end{corollary}
+
+\begin{proof}
+证明这个推论的方法有两个。一个方法是先在$G$内求得一条从$a$到$b$的折线。然后修改其每一线段，使得新的折线具有所要的性质。利用紧性比较容易实现这个证明（见本章\ref{section0020205}节习题\ref{exer002020507}）。另一个证明可以由修改定理\ref{thm:thm002020201}的证明而得到。和定理\ref{thm:thm002020201}的证明一样，定义集$A$，但附加一个限制，就是折线的线段都平行于一个坐标轴。往下的证明仍然有效，只有一点例外，就是如果$z \in B(b; \epsilon)$，那么$[b,z]$可能不平行于坐标轴，但是容易看出，如果$z=x+iy$，$b=p+iq$，那么折线$[b,p+iy]\cup [p+iy, z] \subset B(b;\epsilon)$，且它的线段平行于坐标轴。
+\end{proof}
+
+现在我们将证明，度量空间的任意一个集可以用典型的方法表示为连通块的和。
 
 
+\begin{exercise}\label{exer002020202}
+证明定理\ref{thm:thm002020201}的证明中的集$S$和$T$是开集。
+\end{exercise}
 
 
+\section{序列与完备性}\label{section0020203}
+
+\section{紧性}\label{section0020204}
+
+\section{连续性}\label{section0020205}
+
+\begin{exercise}\label{exer002020507}
+设$G$是$\mathbb{C}$中的一个开子集
+\end{exercise}
 
 
 
