@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  21 APR 2020 21:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  22 APR 2020 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4495,21 +4495,33 @@ m/m/n/10.95/52 0$\OML/ntxmi/m/it/10.95 z$\C70/rm/m/n/10.95/76 „ \C70/rm/m/n/10.
  []
 
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[104])
+[104]
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 630.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 630.
+
+
+LaTeX Warning: Reference `section0020201' on page 105 undefined on input line 6
+30.
+
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[105]
+[105])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[106]
 \openout2 = `3-CalculusOfMultiVariables.aux'.
 
- (./3-CalculusOfMultiVariables.tex [106
+ (./3-CalculusOfMultiVariables.tex [107
 
 
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[107]
+[108]
 ç¬¬ 20\tmspace +\thickmuskip {.2777em}ç«  20.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[108
+[109
 
 ]
 Overfull \hbox (8.14627pt too wide) in paragraph at lines 62--63
@@ -4526,7 +4538,7 @@ f ^^[| \C70/rm/m/n/12/53 ë \C70/rm/m/n/12/50 Z \C70/rm/m/n/12/53 Ì \C70/rm/m/n/
  []
 
 ) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [109] (./mathbook.bbl
+) [110] (./mathbook.bbl
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10> not available
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 7.
@@ -4536,7 +4548,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 7.
 ) 
 AED: lastpage setting LastPage
-[110
+[111
 
 
 ]
@@ -4559,11 +4571,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 55983 strings out of 494443
- 1039019 string characters out of 6173253
+ 56049 strings out of 494443
+ 1040402 string characters out of 6173253
  1295555 words of memory out of 5000000
- 56442 multiletter control sequences out of 15000+600000
- 861664 words of font info for 940 fonts, out of 8000000 for 9000
+ 56489 multiletter control sequences out of 15000+600000
+ 867434 words of font info for 952 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1551s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -4655,17 +4667,17 @@ st/fonts/type1/public/tex-gyre/qtmb.pfb><d:/texlive/2019/texmf-dist/fonts/type1
 re/qtmri.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/rntxmi.pfb><d
 :/texlive/2019/texmf-dist/fonts/type1/public/newtx/rntxmi5.pfb><d:/texlive/2019
 /texmf-dist/fonts/type1/public/newtx/rntxmi7.pfb><d:/texlive/2019/texmf-dist/fo
-nts/type1/public/txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/txfonts/rtxr.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.
-pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texliv
-e/2019/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-d
-ist/fonts/type1/public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type
-1/public/newtx/txsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on mathbook.pdf (115 pages, 1737960 bytes).
+nts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public
+/txfonts/rtxmi.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.
+pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/
+2019/texmf-dist/fonts/type1/public/txfonts/txmia.pfb><d:/texlive/2019/texmf-dis
+t/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/
+public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/t
+xsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on mathbook.pdf (116 pages, 1750851 bytes).
 PDF statistics:
- 2623 PDF objects out of 2984 (max. 8388607)
- 2141 compressed objects within 22 object streams
- 505 named destinations out of 1000 (max. 500000)
- 34893 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 2639 PDF objects out of 2984 (max. 8388607)
+ 2155 compressed objects within 22 object streams
+ 511 named destinations out of 1000 (max. 500000)
+ 35405 words of extra memory for PDF output out of 35830 (max. 10000000)
 

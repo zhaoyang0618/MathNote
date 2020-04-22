@@ -532,11 +532,11 @@ $\mathbb{C}$的下列子集，哪些是开集，哪些是闭集？
 证明：$(\mathbb{C}_{\infty}, d)$是一度量空间，其中$d$是由第一章的（\ref{equ002010607}），（\ref{equ002010608}）给出的。
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{exer002020108}
 设$(X, d)$是一度量空间，$Y \subset X$，又设$G \subset X$是开的，证明$G \cap Y$是$(Y, d)$中的开集。反之，如果$G_1 \subset Y$是$(Y, d)$中的开集，则存在开集$G \subset X$，使得$G_1 = G \cap Y$。
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{exer002020109}
 在上题中用“闭的”代替“开的”。
 \end{exercise}
 
@@ -615,6 +615,52 @@ A = \{ b \in G: \text{存在}a\text{到}b\text{的折线}P \subset G\}.
 \end{proof}
 
 现在我们将证明，度量空间的任意一个集可以用典型的方法表示为连通块的和。
+
+\begin{definition}{}{def002020205}
+度量空间$X$的子集$D$是$X$的一个分支，如果它是$X$的最大连通子集。即$D$是连通的，并且不存在$X$的连通子集，$D$是它的真子集。
+\end{definition}
+
+如果读者考察这一节一开始给出的例子，就会发现$A$，$B$都是分支。并且$X$只有这两个分支。作为另一个例子，设$X = \{0, 1, \frac{1}{2},\frac{1}{3}, \cdots\}$，这时显然$X$的每一个分支都是一个点，并且它的每一个点都是一个分支。注意，分支$\{\frac{1}{n}\}$都是$X$中的开集，分支$\{0\}$不是$X$中的开集。
+
+\begin{lemma}{}{lemma002020206}
+设$x_0 \in X$，$\{D_j : j \in J\}$是$X$的连通子集族，对于$J$中的每一个$j$，$x_0 \in D_j$。则$D = \bigcup{\{D_j : j \in J\}}$是连通的。
+\end{lemma}
+
+\begin{proof}
+设$A$是度量空间$(D, d)$的子集，它既是开的又是闭的，且设$A \neq \emptyset$。那么对于每个$j$，$A \cap D_j$是$(D_j, d)$中的开集，也是$(D_j, d)$中的闭集（见\ref{section0020201}节中的习题\ref{exer002020108}和习题\ref{exer002020109}）。由于$D_j$是连通的，所以，或者$A \cap D_j = \emptyset$，或者$A \cap D_j = D_j$。因为$A \neq \emptyset$，所以至少存在一个$k$，使得$A \cap D_k \neq \emptyset$；因此$A \cap D_k = D_k$，特别地，$x_0 \in A$。所以，对于每个$j$，$x_0 \in A \cap D_j$，于是对于每个$j$，$A \cap D_j = D_j$，或者说$D_j \subset A$。这就得到$D = A$，所以$D$是连通的。
+\end{proof}
+
+\begin{theorem}{}{thm002020207}
+设$(X, d)$是一个度量空间，则
+\begin{enumerate}
+\item[(a)]$X$中的每一个$x_0$包含在$X$的一分支中；
+\item[(b)]$X$的不同分支是互不相交的。
+\end{enumerate}
+\end{theorem}
+
+注意，(a)表示$X$是它的分支的和。
+
+\begin{proof}
+(a)设$\mathscr{D}$是包含$x_0$的$X$的连通子集族。注意到$\{x_0\} \in \mathscr{D}$，所以$\mathscr{D} \neq \emptyset$。也注意到上述引理的假设适用于族$\mathscr{D}$，因此$C = \bigcup\{D; D \in \mathscr{D}\}$是连通的，且$x_0 \in C$。$C$必定是一个分支。事实上，如果$D$是连通的，$C \subset D$，那么$x_0 \in D$，所以$D \in \mathscr{D}$。但是这样一来,$D \subset C$，所以$C=D$。于是$C$是最大的。(a)得证。
+
+(b)设$C_1$，$C_2$是两个分支，$C_1 \neq C_2$，假定在$C_1 \cap C_2$内存在一点$x_0$，再由引理，$C_1 \cup C_2$是连通的，由于$C_1$，$C_2$都是分支，这就给出$C_1 = C_1 \cup C_2 = C_2$，矛盾。
+\end{proof}
+
+\begin{proposition}{}{prop002020208}
+(a)如果$A \subset X$是连通的，$A \subset B \subset A^-$，那么$B$是连通的；(b)如果$C$是$X$的一分支，那么$C$是闭的。
+\end{proposition}
+
+证明留给读者作为习题。
+
+\begin{theorem}{}{thm002020209}
+设$G$是$\mathbb{C}$中的开集，那么$G$的分支是开集，并且$G$只有可数个分支。 
+\end{theorem}
+
+\begin{proof}
+设$C$是$G$的一分支，$x_0 \in C$。由于$G$是开集，所以存在$\epsilon > 0$，使得$B(x_0;\epsilon) \subset G$。根据引理，$B(x_0;\epsilon) \cup C$是连通的，所以它必是$C$。即$B(x_0;\epsilon) \subset C$，所以$C$是开的。
+
+为了看出分支的个数是可数的，设$S = \{a + ib: a, b\text{是有理数，且}a+ib \in G\}$，那么$S$是可数的。$G$的每个分支包含$S$的一点，所以分支的个数是可数的。
+\end{proof}
 
 
 \begin{exercise}\label{exer002020202}
