@@ -662,15 +662,168 @@ A = \{ b \in G: \text{存在}a\text{到}b\text{的折线}P \subset G\}.
 为了看出分支的个数是可数的，设$S = \{a + ib: a, b\text{是有理数，且}a+ib \in G\}$，那么$S$是可数的。$G$的每个分支包含$S$的一点，所以分支的个数是可数的。
 \end{proof}
 
+\begin{exercise}\label{exer002020201}
+本习题的目的在于证明$\mathbb{R}$的连通子集是一个区间。
+\begin{enumerate}
+\item[(a)]证明：当且仅当对于$A$中的任意两点$a$, $b$，$a < b$，有$[a, b] \subset A$时，集$A \subset \mathbb{R}$是一个区间。
+\item[(b)]利用(a)证明：如果$A \subset \mathbb{R}$是连通的，那么$A$是一个区间。
+\end{enumerate}
+\end{exercise}
 
 \begin{exercise}\label{exer002020202}
 证明定理\ref{thm:thm002020201}的证明中的集$S$和$T$是开集。
 \end{exercise}
 
+\begin{exercise}
+$\mathbb{C}$中的下列子集$X$，哪些是连通的？如果$X$不是连通的，它的分支是什么？
+\begin{enumerate}
+\item[(a)]$X = \{z: |z| \le 1\} \cup \{z:|z-2| < 1\}$；
+\item[(b)]$X = [0, 1] \cup \{1 + \frac{1}{n}: n > 1\}$；
+\item[(c)]$X = \mathbb{C} - (A \cup B)$，其中$A = [0, \infty)$，$B = \{z = r\cis{\theta} : r = \theta, 0 \le \theta \le \infty \}$。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+证明引理\ref{lem:lemma002020206}的下述推广：如果$\{D_j:j \in J\}$是$X$的连通子集族，且对于$J$中的每个$j$和$k$，有$D_j \cap D_k \neq \emptyset$，那么$D = \bigcup\{D_j: j \in J\}$是连通的。
+\end{exercise}
+
+\begin{exercise}
+证明：如果$F \subset X$是闭的、连通的，那么对于$F$中的每对点$a$，$b$和每个$\epsilon > 0$，在$F$中存在点$z_0, z_1,\cdots z_n$，$z_0=a$，$z_n=b$，且对于$1 \le k \le n$，$d(z_{k-1}, z_k) < \epsilon$，$F$是闭的这个假定是必要的吗？如果$F$是一个满足这个性质的集，即使$F$是闭的，也不一定是连通的。试举例说明之。
+\end{exercise}
+
 
 \section{序列与完备性}\label{section0020203}
+在度量空间中，最有用的概念之一是收敛序列的概念，这一概念在度量空间和复分析中与在微积分中一样起着中心的作用。
+
+\begin{definition}{}{def002020301}
+设$\{x_1,x_2,\cdots\}$是度量空间$(X,d)$中的一个序列，说$\{x_n\}$收敛到$x$，如果对于每个$\epsilon > 0$，存在正整数$N$，使得$n > N$时，$d(x, x_n) < \epsilon$，记为$x = \lim{x_n}$或$x_n \to x$。
+\end{definition}
+
+换言之，$x = \lim{x_n}$，如果$0 = \lim{d(x, x_n)}$。
+
+如果$X = \mathbb{C}$，那么$z = \lim{z_n}$意味着，对于每个$\epsilon > 0$，存在正整数$N$，使得当$n > N$时，$|z - z_n| < \epsilon$。
+
+在度量空间的理论中，许多概念可以借助于序列来叙述。下面是一个例子。
+
+\begin{proposition}{}{prop002020302}
+一个集$F \subset X$是闭的，当且仅当对于$F$中的每个序列$\{x_n\}$，若$x = \lim{x_n}$，则$x \in F$。
+\end{proposition}
+
+\begin{proof}
+设$F$是闭的，$x = \lim{x_n}$，其中每个$x_n$在$F$中。所以对于每个$\epsilon > 0$，在$B(x;\epsilon)$中有一点$x_n$；即$B(x;\epsilon) \cap F \neq \emptyset$。所以由命题\ref{pro:prop002020103}(f)，$x \in F^- = F$。
+
+现在设$F$不是闭的，所以在$F^-$中有$x_0$，$x_0$不在$F$中。由命题\ref{pro:prop002020103}(f)，对于每个$\epsilon > 0$，有$B(x_0;\epsilon) \cap F \neq \emptyset$。特别地，对于每个正整数$n$，在$B(x_0; \frac{1}{n}) \cap F$中有点$x_n$。于是$d(x_0, x_n) < \frac{1}{n}$，这就蕴含$x_n \to x_0$。由于$x_0 \not\in F$，这就是说定理的条件不满足。
+\end{proof}
+
+\begin{definition}{}{def002020303}
+设$A \subset X$。那么$X$中的点$x$是$A$的极限点，如果在$A$中存在由不同点构成的序列$\{x_n\}$，使得$x = \lim{x_n}$。
+\end{definition}
+
+在这个定义中“不同”二字的理由可由下面的例子得到解释。设$X = \mathbb{C}$，$A = [0, 1] \cup \{i\}$；$[0, 1]$中的每一点是$A$的极限点，但$i$不是$A$的极限点，我们不能指望把$i$这样的点叫做极限点。但是如果把“不同”二字从定义中删去，我们就可以对每个$n$取$x_n = i$，有$i = \lim{x_n}$。
+
+\begin{proposition}{}{prop002020304}
+(a)一个集合是闭的，当且仅当，它包含它的所有极限点；(b)如果$A \subset X$，那么$A^-=A \cup \{x: x\text{是}A\text{的极限点}\}$。
+\end{proposition}
+
+证明留做习题。
+
+从实分析中我们知道，$\mathbb{R}$的基本性质是：任意一个序列，当$n$增大时它的项变得越来越接近，则它一定是收敛的。这种序列称为Cauchy序列。这种序列的属性之一是它的极限一定存在，尽管你不能求出它。
+
+\begin{definition}{Cauchy序列}{def002020305}
+序列$\{x_n\}$称为Cauchy序列，如果对于每个$\epsilon > 0$，都存在一个正整数$N$，使得对所有的$n$，$m \ge N$，有$d(x_n, x_m) < \epsilon$。
+\end{definition}
+
+如果$(X, d)$有性质：每个Cauchy序列在$X$中有极限，那么$(X, d)$是完备的。
+
+\begin{proposition}{}{prop002020306}
+$\mathbb{C}$是完备的。
+\end{proposition}
+
+\begin{proof}
+如果$\{x_n + iy_n\}$是$\mathbb{C}$中的Cauchy序列，那么$\{x_n\}$和$\{y_n\}$是$\mathbb{R}$中的Cauchy序列，由于$\mathbb{R}$是完备的，所以$x_n \to x$，$y_n \to y$，$x, y$在$\mathbb{R}$中。由此推出，$x+iy=\lim{(x_n + iy_n)}$，所以$\mathbb{C}$是完备的。
+\end{proof}
+
+考虑具有度量$d$(见第\ref{section00201}章的\ref{equ002010608}和\ref{equ002010607})的$C_{\infty}$。设$z_n$，$z$是$\mathbb{C}$中的点，可以证明$d(z_n, z) \to 0$，当且仅当$|z_n-z| \to 0$。尽管如此，注意序列$\{z_n\}$，$\lim{|z_n|} = \infty$是$\mathbb{C}_{\infty}$中的Cauchy序列，但是它不是$\mathbb{C}$中的Cauchy序列。
+
+如果$A \subset X$，我们把$\diam{A} = \sup{\{d(x, y):x\text{和}y\text{在}A\text{中}\}}$定义为$A$的直径。
+
+\begin{theorem}{Cantor定理}{thm002020307}
+度量空间$(X, d)$是完备的，当且仅当，任意满足条件$F_1 \supset F_2 \supset \cdots$和$\diam{F_n} \to 0$，非空闭集序列$\{F_n\}$，其交集$\bigcap_{n=1}^{\infty}{F_n}$是由一个点所组成。
+\end{theorem}
+
+\begin{proof}
+设$(X, d)$是完备的，$\{F_n\}$是一个闭集序列，具有性质：(i)$F_1 \supset F_2 \supset \cdots$；(ii)$\lim{\diam{F_n}} = 0$。对于每个$n$，设$x_n$是$F_n$种的任意一点，如果$n, m \ge N$，那么$x_n$，$x_m$在$F_N$中，由定义，$d(x_n, x_m) \le \diam{F_N}$。由假定，$N$可玄德充分大，使得$\diam{F_N} < \epsilon$；这就表明$\{x_n\}$是Cauchy序列。由于$X$是完备的，所以$x_0 = \lim{x_n}$存在。又对于所有的$n \ge N$，因为$F_n \subset F_N$，所以$x_n$在$F_N$中；因此，对于每个$N$，$x_0$在$F_N$中，这就给出$x_0 \in \bigcap_{n=1}^{\infty}{F_n} =F$。所以$F$至少包含一个点。如果$y$也在$F$中，那么对于每个$n$，$x_0$和$y$都在$F_n$中，这就给出$d(x_0, y) \le \diam{F_n} \to 0$，所以$d(x_0, y) = 0$，或者$x_0 = y$。
+
+现在，如果$X$满足所述的条件，我们来证明$X$是完备的。设$\{x_n\}$是$X$中的Cauchy序列，又设$F_n = \{x_n, x_{n+1},\cdots\}^-$；那么$F_1 \supset F_2 \supset \cdots$。如果$\epsilon > 0$，选取$N$，使得对于每个$n, m \ge N$，都有
+\[
+d(x_n, x_m) < \epsilon;
+\]
+这就表示对于$n \ge N$，$\diam\{x_n, x_{n+1}, \cdots\} \le \epsilon$，所以对于$n \ge N$，$\diam{F_n} \le \epsilon$（习题\ref{exer002020303}）。于是$\diam{F_n} \to 0$，并且，按照假设，在$X$中存在点$x_0$，$\{x_0\} = F_1 \cap F_2 \cap \cdots$。特别地，$x_0$在$F_n$中，$d(x_0, x_n) \le \diam{F_n} \to 0$，所以$x_0 = \lim{x_n}$。
+\end{proof}
+
+有一个典型习题与这个定理有联系，就是在$\mathbb{R}$中找一个集序列$\{F_n\}$，它满足下面的条件中的两个条件：
+\begin{enumerate}
+\item[(a)]每个$F_n$是闭的；
+\item[(b)]$F_1 \supset F_2 \supset \cdots$；
+\item[(c)]$\diam{F_n} \to 0$。
+\end{enumerate}
+但是$F = F_1 \cap F_2 \cap \cdot$或者是空的，或者多于一点，对于两个条件的各种可能选择，读者都应举出相应的例子。
+
+\begin{proposition}{}{prop002020308}
+设$(X, d)$是一个完备的度量空间，$Y \subset X$，当且仅当$Y$在$X$中是闭时$(Y, d)$是一个完备度量空间。
+\end{proposition}
+
+\begin{proof}
+当$Y$是闭子集时，$(Y, d)$是完备的。其证明留给读者作为习题。现在设$(Y, d)$是完备的，$x_0$是$Y$的极限点，那么在$Y$中有序列$\{y_n\}$，使得$x_0 = \lim{y_n}$。因此$\{y_n\}$是Cauchy序列（习题\ref{exer002020305}），并且因为$(Y, d)$是完备的，所以$\{y_n\}$一定收敛到$Y$中的$y_0$。由此推得$y_0 = x_0$，所以$Y$包含它的所有极限点。由命题\ref{pro:prop002020304}，$Y$是闭的。
+\end{proof}
+
+\begin{exercise}
+证明命题\ref{pro:prop002020304}。
+\end{exercise}
+
+\begin{exercise}
+完成命题\ref{pro:prop002020308}的详细证明。
+\end{exercise}
+
+\begin{exercise}\label{exer002020303}
+证明：$\diam{A} = \diam{A^-}$。
+\end{exercise}
+
+\begin{exercise}\label{exer002020304}
+设$z_n$，$z$是$\mathbb{C}$中的点，$d$是$\mathbb{C}_{\infty}$中的度量，证明$|z_n - z| \to 0$，当且仅当，$d(z_n, z) \to 0$。证明：如果$|z_n| \to \infty$，那么$\{z_n\}$是$\mathbb{C}_{\infty}$中的Cauchy序列。（$\{z_n\}$在$\mathbb{C}_{\infty}$中一定收敛吗？）
+\end{exercise}
+
+\begin{exercise}\label{exer002020305}
+证明：$(X, d)$中的每个收敛序列一定是Cauchy序列。
+\end{exercise}
+
+\begin{exercise}\label{exer002020306}
+给出三个不完备度量空间的例子。
+\end{exercise}
+
+\begin{exercise}\label{exer002020307}
+在$\mathbb{R}$上作一度量$d$，满足条件：$|x_n - x| \to 0$，当且仅当，$d(x_n, x) \to 0$，而当$|x_n| \to \infty$时，$\{x_n\}$是$(\mathbb{R}, d)$中的Cauchy序列。（提示：从$\mathbb{C}_{\infty}$得到启示。）
+\end{exercise}
+
+\begin{exercise}\label{exer002020308}
+设$\{x_n\}$是Cauchy序列，且$\{x_{n_k}\}$是收敛子序列，证明：$\{x_n\}$一定是收敛的。
+\end{exercise}
+
+
 
 \section{紧性}\label{section0020204}
+紧性的概念是把有限集中一些好的性质推广到无穷集去，紧集的大部分性质类似于有限集的性质，这些性质在有限集是很平凡的。例如，有限集的每个序列有收敛子序列。这是平凡的，因为至少有一点重复无穷多次。当我们把“有限”代之以“紧”时，这个结果仍然成立。
+
+\begin{definition}{紧集}{def002020401}
+度量空间$X$的子集$K$是紧的，如果对于$X$中的每个具有性质
+\begin{gather}\label{equ002020402}
+K \subset \bigcup\{G: G \in \mathscr{G}\},
+\end{gather}
+的开集族$\mathscr{G}$都可在$\mathscr{G}$中找到有限个集
+\end{definition}
+
+
+
 
 \section{连续性}\label{section0020205}
 
