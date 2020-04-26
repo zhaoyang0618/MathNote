@@ -819,13 +819,147 @@ d(x_n, x_m) < \epsilon;
 \begin{gather}\label{equ002020402}
 K \subset \bigcup\{G: G \in \mathscr{G}\},
 \end{gather}
-的开集族$\mathscr{G}$都可在$\mathscr{G}$中找到有限个集
+的开集族$\mathscr{G}$都可在$\mathscr{G}$中找到有限个集$G_1, G_2, \cdots, G_n$，使得$K \subset G_1 \cup G_2 \cup \cdots \cup G_n$。满足（\ref{equ002020402}）的集族$\mathscr{G}$称为$K$的覆盖；如果$\mathscr{G}$的每个集是开的，则称它是$K$的开覆盖。
 \end{definition}
 
+显然，空集和所有的有限集是紧的。$D = \{z \in \mathbb{C}:|z|<1\}$是一个非紧集的例子。如果$G_n = \big\{z : |z| < 1 - \frac{1}{n}\big\}$，$n=2,3,\cdots$，那么$\{G_2, G_3, \cdots\}$是$D$的一个开覆盖，但它没有有限子覆盖。
+
+\begin{proposition}{}{prop002020403}
+设$K$是$X$的一个紧子集，那么
+\begin{enumerate}
+\item[(a)]$K$是闭的；
+\item[(b)]如果$F$是闭的，且$F \subset K$，则$F$是紧的。
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+为了证明(a)，我们要证明$F = F^-$。设$x_0 \in K^-$，由命题\ref{pro:prop002020103}(f)，对于每个$\epsilon > 0$，$B(x_0;\epsilon) \cap K \neq \emptyset$。设
+\[
+G_n = X - \bar{B}(x_0; \frac{1}{n}),
+\]
+并假定$x_0 \not\in K$，那么每个$G_n$是开集，且$K \subset \bigcup_{n=1}^{\infty}{G_n}$（因为$\bigcap_{n=1}^{\infty}{\bar{B}(x_0; \frac{1}{n})} = \{x_0\}$）。因为$K$是紧的，所以存在正整数$m$，使得$K \subset \bigcup_{n=1}^{m}{G_n}$。但是$G_1 \subset G_2 \subset \cdots$，所以$K \subset G_m = X - \bar{B}(x_0;\frac{1}{m})$。但这就给出$B(x_0; \frac{1}{m}) \cap K = \emptyset$，从而得到一个矛盾。于是$K = K^-$。
+
+为了证明(b)，设$\mathscr{G}$是$F$的一个开覆盖。那么由于$F$是闭的，$\mathscr{G} \cup \{X-F\}$是$K$的开覆盖。设$G_1, G_2, \cdots, G_n$是$\mathscr{G}$中的集，使得$K \subset G_1 \cup \cdots \cup G_n \cup (X-F)$。显然，$F \subset G_1 \cup \cdots \cup G_n$，所以$F$是紧的。
+\end{proof}
+
+设$\mathscr{F}$是$X$的子集族，我们说$\mathscr{F}$有有限交性质$(f, i, p)$如果，只要$\{F_1, F_2, \cdots, F_n\} \subset \mathscr{F}$，总有$F_1 \cap F_2 \cap \cdots \cap F_n \neq \emptyset$。这种子集族的一个例子是$\{D - G_2, D-G_3, \cdots\}$，其中集$G_n$是命题\ref{pro:prop002020403}之前所述例子中的集。
+
+\begin{proposition}{}{prop002020404}
+一个集合$K \subset X$是紧的，当且仅当，$K$中每个具有$(f,i,p)$的闭子集\footnote{这里的“闭子集”应是“相对于集合$K$的闭子集”。否则命题的充分性不真，必要性的证明应作相应的修改。}族$\mathscr{F}$，都有$\bigcap\{F: F \in \mathscr{F}\} \neq \emptyset$。
+\end{proposition}
+
+\begin{proof}
+设$K$是紧的，$\mathscr{F}$是具有$(f,i,p)$的$K$中的闭子集族。假设$\bigcap\{F: F \in \mathscr{F}\} = \emptyset$。令$\mathscr{P} = \{X - F: F \in \mathscr{F}\}$，那么由假设$\bigcup\{X - F: F \in \mathscr{F}\} = X - \bigcap\{F: F \in \mathscr{F}\} = X$。特别地，$\mathscr{P}$是$K$的开覆盖，于是存在$F_1, \cdots, F_n \in \mathscr{F}$，使得$K \subset \bigcup_{k=1}^{n}{(X - F_k)} = X - \bigcap_{k=1}^{n}{F_k}$。但这就给出$\bigcap_{k=1}^{n}{F_k} = X - K$，由于每个$F_k$是$K$的子集，所以必有$\bigcap_{k=1}^{n}{F_k} = \emptyset$。这与$\mathscr{F}$具有$(f,i,p)$相矛盾。
+
+条件的充分性的证明留给读者作为习题。
+\end{proof}
+
+\begin{corollary}{}{coro002020405}
+每个紧的度量空间是完备的。
+\end{corollary}
+
+\begin{proof}
+这容易由上面的命题和定理\ref{thm:thm002020307}推出。
+\end{proof}
+
+\begin{corollary}{}{coro002020406}
+如果$X$是紧的，那么每个无穷集在$X$中至少有一个极限点。
+\end{corollary}
+
+\begin{proof}
+设$S$是$X$的一无穷子集，假设$S$没有极限点。设$\{a_1, a_2, \cdots\}$是$S$中不同点的序列，那么$F_n = \{a_n, a_{n+1}, \cdots\}$也没有极限点。但是如果一个集合没有极限点，那么也可以说它包含了它的所有极限点，因而它是闭集！于是每个$F_n$是闭的，且$\{F_n : n \ge 1\}$具有$(f,i,p)$。但是由于点$a_1, a_2,\cdots$是不同的，所以$\bigcap_{n=1}^{\infty}{F_n} = \emptyset$。这与上面的命题\ref{pro:prop002020404}相矛盾。
+\end{proof}
+
+\begin{definition}{列紧性}{def002020407}
+称一个度量空间$(X, d)$是列紧的，如果$X$中的每个序列都有收敛子序列。
+\end{definition}
+
+我们将证明度量空间的紧性和列紧性是一回事，为此需要下面的引理。
+
+\begin{lemma}{Lebesque覆盖引理}{lemma002020408}
+如果$(X, d)$是列紧的，$\mathscr{G}$是$X$的开覆盖，那么存在$\epsilon > 0$，使得$X$中的每个$x$，都存在$\mathscr{G}$中的一个集$G$，满足$B(x; \epsilon) \subset G$。
+\end{lemma}
+
+\begin{proof}
+用反证法，设$\mathscr{G}$是$X$的开覆盖，而这样的$\epsilon$不存在。特别地，对于每个正整数$n$，在$X$中有点$x_n$，使得$B(x_n;\frac{1}{n})$不包含在$\mathscr{G}$中任一个集$G$内。因为$X$是列紧的，所以在$X$中存在点$x_0$和序列$\{x_{n_k}\}$，使得$x_0 = \lim{x_{n_k}}$。设$G_0 \in \mathscr{G}$，$x_0 \in G_0$；选取$\epsilon >0$使得$B(x_0;\epsilon) \subset G_0$。现在设$N$是这样的正整数，对于所有的$n_k \ge N$，都有$d(x_0;x_{n_k}) \le \epsilon / 2$。设$n_k$是比$N$和$2/\epsilon$都大的任意正整数，$y \in B(x_{n_k};\frac{1}{n_k})$，那么$d(x_0, y) \le d(x_0, x_{n_k}) + d(x_{n_k}, y) < \epsilon / 2 + 1/n_k < \epsilon$。即$B(x_{n_k}; \frac{1}{n_k}) \subset B(x_0;\epsilon) \subset G_0$，这和$x_{n_k}$的取法相矛盾。
+\end{proof}
+
+对于Lebesque覆盖引理通常有两种误解。一是言之未及，一是言过其实。由于$\mathscr{G}$是$X$的开覆盖，所以$X$的每个$x$包含在$\mathscr{G}$的某一个$G$内；因为$G$是开集，于是存在$\epsilon > 0$使得$B(x;\epsilon) \subset G$。但是引理所给出的$\epsilon > 0$是使得对于任意的$x$，$B(x; \epsilon)$都包含在$\mathscr{G}$的某一集内。另一种误解是，以为对于引理中所得到的$\epsilon > 0$，$B(x; \epsilon)$包含在$\mathscr{G}$中含有$x$的每个$G$内。
+
+\begin{theorem}{}{thm002020409}
+设$(X, d)$是一个度量空间，那么下列条件是等价的：
+\begin{enumerate}
+\item[(a)]$X$是紧的；
+\item[(b)]$X$中的每个无穷集至少有一个极限点；
+\item[(c)]$X$是列紧的；
+\item[(d)]$X$是完备的，并且对于每个$\epsilon > 0$，$X$内存在有穷多个点$x_1,x_2,\cdots, x_n$，使得
+\[
+X = \bigcup_{k=1}^{n}{B(x_k;\epsilon)}.
+\]
+（(d)中所述的性质称为完全有界性。）
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+由推论\ref{cor:coro002020406}，(a)蕴含(b)。
+
+(b)蕴含(c)。设$\{x_n\}$是$X$中的一个序列，不失一般性，假定点$x_1,x_2,\cdots$是不同的。由(b)，集合$\{x_1, x_2,\cdots\}$有一个极限点$x_0$。于是有点$x_{n_1} \in B(x_0; 1)$，类似的，有正整数$n_2 > n_1$，$x_{n_2} \in B(x_0; \frac{1}{2})$，如此继续下去，我们得到正整数$n_1 < n_2 < \cdots$，$x_{n_k} \in B(x_0;\frac{1}{k})$。于是$x_0 = \lim{x_{n_k}}$。所以$X$是列紧的。
+
+(c)蕴含(d)。设$\{x_n\}$是Cauchy序列，应用列紧性的定义和借助于\ref{section0020203}节的习题\ref{exer002020308}，便可看出$X$是完备的。
+
+现在设$\epsilon > 0$，固定$x_1 \in X$。如果$X = B(x_1;\epsilon)$，那么结论得证。否则选取$x_2 \in X - B(x_1; \epsilon)$。如果$X = B(x_1;\epsilon) \cup B(x_2;\epsilon)$，结论也得证。否则设$x_3 \in X - [B(x_1;\epsilon) \cup B(x_2;\epsilon)]$。如果这个过程不会终止，我们就得到一序列$\{x_n\}$，使得
+\[
+x_{n+1} \in X - \bigcup_{k=1}^{n}{B(x_k; \epsilon)}.
+\]
+但是这蕴含对于$n \neq m$，$d(x_n, x_m) \ge \epsilon > 0$。于是$\{x_n\}$没有收敛子列，这与(c)相矛盾。
+
+(d)蕴含(c)。这部分证明用到“鸽巢原理”，这个原理可表述为：如果物件数多于容器数，那么至少有一个容器里装的物件多于一个。进而，如果无穷多个点包含在有穷多个球里，那么有一个球包含无穷多个点，所以(d)是说，对于每个$\epsilon > 0$和$X$中的无穷集，存在点$y \in X$，使得$B(y; \epsilon)$包含这个集的无穷多个点。设$\{x_n\}$是一个由不同点组成的序列。在$X$中存在点$y_1$和$\{x_n\}$的子序列$\{x_{n}^{(1)}\}$，使得$\{x_n^{(1)}\} \subset B(y_1;1)$。又存在$X$中的$y_2$和$\{x_n^{(1)}\}$的子序列$\{x_n^{(2)}\}$，使得$\{x_n^{(2)}\} \subset B(y_2; 1/2)$。如此继续下去，对于每个正整数$k \ge 2$，存在$X$中的$y_k$和$\{x_n^{(k-1)}\}$的子序列$\{x_n^{(k)}\}$，使得$\{x_n^{(k)}\} \subset B(y_k; 1/k)$。设$F_k = \{x_n^{(k)}\}^-$，那么$\diam{F_k} \le 2/k$，且$F_1 \supset F_2 \supset \cdots$。根据定理\ref{thm:thm002020407}，$\bigcap_{k=1}^{\infty}{F_k} = \{x_0\}$。我们断言$x_k^{(k)} \to x_0$（$x_k^{(k)}$是$\{x_n\}$的子序列）。事实上，$x_0 \in F_k$，所以$d(x_0;x_k^{(k)}) \le \diam{F_k} \le 2/k$，$x_0 = \lim{x_k^{(k)}}$。
+
+(c)蕴含(a)。设$\mathscr{G}$是$X$的一个开覆盖。上面的引理给出一个$\epsilon > 0$，使得对于每个$x \in X$，$\mathscr{G}$中存在一个集$G$，$B(x; \epsilon) \subset G$。现在已知(c)蕴含(d)，因此，在$X$中存在点$x_1, \cdots, x_n$，使得$X = \bigcup_{k=1}^{n}{B(x_k;\epsilon)}$。现在对于$1 \le k \le n$，存在集$G_k \in \mathscr{G}$，$B(x_k;\epsilon) \subset G_k$。因此$X = \bigcup_{k=1}^{n}{G_k}$，即$\{G_1,\cdots, G_n\}$是$\mathscr{G}$的有限子覆盖。
+\end{proof}
+
+\begin{theorem}{Heine-Borel定理}{thm002020410}
+当且仅当$K$是有界闭集时，$R^{n}$（$n \ge 1$）是一个集$K$是紧的。
+\end{theorem}
+
+\begin{proof}
+如果$K$是紧的，那么由前一定理的(d)，$K$是完全有界的。由命题\ref{pro:prop002020403}推出$K$一定是闭的。容易证明完全有界的集也是有界的。
+
+现在假设$K$是有界闭集。因此存在实数$a_1,a_2,\cdots,a_n$和$b_1,b_2,\cdots,b_n$，使得$K \subset F = [a_1, b_1] \times \cdots [a_n, b_n]$。如果能够证明$F$是紧的，那么因为$K$是闭的，就可推知$K$是紧的（命题\ref{pro:prop002020403}(b)）。由于$\mathbb{R}^n$是完备的和$F$是闭的，推知$F$是完备的。因此，再次应用前一定理中的(d)，我们只需证明$F$是完全有界的。这是容易的，虽然写起来有点繁。设$\epsilon > 0$；现在我们将$F$写成$n$维矩形的和，其中每个矩形的直径小于$\epsilon$。这样，我们有$F \subset \bigcup_{k=1}^{\infty}{B(x_k; \epsilon)}$，其中每个$x_k$属于前面提到的矩形中的某一个。这个做法的细节留给读者作为习题去完成（习题\ref{exer002020403}）。
+\end{proof}
+
+\begin{exercise}
+完成命题\ref{exer002020404}的证明。
+\end{exercise}
+
+\begin{exercise}\label{exer002020402}
+设$p = (p_1,p_2,\cdots, p_n)$，$q = (q_1, q_2, \cdots, q_n)$是$\mathbb{R}$中的点，并且对于每个$k$，$p_k < q_k$。设$R = [p_1, q_1] \times \cdots \times [p_n,q_n]$。证明
+\[
+\diam{R} = d(p, q) = [\sum_{k=1}^{n}{(q_k - p_k)^2}]^{\frac{1}{2}}.
+\]
+\end{exercise}
+
+\begin{exercise}\label{exer002020403}
+设$F = [a_1, b_1] \times \cdots \times [a_n, b_n] \subset \mathbb{R}^n$，$\epsilon > 0$，利用习题\ref{exer002020402}证明：存在矩形$R_1, R_2, \cdots, R_m$，使得$F = \bigcup_{k=1}^{m}{R_k}$，并且对于每个$k$，$\diam{R_k} < \epsilon$。如果$x_k \in R_k$，那么由此推出$R_k \subset B(x_k; \epsilon)$。
+\end{exercise}
+
+\begin{exercise}\label{exer002020404}
+证明：有穷多个紧集的和是紧的。
+\end{exercise}
+
+\begin{exercise}
+设$X$是所有有界复数序列的集。也就是$\{x_k\} \in X$，当且仅当，$\sup\{|x_n|:n \ge 1\} < \infty$。如果$x = \{x_n\}$和$y = \{y_n\}$，定义$d(x, y) = \sup\{|x_n-y_n|: n \ge 1\}$。证明：对于$X$中的每个$x$和$\epsilon > 0$，$\bar{B}(x; \epsilon)$不是完全有界的，尽管它是完备的。（提示：如果首先证明可以假定$x=(0, 0, \cdots, 0)$，事情就容易了）。
+\end{exercise}
+
+\begin{exercise}
+证明：完全有界的集的闭包是完全有界的。
+\end{exercise}
 
 
 
 \section{连续性}\label{section0020205}
+函数最基本的性质之一是连续性。有了连续性就保证了一定程度的正则性和光滑性。否则，
+
 
 \begin{exercise}\label{exer002020507}
 设$G$是$\mathbb{C}$中的一个开子集

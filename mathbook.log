@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  25 APR 2020 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.8.3)  26 APR 2020 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4308,6 +4308,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 ]
+
+Package natbib Warning: Citation `FunctionsofOneComplexVariable1978' on page 88
+ undefined on input line 2.
+
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [88]
 Á¨¨ 18\tmspace +\thickmuskip {.2777em}Á´† 18.
@@ -4915,20 +4919,274 @@ sy/m/n/12 f\OML/ntxmi/m/it/12 z[]\LMS/ntxsy/m/n/12 g$\C70/rm/m/n/12/57 ($\U/ntx
 sym/m/n/12 C[]$\C70/rm/m/n/12/4e -
  []
 
-) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [109]
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[109]
+Overfull \hbox (11.00198pt too wide) in paragraph at lines 845--846
+[]\C70/rm/m/n/12/8b æ$\U/rsfs/m/n/12 F$\C70/rm/m/n/12/66 /$\OML/ntxmi/m/it/12 X
+$\C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/5b P \C70/rm/m/n/12/96 ∆ \C70/rm/m/n/12/65 
+œ|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/62 ^^Q \C70/rm/m/n/12/4e Ï \C70/rm/m/n/
+12/8b Ù$\U/rsfs/m/n/12 F$\C70/rm/m/n/12/67 	 	 \C70/rm/m/n/12/96 P \C70/rm/m/n/
+12/4e § \C70/rm/m/n/12/60 ' \C70/rm/m/n/12/8d ($\LMS/ntxsy/m/n/12 π\OML/ntxmi/m
+/it/12 f; i; p\LMS/ntxsy/m/n/12 ∫$\C70/rm/m/n/12/59 Ç \C70/rm/m/n/12/67 ú|\C70/
+rm/m/n/12/ff ^^L| \C70/rm/m/n/12/53 Í \C70/rm/m/n/12/89 Å$\LMS/ntxsy/m/n/12 f\O
+ML/ntxmi/m/it/12 F[]; F[]; []  ; F[]\LMS/ntxsy/m/n/12 g ^^Z
+ []
+
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[110]
+Overfull \hbox (24.15804pt too wide) in paragraph at lines 883--885
+\OML/ntxmi/m/it/10.95 G[]$|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/73 ∞ \C7
+0/rm/m/n/10.95/57 ( \C70/rm/m/n/10.95/8b æ$\OML/ntxmi/m/it/10.95 N$\C70/rm/m/n/
+10.95/66 / \C70/rm/m/n/10.95/8f Ÿ \C70/rm/m/n/10.95/68 7 \C70/rm/m/n/10.95/76 Ñ
+ \C70/rm/m/n/10.95/6b c \C70/rm/m/n/10.95/65 t p|\C70/rm/m/n/10.95/ff ^^L| \C70
+/rm/m/n/10.95/5b ˘ \C70/rm/m/n/10.95/4e é \C70/rm/m/n/10.95/62 @ \C70/rm/m/n/10
+.95/67 	 \C70/rm/m/n/10.95/76 Ñ$\OML/ntxmi/m/it/10.95 n[] \LMS/ntxsy/m/n/10.95 
+^^U \OML/ntxmi/m/it/10.95 N$|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/90 ˝ \
+C70/rm/m/n/10.95/67 	$\OML/ntxmi/m/it/10.95 d\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m
+/it/10.95 x[]\OT1/ntxtlf/m/n/10.95 (-20) ; \OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/
+m/n/10.95 ∫ ^^T \OML/ntxmi/m/it/10.95 ^^O\LMS/ntxsy/m/n/10.95 ù\OT1/ntxtlf/m/n/
+10.95 (-20) 2$|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/8b æ$\OML/ntxmi/m/it
+/10.95 n[]$\C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95/6b ‘$\OML/ntxmi/m/it/10.95 
+N$\C70/rm/m/n/10.95/54 å$\OT1/ntxtlf/m/n/10.95 (-20) 2\LMS/ntxsy/m/n/10.95 ù\OM
+L/ntxmi/m/it/10.95 ^^O$\C70/rm/m/n/10.95/90 ˝
+ []
+
+
+Overfull \hbox (8.9089pt too wide) in paragraph at lines 906--907
+[]\T1/ntxtlf/m/n/10.95 (-20) (b)\C70/rm/m/n/10.95/85 t \C70/rm/m/n/10.95/54 +\T
+1/ntxtlf/m/n/10.95 (-20) (c)|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/8b æ$\
+LMS/ntxsy/m/n/10.95 f\OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/m/n/10.95 g$\C70/rm/m/
+n/10.95/66 /$\OML/ntxmi/m/it/10.95 X$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/7
+6 Ñ \C70/rm/m/n/10.95/4e ^^@ * \C70/rm/m/n/10.95/5e è \C70/rm/m/n/10.95/52 ^^W|
+\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/4e ^^M \C70/rm/m/n/10.95/59 1 \C70/
+rm/m/n/10.95/4e ^^@ \C70/rm/m/n/10.95/82 , \C70/rm/m/n/10.95/60 '|\C70/rm/m/n/1
+0.95/ff ^^L| \C70/rm/m/n/10.95/50 G \C70/rm/m/n/10.95/5b ö \C70/rm/m/n/10.95/70
+ π$\OML/ntxmi/m/it/10.95 x[]; x[]; [] $\C70/rm/m/n/10.95/66 / \C70/rm/m/n/10.95
+/4e ^^M \C70/rm/m/n/10.95/54 ^^L \C70/rm/m/n/10.95/76 Ñ|\C70/rm/m/n/10.95/30 ^^
+B| \C70/rm/m/n/10.95/75 1\T1/ntxtlf/m/n/10.95 (-20) (b)|\C70/rm/m/n/10.95/ff ^^
+L|
+ []
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 910.
+
+[111]
+
+LaTeX Warning: Reference `thm:thm002020407' on page 112 undefined on input line
+ 916.
+
+
+Overfull \hbox (13.5037pt too wide) in paragraph at lines 916--917
+\C70/rm/m/n/10.95/52 ^^W|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/57 ($\OML/
+ntxmi/m/it/10.95 X$\C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/5b X \C70/rm/m/n/10
+.95/57 ( \C70/rm/m/n/10.95/70 π$\OML/ntxmi/m/it/10.95 y[]$\C70/rm/m/n/10.95/54 
+å$\LMS/ntxsy/m/n/10.95 f\OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/m/n/10.95 g$\C70/rm
+/m/n/10.95/76 Ñ \C70/rm/m/n/10.95/5b P \C70/rm/m/n/10.95/5e è \C70/rm/m/n/10.95
+/52 ^^W$\LMS/ntxsy/m/n/10.95 f\OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/m/n/10.95 g$|
+\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/4f ^^? \C70/rm/m/n/10.95/5f ó$\LMS/
+ntxsy/m/n/10.95 f\OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/m/n/10.95 g ^^Z \OML/ntxmi
+/m/it/10.95 B\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 y[]\OT1/ntxtlf/m/n/10.
+95 (-20) ; 1\LMS/ntxsy/m/n/10.95 ∫$|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95
+/53 » \C70/rm/m/n/10.95/5b X \C70/rm/m/n/10.95/57 ($\OML/ntxmi/m/it/10.95 X$\C7
+0/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/76 Ñ$\OML/ntxmi/m/it/10.95 y[]$\C70/rm/m/
+n/10.95/54 å$\LMS/ntxsy/m/n/10.95 f\OML/ntxmi/m/it/10.95 x[]\LMS/ntxsy/m/n/10.9
+5 g$\C70/rm/m/n/10.95/76 Ñ
+ []
+
+
+Overfull \hbox (1.4862pt too wide) in paragraph at lines 928--929
+\C70/rm/m/n/10.95/62 ^^Q \C70/rm/m/n/10.95/4e Ï \C70/rm/m/n/10.95/5c ^^F$\OML/n
+txmi/m/it/10.95 F$\C70/rm/m/n/10.95/51 ô \C70/rm/m/n/10.95/62 ^^P$\OML/ntxmi/m/
+it/10.95 n$\C70/rm/m/n/10.95/7e Ù \C70/rm/m/n/10.95/77 È \C70/rm/m/n/10.95/5f b
+ \C70/rm/m/n/10.95/76 Ñ \C70/rm/m/n/10.95/54 å|\C70/rm/m/n/10.95/ff ^^L| \C70/r
+m/m/n/10.95/51 v \C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/6b œ \C70/rm/m/n/10.9
+5/4e * \C70/rm/m/n/10.95/77 È \C70/rm/m/n/10.95/5f b \C70/rm/m/n/10.95/76 Ñ Ù \
+C70/rm/m/n/10.95/5f Ñ \C70/rm/m/n/10.95/5c ^^O \C70/rm/m/n/10.95/4e é$\OML/ntxm
+i/m/it/10.95 ^^O$|\C70/rm/m/n/10.95/30 ^^B| \C70/rm/m/n/10.95/8f Ÿ \C70/rm/m/n/
+10.95/68 7|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/62 ^^Q \C70/rm/m/n/10.95
+/4e Ï \C70/rm/m/n/10.95/67 	$\OML/ntxmi/m/it/10.95 F \LMS/ntxsy/m/n/10.95 ^^Z [
+][] []$|\C70/rm/m/n/10.95/ff ^^L|
+ []
+
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[112])
+(d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[113]
 \openout2 = `3-CalculusOfMultiVariables.aux'.
 
- (./3-CalculusOfMultiVariables.tex [110
+ (./3-CalculusOfMultiVariables.tex [114
 
 
 
 ]
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[111]
+[115]
 Á¨¨ 20\tmspace +\thickmuskip {.2777em}Á´† 20.
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[112
+[116
 
 ]
 Overfull \hbox (8.14627pt too wide) in paragraph at lines 62--63
@@ -4945,7 +5203,7 @@ f ^^[| \C70/rm/m/n/12/53 Î \C70/rm/m/n/12/50 Z \C70/rm/m/n/12/53 Ã \C70/rm/m/n/
  []
 
 ) (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf
-) [113] (./mathbook.bbl
+) [117] (./mathbook.bbl
 (d:/texlive/2019/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10> not available
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 7.
@@ -4953,9 +5211,13 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 7.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 7.
-) 
+)
+
+Package natbib Warning: There were undefined citations.
+
+
 AED: lastpage setting LastPage
-[114
+[118
 
 
 ]
@@ -4964,7 +5226,12 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
  (./mathbook.aux (./0-preface.aux) (./1-surveyofmodernalgebra.aux)
 (./6-Algebra-Artin.aux) (./5-BasicAlgebra.aux)
 (./7-MathematicalAnalysis-Apostol.aux) (./2-ComplexAnalysisOfOneVariable.aux)
-(./3-CalculusOfMultiVariables.aux))
+(./3-CalculusOfMultiVariables.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
@@ -4978,11 +5245,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 56315 strings out of 494443
- 1045474 string characters out of 6173253
+ 56502 strings out of 494443
+ 1049198 string characters out of 6173253
  1295555 words of memory out of 5000000
- 56554 multiletter control sequences out of 15000+600000
- 869054 words of font info for 958 fonts, out of 8000000 for 9000
+ 56626 multiletter control sequences out of 15000+600000
+ 872530 words of font info for 963 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,18n,124p,3239b,1551s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -5081,10 +5348,10 @@ pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/texlive/
 t/fonts/type1/public/txfonts/txsyb.pfb><d:/texlive/2019/texmf-dist/fonts/type1/
 public/txfonts/txsyc.pfb><d:/texlive/2019/texmf-dist/fonts/type1/public/newtx/t
 xsys.pfb><d:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mathbook.pdf (119 pages, 1781264 bytes).
+Output written on mathbook.pdf (123 pages, 1822455 bytes).
 PDF statistics:
- 2689 PDF objects out of 2984 (max. 8388607)
- 2201 compressed objects within 23 object streams
- 536 named destinations out of 1000 (max. 500000)
+ 2737 PDF objects out of 2984 (max. 8388607)
+ 2245 compressed objects within 23 object streams
+ 555 named destinations out of 1000 (max. 500000)
  35405 words of extra memory for PDF output out of 35830 (max. 10000000)
 
