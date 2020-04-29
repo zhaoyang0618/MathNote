@@ -6,50 +6,51 @@ A level-1 auxiliary file: 0-preface.aux
 A level-1 auxiliary file: 1-surveyofmodernalgebra.aux
 A level-1 auxiliary file: 6-Algebra-Artin.aux
 A level-1 auxiliary file: 5-BasicAlgebra.aux
+A level-1 auxiliary file: 8-Calculus-Spivak.aux
 A level-1 auxiliary file: 7-MathematicalAnalysis-Apostol.aux
 A level-1 auxiliary file: 2-ComplexAnalysisOfOneVariable.aux
 A level-1 auxiliary file: 3-CalculusOfMultiVariables.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mathreference.bib
-You've used 6 entries,
+You've used 7 entries,
             2984 wiz_defined-function locations,
-            692 strings with 5051 characters,
-and the built_in function-call counts, 3948 in all, are:
-= -- 624
-> -- 180
-< -- 54
-+ -- 42
-- -- 24
-* -- 156
-:= -- 993
-add.period$ -- 6
-call.type$ -- 6
-change.case$ -- 42
-chr.to.int$ -- 6
-cite$ -- 6
-duplicate$ -- 78
-empty$ -- 151
-format.name$ -- 90
-if$ -- 973
+            698 strings with 5135 characters,
+and the built_in function-call counts, 4600 in all, are:
+= -- 728
+> -- 210
+< -- 63
++ -- 49
+- -- 28
+* -- 182
+:= -- 1155
+add.period$ -- 7
+call.type$ -- 7
+change.case$ -- 49
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 91
+empty$ -- 176
+format.name$ -- 105
+if$ -- 1135
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 12
-newline$ -- 24
-num.names$ -- 72
-pop$ -- 114
+missing$ -- 14
+newline$ -- 27
+num.names$ -- 84
+pop$ -- 133
 preamble$ -- 1
-purify$ -- 48
+purify$ -- 56
 quote$ -- 0
 skip$ -- 0
 stack$ -- 0
-substring$ -- 66
-swap$ -- 12
+substring$ -- 77
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
+type$ -- 14
 warning$ -- 0
-while$ -- 60
+while$ -- 70
 width$ -- 0
-write$ -- 95
+write$ -- 110
