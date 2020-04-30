@@ -73,6 +73,9 @@
 \contentsline {section}{\numberline {20.3}序列与完备性}{109}{section.20.3}% 
 \contentsline {section}{\numberline {20.4}紧性}{112}{section.20.4}% 
 \contentsline {section}{\numberline {20.5}连续性}{116}{section.20.5}% 
-\contentsline {part}{VII\hspace {1em}多元微积分}{121}{part.7}% 
-\contentsline {chapter}{\numberline {21}欧氏空间}{123}{chapter.21}% 
-\contentsline {section}{\numberline {21.1}向量空间}{123}{section.21.1}% 
+\contentsline {section}{\numberline {20.6}一致收敛性}{121}{section.20.6}% 
+\contentsline {chapter}{\numberline {21}解析函数的初等性质和例子}{123}{chapter.21}% 
+\contentsline {section}{\numberline {21.1}幂级数}{123}{section.21.1}% 
+\contentsline {part}{VII\hspace {1em}多元微积分}{124}{part.7}% 
+\contentsline {chapter}{\numberline {22}欧氏空间}{126}{chapter.22}% 
+\contentsline {section}{\numberline {22.1}向量空间}{126}{section.22.1}% 
