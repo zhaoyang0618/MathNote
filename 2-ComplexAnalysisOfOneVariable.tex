@@ -1412,7 +1412,10 @@ c_n = \sum_{k=0}^{n}{a_kb_{n-k}},
 因为根据(\ref{pro:prop002030202})$\lim{[f(z_0 + h_n) - f(z_0)]} = 0$，所以我们有
 \[\lim{h_n^{-1}[g \circ f(z_0 + h_n) - g \circ f(z_0)]} = g'(f(z_0))f'(z_0).
 \]
-\item[情形2]设对于无穷多个$n$的值，$f(z_0) = f(z_0 + h_n)$。将$h_n$表示为两个序列$\{k_n\}$和$\{l_n\}$的和，其中$f(z_0) \neq f(z_0 + k_n)$和$f(z_0) = f(z_0 + l_n)$对所有的$n$成立。由于$f$是可微的，所以$f'(z_0) = \lim{l_n^{-1}[f(z_0 + l_n) - f(z_0)]} = 0$。也有$\lim{l_n^{-1}[g \circ f(z_0 + l_n) - g \circ f(z_0)]} = 0$。由情形1，$\lim{k_n^{-1}[g \circ f(z_0+k_n) - g \circ f(z_0)]} = g'(f(z_0))f'(z_0) = 0$，所以$\lim{h_n^{-1}[g \circ f(z_0+h_n) - g \circ f(z_0)]} = 0 = g'(f(z_0))f'(z_0) = 0$.
+\item[情形2]设对于无穷多个$n$的值，$f(z_0) = f(z_0 + h_n)$。将$h_n$表示为两个序列$\{k_n\}$和$\{l_n\}$的和，其中$f(z_0) \neq f(z_0 + k_n)$和$f(z_0) = f(z_0 + l_n)$对所有的$n$成立。由于$f$是可微的，所以$f'(z_0) = \lim{l_n^{-1}[f(z_0 + l_n) - f(z_0)]} = 0$。也有$\lim{l_n^{-1}[g \circ f(z_0 + l_n) - g \circ f(z_0)]} = 0$。由情形1，$\lim{k_n^{-1}[g \circ f(z_0+k_n) - g \circ f(z_0)]} = g'(f(z_0))f'(z_0) = 0$，所以
+\[
+\lim{h_n^{-1}[g \circ f(z_0+h_n) - g \circ f(z_0)]} = 0 = g'(f(z_0))f'(z_0) = 0.
+\]
 \end{description}
 一般情形容易由上面两种情形推出。
 \end{proof}
@@ -1501,9 +1504,167 @@ a_n = \frac{1}{n!}f^{(n)}(a).
 如果$G$是连通开集，$f: G \to \mathbb{C}$是可微的，并且对于$G$内所有的$z$，$f'(z)=0$，那么$f$是常数。
 \end{proposition}
 
-\begin{exercise}\label{exer002030202}
-证明：如果$b_n$, $a_n$是正实数，
-\end{exercise}
+\begin{proof}
+在$G$内固定$z_0$，设$w_0 = f(z_0)$，$A = \{z \in G: f(z)=w_0\}$.我们将通过证明$A$在$G$内既是开的，又是闭的，来证明$A = G$。设$z \in G$，$\{z_n\} \subset A$, $z = \lim{z_n}$，因为$f(z_n) = w_0$对于每个$n \ge 1$成立，以及$f$是连续的，所以我们得到，$f(z)=w_0$，或者说$z \in A$。于是$A$在$G$内是闭的。现在在$A$内固定$a$，设$\epsilon > 0$，使得$B(a;\epsilon) \subset G$。如果$z \in B(a;\epsilon)$, 令$g(t) = f(tz + (1-t)a)$，$0 \le t \le 1$，那么
+\begin{gather}\label{equ002030211}
+\frac{g(t)-g(s)}{t - s} = \frac{g(t)-g(s)}{(t-s)z + (s-t)a} \cdot \frac{(t-s)z + (s-t)a}{t - s}.
+\end{gather}
+如果我们令$t \to s$，便得到
+\[
+\lim_{t \to s}{\frac{g(t)-g(s)}{t - s}} = f'(sz + (1-s)a) \cdot (z-a) = 0.
+\]
+即对于$0 \le s \le t$，$g'(s) = 0$，因此$g$是一个常数。所以$f(z)=g(1) = g(0) = f(a)=w_0$. 即$B(a; \epsilon) \subset A$, $A$也是开集。
+\end{proof}
+
+现在对$f(z)=e^z$，求导数，由命题\ref{pro:prop002030205}，
+\[
+\begin{aligned}
+f'(z) &= \sum_{n=1}^{\infty}{\frac{n}{n!}z^{n-1}} = \sum_{n=1}^{\infty}{\frac{1}{(n-1)!}z^{n-1}}\\
+&= \sum_{n=0}^{\infty}{\frac{z^n}{n!}} = f(z).
+\end{aligned}
+\]
+于是复的指数函数和实的情形有相同的性质，即
+\begin{gather}\label{equ002030212}
+\frac{d}{dz}{e^z} = e^z.
+\end{gather}
+对于$\mathbb{C}$内某一固定的$a$，设$g(z) = e^ze^{a-z}$，那么$g'(z) = e^ze^{a-z} + e^z(-e^{a-z}) = 0$, 因此对于$\mathbb{C}$中的所有$z$和某一常数$\omega$, $g(z) = \omega$. 特别地，利用$e^0 = 1$，我们得到$\omega = g(0) = e^a$. 所以对于所有的$z$，$e^ze^{a-z}=e^a$。于是对于$\mathbb{C}$中所有的$a$, $b$,$e^{a+b} = e^a \cdot e^b$. 这也给出$1 = e^ze^{-z}$，它蕴含对于任意的$z$，$e^z \neq 0$以及$e^{-z} = 1/e^z$。我们再回到$e^z$的幂级数。因为这个级数的所有系数是实的，所以我们得到$\exp{\bar{z}} = \overline{\exp{z}}$. 特别地，对于实数$\theta$, 我们得到$|e^{i\theta}|^2 = e^{i\theta}e^{-i\theta} = e^0 = 1$. 更一般地，$|e^z|^2 = e^ze^{\bar{z}} = e^{z = \bar{z}} = \exp{(2\Re{z})}$, 于是 
+\begin{gather}\label{equ002030213}
+|\exp{z}| = \exp{(\Re{z})}.
+\end{gather}
+所以我们看出$e^z$和实函数$e^x$有同样的性质。仍和实的幂级数类似，我们也用幂级数定义$\cos{z}$和$\sin{z}$. 
+\[
+\begin{aligned}
+\cos{z} &= 1 - \frac{z^2}{2!} + \frac{z^4}{4!} + \cdots + (-1)^n\frac{z^{2n}}{(2n)!} + \cdots,\\
+\sin{z} &= z - \frac{z^3}{3!} + \frac{z^5}{5!} + \cdots + (-1)^n\frac{z^{2n+1}}{(2n+1)!} + \cdots.
+\end{aligned}
+\]
+这两个幂级数的收敛半径都是$\infty$，所以$\cos{z}$和$\sin{z}$在$\mathbb{C}$内是解析的。利用命题\ref{pro:prop002030205}，我们得到$(\cos{z})' = -\sin{z}$, $(\sin{z})' = \cos{z}$。通过幂级数的运算（因为幂级数是绝对收敛的, 这是允许的），得到
+\begin{gather}\label{equ002030214}
+\cos{z} = \frac{1}{2}(e^{iz} + e^{-iz}), \quad \sin{z} = \frac{1}{2i}(e^{iz} - e^{-iz}).
+\end{gather}
+这就得到，对于$\mathbb{C}$中的$z$，有$\cos^2{z} + \sin^2{z} = 1$以及
+\begin{gather}\label{equ002030215}
+e^{iz} = \cos{z} + i\sin{z}.
+\end{gather}
+特别地，如果在（\ref{equ002030215}）中设$z$是实数$\theta$，我们得到$e^{i\theta} = \cis{\theta}$。因此，对于$\mathbb{C}$中的$z$
+\begin{gather}\label{equ002030216}
+z = |z|e^{i\theta},
+\end{gather}
+其中$\theta = \arg{z}$。因为$e^{x+iy} = e^x+e^{iy}$，所以我们有$|e^z| = \exp{(\Re{z})}$及$\arg{e^z} = \Im{z}$.
+
+说$f$是以$c$为周期的周期函数，如果$f(z+c) = f(z)$对于$\mathbb{C}$中的所有$z$成立。如果$c$是$e^z$的周期，那么$e^z = e^{z+c} = e^ze^c$蕴含$e^c=1$。因为$1 = |e^c| = \exp{(\Re{c})}$，$\Re{(c)} = 0$。于是对于$\mathbb{R}$中的某一$\theta$，$c = i\theta$. 但是由于$1 = e^c = e^{i\theta} = \cos{\theta} + i\sin{theta}$, 给出$e^z$的周期是$2\pi{i}$的倍数。于是如果我们用直线$\Im{z} = \pi(2k-1)$，$k$是任意整数，把平面分成无穷多个水平带形，指数函数在每个带形内有相同的性质。这个周期性是实指数所不具备的一个性质。注意，通过考察复函数，我们证明了指数函数和三角函数之间的关系式（\ref{equ002030215}）。这个关系式单凭我们关于实函数的知识是料想不到的。
+
+现在我们来定义$\log{z}$，我们可以采取和前面一样的办法，设$\log{z}$是实对数函数在某点附近的幂级数展开式。但是这仅给出在某一圆内的$\log{z}$。定义对数为$t^{-1}$从$1$到$x$（$x > 0$）的积分，这个方法是可行，但在复的情形，这样定义有点冒险，并且是不能令人满意的。又因为与实的情形不同，$e^z$并不是一一的映照，所以$\log{z}$不能定义为$e^z$的反函数。但是我们可以有与此类似的做法。
+
+我们要这样定义$\log{w}$, 使得当$z = \log{w}$时，$w = e^z$。现在，因为对于任意$z$, $e^z \neq 0$, 所以我们不能定义$\log{0}$，设$e^z = w$，$w \neq 0$; 如果$z = x + iy$，那么$|w| = e^x$，且对于某个$k$，$y = \arg{w} + 2\pi{}k$. 因此
+\begin{gather}\label{equ002030217}
+\{\log{|w|} + i(\arg{w} + 2\pi{}k) : k\text{是任意整数}\}
+\end{gather}
+是$e^z = w$的解的集。（注意：$\log{|w|}$是通常实的对数。）
+
+\begin{definition}{}{def002030218}
+如果$G$是$\mathbb{C}$中的连通开集，$f: G \to \mathbb{C}$是一个连续函数，使得对于$G$内的所有$z$，$z = \exp{f(z)}$，那么$f$是对数的一个分支。
+\end{definition}
+
+注意$0 \not\in G$。
+
+设$f$是连通集$G$内的一个给定的对数分支，$k$是整数。$g(z)=f(z) + 2\pi{}ki$，那么$\exp{g(z)} = \exp{f(z)} = z$，所以$g$也是一个对数分支。反之，如果$f$, $g$都是$\log{z}$的分支，那么对于$G$内的每个$z$, $f(z) = g(z) + 2\pi{}ki$，$k$是依赖于$z$的某一整数。对于$G$内的每个$z$, $k$是相同的吗？回答是肯定的。事实上，如果$h(z) = \frac{1}{2\pi{}i}[f(z)-g(z)]$, 那么$h(z)$在$G$内是连续的，并且$h(G) \subset \mathbb{Z}$（整数集）。因为$G$是连通的，所以$h(G)$也是连通的（第\ref{chapter00202}章定理\ref{thm:thm002020508}）。因此在$\mathbb{Z}$中有一个整数$k$，使得$f(z) + 2\pi{}ik = g(z)$对于$G$内的所有$z$都成立。这就得到下面的命题。
+
+\begin{proposition}{}{prop002030219}
+如果$G \subset \mathbb{C}$是连通开集, $f$是$G$内$\log{z}$的一个分支，那么$\log{z}$的所有分支可表示为$f(z) + 2\pi{}ki$，$k \in \mathbb{Z}$。
+\end{proposition}
+
+现在让我们在某一个连通开集内至少作出$\log{z}$的一个分支。设
+\[
+G = \mathbb{C} - \{z: z \le 0\};
+\]
+即，沿负实轴“切开”平面。显然$G$是连通的，并且对于$G$内的每个$z$，能够唯一地表示为$z = |z|e^{i\theta}$，其中$-\pi < \theta < \pi$，对于$\theta$在这个范围内，定义$f(re^{i\theta}) = \log{r} + i\theta$。我们把连续性的证明留给读者（习题\ref{exer002030209}），由此推出$f$是$G$内对数的一个分支。
+
+$f$是解析的吗？为了回答这个问题，我们先证明一个一般性的事实。
+
+\begin{proposition}{}{prop002030220}
+设$G$和$\Omega$是$\mathbb{C}$的开子集。假定$f: G \to \mathbb{C}$，$g: \Omega \to \mathbb{C}$是连续函数，使得$f(G) \subset \Omega$，且$g(f(z)) = z$对于$G$内的所有$z$成立。如果$g$是可微的，且$g'(z) \neq 0$，那么$f$是可微的，且
+\[
+f'(z) = \frac{1}{g'(f(z))}.
+\]
+如果$g$是解析的，那么$f$也是解析的。
+\end{proposition}
+
+\begin{proof}
+在$G$内固定一点$a$. 设$h \in \mathbb{C}$，$h \neq 0$, 使得$a + h \in G$. 因此$a = g(f(a))$, $a + h = g(f(a + h))$蕴含$f(a) \neq f(a + h)$. 又
+\[
+\begin{aligned}
+1 &= \frac{g(f(a + h)) - g(f(a))}{h}\\
+&=\frac{g(f(a + h)) - g(f(a))}{f(a + h) - f(a)} \cdot \frac{f(a + h) - f(a)}{h}.
+\end{aligned}
+\]
+
+现在当$h \to 0$时，左边的极限当然是1，所以右边的极限也存在。因为$\lim\limits_{h \to 0}{[f(a + h) - f(a)]} = 0$, 所以
+\[
+\lim_{h \to 0}{\frac{g(f(a + h)) - g(f(a))}{f(a+h) - f(a)}} = g'(f(a)).
+\]
+因此，由$g'(f(a)) \neq 0$可知
+\[
+\lim_{h \to 0}{\frac{f(a + h) - f(a)}{h}}
+\]
+存在，并且$1 = g'(f(a))f'(a)$。
+
+于是$f'(z) = [g'(f(a))]^{-1}$。如果$g$是解析的，那么$g'$是连续的，由此得到$f$是解析的。
+\end{proof}
+
+\begin{corollary}{}{coro002030221}
+对数函数的分支是解析的，它的导数是$z^{-1}$.
+\end{corollary}
+
+我们把上面定义在$\mathbb{C} - \{z:z \le 0\}$的对数的特殊分支，称为对数的主分支（principal branch）。如果不作别的声明，我们总是把$\log{z}$当作对数的主分支。
+
+如果$f$是对数函数在连通开集$G$内的分支，$b$是$\mathbb{C}$中的固定点，那么定义$g: G \to \mathbb{C}$为$g(z) = \exp{(bf(z))}$. 如果$b$是一个整数，那么$g(z) = z^b$。对于具有$\log{z}$的分支的连通开集，我们用这种方式定义$z^b$的分支，其中$b$在$\mathbb{C}$中。如果我们把$g(z)=z^b$作为一个函数，我们总是把这个函数理解为$z^b = \exp{b\log{z}}$，其中$\log{z}$是对数的主分支，因为$\log{z}$是解析的，所以$z^b$也是解析的。
+
+从刚才的考虑可以明显看出，连通性在解析函数论中起着重要作用。例如，如果$G$不是连通的，那么命题\ref{pro:prop002030210}是不对的。连通性在这里所起的作用类似于区间在微积分中所起的作用。因为这个原因，引进术语“域\footnote{这个域不是代数中的域，这里的域应该对应英文domain，而代数中的域对应field。}”是方便的。一个域是平面上的一个连通开子集。
+
+这一节以讨论Cauchy-Riemann方程作为结束。设$f: G \to \mathbb{C}$是解析的。对于$G$内的$x + iy$，令$u(x, y) = \Re{f(x + iy)}$, $v(x, y) = \Im{f(x + iy)}$。我们用两种不同的方法计算极限
+\[
+f'(z) = \lim_{h \to 0}{\frac{f(z+h) - f(z)}{h}}.
+\]
+先让$h$取实值趋于零。对于$h \neq 0$，$h$是实的，我们得到
+\[
+\begin{aligned}
+\frac{f(z+h) - f(z)}{h} &= \frac{f(x+ h + iy) - f(x + iy)}{h}\\
+&= \frac{u(x+h, y) - u(x, y)}{h} \\
+&\quad + i\frac{v(x+h, y) - v(x, y)}{h}
+\end{aligned}
+\]
+令$h \to 0$，得到
+\begin{gather}\label{equ002030222}
+f'(z) = \frac{\partial{u}}{\partial{x}}(x, y) + i\frac{\partial{v}}{\partial{x}}(x, y).
+\end{gather}
+现在让$h$取纯虚值趋于零，即对于$h \neq 0$，$h$是实的，
+\[
+\begin{aligned}
+\frac{f(z+ih) - f(z)}{ih} &= -i\frac{u(x, y+h) - u(x, y)}{h} \\
+&\quad + \frac{v(x, y+h) - v(x, y)}{h}
+\end{aligned}
+\]
+于是
+\begin{gather}\label{equ002030223}
+f'(z) = -i\frac{\partial{u}}{\partial{y}}(x, y) + \frac{\partial{v}}{\partial{y}}(x, y).
+\end{gather}
+令（\ref{equ002030222}）和（\ref{equ002030223}）的实部虚部相等，我们便得到Cauchy-Riemann方程
+\begin{gather}\label{equ002030224}
+\frac{\partial{u}}{\partial{x}} = \frac{\partial{v}}{\partial{y}}, \quad \frac{\partial{u}}{\partial{y}} = -\frac{\partial{v}}{\partial{x}}
+\end{gather}
+
+
+
+
+
+\begin{problemset}
+\item\label{exer002030202}证明：如果$b_n$, $a_n$是正实数，
+
+\item\label{exer002030209}设$z_n$, $z \in G= \mathbb{C} - \{z: z \le 0\}$, 且
+
+\end{problemset}
+
 
 
 \chapter{复积分}\label{chapter00204}
