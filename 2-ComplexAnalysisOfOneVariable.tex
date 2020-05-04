@@ -1653,23 +1653,135 @@ f'(z) = -i\frac{\partial{u}}{\partial{y}}(x, y) + \frac{\partial{v}}{\partial{y}
 \begin{gather}\label{equ002030224}
 \frac{\partial{u}}{\partial{x}} = \frac{\partial{v}}{\partial{y}}, \quad \frac{\partial{u}}{\partial{y}} = -\frac{\partial{v}}{\partial{x}}
 \end{gather}
+假定$u$和$v$有二阶连续偏导数（我们最终将证明它们是无穷次可微的）。对Cauchy-Riemann方程求微商，我们得到
+\[
+\frac{\partial^2{u}}{\partial{x^2}} = \frac{\partial^2{v}}{\partial{x}\partial{y}}, \quad
+\frac{\partial^2{u}}{\partial{y^2}} = -\frac{\partial^2{v}}{\partial{y}\partial{x}}.
+\]
+因此
+\begin{gather}\label{equ002030225}
+\frac{\partial^{u}}{\partial{x^2}} + \frac{\partial^2{u}}{\partial{y^2}} = 0,
+\end{gather}
+满足（\ref{equ002030225}）的任意一个具有连续的二阶偏导数的函数称为调和函数。类似地，$v$也是调和的。我们将在第\ref{chapter00210}章中研究调和函数。
 
+设$G$是平面上的一个域，$u$和$v$是定义在$G$内具有连续偏导数的函数。进而设$u$, $v$满足Cauchy-Riemann方程。为此，设$z = x + iy \in G$, $B(z;r) \subset G$. 如果$h = s + it \in B(0; r)$, 那么
+\[
+\begin{aligned}
+u(x+s, y+t) - u(x, y) &= [u(x+s, y+t) - u(x, y + t)]\\
+&\quad + [u(x, y + t) - u(x, y)].
+\end{aligned}
+\]
+把一元函数导数的中值定理应用到这两个括号内的式子上，那么对于$B(0; r)$内的每个$s + it$，都有数$s_1$和$t_1$,$|s_1| < |s|$, $|t_1| < |t|$,使得
+\begin{gather}\label{equ002030226}
+\left\{
+\begin{aligned}
+&u(x+s, y+t) - u(x, y+t) = u_x(x+s_1, y+ t)s,\\
+&u(x, y+t) - u(x, y) = u_y(x, y + t_1)t.
+\end{aligned}
+\right.
+\end{gather}
+令$\varphi(s, t) = [u(x+s, y+t) - u(x, y)] - [u_x(x, y)s +u_y(x, y)t]$, 由(\ref{equ002030226})得到
+\[
+\begin{aligned}
+\frac{\varphi(s, t)}{s + it} &= \frac{s}{s + it}[u_x(x+s_1, y + t) - u_x(x, y)]\\
+&\quad + \frac{t}{s+it}[u_y(x, y+t_1) - u_y(x, y)].
+\end{aligned}
+\]
+但是由$|s| < |s + it|$, $|t| < |s + it|$, $|s_1| < |s|$, $|t_1| < |t|$,以及$u_x$, $u_y$是连续的，得到
+\begin{gather}\label{equ002030227}
+\lim_{s + it \to 0}{\frac{\varphi(s, t)}{s + it}} = 0.
+\end{gather}
+因此
+\[
+\begin{aligned}
+u(x+s, y+t) - u(x, y) &= u_x(x, y)s + u_y(x, y)t \\
+&\quad + \varphi(s, t),
+\end{aligned}
+\]
+其中$\varphi$满足（\ref{equ002030227}）。类似地，
+\[
+\begin{aligned}
+v(x+s, y+t) - v(x, y) = v_x(x, y)s + v_y(x, y)t + \psi(s, t).
+\end{aligned}
+\]
+其中$\psi$满足
+\begin{gather}\label{002030228}
+\lim_{s +it \to 0}{\frac{\psi(s, t)}{s+it}} = 0.
+\end{gather}
+利用$u$, $v$满足Cauchy-Riemann方程这个事实，容易看出
+\[
+\frac{f(z + s + it) - f(z)}{s+it} = u_x(z) + iv_x(z) + \frac{\varphi(s, t) + i\psi(s, t)}{s+it}.
+\]
+根据（\ref{equ002032027}）和（\ref{equ002030228}），$f$是可微的，并且$f'(z) = u_x(z) + iv_x(z)$. 因为$u_x$, $v_x$是连续的，所以$f'$是连续的，$f$是解析的。我们把这些结果总结如下。
+\begin{theorem}{}{thm002030229}
+设$u$, $v$是定义在区域$G$内的实值函数，假定$u$, $v$有连续的偏导数。$f: G \to \mathbb{C}$定义为$f(z) = u(z) + iv(z)$。当且仅当$u$, $v$满足Cauchy-Riemann方程时，$f$是解析的。
+\end{theorem}
 
+\textbf{例子}\quad $u(x, y) = \log{(x^2+y^2)^{\frac{1}{2}}}$在$G = \mathbb{C} - \{0\}$内是调和的吗？回答是肯定的。对$u$求微商可看出它满足（\ref{002030225}）。但是也可通过观察下述事实来证明：在$G$内的每一点的邻域内，$u$是定义在该邻域的一个解析函数（哪个函数？）的实部。
 
+下面是关于调和函数的另一个问题。这个问题将在第\ref{chapter00208}章\ref{section0020803}中作详细的研究。设$G$是平面上的一个域，$u: G \to \mathbb{R}$是调和的. 是否存在一个调和函数$v: G \to \mathbb{R}$，使得$f = u+iv$在$G$内是解析的？如果这样的函数$v$存在, 就称它是$u$的共轭调和函数。如果$v_1$和$v_2$是$u$的两个共轭调和函数，那么$i(v_1-v_2) = (u+iv_1)-(u+iv_2)$在$G$内是解析的，并且仅取纯虚值。由此推出，一个调和函数的两个共轭调和函数相差为一常数（习题\ref{exer002030214}）。
+
+回到共轭调和函数的存在性问题上来。在域$G = \mathbb{C} - \{0\}$内调和函数的上述例子$u(z) = \log{|z|}$，没有共轭调和函数。事实上，如果它有共轭调和函数，那么便可在$G$内定义对数函数的一个解析分支，而这是办不到的（习题\ref{exer002030221}）。但是存在一些区域，在这些区域内每个调和函数有共轭调和函数。特别地，现在证明，当$G$是任意圆或是整个平面时，就是这种情形。
+\begin{theorem}{}{thm002030230}
+设$G$或者是整个平面，或者是某一个开圆。如果$u: G \to \mathbb{R}$是一个调和函数，那么$u$有共轭调和函数。
+\end{theorem}
+
+\begin{proof}
+为了完成定理的证明，需要用到积分号下求微商的Leibniz法则（这个法则将在第\ref{chapter00204}章的\ref{pro:prop002040201}的命题中叙述和证明），设$G = B(0; R)$，$0 < R \le \infty$。又设$u : G \to \mathbb{R}$是调和函数。我们通过寻求调和函数$v$，使得$u$, $v$满足Cauchy-Riemann方程，来完成定理的证明。为此定义
+\[
+v(x,y) = \int_{0}^{y}{u_x(x, t)dt} + \varphi(x),
+\]
+并确定$\varphi$，使得$v_x = -u_y$。上述等式两边对$x$求微商，得到
+\[
+\begin{aligned}
+v_x(x, y) &= \int_{0}^{y}{u_{xx}(x, t)dt} + \varphi'(x) = -\int_{0}^{y}{u_{yy}(x, t)dt} + \varphi'(x)\\
+&= -u_y(x, y) + u_y(x, 0) + \varphi'(x).
+\end{aligned}
+\]
+所以，必定有$\varphi'(x) = -u_y(x, 0)$。容易验证$u$和
+\[
+v(x, y) = \int_{0}^{y}{u_x(x, t)dt} - \int_{0}^{x}{u_y(s, 0)ds}
+\]
+确实满足Cauchy-Riemann方程。
+\end{proof}
+
+$G$是圆或是$\mathbb{C}$这个条件 用在何处？这个证明方法为什么不能作足够的修改使之适用于一般的域？当$G = \mathbb{C} - \{0\}$, $u = \log{|z|}$时，这个证明在何处失效？
 
 
 \begin{problemset}
+\item 证明：$f(z) = |z|^2 = x^ + y^2$仅在原点有导数。
+
 \item\label{exer002030202}证明：如果$b_n$, $a_n$是正实数，
 
 \item\label{exer002030209}设$z_n$, $z \in G= \mathbb{C} - \{z: z \le 0\}$, 且
 
+\item\label{exer002030214}设$f: G \to \mathbb{C}$是解析的，$G$是连通的，
+
+\item\label{exer002030221}证明：不存在定义于$G = \mathbb{C} - \{0\}$的对数分支。(提示：假如这样的分支存在，将它与主分支比较。)
 \end{problemset}
 
 
 
 \chapter{复积分}\label{chapter00204}
 
+\section{解析函数的幂级数表示}\label{section0020402}
 
+\begin{proposition}{}{prop002040201}
+设$\varphi$
+\end{proposition}
+
+\chapter{Runge定理}\label{chapter00208}
+
+\section{Runge定理}\label{section0020801}
+
+
+\section{单连通性}\label{section0020802}
+
+
+\section{Mittag-Leffler定理}\label{section0020803}
+
+
+\chapter{调和函数}\label{chapter00210}
 
 
 
