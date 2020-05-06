@@ -1850,6 +1850,86 @@ $\cos{z}$, $\sin{z}$以及其他解析函数的映照性质的研究将在习题
 形如$S(z) = \frac{az+b}{cz+d}$的映照称为分式线性变换。如果$a$,$b$,$c$,$d$满足$ad-bc \neq 0$，那么$S(z)$称为M\"obius（麦比乌斯）变换。
 \end{definition}
 
+如果$S$是M\"obius变换，那么$S^{-1} = \frac{dz - b}{-cz+a}$满足$S(S^{-1}(z)) = S^{-1}(S(z)) = z$，即$S^{-1}$是$S$的逆映照，如果$S$和$T$都是分式线性变换，那么$S \circ T$也是分式线性变换，因此，M\"obius变换的集在复合变换下构成一个群。如果不作别的声明，我们考虑的分式线性变换总是M\"obius变换。
+
+设$S(x) = \frac{az+b}{cz+d}$, 如果$\lambda$是任意非零复数，那么
+\[
+S(z) = \frac{(\lambda{}a)z + (\lambda{}b)}{(\lambda{}c)z + (\lambda{}d)}.
+\]
+即系数$a,b,c,d$不是唯一的（见习题\ref{exer002030320}）。
+
+我们也可以把$S$看作是定义在$\mathbb{C}_{\infty}$上的，它满足$S(\infty) = a/c$, $S(-d/c) = \infty$. (注意，我们不可能有$a = 0 =c$，或$d = 0 = c$,因为在这两种情形下都和$ad - bc \neq 0$相矛盾)因为$S$有逆变换，所以$S$把$\mathbb{C}_{\infty}$映为$\cinfty$。
+
+如果$S(z) = z+a$，那么$S$称为平移；如果$S(z)=az$，$a \neq 0$, 那么$S$是一伸缩；如果$S(z)=e^{i\theta}z$\footnote{奇怪，从这个定义来看，前面的$az$中的$a$应该是实数才是合理的。}，那么它是一个旋转。最后，如果$S(z) = 1/z$，那么它是一个反演。
+
+\begin{proposition}{}{prop002030306}
+如果$S$是一个M\"obius变换，那么$S$是平移，伸缩\footnote{从这个命题看，旋转是包含在伸缩里面的。}，反演的复合。（当然，其中有的可能不出现。）
+\end{proposition}
+
+\begin{proof}
+首先，设$c = 0$，因此$S(z) = (a/d)z + (b/d)$, 所以如果$S_1(z)=(a/d)z$, $S_2(z) = z + (b/d)$, 那么$S_2 \circ S_1 = S$, 命题得证。
+
+现在设$c \neq 0$, 那么令$S_1(z)=z + d/c$, $S_2(z) = 1/z$, $S_3(z) = \frac{bc - ad}{c^2}z$, $S_4(z) = z + a/c$, 那么$S = S_4 \circ S_3 \circ S_2 \circ S_1$.
+\end{proof}
+
+$S$的不动点是什么呢？即哪些点满足$S(z)=z$. 如果$z$满足这个条件，那么
+\[
+cz^2 + (d-a)z - b = 0.
+\]
+因此，一个M\"obius变换至多有两个不动点。除非$S(z)=z$对所有的$z$成立。
+
+
+现在设$S$是一个M\"obius变换，$a,b,c$是$\cinfty$中的不同点。$\alpha=S(a)$, $\beta = S(b)$, $\gamma = S(c)$. 假定$T$是另一个具有这种性质的变换。那么$T^{-1}\circ S$以$a, b, c$作为不动点，所以$T^{-1}\circ S = I =$恒同变换，即$S=T$. 因此一个M\"obius变换由$\cinfty$中的任意给定的三个点唯一确定。
+
+设$z_2, z_3, z_4$是$\cinfty$中的点。定义$S: \cinfty \to \cinfty$为：
+\[
+\begin{aligned}
+S(z) &= (\frac{z - z_3}{z-z_4})/(\frac{z_2-z_3}{z_2-z_4}), \quad z_2,z_3, z_4 \in \mathbb{C};\\
+S(z) &= \frac{z- z_3}{z-z_4},\quad z_2 = \infty;\\
+S(z) &= \frac{z_2- z_4}{z-z_4},\quad z_3 = \infty;\\
+S(z) &= \frac{z- z_3}{z_2-z_3},\quad z_4 = \infty.
+\end{aligned}
+\]
+
+在任意情况下，$S(z_2) = 1$, $S(z_3) = 0$, $S(z_4) = \infty$.并且$S$是具有这种性质的唯一变换。
+\begin{definition}{交比}{def002030307}
+如果$z_1 \in \cinfty$，那么$(z_1,z_2,z_3,z_4)$（$z_1,z_2,z_3,z_4$的交比）是使$z_2$变为1，$z_3$变为0，$z_4$变为$\infty$这一唯一的M\"obius变换下$z_1$的像。
+\end{definition}
+
+例如, $(z_2,z_2, z_3, z_4)=1$，$(z, 1, 0, \infty)=z$. 如果$M$是任意M\"obius映照，$w_2,w_3,w_4$是使得$Mw_2=1$, $Mw_3=0$, $Mw_4=\infty$的点，那么$Mz=(z,w_2,w_3,w_4)$.
+
+\begin{proposition}{}{prop002030308}
+如果$z_2,z_3,z_4$是不同的点，$T$是任意M\"obius变换，那么对于任意点$z_1$,
+\[
+(z_1,z_2,z_3,z_4) = (Tz_1, Tz_2, Tz_3, Tz_4).
+\]
+\end{proposition}
+
+\begin{proof}
+设$S(z) = (z, z_2, z_3, z_4)$, 那么$S$是一个M\"obius映照。如果$M = ST^{-1}$, 那么$M(Tz_2) = 1$, $M(Tz_3) = 0$, $M(Tz_4) = \infty$,因此$ST^{-1} = (z, Tz_2, Tz_3, Tz_4)$对于$\cinfty$中的所有$z$成立。特别地，令$z = Tz_1$便得到所要求的结果。
+\end{proof}
+
+\begin{proposition}{}{prop002030309}
+如果$z_2, z_3, z_4$是$\cinfty$中的不同点， $\omega_2, \omega_3, \omega_4$也是$\cinfty$中的不同点，那么有且只有一个M\"obius变换，使得$Sz_2=\omega_2$, $Sz_3 = \omega_3$, $Sz_4 = \omega_4$.
+\end{proposition}
+
+\begin{proof}
+设$Tz = (z, z_2, z_3, z_4)$, $Mz = (z, \omega_2, \omega_3, \omega_4)$, $S = M^{-1}T$. 显然$S$具有所要求的性质。如果$R$是另一个M\"obius变换，使得$Rz_j=\omega_j$, $j=2,3,4$, 那么$R^{-1}\circ S$有三个不动点（$z_2, z_3$和$z_4$），因此$R^{-1} \circ S = I$，或者说$S = R$.
+\end{proof}
+
+从中学几何中已经熟知，平面上的三点决定一个圆周。（注意$\cinfty$中过$\infty$的圆周相应于$\mathbb{C}$中的直线，因此，在上面的叙述中不需要预先声明三点“不共线”，平面上的直线将称为圆周。）下述结果说明在什么时候四点位于一个圆周上。
+
+\begin{proposition}{}{prop002030310}
+设$z_1,z_2,z_3,z_4$是$\cinfty$中的四个不同点，那么$(z_1,z_2,z_3,z_4)$是实数，当且仅当，这四个点位于一个圆周上。
+\end{proposition}
+
+
+
+\begin{problemset}
+\item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$,
+
+\end{problemset}
+
 
 
 
