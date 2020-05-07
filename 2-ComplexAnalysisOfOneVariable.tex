@@ -1923,9 +1923,100 @@ S(z) &= \frac{z- z_3}{z_2-z_3},\quad z_4 = \infty.
 设$z_1,z_2,z_3,z_4$是$\cinfty$中的四个不同点，那么$(z_1,z_2,z_3,z_4)$是实数，当且仅当，这四个点位于一个圆周上。
 \end{proposition}
 
+\begin{proof}
+设$S:\cinfty \to \cinfty$定义为$Sz = (z, z_2, z_3, z_4)$, 那么$S^{-1}(\mathbb{R})=$使得$(z,z_2,z_3,z_4)$是实数的$z$的集。因此，如果我们能够在M\:obius变换下，$\mathbb{R}_{\infty}$的像是一个圆周，命题就得证。
+
+设$Sz = \frac{az+b}{cz+d}$, 如果$z=x \in \mathbb{R}$, $\omega = S^{-1}(x)$, 那么$x = S\omega$九蕴含$S(\omega) = \overline{S(\omega)}$, 即
+\[
+\frac{a\omega + b}{c\omega+d} = \frac{\overline{a\omega} + \bar{b}}{\overline{c\omega} + \bar{d}}
+\]
+交叉相乘得到
+\begin{gather}\label{equ002030311}
+\begin{aligned}
+&(a\bar{c} - \bar{a}c)|\omega|^2 + (a\bar{d}-\bar{d}c)\omega\\
+&+(b\bar{c} - d\bar{a})\bar{\omega} + (b\bar{d} - \bar{b}d) = 0.
+\end{aligned}
+\end{gather}
+如果$a\bar{c}$是实的，那么$a\bar{c} - \bar{a}c = 0$, 令$\alpha = 2(a\bar{d} - \bar{b}c)$, $\beta = i(b\bar{d}-\bar{b}d)$. 用$i$乘（\ref{equ002030311}），因为$\beta$是实的，所以得到
+\begin{gather}\label{equ002030312}
+0 = \Im{(\alpha\omega)} - \beta = \Im{(\alpha\omega - \beta)}.
+\end{gather}
+即$\omega$位于由（\ref{equ002030312}）决定的直线上，$\alpha$, $\beta$是固定的。如果$a\bar{c}$不是实的，那么(\ref{equ002030311})变成
+\[
+|\omega|^2 + \bar{\gamma}\omega + \gamma\bar{\omega} - \delta = 0,
+\]
+其中$\gamma$是某一个复常数，$\delta$是某一个实常数。因此
+\begin{gather}\label{equ002030313}
+|\omega + \gamma| = \lambda,
+\end{gather}
+其中
+\[
+\lambda = (|\gamma|^2 + \delta)^{\frac{1}{2}} = |\frac{ad-bc}{\bar{a}c - a\bar{c}}| > 0.
+\]
+因为$\gamma$和$\lambda$不依赖于$x$, (\ref{equ002030313})是圆周的方程，所以命题得证。
+\end{proof}
+
+\begin{theorem}{}{thm002030314}
+M\"obius变换把圆周变为圆周。
+\end{theorem}
+
+\begin{proof}
+设$\Gamma$是$\cinfty$中的任意的一个圆周，$S$是任意一个M\"obius变换。$z_2$, $z_3$, $z_4$是$\Gamma$上的三个不同的点，记$\omega_j = Sz_j$, $j=2,3,4$, 那么$\omega_2, \omega_3, \omega_4$决定一圆周$\Gamma'$。我们断言$S(\Gamma) = \Gamma'$.事实上，对于$\cinfty$中的任意一点$z$,由命题\ref{pro:prop002030308}得到
+\begin{gather}\label{equ002030315}
+(z, z_2, z_3, z_4) = (Sz, \omega_2, \omega_3, \omega_4).
+\end{gather}
+根据上面的命题，如果$z$在$\Gamma$上，那么(\ref{equ002030315})的两边是实的，但这就是说$Sz \in \Gamma'$.
+\end{proof}
+
+现在设$\Gamma$和$\Gamma'$是$\cinfty$中的两个圆周。$z_2,z_3,z_4 \in \Gamma$, $\omega_2, \omega_3, \omega_4 \in \Gamma'$. 令$Rz = (z, z_2, z_3, z_4)$, $Sz=(z, \omega_2, \omega_3, \omega_4)$, 那么$T = S^{-1}\circ R$把$\Gamma$映为$\Gamma'$。事实上，$Tz_j = \omega_j$, $j=2,3,4$,和上面的证明一样，推出$T(\Gamma) = \Gamma'$.
+
+\begin{proposition}{}{prop002030316}
+对于$\cinfty$中任意给定的圆周$\Gamma$和$\Gamma'$，存在一个M\"obius变换$T$，使得$T(\Gamma) = \Gamma'$. 并且我们能够指定$\Gamma$上的任意三点变为$\Gamma'$上的任意三点。如果我们指定$Tz_j$, $j=2,3,4$（$\Gamma$上的$z_j$互不相同），那么$T$是唯一的。
+\end{proposition}
+
+\begin{proof}
+除了唯一性外，其余的已在上段中给出了。唯一性的证明对于读者来说是一个简单的习题。
+\end{proof}
+
+现在我们知道M\"obius变换把圆周变为圆周。下一个问题是这些圆周的内部和外部变为什么？为了回答这个问题，我们引进一些新的概念。
+
+\begin{definition}{}{def002030317}
+设$\Gamma$是通过$z_2, z_3, z_4$的圆周，$\cinfty$中的点$z$和$z^*$称为关于$\Gamma$是对称的，如果
+\begin{gather}\label{equ002030318}
+(z^*, z_2, z_3, z_4) = \overline{(z, z_2, z_3, z_4)}.
+\end{gather}
+\end{definition}
+这个式子表示，这个定义不仅依赖于圆周，而且也依赖于圆周上的点$z_2, z_3, z_4$,作为一个习题（习题\ref{exer002030311}），留给读者去证明对称性和这些点的选取无关。
+
+由命题\ref{pro:prop002030310}, $z$关于圆周$\Gamma$与自己对称，当且仅当，$z \in \Gamma$.
+
+让我们来研究$z$和$z^*$是对称的意味着什么。设$\Gamma$是一条直线，那么顾名思义，我们相信$z$和$z^*$关于$\Gamma$是对称的，如果通过$z$和$z^*$的直线垂直于$\Gamma$，并且$z$和$z^*$在$\Gamma$的两侧，到$\Gamma$的有相同的距离。事实正是如此。
+
+设$\Gamma$是一直线。取$z_4 = \infty$。等式(\ref{equ002030318})变成
+\[
+\frac{z^* - z_3}{z_2-z_3} = \frac{\bar{z}-\bar{z_3}}{\bar{z_2} - \bar{z_3}}.
+\]
+这就得到$|z^* - z_3| = |z - z_3|$;因为$z_3$是不确定的，所以$z$, $z^*$到$\Gamma$上每一点的距离相同。又
+\[
+\Im{\frac{z^*-z_3}{z_2-z_3}} = \Im{\frac{\bar{z}-\bar{z_3}}{\bar{z_2} - \bar{z_3}}} = -\Im{\frac{z-z_3}{z_2-z_3}}.
+\]
+因此，我们得到（除非$z \in \Gamma$），$z$, $z^*$位于$\Gamma$确定的不同的半平面内。由此推出，$[z, z^*]$垂直于$\Gamma$.
+
+现在设$\Gamma = \{z:|z - a|=R\}$（$0 < R < \infty$），$z_2,z_3, z_4$在$\Gamma$上。根据（\ref{equ002030318}）,并对若干M\"obius变换多次应用命题\ref{pro:prop002030308}，得到
+\[
+\begin{aligned}
+(z^*, z_2, z_3, z_4) &= \overline{(z, z_2, z_3, z_4)}\\
+&= \overline{(z-a, z_2-a, z_3-a, z_4-a)} \\
+&= (\bar{z}- \bar{a}, \frac{R^2}{z_2 - a}, \frac{R^2}{z_3 - a}, \frac{R^2}{z_4 - a})\\
+&= (\frac{R^2}{\bar{z} - \bar{a}}, z_2 - a, z_3 - a, z_4 - a)\\
+&= (\frac{R^2}{\bar{z}-\bar{a}} + a, z_2, z_3, z_4). 
+\end{aligned}\footnote{第一个等式是对称的定义，第二个等式使用变换$Tz = z-a$，第三个等式是把共轭作用于每一项，这个是成立的，第四个等式是使用变换$Tz = R^2/z$，第五个等式是使用变换$Tz = z+a$。}
+\]
 
 
 \begin{problemset}
+\item\label{exer002030311}证明：对称的定义（\ref{def:def002030317}）
+
 \item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$,
 
 \end{problemset}
