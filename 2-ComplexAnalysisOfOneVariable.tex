@@ -2012,9 +2012,105 @@ M\"obius变换把圆周变为圆周。
 &= (\frac{R^2}{\bar{z}-\bar{a}} + a, z_2, z_3, z_4). 
 \end{aligned}\footnote{第一个等式是对称的定义，第二个等式使用变换$Tz = z-a$，第三个等式是把共轭作用于每一项，这个是成立的，第四个等式是使用变换$Tz = R^2/z$，第五个等式是使用变换$Tz = z+a$。}
 \]
+因此。$z^* = a + R^2(\bar{z} - \bar{a})^{-1}$, 或者$(z^* - a)(\bar{z} - \bar{a}) = R^2$. 由此得到
+\[
+\frac{z^*-a}{z-a} = \frac{R^2}{|z-a|^2} > 0;
+\]
+所以$z^*$位于从$a$出发，通过$z$的射线$\{a + t(z-a): 0 < t < \infty\}$上。利用$|z-a||z-a| = R^2$这一事实，如下图所示，我们能够由$z$得到$z^*$（若$z$位于$\Gamma$内部）。设$L$是从$a$出发，通过$z$的射线，过$z$点作一条直线$P$垂直于$L$, 在$P$和$\Gamma$的交点处作$\Gamma$的切线，这条切线和$L$的交点就是$z^*$. 点$a$和$\infty$关于$\Gamma$是对称的。
 
+\begin{theorem}{对称原理}{thm002030319}
+如果M\"obius变换$T$把圆周$\Gamma_1$变为圆周$\Gamma_2$，那么关于$\Gamma_1$的一对对称点被$T$映为关于$\Gamma_2$的一对对称点。
+\end{theorem}
+
+\begin{proof}
+设$z_2, z_3, z_4 \in \Gamma_1$, 如果$z, z^*$关于$\Gamma_1$是对称的，那么由命题\ref{pro:prop002030308}得到
+\[
+\begin{aligned}
+(Tz^*, Tz_2, Tz_3, Tz_4) &= (z^*, z_2, z_3, z_4)\\
+&= \overline{(z, z_2, z_3, z_4)}\\
+&=\overline{(Tz, Tz_2, Tz_3, Tz_4)}.
+\end{aligned}
+\]
+因此$Tz^*$和$Tz$关于$\Gamma_2$是对称的。
+\end{proof}
+
+现在我们讨论在$\cinfty$中圆周的定向。这将能够使我们去区分$\cinfty$中圆周的“内部”和“外部”。注意，在$\cinfty$（球面）上，对于圆周的内部和外部没有明显的选择。
+
+\begin{definition}{}{def002030320}
+如果$\Gamma$是一个圆周，那么$\Gamma$的定向是$\Gamma$上的有序的三个点$(z_1, z_2, z_3)$。
+\end{definition}
+
+直观上，这三个点给了$\Gamma$的一个方向。这就是我们从$z_1$“走”到$z_2$再到$z_3$，如果只给定两个点，当然意思就含糊了。
+
+设$\Gamma = \mathbb{R}$, $z_1, z_2, z_3 \in \mathbb{R}$，又设$Tz = (z, z_1, z_2, z_3) = \frac{az+b}{cz+d}$. 由于$T(\mathbb{R}_{\infty}) = \mathbb{R}_{\infty}$，由此推出，$a,b,c,d$可以取为实数（见习题\ref{exer002030308}），因此
+\[
+\begin{aligned}
+Tz &= \frac{az+b}{cz+d} = \frac{az+b}{|cz+d|^2}(c\bar{z} = d)\\
+&=\frac{1}{|cz+d|^2}[ac|z|^2 + bd + bc\bar{z} + adz].
+\end{aligned}
+\]
+所以
+\[
+\Im{(z, z_1, z_2, z_3)} = \frac{(ad-bc)}{|cz+d|^2}\Im{z}.
+\]
+于是，$\{z:\Im{(z, z_1, z_2, z_3)<0}\}$或者是上半平面，或者是下半平面，取决于$(ad-bc)<0$还是$(ad-bc)>0$.（注意，$ad-bc$是$T$的“行列式”。）
+
+现在设$\Gamma$是任意的，$z_1, z_2, z_3$在$\Gamma$上。对于任意的M\"obius变换$S$，我们有（根据命题\ref{pro:prop002030308}）
+\[
+\begin{aligned}
+\{z:\Im{(z, z_1, z_2, z_3)} > 0\} &= \{z:\Im{(Sz, Sz_1, Sz_2, Sz_3)} > 0\}\\
+&= S^{-1}\{z:\Im{(z, Sz_1, Sz_2, Sz_3)} > 0\}.
+\end{aligned}
+\]
+特别地，如果选取$S$，使得$S$把$\Gamma$映为$\mathbb{R}_{\infty}$，那么$\{z: \Im{(z, z_1,z_2, z_3)} > 0\}$等于上半平面或下半平面在$S^{-1}$下的像。
+
+如果$(z_1, z_2, z_3)$是$\Gamma$的定向，那么我们定义$\Gamma$（关于$(z_1, z_2, z_3)$）的右边为
+\[
+\{z:\Im{(z,z_1, z_2, z_3)} > 0\}.
+\]
+类似地，我们定义$\Gamma$的左边为
+\[
+\{z:\Im{(z,z_1, z_2, z_3)} < 0\}.
+\]
+
+下述定理的证明留给读者作为习题。
+\begin{theorem}{定向原理}{thm002030321}
+设$\Gamma_1$和$\Gamma_2$是$\cinfty$中的两个圆周，$T$是M\"obius变换，$T(\Gamma_1) = \Gamma_2$, $(z_1, z_2, z_3)$是$\Gamma_1$的定向，那么$T$把$\Gamma_1$的右边和左边变为$\Gamma_2$关于定向$(Tz_1, Tz_2, Tz_3)$的右边和左边。
+\end{theorem}
+
+考虑$\mathbb{R}$的定向$(1, 0, \infty)$。由交比的定义，$(z, 1, 0, \infty) = z$。因此，$\mathbb{R}$关于$(1,0,\infty)$的右边是上半平面。这和我们的直观是一致的“当我们沿$\mathbb{R}$从$1$走到$0$，再到$\infty$，上半平面在我们的右边。
+
+作为例子，考虑下述问题：找出一个解析函数$f: G \to \mathbb{C}$，$G = \{z:\Re{z} > 0\}$，使得$f(G) = D = \{z:|z|<1\}$. 我们是通过寻找一个M\"obius变换来解决这个问题的。这个变换把虚轴变为单位圆周。由定向原理，它把$G$变为$D$（即我们必须细心选取这个映照，使得它不是把$D$变为$\{z:|z|>1\}$）。
+
+如果我们给定虚轴的定向为$(-i, 0, i)$，那么$\{z:\Re{z} > 0\}$是虚轴的右边。事实上，
+\[
+\begin{aligned}
+(z, -i, 0, i) &= \frac{2z}{z-i} = \frac{2z}{z-i} \cdot \frac{\bar{z}+i}{\bar{z}+i}\\
+&=\frac{2}{|z-i|^2}(|z|^2 + iz).
+\end{aligned}
+\]
+因此, $\{z: \Im{(z, -i, 0, i)} > 0\} = \{z: \Im{iz} > 0\} = \{z:\Re{z} > 0\}$.给$\Gamma$以定向$(-i, -1, i)$，我们得到$D$位于$\Gamma$的右边。又
+\[
+(z, -i, -1, i) = \frac{2i}{i-1} \cdot \frac{z+1}{z-i}.
+\]
+如果
+\[
+Sz = \frac{2z}{z-i}, Rz = (\frac{2i}{i-1})(\frac{z+1}{z-i}),
+\]
+那么$T = R^{-1}S$把$G$映为$D$（并把虚轴映为$\Gamma$）。由代数运算，我们有
+\[
+Tz = \frac{z-1}{z+1}.
+\]
+
+把这个结果和前面的结果结合起来，我们得到, $g(z) = \frac{e^z-1}{e^z+1}$把无穷带形$\{z:|\Im{z}|<\pi/2\}$映为开单位圆$D$。（值得一提的是$\frac{e^z-1}{e^z+1} = \tanh(\frac{z}{2})$）。
+
+设$G_1, G_2$是连通开集，为了找出一个解析函数$f$，使得$f(G_1)=G_2$，我们试图把$G_1, G_2$都映为开单位圆。如果这一点能够办到，$f$就能由一个函数和另一个函数的反函数的符合而得到。
+
+作为一个例子，设$G$是两个相交于$a, b$（$a \neq b$）的圆周的内部开集，$L$是过$a, b$的直线，其定向是$(\infty, a, b)$。
 
 \begin{problemset}
+\item\label{exer002030308}如果$Tz = \frac{az+b}{cz+d}$
+
 \item\label{exer002030311}证明：对称的定义（\ref{def:def002030317}）
 
 \item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$,
