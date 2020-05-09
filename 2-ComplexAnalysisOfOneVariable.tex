@@ -2106,14 +2106,63 @@ Tz = \frac{z-1}{z+1}.
 
 设$G_1, G_2$是连通开集，为了找出一个解析函数$f$，使得$f(G_1)=G_2$，我们试图把$G_1, G_2$都映为开单位圆。如果这一点能够办到，$f$就能由一个函数和另一个函数的反函数的符合而得到。
 
-作为一个例子，设$G$是两个相交于$a, b$（$a \neq b$）的圆周的内部开集，$L$是过$a, b$的直线，其定向是$(\infty, a, b)$。
+作为一个例子，设$G$是两个相交于$a, b$（$a \neq b$）的圆周的内部开集，$L$是过$a, b$的直线，其定向是$(\infty, a, b)$。那么$Tz = (z, \infty, a, b) = \frac{z-a}{z-b}$把$L$映为实轴$(T\infty = 1,Ta=0, Tb=\infty)$.由于$T$把圆周映为圆周，所以$T$把$\Gamma_1$和$\Gamma_2$映为过$0$和$\infty$的圆周，即$T(\Gamma_1)$, $T(\Gamma_2)$是直线。利用定向，我们有$T(G) = \{\theta_0 - \alpha < \arg{\omega} < \theta_0\}$\footnote{原书误为$T(G) =\{\omega-\alpha < \arg{\omega} < \alpha\}$, $\alpha>0$.---译注}, $\alpha>0$，或者是某一这种闭扇形的余集。利用幂函数，或许还有一个旋转，我们可以把这个楔形映为右半平面。现在与$\frac{z-1}{z+1}$复合起来，就得到$G$到$D = \{z:|z|<1\}$的映照。
 
 \begin{problemset}
-\item\label{exer002030308}如果$Tz = \frac{az+b}{cz+d}$
+\item 求$\{z:\Re{z} < 0, |\Im{z}| < \pi\}$在指数函数下的像。
 
-\item\label{exer002030311}证明：对称的定义（\ref{def:def002030317}）
+\item 对于集$\{z:|\Im{z}|< \pi/2\}$做上一习题
 
-\item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$,
+\item 讨论$\cos{z}$和$\sin{z}$的映照性质。
+
+\item 讨论$z^n$和$z^{1/n}$, $n>2$的映照性质。（提示：利用极坐标。）
+
+\item 求出$\cinfty$中伸缩、平移、反演的不动点。
+
+\item 计算下列交比：(a) $(7+i,1,0,\infty)$; (b)$(2, 1-i, 1, 1+i)$; (c)$(0, 1, i, -1)$; (d)$(i-1, \infty, 1+i, 0)$.
+
+\item 如果$Tz = \frac{az+b}{cz+d}$，求出$z_2,z_3, z_4$（用$a,b,c,d$表示），使得$Tz = (z, z_2, z_3, z_4)$.
+
+\item\label{exer002030308}如果$Tz = \frac{az+b}{cz+d}$, 证明：当且仅当我们可以选取$a,b,c,d$为实数时$T(\mathbb{R}) = \mathbb{R}$.
+
+\item 如果$Tz = \frac{az+b}{cz+d}$,求出$T(\Gamma) = \Gamma$的充分必要条件，其中$\Gamma$是单位圆周$\{z:|z|=1\}$.
+
+\item 设$D = \{z:|z|<1\}$, 求出所有满足$T(D)=D$的M\"obius变换。
+
+\item\label{exer002030311}证明：对称的定义（\ref{def:def002030317}）不依赖于$z_2,z_3,z_4$的选取，即证明：如果$\omega_2, \omega_2, \omega_4$也在$\Gamma$上，那么它们满足等式(\ref{equ002030318})，当且仅当$(z^*, \omega_2, \omega_3, \omega_4) = \overline{(z, \omega_2, \omega_3, \omega_4)}$.（提示：利用习题\ref{exer002030308}）
+
+\item 证明定理\ref{thm:thm002030304}。
+
+\item 讨论映照$f(z) = \frac{1}{2}(z + \frac{1}{z})$.
+
+\item 设一个圆包含在另一个圆内，并在一点$a$相切，$G$是这两个圆周之间的域，将$G$共形映照为开单位圆。（提示：先用$(z-a)^{-1}$）.
+
+\item 设$G = \{z: 0 < |z| < 1\}$. 能否将$G$共形映照为开单位圆？
+
+\item 试用解析函数$f$把$G = \mathbb{C} - \{z:-1  \le z \le 1\}$映为开单位圆，$f$能是一一的吗？
+
+\item 设$G$是一个域，$f: G \to \mathbb{C}$是解析的，$f(G)$是圆周的一子集，证明：$f$是一常数。
+
+\item 设$-\infty < a < b < \infty$. $Mz = \frac{z-ia}{z-ib}$. 定义直线$L_1 = \{z:\Im{z}=b\}$, $L_2 = \{z:\Im{z}=a\}$, $L_3=\{z:\Re{z}=0\}$.确定图中的$A, B, C, D, E, F$中的哪一个能被$M$映为图中的$U,V,W,X,Y,Z$.
+
+\item 设$a,b,M$如上题所述，$\log{z}$是对数的主分支。
+\begin{enumerate}
+\item[(a)]证明：$\log{(Mz)}$对于所有的$z$，除去$z=ic$,$a<c<b$外有定义。并且如果$h(z)=\Im{[\log{Mz}]}$, 那么对于$\Re{z} > 0$, 有$0 < h(z) < \pi$.
+\item[(b)]证明：对于$\Re{z} > 0$及任意实数$c$, $\log{(z-ic)}$有定义，并证明：如果$\Re{z}>0$,有$|\Im{\log{(z-ic)}}|<\pi/2$. 
+\item[(c)]设$h$如(a)中所述，证明：$h(z)=\Im{[\log{z-ia} - \log{(z-ib)}]}$.
+\item[(d)]证明:
+\[
+\int_{a}^{b}{\frac{dt}{z-it}} = i[\log{(z-ib)} - \log{(z-ia)}].
+\]
+（提示：利用微积分学的基本定理。）
+\item[(e)]结合(c)和(d)，得到
+\[
+h(x+iy) = \int_{a}^{b}{\frac{dt}{x^2 + (y-t)^2}} = \arctan{(\frac{y-a}{x})} - \arctan{(\frac{y-b}{x})}.
+\]
+\item[(f)]解释(e)的几何意义，并证明：当$\Re{z}>0$时，$h(z)$是图中所画的角度。
+\end{enumerate}
+
+\item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$, 证明：当且仅当存在非零复数$\lambda$，使得$\alpha = \lambda{}a$, $\beta = \lambda{}b$, $\gamma = \lambda{}c$, $\delta = \lambda{}d$时$S = T$.
 
 \end{problemset}
 
