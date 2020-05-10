@@ -1149,7 +1149,7 @@ d(A, B) = \inf\{d(a, b): a \in A, b \in B\}.
 \end{exercise}
 
 \begin{exercise}\label{exer002020506}
-回忆稠密集的定义(\ref{def:def002020104}). 设$\Omega$是完备的度量空间，$f: (D, d) \to (\Omega,\rho)$是一致连续的，其中$D$在$(X, d)$中稠密。利用上题证明：存在一致连续的函数$g:X \to \Omega$，使得对$D$内的每一点，$g(x)=f(x)$.
+回忆稠密集的定义(\ref{def:def002020104}). 设$\Omega$是完备的度量空间，$f: (D, d) \to (\Omega,\rho)$是一致连续的，其中$D$在$(X, d)$中稠密。利用上题证明存在一致连续的函数$g:X \to \Omega$，使得对$D$内的每一点，$g(x)=f(x)$.
 \end{exercise}
 
 \begin{exercise}\label{exer002020507}
@@ -2164,16 +2164,96 @@ h(x+iy) = \int_{a}^{b}{\frac{dt}{x^2 + (y-t)^2}} = \arctan{(\frac{y-a}{x})} - \a
 
 \item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$, 证明：当且仅当存在非零复数$\lambda$，使得$\alpha = \lambda{}a$, $\beta = \lambda{}b$, $\gamma = \lambda{}c$, $\delta = \lambda{}d$时$S = T$.
 
+\item\label{exer002030321} 设$T$是具有不定点$z_1$和$z_2$的M\"obius变换。如果$S$是一个M\"obius变换，证明：$S^{-1}TS$有不动点$S^{-1}z_1$和$S^{-1}z_2$.
+
+\item\label{exer002030322} (a)证明：一个M\"obius变换，当且仅当它是一个伸缩时，仅以$0$和$\infty$为它的不动点。
+
+(b)证明：一个M\"obius变换，当且仅当它是一个平移时，仅以$\infty$为它的不动点。
+
+\item 证明：一个M\"obius变换$T$，当且仅当, $Tz = a/z$, $a \in \mathbb{C}$时，满足$T(0) = \infty$, $T(\infty) = 0$。
+
+\item 设$T$是一个M\"obius变换，且不失恒同变换。证明：一个M\"obius变换$S$, 当且仅当$S$和$T$有相同的不动点时，满足$ST=TS$。（提示：利用习题\ref{exer002030321}和\ref{exer002030322}）
+
+\item 求出M\"obius变换群的所有Abel子群。
+
+\item (a)设$GL_2(\mathbb{C})=$所有的$2 \times 2$可逆复数矩阵。$\mathscr{M}$是M\"obius变换群。$\varphi: GL_2(\mathbb{C}) \to \mathscr{U}$定义为
+\[
+\varphi\begin{pmatrix}a & b \\ c & d\end{pmatrix} = \frac{az+b}{cz+d}.
+\]
+证明：$\varphi$是$GL_2(\mathbb{C})$到$\mathscr{M}$上的群同态。求出$\varphi$的核。
+
+(b) 设$SL_2(\mathbb{C})$是$GL_2(\mathbb{C})$的子群，它是由行列式为1的所有矩阵所组成的。证明：$SL_2(\mathbb{C})$在$\varphi$下的像是$\mathscr{M}$的全体。$\varphi$的核的哪部分在$SL_2(\mathbb{C})$中？
+
+\item 如果$\mathscr{G}$是一个群，$\mathscr{N}$是一个子群，那么$\mathscr{N}$称为$\mathscr{G}$的正规子群，如果当$T \in \mathscr{N}$，$S \in \mathscr{G}$时$S^{-1}TS \in \mathscr{N}$。如果$\mathscr{G}$的仅有的正规子群是$\{I\}$（$I$是$\mathscr{G}$的单位）和$\mathscr{G}$本身，则称$\mathscr{G}$是单纯群。证明：M\"obius变换群$\mathscr{M}$是一个单纯群。
+
+\item 讨论$(1-z)^i$的映照性质。
+
+\item 对于复数$\alpha$和$\beta$，$|\alpha|^2 + |\beta|^2 = 1$,
+\[
+u_{\alpha,\beta} = \frac{\alpha{}z - \bar{\beta}}{\beta{}z - \bar{\alpha}}, U = \{u_{\alpha,\beta}:|\alpha|^2+|\beta|^2=1\}.
+\]
+(a)证明：在变换的复合运算下$U$构成一个群。
+
+(b)如果$SU_2$是所有的行列式为1的酉矩阵所构成的集，证明：$SU_2$在矩阵的乘法下是一个群，并且对于$SU_2$中的每一个$A$, 有唯一的复数$\alpha,\beta$，它们满足$|\alpha|^2+|\beta|^2=1$,使得$A = \begin{pmatrix}\alpha & \beta \\ -\bar{\beta} & \bar{\alpha}\end{pmatrix}$.
+
+(c)证明：$\begin{pmatrix}\alpha & \beta \\ -\bar{\beta} & \bar{\alpha}\end{pmatrix} \to u_{\alpha, \beta}$是群$SU_2$到$U$上的同构。
+
+(d)如果$l \in \{0, \frac{1}{2}, 1, \frac{3}{2}, \cdots\}$, 设$H_l=$所有其次数$\le 2l$的多项式。对于$U$中的$u_{\alpha,\beta}$定义$T_u^{(l)}:H_l \to H_l$为$(T_u^{(l)}f)(z) = (\beta{}z+\bar{\alpha})^{2l}f(u(z))$.证明：$T_u^{(l)}$是$H_l$上的一个可逆的线性变换。并且$u \mapsto T_u^{(l)}$是$U$到一个可逆线性变换群里（$H_l$到$H_l$上）的一一同态。
+
+\item 对于$|z|<1$定义$f(z)$为
+\[
+f(z) = \exp\{-i\log{[i(\frac{1+z}{1-z})]^{1/2}}\}.
+\]
+
+(a)证明: $f$将$D = \{z:|z|<1\}$共形映照为一个圆环$G$.
+
+(b)求出所有把$D$映为$D$的M\"obius变换$S(z)$，使得当$|z|<1$时,$f(s(z)) = f(z)$.
 \end{problemset}
 
 
-
-
-
-
 \chapter{复积分}\label{chapter00204}
+本章导出的结果在解析函数的研究中是基本的，这里给出的定理是整个数学知识的基础之一，并且具有一系列范围广泛的应用。
+
+\section{Riemann-Stieltjes积分}\label{section0020401}
+为了定义函数沿$\mathbb{C}$内一条路径的积分，我们首先来定义Riemann-Stieltjes积分。这种积分的讨论是远不完备的，而仅限于讨论为了有力的解释线积分是必需的那些结果。
+
+\begin{definition}{有界变差函数}{def002040101}
+设$[a, b] \subset \mathbb{R}$，称函数$\gamma:[a, b] \to \mathbb{C}$是有界变差函数，如果存在一个常数$M>0$，使得对于$[a,b]$的每一个分割$P=\{a=t_0 < t_1<\cdots<t_m=b\}$, 总有
+\[
+v(\gamma:P) = \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|} \le M.
+\]
+$\gamma$的全变差$V(\gamma)$定义为
+\[
+V(\gamma) = \sup\{v(\gamma:P):P\text{是}[a,b]\text{的任一个分割}\}.
+\]
+显然, $V(\gamma) \le M < \infty$.
+\end{definition}
+
+容易看出。当且仅当，$\Re{\gamma}$和$\Im{\gamma}$是有界变差函数时，$\gamma$才是有界变差函数。当$\gamma$是实的，非减函数时，那么$\gamma$是有界变差函数，并且$V(\gamma) = \gamma(b) - \gamma(a)$（习题\ref{exer002040101}）。我们还要给出别的例子，但首先给出这种函数的一些容易导出的性质。
+\begin{proposition}{}{prop002040102}
+设$\gamma:[a, b] \to \mathbb{C}$是有界变差函数，那么：
+\begin{enumerate}
+\item[(a)]如果$P$和$Q$是$[a,b]$的分割，且$P \subset Q$，则
+\[
+v(\gamma:P) \le v(\gamma:Q);
+\]
+\item[(b)]如果$\sigma:[a, b] \to \mathbb{C}$也是有界变差函数，且$\alpha, \beta \in \mathbb{C}$, 则$\alpha\gamma+\beta\sigma$是有界变差函数，且
+\[
+V(\alpha\gamma+\beta\sigma) \le |\alpha|V(\gamma) + |\beta|V(\sigma).
+\]
+\end{enumerate}
+\end{proposition}
+
+证明留给读者。
+
+\begin{problemset}
+\item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的,
+\end{problemset}
+
 
 \section{解析函数的幂级数表示}\label{section0020402}
+
+
 
 \begin{proposition}{}{prop002040201}
 设$\varphi$
