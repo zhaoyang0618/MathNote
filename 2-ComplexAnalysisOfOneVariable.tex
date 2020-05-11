@@ -2246,6 +2246,87 @@ V(\alpha\gamma+\beta\sigma) \le |\alpha|V(\gamma) + |\beta|V(\sigma).
 
 证明留给读者。
 
+下面的命题给出一类广泛的有界变差函数，实际上，这是我们主要考虑的一类函数。
+
+\begin{proposition}{}{prop00203040103}
+如果$\gamma:[a,b]\to \mathbb{C}$是分段光滑函数，则$\gamma$是有界变差函数，且
+\[
+V(\gamma) = \int_{a}^{b}{|\gamma'(t)|dt}.
+\]
+\end{proposition}
+
+\begin{proof}
+设$\gamma$是光滑的（对于分段光滑情形的证明容易由此推出），我们记得，当我们说$\gamma$是光滑时，就意味着$\gamma'$是连续的。设$P=\{a=t_0<t_1<\cdots<t_m=b\}$,那么，由定义,
+\[
+\begin{aligned}
+v(\gamma;P) &= \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|} = \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(t)dt}|} \\
+&\le\sum_{k=1}^{m}{\int_{t_{k-1}}^{t_k}{|\gamma'(t)|dt}} = \int_{a}^{b}{|\gamma'(t)|dt}.
+\end{aligned}
+\]
+因此$V(\gamma) \le \int_{a}^{b}{|\gamma'(t)|dt}$, $\gamma$是有界变差函数。
+
+由于$\gamma'$连续，因而一致连续；所以，如果给定$\epsilon>0$, 我们可以选取$\delta_1 >0$,使得当$|s-t|<\delta_1$时，有$|\gamma'(s)-\gamma'(t)|<\epsilon$, 又可选取$\delta_2 > 0$,使得如果$P=\{a=t_0<t_1<\cdots<t_m = b\}$, $\left\|P\right\| = \max\{(t_k - t_{k-1}):1 \le k \le m\} \le \delta_2$时，有
+\[
+|\int_{a}^{b}{|\gamma'(t)|dt} + \sum_{k=1}^{m}{|\gamma'(\tau_k)|(t_k - t_{k-1})}| < \epsilon,
+\]
+其中$\tau_k$是$[t_{k-1}, t_k]$中的任意一点。因此，
+\[
+\begin{aligned}
+\int_{a}^{b}{|\gamma'(t)|dt} &\le \epsilon + \sum_{k=1}^{m}{|\gamma'(\tau_k)|(t_k-t_{k-1})}\\
+&=\epsilon + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(\tau_k)dt}|}\\
+&\le \epsilon + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{[\gamma'(\tau_k) - \gamma'(t)]dt}|} \\
+&\quad + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(t)dt}|}.
+\end{aligned}
+\]
+如果$\left\|P\right\| \le \delta = \min(\delta_1, \delta_2)$,那么对于$[t_{k-1}, t_k]$中的$\tau_k$，有$|\gamma'(t_k) - \gamma'(t_{k-1})|<\epsilon$, 且
+\[
+\begin{aligned}
+\int_{a}^{b}{|\gamma'(t)|dt} &\le \epsilon + \epsilon(b-a) + \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|}\\
+&=\epsilon[1 + (b-a)] + v(\gamma;P)\\
+&\le \epsilon[1 + (b-a)] + V(\gamma).
+\end{aligned}
+\]
+令$\epsilon \to 0+$, 给出
+\[
+\int_{a}^{b}{|\gamma'(t)|dt} \le V(\gamma),
+\]
+这就得到了要证明的等式。
+\end{proof}
+
+\begin{theorem}{}{thm002040104}
+设$\gamma:[a,b]\to \mathbb{C}$是有界变差函数，$f:[a,b]\to \mathbb{C}$是连续函数，则存在一个复常数$I$, 使得对于每个$\epsilon>0$，存在$\delta>0$，当$P = \{t_0<t_1<\cdots<t_m\}$是$[a,b]$的一个分割,且$\left\|P\right\|=\max\{(t_k - t_{k-1}):1\le k \le m\} < \delta$时,
+\[
+|I - \sum_{k=1}^{m}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}|<\epsilon
+\]
+其中$\tau_k$可以在$[t_{k-1}, t_k]$上任意选择。
+
+数$I$就称为$f$在$[a,b]$上关于$\gamma$的积分，记为
+\[
+I = \int_{a}^{b}{fd\gamma} = \int_{a}^{b}{f(t)d\gamma(t)}.
+\]
+\end{theorem}
+
+\begin{proof}
+由于$f$是连续的，因而是一致连续的；于是我们可以（归纳地）取到正数$\delta_1>\delta_2>\delta_3>\cdots$,使得当$|s-t|<\delta_m$时，有$|f(s)-f(t)|<\frac{1}{m}$.对每一个$m \ge 1$，设$\mathscr{P}_m$是$[a,b]$的满足$\|P\| < \delta_m$的所有分割$P$作成的集，那么$\mathscr{P}_1 \supset \mathscr{P}_2 \supset\cdots$, 再定义$F_m$是集
+\begin{gather}\label{equ002040105}
+\{\sum_{k=1}^{m}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}: P \in \mathscr{P}_m, t_{k-1} \le \tau_k \le t_k\}
+\end{gather}
+的闭包。
+
+我们先假定下述断言成立。
+\begin{gather}\label{equ002040106}
+\left\{
+\begin{aligned}
+&F_1 \supset F_2 \supset F_3 \supset \cdots,\\
+&\diam{F_m} \le \frac{2}{m}V(\gamma).
+\end{aligned}
+\right.
+\end{gather}
+这时由Cantor定理（第\ref{section00202}章\ref{thm:thm002020307}），恰好存在一个复数$I$，使得对每一个$m \ge 1$都有$I \in F_m$. 让我们来说明，这将完成定理的证明。如果$\epsilon>0$, 令$m > \frac{2}{\epsilon}V(\gamma)$, 则$\epsilon > \frac{2}{m}V(\gamma) \le \diam{F_m}$，由于$I \in F_m$，所以$F_m \subset B(I;\epsilon)$. 于是取$\delta=\delta_m$，定理便得证。
+
+现在来证明断言（\ref{equ002040106}）。
+\end{proof}
+
 \begin{problemset}
 \item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的,
 \end{problemset}
