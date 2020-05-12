@@ -2324,7 +2324,71 @@ I = \int_{a}^{b}{fd\gamma} = \int_{a}^{b}{f(t)d\gamma(t)}.
 \end{gather}
 这时由Cantor定理（第\ref{section00202}章\ref{thm:thm002020307}），恰好存在一个复数$I$，使得对每一个$m \ge 1$都有$I \in F_m$. 让我们来说明，这将完成定理的证明。如果$\epsilon>0$, 令$m > \frac{2}{\epsilon}V(\gamma)$, 则$\epsilon > \frac{2}{m}V(\gamma) \le \diam{F_m}$，由于$I \in F_m$，所以$F_m \subset B(I;\epsilon)$. 于是取$\delta=\delta_m$，定理便得证。
 
-现在来证明断言（\ref{equ002040106}）。
+现在来证明断言（\ref{equ002040106}）。显然由$\mathscr{P}_1 \supset \mathscr{P}_2 \supset \cdots$可推出$F_1 \supset F_2 \supset \cdots$. 为了证明$\diam{F_m} \le \frac{2}{m}V(\gamma)$,只要证明（\ref{equ002040105}）中的集的直径$\le\frac{2}{m}V(\gamma)$. 为此分作两步进行，每一步都是容易的，虽然第一步较为冗长。
+
+设$P = \{t_0<t_1<\cdots<t_m\}$是一个分割，我们用$S(P)$表示形如$\sum{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}$的和数, 其中$\tau_k$是$[t_{k-1}, t_k]$上的任意一点。固定$m \ge 1$且设$P \in \mathscr{P}_m$. 第一步证明，如果$P \subset Q$（$Q \in \mathscr{P}_m$）,则$|S(P)-S(Q)|<\frac{1}{m}V(\gamma)$. 设$Q$是由$P$添上一个分点得到的，我们仅就这一情形给出证明。设$1 \le p \le m$, $t_{k-1} < t^*<t_p$;又设$P \cup \{t^*\} = Q$.假如$t_{p-1} \le \sigma \le t^*$, $t^* \le \sigma' \le t_{p}$,
+\[
+S(Q) = \sum_{k \neq p}{f(\sigma_k)[\gamma(t_k) - \gamma(t_{k-1})]} + f(\sigma)[\gamma(t^*) - \gamma(t_{p-1})]\\
++f(\sigma')[\gamma(t_p) - \gamma(t^*)].
+\]
+因为当$|\tau - \sigma|<\delta_m$时,$|f(\tau) - f(\sigma)| < \frac{1}{m}$,所以便有
+\[
+\begin{aligned}
+|S(P)-S(Q)| &= |\sum_{k \neq p}{[f(\tau_k) - f(\sigma_k)][\gamma(t_k) - \gamma(t_{k-1})]}\\
+&\quad +f(\tau_p)[\gamma(t_p) - \gamma(t_{p-1})]\\
+&\quad -f(\sigma)[\gamma(t^*) - \gamma(t_{p-1})]\\
+&\quad -f(\sigma')[\gamma(t_p) - \gamma(t^*)]|\\
+&\le \frac{1}{m}\sum_{k \neq p}{|\gamma(t_k) - \gamma(t_{k-1})|} \\
+&\quad + |[f(\tau_p) - f(\sigma)][\gamma(t^*) - \gamma(t_{k-1})]\\
+&\quad + [f(\tau_p) - f(\sigma')][\gamma(t_p) - \gamma(t^*)]|\\
+&\le \frac{1}{m}\sum_{k \neq p}{|\gamma(t_k) - \gamma(t_{k-1})|} \\
+&\quad + \frac{1}{m}|\gamma(t^*) - \gamma(t_{k-1})|\\
+&\quad + \frac{1}{m}|\gamma(t_p) - \gamma(t^*)| \le \frac{1}{m}V(\gamma).
+\end{aligned}
+\]
+
+第二步，设$P$和$R$是$\mathscr{P}_m$中的任意两个分割，那么$Q = P \cup R$是既包含$P$也包含$R$的分割，利用第一步我们得到
+\[
+\begin{aligned}
+|S(P) - S(R)| &\le |S(P) - S(Q)| + |S(Q) - S(R)|\\
+&\le \frac{2}{m}V(\gamma).
+\end{aligned}
+\]
+由此便推出（\ref{equ002040105}）中的集的直径$\le\frac{2}{m}V(\gamma)$.
+\end{proof}
+
+通过$\epsilon-\delta$论证方法，从定义可推出下面的结果。
+
+\begin{proposition}{}{prop002040107}
+设$f$和$g$是$[a,b]$上的连续函数，$\gamma$和$\sigma$是$[a,b]$上的有界变差函数，则对于任意两个数$\alpha$，$\beta$, 有
+\begin{enumerate}
+\item[(a)]$\int_{a}^{b}{(\alpha{}f + \beta{}g)d\gamma} = \alpha\int_{a}^{b}{fd\gamma} + \beta\int_{a}^{b}{gd\gamma}$;
+\item[(b)]$\int_{a}^{b}{fd(\alpha\gamma+\beta\sigma)} = \alpha\int_{a}^{b}{fd\gamma} + \beta\int_{a}^{b}{gd\gamma}$.
+\end{enumerate}
+\end{proposition}
+
+下面的命题对于计算这种积分是很有用的，
+
+\begin{proposition}{}{prop002040108}
+设$\gamma:[a,b] \to \mathbb{C}$是有界变差函数，$f:[a,b] \to \mathbb{C}$是连续函数，如果$a = t_0 < t_1 < \cdots < t_m = b$，则
+\[
+\int_{a}^{b}{fd\gamma} = \sum_{k=1}^{m}{\int_{t_{k-1}}^{t_k}{fd\gamma}}.
+\]
+\end{proposition}
+
+证明留做习题。
+
+前面已经提到，我们将主要考虑分段光滑的$\gamma$. 下面的定理说明，在这种情形下我们能够通过微积分学中已经学过的积分法来计算$\int{fd\gamma}$.
+
+\begin{theorem}{}{thm002040109}
+如果$\gamma$是分段光滑的，$f:[a,b]\to \mathbb{C}$是连续函数，则
+\[
+\int_{a}^{b}{fd\gamma} = \int_{a}^{b}{f(t)\gamma'(t)dt}.
+\]
+\end{theorem}
+
+\begin{proof}
+我们仍然只考虑$\gamma$是光滑的情形。通过考虑$\gamma$的实部和虚部, 把证明归结为对于$\gamma([a,b]) \subset \mathbb{R}$的情形.设$\epsilon > 0$,且可取$\delta>0$,使得
 \end{proof}
 
 \begin{problemset}
