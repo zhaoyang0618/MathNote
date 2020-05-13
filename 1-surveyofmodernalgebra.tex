@@ -2111,14 +2111,87 @@ y^3+py=q.
 \[
 \operatorname{sh}{3\theta} = 4\operatorname{sh}^3{\theta} + 3\operatorname{sh}{\theta},
 \]
-
+因此\footnote{书中几个反函数使用的符号是$\operatorname{Ar}\operatorname{sh}$, $\operatorname{Ar}\operatorname{ch}$和$\operatorname{Arc}\operatorname{cos}$，应该想办法统一这些三角函数的表示方法，包括双曲函数的表示。},
 \[
-\sh^2{i} + \ch^2{i} = 1,
+z = \sh{(\frac{1}{3}\argsh{C})}.
 \]
 
+为了解第二个方程，当$D \ge 1$，我们利用类似的公式
+\[
+\ch{3\theta} = 4\ch^3{\theta} -3\ch{\theta},
+\]
+得到
+\[
+z = \ch{\frac{1}{3}\argch{C}}.
+\]
+当$C \le -1$, 改变$z$的符号后再应用同样的方法求解。为了解当$|C|<1$时的第二个方程（这就是15.8的不可约情形），利用相似的公式
+\[
+\cos{3\theta} = 4\cos^3{\theta}-3\cos{theta},
+\]
+得到
+\[
+z = \cos{\frac{1}{3}\arccos{C}}.
+\]
+在这种情形下，$z$取三个值，这是因为$\frac{1}{3}\arccos{C}$有三个值，它们之间相差$120^\circ$的倍数。
+
+\begin{problemset}
+\item 证明：每个正实数有实平方根。
+
+\item 证明：对任意正实数$a$和任意整数$n$，方程$x^n=a$有且仅有一个正实根$\sqrt[n]{a}$.
+
+\item 证明：对每个$C > -\frac{3}{8}$, $x^4-x=C$有两个实根。
+
+\item 利用正文中的（\ref{equ001040401}）式和$(\frac{\sqrt{5}}{2})^2 = 1 + \frac{1}{4}$，求$\sqrt{5}$得四位小数近似值。
+
+\item 利用（\ref{equ001040401}）式和$(\frac{5\sqrt{2}}{7})^2 = 1 + \frac{1}{49}$,求$\sqrt{2}$得六位小数近似值。
+
+\item 证明：偶次首一多项式达到最小值$K$，并且对每个值$C>K$，多项式两次取值$C$.
+
+\item (a)设$a$和$b$为正实数，$n \ge -1$为整数，证明，对一切充分大的正值$x$，有$ax^{n+1} > bx^n$.
+
+(b)已知多项式具有正德首项系数，求出一个实数$M$，使得对一切$x > M$，有$p(x)>0$.
+
+\item 证明推论\ref{cor:coro001040401}.
+
+\item 证明推论\ref{cor:coro001040402}.
+
+\item 求下列方程的实根（取小数三位）：
+\begin{enumerate}
+\item[(a)]$3x^3 - x = \frac{1}{9}$,
+\item[(b)]$x^3 - 3x^2 + 6x = 7$,
+\item[(c)]$x^3+3x^2+2=0$.
+\end{enumerate}
+\end{problemset}
 
 
+\section{戴德金分割}\label{section0010405}
+想象在$x$轴上，有理数撒布在它们各自本来的位置上，但是当分割$x$轴时（比如说，用剪刀剪开），我们就把我们就把全体有理数分成两类，一类在左边，记作$L$，一类在右边，记作$U$。每个有理数落入这两类中，而仅当在点$x = \frac{m}{n}$处分割$x$轴时，有理数$\frac{m}{n}$同时落在这两类中。特别注意，如果$x$在$L$中，那么对$U$的每个$y$，有$x \le y$；反过来，如果对$U$中一切$y$，有$x \le y$，那么$x$必落在$L$中。由此引出戴德金(Dedekind)分割的想法。 
 
+一般地，设$F$为任意有序域。我们用$F$中的“戴德金分割”表示适合下列条件的一对非空子集$L$和$U$:
+\begin{enumerate}
+\item[(i)]$L$是$U$的全体元素的所有下界的集合；
+\item[(ii)]$U$是$L$的全体元素的所有上界的集合。
+\end{enumerate}
+
+\begin{lemma}{}{lemma001040501}
+戴德金分割的$L$部分和$U$部分合在一起包含$F$的一切元素；它们至多有一个公共元素。
+\end{lemma}
+
+\begin{proof}
+设已知$x \in F$，如果对某$a \in L$，有$x \le a$，那么对一切$y \in U$，有$x \le a \le y$，因此$x \in L$，否则，由三分律，对一切$a \in L$,有$x > a$,所以$x \in U$。这就证明了第一个结论：$F$的每个元素不在$L$中就在$U$中。再有，设$a$和$b$都既在$L$中又在$U$中，则$a \ge b$（因为$a \in U$, $b \in L$），并且$a \le b$（因为$a \in L$, $b \in U$），因此$a=b$, 这就证明了第二个结论。
+\end{proof}
+
+如果$L$和$U$有一个公共元素$a$，则称该分割是通过$a$的。显然，如果$L_a$是所有适合$x \le a$的$x$的集合，并且$U_a$是所有适合$x\ge a$的$x$的集合，那么分割$(L_a, U_a)$通过$a$.
+
+\textbf{戴德金分割公理}\quad （在有序域$F$上）每个分割通过某元素$a$.
+
+\begin{theorem}{}{thm001040505}
+戴德金分割公理在有序域中成立当且仅当$F$是完备的有序域。
+\end{theorem}
+
+\begin{proof}
+设$(L, U)$是任意分割，如果最小上界的存在性是已知的，则$L$具有最小上界$a$。因为$a$是$L$的上界，所以$a$必在$U$中；
+\end{proof}
 
 
 
