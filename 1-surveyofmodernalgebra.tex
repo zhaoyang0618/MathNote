@@ -2371,11 +2371,111 @@ y = \left[\frac{\sqrt{a^2+b^2} - a}{2}\right]^{\frac{1}{2}}, \quad x = \frac{b}{
 \arg{z} &= \theta = \arctan{\frac{y}{x}}.
 \end{aligned}
 \end{gather}
+我们把$r$称为复数$z$的绝对值，把$\theta$称为$z$的辐角。$r$和$\theta$按下式确定$x$和$y$
+\begin{gather}\label{equ001050206}
+x = r\cos{\theta}, y = r\sin{\theta}, z = r(\cos{\theta} + i\sin{\theta}).
+\end{gather}
+这就是通常由极坐标到直角坐标的变换公式。我们还可以把（\ref{equ001050206}）式写成$z=re^{i\theta}$，这是因为，由通常的泰勒级数展开式得到
+\[
+e^{i\theta} = 1 + i\theta + \frac{(-1)\theta^2}{2!} + \frac{(-i)\theta^3}{3!} + \cdots = \cos{\theta} + i\sin{\theta}.
+\]
+
+绝对值和辐角的重要性主要反映在棣莫弗（De Moivre）公式，这个公式叙述如下：
+\begin{theorem}{}{thm001050203}
+复数乘积的绝对值等于因子的绝对值之积，乘积的辐角等于因子的辐角之和，换句话说，
+\begin{gather}\label{equ001050207}
+|zz'| = |z||z'|,\quad \arg{zz'} = \arg{z} + \arg{z'}.
+\end{gather}
+\end{theorem}
+
+\begin{proof}
+因为按（\ref{equ001050206}）式, 有$z = r(\cos{\theta} + i\sin{\theta})$, $z' = r'(\cos{\theta'} + i\sin{\theta'})$,代入定义（\ref{equ001050102}）中我们得到
+\[
+\begin{aligned}
+zz' = rr'&[(\cos{\theta}\cos{\theta'} - \sin{\theta}\sin{\theta'}) \\
+&+i(\cos{\theta}\sin{\theta'} + \sin{\theta}\cos{\theta'})];
+\end{aligned}
+\]
+由熟知的三角公式，这就是
+\[
+zz' = rr'[\cos{(\theta + \theta')} + i\sin{(\theta + \theta')}].
+\]
+这就给出了结论（\ref{equ001050207}）。
+\end{proof}
+
+复数绝对值的乘法性质与加法性质（不等式）其表达形式同实数一样，即
+\begin{gather}
+|z| > 0, \text{除非}z=0, |0|=0; \label{equ001050208}\\
+|z+z'| \le |z| + |z'|.\label{equ001050209}
+\end{gather}
+
+为了证明这些，注意公式（\ref{equ001050101}）意味着$z+z'$可以通过画以$z$, $O$和$z'$为三个顶点的平行四边形来求得，第四个顶点就是$z + z'$, 由于复数的绝对值等于相应线段的几何长度，现在可以推出公式（\ref{equ001050208}）和（\ref{equ001050208}）。
+
+复$n$次单位根可以用三角方法求得。从棣莫弗公式（\ref{equ001050207}）直接得出
+\[
+[r(\cos{\theta} + i\sin{\theta})]^{-1} = \frac{1}{r}[\cos{(-\theta)} + i\sin{(-\theta)}].
+\]
+进一步得到，$z^n=1$当且仅当$|z|^n = 1$, 并且$n\cdot \arg{z}$是$2\pi$的整数倍$2k\pi$.因为$|z| \ge 0$, 所以$|z| = 1$. 因为$\arg{z}$在$0 \le \theta < 2\pi$上是单值的，所以$z^n=1$确有$n$个解。在直角坐标这，它们是
+\[
+1, \cos{\frac{2\pi}{n}} + i\sin{\frac{2\pi}{n}},\cdots, \cos{\frac{2\pi(n-1)}{n}} + i\sin{\frac{2\pi(n-1)}{n}}.
+\]
+如果我们用$\omega$表示$\cos{\frac{2\pi}{n}} + i\sin{\frac{2\pi}{n}}$, 则可得到这些$n$次单位根的另一种表示：$1, \omega, \omega^2,\cdots, \omega^{n-1}$.用几何语言叙述就是
+\begin{theorem}{}{thm001050204}
+全体复$n$次单位根是单位圆$|z|=1$内接正$n$边形的$n$个顶点。
+\end{theorem}
+
+更一般地，考虑方程$z^n=c$，其中$c \neq 0$味任意复数。在极坐标中，方程的一个解是
+\[
+z_0 = |c|^{\frac{1}{n}}(\cos{\theta} + i\sin{\theta}), \text{其中}\theta = \frac{1}{n}\arg{z}.
+\]
+此外，$wz_0$是$z^n=c$的根当且仅当$c = (wz_0)^n = w^nz_0^n = w^nc$, 因此$w^n=1$. 于是$c$的$n$次根是$z_0, \omega{}z_0, \omega^2z_0,\cdots, \omega^{n-1}z_0$, 这里$\omega$是上面定义的复$n$次单位根。 特别，它们也可以用正多边形的$n$个顶点表示。
+
+对$c = a+bi$的$n$次根$z_0, \omega{}z_0, \omega^2z_0, \cdots, \omega^{n-1}z_0$, 我们可以借助于三角函数表和对数表，很容易地计算出它们的数值。从恒等式
+\[
+\log{|z_0|} = \log{|c|^{\frac{1}{n}}} = \frac{1}{n}\log{(a^2+b^2)^{\frac{1}{2}}} = \frac{1}{2n}\log(a^2+b^2)
+\]
+出发，我们可以计算$|z_0|$. 根据棣莫弗公式（\ref{equ001050207}）, 有$\arg{z_0} = \frac{1}{n}\arctan{\frac{b}{a}}$,和$
+\arg{\omega^{k}z_0} = \frac{1}{n}\arctan{\frac{b}{a}} + \frac{360k}{n}$. 这里的单位是度。最后由公式
+\[
+z = r(\cos{\theta} + i\sin{\theta}) = |z|\cos{(\arg{z})} + i|z|\sin{(\arg{z})}
+\]
+完成计算。
+
+每个复$n$次单位根$\omega$满足一个有理数域上不可约的有理系数多项式方程。这些方程称为“分圆”方程，在方程式理论中起着重要作用。
+
+由定义，每个$n$次单位根满足方程$z^n-1=0$， 此外, 除了$z=1$的其他所有根满足
+\begin{gather}\label{equ001050210}
+q_n(z) = \frac{z^n-1}{z-1} = z^{n-1} + z^{n-2} + \cdots + z + 1 = 0.
+\end{gather}
+
+在\ref{subsection0010310}中用爱森斯坦判别准则证明当$n=p$为素数时，$q_p(z)$是不可约的。
+
+如果$n$不是素数，那么情况就复杂了。例如，当$n=4$, $z^3+z^2+z+1=(z+1)(z^2+1)$是可约的。一般地，我们可以从（\ref{equ001050210}）中分解出$k$次单位根所满足的分圆多项式，这里$k$取遍$n$的所有真因子。$n$次单位根，如果对所有的$k<n$, 它不是$k$次单位根，则称它为$n$次本原单位根。（例如，四次本原单位根是$i$和$-i$.）$n$次本原单位根是$\omega^m$,其中$m$与$n$互素，它们都满足有理数域上同一个不可约方程。但是这一结论的证明和这个方程次数的计算，需要更多的数论知识。
+
+\begin{problemset}
+\item 用棣莫弗公式证明复数乘法的交换律和结合律，以及乘法逆元素的存在性。
+
+\item 描述对应关系$z \mapsto zi$的几何意义。
+
+\item 求三次单位根和五次单位根的实分量和虚分量，计算到小数点后四位（用三角函数表）。
+
+\item 求$2+2i$得立方根和四次根，计算到小数点后四位。
+
+\item 列出全部12次本原单位根，并在图纸上把它们画在一个大单位圆上。
+
+\item 用几何语言描述变换$z \mapsto cz+d$（$c, d \in \mathbb{C}$, $c \neq 0$）的效果，当$|c|=1$时是什么情况？（提示：使用“平移”，“旋转”和“放大”等词。）
+
+\item 找出$z^6-1$在有理数域$\mathbb{Q}$上的不可约因子。
+
+\item (a)证明：$\omega = \cos{\frac{2\pi}{n}} + i\sin{\frac{2\pi}{n}}$是$n$次本原单位根。
+
+(b) 证明：$\omega^m$是$n$次本原单位根当且仅当$m$与$n$互素。
+\end{problemset}
 
 
 
-
-
+\section{代数基本定理}\label{section0010503}
+我们在\ref{section0010501}中看到，实数系$\mathbb{R}$添加方程$z^2+1=0$的一个虚根$i$就得到复数系。
 
 
 
