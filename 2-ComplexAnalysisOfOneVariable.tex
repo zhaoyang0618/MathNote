@@ -2388,8 +2388,83 @@ S(Q) = \sum_{k \neq p}{f(\sigma_k)[\gamma(t_k) - \gamma(t_{k-1})]} + f(\sigma)[\
 \end{theorem}
 
 \begin{proof}
-我们仍然只考虑$\gamma$是光滑的情形。通过考虑$\gamma$的实部和虚部, 把证明归结为对于$\gamma([a,b]) \subset \mathbb{R}$的情形.设$\epsilon > 0$,且可取$\delta>0$,使得
+我们仍然只考虑$\gamma$是光滑的情形。通过考虑$\gamma$的实部和虚部, 把证明归结为对于$\gamma([a,b]) \subset \mathbb{R}$的情形.设$\epsilon > 0$,且可取$\delta>0$,使得当$P = \{a=t_0<t_1<\cdots<t_n=b\}$,满足$\|P\| < \delta$时
+\begin{gather}
+\left|\int_{a}^{b}{fd\gamma} - \sum_{k=1}^{n}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}\right| < \epsilon / 2,\label{equ002040110}\\
+\left|\int_{a}^{b}{f(t)\gamma'(t)dt} - \sum_{k=1}^{m}{f(\tau_k)\gamma'(\tau_k)(t_k - t_{k-1})}\right| < \epsilon / 2.\label{equ002040111}
+\end{gather}
+对于$[t_{k-1}, t_k]$上的任意$\tau_k$成立。如果我们应用导数的中值定理，得到在$[t_{k-1}, t_k]$内存在$\tau_k$，使得$\gamma'(\tau_k) = [\gamma(t_k) - \gamma(t_{k-1})](t_k - t_(k-1))^{-1}$（注意：应用中值定理时，$\gamma$必需是实的）。于是
+\[
+\sum_{k=1}^{n}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]} = \sum_{k=1}^{n}{f(\tau_k)\gamma'(\tau_k)(t_k - t_{k-1})}.
+\]
+联系到不等式（\ref{equ002040110}）和（\ref{equ002040111}）就得到
+\[
+\left|\int_{a}^{b}{fd\gamma} - \int_{a}^{b}{f(t)\gamma'(t)dt}\right| < \epsilon.
+\]
+由于$\epsilon$是任意的，所以定理得证。
 \end{proof}
+
+我们已经定义路径为一个连续函数$\gamma:[a, b] \to \mathbb{C}$.如果$\gamma$是一条路径，那么集合$\gamma(t):a \le t \le b$称为$\gamma$的迹(trace),用$\{\gamma\}$表示。应当注意，路径的迹总是紧集。当$\gamma$是有界变差函数时，$\gamma$是可求长路径。如果$P$是$[a,b]$的一个分割，那么$v(\gamma;P)$正好就是连接$\gamma$的迹上的分点的线段的长度的和。说$\gamma$是可求长的就是说$\gamma$有有穷长度，且它的长度是$V(\gamma)$. 特别地，如果$\gamma$是分段光滑的，那么$\gamma$是可求长的，它的长度等于$\int_{a}^{b}{|\gamma'(t)|dt}$.
+
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，且$\{\gamma\} \subset E \subset \mathbb{C}$，$f: E \to \mathbb{C}$是连续函数，那么$f \circ \gamma$是$[a,b]$上的连续函数。记住这点，有助于理解下面的定义。
+\begin{definition}{}{def002040112}
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，$f$是定义在$\gamma$的迹上的连续函数，那么$f$沿$\gamma$的（线）积分是
+\[
+\int_{a}^{b}{f[\gamma(t)]d\gamma(t)}.
+\]
+这个线积分也可以表示为$\int_{\gamma}{f} = \int_{\gamma}{f(z)dz}$.
+\end{definition}
+
+作为例子，我们将$\gamma:[a, b] \to \mathbb{C}$取为$\gamma(t) = e^{it}$, 对于$z \neq 0$, 定义$f(z) = \frac{1}{z}$。$\gamma$是光滑的，所以由定理\ref{thm:thm002040109}，
+\[
+\int_{\gamma}{\frac{1}{z}dz} = \int_{0}^{2\pi}{e^{-it}(ie^{it})dt} = 2\pi{}i.
+\]
+
+利用$\gamma$的同一定义，并设$m \ge 0$是任意整数，得到
+\[
+\begin{aligned}
+\int_{\gamma}{z^mdz} &= \int_{0}^{2\pi}{e^{imt}(ie^{it})dt} = \int_{0}^{2\pi}{\exp(i(m+1))dt}\\
+&=\int_{0}^{2\pi}{\cos(m+1)tdt} + i\int_{0}^{2\pi}{\sin(m+1)tdt} = 0.
+\end{aligned}
+\]
+
+现在设$a, b \in \mathbb{C}$, 令$\gamma(t) = tb + (1-t)a$, $0 \le t \le 1$,那么$\gamma'(t) = b-a$,利用微积分学的基本定理，我们便得到
+\[
+\int_{\gamma}{z^ndz} = (b-a)\int_{0}^{1}{[tb + (1-t)a]^ndt} = \frac{1}{n+1}(b^{n+1} - a^{n+1}),
+\]
+其中$n \ge 0$.在习题中将举出更多的例子。但现在我们将证明某个“不变性”的结果，这个结果除了可用于计算外，也构成了我们曲线定义的基础。
+
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，$\varphi:[c, d] \to [a, b]$是连续非减函数，它的像是整个$[a,b]$（即$\varphi(c)=a$, $\varphi(d)=b$），则$\gamma\circ\varphi: [c, d] \to \mathbb{c}$是一条路径，它与$\gamma$有相同的迹。而且$\gamma\circ\varphi$是可求长的，因为如果$c=a_0<s_1<\cdots<s_n=d$,那么$a = \varphi(s_0) \le \varphi(s_1) \le \cdots \le \varphi(s_n) = b$是$[a,b]$的一个分割，因此
+\[
+\sum_{k=1}^{n}{|\gamma(\varphi(s_k)) - \gamma(\varphi(s_{k-1}))|} \le V(\gamma,)
+\]
+所以$V(\gamma\circ\varphi) \le V(\gamma)<\infty$,如果$f$是$\{\gamma\} = \{\gamma\circ\varphi\}$上的连续函数，那么$\int_{\gamma\circ\varphi}{f}$也是有定义的。
+
+\begin{proposition}{}{prop002040113}
+如果$\gamma:[a,b] \to \mathbb{C}$是可求长路径，$\varphi:[c, d] \to [a,b]$是连续非减函数，且$\varphi(c)=a$, $\varphi(d)=b$, 则对于$\{\gamma\}$上的任意一个连续函数$f$,有
+\[
+\int_{\gamma}{f} = \int_{\gamma\circ\varphi}{f}.
+\]
+\end{proposition}
+
+\begin{proof}
+设$\epsilon > 0$，选取$\delta_1 > 0$,使得对于满足$(s_k - s_{k-1})< \delta_1$的$[c, d]$的分割$\{s_0<s_1<\cdots<s_n\}$及$s_{k-1} \le \sigma_k \le s_k$,有
+\begin{gather}\label{equ002040114}
+\left|\int_{\gamma\circ\varphi}{f} - \sum_{k=1}^{n}{f(\gamma\circ\varphi(\sigma_k))[\gamma\circ\varphi(s_k) - \gamma\circ\varphi(s_{k-1})]}\right| < \epsilon/2.
+\end{gather}
+类似地，选取$\delta_2>0$，使得对于满足$(t_k - t_{k-1})<\delta_2$的$[a,b]$的分割$\{t_0 < t_1 < \cdots < t_n\}$及$t_{k-1}\le \tau_k \le t_k$，有
+\begin{gather}\label{equ002040115}
+\left|\int_{\gamma}{f} - \sum_{k=1}^{n}{f(\gamma(\tau_k))[\gamma(t_k) - \gamma(t_{k-1})]}\right| < \epsilon/2.
+\end{gather}
+但是$\varphi$在$[c, d]$上是一致连续的，因此存在$\delta > 0$,$\delta<\delta_1$,使得当$|s-s'|<\delta$时,就有$|\varphi(s)-\varphi(s')|<\delta_2$,所以，如果$\{s_0 < s_1 < \cdots<s_n\}$是$[c,d]$的一个分割，满足$(s_k - s_{k-1})<\delta<\delta_1$,令$t_k = \varphi(s_k)$，那么$\{t_0<t_1<\cdots<t_n\}$是$[a,b]$的一个分割，满足$(t_k - t_{k-1})<\delta_2$.如果$s_{k-1} \le \sigma_k \le s_k$, 令$\tau_k = \varphi(\sigma_k)$,那么（\ref{equ002040114}）和（\ref{equ002040115}）都成立，而且这两个差式的第二项是相同的，由此推出
+\[
+\left|\int_{\gamma}{f} - \int_{\gamma\circ\varphi}{f}\right| < \epsilon.
+\]
+因为$\epsilon>0$是任意的，所以等式得证。
+\end{proof}
+
+我们希望在可求长路径的集合上定义一个等价关系，使得等价类中的每一条路径有相同的迹，并且在这个迹上的连续函数的线积分，对于这个类中的每一条路径来说都是相同的。
+
 
 \begin{problemset}
 \item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的,

@@ -2475,9 +2475,92 @@ q_n(z) = \frac{z^n-1}{z-1} = z^{n-1} + z^{n-2} + \cdots + z + 1 = 0.
 
 
 \section{代数基本定理}\label{section0010503}
-我们在\ref{section0010501}中看到，实数系$\mathbb{R}$添加方程$z^2+1=0$的一个虚根$i$就得到复数系。
+我们在\ref{section0010501}中看到，实数系$\mathbb{R}$添加方程$z^2+1=0$的一个虚根$i$就得到复数系。但是为什么就到此为止了呢？为什么不打算添加其他多项式方程的“虚”根以便得到更大的域呢？所谓代数基本定理就回答了这个问题：一旦添加上$i$，那么每个多项式方程就必有（复）根，所以为解方程我们就不需要再选另外的虚根。
 
+\begin{theorem}{欧拉-高斯}{thm001050305}
+每个正次数的复系数多项式必有复根。
+\end{theorem}
 
+已经知道这个著名定理的很多证明方法\footnote{例如参见，L. E. Dickson, New First Course in the Theory of Equations (New York: Wiley, 1939). 附录，或L. Weisner, Introduction to the theory of Equations (New York:Macmillan, 1938), p.145}。所有的证明都包含着像第\ref{section00104}章引进的那些非代数概念; 这里我们选择了一个证明，它的非代数部分在直观上好像特别容易说明。我们不从第\ref{section00104}章有关的公理来详细证明非代数部分。
+
+\begin{proof}
+因为多项式
+\[
+p(z) = a_mz^m =a_{m-1}z^{m-1}+\cdots+a_0, a_m \neq 0
+\]
+与多项式
+\[
+\begin{aligned}
+q(z) &= z^m + \frac{a_{m-1}}{a_m}z^{m-1} + \cdots + \frac{a_0}{a_m} \\
+&= z^m + c_{m-1}z^{m-1} + \cdots + c_0
+\end{aligned}
+\]
+有相同的根，所以只须讨论首项系数为1的情况。
+
+这种情况下，我们画两个复平面，一个标记为“$z-$平面”，另一个标记为“$w-$平面”. 已知函数$q(z)$把$z-$平面的每个点$z_0=(x_0, y_0)$映射到$w-$平面的点$w_0 = q(z_0)$上。此外，如果$z$描绘$z-$平面上的一条连续曲线，那么$q(z)$（是可微的）将描绘$w-$平面上的一条连续曲线。我们的目的是证明，$w-$平面的原点$O$是$z-$平面上某个点$z$的“像”$q(z)$，或者与之同样的是证明$z-$平面上某个圆的像通过$w-$平面的原点$O$.
+
+对每个固定的$r > 0$，函数$w = q(re^{\theta})$确定了$w-$平面上的一条闭曲线$\gamma_r'$,即$z-$平面上以原点$O$为中心，$r$为半径的圆$\gamma_r: |z| = r$（$z = re^{i\theta}$）的像。对每个固定的$r$, 考虑线积分\footnote{在证明线积分的存在时，必须用到$\mathbb{R}$的完备性。恒等式\[d(\arg{w}) = \frac{udv - vdu}{u^2+v^2}\]成立是因为$\arg{w} = \arctan{\frac{v}{u}}$.}
+\[
+\phi(r, \theta) = \int_{0}^{\theta}{d(\arg{w})} = \int_{0}^{\theta}{\frac{udv - vdu}{u^2+v^2}},
+\]
+这是对任何不通过原点$w=0$的曲线$\gamma_r'$来定义的。（如果$\gamma_r'$通过$w=0$，那么定理\ref{thm:thm001050305}的结论就立即可得。）几何上显然有$\phi(r, 2\pi) = 2\pi{}n(r)$,这里分支数$n(r)$是曲线$\gamma_r'$绕原点反时针旋转的次数。例如，在图中描绘的曲线，其$n(r)=2$.
+
+现在考虑$n(r)$随$r$的变化情况。因为$q(re^{i\theta})$是连续函数，所以除了$\gamma_r'$通过原点外，$n(r)$也是随$r$连续变化的。再有，$n(0)=0$（除非$c_0=0$，这时$0$是方程的根）, 现在假定$c_0 \neq 0$, 我们将证明，当$r$充分大时，$n(r)$就是$q(z)$的次数$m$。实际上，设
+\[
+\begin{aligned}
+q(z) &= z^m + c_{m-1}z^{m-1} + \cdots + c_z+c_0\\
+&=z^{m}\left(1 + \sum_{k=1}^{m}{c_{m-k}z^{-k}}\right)
+\end{aligned}
+\]
+根据棣莫弗公式（\ref{equ001050207}），有
+\[
+\arg{q(z)} = m\arg{z} + \arg{\left(1 + \sum_{k=1}^{m}{c_{m-k}z^{-k}}\right)}
+\]
+因此，当$z$沿着圆$\gamma_r$作反时针方向变化一周时，$\arg{q(z)}$得到的改变量是$\arg{z}$的改变量的$m$倍（即$m \cdot 2\pi$）加上$\arg{\left(1 + \sum\limits_{k=1}^{m}{c_{m-k}z^{-k}}\right)}$的改变量。可是当$|z| = r$充分大时，由公式（\ref{equ001050208}）和（\ref{equ001050209}）可知，
+\[
+1 + \sum_{k=1}^{m}{c_{m-k}z^{-k}} = u
+\]
+停留在圆$|u-1|<\frac{1}{2}$中，因此绕原点只转了零次（画个图加以解释）。
+
+我们得出结论：当$r$充分大时，$n(r)=m$，$\arg{q(z)}$的总改变量是$2\pi{}m$。但是当$r$变化时，$\gamma_r'$是连续变形的（因为$q(z)$是连续的）。然而，几何上显然有\footnote{这作为平面拓扑学中的一个定理已经证明了。例如参看S. Lefschetz. Introduction to Topology (Princeton University Predd, 1949), p. 127}. 一条绕原点$m$（$\neq 0$）次的曲线，如果不是它变形的某一步通过原点，这条曲线就不能连续地变形成一点。由此推出，对某个$r$, $\gamma_r'$必通过原点，这就出现$q(z)=0$!证毕。
+.\end{proof}
+
+作为推论，我们注意，如果$p(z_1) = 0$, 那么根据余数定理（\ref{subsection0010305}），我们可以写成$p(z) = (z-z_1)r(z)$.如果$p(z)$的次数为$m$, $m>1$，则商式$r(z)$具有正次数，因此它也有一个复根$z=z_2$, 如此进行下去，我们就找到$p(z)$的$m$个线性因子，如
+\begin{gather}\label{equ001050311}
+p(z) = c(z-z_1)(z-z_2)\cdots(z-z_m).
+\end{gather}
+由此得到，$\mathbb{C}$上的不可约多项式只能是线性的。这个推论和第\ref{section00103}章的唯一因子分解定理合在一起得出
+\begin{theorem}{}{thm001050306}
+任意复系数多项式可按一种且仅按一种方式写成（\ref{equ001050311}）的形式。
+\end{theorem}
+
+在（\ref{equ001050311}）中$p(z)$的根显然是$z_1, \cdots, z_m$，这是因为乘积为零当且仅当它其中一个因子为零。如果因子$(z-z_i)$重复出现，那么它重复出现的次数称为根$z_i$的重数。在微积分学中，这个可以定义为$p(z)$在$z_i$点为零的“阶数”：使得$p(z)$和它的前$v-1$阶导数在$z_i$点都为零的最大整数$v$。
+
+\begin{problemset}
+\item 不用\ref{subsection0010308}一般的唯一性定理，证明：分解式（\ref{equ001050311}）的唯一性。
+
+\item 证明：任何有理复函数，如果对所有的$z$都取有限值，则它是多项式。
+
+\item 所有复数偶$(w, z)$，当相加和相乘遵循法则（\ref{equ001050101}）和（\ref{equ001050102}）时，它构成含有单位元素的交换环吗？构成域吗？
+
+\item 证明：任意二次多项式可以通过$\mathbb{C}[z]$的适当的自同构得到形式$cz(z-1)$或$cz^2$.
+
+\item \begin{enumerate}
+\item[(a)]用马克劳林（Maclaurin）级数证明公式$e^{ix} = \cos{x} + i\sin{x}$.
+\item[(b)]证明每个复数可以写成$re^{i\theta}$.
+\item[(c)]推导恒等式
+\[
+\cos{z} = \frac{e^{iz} + e^{-iz}}{2},\quad\sin{z} = \frac{e^{iz} - e^{-iz}}{2i}.
+\]
+\end{enumerate}
+
+\item 利用部分分式证明：域$\mathbb{C}$上的任意有理函数可以写成一个多项式加上一些有理函数之和，这些有理函数的分子是常数，分母是线性函数的幂。
+
+\item 分解$z^2+z+1+i$.
+\end{problemset}
+
+\section{共轭数与实多项式}\label{section0010504}
+在复数域$\mathbb{C}$上，方程$z^2=-1$有两个根$i$和$-i=0+(-1)i$。对应$x+yi \mapsto x+y(-i)=x-yi$把第一个根映射到第二个根，反过来把第二个根映射到第一个根，而它们保持所有实数不变。而且这个对应把和映射到和，把积映射到积，这可以通过直接代入公式（\ref{equ001050101}）和（\ref{equ001050102}）或者应用定理\ref{thm:thm001050101}来验证。换句话说，这个对应是$\mathbb{C}$的一个自同构（$\mathbb{C}$到自身的同构）。
 
 
 
