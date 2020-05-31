@@ -2463,7 +2463,94 @@ S(Q) = \sum_{k \neq p}{f(\sigma_k)[\gamma(t_k) - \gamma(t_{k-1})]} + f(\sigma)[\
 因为$\epsilon>0$是任意的，所以等式得证。
 \end{proof}
 
-我们希望在可求长路径的集合上定义一个等价关系，使得等价类中的每一条路径有相同的迹，并且在这个迹上的连续函数的线积分，对于这个类中的每一条路径来说都是相同的。
+我们希望在可求长路径的集合上定义一个等价关系，使得等价类中的每一条路径有相同的迹，并且在这个迹上的连续函数的线积分，对于这个类中的每一条路径来说都是相同的。如果对于某一个像上面那样的\footnote{所谓“像上面那样的$\varphi$”是指不减的$\varphi$---校者注}$\varphi$，$\sigma = \gamma\circ\varphi$，我们似乎就应当定义$\sigma$和$\gamma$是等价的，但这并不是等价关系！
+
+\begin{definition}{}{def002040116}
+设$\sigma:[c, d]\to \mathbb{C}$和$\gamma:[a, b] \to\mathbb{C}$都是可求长路径
+。称路径$\sigma$和$\gamma$等价，如果存在连续、严格增函数$\varphi:[c, d]\to[a,b]$，且$\varphi(c)=a$, $\varphi(d)=b$,使得$\sigma = \gamma\circ\varphi$.我们称函数$\varphi$为一个参数变换。
+\end{definition}
+
+一条曲线是路径的一个等价类。一条曲线的迹是其等价类中任意一条路径的迹。如果$f$在曲线的迹上连续，那么$f$在曲线上的积分定义为$f$在等价类中任意一条路径上的积分。
+
+曲线是光滑的（分段光滑的），当且仅当，它的等价类中某一个路径是光滑的（分段光滑的）。
+
+今后，曲线和它的等价类中的路径我们将不加区别。假如“设$\gamma$是按照反时针方向通过一次的单位圆周”就表示一条曲线。读者应当相信，今后所叙述的关于曲线的结果，与具体路径的取法无关。
+
+设$\gamma:[a,b]\to\mathbb{C}$是一个可求长路径，且对于$a \le t \le b$, 令$|\gamma|(t)$为$V(\gamma;[a,t])$,即
+\[
+|\gamma|(t) = \sup\left\{\sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|}:\{t_0<t_1<\cdots<t_n\}\text{是}[a,t]\text{的分割}\right\}.
+\]
+显然，$|\gamma|(t)$是增函数，所以$|\gamma|:[a, b]\to\mathbb{C}$是有界变差函数。如果$f$在$\{\gamma\}$上连续，定义
+\[
+\int_{\gamma}{f|dz|} = \int_{a}^{b}{f(\gamma(t))d|\gamma|(t)}.
+\]
+如果$\gamma$是可求长曲线，那么用$-\gamma$表示由$(-\gamma)(t)=\gamma(-t)$定义的曲线，$-b \le t \le -a$.其另一个记号是$\gamma^{-1}$.此外，如果$c \in \mathbb{C}$,$\gamma+c$表示由$(\gamma+c)(t)=\gamma(t)+c$定义的曲线。下面的命题给出线积分的许多基本性质。
+\begin{proposition}{}{prop002040117}
+设$\gamma$是可求长曲线，$f$是$\{\gamma\}$上的连续函数，则
+\begin{enumerate}
+\item[(a)] $\int_{\gamma}{f} = -\int_{-\gamma}{f}$;
+\item[(b)] $|\int_{\gamma}{f}| \le \int_{\gamma}{|f||dz|} \le V(\gamma)\sup[|f(z)|:z \in \{\gamma\}]$;
+\item[(c)] 如果$c \in \mathbb{C}$,那么$\int_{\gamma}{f(z)dz} = \int_{\gamma+c}{f(z)dz}$.
+\end{enumerate}
+\end{proposition}
+
+证明留作习题。
+
+下面的结果类似于关于线积分的微积分学的基本定理。
+
+\begin{theorem}{}{thm002040118}
+设$G$是$\mathbb{C}$中的开集，$\gamma$是$G$内的可求长路径，其起点和终点分别是$\alpha$和$\beta$.如果$f:G \to\mathbb{C}$是连续函数，且具有原函数$F:G\to\mathbb{C}$.则
+\[
+\int_{\gamma}{f} = F(\beta) - F(\alpha).
+\]
+(我们记得，当$F'=f$时，则称$F$是$f$的原函数。)
+\end{theorem}
+
+在这个定理的证明中，需要下面有用的事实。
+\begin{lemma}{}{lemma002040119}
+如果$G$是$\mathbb{C}$中的开集，$\gamma:[a,b]\to G$是可求长路径，$f:G\to\mathbb{C}$是连续的，则对于每个$\epsilon>0$,存在$G$内的折线$\Gamma$,使得$\Gamma(a)=\gamma(a)$, $\Gamma(b)=\gamma(b)$,并且$\left|\int_{\gamma}{f}-\int_{\Gamma}{f}\right|<\epsilon$.
+\end{lemma}
+
+\begin{proof}
+\textbf{情形I}\quad 设$G$是一个开圆。由于$\{\gamma\}$是紧集，$d = \dist(\{\gamma\}, \partial{G})>0$.由此推出，如果$G=B(c;r)$,那么$\{\gamma\} \subset B(c;\rho)$,其中$\rho = r - \frac{1}{2}d$.过渡到这个较小的圆的理由是，$f$在$\bar{B}(c;\rho) \subset G$上是一致连续的，因此，不失一般性，可以假定$f$在$G$内是一致连续的。选取$\delta>0$,使得当$|z-w|<\delta$时,$|f(z)-f(w)|<\epsilon$.如果$\gamma:[a, b]\to\mathbb{C}$，那么$\gamma$是一致连续的。于是存在$[a,b]$的分割$\{t_0<t_1<\cdots<t_n\}$使得当$t_{k-1}\le s,t\le t_k$时，
+\begin{gather}\label{equ002040119}
+|\gamma(s) - \gamma(t)| < \delta.
+\end{gather}
+并且对于$t_{k-1} \le \tau_k \le t_k$,有
+\begin{gather}\label{equ002040120}
+\left|\int_{\gamma}{f} - \sum_{k=1}^{n}{f(\gamma(\tau_k))[\gamma(t_k) - \gamma(t_{k-1})]}\right|<\epsilon.
+\end{gather}
+我们定义$\Gamma:[a,b]\to\mathbb{C}$为
+\begin{gather*}
+\Gamma(t) = \frac{1}{t_k - t_{k-1}}[(t_k-t)\gamma(t_{k-1}) + (t - t_{k-1})\gamma(t_k)],\\
+t_{k-1} \le t \le t_{k}.
+\end{gather*}
+所以在$[t_{k-1}, t_k]$上，$\Gamma(t)$是从$\gamma(t_{k-1})$到$\gamma(t_k)$的线段，即$\Gamma$是$G$内的折线路径。由(\ref{equ002040119})得到
+\begin{gather}\label{equ002040121}
+|\Gamma(t) - \gamma(\tau_k)|<\delta, t_{k-1} \le t \le t_k.
+\end{gather}
+
+由于$\int_{\Gamma}{f} = \int_{a}^{b}{f[\Gamma(t)]\Gamma'(t)dt}$, 所以
+\[
+\int_{\Gamma}{f} = \sum_{k=1}^{n}{\frac{\gamma(t_k) - \gamma(t_{k-1})}{t_k - t_{k-1}}\int_{t_{k-1}}^{t_k}{f(\Gamma(t))dt}}.
+\]
+利用（\ref{equ002040120}），我们得到
+\[
+\begin{aligned}
+\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| &\le \epsilon + \left|\sum_{k=1}^{n}{f(\gamma(\tau_k))}\right.\\
+&\qquad\left.\cdot[\gamma(t_k) - \gamma(t_{k-1})] - \int_{\Gamma}{f}\right|\\
+&\le\epsilon + \sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|(t_k - t_{k-1})^{-1}}\\
+&\qquad\cdot\int_{t_{k-1}}^{t_k}{|f(\Gamma(t)) - f(\gamma(\tau_k))|dt}.
+\end{aligned}
+\]
+应用（\ref{equ002040121}）于被积函数，得到
+\[
+\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| \le \epsilon + \epsilon\sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|} \le \epsilon(1 + V(\gamma)).
+\]
+情形I得证。
+
+\textbf{情形II}\quad $G$是任意的。由于$\{\gamma\}$是紧集，所以存在数$r>0$,$0<r<\dist(\{\gamma\}, \partial{G})$.选取$\delta>0$，使得当$|s-t|<\delta$时, $|\gamma(s) - \gamma(t)|<r$.如果$P=\{t_0<t_1<\cdots<t_n\}$是$[a,b]$的一个分割，且$\|P\| < \delta$，那么对于$t_{k-1} \le t \le t_k$,有$|\gamma(t) - \gamma(t_{k-1})|<r$.即，如果$\gamma_k:[t_{k-1}, t_k]\to\mathbb{C}$定义为$\gamma_k(t)=\gamma(t)$,那么$\{\gamma_k\} \subset B(\gamma(t_{k-1});r)$, $1 \le k \le n$.由情形I，存在一条折线路径$\Gamma_k:[t_{k-1}, t_k]\to B(\gamma(t_{k-1});r)$使得$\Gamma(t_{k-1}) = \gamma(t_{k-1})$, $\Gamma(t_k) = \gamma(t_k)$，且$\left|\int_{\gamma_k}{f} - \int_{\Gamma_k}{f}\right|<\epsilon/n$.在$[t_{k-1}, t_k]$上让$\Gamma(t) = \Gamma_k(t)$,那么$\Gamma$具有所要求的性质。
+\end{proof}
 
 
 \begin{problemset}
