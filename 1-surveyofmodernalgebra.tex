@@ -2658,7 +2658,61 @@ z^2+Bz+C=0,\quad(B = \frac{b}{a}, C = \frac{c}{a}).
 \begin{gather}\label{equ001050515}
 w^2 = \frac{B^2}{4} - C.
 \end{gather}
+对$w$, $B$, $C$代回$z$, $a$, $b$, $c$，这就得出
+\begin{gather}\label{equ001050516}
+z = w - \frac{B}{2} = \frac{-b + \sqrt{b^2 - 4ac}}{2a}
+\end{gather}
+根据\ref{section0010502},所以有两个解。
 
+三次方程可以类似地求解。首先像\ref{section0010404}那样，把三次方程化为形式
+\begin{gather}\label{equ001050517}
+z^3 + pz + q = 0,
+\end{gather}
+然后做维特(Vieta)变换$z = w - \frac{p}{3w}$,结果得到（有些项已消去）
+\begin{gather}\label{equ001050518}
+w^3 - \frac{p^3}{27w^3} + q = 0.
+\end{gather}
+用$w^3$乘以各项，我们得到关于$w^3$的二次方程。这个方程可以根据公式（\ref{equ001050516}）求解，得出
+\begin{gather}\label{equ001050519}
+w^3 = -\frac{q}{2} + \sqrt{\frac{q^2}{4} + \frac{p^3}{27}}\quad (\text{两个值}).
+\end{gather}
+这给出$w$的6个三次根形式的解。把这些解代入公式$z = w - \frac{p}{3w}$，我们就得到$z$的三对解，成对的两个解是相等的。
+
+阐述一下前面定理6中的公式是有趣的。例如，二次多项式的情形，记
+\[
+z^2 + Bz + C = (z-z_1)(z-z_2),
+\]
+我们有
+\begin{gather}\label{equ001050520}
+z_1+z_2 = -B, z_1z_2 = C,
+\end{gather}
+因而
+\begin{gather}\label{equ00105052002}
+(z_1 - z_2)^2 = B^2-4C.
+\end{gather}
+$B^2 - 4C=D$这个量是（\ref{equ001050514}）的判别式。用原来（\ref{equ001050513}）式中的系数表示：$D = \frac{b^2-4ac}{a^2}$.
+
+类似的，设$z_1$, $z_2$, $z_3$是简化的三次方程（\ref{equ001050517}）的根，则
+\begin{gather}\label{equ001050521}
+z_1+z_2+z_3 = 0, z_1z_2+z_2z_3+z_3z_1=p, z_1z_2z_3=-q,
+\end{gather}
+合并前两个关系式，我们得到公式
+\begin{gather}\label{equ001050522}
+\begin{gathered}
+p = z_1z_2 - z_3^2,(z_1-z_2)^2 = -4p-3z_3^2,\\
+z_1^2+z_2^2+z_3^2 = -2p.
+\end{gathered}
+\end{gather}
+我们现在用
+\begin{gather}
+D=\prod_{i<j}{(z_i-z_j)^2} = P^2,\notag\\
+\text{这里}P = (z_1-z_2)(z_2-z_3)(z_3-z_1)\label{equ001050523}
+\end{gather}
+来定义三次方程的判别式，把$P$平方，再利用（\ref{equ001050522}）式的第二个关系式，通过一些计算后我们就得到
+\begin{gather}\label{equ001050524}
+D = -4p^3 - 27q^2,
+\end{gather}
+它可以用来简化（\ref{equ001050519}），得$w = -\frac{q}{2} + \frac{\sqrt{-D}}{6}$.
 
 
 \section{四次方程的根式解法}\label{section0010506}
