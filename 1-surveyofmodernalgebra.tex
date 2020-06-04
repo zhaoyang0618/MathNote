@@ -2116,9 +2116,9 @@ y^3+py=q.
 \operatorname{sh}{3\theta} = 4\operatorname{sh}^3{\theta} + 3\operatorname{sh}{\theta},
 \]
 因此\footnote{书中几个反函数使用的符号是$\operatorname{Ar}\operatorname{sh}$, $\operatorname{Ar}\operatorname{ch}$和$\operatorname{Arc}\operatorname{cos}$, 应该想办法统一这些三角函数的表示方法, 包括双曲函数的表示. },
-\[
+\begin{gather}\label{equ001040409}
 z = \sh{(\frac{1}{3}\argsh{C})}.
-\]
+\end{gather}
 
 为了解第二个方程, 当$D \ge 1$, 我们利用类似的公式
 \[
@@ -2714,10 +2714,66 @@ D = -4p^3 - 27q^2,
 \end{gather}
 它可以用来简化（\ref{equ001050519}），得$w = -\frac{q}{2} + \frac{\sqrt{-D}}{6}$.
 
+\begin{theorem}{}{thm001050508}
+实系数二次方程或三次方程，如果它的判别式非负则它有实根；如果它的判别式是负的，则它有两个虚根。
+\end{theorem}
+
+\begin{proof}
+根据定理\ref{thm:thm001050407}的推论，或者所有的根都是实根，或者有两个共轭虚根$z_1 = x_1 + yi$和$z_2 = x_1 - yi$. 如果所有的根都是实根，则对所有的$i \neq j$, 有$(z_i - z_j)^2 \ge 0$,因此$D \ge 0$.对第二种情况，有$(z_1-z_2)^2 = -4y^2<0$,又因为$z_3=x_3$是实的，所以$(z_1-z_3)(z_2-z_3) = (x_1-x_3)^2+y^2 > 0$, 因此$D<0$.证毕。
+\end{proof}
+
+由（\ref{equ001050523}）式，条件$D=0$给出了检验方程有重根的简单判别法。
+
+可惜的是，在$D>0$的情况下，方程$z^3 +pz+q =0$的三个根全部是实根，但公式（\ref{equ001050519}）却是用复数把它们表示出来。我们在\ref{section0011506}中将指出这是毫无助益的。
+
+
+\begin{problemset}
+\item 证明：对任意复数$y,p$，存在$z$满足$y = z - \frac{p}{3z}$。存在多少个$z?$
+
+\item\label{exer001050502} 用根式表出方程的解:
+\begin{enumerate}
+\item[(a)]$z^2+iz=2$,
+\item[(b)]$z^3+3iz=1+i$,
+\item[(c)]$z^3+3iz^2 = 10i$.
+\end{enumerate}
+
+\item 把习题\ref{exer001050502}(a) - (c)每个方程中的一个根改写成小数形式。
+
+\item (a)证明（\ref{equ001050522}）式; \qquad (b)证明（\ref{equ001050524}）式。
+
+\item (a)证明：$\sh{3\gamma} = \sh(3\gamma + 2\pi{}i)$.
+
+(b)利用\ref{section0010404}中的公式(\ref{equ001040409})证明：方程$4z^3+3z = C$除有实根$\sh\left[\frac{1}{3}\operatorname{Arsh}{C}\right]$外，还有复根$-\frac{1}{3}\ch{\gamma} \pm \frac{i\sqrt{3}}{2}\sh{\gamma}$.
+
+\item 设$\omega = e^{\frac{2\pi{}i}{5}}$是五次本原单位根，且设$\zeta = \omega + \frac{1}{\omega}$.
+\begin{enumerate}
+\item[(a)]证明：$\zeta^2 + \zeta=1$.
+\item[(b)]推断：中心在$(0, 0)$,一个顶点在$(1,0)$的一个正五边形中，与这个顶点相邻的顶点的$x$坐标是$\frac{\sqrt{5}-1}{4}$.
+\end{enumerate}
+
+\item用公式$\cos{\theta} = \frac{e^{i\theta} + e^{-i\theta}}{2}$证明：$\cos{n\theta} = T_n(\cos{\theta})$,其中$T_n$为一个适当的$n$次多项式，并计算$T_1, T_2, T_3, T_4$.
+
+\end{problemset}
+
+
 
 \section{四次方程的根式解法}\label{section0010506}
+任何一种把代数方程的求解化为一系列有理运算和对某数开$n$次方根的运算的方法称为“根式解法”。
 
+\begin{theorem}{}{thm001050609}
+任意$n \le 4$次实系数或复系数多项式方程可用根式求解。
+\end{theorem}
 
+\begin{proof}
+因为$n=1$的情形在任意域上都是可解的，而$n=2,3$的情形在\ref{section0010505}中已作了处理，所以我们只须考虑
+\[
+ax^4+bx^3+cx^2+dx+e=0,\quad (a \neq 0).
+\]
+再有，用$a$去除每一项，并用$z = x + \frac{b}{4a}$代替$x$（以便配成“完全”四次方），我们得到方程
+\begin{gather}\label{equ001050625}
+z^4 + pz^2 + qz + r = 0,
+\end{gather}
+\end{proof}
 
 
 
