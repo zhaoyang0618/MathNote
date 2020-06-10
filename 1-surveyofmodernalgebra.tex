@@ -2853,7 +2853,191 @@ z^3+Az^2+bz+c = (z+a)(z^2+bz+c),
 \section{正方形的对称}\label{section0010601}
 “对称”的概念对每个受过教育的人来说都是熟悉的，但是由对称产生的对称代数却只有少数人了解。我们将通过具体的正方形对称来引出这个代数。
 
+我们设想一个正方形硬纸板放在有固定轴的平面上，使得正方形的中心落在坐标原点上，正方形的一个边是水平的。显然，这个正方形具有旋转对称：它通过下面的刚体运动可旋转成自身。
+\begin{enumerate}
+\item[$R$:]围绕中心O顺时针旋转$90^{\circ}$.
+\item[$R',R''$:]以同样的方式旋转$180{\circ}$和$270^{\circ}$.
+\end{enumerate}
+这个正方形还有反射对称：它可以通过下面的刚体反射变为自身。
+\begin{enumerate}
+\item[$H$:]关于过原点O的水平轴的反射.
+\item[$V$:]关于过原点O的垂直轴的反射.
+\item[$D$:]关于I, III象限中的对角线的反射.
+\item[$D'$:]关于II, IV象限中的对角线的反射.
+\end{enumerate}
+至此，我们列举的这些情形包括了七种对称。
 
+对称代数起源于下述事实：我们通过相继完成两个运动可以把两个运动相乘。例如，乘积$HR$可分两步得到：首先把正方形关于水平轴反射，然后再把正方形顺时针旋转$90^{\circ}$。通过正方形硬纸板的实验，我们可以验证，$HR$的最终效果与$D'$是一样的，这里是关于从左上角到右下角的对角线的反射。另一方面，等式$HR=D'$可以通过观察正方形的每个顶点的变化来验证，如果等式两边具有同一个效果，则等式成立。例如，在图1中，$HR$是先通过$H$把1送到4，然后通过$R$把4送到3，因此就把1送到3，这恰好与$D'$的效果一样。
+
+类似地，$RH$定义为先顺时针旋转$90^{\circ}$随后关于水平轴反射。（注意：图\ref{figure001060101}的平面包含反射轴，这个平面可以想象成不随正方形而旋转。）
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture} 
+\draw (-1, -1) rectangle (1,1);
+\draw[dashed] (-2,0) -- (2,0); 
+\draw[dashed] (-2,-2) -- (2,2); 
+\draw[dashed] (0,-2) -- (0,2) node [above]{$V$}; 
+\draw[dashed] (-2,2) -- (2,-2);
+\draw[->] (2, 1.14) arc (30:-30:2.28);
+\coordinate (A) at (0,0);
+\fill(A) circle (1.5pt) node[below left]{O};
+\coordinate (A) at (1,1);
+\fill(A) circle (1.5pt) node[above]{1};
+\coordinate (A) at (-1,1);
+\fill(A) circle (1.5pt) node[above]{2};
+\coordinate (A) at (-1,-1);
+\fill(A) circle (1.5pt) node[below]{3};
+\coordinate (A) at (1,-1);
+\fill(A) circle (1.5pt) node[below]{4};
+\coordinate (A) at (2,2);
+\fill(A) circle (1.5pt) node[right]{D};
+\coordinate (A) at (2,0);
+\fill(A) circle (1.5pt) node[below]{H};
+\coordinate (A) at (2,-2);
+\fill(A) circle (1.5pt) node[right]{$D'$};
+\node[right] (R) at (2.28, 0) {R};
+\end{tikzpicture}
+\caption{}\label{figure001060101}
+\end{figure}
+
+
+由计算表明$RH=D\neq HR$，由此我们顺便得到这里所说的“乘法”一般不满足交换律！但是它满足结合律，我们在\ref{section0010602}中将看到这一点。
+
+读者计算正方形对称的其他乘积（\ref{section0010604}的表1中给出的一个完整的乘法表）是有意义的。当你做完这些乘积之后将会发现，一般地，逐次地把任意两个对称乘起来便得到第三个对称，但有个例外，例如，当$R$和$R'$相乘时，就会看到它的积是一个使正方形每个点都保持原来位置的运动，这就是所谓的“恒等”运动$I$. 这通常不被非数学家认为是对称；尽管如此，为了能使所有的对称两两相乘，我们还是把$I$看作一个（退化的）对称。
+
+一般地，根据定义，几何图形的对称是图形上的点保持距离不变的一一变换。容易看出，正方形的任意对称一定把顶点1变换到四个可能的顶点之一，而且对每个这样的选择正好有两个对称，于是总共只有八个对称，就是我们已经列出来的那些。
+
+不仅正方形，而且每个正多边形和正多面体（例如立方体和正二十面体）都存在有趣的对称群，可以用上面概述的出等方法找到。
+
+类似的，很多装饰品有有趣的对称。例如我们考虑一个无限长的装饰图案
+
+\begin{center}
+\begin{tikzpicture} 
+\draw[->] (0,0) -- (1,0); 
+\draw (1,0) -- (2,0); 
+\draw[->] (2,0) -- (3,0); 
+\draw (3,0) -- (4,0); 
+\draw[->] (4,0) -- (5,0); 
+\draw (5,0) -- (6,0); 
+\draw[->] (6,0) -- (7,0); 
+\draw (7,0) -- (8,0); 
+\end{tikzpicture}
+\end{center}
+
+在这个图案中，箭头是沿着直线以一英寸间隔均匀分布的。这个图形的三个简单的对称是：$T$, 向右平移一英寸；$T'$，向左平移一英寸；$H$，图形关于水平轴反射。其他对称（事实上是一切对称）可以由这三个对称反复相乘而得到。
+
+\begin{problemset}
+\item 计算$HV, HD', D'H, R'D', D'R', R'R''$.
+
+\item 在“箭头”装饰图案中，描述对称$TH$和$HT$.
+
+\item 列出等边三角形的所有对称，并计算五种具有代表性的乘积。
+
+\item 列出普通矩形的所有对称，并计算它们的所有乘积。
+
+\item 正四面体有多少对称? 正八面体有多少对称？画图说明。
+
+\item 证明：正文中的装饰图案的任意对称可通过$H$, $T$和$T'$反复相乘而得到。
+
+\end{problemset}
+
+
+
+\section{变换群}\label{section0010602}
+对称代数可以推广到无论什么元素的任意集合$S$的一一变换。虽然常常把集合$S$看作“空间”（例如平面或球），把$S$的元素看作“点”，并且把双射看作$S$的相对于适当性质的“对称”，然而在任何情况下，$S$的双射还满足一些非平凡的代数定律。
+
+为了理解这些定律，我们必须清楚地记住\ref{section0010111}中给出的关于函数、单射、满射和双射的定义。为了重新解释它们，我们给出一些新的例子。同\ref{section0010111}一样，我们通常用缩写记号$xf$代替$f(x)$（读作“$x$通过$f$的变换”），用$xg$代替$g(x)$,等等。
+
+函数$f(x)=e^{2\pi{}ix}$把实数域$\mathbb{R}$映入复数域$\mathbb{C}$，它的值域（像）是单位圆。类似的，$g(z)=|z|$是函数$g:\mathbb{C} \to \mathbb{R}$，它的像是所有非负实数的集合。
+
+再有，考虑下列整数环$\mathbb{Z}$到自身的函数$\phi_0:\mathbb{Z} \to \mathbb{Z}$和$\psi_0:\mathbb{Z} \to \mathbb{Z}$:
+\[
+n\phi_0 = 2n, m\psi_0 = \left\{
+\begin{aligned}
+\frac{m}{2}, & \quad m \text{为偶数},\\
+0,&\quad m \text{为奇数}.
+\end{aligned}
+\right.
+\]
+根据乘法消去律，$\phi_0$是一一的；然而它的值域仅由偶数组成，所以$\phi_0$没有把$\mathbb{Z}$变换到$\mathbb{Z}$上。另一方面, $\psi_0$不是一一的，这因为所有奇数都映射到零，但是它把$\mathbb{Z}$映到$\mathbb{Z}$上，于是$\psi_0$是满射, 而不是单射。
+
+我们现在转到变换代数。具有相同的定义域$S$和相同的取值域$T$的两个变换$\phi:S \to T$和$\phi':S \to T$，如果它们作用到$S$的每一点上都有相同的效果，则称它们相等，即
+
+\begin{gather}\label{equ001060201}
+\phi = \phi'\text{的意思是},\text{对每个}p \in S, p\phi = p\phi'.
+\end{gather}
+
+再定义两个变换$\phi$和$\psi$的乘积或合成$\phi\psi$为它们相继作用的结果，先$\phi$后$\psi$,然而这里应假定$\phi$的取值域是$\psi$的定义域，换句话说,如果
+\[
+\phi: S \to T, \psi: T \to U,
+\]
+那么$\phi\psi$是由等式
+\begin{gather}\label{equ001060202}
+p(\phi\psi) = (p\phi)\psi
+\end{gather}
+给出的由$S$到$U$中的变换，式中规定$\phi\psi$作用到任意点$p \in S$, 特别是，$S$（到自身）的两个变换的乘积总是可以定义的。我们现在只考虑这种情况，只要假定所包含的乘积有定义，下面证明的恒等式几乎所有都可以用于一般情况。
+
+变换的乘法适合
+
+\textbf{结合律}
+\[
+(\phi\psi)\theta = \phi(\psi\theta),
+\]
+
+这里假定所包含的乘积都有定义，直观上这是显然的：$(\phi\psi)\theta$和$\phi(\psi\theta)$两者都是按照先$\phi$后$\psi$最后$\theta$的顺序作用的。正式地，对每个$p \in S$,我们有
+\[
+p[\phi(\psi\theta)] \mathop{=}_{\phi(\psi\theta)}(p\phi)(\psi\theta) \mathop{=}_{\psi\theta} [(p\phi)\psi]\theta \mathop{=}_{\phi\psi} [p(\phi\psi)]\theta \mathop{=}_{(\phi\psi)\theta} p[(\phi\psi)\theta],
+\]
+这里每步都依赖于乘法的定义（\ref{equ001060202}），也就是把定义（\ref{equ001060202}）用到与每步相对应的等号下面标出的乘积上。根据变换相等的定义（\ref{equ001060201}），这就证明了结合律$\phi(\psi\theta)=(\phi\psi)\theta$.
+
+集合$S$上的恒等变换$I = I_{S}$是使$S$上每个点保持固定的变换$I:S \to S$。代数上，这可叙述成等式
+\begin{gather}\label{equ001060203}
+pI = p, \text{对每个}p \in S.
+\end{gather}
+从上面的定义，直接推出
+\textbf{同一律}
+\[
+I\phi = \phi{}I = \phi, \text{对一切}\phi.
+\]
+为了验证这一点，我们注意，对所有的$p$,有$p(I\phi) = (pI)\phi = p\phi$,类似的，$p(\phi{}I) = (p\phi)I = p\phi$.
+
+现在回到前面定义在集合$Z$上的特殊变换$\phi_0$和$\psi_0$，并计算它们的乘积。显然
+\[
+m\psi_0\phi_0 = \left\{
+\begin{aligned}
+m, &\quad \text{当m为偶数},\\
+0, &\quad \text{当m为奇数}.
+\end{aligned}
+\right.
+\]
+因此$\psi_0\phi_0 \neq I$。另一方面，对一切$m \in \mathbb{Z}$, 有$m\phi_0\psi_0 = m$,因此$\phi_0\psi_0 = I$.于是我们称$\psi_0$是$\phi_0$的右逆元素（而不是左逆元素）。
+
+一般地，如果变换$\phi:S \to S$和$\psi:S \to S$具有$\phi\psi = I: S \to S$，那么称$\phi$是$\psi$的左逆怨怒是，而$\psi$是$\phi$的右逆元素。这些定义同以前定义的是“一一映入的（单射）”和“映上的（满射）”等概念有密切关系。
+
+\begin{theorem}{}{thm001060201}
+变换$\phi:S \to S$是一一的当且仅当它有右逆元素，$\phi$是映上的当且仅当它有左逆元素。
+\end{theorem}
+
+\begin{proof}
+如果$\phi$有右逆元素$\psi$，$\phi\psi = I$，并且$p\phi = p'\phi$,那么
+\[
+p = p(\phi\psi) = (p\phi)\psi = (p'\phi)\psi = p'(\phi\psi) = p'.
+\]
+于是由$p\phi = p'\phi$可推出$p=p'$，因此$\phi$是一一的。类似的，如果$\phi$有左逆元素$\psi'$，则$\psi'\phi = I$.因此$S$中的任何元素$q$都可写成
+\[
+q = qI = q(\psi'\phi) = (q\psi')\phi,
+\]
+这表明$q$是某一点$p = q\psi'$的$\phi-$像。因此$\phi$是映上的。
+
+反过来，已知任意$\phi:S \to S$,我们首先如下构造第二个变换$\psi:S \to S$.
+\end{proof}
+
+\section{其他例子}\label{section0010603}
+
+
+
+\section{抽象群}\label{section0010604}
 
 
 
