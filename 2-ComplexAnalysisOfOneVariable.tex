@@ -2552,9 +2552,53 @@ t_{k-1} \le t \le t_{k}.
 \textbf{情形II}\quad $G$是任意的。由于$\{\gamma\}$是紧集，所以存在数$r>0$,$0<r<\dist(\{\gamma\}, \partial{G})$.选取$\delta>0$，使得当$|s-t|<\delta$时, $|\gamma(s) - \gamma(t)|<r$.如果$P=\{t_0<t_1<\cdots<t_n\}$是$[a,b]$的一个分割，且$\|P\| < \delta$，那么对于$t_{k-1} \le t \le t_k$,有$|\gamma(t) - \gamma(t_{k-1})|<r$.即，如果$\gamma_k:[t_{k-1}, t_k]\to\mathbb{C}$定义为$\gamma_k(t)=\gamma(t)$,那么$\{\gamma_k\} \subset B(\gamma(t_{k-1});r)$, $1 \le k \le n$.由情形I，存在一条折线路径$\Gamma_k:[t_{k-1}, t_k]\to B(\gamma(t_{k-1});r)$使得$\Gamma(t_{k-1}) = \gamma(t_{k-1})$, $\Gamma(t_k) = \gamma(t_k)$，且$\left|\int_{\gamma_k}{f} - \int_{\Gamma_k}{f}\right|<\epsilon/n$.在$[t_{k-1}, t_k]$上让$\Gamma(t) = \Gamma_k(t)$,那么$\Gamma$具有所要求的性质。
 \end{proof}
 
+\textbf{定理\ref{thm:thm002040118}的证明} \quad \textbf{情形I}\quad $\gamma:[a, b] \to \mathbb{C}$是分段光滑的。这时由微积分学的基本定理，
+\[
+\begin{aligned}
+\int_{\gamma}{f} &= \int_{a}^{b}{f(\gamma(t))\gamma'(t)dt} = \int_{a}^{b}{F'(\gamma(t))\gamma'(t)dt}\\
+&=\int_{a}^{b}{(F \circ \gamma)'(t)dt} = F(\gamma(b)) - F(\gamma(a)) \\
+&= F(\beta) - F(\alpha).
+\end{aligned}
+\]
+
+\textbf{情形II}\quad 一般情形，若$\epsilon > 0$, 由引理\ref{lem:lemma002040119}, 存在从$\alpha$到$\beta$的折线路径$\Gamma$, 使得$\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| < \epsilon$, 但是$\Gamma$是分段光滑的，所以由情形I, $\int_{\Gamma}{f} = F(\beta) - F(\alpha)$. 因此$\left|\int_{\gamma}{f} - [F(\beta) - F(\alpha)]\right| < \epsilon$;由于$\epsilon$是任意的。我们所要求的等式得证。
+
+在定理\ref{thm:thm002040118}的证明中，利用引理\ref{lem:lemma002040119}，从分段光滑的情形过渡到可求长的情形，这种方法在关于线积分许多结果的证明中是有代表性的。今后我们还会看到引理\ref{lem:lemma002040119}的应用。
+
+称一条曲线$\gamma:[a, b] \to \mathbb{C}$是闭的，如果$\gamma(a) = \gamma(b)$.
+
+\begin{corollary}{}{coro002040122}
+设$G$, $\gamma$和$f$满足定理\ref{thm:thm002040118}中的假定，如果$\gamma$是闭曲线，则
+\[
+\int_{\gamma}{f} = 0.
+\]
+\end{corollary}
+
+微积分学的基本定理告诉我们，每一个连续函数必有原函数。对于复变函数来说，情况远非如此，例如，设$f(z) = x^2 + y^2$, 如果$F$是$f$的原函数。现在由Cauchy-Riemann方程，得到
+\[
+\frac{\partial{U}}{\partial{x}} = \frac{\partial{V}}{\partial{y}} = x^2+y^2, \frac{\partial{U}}{\partial{y}} = \frac{\partial{V}}{\partial{x}} = 0.
+\]
+但是$\frac{\partial{U}}{\partial{y}} = 0$蕴含着$U(x, y) = u(x)$, $u(x)$是某一个可微的函数，所以$x^2 + y^2 = \frac{\partial{U}}{\partial{x}} = u'(x)$，这是一个明显的矛盾。应用定理\ref{thm:thm002040118}也可以看出$|z|^2$没有原函数（见习题\ref{exer002040108}）。
+
 
 \begin{problemset}
-\item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的,
+\item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的, 证明：$\gamma$是有界变差函数，且$V(\gamma) = \gamma(b) - \gamma(a)$.
+
+\item 证明命题\ref{pro:prop002040102}.
+
+\item 证明命题\ref{pro:prop002040107}.
+
+\item 证明命题\ref{pro:prop002040108}（利用归纳法）.
+
+\item 设$\gamma(t) = \exp{((-1 + i)t^{-1})}$, $0 < t < 1$,且$\gamma(0) = 0$,证明：$\gamma$是可求长路径，并求出$V(\gamma)$，作出$\gamma$的迹的略图。
+
+\item 证明：如果$\gamma:[a, b] \to \mathbb{C}$是Lipschitz函数，则$\gamma$是有界变差函数。
+
+\item 设$\gamma:[a, b] \to \mathbb{C}$定义为$\gamma(t) = t + it\sin{\frac{1}{t}}$，当$t \neq 0$时. $\gamma(0) = 0$.证明$\gamma$是一条路径，但不是可求长的，作出这一条路径。
+
+\item\label{exer002040108}设$\gamma$和$\sigma$是两条折线$[1, i]$和$[1, 1+i, i]$. 试将$\gamma$和$\sigma$表示为路径，并计算$\int_{\gamma}{f}$和$\int_{\sigma}{f}$,其中$f(z) = |z|^2$.
+
+\item 定义
 \end{problemset}
 
 
