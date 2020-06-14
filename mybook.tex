@@ -1,0 +1,73 @@
+\documentclass[cn,11pt,chinese]{elegantbook}
+
+\usepackage[all]{xy}
+\usepackage{amsmath}
+\usepackage{asymptote}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+
+
+\newcount\mycount
+%\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+%\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+%\def\PoolColor{rgb:red,1;black,0.3}
+%\def\FcColor{rgb:blue,5;red,2.5;white,5}
+%\def\FcReluColor{rgb:blue,5;red,5;white,4}
+%\def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\cis{\,\text{cis}\,}
+\def\intset{\operatorname{int}}
+\def\diam{\operatorname{diam}}
+\def\dist{\operatorname{dist}}
+\def\ulim{\operatorname{u-lim}}
+\def\cinfty{\mathbb{C}_{\infty}}
+\def\sh{\operatorname{sh}}
+\def\argsh{\operatorname{argsh}}
+\def\ch{\operatorname{ch}}
+\def\argch{\operatorname{argch}}
+
+%\newtheorem{lemma}{法则}
+% 方程编号以section为准
+\numberwithin{equation}{section}
+
+
+% title info
+\title{高等数学基础}
+%\subtitle{读书笔记}
+
+% bio info
+\author{虞朝阳}
+\institute{西北工业大学}
+%\date{\today}
+
+% extra info
+\version{1.00}
+\extrainfo{Wir m\"ussen wissen, wir werden wissen. (我们必须知道，我们必将知道) - David.Hilbert}
+%\logo{logo.png}
+\cover{cover.jpg}
+
+\begin{document}
+
+%$\mathop {\min }\limits_x f(x)$
+%
+%\begin{displaymath}
+%\mathop{\sum \sum}_{i,j=1}^{N} a_i a_j 
+%{\sum \sum}_{i,j=1}^{N} a_i a_j
+%\end{displaymath}
+
+
+\maketitle
+
+\include{mybook_preface}
+
+\tableofcontents
+\mainmatter
+\hypersetup{pageanchor=true}
+
+\include{mybook_settheory}
+
+% \bibliographystyle{plain}
+\bibliography{mathreference}
+\appendix
+
+\end{document}
