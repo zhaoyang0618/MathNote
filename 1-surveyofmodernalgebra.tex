@@ -3235,7 +3235,148 @@ x=xe=x(aa^{-1})=(xa)a^{-1}=ea^{-1}=a^{-1}.
 \]
 类似地，$a^{-1}$是使得$ay=e$的唯一元素。
 
+因为根据定理\ref{thm:thm001060403}, 在任意群$G$中方程$ex=e$和$ay=e$有唯一解分别为$x=e$和$y = a^{-1}$，因此，我们得到
+\begin{corollary}{}{coro001060401}
+群有唯一的单位元素，并且对每个元素$a$有唯一的逆$a^{-1}$.
+\end{corollary}
 
+\begin{theorem}{}{thm001060404}
+前面所述的群的定义中，同一律和逆律可以用较弱的形式来代替。
+
+\textbf{左同一律}\quad 对所有的元素$a$，存在某元素$e$，满足$ea = a$.
+
+\textbf{左逆律}\quad 对给定的元素$a$，存在某元素$a^{-1}$，满足$a^{-1}a = e$.
+\end{theorem}
+
+\begin{proof}
+如果这些弱的定律成立，则左消去律也成立，即由$ca = cb$可推出$a=b$。因为我们只须用$c^{-1}$左乘等式$ca=cb$的两边，再用结合律得到$(c^{-1}c)a = (c^{-1}c)b$，这就是$ea=eb$，故得$a=b$.
+
+给出的这个左单位元素也是右单位元素，这是因为
+\[
+a^{-1}ae = ee = e = a^{-1}a
+\]
+再根据左消去律，因此对所有的$a$，有$ae=a$. 最后，左逆元素也是右逆元素，因为由于左单位元素也是右单位元素，则有
+\[
+a^{-1}(aa^{-1}) = (a^{-1}a)a^{-1} = ea^{-1}=a^{-1} = a^{-1}e,
+\]
+现在再用左消去律，得$aa^{-1}=e$。这就完成了我们的证明。
+\end{proof}
+
+还有很多其他的群公设系统，常用的一个是按照除法的可能性来建立的，如下所述：
+\begin{theorem}{}{thm001060405}
+如果$G$是一个非空集合，在满足结合律的乘法之下是封闭的，对于这个集合所有的方程$xa=b$和$ay=b$在$G$中有解$x$和$y$，那么$G$是一个群。
+\end{theorem}
+
+证明留做习题。
+
+除了对任意群$G$把有关乘法的代数定律系统化以外，当$G$的元素有限时，我们还可以用“乘法表”的形式给出$G$中任意两个元素乘积的特殊构成法则。这个乘法表是一些元素的正方形阵列，表的最左一列和最上一行列出群的所有元素。表中对应着最左列上的$a$和最上行的$b$的那个元素是乘积$ab$（按此次序）。
+
+为举例说明，我们在表\ref{table001060401}中绘制了正方形对称群的乘法表。这个表的计算可以按照\ref{section0010601}中证明的$HR=D'$和$RH=D$的模式来进行。其他方法将在\ref{section0010606}中描述。
+\begin{table}
+\caption{正方形对称群}\label{table001060401}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+&$I$ & $R$ & $R'$ & $R''$ & $H$ & $V$ & $D$ & $D'$\\ \hline
+$I$ & $I$ & $R$ & $R'$ & $R''$ & $H$ & $V$ & $D$ & $D'$ \\ \hline
+$R$ & $R$ & $R'$ & $R''$ & $I$ & $D$ & $D'$ & $V$ & $H$ \\ \hline
+$R'$ & $R'$ & $R''$ & $I$ & $R$ & $V$ & $H$ & $D'$ & $D$ \\ \hline
+$R''$ & $R''$ & $I$ & $R$ & $R'$ & $D'$ & $D$ & $H$ & $V$ \\ \hline
+$H$ & $H$ & $D'$ & $V$ & $D$ & $I$ & $R'$ & $R''$ & $R$ \\ \hline
+$V$ & $V$ & $D$ & $H$ & $D'$ & $R'$ & $I$ & $R$ & $R''$ \\ \hline
+$D$ & $D$ & $H$ & $D'$ & $V$ & $R$ & $R''$ & $I$ & $R'$ \\ \hline
+$D'$ & $D'$ & $V$ & $D$ & $H$ & $R''$ & $R$ & $R'$ & $I$ \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+关于群的大部分性质可以直接从表中看到。例如，单位元素的存在表明，某一行和相应的列一定分别是顶头一行和最左边一列的复制品。方程$ay=b$可解意味着$a$所在的那一行一定包含元素$b$；因为解是唯一的，所以$b$在这一行中只能出现一次。一个群是交换群当且仅当它的乘法表关于主对角线（即左上角到右下角的联线）是对称的。遗憾的是，结合律不容易从这个表中直观地看出。
+
+\begin{problemset}
+\item 设$a,b,c$是群的固定元素，证明方程$xaxba=xbc$有唯一解。
+
+\item 证明：在$2n$和元素的群中，除单位元素外还存在一个元素同它的逆相等。
+
+\item 全体正实数在加法下构成一个群吗？在乘法下构成群吗？全体偶数在加法下构成群吗？全体奇数呢？为什么？
+
+\item 在模11整数域$\mathbb{Z}_{11}$中，下列集合中哪些在乘法下构成群：
+\begin{enumerate}
+\item[(a)] $(1,3,4,5,9)$,
+\item[(b)] $(1,3,5,7,8)$,
+\item[(c)] $(1, 8)$,
+\item[(d)] $(1, 10)$.
+\end{enumerate}
+
+\item 证明：含有四个元素或少于四个元素的群一定是阿贝尔群。（提示：$ba$是$e, a, b, ab$中的一个，显然的情形除外。）
+
+\item 证明：如果在一个群中$xx=x$，则$x=e$.
+
+\item 下列乘法表描述一个群吗？
+\begin{table}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+&$a$ & $b$ & $c$ & $d$ \\ \hline
+$a$ & $b$ & $d$ & $a$ & $c$ \\ \hline
+$b$ & $d$ & $c$ & $b$ & $a$ \\ \hline
+$c$ & $a$ & $b$ & $c$ & $b$ \\ \hline
+$d$ & $c$ & $a$ & $d$ & $a$ \\ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+&$a$ & $b$ & $c$ & $d$ \\ \hline
+$a$ & $a$ & $b$ & $c$ & $d$ \\ \hline
+$b$ & $b$ & $a$ & $d$ & $c$ \\ \hline
+$c$ & $c$ & $d$ & $a$ & $a$ \\ \hline
+$d$ & $d$ & $c$ & $b$ & $b$ \\ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\item 证明：\ref{section0010102}中法则2(单位元)，4（消去律），和6（逆元唯一性）在任意交换群中都成立。
+
+\item 下列数集中哪一些是群？为什么？
+\begin{enumerate}
+\item[(a)] 所有有理数，在加法运算之下；在乘法运算之下；
+\item[(b)] 所有无理数，在乘法运算之下；
+\item[(c)] 所有绝对值为1的复数，在乘法运算之下；
+\item[(d)] 所有绝对值为1的复数，在运算$z \circ z' = |z| \cdot z'$之下；
+\item[(e)] 所有整数，在减法运算之下；
+\item[(f)] 任意整环的全体单位（\ref{section0010306}），在乘法运算之下；
+\end{enumerate}
+
+\item 证明：下列公设系统描述一个阿贝尔群：
+\begin{enumerate}
+\item[(i)] 对一切$a,b,c$有$(ab)c = a(bc)$;
+\item[(ii)]定理\ref{thm:thm001060404}的“左同一律”成立；
+\item[(iii)]定理\ref{thm:thm001060404}的“左逆律”成立；
+\end{enumerate}
+
+\item 证明：如果对群$G$中所有元素有$x^2=e$，那么$G$是交换群。
+
+\item 证明定理\ref{thm:thm001060405}。（提示：如果$ax=a$，那么$x$是右单位元素，并且任意右单位元素等于左单位元素。）
+
+\item 设$S$是一个非空集合，在乘法运算之下是封闭的，并且满足$ab=ba$, $a(bc)= (ab)c$, 由$ax=ay$可推出$x=y$.
+\begin{enumerate}
+\item[(a)]证明：若$S$有限，则$S$是群。
+\item[(b)]证明：若$S$有限或无限，则$S$可以嵌入一个群中。
+\end{enumerate}
+
+\end{problemset}
+
+
+
+
+\section{同构}\label{section0010605}
+考虑实数整环上的变换$x \mapsto \log{x}$.
+
+
+
+\section{循环群}\label{section0010606}
 
 
 
