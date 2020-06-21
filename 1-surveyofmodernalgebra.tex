@@ -3372,11 +3372,136 @@ $d$ & $d$ & $c$ & $b$ & $b$ \\ \hline
 
 
 \section{同构}\label{section0010605}
-考虑实数整环上的变换$x \mapsto \log{x}$.
+考虑实数整环上的变换$x \mapsto \log{x}$.我们知道，当$x$在区间$0 < x < +\infty$上增加时, $\log{x}$就在区间$-\infty < x < +\infty$上连续增加；也就是说，这个对应是正实数系和全体实数系之间的一一对应（逆变换是$y \mapsto e^{y}$）。而且对所有的$x, y$,有$log{xy} = \log{x} + \log{y}$, 于是我们可以用相应的和的计算代替乘积的计算。事实上，这是对数主要的实际用途。
+
+其次，设$\mathbb{Z}_3$是模3整数构成的域(\ref{section0010310})，并设$G$是等边三角形到自身的刚体旋转群。如果$I, R$和$R'$分别表示转过$0^{\circ}$，$120^{\circ}$和$240^{\circ}$的旋转，那么把整数同旋转联系起来的对应$0 \leftrightarrow I$, $1 \leftrightarrow R$, $2 \leftrightarrow R'$是一个把$\mathbb{Z}_3$中元素的和映射成$G$中相应旋转的乘积的双射。例如，考虑对应
+
+\begin{equation*}
+\begin{aligned}
+1 + 2 \equiv 0 (\mod{3})\quad &\leftrightarrow &&RR' = I\\
+2 + 2 \equiv 1 (\mod{3})\quad &\leftrightarrow &&R'R' = R
+\end{aligned}
+\end{equation*}
+
+这些都是\ref{section0010112}中所谈到的“同构”一般概念的例子，这个概念对群来说比对整环更简单也更重要。
+\begin{definition}{}{def001060501}
+两个群$G$和$G'$之间的同构指的是它们元素之间保持群的乘法的双射$a \leftrightarrow a'$,即它满足, 若$a \leftrightarrow a'$和$b \leftrightarrow b'$，则$ab \leftrightarrow a'b'$.
+\end{definition}
+
+例如，在第一个例子中我们描述了正实数乘法群与实数加法群之间的同构，在第二个例子中，我们指出一个模3整数加法群与正三角形旋转对称群之间的同构。
+
+类似的，映射$0 \mapsto 1$, $1 \mapsto 2$, $2 \mapsto 4$, $3 \mapsto 3$是模4整数加法群与模5非零整数乘法群之间的同构。通过比较模4整数加法群的加发表和模5非零整数乘法群的乘法表来验证这个结果是方便的。见表\ref{table001060502}和表\ref{table001060503}.
+\begin{table}
+\begin{minipage}{0.45\textwidth}
+\centering
+\caption{}\label{table001060502}
+\begin{tabular}{c|cccc}
+$+$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+$0$ & $0$ & $1$ & $2$ & $3$ \\
+$1$ & $1$ & $2$ & $3$ & $0$ \\
+$2$ & $2$ & $3$ & $0$ & $1$ \\
+$3$ & $3$ & $0$ & $1$ & $2$ 
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+\caption{}\label{table001060503}
+\begin{tabular}{c|cccc}
+$\times$ & $1$ & $2$ & $4$ & $3$ \\ \hline
+$1$ & $1$ & $2$ & $4$ & $3$ \\
+$2$ & $2$ & $4$ & $3$ & $1$ \\
+$4$ & $4$ & $3$ & $1$ & $2$ \\
+$3$ & $3$ & $1$ & $2$ & $4$ 
+\end{tabular}
+\end{minipage}
+\end{table}
+
+依次我们有，模4整数加法群同构于正方形旋转对称群。通过比较表\ref{table001060502}和表\ref{table001060401}（\ref{section0010604}）的旋转部分可以验证，双射$0 \leftrightarrow I$, $1 \leftrightarrow R$, $2 \leftrightarrow R'$, $3 \leftrightarrow R''$是一个同构。
+
+同构的概念很重要，因为它使我们认识到，完全不同的群从抽象群论的观点看可以看成同一个群。同构的群抽象地认为是同一个群（它们的差别仅在于它们元素符号的不同），这个事实可以在很多情况下看到。
+
+例如，根据定义，两个有限群$G$和$G'$同构当且仅当通过适当的替换，从$G$的群表可以得出$G'$的群表，从\ref{section0010604}的倒数第二句可以得出，$G'$是阿贝尔群当且仅当$G$是阿贝尔群，也就是说，一个有限阿贝尔群的任何同构像是阿贝尔群，还有，在其他方面，同构的性质很像相等。
+
+\begin{theorem}{}{thm001060506}
+关系“群$G$同构于群$G'$”满足群之间的自反的，对称的和传递的关系。
+\end{theorem}
+
+\begin{proof}
+自反性是显然的（每个群通过恒等变换同它自身同构）。对于对称性，设$a \leftrightarrow aT$是$G$和$G'$之间的任意同构对应，因为$T$是双射，所以$T$有逆元素$T^{-1}$，$T^{-1}$是$G'$到$G$上的同构。最后，如果$T$把$G$同构地映射到$G'$上，而$T'$把$G'$同构地映射到$G''$上，那么$TT'$就是$G$和$G''$之间的同构。
+\end{proof}
+
+值得注意的是，定理\ref{thm:thm001060506}及其证明对于整环之间的同构同样成立，而且对于任何类型的代数系统之间的同构也都成立。
+
+\begin{theorem}{}{thm001060507}
+在两个群同构之下，它们的单位元素相互对应，相应元素的逆元素相互对应。
+\end{theorem}
+
+\begin{proof}
+方程$ax=a$的唯一解$e$对应到$a'x=a'$的唯一解$e$,因此单位元素相互对应。所以，$G$中方程$ax=e$的唯一解$a^{-1}$对应到$G'$中方程$a'x=e'$的唯一解$a'^{-1}$. 这就完成了证明。
+\end{proof}
+
+我们最后证明著名的凯莱(Cayley)定理，这个定理可被解释为是证明变换乘法有关公设的完备性。
+
+\begin{theorem}{}{thm001060508}
+任意抽象群$G$与一个变换群同构。
+\end{theorem}
+
+\begin{proof}
+把由$G$的所有元素组成的“空间”上的每个变换$\phi_a: x \to xa = x\phi_a$同$G$的元素$a$联系起来。因为由$e\phi_a = e\phi_b$可推出$a=ea=eb=b$，所以$G$的不同元素对应着不同的变换，因为对所有的$x$，有
+\begin{equation}\label{equ001060506}
+x(\phi_a\phi_b) = (x\phi_a)\phi_b = (xa)\phi_b = (xa)b = x(ab) = x\phi_{ab},
+\end{equation}
+所以乘积$\phi_a\phi_b = \phi_{ab}$，因而所有$\phi_a$的集合$G'$包含任意两个变换，就一定包含它们的乘积。再有，因为对所有的$x$有$x\phi_e = xe = x$，所以$G'$包含单位元素。我们可以类似地证明，对所有的$a$, $(\phi_a)^{-1}$存在，并在$G'$中，实际上它就是$\phi_{a^{-1}}$, 因此$G'$是一个变换群，根据（\ref{equ001060506}），它与$G$同构。
+\end{proof}
+
+\begin{problemset}
+\item\label{exer001060501} 下列群中，任意两个群都同构吗?
+\begin{enumerate}
+\item[(a)] 等边三角形的对称群；
+\item[(b)] 正方形对称群；
+\item[(c)] 正六边形的旋转群；
+\item[(d)] 模6整数加法群。
+\end{enumerate}
+
+\item 与习题\ref{exer001060501}同样的问题。
+\begin{enumerate}
+\item[(a)] 正方形的旋转群；
+\item[(b)] 矩形的对称群；
+\item[(c)] 菱形（等边平行四边形）的对称群；
+\item[(d)] 模13整数1,5,8,12的乘法群；
+\item[(e)] 模12整数1，5，7，11的乘法群。
+\end{enumerate}
+
+\item (a)证明：“高斯整数”$m + n\sqrt{-1}$（$m, n \in \mathbb{Z}$）的加法群同形为$2^n3^m$($m, n \in \mathbb{Z}$)的有理因子的乘法群同构。
+
+(b)给出两个与矩形网络的变换群同构的群。
+
+\item 非零实数构成的乘法群与所有实数构成的加法群同构吗？
+
+\item 确定$\mathbb{Z}_4$的加法群与正方形的旋转群之间的所有同构。
+
+\item\label{exer001060506} (a)列出正方形对称群与正方形四个顶点1,2,3,4上的变换群之间的同构。
+
+(b)像定理\ref{thm:thm001060507}那样明显地指出，两个群中的逆元素在这个同构之下是如何对应的。
+
+\item 对正六边形的旋转群做习题\ref{exer001060506}.
+
+\item 列出与下列每个群同构的变换群，说明定理\ref{thm:thm001060508}
+\begin{enumerate}
+\item[(a)] 所有实数构成的加法群；
+\item[(b)] 所有非零实数构成的乘法群；
+\item[(c)] 模8整数加法群。
+\end{enumerate}
+
+\end{problemset}
 
 
 
 \section{循环群}\label{section0010606}
+在任意群中，元素$a$的整数幂$a^m$可以分别对正指数、零指数和负指数来定义。当$m>0$时，我们定义
+\begin{equation}\label{001060607}
+a^m = a\cdot a \cdots a (\text{m个因子}), a^0 = e, a^{-m} = (a^{-1})^m.
+\end{equation}
 
 
 
