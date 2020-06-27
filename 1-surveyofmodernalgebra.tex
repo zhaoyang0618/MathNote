@@ -456,15 +456,15 @@ a = \pm{}p_1^{e_1}p_2^{e_2} \cdots p_k^{e_k} \quad (1 < p_1 < p_2 < \cdots < p_k
 \section{同余式}\label{section0010109}
 两个整数$a$和$b$对模$m$同余定义如下：
 \begin{definition}{同余}{defModule}
-$a \equiv b (\mod{m})$成立当且仅当$m|(a-b)$. 
+$a \equiv b \pmod{m}$成立当且仅当$m|(a-b)$. 
 \end{definition}
-我们也可以说$a \equiv b(\mod{m})$的意思是差$a-b$在$m$的所有倍数的集合中. 另外还可以根据下述事实来定义：每个整数$a$除以$m$剩下唯一的余数. 
+我们也可以说$a \equiv b \pmod{m}$的意思是差$a-b$在$m$的所有倍数的集合中. 另外还可以根据下述事实来定义：每个整数$a$除以$m$剩下唯一的余数. 
 \begin{theorem}{}{theorem0023}
 两个整数$a$和$b$对模$m$同余当且仅当它们除以$|m|$时剩下相同的余数. 
 \end{theorem}
-注意到$a \equiv b(\mod{m})$当且仅当$a \equiv b(\mod{m})$, 只需要对$m>0$进行证明即可. 证明使用定义即可. 
+注意到$a \equiv b \pmod{m}$当且仅当$a \equiv b \pmod{m}$, 只需要对$m>0$进行证明即可. 证明使用定义即可. 
 
-固定模$m$的同于关系具有和相等类似的性质（很多时候在知道模$m$的时候, 经常会省略$(\mod{m})$, 就如下面所示）：
+固定模$m$的同于关系具有和相等类似的性质（很多时候在知道模$m$的时候, 经常会省略$\pmod{m}$, 就如下面所示）：
 \begin{itemize}
 \item 自反律 $a \equiv a$.
 \item 对称律 若$a \equiv b$, 则$b \equiv a$.
@@ -474,17 +474,17 @@ $a \equiv b (\mod{m})$成立当且仅当$m|(a-b)$.
 
 固定模$m$的同余关系还具有“代换性质”, 这也是相等关系的性质之一, 即：同余整数之和同余, 而且同余整数之积同余. 用同余式表示为：$a_1 \equiv b_1$, $a_2 \equiv b_2$, 那么$a_1+a_2 \equiv b_1+b_2$, $a_1a_2 \equiv b_1b_2$. 
 \begin{theorem}{}{theorem0024}
-如果$a \equiv b(\mod{m})$, 那么对一切整数$x$, 有
+如果$a \equiv b \pmod{m}$, 那么对一切整数$x$, 有
 \[
-a+x \equiv b+1, \quad ax \equiv bx, \quad  -a \equiv -b \quad (\mod{m})
+a+x \equiv b+1, \quad ax \equiv bx, \quad  -a \equiv -b \quad \pmod{m}
 \]
 \end{theorem}
 
 同样使用定义即可证明. 
 
-对于方程成立的消去律对于同余式不一定成立. 例如, 由$2 \cdot 7 \equiv 2 \cdot 1(\mod{12})$不能推出$7 \equiv 1(\mod{12})$. 之所以不能这样推断, 是因为被消去的$2$是模的一个因子. 对于同余, 最好也只能得到修改的消去律：
+对于方程成立的消去律对于同余式不一定成立. 例如, 由$2 \cdot 7 \equiv 2 \cdot 1 \pmod{12}$不能推出$7 \equiv 1 \pmod{12}$. 之所以不能这样推断, 是因为被消去的$2$是模的一个因子. 对于同余, 最好也只能得到修改的消去律：
 \begin{theorem}{}{theorem0025}
-当$c$与$m$互素时, 由$ca \equiv cb(\mod{m})$可推出$a \equiv b(\mod{m})$. 
+当$c$与$m$互素时, 由$ca \equiv cb \pmod{m}$可推出$a \equiv b \pmod{m}$. 
 \end{theorem}
 
 这实际上是定理\ref{thm:theorem0020}的一个应用. 
@@ -493,16 +493,16 @@ a+x \equiv b+1, \quad ax \equiv bx, \quad  -a \equiv -b \quad (\mod{m})
 \begin{theorem}{}{theorem0026}
 如果$c$与$m$互素, 那同余式
 \[
-cx \equiv b(\mod{m})
+cx \equiv b \pmod{m}
 \]
 有整数解$x$, 任意两个解$x_1$和$x_2$对模$m$同余. 
 \end{theorem}
 
-证明提要：$(c,m)=1$, 说明存在整数$s$,$t$使得$1 = sc+tm$, 从而$b = bsc + btm$, 于是$b \equiv (bs)c(\mod{m})$, 也就是$x=bs$是一个解. 第二个结论, 通过使用同余式的传递律和对称律, 由$cx_1 \equiv b$和$cx_2 \equiv b$可推出$cx_1 \equiv cx_2$, 使用定理\ref{thm:theorem0025}可得$x_1 \equiv x_2$. 
+证明提要：$(c,m)=1$, 说明存在整数$s$,$t$使得$1 = sc+tm$, 从而$b = bsc + btm$, 于是$b \equiv (bs)c \pmod{m}$, 也就是$x=bs$是一个解. 第二个结论, 通过使用同余式的传递律和对称律, 由$cx_1 \equiv b$和$cx_2 \equiv b$可推出$cx_1 \equiv cx_2$, 使用定理\ref{thm:theorem0025}可得$x_1 \equiv x_2$. 
 
 当模$m$为素数时, 出现重要的特殊情形, 此时, 不能被$m$整除的一切整数都与$m$互素, 由此得出
 \begin{corollary}{}{corollary0026}
-如果$p$为素数, 并且$c \not\equiv 0(\mod{p})$, 那么$cx \equiv b(\mod{p})$有模$p$的唯一解. 
+如果$p$为素数, 并且$c \not\equiv 0 \pmod{p}$, 那么$cx \equiv b \pmod{p}$有模$p$的唯一解. 
 \end{corollary}
 
 这里所谓模$p$唯一解, 就是指任意两个解模$p$同余（相等）. 
@@ -512,31 +512,31 @@ cx \equiv b(\mod{m})
 如果$m_1$与$m_2$互素, 那么同余式
 \begin{gather}
 \begin{aligned}
-x &\equiv b_1 (\mod{m_1}) \\
-x &\equiv b_2 (\mod{m_2})
+x &\equiv b_1 \pmod{m_1} \\
+x &\equiv b_2 \pmod{m_2}
 \end{aligned}
 \end{gather}
 有公共解$x$, 任意两个解$x_1$和$x_2$对模$m_1m_2$同余. 
 \end{theorem}
 
-证明摘要：对任意整数$y$, $x = b_1 + ym_1$是第一个同余式的解, 这样的$x$又要满足 第二个同余式, 当且仅当$b_1+ym_1 \equiv b_2(\mod{m_2})$, 或者说$ym_1 \equiv b_2-b_1 (\mod{m_2})$, 根据定理\ref{thm:theorem0026}, 这个方程有解$y$, 从而$x$存在. 第二部分, 只需要注意到, 对于任意两个解$x_1$和$x_2$, 有$x_1-x_2 \equiv 0(\mod{m_1})$, $x_1-x_2 \equiv 0 (\mod{m_2})$, 而$（m_1, m_2) = 1$, 于是$x_1-x_2$必然可以被$m_1m_2$整除. 
+证明摘要：对任意整数$y$, $x = b_1 + ym_1$是第一个同余式的解, 这样的$x$又要满足 第二个同余式, 当且仅当$b_1+ym_1 \equiv b_2 \pmod{m_2}$, 或者说$ym_1 \equiv b_2-b_1 \pmod{m_2}$, 根据定理\ref{thm:theorem0026}, 这个方程有解$y$, 从而$x$存在. 第二部分, 只需要注意到, 对于任意两个解$x_1$和$x_2$, 有$x_1-x_2 \equiv 0 \pmod{m_1}$, $x_1-x_2 \equiv 0 \pmod{m_2}$, 而$（m_1, m_2) = 1$, 于是$x_1-x_2$必然可以被$m_1m_2$整除. 
 
 上面同样的方法应用于形为
 \[
-a_ix \equiv b_i (\mod{m_i})
+a_ix \equiv b_i \pmod{m_i}
 \]
 的两个或多个同余式, 其中$(a_i, m_i)=1$, 并且各个不同的模两两互素. 
 
-书中没有这个过程, 这里简单对两个同余式的情形说明一下：对于$a_1x \equiv b_1(\mod{m_1})$来说, 从$(a_1, m_1)=1$可知存在$s_1,t_1$使得$s_1a_1+t_1m_1=1$, 从而可知$x = b_1s_1$是同余式的一个解, 对于任意整数$y$, $b_1s_1+ym_1$都是其解, 代入第二个同余式$a_2x \equiv b_2(\mod{m_2})$, 有$a_2(b_1s_1 + ym_1) \equiv b_2(\mod{m_2})$, 或者$a_2m_1y \equiv b_2 - b_1s_1a_2 (\mod{m_2})$, 而$(a_2, m_2)=1$, $(m_1, m_2)=1$, 必有$(a_2m_1, m_2)=1$,最后一个同余式有解$y$, 从而存在$x$. 
+书中没有这个过程, 这里简单对两个同余式的情形说明一下：对于$a_1x \equiv b_1 \pmod{m_1}$来说, 从$(a_1, m_1)=1$可知存在$s_1,t_1$使得$s_1a_1+t_1m_1=1$, 从而可知$x = b_1s_1$是同余式的一个解, 对于任意整数$y$, $b_1s_1+ym_1$都是其解, 代入第二个同余式$a_2x \equiv b_2 \pmod{m_2}$, 有$a_2(b_1s_1 + ym_1) \equiv b_2 \pmod{m_2}$, 或者$a_2m_1y \equiv b_2 - b_1s_1a_2 \pmod{m_2}$, 而$(a_2, m_2)=1$, $(m_1, m_2)=1$, 必有$(a_2m_1, m_2)=1$,最后一个同余式有解$y$, 从而存在$x$. 
 
 \begin{theorem}{费马(Fermat)小定理}{theorem0028}
 如果$a$为整数, $p$为素数, 那么
 \[
-a^p \equiv a(\mod{p})
+a^p \equiv a \pmod{p}
 \]
 \end{theorem}
 
-是用数学归纳法以及二项式公式, 二项式公式$(n+1)^p$中, 除了第一项和最后一项, 其余每一项都能被$p$整除（这个结论并不显然, 需要证明）, 于是$(n+1)^p \equiv n^p + 1(\mod{p})$. 
+是用数学归纳法以及二项式公式, 二项式公式$(n+1)^p$中, 除了第一项和最后一项, 其余每一项都能被$p$整除（这个结论并不显然, 需要证明）, 于是$(n+1)^p \equiv n^p + 1 \pmod{p}$. 
 
 关于$p | {p \choose k}$并不是特别明显, 这里$0 < k < p$, 不过在$p$是素数的情形下, 还是比较容易的, 证明如下：由于$p$是素数, 所以条件中的$k$, 任意$0 < l \le k$满足$(l, p)=1$, 于是$(k!, p)=1$, 因为$p \choose k$是整数, 于是应该有$k!|(p-1)\cdots(p-k+1)$, 也就是
 \[
@@ -568,7 +568,7 @@ a^p \equiv a(\mod{p})
 
 证明也就是验证交换环的各个公设, 这里省略. 
 
-与整环定义唯一不相一致的公设是乘法消去律. 而乘法消去律在交换环中等价于：$\mathbb{Z}_n$中无零因子, 及由$ab=0$推出$a=0$或者$b=0$, 在$\mathbb{Z}_n$中就是：由$ab \equiv 0(\mod{n})$推出$a \equiv 0(\mod{n})$或$b \equiv 0(\mod{n})$, 这等价于：由$n|ab$推出$n|a$或$n|b$, 这个结果对于$n$为素数的时候是成立的. $n$不是素数的时候, 有非平凡分解$n=ab$, 此时显然$n|a$和$n|b$都不成立, 因此我们有
+与整环定义唯一不相一致的公设是乘法消去律. 而乘法消去律在交换环中等价于：$\mathbb{Z}_n$中无零因子, 及由$ab=0$推出$a=0$或者$b=0$, 在$\mathbb{Z}_n$中就是：由$ab \equiv 0 \pmod{n}$推出$a \equiv 0 \pmod{n}$或$b \equiv 0 \pmod{n}$, 这等价于：由$n|ab$推出$n|a$或$n|b$, 这个结果对于$n$为素数的时候是成立的. $n$不是素数的时候, 有非平凡分解$n=ab$, 此时显然$n|a$和$n|b$都不成立, 因此我们有
 \begin{theorem}{}{theorem0030}
 模$n$整数环$\mathbb{Z}_n$是整环当且仅当$n$是素数. 
 \end{theorem}
@@ -611,7 +611,7 @@ a=a'\text{且}b=b'\text{推出}a \circ b = a' \circ b'
 
 为方便起见, 把所有有序元素对$(a, b)$（$a \in S$, $b \in T$）的集合记作$S \times T$, 这称为$S$和$T$的笛卡尔积. 我们又把集合同自身的积$S \times S$记作$S^2$, 那么二元运算同函数$\circ: S^2 \to S$一样. 
 
-两个已知整数间有各种关系, 例如$a=b$, $a<b$, $a \equiv b(\mod{7})$, $a|b$等. 为一般地讨论关系, 我们引进符号$R$表示任何关系, 形式上, 如果已知集合$S$中的任何两个元素$a$和$b$, 不是$a$与$b$和关系$R$（记作$aRb$）, 就是$a$与$b$没有关系$R$（记作$aR'b$）, 那么$R$就表示集合$S$上的二元关系. 
+两个已知整数间有各种关系, 例如$a=b$, $a<b$, $a \equiv b \pmod{7}$, $a|b$等. 为一般地讨论关系, 我们引进符号$R$表示任何关系, 形式上, 如果已知集合$S$中的任何两个元素$a$和$b$, 不是$a$与$b$和关系$R$（记作$aRb$）, 就是$a$与$b$没有关系$R$（记作$aR'b$）, 那么$R$就表示集合$S$上的二元关系. 
 
 数学中特别重要的是像同于和相等那样的集合$S$上满足下面定律的关系：
 \begin{itemize}
@@ -848,7 +848,7 @@ ab_1, ab_2, \cdots, ab_n,
 \end{gather}
 这给出了$D$中几个全不相同的元素, 因为不然, 如果对某$i \neq j$有$ab_i = ab_j$, 则根据消去律, 得到$b_i=b_j$, 这与假定$b_i$是不同元素相违背. 因为$D$中全部元素都在列表(\ref{equation0029}), $D$中单位元素1也必然出现在表中某个位置上, 比如$1 = ab_i$, 那么相应的元素$b_i$就是所要求的$a$的逆元素. 
 
-根据上述证明, 为在$\mathbb{Z}_p$中精确地找出逆元素, 可以对$\mathbb{Z}_p$中所有可能的数$b_i$进行试验来得到. 逆元素还可以直接计算出, 这是因为$\mathbb{Z}_p$中方程$ax=1$（其中$a \neq 0$）就是同余方程$ax \equiv 1(\mod{p})$, 后者可以根据欧几里得算法求出$x$. 
+根据上述证明, 为在$\mathbb{Z}_p$中精确地找出逆元素, 可以对$\mathbb{Z}_p$中所有可能的数$b_i$进行试验来得到. 逆元素还可以直接计算出, 这是因为$\mathbb{Z}_p$中方程$ax=1$（其中$a \neq 0$）就是同余方程$ax \equiv 1 \pmod{p}$, 后者可以根据欧几里得算法求出$x$. 
 
 值得注意的是, 联立线性方程组的整个理论应用到一般域. 例如考虑两个联立方程
 \begin{gather} \label{equation0030}
@@ -955,7 +955,7 @@ x&+&9y&+&6z&\equiv&2\\
 &&y&+&8z&\equiv&1\\
 &&&&z&\equiv&7
 \end{array}
-\right\}(\mod{11})
+\right\}\pmod{11}
 \]
 最后得到$x=4,y=0,z=7$. 
 
@@ -1788,8 +1788,8 @@ a(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0,
 是一整系数多项式, 如果
 \[
 \begin{aligned}
-a_n &\not\equiv 0(\mod{p}),a_{n-1}\equiv a_{n-2}\equiv \cdots \equiv a_0 \equiv 0(\mod{p}),\\
-a_0 &\not\equiv 0(\mod{p^2}),
+a_n &\not\equiv 0 \pmod{p},a_{n-1}\equiv a_{n-2}\equiv \cdots \equiv a_0 \equiv 0 \pmod{p},\\
+a_0 &\not\equiv 0 \pmod{p^2},
 \end{aligned}
 \]
 那么$a(x)$在有理数域上是不可约的. 
@@ -1800,11 +1800,11 @@ a_0 &\not\equiv 0(\mod{p^2}),
 \[
 a(x)=(b_mx^m+b_{m-1}x^{m-1}+\cdots + b_0)(c_kx^k+c_{k-1}x^{k-1} + \cdots + c_0),
 \]
-根据定理\ref{thm:thm001030915}, 我们可以假定这两个因子都是整系数的, 即$b_i$, $c_j$为整数. 因为$a_0=b_0c_0$, 所以假设中的第三个条件$a_0 \not\equiv 0 (\mod{p^2})$意味着$b_0$和$c_0$不能同时被$p$整除. 固定一种情况, 我们假设$b_0 \not\equiv 0(\mod{p})$, 而$c_0 \equiv 0(\mod{p})$. 但是$b_mc_k = a_n \not\equiv 0(\mod{p})$, 故$c_k \not\equiv 0(\mod{p})$, 选取最小的指标$r$（$r \le k$）使得$c_r \not\equiv 0(\mod{p})$, 而$c_{r-1}\equiv\cdots\equiv c_0 \equiv 0(\mod{p})$. 那么
+根据定理\ref{thm:thm001030915}, 我们可以假定这两个因子都是整系数的, 即$b_i$, $c_j$为整数. 因为$a_0=b_0c_0$, 所以假设中的第三个条件$a_0 \not\equiv 0 \pmod{p^2}$意味着$b_0$和$c_0$不能同时被$p$整除. 固定一种情况, 我们假设$b_0 \not\equiv 0 \pmod{p}$, 而$c_0 \equiv 0 \pmod{p}$. 但是$b_mc_k = a_n \not\equiv 0 \pmod{p}$, 故$c_k \not\equiv 0 \pmod{p}$, 选取最小的指标$r$（$r \le k$）使得$c_r \not\equiv 0 \pmod{p}$, 而$c_{r-1}\equiv\cdots\equiv c_0 \equiv 0 \pmod{p}$. 那么
 \[
-a_r = b_0c_r + b_1c_{r-1} + \cdots + b_rc_0 \equiv b_0c_r(\mod{p}).
+a_r = b_0c_r + b_1c_{r-1} + \cdots + b_rc_0 \equiv b_0c_r \pmod{p}.
 \]
-但是, 因为$p$是素数, 所以由$b_0 \not\equiv 0$和$c_r \not\equiv 0(\mod{p})$得出$a_r \not\equiv 0(\mod{p})$. 根据假设, 这样的系数$a_r$只可能是$a_n$, 故$r=n$. 这表明第二个因子的次数必须是$n$, 所以多项式$f(x)$确实是不可约的. 证毕. 
+但是, 因为$p$是素数, 所以由$b_0 \not\equiv 0$和$c_r \not\equiv 0 \pmod{p}$得出$a_r \not\equiv 0 \pmod{p}$. 根据假设, 这样的系数$a_r$只可能是$a_n$, 故$r=n$. 这表明第二个因子的次数必须是$n$, 所以多项式$f(x)$确实是不可约的. 证毕. 
 \end{proof}
 
 当$n=p$时, 这个判别准则可应用于多项式（\ref{equ001031013}）, 这时（\ref{equ001031013}）式给出分圆多项式
@@ -3380,8 +3380,8 @@ $d$ & $d$ & $c$ & $b$ & $b$ \\ \hline
 
 \begin{equation*}
 \begin{aligned}
-1 + 2 \equiv 0 (\mod{3})\quad &\leftrightarrow &&RR' = I\\
-2 + 2 \equiv 1 (\mod{3})\quad &\leftrightarrow &&R'R' = R
+1 + 2 \equiv 0 \pmod{3}\quad &\leftrightarrow &&RR' = I\\
+2 + 2 \equiv 1 \pmod{3}\quad &\leftrightarrow &&R'R' = R
 \end{aligned}
 \end{equation*}
 
@@ -3540,7 +3540,7 @@ e = a^{r}(a^s)^{-1} = a^ra^{-s} = a^{r-s},
 \end{equation}
 这里用了公式(\ref{equ001060608})。再看，若$r \neq s$，则或$r > s$，或$s > r$，因此，如果$a$的阶是无穷，那么不存在整数$r > s$使得$a^{r-s} = e$,所以不存在$a$的两个不同的幂是相等的。此外，由(\ref{equ001060608})有$a^sa^t = a^{s+t}$，因此对应$a^s \mapsto s$使群$G$与整数加法群同构，这就证明了定理的第一个结论。
 
-如果$a$的阶是有限的，那么使得$a^t=e$的整数$t$的集合包含零，由(\ref{equ001060608})可知这个集合还包含它的任意两个元素的和与差。因此，根据\ref{section0010107}定理\ref{thm:thm001010706}，$a^t=e$当且仅当$t$是$a$的阶的倍数，所以根据公式(\ref{equ001060609})，$a^r=a^s$当且仅当$n|(r-s)$; 也就是说，$a^r=a^s$当且仅当$r \equiv s(\mod{n})$. 最后，再由(\ref{equ001060608})，有$a^ra^s=a^{r+s}$，所以对应$a^r \mapsto r$是$G$到模$n$整数加法群的同构。
+如果$a$的阶是有限的，那么使得$a^t=e$的整数$t$的集合包含零，由(\ref{equ001060608})可知这个集合还包含它的任意两个元素的和与差。因此，根据\ref{section0010107}定理\ref{thm:thm001010706}，$a^t=e$当且仅当$t$是$a$的阶的倍数，所以根据公式(\ref{equ001060609})，$a^r=a^s$当且仅当$n|(r-s)$; 也就是说，$a^r=a^s$当且仅当$r \equiv s \pmod{n}$. 最后，再由(\ref{equ001060608})，有$a^ra^s=a^{r+s}$，所以对应$a^r \mapsto r$是$G$到模$n$整数加法群的同构。
 \end{proof}
 
 定理\ref{thm:thm001060609}的一个推论是，任意循环群$G$的元素个数（称为群$G$的阶）等于$G$的任意一个生成元的阶，任意两个同阶循环群同构。
@@ -3669,7 +3669,7 @@ $[I, H]$ & $[I, V]$ &
 \item 在四个数字1,2,3,4的置换群中（置换记作$\phi$）,找出下列子群：
 \begin{enumerate}
 \item[(a)] 所有把集合$\{1,2\}$变为$\{1,2\}$的置换$\phi$.
-\item[(b)] 所有适合“对集合$\{1,2,3,4\}$中任意两个数字$a,b$, 由$a \equiv b(\mod{2})$可推出$a\phi \equiv b\phi(\mod{2})$”的置换$\phi$.
+\item[(b)] 所有适合“对集合$\{1,2,3,4\}$中任意两个数字$a,b$, 由$a \equiv b \pmod{2}$可推出$a\phi \equiv b\phi \pmod{2}$”的置换$\phi$.
 \end{enumerate}
 
 \item 证明：当$G$是无限的，但$G$的所有元素有有限阶，定理\ref{001060711}仍然成立。说明$\mathbb{Z}_p[x]$的加法群就是这样一个群。
@@ -3763,11 +3763,11 @@ $G$的每个元素$a$生成一个循环子群，它的阶就是$a$的阶（定�
 
 拉格朗日定理也可以应用到数论中。
 \begin{corollary}{费马}{coro001060804}
-如果$a$是整数，$p$是素数，那么$a^p \equiv a(\mod{p})$.
+如果$a$是整数，$p$是素数，那么$a^p \equiv a \pmod{p}$.
 \end{corollary}
 
 \begin{proof}
-模$p$整数（零除外）乘法群有$p-1$个元素。那么根据推论\ref{cor:coro001060801}，这个群的任意元素$a$的阶是$p-1$的因子，所以对任何元素$a \neq 0(\mod{p})$有$a^{p-1}\equiv 1(\mod{p})$. 如果我们用$a$乘同余式两边，我们就得到所要求的同余式。对于$a \equiv 0(\mod{0})$的情况，结论显然正确。
+模$p$整数（零除外）乘法群有$p-1$个元素。那么根据推论\ref{cor:coro001060801}，这个群的任意元素$a$的阶是$p-1$的因子，所以对任何元素$a \neq 0 \pmod{p}$有$a^{p-1}\equiv 1 \pmod{p}$. 如果我们用$a$乘同余式两边，我们就得到所要求的同余式。对于$a \equiv 0 \pmod{p}$的情况，结论显然正确。
 \end{proof}
 
 \begin{problemset}
@@ -3784,10 +3784,10 @@ $G$的每个元素$a$生成一个循环子群，它的阶就是$a$的阶（定�
 
 \item 设$S$是群$G$的任意子群。又设$SaS$表示由所有乘积$sas'$（$s,s'$在$S$中）组成的集合。证明：对任意$a, b \in G$, 或者$SaS \cap SbS$是空集，或者$SaS = SbS$.
 
-\item 对任意子群$S$, 设$x \equiv y(\mod{S})$是指$xy^{-1} \in S$.
+\item 对任意子群$S$, 设$x \equiv y \pmod{S}$是指$xy^{-1} \in S$.
 \begin{enumerate}
-\item[(a)] 证明：这个关系满足自反律、对称律和传递律。并证明：$x \equiv y(\mod{S})$当且仅当$x$和$y$在$S$的同一个右陪集中。
-\item[(b)] 证明：由$x \equiv y(\mod{S})$可推出，对一切$a$有$xa \equiv ya(\mod{S})$.
+\item[(a)] 证明：这个关系满足自反律、对称律和传递律。并证明：$x \equiv y \pmod{S}$当且仅当$x$和$y$在$S$的同一个右陪集中。
+\item[(b)] 证明：由$x \equiv y \pmod{S}$可推出，对一切$a$有$xa \equiv ya \pmod{S}$.
 \end{enumerate}
 
 \item 设$G$是正六边形对称群，$S$是保持一个顶点固定的子群。求出$S$的右陪集和左陪集。
@@ -3803,7 +3803,7 @@ $G$的每个元素$a$生成一个循环子群，它的阶就是$a$的阶（定�
 \item[(a)] 证明：在任意交换环$R$中，所有单位（具有乘法逆元素的那些元素）构成一个群$G$。
 \item[(b)] 证明：如果$R = \mathbb{Z}_n$, 那么$G$是由所有与$n$互素的正整数$k < n$组成。
 \item[(c)] 在$R = \mathbb{Z}_n$的情况下，$G$的阶记作$\phi_n$, 并称为欧拉函数。证明：当$n=p$为素数时，$\phi(p)=p-1$。计算$\phi(12)$, $\phi(16)$, $\phi(30)$.
-\item[(d)] 用拉格朗日定理证明：如果$(k, n)=1$，那么$k^{\phi(n)} \equiv 1(\mod{n})$.
+\item[(d)] 用拉格朗日定理证明：如果$(k, n)=1$，那么$k^{\phi(n)} \equiv 1 \pmod{n}$.
 \end{enumerate}
 
 \item 证明：如果$S$和$T$分别是群$G$的$s$阶和$t$阶子群，并且$S \cap T$和$S \cup T$的阶分别为$u$和$v$，那么$st \le uv$.
