@@ -1,0 +1,98 @@
+\part{流形上的微积分}
+《流形上的微积分》的作者是M.Spivak. 参考：\cite{CalculusOnManifoldsSpivak1980}. 
+
+\chapter{欧几里得空间上的函数}\label{chapter00901}
+欧几里得（Euclid）$n$维空间（也简称欧氏空间）$\real^n$定义为一切实数$x^i$的$n$数组$(x^1,\cdots, x^n)$（一个“1数组”就是一个数，而$\real^1=\mathbb{R}$则是一切实数的集）的集合. $\real^n$的元通常称为$\real^n$的点，而$\real^1,\real^2,\real^3$通常分别称为直线、平面和空间。如$x$表示$\real^n$的一元素，则$x$是一个$n$数组，其中第$i$个记作$x^i$; 于是我们可以写成
+\[
+x = (x^1, \cdots, x^n).
+\]
+
+$\real^n$中的点也常常称为$\real^n$中的向量，因为，按照$x+y=(x^1+y^1,\cdots, x^n+y^n)$以及$ax=(ax^1,\cdots, ax^n)$作为运算，$\real^n$是一个向量空间（在实数域上，维数为$n$）。在这向量空间中，向量$x$的长度的概念，通常称为$x$的范数$|x|$, 并定义为$|x| = \sqrt{(x^1)^2 + \cdots + (x^n)^2}$。如$n=1$，则$|x|$就是$x$的通常的绝对值。范数和$\real^n$的向量空间结构间的下一关系极为重要。
+\begin{theorem}{}{thm009010101}
+如$x,y \in \real^n$且$a \in \real$,则
+\begin{enumerate}
+\item[(1)] $|x| \ge 0$,当且仅当$x=0$时，$|x|=0$.
+\item[(2)] $\left|\sum\limits_{i=1}^{n}{x^iy^i}\right| \le |x| \cdot |y|$,当且仅当$x$与$y$线性相关时等式成立。
+\item[(3)] $|x+y| \le |x| + |y|$.
+\item[(4)] $|ax| = |a| \cdot |x|$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item[(1)] 根据定义，显然有$|x| \ge 0$，而且$|x|=0$时，必有各个$x^i=0$，也就是$x=0$,反过来，如果$x=0$,显然有$|x|=0$。而$x \neq 0$时，至少存在一个$x^i \neq 0$,于是$|x| \ge |x^i|>0$.
+
+\item[(2)] 如$x$与$y$线性相关，等式明显成立。如不是这样，则对一切$\lambda \in \real$,$\lambda{}y - x \neq 0$,因此
+\[
+\begin{aligned}
+0 &< |\lambda{}y - x|^2 = \sum_{i=1}^{n}{(\lambda{}y^i - x^i)^2}\\
+&= \lambda^2\sum_{i=1}^{n}{(y^i)^2} - 2\lambda\sum_{i=1}^{n}{x^iy^i} + \sum_{i=1}^{n}{(x^i)^2}.
+\end{aligned}
+\]
+所以右方是$\lambda$的没有实根的二次式，其判别式必须为负。于是
+\[
+4\left(\sum_{i=1}^{n}{x^iy^i}\right)^2 - 4\sum_{i=1}^{n}{(x^i)^2}\sum_{i=1}^{n}{(y^i)^2}<0.
+\]
+
+\item[(3)]
+\begin{equation*}
+\begin{aligned}
+&|x + y|^2 = \sum_{i=1}^{n}{(x^i+y^i)^2} \\
+& = \sum_{i=1}^{n}{(x^i)^2} + \sum_{i=1}^{n}{(y^i)^2} + 2\sum_{i=1}^{n}{x^iy^i} \\
+& \le |x|^2+|y|^2+2|x|\cdot|y| \\
+&=(|x|+|y|)^2.
+\end{aligned}
+\end{equation*}
+
+\item[(4)] $|ax| = \sqrt{\sum\limits_{i=1}^{n}{(ax^i)^2}} = \sqrt{a^2\sum\limits_{i=1}^{n}{(x^i)^2}} = |a|\cdot|x|$.
+\end{enumerate}
+\end{proof}
+
+在(2)中出现的量$\sum\limits_{i=1}^{n}{x^iy^i}$称为$x$与$y$的内积并记作$\left<x,y\right>$。内积的一些最重要的性质如下。
+\begin{theorem}{}{thm009010102}
+如$x,x_1,x_2$与$y,y_1,y_2$是$\real^n$中的向量，且$a \in \real$, 则
+\begin{enumerate}
+\item[(1)] $\left<x,y\right>=\left<y,x\right>$ (对称性).
+\item[(2)] (双线性)
+\begin{gather*}
+\left<ax, y\right> = \left<x, ay\right> = a\left<x, y\right>\\
+\left<x_1 + x_2, y\right> = \left<x_1, y\right> + \left<x_2, y\right> \\
+\left<x, y_1+y_2\right> = \left<x, y_1\right> + \left<x, y_2\right>
+\end{gather*}
+\item[(3)] $\left<x, x\right> \ge 0$,且$\left<x, x\right>=0$当且仅当$x=0$（正定性）。
+\item[(4)] $|x| = \sqrt{\left<x, x\right>}$.
+\item[(5)] 极化等式
+\[
+\left<x, x\right> = \frac{|x+y|^2 - |x-y|^2}{4}.
+\]
+\end{enumerate}
+\end{theorem}
+
+
+\section{范数与内积}\label{section0090101}
+
+
+\section{欧几里得空间的子集}\label{section0090102}
+
+
+
+\section{函数与连续性}\label{section0090103}
+
+
+
+\chapter{微分}\label{chapter00902}
+
+
+
+\chapter{积分}\label{chapter00903}
+
+
+
+
+\chapter{链上的积分}\label{chapter00904}
+
+
+
+
+\chapter{流形上的积分}\label{chapter00905}
+
