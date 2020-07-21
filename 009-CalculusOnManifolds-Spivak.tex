@@ -2,17 +2,18 @@
 《流形上的微积分》的作者是M.Spivak. 参考：\cite{CalculusOnManifoldsSpivak1980}. 
 
 \chapter{欧几里得空间上的函数}\label{chapter00901}
-欧几里得（Euclid）$n$维空间（也简称欧氏空间）$\real^n$定义为一切实数$x^i$的$n$数组$(x^1,\cdots, x^n)$（一个“1数组”就是一个数，而$\real^1=\mathbb{R}$则是一切实数的集）的集合. $\real^n$的元通常称为$\real^n$的点，而$\real^1,\real^2,\real^3$通常分别称为直线、平面和空间。如$x$表示$\real^n$的一元素，则$x$是一个$n$数组，其中第$i$个记作$x^i$; 于是我们可以写成
+\section{范数与内积}\label{section0090101}
+欧几里得（Euclid）$n$维空间（也简称欧氏空间）$\real^n$定义为一切实数$x^i$的$n$数组$(x_1,\cdots, x_n)$（一个“1数组”就是一个数，而$\real^1=\mathbb{R}$则是一切实数的集）的集合. $\real^n$的元通常称为$\real^n$的点，而$\real^1,\real^2,\real^3$通常分别称为直线、平面和空间。如$x$表示$\real^n$的一元素，则$x$是一个$n$数组，其中第$i$个记作$x^i$; 于是我们可以写成
 \[
-x = (x^1, \cdots, x^n).
+x = (x_1, \cdots, x_n).
 \]
 
-$\real^n$中的点也常常称为$\real^n$中的向量，因为，按照$x+y=(x^1+y^1,\cdots, x^n+y^n)$以及$ax=(ax^1,\cdots, ax^n)$作为运算，$\real^n$是一个向量空间（在实数域上，维数为$n$）。在这向量空间中，向量$x$的长度的概念，通常称为$x$的范数$|x|$, 并定义为$|x| = \sqrt{(x^1)^2 + \cdots + (x^n)^2}$。如$n=1$，则$|x|$就是$x$的通常的绝对值。范数和$\real^n$的向量空间结构间的下一关系极为重要。
+$\real^n$中的点也常常称为$\real^n$中的向量，因为，按照$x+y=(x_1+y_1,\cdots, x_n+y_n)$以及$ax=(ax_1,\cdots, ax_n)$作为运算，$\real^n$是一个向量空间（在实数域上，维数为$n$）。在这向量空间中，向量$x$的长度的概念，通常称为$x$的范数$|x|$, 并定义为$|x| = \sqrt{(x_1)^2 + \cdots + (x_n)^2}$。如$n=1$，则$|x|$就是$x$的通常的绝对值。范数和$\real^n$的向量空间结构间的下一关系极为重要。
 \begin{theorem}{}{thm009010101}
 如$x,y \in \real^n$且$a \in \real$,则
 \begin{enumerate}
 \item[(1)] $|x| \ge 0$,当且仅当$x=0$时，$|x|=0$.
-\item[(2)] $\left|\sum\limits_{i=1}^{n}{x^iy^i}\right| \le |x| \cdot |y|$,当且仅当$x$与$y$线性相关时等式成立。
+\item[(2)] $\left|\sum\limits_{i=1}^{n}{x_iy_i}\right| \le |x| \cdot |y|$,当且仅当$x$与$y$线性相关时等式成立。
 \item[(3)] $|x+y| \le |x| + |y|$.
 \item[(4)] $|ax| = |a| \cdot |x|$.
 \end{enumerate}
@@ -20,35 +21,35 @@ $\real^n$中的点也常常称为$\real^n$中的向量，因为，按照$x+y=(x^
 
 \begin{proof}
 \begin{enumerate}
-\item[(1)] 根据定义，显然有$|x| \ge 0$，而且$|x|=0$时，必有各个$x^i=0$，也就是$x=0$,反过来，如果$x=0$,显然有$|x|=0$。而$x \neq 0$时，至少存在一个$x^i \neq 0$,于是$|x| \ge |x^i|>0$.
+\item[(1)] 根据定义，显然有$|x| \ge 0$，而且$|x|=0$时，必有各个$x_i=0$，也就是$x=0$,反过来，如果$x=0$,显然有$|x|=0$。而$x \neq 0$时，至少存在一个$x_i \neq 0$,于是$|x| \ge |x_i|>0$.
 
 \item[(2)] 如$x$与$y$线性相关，等式明显成立。如不是这样，则对一切$\lambda \in \real$,$\lambda{}y - x \neq 0$,因此
 \[
 \begin{aligned}
-0 &< |\lambda{}y - x|^2 = \sum_{i=1}^{n}{(\lambda{}y^i - x^i)^2}\\
-&= \lambda^2\sum_{i=1}^{n}{(y^i)^2} - 2\lambda\sum_{i=1}^{n}{x^iy^i} + \sum_{i=1}^{n}{(x^i)^2}.
+0 &< |\lambda{}y - x|^2 = \sum_{i=1}^{n}{(\lambda{}y_i - x_i)^2}\\
+&= \lambda^2\sum_{i=1}^{n}{(y_i)^2} - 2\lambda\sum_{i=1}^{n}{x_iy_i} + \sum_{i=1}^{n}{(x_i)^2}.
 \end{aligned}
 \]
 所以右方是$\lambda$的没有实根的二次式，其判别式必须为负。于是
 \[
-4\left(\sum_{i=1}^{n}{x^iy^i}\right)^2 - 4\sum_{i=1}^{n}{(x^i)^2}\sum_{i=1}^{n}{(y^i)^2}<0.
+4\left(\sum_{i=1}^{n}{x_iy_i}\right)^2 - 4\sum_{i=1}^{n}{(x_i)^2}\sum_{i=1}^{n}{(y_i)^2}<0.
 \]
 
 \item[(3)]
 \begin{equation*}
 \begin{aligned}
-&|x + y|^2 = \sum_{i=1}^{n}{(x^i+y^i)^2} \\
-& = \sum_{i=1}^{n}{(x^i)^2} + \sum_{i=1}^{n}{(y^i)^2} + 2\sum_{i=1}^{n}{x^iy^i} \\
+&|x + y|^2 = \sum_{i=1}^{n}{(x_i+y_i)^2} \\
+& = \sum_{i=1}^{n}{(x_i)^2} + \sum_{i=1}^{n}{(y_i)^2} + 2\sum_{i=1}^{n}{x_iy_i} \\
 & \le |x|^2+|y|^2+2|x|\cdot|y| \\
 &=(|x|+|y|)^2.
 \end{aligned}
 \end{equation*}
 
-\item[(4)] $|ax| = \sqrt{\sum\limits_{i=1}^{n}{(ax^i)^2}} = \sqrt{a^2\sum\limits_{i=1}^{n}{(x^i)^2}} = |a|\cdot|x|$.
+\item[(4)] $|ax| = \sqrt{\sum\limits_{i=1}^{n}{(ax_i)^2}} = \sqrt{a^2\sum\limits_{i=1}^{n}{(x_i)^2}} = |a|\cdot|x|$.
 \end{enumerate}
 \end{proof}
 
-在(2)中出现的量$\sum\limits_{i=1}^{n}{x^iy^i}$称为$x$与$y$的内积并记作$\left<x,y\right>$。内积的一些最重要的性质如下。
+在(2)中出现的量$\sum\limits_{i=1}^{n}{x_iy_i}$称为$x$与$y$的内积并记作$\left<x,y\right>$。内积的一些最重要的性质如下。
 \begin{theorem}{}{thm009010102}
 如$x,x_1,x_2$与$y,y_1,y_2$是$\real^n$中的向量，且$a \in \real$, 则
 \begin{enumerate}
@@ -68,16 +69,292 @@ $\real^n$中的点也常常称为$\real^n$中的向量，因为，按照$x+y=(x^
 \end{enumerate}
 \end{theorem}
 
+\begin{proof}
+\begin{enumerate}
+\item[(1)]$\left<x,y\right> = \sum\limits_{i=1}^{n}{x^iy^i} = \sum\limits_{i=1}^{n}{y^ix^i} = \left<y, x\right>$.
+\item[(2)]由(1)只须证明
+\begin{gather*}
+\left<ax,y\right> = a\left<x,y\right>,\\
+\left<x_1+x_2, y\right> = \left<x_1, y\right> + \left<x_2, y\right>.
+\end{gather*}
+这些可由下列等式得出：
+\[
+\begin{aligned}
+\left<ax,y\right> &= \sum_{i=1}^{n}{(ax^i)y^i} = a\sum_{i=1}^{n}{x^iy^i} = a\left<x,y\right>,\\
+\left<x_1+x_2, y\right> &= \sum_{i=1}^{n}{(x_1^i+x_2^i)y^i} = \sum_{i=1}^{n}{x_1^iy^i} + \sum_{i=1}^{n}{x_2^iy^i}\\
+&= \left<x_1, y\right> + \left<x_2, y\right>.
+\end{aligned}
+\]
+\item[(3)]和(4)留给读者.
+\item[(5)]
+\[
+\begin{aligned}
+&\quad\frac{|x+y|^2 - |x-y|^2}{4} \\
+& = \frac{1}{4}[\left<x+y, x+y\right> - \left<x-y, x-y\right>]\\
+& = \frac{1}{4}[\left<x, x\right> + 2\left<x, y\right> + \left<y, y\right> - \\
+& \qquad (\left<x, x\right> - 2\left<x, y\right> + \left<y, y\right>)] = \left<x, y\right>.
+\end{aligned}
+\]
+\end{enumerate}
+\end{proof}
 
-\section{范数与内积}\label{section0090101}
+我们对记号作一些重要注解以结束本节。向量$(0, \cdots, 0)$通常简记为$0$. $\real^m$的通常基底是$e_1,\cdots, e_n$, 其中$e_i=(0,\cdots,1,\cdots, 0)$, 在第$i$个位置上是$1$.如$T: \real^n \to \real^m$是一个线性变换，$T$关于$\real^n$与$\real^m$的通常基底的矩阵是$m \times n$矩阵$A = (a_{ij})$，其中$T(e_i) = \sum\limits_{j=1}^{n}{a_{ji}e_j}$---$T(e_i)$的系数出现在矩阵的第$i$列。如$S:\real^m \to \real^p$有$p \times m$矩阵$B$, 则$S \circ T$有$p \times n$矩阵$BA$[这里$S \circ T(x) = S(T(x))$;绝大多数线性代数书籍把$S \circ T$简记为$ST$]. 为要找出$T(x)$，我们来计算$m \times 1$矩阵.
+\[
+\begin{pmatrix}
+y^1\\
+\vdots\\
+y^m
+\end{pmatrix}
+=\begin{pmatrix}
+a_{11}, &\cdots ,&a_{1n}\\
+\vdots && \vdots \\
+a_{m1}, & \cdots,&a_{mn}
+\end{pmatrix}
+\cdot\begin{pmatrix}
+x^1\\
+\vdots\\
+x^n
+\end{pmatrix};
+\]
+则$T(x)=(y^1,\cdots,y^m)$.下一习惯记法大大简化许多公式：如$x \in \real^n$与$y \in \real^m$，则$(x,y)$表示
+\[
+(x^1,\cdots,x^n,y^1,\cdots,y^m) \in \real^{n+m}.
+\]
+
+\begin{problemset}
+\item 求证$|x| \le \sum\limits_{i=1}^{n}{|x^i|}$.
+
+注意到不等式两边都大于等于0，两边平方，展开，就会发现等式成立。
+\[
+(\sum_{i=1}^{n}{|x^i|})^2 = \sum_{i=1}^{n}{|x^i|^2} + \sum_{i \neq j}{|x^i||x^j|} = |x| + \sum_{i \neq j}{|x^i||x^j|}
+\]
+
+\item 定理\ref{thm:thm009010101}(3)中的等式何时成立？提示：重新检查证明；答案不是“当$x$与$y$线性相关”。
+
+在证明过程中，等式成立首先要求$x$与$y$线性相关，然后要求$\sum_{i=1}^{n}{x^iy^i} \ge 0$，把线性相关代入，可以得出等号成立当且仅当：$ax+by=0$且$ab \le 0$，也就是$x$和$y$同方向。
+
+\item 求证$|x-y| \le |x| + |y|$,何时等式成立？
+
+和上一道题目类似，这一次要求$x$与$y$共线，但是需要相反方向才能取等号。
+
+\item 求证$\left||x|-|y|\right| \le |x-y|$.
+\begin{gather*}
+|x| = |x-y+y| \le |x-y|+|y|\\
+|x| - |y| \le |x-y|
+\end{gather*}
+由对称性可以得出另一个不等式:$|y|-|x| \le |x-y|$，结合起来就是所要证的不等式。
+
+\item 量$|y-x|$称为$x$与$y$间的距离，求证并在几何上解释“三角形不等式”:
+\[
+|z-x| \le |z-y| + |y-x|.
+\]
+
+只要注意到，对于三个点$x$, $y$和$z$构成的三角形来说，不等式中的恰好就是三条边长，几何上三角形两边之和大于第三边。至于代数证明很简单.
+\[
+|z-x| = |z-y + y-x| \le |z-y| + |y-x|.
+\]
+
+\item 设$f$与$g$在$[a,b]$上平方可积。
+\begin{enumerate}
+\item[(a)]求证：$\left|\int_{a}^{b}{fg}\right| \le \left(\int_{a}^{b}{f^2}\right)^{1/2}\left(\int_{a}^{b}{g^2}\right)^{1/2}$, 提示：分别考虑下面二情况：对某一$\lambda \in\real$, $0 = \int_{a}^{b}{(f - \lambda{}g)^2}$; 对一切$\lambda \in \real$, $0 < \int_{a}^{b}{(f - \lambda{}g)^2}$.
+
+\item[(b)]如等式成立，$f = \lambda{}g$必定对某个$\lambda \in \real$成立吗？如$f$与$g$连续又怎样？
+
+\item[(c)]证明定理\ref{thm:thm009010102}是(a)的一个特殊情形。
+\end{enumerate}
+
+(a)$f$与$g$平方可积，说明$(f-\lambda{}g)$也是平方可积的，假设存在一$\lambda \in \real$使得$0 = \int_{a}^{b}{(f - \lambda{}g)^2}$, 那么说明除了一个零测集$\Lambda$之外，有$f - \lambda{}g = 0$. 也就是几乎处处有$f = \lambda{}g$,从而几乎处处$fg = \lambda{}g^2$,由此不等式左边$\left|\int_{a}^{b}{fg}\right| = \left|\int_{a}^{b}{\lambda{}g^2}\right| = |\lambda|\int_{a}^{b}{g^2}$, 不等式右边：$\left(\int_{a}^{b}{f^2}\right)^{1/2}\left(\int_{a}^{b}{g^2}\right)^{1/2} = |\lambda|\int_{a}^{b}{g^2}$,不等式成立等号。如果对于所有$\lambda \in \real$, 
+\[
+\begin{aligned}
+0 &< \int_{a}^{b}{(f - \lambda{}g)^2} = \int_{a}^{b}{(f^2 -2\lambda{}fg + \lambda^2g^2)}\\
+&=\int_{a}^{b}{f^2} - 2\lambda\int_{a}^{b}{fg} + \lambda^2\int_{a}^{b}{g^2}.
+\end{aligned}
+\]
+如果$\dsint_{a}^{b}{g^2} = 0$，那么讨论和前面类似，只是此时是$g$几乎处处等于0，从而$fg$几乎处处等于0，于是$\dsint_{a}^{b}{fg} = 0$,所以只需考虑$\dsint_{a}^{b}{g^2} > 0$的情形，此时二次型的系数大于零，只有判别式小于0
+\[
+\Delta = 4\left(\int_{a}^{b}{fg}\right)^2 - 4\int_{a}^{b}{f^2}\int_{a}^{b}{g^2} < 0,
+\]
+获证。
+
+(b)等式成立，说明存在$\lambda \in \real$,在除了某个零测集之外有$f = \lambda{}g$，或者$f$和$g$至少有一个几乎处处等于0，如果$f$和$g$连续，那么在$g\neq 0$的情形下，必然存在一$\lambda \in \real$使得$f = \lambda{}g$. 因为对于非负连续函数，如果存在某点不等于0，那么由于连续函数的保号性，必然在区间上的积分大于0.
+
+(c)考虑如下定义在$[0, n]$区间上的阶梯函数$f(x)$和$g(x)$：
+\[
+f(x) = \left\{
+\begin{aligned}
+&x_1, \quad 0 \le x \le 1,\\
+&x_2, \quad 1 < x \le 2,\\
+&\cdots, \\
+&x_n, \quad (n-1) < x \le n.
+\end{aligned}
+\right.
+\]
+$g(x)$类似，只是在相同区间上，$x_i$换成$y_i$，那么显然$f(x)$和$g(x)$都是平方可积的，并且
+\[
+\begin{aligned}
+\int_{0}^{n}{fg} &= \sum_{i=1}^{n}{x_iy_i},\\
+\int_{0}^{n}{f^2} &= \sum_{i=1}^{n}{(x_i)^2}\\
+\int_{0}^{n}{g^2} &= \sum_{i=1}^{n}{(y_i)^2}.
+\end{aligned}
+\]
+
+
+\end{problemset}
+
 
 
 \section{欧几里得空间的子集}\label{section0090102}
+闭区间$[a,b]$在$\real^2$中有一自然的类比。这就是闭矩形$[a,b]\times[c,d]$，定义为一切数对$(x,y)$的全体，其中$x \in [a,b]$,$y \in [c,d]$。更一般的，如$A \subset \real^m$, $B \subset \real^n$，则$A \times B \subset \real^{m+n}$定义为一切$(x, y) \in \real^{m+n}$的集，其中$x \in A$, $y \in B$.特别，$\real^{m+n} = \real^m \times \real^n$.如$A \subset \real^m$, $B \subset \real^n$, 和$C \subset \real^p$,则$(A \times B) \times C = A \times (B \times C)$,二者皆简记为$A \times B \times C$;这一记法也推广到任意个数的集的乘积。集$[a_1, b_1] \times \cdots \times [a_n, b_n] \subset \real^n$称作$\real^n$中的闭矩形，而集$(a_1, b_1) \times \cdots \times (a_n, b_n) \subset \real^n$称作开矩形。更一般地，一个集$U \subset \real^n$称作开集，如果对每一个$x \in U$, 有一个开矩形$A$使得$x \in A \subset U$.
+
+$\real^n$的一个子集$C$称为闭集如$\real^n-C$是开集。例如，如$C$只含有限多个点，则$C$是闭。读者应该补充证明：$\real^n$中的闭矩形确为一闭集。
+
+如$A \subset \real^n$且$x \in \real^n$, 则下列三种可能性之一必成立。
+\begin{enumerate}
+\item[1.]存在一个开矩形$B$使得$x \in B \subset A$.
+\item[2.]存在一个开矩形$B$使得$x \in B \subset \real^n - A$.
+\item[3.]如$B$是任一个开矩形使得$x \in B$者，则$B$同时含有$A$与$\real^n-A$的点。
+\end{enumerate}
+
+满足(1)的那些点构成$A$的内域, 满足(2)的那些点构成$A$的外域，满足(3)的那些点构成$A$的边界。习题1-16到1-18表明这些术语有时可能有意想不到的意义。
+
+不难看出，任何集$A$的内域是开的；对$A$的外域，它实际上是$\real^n-A$的內域，所以也是如此。于是（习题1-14）它们的并集是开的，而所剩下的，即其边界，必定是闭得。
+
+我们把一组开集称为$A$的一个开覆盖（或简称覆盖$A$）\footnote{原文意思是若一个集族$\mathscr{O}$是$A$的覆盖，就说$\mathscr{O}$覆盖$A$. 而不是说开覆盖可以简称为覆盖，而应说开集族$\mathscr{O}$覆盖$A$}$\mathscr{O}$.如果任一点$x \in A$是在$\mathscr{O}$的某开集中。例如，如$\mathscr{O}$是一切开区间$(a, a+1)$的集合，其中$a \in \real$, 则$\mathscr{O}$是$\real$的一（开）覆盖。很明显，$\mathscr{O}$的有限个开集不能覆盖$\real$,也不能覆盖$\real$的任一无界集。类似情况对有界集也可能发生。设对一切正整数$n>1$,$\mathscr{O}$是一切开区间$(1/n,1-1/n)$的集合，则$\mathscr{O}$是$(0, 1)$的一开覆盖，但$\mathscr{O}$中的有限个集仍不能覆盖$(0, 1)$。虽然这一现象可能不会出现特别的坏处，但这种状况不会发生的集至为重要，它们有一个特殊的名称：一集$A$称为紧的，如它的任何开覆盖$\mathscr{O}$包含着一个有限个开集的组仍能覆盖$A$.
+
+只有有限个点的集显然是紧的，包含$0$以及数$1/n$（对一切整数$n$）的无限集$A$也是紧的（理由：如$\mathscr{O}$是一覆盖：则对$\mathscr{O}$中某一开集$U$有$0 \in U$;$A$中只有有限个别的点不在$U$中，每个这样的点至多只要再加上一个开集）。
+
+下列几个结果使对紧集的认识大大简化了，其中只有第一个结果有一定的深度（也就是，用到了有关实数的一些事实）。
+
+\begin{theorem}{海涅-波雷耳(Heine-Borel)}{thm009010103}
+闭区间$[a,b]$是紧的。
+\end{theorem}
+
+\begin{proof}
+若$\mathscr{O}$是$[a,b]$的一个开覆盖，设$A = \{x: a \le x \le b\text{且}[a, x]\text{能被}\mathscr{O}\text{中某有限个开集所覆盖}\}$.注意$a \in A$,且$A$显然有上界(以$b$为上界)。我们希望证明$b \in A$。这只要对$\alpha = A$的上确界($\alpha = \sup{A}$)证明两件事：(1)$\alpha \in A$, (2)$b = \alpha$就行了。
+
+因$\mathscr{O}$是一覆盖，故对某一$U$有$\alpha \in U$.那么在某区间中$\alpha$左边的一切点也在$U$中。因为$\alpha$是$A$的上确界，故在这区间中有一$x \in A$.于是$[a, x]$能被$\mathscr{O}$中某有限个开集所覆盖，而$[x, \alpha]$被一个集$U$所覆盖。所以$[a, \alpha]$能被$\mathscr{O}$中有限个开集所覆盖，即$\alpha \in A$。这就证明了(1).
+
+要证(2)为真，假设不然：$\alpha < b$. 因此在$\alpha$与$b$之间有一点$x'$使$[\alpha, x'] \subset U$.因$\alpha \in A$,区间$[a, \alpha]$能被$\mathscr{O}$中有限个开集所覆盖，而$[\alpha, x']$已被$U$覆盖。所以$x' \in A$,这和$\alpha$是$A$的上确界相矛盾。
+\end{proof}
+
+若$B \subset \real^m$是紧的且$x \in \real^n$,易见$\{x\}\times B \subset \real^{n+m}$是紧的。但是，可以作出一个强得多的论断。
+
+\begin{theorem}{}{thm009010104}
+若$B$是紧的，$\mathscr{O}$是$\{x\} \times B$的一开覆盖，则有包含$x$的一开集$U \subset \real^n$使得$U \times B$能被$\mathscr{O}$中有限个集所覆盖。
+\end{theorem}
+
+\begin{proof}
+因为$\{x\} \times B$是紧的，我们可以一开始就认为$\mathscr{O}$是有限的，我们只要找出开集$U$使$U \times B$被$\mathscr{O}$所覆盖。
+
+对每一个$y \in B$, 点$(x, y)$在$\mathscr{O}$的某开集$W$中。因$W$是开的，对某一开矩形$U_y \times V_y$我们有$(x, y) \in U_y \times V_y \subset W$.这些集$V_y$覆盖了紧集$B$,所以有限个$V_{y_1}, \cdots, V_{y_k}$也覆盖$B$.令$U = U_{y_1} \cap \cdots \cap U_{y_k}$.于是，若$(x', y') \in U \times B$,对某一$i$我们有$y' \in V_{y_i}$,当然$x' \in U_{y_i}$.所以$(x',y') \in U_{y_i} \times V_{y_i}$,它包含在$\mathscr{O}$的某个$W$中。
+\end{proof}
+
+\begin{corollary}{}{coro009010105}
+若$A \subset \real^n$与$B \subset \real^m$是紧的，则$A \times B \subset \real^{n+m}$也是紧的。
+\end{corollary}
+
+\begin{proof}
+若$\mathscr{O}$是$A \times B$的一开覆盖，则对每一个$x \in A$, $\mathscr{O}$覆盖了$\{x\} \times B$。由定理\ref{thm:thm009010104}，有一个包含$x$的开集$U_x$,使得$U_x \times B$能被$\mathscr{O}$中有限个集覆盖。因为$A$是紧的，$U_x$中的有限个$U_{x_1}, \cdots U_{x_m}$覆盖$A$.因为$\mathscr{O}$中有限个集覆盖每一个$U_{x_i} \times B$,所以$\mathscr{O}$中有限个集也就整个覆盖了$A \times B$.
+\end{proof}
+
+\begin{corollary}{}{coro009010106}
+若每一个$A_i$是紧的，则$A_1 \times \cdots \times A_k$也是紧的。特别，$\real^k$中的闭矩形是紧的。
+\end{corollary}
+
+\begin{corollary}{}{coro009010107}
+$\real^n$中的有界闭集是紧的。
+\end{corollary}
+
+(逆定理也真)
+
+\begin{proof}
+若$A \subset \real^n$是有界闭的, 则对某一个闭矩形$B$, $A \subset B$, 若$\mathscr{O}$是$A$的一个开覆盖，则$\mathscr{O}$是$\mathscr{O}$与$\real^n-A$一起是$B$的一个开覆盖。所以$\mathscr{O}$中有限个集$U_1, \cdots, U_n$，可能再加上$\real^n-A$，覆盖了$B$，因此, $U_1, \cdots, U_n$覆盖了$A$.
+\end{proof}
+
+\begin{problemset}
+\item\label{exer009010114} 求证任何一个（即使是无穷多个）开集的并集是开的。求证两个（从而是有限个）开集的交集是开的，给出对于无穷多个开集的一个反例。
+
+\item\label{exer009010115} 求证$\{x \in \real^n:|x-a|<r\}$是开的（参见习题\ref{exer009010127}）。
+
+\item\label{exer009010116} 求下列集的内域，外域和边界:
+\begin{gather*}
+\{x \in \real^n: |x| \le 1 \}\\
+\{x \in \real^n: |x| = 1\}\\
+\{x \in \real^n:\text{每一}x^i\text{是有理数}\}.
+\end{gather*}
+
+\item\label{exer009010117} 求作一个集$A \subset [0, 1]\times[0,1]$,使得$A$在每一条水平线和铅直线上至多只含一点，但$A$的边界$=[0, 1] \times [0, 1]$。提示：只要能保证$A$在正方形$[0, 1] \times [0, 1]$的每四分之一中含有点，又在每十六分之一中含有点，如此等等，这就够了。
+
+\item 如$A \subset [0, 1]$是这样一些开区间$(a_i, b_i)$的并集，使得$(0, 1)$中的每一有理数包含在某个$(a_i, b_i)$内，求证$A$的边界$=[0, 1]-A$.
+
+\item 如$A$是包含任何有理数$r \in [0, 1]$的一个闭集，求证$[0, 1] \subset A$.
+
+\item\label{exer009010120} 求证推论\ref{cor:coro009010107}的逆：$\real^n$的紧集是闭有界集（参见习题\ref{exer009010128}）。
+
+\item (a)如$A$是闭的且$x \not\in A$，求证存在一数$d > 0$使对一切$y \in A$有$|y-x| \ge d$.
+
+(b)如$A$是闭的，$B$是紧的，且$A \cap B =\emptyset$,求证存在$d>0$使对一切$y \in A$与$x \in B$有$|y-x| \ge d$. 提示：对每一个$b \in B$找出包含$b$的一开集$U$使得这一关系式对$x \in U \cap B$成立。
+
+(c) 若$A$与$B$都是闭的但都不是紧的，试在$\real^2$中给出一个反例。
+
+\item\label{exer009010122} 如$U$是开的且$C \subset U$是紧的，证明存在一紧集$D$使得$C \subset D$的内域且$D \subset U$.
+
+\end{problemset}
 
 
 
 \section{函数与连续性}\label{section0090103}
+从$\real^n$到$\real^m$的一个函数(有时称为$n$个变元的（向量值）函数)是一个规则，它把$\real^n$中的每一点对应到$\real^m$中的某一点；一个函数$f$使$x$所对应的点记作$f(x)$. 我们写$f:\real^n \to \real^m$（按上下文读作“$f$把$\real^n$映入$\real^m$”或“$f$映$\real^n$入$\real^m$”）表明$f(x) \in \real^m$是对$x \in \real^n$定义的。记号$f: A \to \real^m$表示$f(x)$仅对集$A$中的$x$有意义，$A$称为$f$的定义域。如$B \subset A$，我们把$f(B)$定义为对$x \in B$的一切$f(x)$的集。又若$C \subset \real^m$，我们定义$f^{-1}(C) = \{x \in A:f(x) \in C\}$.记号$f:A \to B$表示$f(A) \subset B$.
 
+通过作出一函数$f: \real^2 \to \real$的图，我们可以得到它的一方便的表示，这个图就是一切形如$(x, y, f(x, y))$的3数组的集，它实际上是3维空间中的一个图形（例如，见第\ref{chapter00902}章图）。
+
+若$f,g:\real^n \to \real$,则函数$f+g$, $f-g$, $f \cdot g$与$f/g$可以确切地像单变量情况一样来定义。如$f:A \to \real^m$, $g: B \to \real^p$, 其中$B \subset \real^m$，则复合函数$g \circ f$定义为$g\circ f(x)= g(f(x))$; $g \circ f$的定义域是$A \cap f^{-1}(B)$. 如$f: A \to \real^m$是1-1的，也就是，当$x \neq y$时$f(x) \neq f(y)$，我们定义$f^{-1}:f(A) \to \real^n$,这里要求$f^{-1}(z)$是唯一的$x \in A$并且$f(x)=z$.
+
+一个函数$f:A \to \real^m$用$f(x)=(f_1(x), \cdots, f_m(x))$确定$m$个分量函数$f_1, \cdots, f_m:A \to \real$.反过来，如果已给$m$个函数$g_1,\cdots, g_m:A \to \real$,则有唯一的函数$f:A \to \real^m$使得$f_i = g_i$,即$f(x)=(g_1(x),\cdots, g_m(x))$。这个函数$f$将记作$(g_1, \cdots, g_m)$,所以我们总有$f=(f_1,\cdots, f_m)$.如$\pi:\real^n \to \real^n$是恒等函数, $\pi(x)=x$,则$\pi_i(x)=x_i$；函数$\pi_i$称作第$i$个投影函数。
+
+和单变量情况一样，记号$\lim\limits_{x \to a}{f(x)} = b$表示，当选取$x$足够接近于$a$但不等于$a$时，我们可以使$f(x)$任意地接近于$b$.用数学术语讲，这表明：对任一数$\epsilon>0$，存在一数$\delta>0$使对$f$的定义域中的一切满足$0 < |x-a| < \delta$的$x$有$|f(x) - b| < \epsilon$.函数$f:A \to \real^m$称为在$a \in A$连续，如果$\lim\limits_{x \to a}{f(x)} = f(a)$. $f:A \to \real^m$在每一$a \in A$处连续就简称$f$是连续的。关于连续性概念的有趣的意想不到点之一是，它可以不用极限来定义。由下一定理得知，$f:\real^n \to \real^m$连续，当且仅当只要$U \subset \real^m$是开的$f^{-1}(U)$就是开的；如$f$的域不是$\real^n$的全部，则需要一稍微复杂的条件。
+
+\begin{theorem}{}{thm009010108}
+如$A \subset \real^n$，函数$f:A \to \real^m$连续当且仅当对任一开集$U \subset \real^m$存在某开集$V \subset \real^n$使得$f^{-1}(U) = V \cap A$.
+\end{theorem}
+
+\begin{proof}
+设$f$连续。如$a \in f^{-1}(U)$,则$f(a) \in U$.因$U$是开的，故有开矩形$B$使$f(a) \in B \subset U$.因$f$在$a$点连续，我们只要把$x$选取在包含$a$的某充分小的矩形$C$内，就能保证$f(x) \in B$.对每一$a \in f^{-1}(U)$这样做，并令$V$为所有这些$C$的并集。显然$f^{-1}(U) = V \cap A$.其逆也类似，留给读者去证明。
+\end{proof}
+
+定理\ref{thm:thm009010108}的下一推断极为重要。
+\begin{theorem}{}{thm009010109}
+如$f:A \to \real^m$是连续的，其中$A \subset \real^n$，而$A$是紧的，则$f(A)$也是紧的。
+\end{theorem}
+
+\begin{proof}
+设$\mathscr{O}$是$f(A)$的一个开覆盖。对于$\mathscr{O}$中每一个开集$U$存在一个开集$V_U$使得$f^{-1}(U) = V_U \cap A$.一切$V_U$的集合是$A$的一开覆盖。因$A$是紧的，故有有限个$V_{U_1}, \cdots, V_{U_n}$覆盖$A$. 于是$U_1, \cdots, U_n$覆盖$f(A)$.
+\end{proof}
+
+若$f:A \to \real$有界，则$f$在$a \in A$处不连续的程度可以用一个确切的方法加以度量。对$\delta > 0$令
+\begin{gather*}
+\begin{aligned}
+M(a,f,\delta) &= \sup\{f(x):x \in A\text{且}|x-a|<\delta\}，\\
+m(a,f,\delta) &= \inf\{f(x):x \in A\text{且}|x-a|<\delta\}.
+\end{aligned}
+\end{gather*}
+$f$在$a$处的振幅$o(f,a)$定义为$o(f,a) = \lim\limits_{\delta \to 0}{[M(a,f,\delta) - m(a,f,\delta)]}$.因为$M(a,f,\delta)-m(a,f,\delta)$当$\delta$下降时也下降，所以这一极限恒存在。关于$o(f,a)$有两个重要事实。
+
+\begin{theorem}{}{thm009010110}
+有界函数$f$当且仅当$o(f, a)=0$时在$a$点连续。
+\end{theorem}
+
+\begin{proof}
+设$f$在$a$点连续，对任一数$\epsilon>0$我们可以选取一数$\delta>0$使对一切
+\end{proof}
+
+\begin{problemset}
+
+\item\label{exer009010127} 由考察来证明$\{x \in \real^n:|x-a|<r\}$是开的。
+
+\item\label{exer009010128} 如$A \subset \real^n$不是闭的。
+
+\end{problemset}
 
 
 \chapter{微分}\label{chapter00902}
