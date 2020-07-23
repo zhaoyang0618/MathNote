@@ -199,6 +199,8 @@ $g(x)$类似，只是在相同区间上，$x_i$换成$y_i$，那么显然$f(x)$�
 \]
 
 
+\item\label{exer009010110} 如$T:\real^m \to \real^n$是一线性变换，证明有这样的数$M$使得对于$h \in \real^m$有$|T(h)| \le M|h|$. 提示：用$|h|$以及$T$的矩阵中的元估计$|T(h)|$.
+
 \end{problemset}
 
 
@@ -345,19 +347,50 @@ $f$在$a$处的振幅$o(f,a)$定义为$o(f,a) = \lim\limits_{\delta \to 0}{[M(a,
 \end{theorem}
 
 \begin{proof}
-设$f$在$a$点连续，对任一数$\epsilon>0$我们可以选取一数$\delta>0$使对一切
+设$f$在$a$点连续，对任一数$\epsilon>0$我们可以选取一数$\delta>0$使对一切$x \in A$且$|x-a|<\delta$者恒有$|f(x)-f(a)|<\epsilon$; 于是$M(a,f,\delta) - m(a,f,\delta) \le 2\epsilon$.因这对任意$\epsilon$为真，故有$o(f, a) = 0$.其逆类似，并留给读者。
+\end{proof}
+
+\begin{theorem}{}{thm009010111}
+设$A \subset \real^n$是闭的。如$f:A \to \real$是任一有界函数，又$\epsilon>0$，则$\{x \in A: o(f, x) \ge \epsilon\}$是闭的。
+\end{theorem}
+
+\begin{proof}
+设$B = \{x \in A: o(f, x) \ge \epsilon\}$.我们要证明$\real^n - B$是开的。如果$x \in \real^n-B$,那么或者有$x \not\in A$,不然的话，就有$x \in A$以及$o(f, x) < \epsilon$. 在第一种情况下，因$A$是闭的，故存在包含$x$的开矩形$C$使得$C \subset \real^n-A \subset \real^n-B$. 在第二种情况下，存在一$\delta>0$使得$M(x, f, \delta) - m(x, f, \delta) < \epsilon$. 令$C$是一包含$x$的开矩形，使得对一切$y \in C$, 有$|x-y|<\delta$. 则若$y \in C$, 就有一$\delta_1$, 使对所有满足$|z-y|<\delta_1$的$z$有$|x-z|<\delta$。于是$M(y,f,\delta_1) - m(y, f,\delta_1) < \epsilon$,从而$o(y, f) < \epsilon$.所以$C \subset \real^n-B$.
 \end{proof}
 
 \begin{problemset}
+\item 若$f:A \to \real^m$且$a \in A$,证明$\lim\limits_{x \to a}{f(x)} = b$当且仅当对于$i=1,\cdots,m$有$\lim\limits_{x \to a}{f_i(x)} = b_i$.
 
-\item\label{exer009010127} 由考察来证明$\{x \in \real^n:|x-a|<r\}$是开的。
+\item 求证$f:A \to \real^m$在$a$点连续当且仅当每一个$f_i$都如此。
 
-\item\label{exer009010128} 如$A \subset \real^n$不是闭的。
+\item 求证线性变换$T:\real^n \to \real^m$是连续的。提示：利用习题\ref{exer009010110}.
+
+\item 设$A = \{(x, y) \in \real^2: x > 0 \text{且}0 < y < x^2\}$.
+\begin{enumerate}
+\item[(a)]证明通过$(0, 0)$的任一直线包含一个围绕$(0, 0)$的在$\real^2-A$中的区间。
+\item[(b)]这样定义$f:\real^2 \to \real$,当$x \not\in A$时，$f(x)=0$,当$x \in A$时$f(x)=1$.对$h \in \real^2$定义$g_h:\real \to \real$, $g_h(t)=f(th)$.求证每个$g_h$在0点连续，但$f$在$(0, 0)$点不连续。 
+\end{enumerate}
+
+\item\label{exer009010127} 由考察$f(x)=|x-a|$确定的$f:\real^n \to \real^1$来证明$\{x \in \real^n:|x-a|<r\}$是开的。
+
+\item\label{exer009010128} 如$A \subset \real^n$不是闭的，证明存在一无界的连续函数$f:A \to \real$.提示：如$x \in \real^n - A$但$x \not\in$[$(\real^n-A)$的内域]，令$f(y) - 1/|y-x|$.
+
+\item 如$A$是紧的，求证任何连续函数$f:A \to \real$有最大值和最小值。
+
+\item 设$f:[a, b] \to \real$是一增函数。如$x_1,\cdots, x_n \in [a, b]$，证明
+\[
+\sum_{i=1}^{n}{o(f, x_i)} < f(b) - f(a).
+\]
 
 \end{problemset}
 
 
 \chapter{微分}\label{chapter00902}
+\section{基本定义}\label{section0090201}
+回想一函数$f: \real \to \real$在$a \in \real$处可微是指：有一数$f'(a)$使得
+\begin{equation}\label{equ009020101}
+\lim_{h \to 0}{\frac{f(a+h) - f(a)}{h}} = f'(a).
+\end{equation}
 
 
 
