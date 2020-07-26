@@ -198,9 +198,107 @@ $g(x)$类似，只是在相同区间上，$x_i$换成$y_i$，那么显然$f(x)$�
 \end{aligned}
 \]
 
+\item 一线性变换$T:\real^n \to \real^n$，如果$|T(x)| = |x|$，则称为保范数的。如果$\left<Tx, Ty\right> = \left<x, y\right>$，则称为保内积的。
+\begin{enumerate}
+\item 求证$T$是保范数的当且仅当$T$是保内积的。
+
+\item 求证这种线性变换$T$是1-1的，而且$T^{-1}$也是同一种变换。
+
+\end{enumerate}
+
+\item 如$x, y \in \real^n$不为零，$x$与$y$间的夹角记作$\angle{(x, y)}$定义为$\arccos(\left<x, y\right>/|x|\cdot|y|)$.由定理\ref{thm:thm009010101}的(2)，这是有意义的。线性变换$T$称为是保角的，如$T$是1-1的，且对$, y \neq 0$,我们有$\angle(Tx, Ty) = \angle(x, y)$.
+\begin{enumerate}
+\item 求证：如$T$是保范数的，则$T$是保角的。
+
+\item 如$\real^n$有一基底$x_1, \cdots, x_n$, 又有数$\lambda_1, \cdots, \lambda_n$使得$Tx_i = \lambda_ix_i$,求证$T$是保角的，当且仅当所有$|\lambda_i|$皆相等。
+
+\item 所有保角的$T: \real^n \to \real^n$是些什么？
+
+\end{enumerate}
+
+\item 如果$0 \le \theta < \pi$, 设$T: \real^2 \to \real^2$有矩阵
+\[
+\begin{pmatrix}
+\cos{\theta} & \sin{\theta}\\
+-\sin{\theta} & \cos{\theta}
+\end{pmatrix},
+\]
+求证$T$是保角的，且若$x \neq 0$,则$\angle(x, Tx) = \theta$.
+
+比较笨，直接计算。点$(x_1,x_2) \in \real^2$,有
+\[
+\begin{aligned}
+|T(x_1,x_2)|^2 &= \left|\begin{pmatrix}\cos{\theta} & \sin{\theta} \\-\sin{\theta} & \cos{\theta}\end{pmatrix}\begin{pmatrix}x_1\\x_2\end{pmatrix}\right|\\
+&=\left|\begin{pmatrix}x_1\cos{\theta} + x_2\sin{\theta}\\-x_1\sin{\theta} + x_2\cos{\theta}\end{pmatrix}\right|\\
+&=(x_1\cos{\theta} + x_2\sin{\theta})^2+(-x_1\cos{\theta} + x_2\sin{\theta})^2\\
+&=x_1^2 + x_2^2 = |(x_1,x_2)|^2.
+\end{aligned}
+\]
+这里省略了展开，合并的过程，展开后刚好抵消一部分，留下部分使用$\cos^2{\theta} + \sin^2{\theta}=1$即可。上述等式说明这是一个保范数的线性变换，从而是保角的。至于后面部分，也是直接计算$\left<x, Tx\right>/|x|\cdot|Tx|$,并注意到$|Tx|=|x|$,于是就有
+\[
+\begin{aligned}
+\frac{\left<x, Tx\right>}{|x|\cdot|Tx|} &= \frac{x_1(x_1\cos{\theta} + x_2\sin{\theta}) + x_2(-x_1\sin{\theta} + x_2\cos{\theta})}{x_1^2+x_2^2} \\
+&= \frac{(x_1^2+x_2^2)\cos{\theta}}{x_1^2+x_2^2} = \cos{\theta},
+\end{aligned}
+\]
+因而$\angle(x, Tx) = \theta$.
+
 
 \item\label{exer009010110} 如$T:\real^m \to \real^n$是一线性变换，证明有这样的数$M$使得对于$h \in \real^m$有$|T(h)| \le M|h|$. 提示：用$|h|$以及$T$的矩阵中的元估计$|T(h)|$.
 
+设$T$的矩阵为$A = (a_{ij})$是一$n \times m$矩阵，令$a=\max{|a_{ij}|}$,则
+\[
+\begin{aligned}
+|T(h)|^2 &= \left<Th,Th\right> = \sum_{i=1}^{n}{(\sum_{j=1}^{m}{a_{ij}h_j})^2}\\
+&\le \sum_{i=1}^{n}{(\sum_{j=1}^{m}{a_{ij}^2})^2(\sum_{j=1}^{m}{h_j^2})^2}\\
+&\le \sum_{i=1}^{n}{ma^2\sum_{j=1}^{m}{h_j^2}} = mna^2\sum_{j=1}^{m}{h_j^2} = mna^2|h|^2
+\end{aligned}
+\]
+于是，只要取$M = \sqrt{mn}a$,这里$a = \max{|a_{ij}|}$就有$|Th| \le M|h|$.
+
+\item 如果$x, y \in \real^n$, $z, w \in \real^m$，证明：$\left<(x, z), (y,w)\right> = \left<x, y\right> + \left<z, w\right>$以及$|(x, z)| = \sqrt{|x|^2 + |z|^2}$. 注意$(x, z)$与$(y,w)$表示$\real^{n+m}$中的点。
+
+直接展开
+\[
+\begin{aligned}
+\left<(x,z),(y,w)\right> &= (x_1y_1+\cdots+x_ny_n) + (z_1w_1+\cdots+z_mw_m)\\
+&=\left<x, y\right> + \left<z,w\right>,\\
+|(x,z)|^2 &= \left<(x,z),(x,z)\right> = \left<x,x\right>+\left<z,z\right>\\
+&=|x|^2+|z|^2.
+\end{aligned}
+\]
+
+\item 设$(\real^n)^*$表示向量空间$\real^n$的对偶空间，如$x \in \real^n$，用$\varphi_x(y) = \left<x, y\right>$定义$\varphi_x \in (\real^n)^*$. 用$T(x) = \varphi_x$定义$T: \real^n \to (\real^n)^*$.证明$T$是一个1-1线性变换，并作出结论：每一个$\varphi \in (\real^n)^*$是关于唯一的一个$x \in \real^n$的$\varphi_x$.
+
+(1)$T$是线性变换，这一点因为内积是双线性函数。$\forall z \in \real^n$,
+\[
+\begin{aligned}
+T(\alpha{}x+\beta{}y)(z) &= \varphi_{\alpha{}x+\beta{}y}(z) = \left<\alpha{}x + \beta{}y, z\right> \\
+&=\alpha\left<x,z\right> + \beta\left<y, z\right> = \alpha\varphi_x(z) + \beta\varphi_y(z) \\
+&= \alpha{}Tx(z)+\beta{}Ty(z).
+\end{aligned}
+\]
+
+(2)$T$是单射.也就是需要从$Tx_1=Tx_2$推出$x_1=x_2$. 从$Tx_1=Tx_2$可知，对于任意的$y \in \real^n$有$\left<x_1, y\right> = \left<x_2,y\right>$, 分别令$y=x_1$和$y=x_2$，可以得到
+\[
+\left<x_1,x_1\right> = \left<x_2,x_1\right>=\left<x_1, x_2\right> = \left<x_2,x_2\right>,
+\]
+由此可得$x_1=x_2$.
+
+
+(3)$T$是满射. 也就是对于任一元素$\varphi \in (\real^n)^*$, 我们需要找到一个$x$使得$Tx = \varphi$. 那么如何构造这个$\varphi$呢？首先回忆一下什么是线性空间的对偶空间，所谓对偶空间，是所有$\real^n$上的线性泛函构成的线性空间，所谓线性泛函，实际上就是$L:\real^n \to \real$的线性变换。既然是线性空间，我们考虑$\real^n$的标准基底$\{e_1,\cdots,e_n\}$, 在$\varphi$作用下的值分别记为$\alpha_i$,也就是$\varphi(e_i) = \alpha_i$. 于是对于任一$x \in \real^n$，有$x = \sum\limits_{i=1}^{n}{x_ie_i}$,从而
+\[
+\varphi(x) = \varphi(\sum_{i=1}^{n}{x_ie_i}) = \sum_{i=1}^{n}{x_i\varphi(e_i)} = \sum_{i=1}^{n}{x_i\alpha_i},
+\]
+这一点提示我们，我们如果记$\alpha=(\alpha_1,\cdots, \alpha_n)$，那么$\varphi(x)=\left<x,\alpha\right>$. 也就是$T\alpha=\varphi$.
+
+
+\item 如$x, y \in \real^n$,则若$\left<x,y\right>=0$,就称$x$与$y$垂直（或正交）。如$x$与$y$垂直，求证：$|x+y|^2 = |x|^2 + |y|^2$.
+
+直接展开并利用对称性以及正交的定义即可。
+\[
+|x+y|^2 = \left<x+y,x+y\right> = \left<x,x\right> + 2\left<x,y\right> + \left<y,y\right> = |x|^2+|y|^2.
+\]
 \end{problemset}
 
 
@@ -391,6 +489,85 @@ $f$在$a$处的振幅$o(f,a)$定义为$o(f,a) = \lim\limits_{\delta \to 0}{[M(a,
 \begin{equation}\label{equ009020101}
 \lim_{h \to 0}{\frac{f(a+h) - f(a)}{h}} = f'(a).
 \end{equation}
+对一般情形的函数$f:\real^n \to \real^m$这个式子当然没有意义，但可以用一种方式将其重写使之有意义。如$\lambda:\real \to \real$是由$\lambda(h) = f'(a)\cdot h$定义的线性变换，则(\ref{equ009020101})式等价于
+\begin{equation}\label{equ009020102}
+\lim_{h \to 0}{\frac{f(a+h) - f(a) - \lambda(h)}{h}} = 0.
+\end{equation}
+(\ref{equ009020102})式常常可解释为$\lambda+f(a)$是$f$在$a$处的一个好的近似（见习题）. 因而我们集中注意力于线性变换$\lambda$,而把可微性重述如下：
+
+函数$f:\real \to \real$在$a \in \real$点可微，如果有一线性变换$\lambda:\real \to \real$使得
+\[
+\lim_{h \to 0}{\frac{f(a+h) - f(a) - \lambda(h)}{h}} = 0.
+\]
+
+在这一形式下，这个定义对于高维有简单的推广：
+\begin{definition}{}{def009020101}
+函数$f:\real^n \to \real^m$在$a \in \real^n$点可微，如果存在一线性变换$\lambda:\real^n \to \real^m$使得
+\[
+\lim_{h \to 0}{\frac{|f(a+h) - f(a) - \lambda(h)|}{|h|}} = 0.
+\]
+\end{definition}
+注意$h$是$\real^n$中的点，$f(a+h)-f(a)-\lambda(h)$是$\real^m$中的点，所以范数记号是不可少的，这个线性变换$\lambda$记作$Df(a)$,称作$f$在$a$点的\textbf{导数}\footnote{这里不同的书略有差异，从而会给人造成混淆，有些书把这个称为微分，而作为线性函数，给定一组基底之后，是存在一个对应的矩阵的，把这个矩阵称为导数。}。短语“这个线性变换$\lambda$”的正确性证明如下。
+\begin{theorem}{}{thm009020101}
+如$f: \real^n \to \real^m$在$a \in \real^n$点可微，则存在一个唯一的线性变换$\lambda:\real^n \to \real^m$使得
+\[
+\lim_{h \to 0}{\frac{|f(a+h) - f(a) - \lambda(h)|}{|h|}} = 0.
+\]
+\end{theorem}
+
+\begin{proof}
+假定$\mu:\real^n \to \real^m$也满足
+\[
+\lim_{h \to 0}{\frac{|f(a+h) - f(a) - \mu(h)|}{|h|}} = 0.
+\]
+如$d(h) = f(a+h) - f(a)$,则
+\[
+\begin{aligned}
+&\lim_{h \to 0}{\frac{|\lambda(h) - \mu(h)|}{|h|}} \\
+& = \lim_{h \to 0}{\frac{|\lambda(h) - d(h) + d(h) - \mu(h)|}{|h|}}\\
+& \le \lim_{h \to 0}{\frac{|\lambda(h) - d(h)|}{|h|}} + \lim_{h \to 0}{\frac{|d(h) - \mu(h)|}{|h|}}\\
+& = 0.
+\end{aligned}
+\]
+另一方面，因$\frac{|\lambda(h) - \mu(h)|}{|h|} \ge 0$, 所以$\lim\limits_{h \to 0}{\frac{|\lambda(h) - \mu(h)|}{|h|}} = 0$. 如$x \in \real^n$,则当$t \to 0$时$tx \to 0$.因此对$x \neq 0$我们有
+\[
+0 = \lim_{t \to 0}{\frac{|\lambda(tx) - \mu(tx)|}{|tx|}} = \frac{|\lambda(x) - \mu(x)|}{|x|}
+\]
+所以$\lambda(x) = \mu(x)$.
+\end{proof}
+
+我们以后将会发现求$Df(a)$的一个简单方法。目前我们来考察由$f(x, y) = \sin{x}$定义的函数$f:\real^2 \to \real$. 那么$Df(a,b) = \lambda$满足$\lambda(x,y) = (\cos{a}) \cdot x$. 为要证明它，注意
+\[
+\begin{aligned}
+&\lim_{(h,k) \to 0}{\frac{|f(a+h, b+k) - f(a, b) - \lambda(h, k)|}{|(h, k)|}}
+&\quad = \lim_{(h,k) \to 0}{\frac{|\sin{(a+h)} - \sin{a} - (\cos{a}) \cdot h|}{|(h, k)|}}
+\end{aligned}
+\]
+因为$\sin'(a) = \cos{a}$, 我们有
+\[
+\lim_{h \to 0}{\frac{|\sin(a + h) - \sin{a} - (\cos{a}) \cdot h|}{|h|}} = 0.
+\]
+因为$|(h, k)| \ge |h|$,所以还有
+\[
+\lim_{(h,k) \to 0}{\frac{|\sin{(a+h)} - \sin{a} - (\cos{a}) \cdot h|}{|(h, k)|}} = 0.
+\]
+
+考察$Df(a):\real^n \to \real^m$关于$\real^n$与$\real^m$的通常基底的矩阵，常常是方便的。这个$m \times n$矩阵称为$f$在$a$处的雅可比(Jacobi)矩阵,记作$f'(a)$. 如$f(x, y) = \sin{x}$, 则$f'(a,b) = (\cos{a}, 0)$. 如$f: \real \to \real$，则$f'(a)$是$1 \times 1$矩阵，其唯一元就是在初等微积分中记作$f'(a)$的那个数。
+
+如果$f$仅在包含$a$的某个开集上定义，那么还可以定义$Df(a)$.为使定理的叙述流畅而又不失其普遍性，我们只考虑定义在$\real^n$上的函数。设有$f:\real^n \to \real^m$，如果$f$在每一个$a \in A$处可微就称$f$在$A$上可微。如$f:A \to \real^m$，又若$f$可以扩张为在包含$A$的某开集上的可微函数，则称$f$是可微的。
+
+\begin{problemset}
+\item 求证：如$f:\real^n \to \real^m$在$a \in \real^n$处可微，则它在$a$点连续。提示，利用习题\ref{exer009010110}.
+
+\item 一函数$f: \real^2 \to \real$,如对每一$x \in \real$,对所有$y_1, y_2 \in \real$我们都有$f(x, y_1) = f(x, y_2)$，则称$f$与第二变元无关。试证$f$与第二变元无关当且仅当存在一函数$g:\real \to \real$使得$f(x, y) = g(x)$. $f'(a, b)$用$g'$表示时是什么？
+
+\item 试决定何时一函数$f:\real^2 \to \real$与第一变元无关，并对这种$f$求出$f'(a,b)$.什么样的函数即与第一变元无关也与第二变元无关？
+
+\item 设$g$施单位圆周
+
+
+\end{problemset}
+
 
 
 
