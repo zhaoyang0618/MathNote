@@ -802,11 +802,358 @@ D(g \circ f)(a) = Dg(f(a)) \circ Df(a).
 \]
 如$m=n=p=1$,我们便得到老的锁链规则。
 
+\begin{proof}
+令$b = f(a)$, $\lambda = Df(a)$, $\mu = Dg(f(a))$.如果我们定义
+\begin{align}
+\varphi(x) &= f(x)- f(a) - \lambda(x - a), \label{equ009020201}\\
+\psi(x) &= g(y) - g(b) - \mu(y - b), \label{equ009020202}\\
+\rho(x) &= g\circ f(x) - g \circ f(a) - \mu \circ \lambda(x - a),\label{equ009020203}
+\end{align}
+则
+\begin{align}
+\lim_{x \to a}{\frac{|\varphi(x)|}{|x - a|}} &=0,\label{equ009020204}\\
+\lim_{y \to b}{\frac{|\psi(x)|}{|y - b|}} &= 0, \label{equ009020205}
+\end{align}
+而我们必须证明
+\[
+\lim_{x \to a}{\frac{|\rho(x)|}{|x - a|}} = 0.
+\]
+现在
+\[
+\begin{aligned}
+\rho(x) &= g(f(x)) - g(b) - \mu(\lambda(x - a)) \\
+&= g(f(x)) - g(b) - \mu(f(x) - f(a) - \varphi(x)) \quad\text{由(\ref{equ009020201})}\\
+&= [g(f(x)) - g(b) - \mu(f(x) - f(a))] + \mu(\varphi(x)) \\
+&= \psi(f(x)) + \mu(\varphi(x)) \text{由(\ref{equ009020202})}
+\end{aligned}
+\]
+于是我们必须证明
+\begin{align}
+&\lim_{x \to a}{\frac{|\psi(f(x))|}{|x - a|}} = 0, \label{equ009020206}\\
+&\lim_{x \to a}{\frac{|\mu(\varphi(x))|}{|x - a|}} = 0. \label{equ009020207}
+\end{align}
+(\ref{equ009020207})式容易从(\ref{equ009020204})式和习题\ref{exer009010110}推得。如果$\epsilon > 0$, 从(\ref{equ009020205})式推知，对某一个$\delta > 0$,我们有
+\[
+|\psi(f(x))| < \epsilon|f(x) - b|, \text{只要}|f(x) - b| < \delta,
+\]
+而这一点只要对某个$\delta_1$, 由$|x - a|<\delta_1$就总成立，于是，由习题\ref{exer009010110}，对某个$M$,
+\[
+\begin{aligned}
+|\psi(f(x))| & < \epsilon|f(x) - b| \\
+&= \epsilon|\varphi(x) + \lambda(x - a)|\\
+&= \epsilon|\varphi(x)| + \epsilon{}M|x - a|.
+\end{aligned}
+\]
+(\ref{equ009020206})式现就容易得出。
 
+\end{proof}
+
+\begin{theorem}{}{thm009020203}
+\begin{enumerate}
+\item[(a)] 如$f:\real^n \to \real^m$是一常值函数（也就是，若对某$y \in \real^m$,我们有:对一切$x \in \real^n$, $f(x) = y$）,那么
+\[
+Df(a) = 0.
+\]
+
+\item[(2)] 如$f:\real^n \to \real^m$是一个线性变换，则
+\[
+Df(a) = f.
+\]
+
+\item[(3)] 如$f:\real^n \to \real^m$，则$f$在$a \in \real^n$处可微当且仅当每个$f_i$是如此，且
+\[
+Df(a) = (Df_1(a), \cdots, Df_m(a)).
+\]
+于是$f'(a)$是$m \times n$矩阵，其第$i$行是$f_i'(a)$.
+
+\item[(4)]如$s:\real^2 \to \real$定义为$s(x, y) = x + y$,则
+\[
+Ds(a, b) = s.
+\]
+
+\item[(5)]如$p:\real^2 \to \real$定义为$p(x, y) = x \cdot y$, 则
+\[
+Dp(a, b)(x, y) = bx + ay.
+\]
+于是$p'(a,b) = (b, a)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item[(1)]
+\[
+\lim_{h \to 0}{\frac{|f(a + h) - f(a) - 0|}{|h|}} = \lim_{h \to 0}{\frac{|y - y - 0|}{|h|}} = 0.
+\] 
+
+\item[(2)]
+\[
+\lim_{h \to 0}{\frac{|f(a + h) - f(a) - f(h)|}{|h|}} = \lim_{h \to 0}{\frac{|f(a) = f(h) - f(a) - f(h)|}{|h|}} = 0.
+\]
+
+\item[(3)]如每一个$f_i$在$a$处可微，且
+\[
+\lambda = (Df_1(a), \cdots, Df_m(a)),
+\]
+则
+\[
+\begin{aligned}
+& f(a + h) - f(a) - f(h) \\
+&\qquad = (f_1(a + h) - f_1(a) - Df_1(a)(h), \cdots, \\
+&\qquad f_m(a+h) - f_m(a) - Df_m(a)(h)).
+\end{aligned}
+\]
+所以
+\[
+\begin{aligned}
+&\lim_{h \to 0}{\frac{|f(a + h) - f(a) - \lambda(h)|}{|h|}}\\
+&\le \lim_{h \to 0}{\sum_{i=1}^{m}{\frac{|f_i(a+h) - f_i(a) - Df_i(a)(h)|}{|h|}}}\\
+&=0.
+\end{aligned}
+\]
+
+另一方面，如$f$在$a$处可微，则由(2)与定理\ref{thm:thm009020202}, $f_i = \pi_i\circ f$在$a$处可微。
+
+\item[(4)]由(2)推得。
+
+\item[(5)]令$\lambda(x, y) = bx + ay$. 那么
+\[
+\begin{aligned}
+&\lim_{(h, k) \to 0}{\frac{|p(a +h, b+k) - p(a, b) - \lambda(h, k)|}{|(h, k)|}}\\
+&\qquad=\lim_{(h, k) \to 0}{\frac{|hk|}{|(h, k)|}}.
+\end{aligned}
+\]
+现在
+\[
+|hk| \le \left\{
+\begin{aligned}
+|h|^2 &\quad\text{如}|k| \le |h|,\\
+|k|^2 &\quad\text{如}|h| \le |k|,
+\end{aligned}
+\right.
+\]
+因此$|hk| \le |h|^2 + |k|^2$.所以
+\[
+\frac{|hk|}{|(h,k)|} \le \frac{h^2 + k^2}{\sqrt{h^2 + k^2}} = \sqrt{h^2 + k^2},
+\]
+因而
+\[
+\lim_{(h, k) \to 0}{\frac{|hk|}{|(h, k)|}} = 0.
+\]
+
+\end{enumerate}
+\end{proof}
+
+\begin{corollary}{}{coro009020204}
+如$f,g:\real^n \to \real$在$a$处可微，则
+\begin{gather*}
+D(f+g)(a) = Df(a) + Dg(a),\\
+D(f \cdot g)(a) = g(a)Df(a) + f(a)Dg(a).
+\end{gather*}
+此外，如果$g(a) \neq 0$,则
+\[
+D(f/g)(a) = \frac{g(a)Df(a) - f(a)Dg(a)}{[g(a)]^2}.
+\]
+\end{corollary}
+
+\begin{proof}
+我们将证明第一式而把其余的留给读者。因为$f + g = s \circ (f, g)$, 我们有
+\[
+\begin{aligned}
+D(f+g)(a) &= Ds(f(a), g(a)) \circ D(f, g)(a)\\
+&= s \circ (Df(a), Dg(a))\\
+&= Df(a) + Dg(a).
+\end{aligned}
+\]
+\end{proof}
+
+下面这样的函数$f: \real^n \to \real^m$的可微性现在得到了保证。其各分量函数可以从函数$\pi_i$（它们是线性变换）以及我们在初等微积分中早已会求导的函数经过加法、乘法、除法和复合而获得。但是，求$Df(x)$或$f'(x)$可能是一项相当艰巨的工作。例如，设$f:\real^2 \to \real$定义为$f(x, y) = \sin(xy^2)$.因为$f = \sin\circ(\pi_1 \cdot [\pi_2]^2)$,我们有
+\[
+\begin{aligned}
+f'(a, b) &= \sin'(ab^2) \cdot [b^2(\pi_1)'(a, b) + a([\pi_2]^2)'(a, b)]\\
+&= \sin'(ab^2) \cdot [b^2(\pi_1)'(a, b) + 2ab(\pi_2)'(a, b)]\\
+&=(\cos(ab^2)) \cdot [b^2(1, 0) + 2ab(0, 1)]\\
+&= (b^2\cos(ab^2), 2ab\cos(ab^2)).
+\end{aligned}
+\]
+幸而我们很快将会发现计算$f'$的一种简单得多的方法。
+
+\begin{problemset}
+\item 利用本节定理求以下的$f'$:
+\begin{enumerate}
+\item[(a)] $f(x, y, z) = x^y$.
+\item[(b)] $f(x, y, z) = (x^y, z)$.
+\item[(c)] $f(x, y) = \sin(x\sin{y})$.
+\item[(d)] $f(x, y, z) = \sin(x\sin(y\sin{z}))$.
+\item[(e)] $f(x, y, z) = x^{y^z}$.
+\item[(f)] $f(x, y, z) = x^{y+z}$.
+\item[(g)] $f(x, y, z) = (x + y)^z$.
+\item[(h)] $f(x, y) = \sin(xy)$.
+\item[(i)] $f(x, y) = [\sin(xy)]^{\cos{3}}$.
+\item[(j)] $f(x, y) = (\sin(xy), \sin(x\sin{y}), x^y)$.
+\end{enumerate}
+
+\item 求以下的$f'$（其中$g:\real \to \real$是连续的）：
+\begin{enumerate}
+\item[(a)] $f(x, y) = \int_{a}^{x+y}{g}$.
+\item[(b)] $f(x, y) = \int_{a}^{x \cdot y}{g}$.
+\item[(c)] $f(x, y, z) = \int_{x^y}^{\sin(x\sin(y\sin{z}))}{g}$.
+\end{enumerate}
+
+\item 一函数$f: \real^n \times \real^m \to \real^p$, 如果对$x,x_1,x_2 \in \real^n$, $y, y_1, y_2 \in \real^m$以及$a \in \real$,我们有
+\begin{gather*}
+f(ax, y) = af(x,y) = f(x, ay),\\
+f(x_1 + x_2, y) = f(x_1, y) + f(x_2, y),\\
+f(x, y_1+y_2) = f(x, y_1) + f(x, y_2),
+\end{gather*}
+则称$f$是双线性的。
+\begin{enumerate}
+\item[(a)] 求证若$f$是双线性的，则
+\[
+\lim_{(h, k) \to 0}{\frac{|f(h, k)|}{|(h, k)|}} = 0.
+\]
+
+\item[(b)]求证$Df(a, b)(x, y) = f(a, y) + f(x, b)$.
+
+\item[(c)]证明定理\ref{thm:thm009020203}中$Dp(a, b)$的公式是(b)的一特殊情况。
+\end{enumerate}
+
+\item 定义$IP: \real^n \times \real^n \to \real$为$IP(x, y) = \left<x,y\right>$.
+\begin{enumerate}
+\item[(a)] 求$D(IP)(a, b)$与$(IP)'(a, b)$.
+\item[(b)] 如$f, g: \real \to \real^n$可微且$h:\real \to \real$定义为$h(t) = \left<f(t), g(t)\right>$, 证明
+\[
+h'(a) = \left<f'(a)^{T}, g(a)\right> + \left<f(a), g'(a)^{T}\right>.
+\]
+(注意$f'(a)$是一$n \times 1$矩阵;其转置矩阵$f'(a)^{T}$是一$1 \times n$矩阵，我们把它看作$\real^n$的元.)
+\item[(c)] 如$f:\real \to \real^n$可微且对一切$t$,$|f(t)| = 1$,证明$\left<f'(t)^{T}, f(t)\right> = 0$.
+\item[(d)]举出一可微函数$f: \real \to \real$使得$|f|(t) = |f(t)|$定义的函数$|f|$不可微。
+\end{enumerate}
+
+\item 设$E_i(i=1,\cdots, k)$是各维数不必相同的欧氏空间。一函数$f: E_1 \times \cdots \times E_k \to \real^p$称为重线性的，如果对于每个选定的$x_j \in E_j$($j \neq i$)，由$g(x) = f(x_1,\cdots,x_{i-1}, x, x_{i+1},\cdots, x_k)$定义的函数$g:E_i \to \real^p$是一个线性变换。
+\begin{enumerate}
+\item[(a)]如果$f$是重线性的而且$i \neq j$, 证明对于$h = (h_1,\cdots, h_k)$，其中$h_l \in E_l$, 我们有
+\[
+\lim_{h \to 0}{\frac{|f(a_1,\cdots,h_i,\cdots,h_j,\cdots,a_k)|}{|h|}} = 0.
+\]
+提示：如果$g(x, y) = f(a_1,\cdots,x,\cdots,y,\cdots, a_k)$，则$g$是双线性的。
+\item[(b)] 求证
+\[
+Df(a_1,\cdots, a_k)(x_1,\cdots, x_k) = \sum_{i=1}^{k}{f(a_1,\cdots, a_{i-1}, x_i, a_{i+1},\cdots, a_k)}.
+\]
+\end{enumerate}
+
+\item 把一个$n \times n$矩阵的每一列视作$\real^n$的一元从而把矩阵本身当作$n$重乘积$\real^n \times \cdots \times \real^n$中的一个点。
+\begin{enumerate}
+\item[(a)] 求证$\det: \real^n \times \cdots \times \real^n \to \real$可微且
+\[
+D(\det)(a_1,\cdots, a_n)(x_1,\cdots, x_n) = \sum_{i=1}^{n}{\det\begin{bmatrix}a_1\\ \vdots \\x_i\\ \vdots\\ a_n\end{bmatrix}}.
+\]
+
+\item[(b)] 如果$a_{ij}: \real \to \real$可微而$f(t) = \det(a_{ij}(t))$,试证
+\[
+f'(t) = \sum_{j=1}^{n}{\det\begin{bmatrix}
+a_{11}(t) &\cdots & a_{1n}(t) \\
+\vdots & & \vdots\\
+a_{j1}'(t) & \cdots & a_{jn}'(t)\\
+\vdots & & \vdots\\
+a_{n1}(t) &\cdots & a_{nn}(t) \\
+\end{bmatrix}}.
+\]
+
+\item[(c)] 如对一切$t$, $\det{(a_{ij}(t))} \neq 0$, 且$b_1, \cdots, b_n: \real \to \real$都是可微的，又设$s_1,\cdots, s_n:\real \to \real$是这样的一些函数使得$s_1(t),\cdots, s_n(t)$是方程组
+\[
+\sum_{j=1}^{n}{a_{ij}s_j(t) = b_j(t)}, \quad i=1,\cdots, n
+\]
+的解。求证$s_i$可微并求出$s_i'(t)$,
+\end{enumerate}
+
+\item 设$f:\real^n \to \real^n$可微且有可微的逆$f^{-1}:\real^n \to \real^n$。证明：$(f^{-1})'(a) = [f'(f^{-1}(a))]^{-1}$. 提示：$f \circ f^{-1}(x) = x$.
+
+\end{problemset}
+
+\section{偏导数}\label{section0090203}
+我们从讨论“每次对一个变元”求导数的问题开始，如$f: \real^n \real$且$a \in \real^n$，如极限
+\[
+\lim_{h \to 0}{\frac{f(a_1, \cdots, a_i + h, \cdots, a_n) - f(a_1,\cdots, a_n)}{h}}
+\]
+存在，就记作$D_if(a)$,称为$f$在$a$点的偏导数。注意$D_if(a)$是某函数的通常导数，这很重要；实际上，如$g(x) = f(a_1,\cdots, x,\cdots, a_n)$,则$D_if(a) = g'(a)$. 这表明, $D_if(a)$是$f$的图形和平面$x_j = a_j$($j \neq i$)的交线在$(a, f(a))$点切线的斜率（图）。这也表明，计算$D_if(a)$是我们早已会做的问题。如$f(x_1,\cdots,x_n)$已由含有$x_1,\cdots,x_n$的某公式给出，则我们可这样来求$D_if(x_1,\cdots, x_n)$,即把所有$x_j$($j \neq i$)都看作常数，而对所得的$x_i$的函数在$x_i$求导。例如，$f(x,y) = \sin(xy^2)$,则$D_1f(x,y) = y^2\cos(xy^2)$, $D_2f(x, y) = 2xy\cos(xy^2)$. 又如，$f(x,y) = x^y$, 则$D_1f(x, y) = yx^{y-1}$, $D_2f(x, y) = x^y\ln{x}$.
+
+稍经练习（例如，作本节末的习题），就和已经会计算的通常导数一样，也会很容易地计算$D_if$.
+
+如果对一切$x \in \real^n$, $D_if(x)$存在，我们便得到一个函数$D_if: \real^n \to \real$.这个函数在$x$点的第$j$个偏导数，也就是$D_j(D_if)(x)$，常常记作$D_{i,j}f(x)$。注意这个记号把$i$和$j$的次序颠倒了。实际上，这个次序通常是没有关系的，因为绝大多数函数（在习题中给出例题）满足$D_{i,j}f = D_{j,i}f$. 有好些细致的定理保证这个等式：下面这个定理已经完全够用了。我们把它的陈述放在这里面而把证明放在后面（习题\ref{exer009030328}）。
+\begin{theorem}{}{thm009020305}
+如$D_{i,j}f$与$D_{j,i}f$在包含$a$的一开集中连续，则
+\[
+D_{i,j}f(a) = D_{j,i}f(a).
+\]
+\end{theorem}
+
+函数$D_{i,j}f$叫做$f$的二阶（混合）偏导数。高阶（混合）偏导数可用明显的方式来定义。显然定理\ref{thm:thm009020305}能用来证明在适当条件下高阶混合偏导数的相应等式。如$f$有一切阶的偏导数，则$D_{i_1,\cdots, i_k}f$中$i_1,\cdots, i_k$的次序是完全无所谓的。具有这种性质的函数称为$C^{\infty}$函数。在以下各章中，为方便起见，经常仅限于讨论$C^{\infty}$函数。
+
+在下节，将用偏导数来求导数。它们还有另外一个重要的用处---求函数的极大值和极小值。
+
+\begin{theorem}{}{thm009020306}
+设$A \subset \real^n$, 如$f:A \to \real$在$A$的內域中点$a$处达到极大（或极小），且$D_if(a)$存在，则$D_if(a) = 0$.
+\end{theorem}
+
+\begin{proof}
+设$g_i(x) = f(a_1,\cdots,x,\cdots,x_n)$。显然$g_i$在$a_i$处有极大值（或极小值），且$g_i$在包含$a_i$的一开区间中有定义。因此$0 = g_i'(a_i) = D_if(a)$.
+\end{proof}
+
+提醒读者，定理\ref{thm:thm009020306}的逆即使当$n=1$时已不成立（如$f:\real \to \real$由$f(x) = x^3$定义，则$f'(0)=0$,但$0$点甚至不是一个局部极大值或极小值）. 如$n > 1$,定理\ref{thm:thm009020306}的逆可以在一种更为奇特的方式下不再为真。例如，设$f:\real^2 \to \real$由$f(x, y) = x^2 - y^2$定义（图）。则因$g_1$在$0$处有一极小值，故$D_1f(0,0)=0$;而因$g_2$在$0$处有一个极大值，故$D_2f(0, 0) = 0$.显然$(0,0)$既不是相对极大点也不是相对极小点。
+
+如用定理\ref{thm:thm009020306}来寻求$f$在$A$上的最大值或最小值，那么还必须单另检查$f$在边界点上的值----这是一件可怕的事情，因为$A$的边界可能是整个$A$! 习题\ref{exer009020227}指明一种作法，习题\ref{exer009050516}陈述了一个经常可用的好方法。
+
+\begin{problemset}
+\item\label{exer009020217} 求下列函数的偏导数：
+\begin{enumerate}
+\item[(a)] $f(x, y, z) = x^y$.
+\item[(b)] $f(x, y, z) = z$.
+\item[(c)] $f(x, y) = \sin(x\sin{y})$.
+\item[(d)] $f(x, y, z) = \sin(x\sin(y\sin{z}))$.
+\item[(e)] $f(x, y, z) = x^{y^z}$.
+\item[(f)] $f(x, y, z) = x^{y+z}$.
+\item[(g)] $f(x, y, z) = (x + y)^z$.
+\item[(h)] $f(x, y) = \sin(xy)$.
+\item[(i)] $f(x, y) = [\sin(xy)]^{\cos{3}}$.
+\end{enumerate}
+
+\item 求下列函数的偏导数(其中$g:\real\to\real$连续):
+\begin{enumerate}
+\item[(a)] $f(x, y) = \int_{a}^{x+y}{g}$.
+\item[(b)] $f(x, y) = \int_{y}^{x}{g}$.
+\item[(c)] $f(x, y) = \int_{a}^{xy}{g}$.
+\item[(d)] $f(x, y, z) = \int_{a}^{\int_{b}^{y}{g}}{g}$.
+\end{enumerate}
+
+\end{problemset}
 
 
 \chapter{积分}\label{chapter00903}
+\section{基本定义}\label{section0090301}
 
+
+
+%\begin{eqnarray}
+%\lefteqn{\int_0^\infty some expression =} \\
+%& & some terms \\
+%& & \mbox{} + more terms
+%\end{eqnarray}
+
+
+\section{测度零和容度零}\label{section0090302}
+
+
+\section{可积函数}\label{section0090303}
+
+
+\section{富比尼定理}\label{section0090304}
+
+\begin{problemset}
+\item\label{exer009030328} 设$D_{1,2}f$与$D_{2,1}f$都连续，应用富比尼定理对$D_{1,2}f = D_{2,1}f$给一简证。提示：
+
+\end{problemset}
 
 
 
