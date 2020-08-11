@@ -1149,7 +1149,7 @@ d(A, B) = \inf\{d(a, b): a \in A, b \in B\}.
 \end{exercise}
 
 \begin{exercise}\label{exer002020506}
-回忆稠密集的定义(\ref{def:def002020104}). 设$\Omega$是完备的度量空间，$f: (D, d) \to (\Omega,\rho)$是一致连续的，其中$D$在$(X, d)$中稠密。利用上题证明：存在一致连续的函数$g:X \to \Omega$，使得对$D$内的每一点，$g(x)=f(x)$.
+回忆稠密集的定义(\ref{def:def002020104}). 设$\Omega$是完备的度量空间，$f: (D, d) \to (\Omega,\rho)$是一致连续的，其中$D$在$(X, d)$中稠密。利用上题证明存在一致连续的函数$g:X \to \Omega$，使得对$D$内的每一点，$g(x)=f(x)$.
 \end{exercise}
 
 \begin{exercise}\label{exer002020507}
@@ -1653,23 +1653,975 @@ f'(z) = -i\frac{\partial{u}}{\partial{y}}(x, y) + \frac{\partial{v}}{\partial{y}
 \begin{gather}\label{equ002030224}
 \frac{\partial{u}}{\partial{x}} = \frac{\partial{v}}{\partial{y}}, \quad \frac{\partial{u}}{\partial{y}} = -\frac{\partial{v}}{\partial{x}}
 \end{gather}
+假定$u$和$v$有二阶连续偏导数（我们最终将证明它们是无穷次可微的）。对Cauchy-Riemann方程求微商，我们得到
+\[
+\frac{\partial^2{u}}{\partial{x^2}} = \frac{\partial^2{v}}{\partial{x}\partial{y}}, \quad
+\frac{\partial^2{u}}{\partial{y^2}} = -\frac{\partial^2{v}}{\partial{y}\partial{x}}.
+\]
+因此
+\begin{gather}\label{equ002030225}
+\frac{\partial^{u}}{\partial{x^2}} + \frac{\partial^2{u}}{\partial{y^2}} = 0,
+\end{gather}
+满足（\ref{equ002030225}）的任意一个具有连续的二阶偏导数的函数称为调和函数。类似地，$v$也是调和的。我们将在第\ref{chapter00210}章中研究调和函数。
 
+设$G$是平面上的一个域，$u$和$v$是定义在$G$内具有连续偏导数的函数。进而设$u$, $v$满足Cauchy-Riemann方程。为此，设$z = x + iy \in G$, $B(z;r) \subset G$. 如果$h = s + it \in B(0; r)$, 那么
+\[
+\begin{aligned}
+u(x+s, y+t) - u(x, y) &= [u(x+s, y+t) - u(x, y + t)]\\
+&\quad + [u(x, y + t) - u(x, y)].
+\end{aligned}
+\]
+把一元函数导数的中值定理应用到这两个括号内的式子上，那么对于$B(0; r)$内的每个$s + it$，都有数$s_1$和$t_1$,$|s_1| < |s|$, $|t_1| < |t|$,使得
+\begin{gather}\label{equ002030226}
+\left\{
+\begin{aligned}
+&u(x+s, y+t) - u(x, y+t) = u_x(x+s_1, y+ t)s,\\
+&u(x, y+t) - u(x, y) = u_y(x, y + t_1)t.
+\end{aligned}
+\right.
+\end{gather}
+令$\varphi(s, t) = [u(x+s, y+t) - u(x, y)] - [u_x(x, y)s +u_y(x, y)t]$, 由(\ref{equ002030226})得到
+\[
+\begin{aligned}
+\frac{\varphi(s, t)}{s + it} &= \frac{s}{s + it}[u_x(x+s_1, y + t) - u_x(x, y)]\\
+&\quad + \frac{t}{s+it}[u_y(x, y+t_1) - u_y(x, y)].
+\end{aligned}
+\]
+但是由$|s| < |s + it|$, $|t| < |s + it|$, $|s_1| < |s|$, $|t_1| < |t|$,以及$u_x$, $u_y$是连续的，得到
+\begin{gather}\label{equ002030227}
+\lim_{s + it \to 0}{\frac{\varphi(s, t)}{s + it}} = 0.
+\end{gather}
+因此
+\[
+\begin{aligned}
+u(x+s, y+t) - u(x, y) &= u_x(x, y)s + u_y(x, y)t \\
+&\quad + \varphi(s, t),
+\end{aligned}
+\]
+其中$\varphi$满足（\ref{equ002030227}）。类似地，
+\[
+\begin{aligned}
+v(x+s, y+t) - v(x, y) = v_x(x, y)s + v_y(x, y)t + \psi(s, t).
+\end{aligned}
+\]
+其中$\psi$满足
+\begin{gather}\label{002030228}
+\lim_{s +it \to 0}{\frac{\psi(s, t)}{s+it}} = 0.
+\end{gather}
+利用$u$, $v$满足Cauchy-Riemann方程这个事实，容易看出
+\[
+\frac{f(z + s + it) - f(z)}{s+it} = u_x(z) + iv_x(z) + \frac{\varphi(s, t) + i\psi(s, t)}{s+it}.
+\]
+根据（\ref{equ002032027}）和（\ref{equ002030228}），$f$是可微的，并且$f'(z) = u_x(z) + iv_x(z)$. 因为$u_x$, $v_x$是连续的，所以$f'$是连续的，$f$是解析的。我们把这些结果总结如下。
+\begin{theorem}{}{thm002030229}
+设$u$, $v$是定义在区域$G$内的实值函数，假定$u$, $v$有连续的偏导数。$f: G \to \mathbb{C}$定义为$f(z) = u(z) + iv(z)$。当且仅当$u$, $v$满足Cauchy-Riemann方程时，$f$是解析的。
+\end{theorem}
 
+\textbf{例子}\quad $u(x, y) = \log{(x^2+y^2)^{\frac{1}{2}}}$在$G = \mathbb{C} - \{0\}$内是调和的吗？回答是肯定的。对$u$求微商可看出它满足（\ref{002030225}）。但是也可通过观察下述事实来证明：在$G$内的每一点的邻域内，$u$是定义在该邻域的一个解析函数（哪个函数？）的实部。
 
+下面是关于调和函数的另一个问题。这个问题将在第\ref{chapter00208}章\ref{section0020803}中作详细的研究。设$G$是平面上的一个域，$u: G \to \mathbb{R}$是调和的. 是否存在一个调和函数$v: G \to \mathbb{R}$，使得$f = u+iv$在$G$内是解析的？如果这样的函数$v$存在, 就称它是$u$的共轭调和函数。如果$v_1$和$v_2$是$u$的两个共轭调和函数，那么$i(v_1-v_2) = (u+iv_1)-(u+iv_2)$在$G$内是解析的，并且仅取纯虚值。由此推出，一个调和函数的两个共轭调和函数相差为一常数（习题\ref{exer002030214}）。
+
+回到共轭调和函数的存在性问题上来。在域$G = \mathbb{C} - \{0\}$内调和函数的上述例子$u(z) = \log{|z|}$，没有共轭调和函数。事实上，如果它有共轭调和函数，那么便可在$G$内定义对数函数的一个解析分支，而这是办不到的（习题\ref{exer002030221}）。但是存在一些区域，在这些区域内每个调和函数有共轭调和函数。特别地，现在证明，当$G$是任意圆或是整个平面时，就是这种情形。
+\begin{theorem}{}{thm002030230}
+设$G$或者是整个平面，或者是某一个开圆。如果$u: G \to \mathbb{R}$是一个调和函数，那么$u$有共轭调和函数。
+\end{theorem}
+
+\begin{proof}
+为了完成定理的证明，需要用到积分号下求微商的Leibniz法则（这个法则将在第\ref{chapter00204}章的\ref{pro:prop002040201}的命题中叙述和证明），设$G = B(0; R)$，$0 < R \le \infty$。又设$u : G \to \mathbb{R}$是调和函数。我们通过寻求调和函数$v$，使得$u$, $v$满足Cauchy-Riemann方程，来完成定理的证明。为此定义
+\[
+v(x,y) = \int_{0}^{y}{u_x(x, t)dt} + \varphi(x),
+\]
+并确定$\varphi$，使得$v_x = -u_y$。上述等式两边对$x$求微商，得到
+\[
+\begin{aligned}
+v_x(x, y) &= \int_{0}^{y}{u_{xx}(x, t)dt} + \varphi'(x) = -\int_{0}^{y}{u_{yy}(x, t)dt} + \varphi'(x)\\
+&= -u_y(x, y) + u_y(x, 0) + \varphi'(x).
+\end{aligned}
+\]
+所以，必定有$\varphi'(x) = -u_y(x, 0)$。容易验证$u$和
+\[
+v(x, y) = \int_{0}^{y}{u_x(x, t)dt} - \int_{0}^{x}{u_y(s, 0)ds}
+\]
+确实满足Cauchy-Riemann方程。
+\end{proof}
+
+$G$是圆或是$\mathbb{C}$这个条件 用在何处？这个证明方法为什么不能作足够的修改使之适用于一般的域？当$G = \mathbb{C} - \{0\}$, $u = \log{|z|}$时，这个证明在何处失效？
 
 
 \begin{problemset}
-\item\label{exer002030202}证明：如果$b_n$, $a_n$是正实数，
+\item 证明：$f(z) = |z|^2 = x^ + y^2$仅在原点有导数。
 
-\item\label{exer002030209}设$z_n$, $z \in G= \mathbb{C} - \{z: z \le 0\}$, 且
+\item\label{exer002030202}证明：如果$b_n$, $a_n$是正实数，$0 < b = \lim{b_n}$, $a = \lim\sup{a_n}$, 则$ab = \lim\sup{(a_nb_n)}$. 如果正德这一要求去掉，结论仍成立吗？
 
+\item 证明：$\lim{n^{\frac{1}{n}}} = 1$.
+
+\item 证明：$(\cos{z})' = -\sin{z}$, $(\sin{z})' = \cos{z}$.
+
+\item 导出公式（\ref{equ002030214}）。
+
+\item 描画出下列各集：$\{z:e^z = i\}$, $\{z:e^z=-1\}$, $\{z:e^z=-i\}$, $\{z:\cos{z}=0\}$, $\{z:\sin{z}=0\}$.
+
+\item 证明对于$\cos{(z+w)}$, $\sin{(z+w)}$的公式。
+
+\item 定义$\tan{z} = \frac{\sin{z}}{\cos{z}}$; 这个函数在何处有定义？在何处是解析的？
+
+\item\label{exer002030209}设$z_n$, $z \in G= \mathbb{C} - \{z: z \le 0\}$, 且$z_n = r_ne^{i\theta_n}$, $z = re^{i\theta}$,其中$-\pi < \theta, \theta_n < \pi$. 证明：如果$z_n \to z$，那么$\theta_n \to \theta$, $r_n \to r$.
+
+\item 证明命题\ref{pro:prop002030220}的下述推广：设$G$和$\Omega$是$\mathbb{C}$中的开集又设$f$和$h$是定义在$G$内的函数，$g: \Omega \to \mathbb{C}$，$f(G) \subset \Omega$, $g$和$h$是解析的, 对于任意$w$, $g'(w) \neq 0$, $f$是连续的，$h$是一一的，并且对于$G$内的$z$，它们满足$h(z) = g(f(z))$. 证明$f$是解析的，给出$f'(z)$的公式。
+
+\item 设$f:G \to \mathbb{C}$是对数函数的一个分支，$n$是一个整数，证明对于$G$内的所有的$z$, $z^n = \exp{(nf(z))}$.
+
+\item 证明：函数$z^{\frac{1}{2}}$的实部总是正的。
+
+\item 设$G = \mathbb{C} - \{z:z \le 0\}$, $n$是正整数。试求出所有的解析函数$f:G \to \mathbb{C}$, 使得对于所有的$z \in G$, $z = (f(z))^n$.
+
+\item\label{exer002030214}设$f: G \to \mathbb{C}$是解析的，$G$是连通的，证明：如果$f(z)$对于$G$内的所有$z$是实的，那么$f$是常数。
+
+\item 对于$r > 0$, 设$A = \{w: w = \exp{(\frac{1}{z})}, 0 < |z| < r\}$, 试确定这个集$A$. 
+
+\item 找出一个连通开集$G \subset \mathbb{C}$和$G$内的两个连续函数$f$和$g$，使得$f(z)^2 = g(z)^2 = 1 - z^2$对于$G$内的所有$z$都成立。你能使$G$最大吗？$f$和$g$是解析的吗？ 
+
+\item 给出$\sqrt{1-z}$的主分支。
+
+\item 设$f$和$g$分别是$z^a$和$z^b$的分支。证明：$fg$是$z^{a+b}$的分支，$f/g$是$z^{a-b}$的分支。设$f(G) \subset G$, $g(G) \subset G$, 证明：$f \circ g$和$g \circ f$都是$z^{ab}$的分支。
+
+\item 设$G$是一个域，定义$G^* - \{z: \bar{z} \in G\}$. 如果$f: G \to \mathbb{C}$是解析的，证明：$f^*: G^* \to \mathbb{C}$, $f^*(z) = \overline{f(\bar{z})}$也是解析的。
+
+\item 设$z_1$, $z_2$, $\cdots$, $z_n$是复数，并且对于$1 \le k \le n$, $\Re{z_k} > 0$, $\Re{(z_1\cdots{}z_n)} > 0$. 证明$\log{(z_1\cdots{}z_n)} = \log{z_1} + \cdots + \log{z_n}$, 其中$\log{z}$是对数函数的主分支。如果关于$z_k$的限制取消，这个公式仍成立吗？
+
+\item\label{exer002030221}证明：不存在定义于$G = \mathbb{C} - \{0\}$的对数分支。(提示：假如这样的分支存在，将它与主分支比较。)
 \end{problemset}
 
 
+\section{作为映照得解析函数. M\"{o}bius变换}\label{section0020303}
+考虑函数$f(z)=z^2$. 如果$z = x+iy$, $\mu + i\nu = f(z)$，那么$\mu = x^2 - y^2$，$\nu = 2xy$. 因此双曲线$x^2 - y^2= c$和$2xy = d$由$f$映为直线$\mu = c$和$\nu = d$. 一个有趣的事实是：当$c$和$d$不为0时，这些双曲线正如它们的像一样是正交的。这个事实并不是孤立的现象。在这一节稍后，我们将对这个性质作一般性的探讨。
+
+现在考察直线$x=c$和$y=d$变成什么。先考察$x=c$（$y$任意）；$f$把这条直线映为$\mu = c^2 - y^2$, $\nu = 2cy$。消去$y$，我们得到$x=c$被映为抛物线$\nu^2 = -4c^2(\mu - c^2)$. 类似地，$f$把$y=d$映为抛物线$\nu^2 = 4d(\mu + d^2)$. 这些抛物线在$(c^2 - d^2, \pm{}2|cd|)$相交。应当指出，当$c \to 0$时，抛物线$\nu^2 = -4c^2(\mu - c^2)$逐渐合拢，而接近于负实轴。这与函数$z^{\frac{1}{2}}$把$G = \mathbb{C} - \{z:z \le 0\}$映为$\{z:\Re{z}>0\}$这一事实相吻合。还要注意，$x=c$和$x=-c$（$y=d$和$y=-d$）被映为同一抛物线。
+
+中心在原点的圆周变成什么呢？若$z = re^{i\theta}$，那么$f(z) = r^2e^{2i\theta}$。于是以原点为中心，半径为$r$的圆周被映为半径为$r^2$的圆周，两个点映为同一点\footnote{$(r, \theta)$和$(r, \theta+\pi)$映为同一个点}。
+
+最后，扇形$S(\alpha, \beta)=\{z:\alpha < \arg{z} < \beta\}$, $\alpha < \beta$变为什么？容易看出$S(\alpha, \beta)$的像是扇形$S(2\alpha, 2\beta)$, 当$\beta-\alpha < \pi$时，$f$限制在$S(\alpha, \beta)$上是一一的。
+
+上面的讨论阐明了$f(z)=z^2$的性质，而且对于研究其他解析函数的映照性质也是有用的。在解析函数的理论中，下述问题占有重要的地位：给定两个连通集$G$和$\Omega$，是否存在定义在$G$内的解析函数，使得$f(G) = \Omega$? 除了本身的兴趣外，这个问题的解（或者宁可说是关于解的存在性问题）是很有用的。
+
+\begin{definition}{}{def002030301}
+域$G \subset \mathbb{C}$内的一条路径是一个连续函数$\gamma: [a,b] \to G$, $[a, b]$是$\mathbb{R}$中的某一区间。如果对于$[a, b]$内的每一个$t$，$\gamma'(t)$存在，并且$\gamma':[a, b] \to \mathbb{C} $是连续的，那么$\gamma$是光滑路径。$\gamma$是分段光滑的，如果存在$[a, b]$的一个分割，$a = t_0 < t_1 < \cdots < t_n=b$, 使得$\gamma$在每个子区间$[t_{j-1}, t_j]$上，$1 \le j \le n$，是光滑的。
+\end{definition}
+
+称函数$\gamma:[a, b] \to \mathbb{C}$对于$[a, b]$内的每个$t$都有导数$\gamma'(t)$, 意思是指：对于$a < t < b$，
+\[
+\lim_{h \to 0}{\frac{\gamma{(t+h)} - \gamma{(t)}}{h}} = \gamma'(t)
+\]
+存在；对于$t=a$和$t=b$分别存在右极限和左极限。当然，这等价于说$\Re{(\gamma)}$和$\Im{(\gamma)}$有导数。
+
+设$\gamma:[a,b] \to G$是光滑路径，并且对于$(a, b)$内的某一$t_0$，$\gamma'(t_0) \neq 0$，那么$\gamma$在点$z_0 = \gamma(t_0)$有切线。这条切线通过点$z_0$，方向是（向量）$\gamma'(t_0)$的方向，或者说这条线的斜率是$\tan{\arg{\gamma'(t_0)}}$. 如果$\gamma_1$和$\gamma_2$是两条光滑路径，$\gamma_1(t_1) = \gamma_2(t_2)=z_0$，$\gamma_1'(t_1) \neq 0$, $\gamma_2'(t_2) \neq 0$, 那么路径$\gamma_1$和$\gamma_2$在$z_0$的夹角定义为
+\[
+\arg{\gamma_2'(t_2)} - \arg{\gamma_1'(t_1)}.
+\]
+
+设$\gamma$是$G$内的光滑路径, $f:G \to \mathbb{C}$是解析的，那么$\sigma = f \circ \gamma$也是一条光滑路径，并且$\sigma'(t) = f'(\gamma(t))\gamma'(t)$. 设$z_0 = \gamma(t_0)$, 假定$\gamma'(t_0) \neq 0$, $f'(z_0) \neq 0$, 那么$\sigma'(t_0) \neq 0$, 并且$\arg{\sigma'(t_0)} = \arg{f'(z_0)} + \arg{\gamma'(t_0)}$, 即
+\begin{gather}\label{equ002030302}
+\arg{\sigma'(t_0)} - \arg{\gamma'(t_0)} = \arg{f'(z_0)}.
+\end{gather}
+
+现在设$\gamma_1$, $\gamma_2$是光滑路径，$\gamma_1(t_1) = \gamma_2(t_2) = z_0$, 并且$\gamma_1'(t_1) \neq 0 \neq \gamma_2'(t_2)$. 设$\sigma_1 = f \circ \gamma_1$, $\sigma_2 = f \circ \gamma_2$. 还假定路径$\gamma_1$和$\gamma_2$在$z_0$彼此不相切，即假定$\arg{\gamma_1(t_1)} \neq \arg{\gamma_2(t_2)}$. 由等式（\ref{equ002030302}）得到
+\begin{gather}\label{equ002030303}
+\arg{\gamma_2'(t_2)} - \arg{\gamma_1'(t_1)} = \arg{\sigma_2'(t_2)} - \arg{\sigma_1'(t_1)}.
+\end{gather}
+这就是说，任意给定过$z_0$的两条路径，$f$把这两条路径映过$w_0 = f(z_0)$的两条路径，当$f'(z) \neq 0$时，曲线的夹角的大小和方向都是保持不变的。综上所述有下面的定理。
+\begin{theorem}{}{thm002030304}
+如果$f:G \to \mathbb{C}$是解析的，那么在$f'(z_0) \neq 0$的每一点$z_0$，$f$保持角度不变。
+\end{theorem}
+
+函数$f: G \to \mathbb{C}$保持角度不变，并且
+\[
+\lim_{z \to a}{\frac{|f(z)-f(a)|}{|z-a|}}
+\]
+也存在，这种函数称为共形映照。如果$f$是解析的，且对于任意$z$，$f'(z) \neq 0$，则$f$是共形的，反之亦然。
+
+如果$f(z) = e^z$，那么$f$在整个$\mathbb{C}$中是共形的。让我们进一步察看一下指数函数。若$z = c + iy$, $c$是固定的。那么$f(z) = re^{iy}$, $r=e^c$, 即$f$把直线$x=c$映为中心在原点，半径为$e^c$的圆周，又，$f$把直线$y=d$映为无穷射线$\{re^{id}: 0 < r < \infty\}$.
+
+我们已经看到，在任何宽度$<2\pi$的水平带形上，$e^z$是一一的，设$G = \{z:-\pi < \Im{z} < \pi\}$, 那么$f(G) = \Omega = \mathbb{C} - \{z:z \le 0\}$. $f$也把垂直线段$\{z = c+iy, -\pi < y < \pi\}$映为部分圆周$\{e^ce^{i\theta}, -\pi < \theta < \pi\}$. 把水平直线$y = d$, $-\pi < d < \pi$，映为和正实轴的夹角等于$d$的射线。
+
+注意，对数的主分支$\log{z}$则反过来，它把$\Omega$映为带形$G$，把圆周映为$G$内的垂直线段，把射线映为$G$内的水平直线。
+
+$\cos{z}$, $\sin{z}$以及其他解析函数的映照性质的研究将在习题中进行。现在着手研究一类奇特的映照---M\"obius映照。
+\begin{definition}{}{def002030305}
+形如$S(z) = \frac{az+b}{cz+d}$的映照称为分式线性变换。如果$a$,$b$,$c$,$d$满足$ad-bc \neq 0$，那么$S(z)$称为M\"obius（麦比乌斯）变换。
+\end{definition}
+
+如果$S$是M\"obius变换，那么$S^{-1} = \frac{dz - b}{-cz+a}$满足$S(S^{-1}(z)) = S^{-1}(S(z)) = z$，即$S^{-1}$是$S$的逆映照，如果$S$和$T$都是分式线性变换，那么$S \circ T$也是分式线性变换，因此，M\"obius变换的集在复合变换下构成一个群。如果不作别的声明，我们考虑的分式线性变换总是M\"obius变换。
+
+设$S(x) = \frac{az+b}{cz+d}$, 如果$\lambda$是任意非零复数，那么
+\[
+S(z) = \frac{(\lambda{}a)z + (\lambda{}b)}{(\lambda{}c)z + (\lambda{}d)}.
+\]
+即系数$a,b,c,d$不是唯一的（见习题\ref{exer002030320}）。
+
+我们也可以把$S$看作是定义在$\mathbb{C}_{\infty}$上的，它满足$S(\infty) = a/c$, $S(-d/c) = \infty$. (注意，我们不可能有$a = 0 =c$，或$d = 0 = c$,因为在这两种情形下都和$ad - bc \neq 0$相矛盾)因为$S$有逆变换，所以$S$把$\mathbb{C}_{\infty}$映为$\cinfty$。
+
+如果$S(z) = z+a$，那么$S$称为平移；如果$S(z)=az$，$a \neq 0$, 那么$S$是一伸缩；如果$S(z)=e^{i\theta}z$\footnote{奇怪，从这个定义来看，前面的$az$中的$a$应该是实数才是合理的。}，那么它是一个旋转。最后，如果$S(z) = 1/z$，那么它是一个反演。
+
+\begin{proposition}{}{prop002030306}
+如果$S$是一个M\"obius变换，那么$S$是平移，伸缩\footnote{从这个命题看，旋转是包含在伸缩里面的。}，反演的复合。（当然，其中有的可能不出现。）
+\end{proposition}
+
+\begin{proof}
+首先，设$c = 0$，因此$S(z) = (a/d)z + (b/d)$, 所以如果$S_1(z)=(a/d)z$, $S_2(z) = z + (b/d)$, 那么$S_2 \circ S_1 = S$, 命题得证。
+
+现在设$c \neq 0$, 那么令$S_1(z)=z + d/c$, $S_2(z) = 1/z$, $S_3(z) = \frac{bc - ad}{c^2}z$, $S_4(z) = z + a/c$, 那么$S = S_4 \circ S_3 \circ S_2 \circ S_1$.
+\end{proof}
+
+$S$的不动点是什么呢？即哪些点满足$S(z)=z$. 如果$z$满足这个条件，那么
+\[
+cz^2 + (d-a)z - b = 0.
+\]
+因此，一个M\"obius变换至多有两个不动点。除非$S(z)=z$对所有的$z$成立。
+
+
+现在设$S$是一个M\"obius变换，$a,b,c$是$\cinfty$中的不同点。$\alpha=S(a)$, $\beta = S(b)$, $\gamma = S(c)$. 假定$T$是另一个具有这种性质的变换。那么$T^{-1}\circ S$以$a, b, c$作为不动点，所以$T^{-1}\circ S = I =$恒同变换，即$S=T$. 因此一个M\"obius变换由$\cinfty$中的任意给定的三个点唯一确定。
+
+设$z_2, z_3, z_4$是$\cinfty$中的点。定义$S: \cinfty \to \cinfty$为：
+\[
+\begin{aligned}
+S(z) &= (\frac{z - z_3}{z-z_4})/(\frac{z_2-z_3}{z_2-z_4}), \quad z_2,z_3, z_4 \in \mathbb{C};\\
+S(z) &= \frac{z- z_3}{z-z_4},\quad z_2 = \infty;\\
+S(z) &= \frac{z_2- z_4}{z-z_4},\quad z_3 = \infty;\\
+S(z) &= \frac{z- z_3}{z_2-z_3},\quad z_4 = \infty.
+\end{aligned}
+\]
+
+在任意情况下，$S(z_2) = 1$, $S(z_3) = 0$, $S(z_4) = \infty$.并且$S$是具有这种性质的唯一变换。
+\begin{definition}{交比}{def002030307}
+如果$z_1 \in \cinfty$，那么$(z_1,z_2,z_3,z_4)$（$z_1,z_2,z_3,z_4$的交比）是使$z_2$变为1，$z_3$变为0，$z_4$变为$\infty$这一唯一的M\"obius变换下$z_1$的像。
+\end{definition}
+
+例如, $(z_2,z_2, z_3, z_4)=1$，$(z, 1, 0, \infty)=z$. 如果$M$是任意M\"obius映照，$w_2,w_3,w_4$是使得$Mw_2=1$, $Mw_3=0$, $Mw_4=\infty$的点，那么$Mz=(z,w_2,w_3,w_4)$.
+
+\begin{proposition}{}{prop002030308}
+如果$z_2,z_3,z_4$是不同的点，$T$是任意M\"obius变换，那么对于任意点$z_1$,
+\[
+(z_1,z_2,z_3,z_4) = (Tz_1, Tz_2, Tz_3, Tz_4).
+\]
+\end{proposition}
+
+\begin{proof}
+设$S(z) = (z, z_2, z_3, z_4)$, 那么$S$是一个M\"obius映照。如果$M = ST^{-1}$, 那么$M(Tz_2) = 1$, $M(Tz_3) = 0$, $M(Tz_4) = \infty$,因此$ST^{-1} = (z, Tz_2, Tz_3, Tz_4)$对于$\cinfty$中的所有$z$成立。特别地，令$z = Tz_1$便得到所要求的结果。
+\end{proof}
+
+\begin{proposition}{}{prop002030309}
+如果$z_2, z_3, z_4$是$\cinfty$中的不同点， $\omega_2, \omega_3, \omega_4$也是$\cinfty$中的不同点，那么有且只有一个M\"obius变换，使得$Sz_2=\omega_2$, $Sz_3 = \omega_3$, $Sz_4 = \omega_4$.
+\end{proposition}
+
+\begin{proof}
+设$Tz = (z, z_2, z_3, z_4)$, $Mz = (z, \omega_2, \omega_3, \omega_4)$, $S = M^{-1}T$. 显然$S$具有所要求的性质。如果$R$是另一个M\"obius变换，使得$Rz_j=\omega_j$, $j=2,3,4$, 那么$R^{-1}\circ S$有三个不动点（$z_2, z_3$和$z_4$），因此$R^{-1} \circ S = I$，或者说$S = R$.
+\end{proof}
+
+从中学几何中已经熟知，平面上的三点决定一个圆周。（注意$\cinfty$中过$\infty$的圆周相应于$\mathbb{C}$中的直线，因此，在上面的叙述中不需要预先声明三点“不共线”，平面上的直线将称为圆周。）下述结果说明在什么时候四点位于一个圆周上。
+
+\begin{proposition}{}{prop002030310}
+设$z_1,z_2,z_3,z_4$是$\cinfty$中的四个不同点，那么$(z_1,z_2,z_3,z_4)$是实数，当且仅当，这四个点位于一个圆周上。
+\end{proposition}
+
+\begin{proof}
+设$S:\cinfty \to \cinfty$定义为$Sz = (z, z_2, z_3, z_4)$, 那么$S^{-1}(\mathbb{R})=$使得$(z,z_2,z_3,z_4)$是实数的$z$的集。因此，如果我们能够在M\:obius变换下，$\mathbb{R}_{\infty}$的像是一个圆周，命题就得证。
+
+设$Sz = \frac{az+b}{cz+d}$, 如果$z=x \in \mathbb{R}$, $\omega = S^{-1}(x)$, 那么$x = S\omega$九蕴含$S(\omega) = \overline{S(\omega)}$, 即
+\[
+\frac{a\omega + b}{c\omega+d} = \frac{\overline{a\omega} + \bar{b}}{\overline{c\omega} + \bar{d}}
+\]
+交叉相乘得到
+\begin{gather}\label{equ002030311}
+\begin{aligned}
+&(a\bar{c} - \bar{a}c)|\omega|^2 + (a\bar{d}-\bar{d}c)\omega\\
+&+(b\bar{c} - d\bar{a})\bar{\omega} + (b\bar{d} - \bar{b}d) = 0.
+\end{aligned}
+\end{gather}
+如果$a\bar{c}$是实的，那么$a\bar{c} - \bar{a}c = 0$, 令$\alpha = 2(a\bar{d} - \bar{b}c)$, $\beta = i(b\bar{d}-\bar{b}d)$. 用$i$乘（\ref{equ002030311}），因为$\beta$是实的，所以得到
+\begin{gather}\label{equ002030312}
+0 = \Im{(\alpha\omega)} - \beta = \Im{(\alpha\omega - \beta)}.
+\end{gather}
+即$\omega$位于由（\ref{equ002030312}）决定的直线上，$\alpha$, $\beta$是固定的。如果$a\bar{c}$不是实的，那么(\ref{equ002030311})变成
+\[
+|\omega|^2 + \bar{\gamma}\omega + \gamma\bar{\omega} - \delta = 0,
+\]
+其中$\gamma$是某一个复常数，$\delta$是某一个实常数。因此
+\begin{gather}\label{equ002030313}
+|\omega + \gamma| = \lambda,
+\end{gather}
+其中
+\[
+\lambda = (|\gamma|^2 + \delta)^{\frac{1}{2}} = |\frac{ad-bc}{\bar{a}c - a\bar{c}}| > 0.
+\]
+因为$\gamma$和$\lambda$不依赖于$x$, (\ref{equ002030313})是圆周的方程，所以命题得证。
+\end{proof}
+
+\begin{theorem}{}{thm002030314}
+M\"obius变换把圆周变为圆周。
+\end{theorem}
+
+\begin{proof}
+设$\Gamma$是$\cinfty$中的任意的一个圆周，$S$是任意一个M\"obius变换。$z_2$, $z_3$, $z_4$是$\Gamma$上的三个不同的点，记$\omega_j = Sz_j$, $j=2,3,4$, 那么$\omega_2, \omega_3, \omega_4$决定一圆周$\Gamma'$。我们断言$S(\Gamma) = \Gamma'$.事实上，对于$\cinfty$中的任意一点$z$,由命题\ref{pro:prop002030308}得到
+\begin{gather}\label{equ002030315}
+(z, z_2, z_3, z_4) = (Sz, \omega_2, \omega_3, \omega_4).
+\end{gather}
+根据上面的命题，如果$z$在$\Gamma$上，那么(\ref{equ002030315})的两边是实的，但这就是说$Sz \in \Gamma'$.
+\end{proof}
+
+现在设$\Gamma$和$\Gamma'$是$\cinfty$中的两个圆周。$z_2,z_3,z_4 \in \Gamma$, $\omega_2, \omega_3, \omega_4 \in \Gamma'$. 令$Rz = (z, z_2, z_3, z_4)$, $Sz=(z, \omega_2, \omega_3, \omega_4)$, 那么$T = S^{-1}\circ R$把$\Gamma$映为$\Gamma'$。事实上，$Tz_j = \omega_j$, $j=2,3,4$,和上面的证明一样，推出$T(\Gamma) = \Gamma'$.
+
+\begin{proposition}{}{prop002030316}
+对于$\cinfty$中任意给定的圆周$\Gamma$和$\Gamma'$，存在一个M\"obius变换$T$，使得$T(\Gamma) = \Gamma'$. 并且我们能够指定$\Gamma$上的任意三点变为$\Gamma'$上的任意三点。如果我们指定$Tz_j$, $j=2,3,4$（$\Gamma$上的$z_j$互不相同），那么$T$是唯一的。
+\end{proposition}
+
+\begin{proof}
+除了唯一性外，其余的已在上段中给出了。唯一性的证明对于读者来说是一个简单的习题。
+\end{proof}
+
+现在我们知道M\"obius变换把圆周变为圆周。下一个问题是这些圆周的内部和外部变为什么？为了回答这个问题，我们引进一些新的概念。
+
+\begin{definition}{}{def002030317}
+设$\Gamma$是通过$z_2, z_3, z_4$的圆周，$\cinfty$中的点$z$和$z^*$称为关于$\Gamma$是对称的，如果
+\begin{gather}\label{equ002030318}
+(z^*, z_2, z_3, z_4) = \overline{(z, z_2, z_3, z_4)}.
+\end{gather}
+\end{definition}
+这个式子表示，这个定义不仅依赖于圆周，而且也依赖于圆周上的点$z_2, z_3, z_4$,作为一个习题（习题\ref{exer002030311}），留给读者去证明对称性和这些点的选取无关。
+
+由命题\ref{pro:prop002030310}, $z$关于圆周$\Gamma$与自己对称，当且仅当，$z \in \Gamma$.
+
+让我们来研究$z$和$z^*$是对称的意味着什么。设$\Gamma$是一条直线，那么顾名思义，我们相信$z$和$z^*$关于$\Gamma$是对称的，如果通过$z$和$z^*$的直线垂直于$\Gamma$，并且$z$和$z^*$在$\Gamma$的两侧，到$\Gamma$的有相同的距离。事实正是如此。
+
+设$\Gamma$是一直线。取$z_4 = \infty$。等式(\ref{equ002030318})变成
+\[
+\frac{z^* - z_3}{z_2-z_3} = \frac{\bar{z}-\bar{z_3}}{\bar{z_2} - \bar{z_3}}.
+\]
+这就得到$|z^* - z_3| = |z - z_3|$;因为$z_3$是不确定的，所以$z$, $z^*$到$\Gamma$上每一点的距离相同。又
+\[
+\Im{\frac{z^*-z_3}{z_2-z_3}} = \Im{\frac{\bar{z}-\bar{z_3}}{\bar{z_2} - \bar{z_3}}} = -\Im{\frac{z-z_3}{z_2-z_3}}.
+\]
+因此，我们得到（除非$z \in \Gamma$），$z$, $z^*$位于$\Gamma$确定的不同的半平面内。由此推出，$[z, z^*]$垂直于$\Gamma$.
+
+现在设$\Gamma = \{z:|z - a|=R\}$（$0 < R < \infty$），$z_2,z_3, z_4$在$\Gamma$上。根据（\ref{equ002030318}）,并对若干M\"obius变换多次应用命题\ref{pro:prop002030308}，得到
+\[
+\begin{aligned}
+(z^*, z_2, z_3, z_4) &= \overline{(z, z_2, z_3, z_4)}\\
+&= \overline{(z-a, z_2-a, z_3-a, z_4-a)} \\
+&= (\bar{z}- \bar{a}, \frac{R^2}{z_2 - a}, \frac{R^2}{z_3 - a}, \frac{R^2}{z_4 - a})\\
+&= (\frac{R^2}{\bar{z} - \bar{a}}, z_2 - a, z_3 - a, z_4 - a)\\
+&= (\frac{R^2}{\bar{z}-\bar{a}} + a, z_2, z_3, z_4). 
+\end{aligned}\footnote{第一个等式是对称的定义，第二个等式使用变换$Tz = z-a$，第三个等式是把共轭作用于每一项，这个是成立的，第四个等式是使用变换$Tz = R^2/z$，第五个等式是使用变换$Tz = z+a$。}
+\]
+因此。$z^* = a + R^2(\bar{z} - \bar{a})^{-1}$, 或者$(z^* - a)(\bar{z} - \bar{a}) = R^2$. 由此得到
+\[
+\frac{z^*-a}{z-a} = \frac{R^2}{|z-a|^2} > 0;
+\]
+所以$z^*$位于从$a$出发，通过$z$的射线$\{a + t(z-a): 0 < t < \infty\}$上。利用$|z-a||z-a| = R^2$这一事实，如下图所示，我们能够由$z$得到$z^*$（若$z$位于$\Gamma$内部）。设$L$是从$a$出发，通过$z$的射线，过$z$点作一条直线$P$垂直于$L$, 在$P$和$\Gamma$的交点处作$\Gamma$的切线，这条切线和$L$的交点就是$z^*$. 点$a$和$\infty$关于$\Gamma$是对称的。
+
+\begin{theorem}{对称原理}{thm002030319}
+如果M\"obius变换$T$把圆周$\Gamma_1$变为圆周$\Gamma_2$，那么关于$\Gamma_1$的一对对称点被$T$映为关于$\Gamma_2$的一对对称点。
+\end{theorem}
+
+\begin{proof}
+设$z_2, z_3, z_4 \in \Gamma_1$, 如果$z, z^*$关于$\Gamma_1$是对称的，那么由命题\ref{pro:prop002030308}得到
+\[
+\begin{aligned}
+(Tz^*, Tz_2, Tz_3, Tz_4) &= (z^*, z_2, z_3, z_4)\\
+&= \overline{(z, z_2, z_3, z_4)}\\
+&=\overline{(Tz, Tz_2, Tz_3, Tz_4)}.
+\end{aligned}
+\]
+因此$Tz^*$和$Tz$关于$\Gamma_2$是对称的。
+\end{proof}
+
+现在我们讨论在$\cinfty$中圆周的定向。这将能够使我们去区分$\cinfty$中圆周的“内部”和“外部”。注意，在$\cinfty$（球面）上，对于圆周的内部和外部没有明显的选择。
+
+\begin{definition}{}{def002030320}
+如果$\Gamma$是一个圆周，那么$\Gamma$的定向是$\Gamma$上的有序的三个点$(z_1, z_2, z_3)$。
+\end{definition}
+
+直观上，这三个点给了$\Gamma$的一个方向。这就是我们从$z_1$“走”到$z_2$再到$z_3$，如果只给定两个点，当然意思就含糊了。
+
+设$\Gamma = \mathbb{R}$, $z_1, z_2, z_3 \in \mathbb{R}$，又设$Tz = (z, z_1, z_2, z_3) = \frac{az+b}{cz+d}$. 由于$T(\mathbb{R}_{\infty}) = \mathbb{R}_{\infty}$，由此推出，$a,b,c,d$可以取为实数（见习题\ref{exer002030308}），因此
+\[
+\begin{aligned}
+Tz &= \frac{az+b}{cz+d} = \frac{az+b}{|cz+d|^2}(c\bar{z} = d)\\
+&=\frac{1}{|cz+d|^2}[ac|z|^2 + bd + bc\bar{z} + adz].
+\end{aligned}
+\]
+所以
+\[
+\Im{(z, z_1, z_2, z_3)} = \frac{(ad-bc)}{|cz+d|^2}\Im{z}.
+\]
+于是，$\{z:\Im{(z, z_1, z_2, z_3)<0}\}$或者是上半平面，或者是下半平面，取决于$(ad-bc)<0$还是$(ad-bc)>0$.（注意，$ad-bc$是$T$的“行列式”。）
+
+现在设$\Gamma$是任意的，$z_1, z_2, z_3$在$\Gamma$上。对于任意的M\"obius变换$S$，我们有（根据命题\ref{pro:prop002030308}）
+\[
+\begin{aligned}
+\{z:\Im{(z, z_1, z_2, z_3)} > 0\} &= \{z:\Im{(Sz, Sz_1, Sz_2, Sz_3)} > 0\}\\
+&= S^{-1}\{z:\Im{(z, Sz_1, Sz_2, Sz_3)} > 0\}.
+\end{aligned}
+\]
+特别地，如果选取$S$，使得$S$把$\Gamma$映为$\mathbb{R}_{\infty}$，那么$\{z: \Im{(z, z_1,z_2, z_3)} > 0\}$等于上半平面或下半平面在$S^{-1}$下的像。
+
+如果$(z_1, z_2, z_3)$是$\Gamma$的定向，那么我们定义$\Gamma$（关于$(z_1, z_2, z_3)$）的右边为
+\[
+\{z:\Im{(z,z_1, z_2, z_3)} > 0\}.
+\]
+类似地，我们定义$\Gamma$的左边为
+\[
+\{z:\Im{(z,z_1, z_2, z_3)} < 0\}.
+\]
+
+下述定理的证明留给读者作为习题。
+\begin{theorem}{定向原理}{thm002030321}
+设$\Gamma_1$和$\Gamma_2$是$\cinfty$中的两个圆周，$T$是M\"obius变换，$T(\Gamma_1) = \Gamma_2$, $(z_1, z_2, z_3)$是$\Gamma_1$的定向，那么$T$把$\Gamma_1$的右边和左边变为$\Gamma_2$关于定向$(Tz_1, Tz_2, Tz_3)$的右边和左边。
+\end{theorem}
+
+考虑$\mathbb{R}$的定向$(1, 0, \infty)$。由交比的定义，$(z, 1, 0, \infty) = z$。因此，$\mathbb{R}$关于$(1,0,\infty)$的右边是上半平面。这和我们的直观是一致的“当我们沿$\mathbb{R}$从$1$走到$0$，再到$\infty$，上半平面在我们的右边。
+
+作为例子，考虑下述问题：找出一个解析函数$f: G \to \mathbb{C}$，$G = \{z:\Re{z} > 0\}$，使得$f(G) = D = \{z:|z|<1\}$. 我们是通过寻找一个M\"obius变换来解决这个问题的。这个变换把虚轴变为单位圆周。由定向原理，它把$G$变为$D$（即我们必须细心选取这个映照，使得它不是把$D$变为$\{z:|z|>1\}$）。
+
+如果我们给定虚轴的定向为$(-i, 0, i)$，那么$\{z:\Re{z} > 0\}$是虚轴的右边。事实上，
+\[
+\begin{aligned}
+(z, -i, 0, i) &= \frac{2z}{z-i} = \frac{2z}{z-i} \cdot \frac{\bar{z}+i}{\bar{z}+i}\\
+&=\frac{2}{|z-i|^2}(|z|^2 + iz).
+\end{aligned}
+\]
+因此, $\{z: \Im{(z, -i, 0, i)} > 0\} = \{z: \Im{iz} > 0\} = \{z:\Re{z} > 0\}$.给$\Gamma$以定向$(-i, -1, i)$，我们得到$D$位于$\Gamma$的右边。又
+\[
+(z, -i, -1, i) = \frac{2i}{i-1} \cdot \frac{z+1}{z-i}.
+\]
+如果
+\[
+Sz = \frac{2z}{z-i}, Rz = (\frac{2i}{i-1})(\frac{z+1}{z-i}),
+\]
+那么$T = R^{-1}S$把$G$映为$D$（并把虚轴映为$\Gamma$）。由代数运算，我们有
+\[
+Tz = \frac{z-1}{z+1}.
+\]
+
+把这个结果和前面的结果结合起来，我们得到, $g(z) = \frac{e^z-1}{e^z+1}$把无穷带形$\{z:|\Im{z}|<\pi/2\}$映为开单位圆$D$。（值得一提的是$\frac{e^z-1}{e^z+1} = \tanh(\frac{z}{2})$）。
+
+设$G_1, G_2$是连通开集，为了找出一个解析函数$f$，使得$f(G_1)=G_2$，我们试图把$G_1, G_2$都映为开单位圆。如果这一点能够办到，$f$就能由一个函数和另一个函数的反函数的符合而得到。
+
+作为一个例子，设$G$是两个相交于$a, b$（$a \neq b$）的圆周的内部开集，$L$是过$a, b$的直线，其定向是$(\infty, a, b)$。那么$Tz = (z, \infty, a, b) = \frac{z-a}{z-b}$把$L$映为实轴$(T\infty = 1,Ta=0, Tb=\infty)$.由于$T$把圆周映为圆周，所以$T$把$\Gamma_1$和$\Gamma_2$映为过$0$和$\infty$的圆周，即$T(\Gamma_1)$, $T(\Gamma_2)$是直线。利用定向，我们有$T(G) = \{\theta_0 - \alpha < \arg{\omega} < \theta_0\}$\footnote{原书误为$T(G) =\{\omega-\alpha < \arg{\omega} < \alpha\}$, $\alpha>0$.---译注}, $\alpha>0$，或者是某一这种闭扇形的余集。利用幂函数，或许还有一个旋转，我们可以把这个楔形映为右半平面。现在与$\frac{z-1}{z+1}$复合起来，就得到$G$到$D = \{z:|z|<1\}$的映照。
+
+\begin{problemset}
+\item 求$\{z:\Re{z} < 0, |\Im{z}| < \pi\}$在指数函数下的像。
+
+\item 对于集$\{z:|\Im{z}|< \pi/2\}$做上一习题
+
+\item 讨论$\cos{z}$和$\sin{z}$的映照性质。
+
+\item 讨论$z^n$和$z^{1/n}$, $n>2$的映照性质。（提示：利用极坐标。）
+
+\item 求出$\cinfty$中伸缩、平移、反演的不动点。
+
+\item 计算下列交比：(a) $(7+i,1,0,\infty)$; (b)$(2, 1-i, 1, 1+i)$; (c)$(0, 1, i, -1)$; (d)$(i-1, \infty, 1+i, 0)$.
+
+\item 如果$Tz = \frac{az+b}{cz+d}$，求出$z_2,z_3, z_4$（用$a,b,c,d$表示），使得$Tz = (z, z_2, z_3, z_4)$.
+
+\item\label{exer002030308}如果$Tz = \frac{az+b}{cz+d}$, 证明：当且仅当我们可以选取$a,b,c,d$为实数时$T(\mathbb{R}) = \mathbb{R}$.
+
+\item 如果$Tz = \frac{az+b}{cz+d}$,求出$T(\Gamma) = \Gamma$的充分必要条件，其中$\Gamma$是单位圆周$\{z:|z|=1\}$.
+
+\item 设$D = \{z:|z|<1\}$, 求出所有满足$T(D)=D$的M\"obius变换。
+
+\item\label{exer002030311}证明：对称的定义（\ref{def:def002030317}）不依赖于$z_2,z_3,z_4$的选取，即证明：如果$\omega_2, \omega_2, \omega_4$也在$\Gamma$上，那么它们满足等式(\ref{equ002030318})，当且仅当$(z^*, \omega_2, \omega_3, \omega_4) = \overline{(z, \omega_2, \omega_3, \omega_4)}$.（提示：利用习题\ref{exer002030308}）
+
+\item 证明定理\ref{thm:thm002030304}。
+
+\item 讨论映照$f(z) = \frac{1}{2}(z + \frac{1}{z})$.
+
+\item 设一个圆包含在另一个圆内，并在一点$a$相切，$G$是这两个圆周之间的域，将$G$共形映照为开单位圆。（提示：先用$(z-a)^{-1}$）.
+
+\item 设$G = \{z: 0 < |z| < 1\}$. 能否将$G$共形映照为开单位圆？
+
+\item 试用解析函数$f$把$G = \mathbb{C} - \{z:-1  \le z \le 1\}$映为开单位圆，$f$能是一一的吗？
+
+\item 设$G$是一个域，$f: G \to \mathbb{C}$是解析的，$f(G)$是圆周的一子集，证明：$f$是一常数。
+
+\item 设$-\infty < a < b < \infty$. $Mz = \frac{z-ia}{z-ib}$. 定义直线$L_1 = \{z:\Im{z}=b\}$, $L_2 = \{z:\Im{z}=a\}$, $L_3=\{z:\Re{z}=0\}$.确定图中的$A, B, C, D, E, F$中的哪一个能被$M$映为图中的$U,V,W,X,Y,Z$.
+
+\item 设$a,b,M$如上题所述，$\log{z}$是对数的主分支。
+\begin{enumerate}
+\item[(a)]证明：$\log{(Mz)}$对于所有的$z$，除去$z=ic$,$a<c<b$外有定义。并且如果$h(z)=\Im{[\log{Mz}]}$, 那么对于$\Re{z} > 0$, 有$0 < h(z) < \pi$.
+\item[(b)]证明：对于$\Re{z} > 0$及任意实数$c$, $\log{(z-ic)}$有定义，并证明：如果$\Re{z}>0$,有$|\Im{\log{(z-ic)}}|<\pi/2$. 
+\item[(c)]设$h$如(a)中所述，证明：$h(z)=\Im{[\log{z-ia} - \log{(z-ib)}]}$.
+\item[(d)]证明:
+\[
+\int_{a}^{b}{\frac{dt}{z-it}} = i[\log{(z-ib)} - \log{(z-ia)}].
+\]
+（提示：利用微积分学的基本定理。）
+\item[(e)]结合(c)和(d)，得到
+\[
+h(x+iy) = \int_{a}^{b}{\frac{dt}{x^2 + (y-t)^2}} = \arctan{(\frac{y-a}{x})} - \arctan{(\frac{y-b}{x})}.
+\]
+\item[(f)]解释(e)的几何意义，并证明：当$\Re{z}>0$时，$h(z)$是图中所画的角度。
+\end{enumerate}
+
+\item\label{exer002030320}设$Sz = \frac{az+b}{cz+d}$, $Tz = \frac{\alpha{}z + \beta}{\gamma{}z + \delta}$, 证明：当且仅当存在非零复数$\lambda$，使得$\alpha = \lambda{}a$, $\beta = \lambda{}b$, $\gamma = \lambda{}c$, $\delta = \lambda{}d$时$S = T$.
+
+\item\label{exer002030321} 设$T$是具有不定点$z_1$和$z_2$的M\"obius变换。如果$S$是一个M\"obius变换，证明：$S^{-1}TS$有不动点$S^{-1}z_1$和$S^{-1}z_2$.
+
+\item\label{exer002030322} (a)证明：一个M\"obius变换，当且仅当它是一个伸缩时，仅以$0$和$\infty$为它的不动点。
+
+(b)证明：一个M\"obius变换，当且仅当它是一个平移时，仅以$\infty$为它的不动点。
+
+\item 证明：一个M\"obius变换$T$，当且仅当, $Tz = a/z$, $a \in \mathbb{C}$时，满足$T(0) = \infty$, $T(\infty) = 0$。
+
+\item 设$T$是一个M\"obius变换，且不失恒同变换。证明：一个M\"obius变换$S$, 当且仅当$S$和$T$有相同的不动点时，满足$ST=TS$。（提示：利用习题\ref{exer002030321}和\ref{exer002030322}）
+
+\item 求出M\"obius变换群的所有Abel子群。
+
+\item (a)设$GL_2(\mathbb{C})=$所有的$2 \times 2$可逆复数矩阵。$\mathscr{M}$是M\"obius变换群。$\varphi: GL_2(\mathbb{C}) \to \mathscr{U}$定义为
+\[
+\varphi\begin{pmatrix}a & b \\ c & d\end{pmatrix} = \frac{az+b}{cz+d}.
+\]
+证明：$\varphi$是$GL_2(\mathbb{C})$到$\mathscr{M}$上的群同态。求出$\varphi$的核。
+
+(b) 设$SL_2(\mathbb{C})$是$GL_2(\mathbb{C})$的子群，它是由行列式为1的所有矩阵所组成的。证明：$SL_2(\mathbb{C})$在$\varphi$下的像是$\mathscr{M}$的全体。$\varphi$的核的哪部分在$SL_2(\mathbb{C})$中？
+
+\item 如果$\mathscr{G}$是一个群，$\mathscr{N}$是一个子群，那么$\mathscr{N}$称为$\mathscr{G}$的正规子群，如果当$T \in \mathscr{N}$，$S \in \mathscr{G}$时$S^{-1}TS \in \mathscr{N}$。如果$\mathscr{G}$的仅有的正规子群是$\{I\}$（$I$是$\mathscr{G}$的单位）和$\mathscr{G}$本身，则称$\mathscr{G}$是单纯群。证明：M\"obius变换群$\mathscr{M}$是一个单纯群。
+
+\item 讨论$(1-z)^i$的映照性质。
+
+\item 对于复数$\alpha$和$\beta$，$|\alpha|^2 + |\beta|^2 = 1$,
+\[
+u_{\alpha,\beta} = \frac{\alpha{}z - \bar{\beta}}{\beta{}z - \bar{\alpha}}, U = \{u_{\alpha,\beta}:|\alpha|^2+|\beta|^2=1\}.
+\]
+(a)证明：在变换的复合运算下$U$构成一个群。
+
+(b)如果$SU_2$是所有的行列式为1的酉矩阵所构成的集，证明：$SU_2$在矩阵的乘法下是一个群，并且对于$SU_2$中的每一个$A$, 有唯一的复数$\alpha,\beta$，它们满足$|\alpha|^2+|\beta|^2=1$,使得$A = \begin{pmatrix}\alpha & \beta \\ -\bar{\beta} & \bar{\alpha}\end{pmatrix}$.
+
+(c)证明：$\begin{pmatrix}\alpha & \beta \\ -\bar{\beta} & \bar{\alpha}\end{pmatrix} \to u_{\alpha, \beta}$是群$SU_2$到$U$上的同构。
+
+(d)如果$l \in \{0, \frac{1}{2}, 1, \frac{3}{2}, \cdots\}$, 设$H_l=$所有其次数$\le 2l$的多项式。对于$U$中的$u_{\alpha,\beta}$定义$T_u^{(l)}:H_l \to H_l$为$(T_u^{(l)}f)(z) = (\beta{}z+\bar{\alpha})^{2l}f(u(z))$.证明：$T_u^{(l)}$是$H_l$上的一个可逆的线性变换。并且$u \mapsto T_u^{(l)}$是$U$到一个可逆线性变换群里（$H_l$到$H_l$上）的一一同态。
+
+\item 对于$|z|<1$定义$f(z)$为
+\[
+f(z) = \exp\{-i\log{[i(\frac{1+z}{1-z})]^{1/2}}\}.
+\]
+
+(a)证明: $f$将$D = \{z:|z|<1\}$共形映照为一个圆环$G$.
+
+(b)求出所有把$D$映为$D$的M\"obius变换$S(z)$，使得当$|z|<1$时,$f(s(z)) = f(z)$.
+\end{problemset}
+
 
 \chapter{复积分}\label{chapter00204}
+本章导出的结果在解析函数的研究中是基本的，这里给出的定理是整个数学知识的基础之一，并且具有一系列范围广泛的应用。
+
+\section{Riemann-Stieltjes积分}\label{section0020401}
+为了定义函数沿$\mathbb{C}$内一条路径的积分，我们首先来定义Riemann-Stieltjes积分。这种积分的讨论是远不完备的，而仅限于讨论为了有力的解释线积分是必需的那些结果。
+
+\begin{definition}{有界变差函数}{def002040101}
+设$[a, b] \subset \mathbb{R}$，称函数$\gamma:[a, b] \to \mathbb{C}$是有界变差函数，如果存在一个常数$M>0$，使得对于$[a,b]$的每一个分割$P=\{a=t_0 < t_1<\cdots<t_m=b\}$, 总有
+\[
+v(\gamma:P) = \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|} \le M.
+\]
+$\gamma$的全变差$V(\gamma)$定义为
+\[
+V(\gamma) = \sup\{v(\gamma:P):P\text{是}[a,b]\text{的任一个分割}\}.
+\]
+显然, $V(\gamma) \le M < \infty$.
+\end{definition}
+
+容易看出。当且仅当，$\Re{\gamma}$和$\Im{\gamma}$是有界变差函数时，$\gamma$才是有界变差函数。当$\gamma$是实的，非减函数时，那么$\gamma$是有界变差函数，并且$V(\gamma) = \gamma(b) - \gamma(a)$（习题\ref{exer002040101}）。我们还要给出别的例子，但首先给出这种函数的一些容易导出的性质。
+\begin{proposition}{}{prop002040102}
+设$\gamma:[a, b] \to \mathbb{C}$是有界变差函数，那么：
+\begin{enumerate}
+\item[(a)]如果$P$和$Q$是$[a,b]$的分割，且$P \subset Q$，则
+\[
+v(\gamma:P) \le v(\gamma:Q);
+\]
+\item[(b)]如果$\sigma:[a, b] \to \mathbb{C}$也是有界变差函数，且$\alpha, \beta \in \mathbb{C}$, 则$\alpha\gamma+\beta\sigma$是有界变差函数，且
+\[
+V(\alpha\gamma+\beta\sigma) \le |\alpha|V(\gamma) + |\beta|V(\sigma).
+\]
+\end{enumerate}
+\end{proposition}
+
+证明留给读者。
+
+下面的命题给出一类广泛的有界变差函数，实际上，这是我们主要考虑的一类函数。
+
+\begin{proposition}{}{prop00203040103}
+如果$\gamma:[a,b]\to \mathbb{C}$是分段光滑函数，则$\gamma$是有界变差函数，且
+\[
+V(\gamma) = \int_{a}^{b}{|\gamma'(t)|dt}.
+\]
+\end{proposition}
+
+\begin{proof}
+设$\gamma$是光滑的（对于分段光滑情形的证明容易由此推出），我们记得，当我们说$\gamma$是光滑时，就意味着$\gamma'$是连续的。设$P=\{a=t_0<t_1<\cdots<t_m=b\}$,那么，由定义,
+\[
+\begin{aligned}
+v(\gamma;P) &= \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|} = \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(t)dt}|} \\
+&\le\sum_{k=1}^{m}{\int_{t_{k-1}}^{t_k}{|\gamma'(t)|dt}} = \int_{a}^{b}{|\gamma'(t)|dt}.
+\end{aligned}
+\]
+因此$V(\gamma) \le \int_{a}^{b}{|\gamma'(t)|dt}$, $\gamma$是有界变差函数。
+
+由于$\gamma'$连续，因而一致连续；所以，如果给定$\epsilon>0$, 我们可以选取$\delta_1 >0$,使得当$|s-t|<\delta_1$时，有$|\gamma'(s)-\gamma'(t)|<\epsilon$, 又可选取$\delta_2 > 0$,使得如果$P=\{a=t_0<t_1<\cdots<t_m = b\}$, $\left\|P\right\| = \max\{(t_k - t_{k-1}):1 \le k \le m\} \le \delta_2$时，有
+\[
+|\int_{a}^{b}{|\gamma'(t)|dt} + \sum_{k=1}^{m}{|\gamma'(\tau_k)|(t_k - t_{k-1})}| < \epsilon,
+\]
+其中$\tau_k$是$[t_{k-1}, t_k]$中的任意一点。因此，
+\[
+\begin{aligned}
+\int_{a}^{b}{|\gamma'(t)|dt} &\le \epsilon + \sum_{k=1}^{m}{|\gamma'(\tau_k)|(t_k-t_{k-1})}\\
+&=\epsilon + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(\tau_k)dt}|}\\
+&\le \epsilon + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{[\gamma'(\tau_k) - \gamma'(t)]dt}|} \\
+&\quad + \sum_{k=1}^{m}{|\int_{t_{k-1}}^{t_k}{\gamma'(t)dt}|}.
+\end{aligned}
+\]
+如果$\left\|P\right\| \le \delta = \min(\delta_1, \delta_2)$,那么对于$[t_{k-1}, t_k]$中的$\tau_k$，有$|\gamma'(t_k) - \gamma'(t_{k-1})|<\epsilon$, 且
+\[
+\begin{aligned}
+\int_{a}^{b}{|\gamma'(t)|dt} &\le \epsilon + \epsilon(b-a) + \sum_{k=1}^{m}{|\gamma(t_k) - \gamma(t_{k-1})|}\\
+&=\epsilon[1 + (b-a)] + v(\gamma;P)\\
+&\le \epsilon[1 + (b-a)] + V(\gamma).
+\end{aligned}
+\]
+令$\epsilon \to 0+$, 给出
+\[
+\int_{a}^{b}{|\gamma'(t)|dt} \le V(\gamma),
+\]
+这就得到了要证明的等式。
+\end{proof}
+
+\begin{theorem}{}{thm002040104}
+设$\gamma:[a,b]\to \mathbb{C}$是有界变差函数，$f:[a,b]\to \mathbb{C}$是连续函数，则存在一个复常数$I$, 使得对于每个$\epsilon>0$，存在$\delta>0$，当$P = \{t_0<t_1<\cdots<t_m\}$是$[a,b]$的一个分割,且$\left\|P\right\|=\max\{(t_k - t_{k-1}):1\le k \le m\} < \delta$时,
+\[
+|I - \sum_{k=1}^{m}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}|<\epsilon
+\]
+其中$\tau_k$可以在$[t_{k-1}, t_k]$上任意选择。
+
+数$I$就称为$f$在$[a,b]$上关于$\gamma$的积分，记为
+\[
+I = \int_{a}^{b}{fd\gamma} = \int_{a}^{b}{f(t)d\gamma(t)}.
+\]
+\end{theorem}
+
+\begin{proof}
+由于$f$是连续的，因而是一致连续的；于是我们可以（归纳地）取到正数$\delta_1>\delta_2>\delta_3>\cdots$,使得当$|s-t|<\delta_m$时，有$|f(s)-f(t)|<\frac{1}{m}$.对每一个$m \ge 1$，设$\mathscr{P}_m$是$[a,b]$的满足$\|P\| < \delta_m$的所有分割$P$作成的集，那么$\mathscr{P}_1 \supset \mathscr{P}_2 \supset\cdots$, 再定义$F_m$是集
+\begin{gather}\label{equ002040105}
+\{\sum_{k=1}^{m}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}: P \in \mathscr{P}_m, t_{k-1} \le \tau_k \le t_k\}
+\end{gather}
+的闭包。
+
+我们先假定下述断言成立。
+\begin{gather}\label{equ002040106}
+\left\{
+\begin{aligned}
+&F_1 \supset F_2 \supset F_3 \supset \cdots,\\
+&\diam{F_m} \le \frac{2}{m}V(\gamma).
+\end{aligned}
+\right.
+\end{gather}
+这时由Cantor定理（第\ref{section00202}章\ref{thm:thm002020307}），恰好存在一个复数$I$，使得对每一个$m \ge 1$都有$I \in F_m$. 让我们来说明，这将完成定理的证明。如果$\epsilon>0$, 令$m > \frac{2}{\epsilon}V(\gamma)$, 则$\epsilon > \frac{2}{m}V(\gamma) \le \diam{F_m}$，由于$I \in F_m$，所以$F_m \subset B(I;\epsilon)$. 于是取$\delta=\delta_m$，定理便得证。
+
+现在来证明断言（\ref{equ002040106}）。显然由$\mathscr{P}_1 \supset \mathscr{P}_2 \supset \cdots$可推出$F_1 \supset F_2 \supset \cdots$. 为了证明$\diam{F_m} \le \frac{2}{m}V(\gamma)$,只要证明（\ref{equ002040105}）中的集的直径$\le\frac{2}{m}V(\gamma)$. 为此分作两步进行，每一步都是容易的，虽然第一步较为冗长。
+
+设$P = \{t_0<t_1<\cdots<t_m\}$是一个分割，我们用$S(P)$表示形如$\sum{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}$的和数, 其中$\tau_k$是$[t_{k-1}, t_k]$上的任意一点。固定$m \ge 1$且设$P \in \mathscr{P}_m$. 第一步证明，如果$P \subset Q$（$Q \in \mathscr{P}_m$）,则$|S(P)-S(Q)|<\frac{1}{m}V(\gamma)$. 设$Q$是由$P$添上一个分点得到的，我们仅就这一情形给出证明。设$1 \le p \le m$, $t_{k-1} < t^*<t_p$;又设$P \cup \{t^*\} = Q$.假如$t_{p-1} \le \sigma \le t^*$, $t^* \le \sigma' \le t_{p}$,
+\[
+S(Q) = \sum_{k \neq p}{f(\sigma_k)[\gamma(t_k) - \gamma(t_{k-1})]} + f(\sigma)[\gamma(t^*) - \gamma(t_{p-1})]\\
++f(\sigma')[\gamma(t_p) - \gamma(t^*)].
+\]
+因为当$|\tau - \sigma|<\delta_m$时,$|f(\tau) - f(\sigma)| < \frac{1}{m}$,所以便有
+\[
+\begin{aligned}
+|S(P)-S(Q)| &= |\sum_{k \neq p}{[f(\tau_k) - f(\sigma_k)][\gamma(t_k) - \gamma(t_{k-1})]}\\
+&\quad +f(\tau_p)[\gamma(t_p) - \gamma(t_{p-1})]\\
+&\quad -f(\sigma)[\gamma(t^*) - \gamma(t_{p-1})]\\
+&\quad -f(\sigma')[\gamma(t_p) - \gamma(t^*)]|\\
+&\le \frac{1}{m}\sum_{k \neq p}{|\gamma(t_k) - \gamma(t_{k-1})|} \\
+&\quad + |[f(\tau_p) - f(\sigma)][\gamma(t^*) - \gamma(t_{k-1})]\\
+&\quad + [f(\tau_p) - f(\sigma')][\gamma(t_p) - \gamma(t^*)]|\\
+&\le \frac{1}{m}\sum_{k \neq p}{|\gamma(t_k) - \gamma(t_{k-1})|} \\
+&\quad + \frac{1}{m}|\gamma(t^*) - \gamma(t_{k-1})|\\
+&\quad + \frac{1}{m}|\gamma(t_p) - \gamma(t^*)| \le \frac{1}{m}V(\gamma).
+\end{aligned}
+\]
+
+第二步，设$P$和$R$是$\mathscr{P}_m$中的任意两个分割，那么$Q = P \cup R$是既包含$P$也包含$R$的分割，利用第一步我们得到
+\[
+\begin{aligned}
+|S(P) - S(R)| &\le |S(P) - S(Q)| + |S(Q) - S(R)|\\
+&\le \frac{2}{m}V(\gamma).
+\end{aligned}
+\]
+由此便推出（\ref{equ002040105}）中的集的直径$\le\frac{2}{m}V(\gamma)$.
+\end{proof}
+
+通过$\epsilon-\delta$论证方法，从定义可推出下面的结果。
+
+\begin{proposition}{}{prop002040107}
+设$f$和$g$是$[a,b]$上的连续函数，$\gamma$和$\sigma$是$[a,b]$上的有界变差函数，则对于任意两个数$\alpha$，$\beta$, 有
+\begin{enumerate}
+\item[(a)]$\int_{a}^{b}{(\alpha{}f + \beta{}g)d\gamma} = \alpha\int_{a}^{b}{fd\gamma} + \beta\int_{a}^{b}{gd\gamma}$;
+\item[(b)]$\int_{a}^{b}{fd(\alpha\gamma+\beta\sigma)} = \alpha\int_{a}^{b}{fd\gamma} + \beta\int_{a}^{b}{gd\gamma}$.
+\end{enumerate}
+\end{proposition}
+
+下面的命题对于计算这种积分是很有用的，
+
+\begin{proposition}{}{prop002040108}
+设$\gamma:[a,b] \to \mathbb{C}$是有界变差函数，$f:[a,b] \to \mathbb{C}$是连续函数，如果$a = t_0 < t_1 < \cdots < t_m = b$，则
+\[
+\int_{a}^{b}{fd\gamma} = \sum_{k=1}^{m}{\int_{t_{k-1}}^{t_k}{fd\gamma}}.
+\]
+\end{proposition}
+
+证明留做习题。
+
+前面已经提到，我们将主要考虑分段光滑的$\gamma$. 下面的定理说明，在这种情形下我们能够通过微积分学中已经学过的积分法来计算$\int{fd\gamma}$.
+
+\begin{theorem}{}{thm002040109}
+如果$\gamma$是分段光滑的，$f:[a,b]\to \mathbb{C}$是连续函数，则
+\[
+\int_{a}^{b}{fd\gamma} = \int_{a}^{b}{f(t)\gamma'(t)dt}.
+\]
+\end{theorem}
+
+\begin{proof}
+我们仍然只考虑$\gamma$是光滑的情形。通过考虑$\gamma$的实部和虚部, 把证明归结为对于$\gamma([a,b]) \subset \mathbb{R}$的情形.设$\epsilon > 0$,且可取$\delta>0$,使得当$P = \{a=t_0<t_1<\cdots<t_n=b\}$,满足$\|P\| < \delta$时
+\begin{gather}
+\left|\int_{a}^{b}{fd\gamma} - \sum_{k=1}^{n}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]}\right| < \epsilon / 2,\label{equ002040110}\\
+\left|\int_{a}^{b}{f(t)\gamma'(t)dt} - \sum_{k=1}^{m}{f(\tau_k)\gamma'(\tau_k)(t_k - t_{k-1})}\right| < \epsilon / 2.\label{equ002040111}
+\end{gather}
+对于$[t_{k-1}, t_k]$上的任意$\tau_k$成立。如果我们应用导数的中值定理，得到在$[t_{k-1}, t_k]$内存在$\tau_k$，使得$\gamma'(\tau_k) = [\gamma(t_k) - \gamma(t_{k-1})](t_k - t_(k-1))^{-1}$（注意：应用中值定理时，$\gamma$必需是实的）。于是
+\[
+\sum_{k=1}^{n}{f(\tau_k)[\gamma(t_k) - \gamma(t_{k-1})]} = \sum_{k=1}^{n}{f(\tau_k)\gamma'(\tau_k)(t_k - t_{k-1})}.
+\]
+联系到不等式（\ref{equ002040110}）和（\ref{equ002040111}）就得到
+\[
+\left|\int_{a}^{b}{fd\gamma} - \int_{a}^{b}{f(t)\gamma'(t)dt}\right| < \epsilon.
+\]
+由于$\epsilon$是任意的，所以定理得证。
+\end{proof}
+
+我们已经定义路径为一个连续函数$\gamma:[a, b] \to \mathbb{C}$.如果$\gamma$是一条路径，那么集合$\gamma(t):a \le t \le b$称为$\gamma$的迹(trace),用$\{\gamma\}$表示。应当注意，路径的迹总是紧集。当$\gamma$是有界变差函数时，$\gamma$是可求长路径。如果$P$是$[a,b]$的一个分割，那么$v(\gamma;P)$正好就是连接$\gamma$的迹上的分点的线段的长度的和。说$\gamma$是可求长的就是说$\gamma$有有穷长度，且它的长度是$V(\gamma)$. 特别地，如果$\gamma$是分段光滑的，那么$\gamma$是可求长的，它的长度等于$\int_{a}^{b}{|\gamma'(t)|dt}$.
+
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，且$\{\gamma\} \subset E \subset \mathbb{C}$，$f: E \to \mathbb{C}$是连续函数，那么$f \circ \gamma$是$[a,b]$上的连续函数。记住这点，有助于理解下面的定义。
+\begin{definition}{}{def002040112}
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，$f$是定义在$\gamma$的迹上的连续函数，那么$f$沿$\gamma$的（线）积分是
+\[
+\int_{a}^{b}{f[\gamma(t)]d\gamma(t)}.
+\]
+这个线积分也可以表示为$\int_{\gamma}{f} = \int_{\gamma}{f(z)dz}$.
+\end{definition}
+
+作为例子，我们将$\gamma:[a, b] \to \mathbb{C}$取为$\gamma(t) = e^{it}$, 对于$z \neq 0$, 定义$f(z) = \frac{1}{z}$。$\gamma$是光滑的，所以由定理\ref{thm:thm002040109}，
+\[
+\int_{\gamma}{\frac{1}{z}dz} = \int_{0}^{2\pi}{e^{-it}(ie^{it})dt} = 2\pi{}i.
+\]
+
+利用$\gamma$的同一定义，并设$m \ge 0$是任意整数，得到
+\[
+\begin{aligned}
+\int_{\gamma}{z^mdz} &= \int_{0}^{2\pi}{e^{imt}(ie^{it})dt} = \int_{0}^{2\pi}{\exp(i(m+1))dt}\\
+&=\int_{0}^{2\pi}{\cos(m+1)tdt} + i\int_{0}^{2\pi}{\sin(m+1)tdt} = 0.
+\end{aligned}
+\]
+
+现在设$a, b \in \mathbb{C}$, 令$\gamma(t) = tb + (1-t)a$, $0 \le t \le 1$,那么$\gamma'(t) = b-a$,利用微积分学的基本定理，我们便得到
+\[
+\int_{\gamma}{z^ndz} = (b-a)\int_{0}^{1}{[tb + (1-t)a]^ndt} = \frac{1}{n+1}(b^{n+1} - a^{n+1}),
+\]
+其中$n \ge 0$.在习题中将举出更多的例子。但现在我们将证明某个“不变性”的结果，这个结果除了可用于计算外，也构成了我们曲线定义的基础。
+
+如果$\gamma:[a, b] \to \mathbb{C}$是可求长路径，$\varphi:[c, d] \to [a, b]$是连续非减函数，它的像是整个$[a,b]$（即$\varphi(c)=a$, $\varphi(d)=b$），则$\gamma\circ\varphi: [c, d] \to \mathbb{c}$是一条路径，它与$\gamma$有相同的迹。而且$\gamma\circ\varphi$是可求长的，因为如果$c=a_0<s_1<\cdots<s_n=d$,那么$a = \varphi(s_0) \le \varphi(s_1) \le \cdots \le \varphi(s_n) = b$是$[a,b]$的一个分割，因此
+\[
+\sum_{k=1}^{n}{|\gamma(\varphi(s_k)) - \gamma(\varphi(s_{k-1}))|} \le V(\gamma,)
+\]
+所以$V(\gamma\circ\varphi) \le V(\gamma)<\infty$,如果$f$是$\{\gamma\} = \{\gamma\circ\varphi\}$上的连续函数，那么$\int_{\gamma\circ\varphi}{f}$也是有定义的。
+
+\begin{proposition}{}{prop002040113}
+如果$\gamma:[a,b] \to \mathbb{C}$是可求长路径，$\varphi:[c, d] \to [a,b]$是连续非减函数，且$\varphi(c)=a$, $\varphi(d)=b$, 则对于$\{\gamma\}$上的任意一个连续函数$f$,有
+\[
+\int_{\gamma}{f} = \int_{\gamma\circ\varphi}{f}.
+\]
+\end{proposition}
+
+\begin{proof}
+设$\epsilon > 0$，选取$\delta_1 > 0$,使得对于满足$(s_k - s_{k-1})< \delta_1$的$[c, d]$的分割$\{s_0<s_1<\cdots<s_n\}$及$s_{k-1} \le \sigma_k \le s_k$,有
+\begin{gather}\label{equ002040114}
+\left|\int_{\gamma\circ\varphi}{f} - \sum_{k=1}^{n}{f(\gamma\circ\varphi(\sigma_k))[\gamma\circ\varphi(s_k) - \gamma\circ\varphi(s_{k-1})]}\right| < \epsilon/2.
+\end{gather}
+类似地，选取$\delta_2>0$，使得对于满足$(t_k - t_{k-1})<\delta_2$的$[a,b]$的分割$\{t_0 < t_1 < \cdots < t_n\}$及$t_{k-1}\le \tau_k \le t_k$，有
+\begin{gather}\label{equ002040115}
+\left|\int_{\gamma}{f} - \sum_{k=1}^{n}{f(\gamma(\tau_k))[\gamma(t_k) - \gamma(t_{k-1})]}\right| < \epsilon/2.
+\end{gather}
+但是$\varphi$在$[c, d]$上是一致连续的，因此存在$\delta > 0$,$\delta<\delta_1$,使得当$|s-s'|<\delta$时,就有$|\varphi(s)-\varphi(s')|<\delta_2$,所以，如果$\{s_0 < s_1 < \cdots<s_n\}$是$[c,d]$的一个分割，满足$(s_k - s_{k-1})<\delta<\delta_1$,令$t_k = \varphi(s_k)$，那么$\{t_0<t_1<\cdots<t_n\}$是$[a,b]$的一个分割，满足$(t_k - t_{k-1})<\delta_2$.如果$s_{k-1} \le \sigma_k \le s_k$, 令$\tau_k = \varphi(\sigma_k)$,那么（\ref{equ002040114}）和（\ref{equ002040115}）都成立，而且这两个差式的第二项是相同的，由此推出
+\[
+\left|\int_{\gamma}{f} - \int_{\gamma\circ\varphi}{f}\right| < \epsilon.
+\]
+因为$\epsilon>0$是任意的，所以等式得证。
+\end{proof}
+
+我们希望在可求长路径的集合上定义一个等价关系，使得等价类中的每一条路径有相同的迹，并且在这个迹上的连续函数的线积分，对于这个类中的每一条路径来说都是相同的。如果对于某一个像上面那样的\footnote{所谓“像上面那样的$\varphi$”是指不减的$\varphi$---校者注}$\varphi$，$\sigma = \gamma\circ\varphi$，我们似乎就应当定义$\sigma$和$\gamma$是等价的，但这并不是等价关系！
+
+\begin{definition}{}{def002040116}
+设$\sigma:[c, d]\to \mathbb{C}$和$\gamma:[a, b] \to\mathbb{C}$都是可求长路径
+。称路径$\sigma$和$\gamma$等价，如果存在连续、严格增函数$\varphi:[c, d]\to[a,b]$，且$\varphi(c)=a$, $\varphi(d)=b$,使得$\sigma = \gamma\circ\varphi$.我们称函数$\varphi$为一个参数变换。
+\end{definition}
+
+一条曲线是路径的一个等价类。一条曲线的迹是其等价类中任意一条路径的迹。如果$f$在曲线的迹上连续，那么$f$在曲线上的积分定义为$f$在等价类中任意一条路径上的积分。
+
+曲线是光滑的（分段光滑的），当且仅当，它的等价类中某一个路径是光滑的（分段光滑的）。
+
+今后，曲线和它的等价类中的路径我们将不加区别。假如“设$\gamma$是按照反时针方向通过一次的单位圆周”就表示一条曲线。读者应当相信，今后所叙述的关于曲线的结果，与具体路径的取法无关。
+
+设$\gamma:[a,b]\to\mathbb{C}$是一个可求长路径，且对于$a \le t \le b$, 令$|\gamma|(t)$为$V(\gamma;[a,t])$,即
+\[
+|\gamma|(t) = \sup\left\{\sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|}:\{t_0<t_1<\cdots<t_n\}\text{是}[a,t]\text{的分割}\right\}.
+\]
+显然，$|\gamma|(t)$是增函数，所以$|\gamma|:[a, b]\to\mathbb{C}$是有界变差函数。如果$f$在$\{\gamma\}$上连续，定义
+\[
+\int_{\gamma}{f|dz|} = \int_{a}^{b}{f(\gamma(t))d|\gamma|(t)}.
+\]
+如果$\gamma$是可求长曲线，那么用$-\gamma$表示由$(-\gamma)(t)=\gamma(-t)$定义的曲线，$-b \le t \le -a$.其另一个记号是$\gamma^{-1}$.此外，如果$c \in \mathbb{C}$,$\gamma+c$表示由$(\gamma+c)(t)=\gamma(t)+c$定义的曲线。下面的命题给出线积分的许多基本性质。
+\begin{proposition}{}{prop002040117}
+设$\gamma$是可求长曲线，$f$是$\{\gamma\}$上的连续函数，则
+\begin{enumerate}
+\item[(a)] $\int_{\gamma}{f} = -\int_{-\gamma}{f}$;
+\item[(b)] $|\int_{\gamma}{f}| \le \int_{\gamma}{|f||dz|} \le V(\gamma)\sup[|f(z)|:z \in \{\gamma\}]$;
+\item[(c)] 如果$c \in \mathbb{C}$,那么$\int_{\gamma}{f(z)dz} = \int_{\gamma+c}{f(z)dz}$.
+\end{enumerate}
+\end{proposition}
+
+证明留作习题。
+
+下面的结果类似于关于线积分的微积分学的基本定理。
+
+\begin{theorem}{}{thm002040118}
+设$G$是$\mathbb{C}$中的开集，$\gamma$是$G$内的可求长路径，其起点和终点分别是$\alpha$和$\beta$.如果$f:G \to\mathbb{C}$是连续函数，且具有原函数$F:G\to\mathbb{C}$.则
+\[
+\int_{\gamma}{f} = F(\beta) - F(\alpha).
+\]
+(我们记得，当$F'=f$时，则称$F$是$f$的原函数。)
+\end{theorem}
+
+在这个定理的证明中，需要下面有用的事实。
+\begin{lemma}{}{lemma002040119}
+如果$G$是$\mathbb{C}$中的开集，$\gamma:[a,b]\to G$是可求长路径，$f:G\to\mathbb{C}$是连续的，则对于每个$\epsilon>0$,存在$G$内的折线$\Gamma$,使得$\Gamma(a)=\gamma(a)$, $\Gamma(b)=\gamma(b)$,并且$\left|\int_{\gamma}{f}-\int_{\Gamma}{f}\right|<\epsilon$.
+\end{lemma}
+
+\begin{proof}
+\textbf{情形I}\quad 设$G$是一个开圆。由于$\{\gamma\}$是紧集，$d = \dist(\{\gamma\}, \partial{G})>0$.由此推出，如果$G=B(c;r)$,那么$\{\gamma\} \subset B(c;\rho)$,其中$\rho = r - \frac{1}{2}d$.过渡到这个较小的圆的理由是，$f$在$\bar{B}(c;\rho) \subset G$上是一致连续的，因此，不失一般性，可以假定$f$在$G$内是一致连续的。选取$\delta>0$,使得当$|z-w|<\delta$时,$|f(z)-f(w)|<\epsilon$.如果$\gamma:[a, b]\to\mathbb{C}$，那么$\gamma$是一致连续的。于是存在$[a,b]$的分割$\{t_0<t_1<\cdots<t_n\}$使得当$t_{k-1}\le s,t\le t_k$时，
+\begin{gather}\label{equ002040119}
+|\gamma(s) - \gamma(t)| < \delta.
+\end{gather}
+并且对于$t_{k-1} \le \tau_k \le t_k$,有
+\begin{gather}\label{equ002040120}
+\left|\int_{\gamma}{f} - \sum_{k=1}^{n}{f(\gamma(\tau_k))[\gamma(t_k) - \gamma(t_{k-1})]}\right|<\epsilon.
+\end{gather}
+我们定义$\Gamma:[a,b]\to\mathbb{C}$为
+\begin{gather*}
+\Gamma(t) = \frac{1}{t_k - t_{k-1}}[(t_k-t)\gamma(t_{k-1}) + (t - t_{k-1})\gamma(t_k)],\\
+t_{k-1} \le t \le t_{k}.
+\end{gather*}
+所以在$[t_{k-1}, t_k]$上，$\Gamma(t)$是从$\gamma(t_{k-1})$到$\gamma(t_k)$的线段，即$\Gamma$是$G$内的折线路径。由(\ref{equ002040119})得到
+\begin{gather}\label{equ002040121}
+|\Gamma(t) - \gamma(\tau_k)|<\delta, t_{k-1} \le t \le t_k.
+\end{gather}
+
+由于$\int_{\Gamma}{f} = \int_{a}^{b}{f[\Gamma(t)]\Gamma'(t)dt}$, 所以
+\[
+\int_{\Gamma}{f} = \sum_{k=1}^{n}{\frac{\gamma(t_k) - \gamma(t_{k-1})}{t_k - t_{k-1}}\int_{t_{k-1}}^{t_k}{f(\Gamma(t))dt}}.
+\]
+利用（\ref{equ002040120}），我们得到
+\[
+\begin{aligned}
+\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| &\le \epsilon + \left|\sum_{k=1}^{n}{f(\gamma(\tau_k))}\right.\\
+&\qquad\left.\cdot[\gamma(t_k) - \gamma(t_{k-1})] - \int_{\Gamma}{f}\right|\\
+&\le\epsilon + \sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|(t_k - t_{k-1})^{-1}}\\
+&\qquad\cdot\int_{t_{k-1}}^{t_k}{|f(\Gamma(t)) - f(\gamma(\tau_k))|dt}.
+\end{aligned}
+\]
+应用（\ref{equ002040121}）于被积函数，得到
+\[
+\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| \le \epsilon + \epsilon\sum_{k=1}^{n}{|\gamma(t_k) - \gamma(t_{k-1})|} \le \epsilon(1 + V(\gamma)).
+\]
+情形I得证。
+
+\textbf{情形II}\quad $G$是任意的。由于$\{\gamma\}$是紧集，所以存在数$r>0$,$0<r<\dist(\{\gamma\}, \partial{G})$.选取$\delta>0$，使得当$|s-t|<\delta$时, $|\gamma(s) - \gamma(t)|<r$.如果$P=\{t_0<t_1<\cdots<t_n\}$是$[a,b]$的一个分割，且$\|P\| < \delta$，那么对于$t_{k-1} \le t \le t_k$,有$|\gamma(t) - \gamma(t_{k-1})|<r$.即，如果$\gamma_k:[t_{k-1}, t_k]\to\mathbb{C}$定义为$\gamma_k(t)=\gamma(t)$,那么$\{\gamma_k\} \subset B(\gamma(t_{k-1});r)$, $1 \le k \le n$.由情形I，存在一条折线路径$\Gamma_k:[t_{k-1}, t_k]\to B(\gamma(t_{k-1});r)$使得$\Gamma(t_{k-1}) = \gamma(t_{k-1})$, $\Gamma(t_k) = \gamma(t_k)$，且$\left|\int_{\gamma_k}{f} - \int_{\Gamma_k}{f}\right|<\epsilon/n$.在$[t_{k-1}, t_k]$上让$\Gamma(t) = \Gamma_k(t)$,那么$\Gamma$具有所要求的性质。
+\end{proof}
+
+\textbf{定理\ref{thm:thm002040118}的证明} \quad \textbf{情形I}\quad $\gamma:[a, b] \to \mathbb{C}$是分段光滑的。这时由微积分学的基本定理，
+\[
+\begin{aligned}
+\int_{\gamma}{f} &= \int_{a}^{b}{f(\gamma(t))\gamma'(t)dt} = \int_{a}^{b}{F'(\gamma(t))\gamma'(t)dt}\\
+&=\int_{a}^{b}{(F \circ \gamma)'(t)dt} = F(\gamma(b)) - F(\gamma(a)) \\
+&= F(\beta) - F(\alpha).
+\end{aligned}
+\]
+
+\textbf{情形II}\quad 一般情形，若$\epsilon > 0$, 由引理\ref{lem:lemma002040119}, 存在从$\alpha$到$\beta$的折线路径$\Gamma$, 使得$\left|\int_{\gamma}{f} - \int_{\Gamma}{f}\right| < \epsilon$, 但是$\Gamma$是分段光滑的，所以由情形I, $\int_{\Gamma}{f} = F(\beta) - F(\alpha)$. 因此$\left|\int_{\gamma}{f} - [F(\beta) - F(\alpha)]\right| < \epsilon$;由于$\epsilon$是任意的。我们所要求的等式得证。
+
+在定理\ref{thm:thm002040118}的证明中，利用引理\ref{lem:lemma002040119}，从分段光滑的情形过渡到可求长的情形，这种方法在关于线积分许多结果的证明中是有代表性的。今后我们还会看到引理\ref{lem:lemma002040119}的应用。
+
+称一条曲线$\gamma:[a, b] \to \mathbb{C}$是闭的，如果$\gamma(a) = \gamma(b)$.
+
+\begin{corollary}{}{coro002040122}
+设$G$, $\gamma$和$f$满足定理\ref{thm:thm002040118}中的假定，如果$\gamma$是闭曲线，则
+\[
+\int_{\gamma}{f} = 0.
+\]
+\end{corollary}
+
+微积分学的基本定理告诉我们，每一个连续函数必有原函数。对于复变函数来说，情况远非如此，例如，设$f(z) = x^2 + y^2$, 如果$F$是$f$的原函数。现在由Cauchy-Riemann方程，得到
+\[
+\frac{\partial{U}}{\partial{x}} = \frac{\partial{V}}{\partial{y}} = x^2+y^2, \frac{\partial{U}}{\partial{y}} = \frac{\partial{V}}{\partial{x}} = 0.
+\]
+但是$\frac{\partial{U}}{\partial{y}} = 0$蕴含着$U(x, y) = u(x)$, $u(x)$是某一个可微的函数，所以$x^2 + y^2 = \frac{\partial{U}}{\partial{x}} = u'(x)$，这是一个明显的矛盾。应用定理\ref{thm:thm002040118}也可以看出$|z|^2$没有原函数（见习题\ref{exer002040108}）。
 
 
+\begin{problemset}
+\item\label{exer002040101}设$\gamma:[a, b] \to \mathbb{R}$是非减的, 证明：$\gamma$是有界变差函数，且$V(\gamma) = \gamma(b) - \gamma(a)$.
+
+\item 证明命题\ref{pro:prop002040102}.
+
+\item 证明命题\ref{pro:prop002040107}.
+
+\item 证明命题\ref{pro:prop002040108}（利用归纳法）.
+
+\item 设$\gamma(t) = \exp{((-1 + i)t^{-1})}$, $0 < t < 1$,且$\gamma(0) = 0$,证明：$\gamma$是可求长路径，并求出$V(\gamma)$，作出$\gamma$的迹的略图。
+
+\item 证明：如果$\gamma:[a, b] \to \mathbb{C}$是Lipschitz函数，则$\gamma$是有界变差函数。
+
+\item 设$\gamma:[a, b] \to \mathbb{C}$定义为$\gamma(t) = t + it\sin{\frac{1}{t}}$，当$t \neq 0$时. $\gamma(0) = 0$.证明$\gamma$是一条路径，但不是可求长的，作出这一条路径。
+
+\item\label{exer002040108}设$\gamma$和$\sigma$是两条折线$[1, i]$和$[1, 1+i, i]$. 试将$\gamma$和$\sigma$表示为路径，并计算$\int_{\gamma}{f}$和$\int_{\sigma}{f}$,其中$f(z) = |z|^2$.
+
+\item 定义
+\end{problemset}
+
+
+\section{解析函数的幂级数表示}\label{section0020402}
+
+
+
+\begin{proposition}{}{prop002040201}
+设$\varphi$
+\end{proposition}
+
+\chapter{Runge定理}\label{chapter00208}
+
+\section{Runge定理}\label{section0020801}
+
+
+\section{单连通性}\label{section0020802}
+
+
+\section{Mittag-Leffler定理}\label{section0020803}
+
+
+\chapter{调和函数}\label{chapter00210}
 
 
 

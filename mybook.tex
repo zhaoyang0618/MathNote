@@ -25,7 +25,6 @@
 \def\argsh{\operatorname{argsh}}
 \def\ch{\operatorname{ch}}
 \def\argch{\operatorname{argch}}
-\def\real{\mathbb{R}}
 
 %\newtheorem{lemma}{法则}
 % 方程编号以section为准
@@ -33,8 +32,8 @@
 
 
 % title info
-\title{数学书籍汇总}
-\subtitle{读书笔记}
+\title{高等数学基础}
+%\subtitle{读书笔记}
 
 % bio info
 \author{虞朝阳}
@@ -59,26 +58,16 @@
 
 \maketitle
 
-\include{0-preface}
+\include{mybook_preface}
 
 \tableofcontents
 \mainmatter
 \hypersetup{pageanchor=true}
 
-% add preface chapter here if needed
-
-\include{1-surveyofmodernalgebra}
-\include{6-Algebra-Artin}
-\include{5-BasicAlgebra}
-\include{8-Calculus-Spivak}
-\include{009-CalculusOnManifolds-Spivak}
-\include{3-CalculusOfMultiVariables}
-\include{7-MathematicalAnalysis-Apostol}
-\include{2-ComplexAnalysisOfOneVariable}
+\include{mybook_settheory}
 
 % \bibliographystyle{plain}
 \bibliography{mathreference}
 \appendix
-% h\include{1-appendixa}
 
 \end{document}
