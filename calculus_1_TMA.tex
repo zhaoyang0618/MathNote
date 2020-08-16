@@ -1,0 +1,76 @@
+\documentclass[cn,11pt,chinese]{elegantbook}
+
+\usepackage[all]{xy}
+\usepackage{amsmath}
+\usepackage{asymptote}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+
+
+\newcount\mycount
+\def\cis{\,\text{cis}\,}
+\def\intset{\operatorname{int}}
+\def\diam{\operatorname{diam}}
+\def\dist{\operatorname{dist}}
+\def\ulim{\operatorname{u-lim}}
+\def\cinfty{\mathbb{C}_{\infty}}
+\def\sh{\operatorname{sh}}
+\def\argsh{\operatorname{argsh}}
+\def\ch{\operatorname{ch}}
+\def\argch{\operatorname{argch}}
+\def\real{\mathbb{R}}
+\def\dsint{{\displaystyle\int}}
+
+\numberwithin{equation}{section}
+
+
+% title info
+\title{微积分}
+\subtitle{第一卷}
+
+% bio info
+\author{Tom. M. Apostol}
+
+% extra info
+\version{1.00}
+\extrainfo{Wir m\"ussen wissen, wir werden wissen. (我们必须知道，我们必将知道) - David.Hilbert}
+%\logo{logo.png}
+\cover{cover.jpg}
+
+\begin{document}
+
+
+\maketitle
+
+\chapter*{Preface}
+
+
+\tableofcontents
+\mainmatter
+\hypersetup{pageanchor=true}
+
+% add preface chapter here if needed
+
+\chapter{Introduction}
+\section{Historical Introduction}
+
+\subsection{The two basic concepts of calculus}
+The remarkable progress that has been made in science and technology during the last Century is due in large part to the development of mathematics. That branch of mathematics known as integral and differential calculus serves as a natural and powerful tool for attacking a variety of problems that arise in physics, astronomy, engineering, chemistry, geology, biology, and other fields including, rather recently, some of the social sciences.
+
+To give the reader an idea of the many diffrent types of problems that can be treated by the methods of calculus, we list here a few sample questions selected from the exercises that occur in later chapters of this book.
+
+With what speed should a rocket be fired upward so that it never returns to earth?What is the radius of the smallest circular disk that can cover every isosceles triangle of a given perimeter $L$? What volume of material is removed from a solid sphere of radius $2r$ if a hole of radius $r$ is drilled through the center? If a strain of bacteria grows at a rate proportional to the amount present and if the population doubles in one hour, by how much will it increase at the end of two hours? If a ten-pound force stretches an elastic spring one inch, how much work is required to stretch the spring one foot? 
+
+These examples, chosen from various fields, illustrate some of the technical questions that can be answered by more or less routine applications of calculus.
+
+Calculus is more than a technical tool
+
+
+
+% \bibliographystyle{plain}
+\bibliography{mathreference}
+\appendix
+% h\include{1-appendixa}
+
+\end{document}
