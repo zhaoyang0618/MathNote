@@ -84,7 +84,59 @@ A slow but revolutionary change in the development of mathematical notations beg
 Gradually the method of exhaustion was transformed into the subject now called integral calculus, a new and powerful discipline with a large variety of applications, not only to geometrical problems concerned with areas and volumes but also to problems in other sciences. This branch of mathematics, which retained some of the original features of the method of exhaustion, received its biggest impetus in the 17th century, largely due to the efforts of Isaac Newton (1642-1727) and Gottfried Leibniz (1646-1716), and its development continued well into the 19th century before the subject was put on a firm mathematical basis by such men as Augustin-Louis Cauchy (1789-1857) and Bernhard Riemann (1826-1866). Further refinements and extensions of the theory are still being carried out in contemporary mathematics.
 
 \subsection{The method of exhaustion for the area of a parabolic segment}
-Before we proceed to a systematic treatment of integral calculus, it will be
+Before we proceed to a systematic treatment of integral calculus, it will be instructive to apply the method of exhaustion directly to one of the special figures treated by Archimedes himself. The region in question is shown in Figure 1.3 and can be described as follows: If we choose an arbitrary point on the base of this figure and denote its distance from 0 by $x$, then the vertical distance from this point to the curve is $x^2$. In particular, if the length of the base itself is $b$, the altitude of the figure is $b^2$. The vertical distance from $x$ to curve is called the "ordinate" at $x$. The curve itself is an example of what is known as parabola. The region bounded by it and the two line segments is called a parabolic segment.
+
+This figure may be enclosed in a rectangle of base $b$ and altitude $b^2$, as shown in Figure 1.3. Examination of the figure suggests that the area of the parabolic segment is less than half the area of the rectangle. Archimedes made the surprising discovery that the area of the parabolic segment is exactly one-third that of the rectangle; that id to say, $A = b^3/3$, where $A$ denotes the area of the parabolic segment. We shall show presently how to arrive at this result.
+
+It should be pointed out that the parabolic segment in Figure 1.3 is not shown exactly as Archimedes drew it and the details that follow are not exactly the same as those used by him. Nevertheless, the essential ideas are those of Archimedes; what is presented here is the method of exhaustion in modern notation.
+
+The method is simply this: We slice the figure into a number of strips and obtain two approximations to the region, one from below and one from above, by using two sets of rectangles as illustrated in Figure 1.4. (We use rectangles rather than arbitrary polygons to simplify the computations.) The area of the parabolic segment is larger than the total area of the inner rectangles but smaller than that of the outer rectangles.
+
+If each strip is further subdivided to obtain a new approximation with a larger number of strips, the total area of the inner rectangles increases, whereas the total area of the outer rectangles decreases. Archimedes realized that an approximation to the area within any desired degree of accuracy could be obtained by simply taking enough strips.
+
+Let us carry out the actual computations that are required in this case. For the cake of simplicity, we subdivide the base into $n$ equal parts, each of length $b/n$ (see Figure 1.5). The points of subdivision correspond to the following values of $x$:
+\[
+0, \frac{b}{n}, \frac{2b}{n}, \frac{3b}{n}, \cdots, \frac{(n-1)b}{n}, \frac{nb}{n} = b,
+\]
+A typical point of subdivision corresponds to $x=kb/n$, where $k$ takes the successive values $k=0,1,2,3,\cdots, n$. At each point $kb/n$ we construct the outer rectangle of altitude $(kb/n)^2$ as illustrated in Figure 1.5. The area of this rectangle is the product of its base and altitude and is equal to
+\[
+\left(\frac{b}{n}\right)\left(\frac{kb}{n}\right)^2 = \frac{b^3}{n^3}k^2.
+\]
+Let us denote by $S_n$ the sum of the areas of the outer rectangles. Then since the $k$th rectangle has area $(b^3/n^3)k^2$, we obtain the formula
+\begin{equation}\label{equ001001}
+S_n = \frac{b^3}{n^3}(1^2 + 2^2 + 3^2 + \cdots + n^2).
+\end{equation}
+In the same way we obtain a formula for the sum $s_n$ of all the inner rectangles:
+\begin{equation}\label{equ001002}
+s_n = \frac{b^3}{n^3}(1^2 + 2^2 + 3^2 + \cdots + (n-1)^2).
+\end{equation}
+
+This brings us to a very important stage in the calculation. Notice that the factor multiplying $b^3/n^3$ in Equation (\ref{equ001001}) is the sum of the squares of the first $n$ integers:
+\[
+1^2 + 2^2 + \cdots + n^2.
+\]
+[The corresponding factor in Equation (\ref{equ001002}) is similar except that the sum has only $n-1$ terms.] For a large value of $n$, the computation of this sum by direct addition of its terms is tedious and inconvenient. Fortunately there is an interesting identity which makes it possible to evaluate this sum in a simpler way, namely,
+\begin{equation}\label{equ001003}
+1^2 + 2^2 + \cdots + n^2 = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{6}.
+\end{equation}
+This identity is valid for every integer $n \ge 1$ and can be proved as follows: Start with the formula $(k+1)^3= k^3 + 3k^2 + 3k + 1$ and rewrite it in the form
+\[
+3k^2 + 3k + 1 = (k+1)^3 - k^3. 
+\]
+Taking $k=1,2,\cdots, n-1$, we get $n-1$ formulas
+\[
+\begin{aligned}
+3 \cdot 1^2 + 3 \cdot 1 + 1 &= 2^3 - 1^3\\
+3 \cdot 2^2 + 3 \cdot 2 + 1 &= 3^3 - 2^3\\
+\vdots&\\
+3(n-1)^2 + 3(n-1) + 1 &= n^3 - (n-1)^3.
+\end{aligned}
+\]
+When we add these formulas, all the terms on the right cancel except two and we obtain
+
+
+
+
 
 
 
