@@ -74,7 +74,7 @@ Basically, calculus has to do with the precise formulation and solution of these
 
 The study of calculus requires a certain mathematical background. The present chapter deals with this background material and is divided into four parts: Part 1 provides historical perspective; Part 2 discusses some notation and terminology from the mathematics sets; Part 3 deals with the real-number system; Part 4 treats mathematical induction and the summation notation. If the reader is acquainted with these topics, ha can proceed directly to the developmentof intergral calculus in Chapter 1. If not, he should become familiar with the material in the unstarred sections of this Introduction before proceeding to Chapter 1.
 
-\subsection{Historical background}
+\subsection{Historical background}\label{section0010102}
 The birth of integral calculus occurred more than 2000 years ago when the Greeks attemplted to determine areas by a process which they called the method of exhaustion. The essential ideas of this method are very simple and can be described briefly as follows: Given a region whose area is to be determined, we inscribe in it a polygonal region which approximates the given region and whose area we easily compute. Then we choose another polygonal region which gives a better approximation, and we continue the process, taking polygons with more and more sides in an attemplt to exhaust the given region. The method is illustrated for a semicircular region in Figure 1.2. It was used successfully by Archimedes (287 -212 B.C.) to find exact formulas for the area of a circle and a few other special figures.
 
 The development of the method of exhaustion beyond the point to which Archimedes carried it has to wait nearly eighteen centuries until the use of algebraic symbols and techniques bacame a standard part of mathematics. The elementary algebra that is familiar to most high-school students today was completely unknown in Archimedes' time, and it would have been next to impossible to extend his method to any general class of regions without some convenient way of expressing rather lengthy calculations in a compact and simplified form.
@@ -83,7 +83,7 @@ A slow but revolutionary change in the development of mathematical notations beg
 
 Gradually the method of exhaustion was transformed into the subject now called integral calculus, a new and powerful discipline with a large variety of applications, not only to geometrical problems concerned with areas and volumes but also to problems in other sciences. This branch of mathematics, which retained some of the original features of the method of exhaustion, received its biggest impetus in the 17th century, largely due to the efforts of Isaac Newton (1642-1727) and Gottfried Leibniz (1646-1716), and its development continued well into the 19th century before the subject was put on a firm mathematical basis by such men as Augustin-Louis Cauchy (1789-1857) and Bernhard Riemann (1826-1866). Further refinements and extensions of the theory are still being carried out in contemporary mathematics.
 
-\subsection{The method of exhaustion for the area of a parabolic segment}
+\subsection{The method of exhaustion for the area of a parabolic segment}\label{section0010103}
 Before we proceed to a systematic treatment of integral calculus, it will be instructive to apply the method of exhaustion directly to one of the special figures treated by Archimedes himself. The region in question is shown in Figure 1.3 and can be described as follows: If we choose an arbitrary point on the base of this figure and denote its distance from 0 by $x$, then the vertical distance from this point to the curve is $x^2$. In particular, if the length of the base itself is $b$, the altitude of the figure is $b^2$. The vertical distance from $x$ to curve is called the "ordinate" at $x$. The curve itself is an example of what is known as parabola. The region bounded by it and the two line segments is called a parabolic segment.
 
 This figure may be enclosed in a rectangle of base $b$ and altitude $b^2$, as shown in Figure 1.3. Examination of the figure suggests that the area of the parabolic segment is less than half the area of the rectangle. Archimedes made the surprising discovery that the area of the parabolic segment is exactly one-third that of the rectangle; that id to say, $A = b^3/3$, where $A$ denotes the area of the parabolic segment. We shall show presently how to arrive at this result.
@@ -133,9 +133,187 @@ Taking $k=1,2,\cdots, n-1$, we get $n-1$ formulas
 \end{aligned}
 \]
 When we add these formulas, all the terms on the right cancel except two and we obtain
+\[
+3[1^2+2^2+\cdots+(n-1)^2] + 3[1+2+\cdots+(n-1)] + (n-1) = n^3 - 1^3.
+\]
+The second sum on the left is the sum of terms in an arithmetic progression and it simplifies to $\frac{1}{2}n(n-1)$. Therefore this last equation gives us
+\begin{equation}\label{equ001004}
+1^2 + 2^2 + \cdots + (n-1)^2 = \frac{n^3}{3} - \frac{n^2}{2} + \frac{n}{6}.
+\end{equation}
+Adding $n^2$ to both members, we obtain (\ref{equ001003}).
+
+For our purposes, we do not need the exact expressions given in the right-hand members of (\ref{equ001003}) and (\ref{equ001004}). All we need are the two inequalities
+\begin{equation}\label{equ001005}
+1^2 + 2^2 + \cdots + (n-1)^2 < \frac{n^3}{3} < 1^2 + 2^2 + \cdots + n^2
+\end{equation}
+which are valid for every integer $n \ge 1$. These inequalities can be deduced easily as consequences of (\ref{equ001003}) and (\ref{equ001004}), or they can be proved directly by induction. (A proof by induction is given in Section \ref{section0010401})
+
+If we multiply both inequalities in (\ref{equ001005}) by $b^3/n^3$ and make use of (\ref{equ001001}) and (\ref{equ001002}), we obtain 
+\begin{equation}\label{equ001006}
+s_n < \frac{b^3}{3} < S_n
+\end{equation}
+for every $n$. The inequalities in (\ref{equ001006}) tell us that $b^3/3$ is a number which lies between $s_n$ and $S_n$ for every $n$. We will now prove that $b^3/3$ is the only number which has this property. In other words, we assert that if $A$ is any number which satisfies the inequalities
+\begin{equation}\label{equ001007}
+s_n < A < S_n
+\end{equation}
+for every positive integer $n$, then $A = B^3/3$. It is because of this fact that Archimedes concluded that the area of the parabolic segment is $b^3/3$.
+
+To prove that $A = b^3/3$, we use the inequalities in (\ref{equ001005}) once more. Adding $n^2$ to both sides of the leftmost inequality in (\ref{equ001005}), we obtain
+\[
+1^2 + 2^2 + \cdots + n^2 < \frac{n^3}{3}+ n^2.
+\]
+Multiplying this by $b^3/n^3$ and using (\ref{equ001001}), we find
+\begin{equation}\label{equ001008}
+S_n < \frac{b^3}{3} + \frac{b^3}{n}.
+\end{equation}
+Similarly, by subtracting $n^2$ from both sides of the rightmost inequality in (\ref{equ001005}) and multiplying by $b^3/n^3$, we are led to the inequality
+\begin{equation}\label{equ001009}
+\frac{b^3}{3} - \frac{b^3}{n} < s_n.
+\end{equation}
+Therefore, any number $A$ satisfying (\ref{equ001007}) must also satisfy
+\begin{equation}\label{equ001010}
+\frac{b^3}{3} - \frac{b^3}{n} < A < \frac{b^3}{3} + \frac{b^3}{n}
+\end{equation}
+for every integer $n \ge 1$. Now there are only three possibilities:
+\[
+A > \frac{b^3}{3}, \quad A < \frac{b^3}{3}, \quad A = \frac{b^3}{3}.
+\]
+If we show that each of the first two leads to a contradiction, then we must have $A = b^3/3$, since, in the manner of Sherlock Holmes, this exhausts all the possibilities.
+
+Suppose the inequality $A > b^3/3$ were true. From the second inequality in (\ref{equ001010}) we obtain
+\begin{equation}\label{equ001011}
+A - \frac{b^3}{3} < \frac{b^3}{n}
+\end{equation}
+for every integer $n \ge 1$. Since $A - b^3/3$ is positive, we may divide both sides of (\ref{equ001011}) by $A - b^3/3$ and then multiply by $n$ to obtain the equivalent statement
+\[
+n < \frac{b^3}{A - b^3/3}
+\]
+for every $n$. But this inequality is obviously false when $n > b^3/(A - b^3/3)$. Hence the inequality $A > b^3/3$ leads to a contradiction. By a similar argument,we can show that the inequality $A < b^3/3$ also leads to a contradiction, and therefore we must have $A = b^3/3$, as asserted.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item[1.] (a) Modify the region in Figure 1.3 by assuming that the ordinate at each $x$ is $2x^2$ instead of $x^2$. Draw the new figure. Check through the principal steps in the foregoing section and find what effect this has on the calculation of the area. Do the same if the ordinate at each $x$ is (b) $3x^2$, (c) $\frac{1}{4}x^2$, (d) $2x^2+1$, (e) $ax^2+c$.
+
+\item[2.] Modify the region in Figure 1.3 by assuming that the ordinate at each $x$ is $x^3$ instead of $x^2$. Draw the new figure.
+
+(a) Use a construction similar to that illustrated in Figure 1.5 and show that the outer and inner sums $S_n$ and $s_n$ are given by
+\[
+S_n = \frac{b^4}{n^4}(1^3+2^2+\cdots+n^3),\quad s_n = \frac{b^4}{n^4}[1^3+2^3+\cdots + (n-1)^3].
+\]
+
+(b) Use the inequalities (which can be proved by mathematical induction; see Section \ref{section0010402})
+\begin{equation}\label{equ001012}
+1^3 + 2^3 + \cdots + (n-1)^3 < \frac{n^4}{4} < 1^3 + 2^3 + \cdots + n^3
+\end{equation}
+to show that $s_n < b^4/4 < S_n$ for every $n$, and prove that $b^4/4$ is the only number which lies between $s_n$ and $S_n$ for every $n$.
+
+(c) What number takes the place of $b^4/4$ if the ordinate at each $x$ is $ax^3+c$?
+
+\item[3.] The inequalities (\ref{equ001005}) and (\ref{equ001012}) are special cases of the more general inequalities
+\begin{equation}\label{equ001013}
+1^k + 2^k + \cdots + (n-1)^k < \frac{n^{k+1}}{k+1} < 1^k + 2^k + \cdots + n^k
+\end{equation}
+that are valid for every $n \ge 1$ and every integer $k \ge 1$. Assume the validity of (\ref{equ001013}) and generalize the results of Exercise 2.
+\end{enumerate}
+
+\subsection{A critical analysis of Archimedes' method}
+From calculations similar to those in Section 1.3, Archimedes concluded that the area of the parabolic segment in question is $b^3/3$. This fact was generally accepted as a mathematical theorem for nearly 2000 years before it was realized that one must re-examine the result from a more critical point of view. To understand why anyone would question the validity of Archimedes' conclusion, it is necessary to know something about the important changes that have taken place in the recent history of mathematics.
+
+Every branch of knowledge is a collection of ideas described by means of words and symbols, and one cannot understand these ideas unless one knows the exact meanings of the words and symbols that are used. Certain branches of knowledge, known as deductive systems, are different from others in that a number of "undefined" concepts are chosen in advance and all other concepts in the system are defined in terms of these. Certain statements about these undefined concepts are taken as axioms or postulates and other statements that can be deduced from the axioms are called theorems. The most familiar example of a deductive system is the Euclidean theory of elementary geometry that has been studied by well-educated men since the time of the ancient Greeks.
+
+The spirit of early Greek mathematics, with its emphasis on the theoretical and postulational approach to geometry as presented in Euclid's Elements, dominated the thinking of mathematicians until the time of the Renaissance. A new and vigorous phase in the development of mathematics began with the advent of algebra in the 16th century, and the next 300 years witnessed a flood of important discoveries. Conspicuously absent from this period was the logically precise reasoning of the deductive method with its use of axioms, definitions, and theorems. Instead, the pioneers in the 16th, 17th, and 18th centuries resorted to a curious blend of deductive reasoning combined with intuition, pure guesswork, and mysticism, and it is not surprising to find that some of their was later shown to be incorrect. However, a surprisingly large number of important discoveries emerged from this era, and a great deal of the work has survived the test of history --- a tribute to the unusual skill and ingenuity of these pioneers.
+
+As the flood of new discoveries began to recede, a new and more critical period emerged. Little by little, mathematicians felt forced to return to the classical ideas of the deductive method in an attempt to put the new mathematics on a firm foundation. This phase of the development, which began early in the 19th century and has continued to the present day, has resulted in a degree of logical purity and abstraction that has surpassed all the traditions of Greek science. At the same time, it has brought about a clearer understanding of the foundations of not only calculus but of all of mathematics.
+
+There are many ways to develop calculus as a deductive system. One possible approach is to take the real numbers as the undefined objects. Some of the rules governing the operations on real numbers may then be taken as axioms. One such set of axioms is listed in Part 3 of this Introduction. New concepts, such as integral, limits, continuity, derivative, must then be defined in terms of real numbers. Properties of these concepts are then deduced as theorems that follow from the axioms.
+
+Looked at as part of the deductive system of calculus, Archimedes' result about the area of a parabolic segment cannot be accepted as a theorem until a satisfactory definition of a area is given first. It is not clear whether Archimedes has ever formulated a precise definition of what he meant by area. He seems to have taken it for granted that every region has an area associated with it. On this assumption he then set out to calculate areas of particular regions. In his calculations he made use of certain facts about area that cannot be proved until we know what is meant by area. For instance, he assumed that if one region lies inside another, the area of the smaller region cannot exceed that of the larger region. Also, if a region is decomposed into two or more parts, the sum of the areas of the individual parts is equal to the area of the whole region. All these are properties we would like area to possess, and we shall insist that any definition of area should imply these properties. It is quite possible that Archimedes himself may have taken area to be an undefined concept and then used the properties we just mentioned as axioms about area.
+
+Today we consider the work of Archimedes as being important not so much because it helps us to compute areas of particular figures, but rather because it suggests a reasonable way to define the concept of area for more or less arbitrary figures. As it turns out, the method of Archimedes suggests as way to define a much more general concept known as the integral. The integral, in turn, is used compute not only area but also quantities such as arc length, volume, work and others.
+
+If we look ahead and make use if the terminology of integral calculus, the result of the calculation carried out in Section {\ref{section0010103}} for the parabolic segment is often stated as follows: 
+\centerline{"The integral of $x^2$ from $0$ to $b$ is $b^3/3$."}
+It is written symbolically as 
+\[
+\int_{0}^{b}{x^2dx} = \frac{b^3}{3}.
+\]
+The symbol $\int$ (an elongated $S$) is called an integral sign, and it was introduced by Leibniz in 1675. The process which produces the number $b^3/3$ is called integration. The numbers $0$ and $b$ which are attached to the integral sign are referred to as the limits of integration. The symbol $\int_{0}^{b}{x^2dx}$ must be regarded as a whole. Its definition will treat it as such, just as the dictionary describes the word "lapidate" without reference to "lap,""id," or "ate."
+
+Leibniz' symbol for the integral was readily accepted by many early mathematicians because they linked to think of integration as a kind of "summation process" which enabled them to add together infinitely many "infinitesimally small quantities." For example, the area of the parabolic segment was conceived of as a sum of infinitely many infinitesimally thin rectangles of height $x^2$ and base $dx$. The integral sign represented the process of adding the areas of all these thin rectangles. This kind of thinking is suggestive and often very helpful, but it is not easy to assign a precise meaning to the idea of an "infinitesimally small quantity." Today the integral is defined in terms of the notion of real number without using ideas like "inifitesimals." This definition is given in Chapter \ref{chapter002}.
+
+
+\subsection{The approach to calculus to be used in this book}
+A thorough and complete treatment of either integral or differential calculus depends ultimately on a careful study of the real number system. This study in itself, when carried out in full, is an intersting but somewhat lengthy program that requires a small volume for its complete exposition. The approach in this book is to begin with the real numbers as undefined objects and simply to list a number of fundamental properties of real numbers which we shall take as axioms. These axioms and some of the simplest theorems that can be deduced from them are discussed in Part \ref{section00103} of this chapter.
+
+Most of the properties of real numbers discussed here are probably familiar to the reader from his study of elementary algebra. However, there are a few properties of real numbers that do not ordinarily come into consideration in elementary algebra but which play an important role in the calculus. These properties stem from the so-called least-upper-bound axiom (also known as the completeness or continuity axiom) which is dealt with here in some detail. The reader may wish to study Part \ref{section00103} before proceeding with the main body of the text, or he may postpone reading this material until later when he reaches those parts of the theory that make use of least-upper-bound properties. Material in the text that depends in the least-upper-bound axiom will be clearly indicated.
+
+To develop calculus as a complete, formal mathematical theory, it would be necessary to state, in addition to the axioms for the real number system, a list of the various "methods of proof" which would be permitted for the purpose of deducing theorems from the axioms. Every statement in the theory would then have o be justified either as an "established law"(that is, an axiom, a definition, or a previously proved theorem) or as the result of applying one of the acceptable methods of proof to an established law. A program of this sort would be extremely long and tedious and would add very little to a beginner's understanding of the subject. Fortunately, it is not necessary to proceed in this fashion in order to get a good understanding and a good working knowledge of calculus. In this book the subject is introduced in an informal way, and ample use is made of geometric intuition whenever it is convenient to do so. At the same time, the discussion proceeds in a manner that is consistent with modern standards of precision and clarity of thought. All the important theorems of the subject are explicitly stated and rigorously proved.
+
+To avoid interrupting the principal flow of ideas, some of the proofs appear in separate starred sections. For the same reason, some of the chapters are accompanied by supplemenatry material in which certain important topics related to calculus are dealt with in detail. Some of these are also starred to indicate that they may be omitted or postponed without disrupting the continuity of the presentation. The extent to which the starred sections are taken up or not will depend partly on the reader's background and skill and partly on the depth of his interests. A person who is interested primarily in the basic techniques may skip the starred sections. Those who wish a more thorough course in calculus, including theory as well as technique, should read some of the starred sections.
 
 
 
+\section{Some Basic Concepts of the Theory of Sets}\label{section00102}
+
+\subsection{Introduction to set theory}
+In discussing any branch of mathematics, be it analysis, algebra, or geometry, it is helpful to use the notation and terminology of set theory.
+
+
+\subsection{Notations for designating sets}
+
+
+\subsection{Subsets}
+
+
+\subsection{Unions, intersections, complements}
+
+
+
+\subsection{Exercises}
+
+
+\section{A Set of Axioms for the Real-Number System}\label{section00103}
+
+
+\subsection{Introduction}
+
+
+\subsection{The field axioms}
+
+
+\subsection{Exercises}
+
+
+\subsection{The order axioms}
+
+
+\subsection{Exercises}
+
+
+\subsection{Integers and rational numbers}
+
+
+
+\subsection{Geometric interpretation of real numbers as points on a line}
+
+
+\subsection{Upper bound of a set, maximum element, least upper bound (supremum)}
+
+
+\subsection{The least-upper-bound axiom (completeness axiom)}
+
+
+
+\section{Mathematical Induction, Summation Notation, and Related Topics}\label{section00104}
+
+\subsection{An example of a proof by mathematical induction}\label{section0010401}
+
+
+
+\subsection{The principle of mathematical induction}\label{section0010402}
+
+
+\chapter{The Concepts of Integral Calculus}\label{chapter002}
 
 
 
