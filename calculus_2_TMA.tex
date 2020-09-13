@@ -57,14 +57,59 @@
 \section{Introduction}
 Throughout mathematics we encounter many examples of mathematical objects that can be added to each other and multiplied by real numbers. First of all, the real numbers themselves are such objects. Other examples are real-valued functions, the complex numbers, infinite series, vectors in $n$-space, and vector valued functions. In this chapter we discuss a general mathematical concept, called a linear space, which includes all these examples and many others as special cases.
 
-Briefly, a linear space is a set of elements of any 
+Briefly, a linear space is a set of elements of any kind on which certain operations (called addition and multiplication by numbers) can be performed. In defining a linear space, we do not specify the nature of the elments nor do we tell how the operations are to be performed on them. Instead, we require that the operations have certain properties which we take as axioms for a linear space. We turn now to a detailed description of these axioms.
 
 
 \section{The definition of a linear space}
+Let $V$ denote a nonempty set of objects, called elements. The set $V$ is called a linear space if it satisfies the following ten axioms which we list in three groups.
 
+Closure axioms
 
+AXIOM 1. CLISURE UNDER ADDITION. For every pair of elements $x$ and $y$ in $V$ there corresponds a unique element in $V$ called the sum of $x$ and $y$, denoted by $x + y$.
+
+AXIOM 2. CLOSURE UNDER MULTIPLICATION BY REAL NUMBERS. For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x$, denoted by $ax$.
+
+Axioms for addition
+
+AXIOM 3. COMMUTATIVE LAW. For all $x$ and $y$ in $V$, we have $x = Y = y + x$.
+
+AXIOM 4. ASSOCIATIVE LAW. For all $x$, $y$ and $z$ in $V$, we have $(x + y) + z = x + (y + z)$.
+
+AXIOM 5. EXISTENCE OF ZERO ELEMENT. There is an element in $V$, denoted by $O$, such that 
+\[
+x+ O = x \quad \text{for all $x$ in $V$}.
+\]
+
+AXIOM 6. EXISTENCE OF NEGATIVES. For every $x$ in $V$, the element $(-1)x$ has the property
+\[
+x + (-1)x = O.
+\]
+
+Axioms for multiplication by numbers
+
+AXIOM 7. ASSOCIATIVE LAW. For every $x$ in $V$ and all real numbers $a$ and $b$, we have 
+\[
+a(bx) = (ab)x.
+\]
+
+AXIOM 8. DISTRIBUTIVE LAW FOR ADDITION IN $V$. For all $x$ and $y$ in $V$ and all real $a$, we have
+\[
+a(x+y) = ax + ay.
+\]
+
+AXIOM 9. DISTRIBUTIVE LAW FOR ADDITION OF NUMBERS. For all $x$ in $V$ and all real $a$ and $b$, we have
+\[
+(a+b)x = ax + bx.
+\]
+
+AXIOM 10. EXISTENCE OF IDENTITY. For every $x$ in $V$, we have $1x = x$.
+
+Linear spaces, as defined above, are sometimes called real linear spaces to emphasize the fact that we are multiplying the elements of $V$ by real numbers. If real number is replaced by complex number in Axioms 2,7,8, and 9, the resulting structure is called a complex linear space. Sometimes a linear space is referred to as a linear vector space or simply a vector space; the numbers used as multipliers are also called scalars. A real linear space has real numbers as scalars; a complex linear space has complex numbers as scalars. Although we shall deal primarily with examples of real linear spaces, all the theorems are valid for complex linear spaces as well. When we use the term linear space without further designation, it is to be understood that the space can be real or complex.
 
 \section{Examples of linear spaces}
+If we specify the set $V$
+
+
 
 
 
