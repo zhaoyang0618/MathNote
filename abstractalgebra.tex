@@ -52,9 +52,26 @@ This book evolved out of notes by the authors from courses given at various univ
 Some results and notation that are used throughout the text are collected in this chapter for convenience. Students may wish to review this chapter quickly at first and then read each section more carefully again as the concepts appear in the course of the text.
 
 \section{Basics}\label{section00001}
-The basics of set theory: sets, $\cap$, $\cup$, $\in$, etc. should be familiar to the reader. 
+The basics of set theory: sets, $\cap$, $\cup$, $\in$, etc. should be familiar to the reader. Our notation for subsets of a given set $A$ will be
+\[
+B = \{a \in A | \cdots (\text{conditions on a}) \cdots\}.
+\]
+The order or cardinality of a set $A$ will be denoted by $|A|$. If $A$ is a finite set the order of $A$ is simply the number of elements of $A$.
 
+It is important to understand how to test whether a particular $x \in A$ lies in a subset $B$ of $A$ (cf. Exercises 1 to 4). The Cartesian product of two sets $A$ and $B$ is the collection $A \times B = \{(a, b)| a \in A, b \in B\}$, of ordered pairs of elements from $A$ and $B$.
 
+We shall use the following notation for some common sets of numbers:
+\begin{enumerate}
+\item[(1)] $\mathbb{Z}= \{0, \pm{1}, \pm{2}, \pm{3}\cdots\}$ denotes the integers (the $\mathbb{Z}$ is for the German word for numbers: "Zahlen").
+\item[(2)] $\mathbb{Q} = \{a/b|a, b \in \mathbb{Z}, b \neq 0\}$ denotes the rational numbers (or rationals).
+\item[(3)] $\real = \{\text{all decimal expansions }\pm{d_1d_2\cdots d_n.a_1a_2a_3\cdots}\}$ denotes the real numbers (or reals).
+\item[(4)] $\mathbb{C} = \{a + bi|a, b \in \real, i^2 = -1\}$ denotes the complex numbers.
+\item[(5)] $\mathbb{Z}^+$, $\mathbb{Q}^+$ and $\real^+$ will denote the positive (nonzero) elements in $\mathbb{Z}$, $\mathbb{Q}$ and $\real$, respectively.
+\end{enumerate}
+
+We shall use the notation $f: A \to B$ or $A \stackrel{f}{\rightarrow} B$ to denote a function $f$ from $a$ to $B$ and the value of $f$ at $a$ is denoted $f(a)$ (i.e. we shall apply our functions on the left). We use the words function and map interchangeably. The set $A$ is called the domain of $f$ and $B$ is called the codomain of $f$. The notation $f: a \mapsto b$ or $a \mapsto b$ if $f$ is understood indicates that $f(a)=b$, i.e. the function is being specified on elements.
+
+If the function $f$ is not specified on elements it is important in general to check that $f$ is well defined, i.e. is unambiguously determined.
 
 \section{Properties of the integers}\label{section00002}
 
