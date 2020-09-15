@@ -20,6 +20,7 @@
 \def\ch{\operatorname{ch}}
 \def\argch{\operatorname{argch}}
 \def\real{\mathbb{R}}
+\def\complex{\mathbb{C}}
 \def\dsint{{\displaystyle\int}}
 
 \numberwithin{equation}{section}
@@ -107,14 +108,67 @@ AXIOM 10. EXISTENCE OF IDENTITY. For every $x$ in $V$, we have $1x = x$.
 Linear spaces, as defined above, are sometimes called real linear spaces to emphasize the fact that we are multiplying the elements of $V$ by real numbers. If real number is replaced by complex number in Axioms 2,7,8, and 9, the resulting structure is called a complex linear space. Sometimes a linear space is referred to as a linear vector space or simply a vector space; the numbers used as multipliers are also called scalars. A real linear space has real numbers as scalars; a complex linear space has complex numbers as scalars. Although we shall deal primarily with examples of real linear spaces, all the theorems are valid for complex linear spaces as well. When we use the term linear space without further designation, it is to be understood that the space can be real or complex.
 
 \section{Examples of linear spaces}
-If we specify the set $V$
+If we specify the set $V$ and tell how to add its elements and how to multiply them by numbers, we get a concrete example of a linear space. The reader can easily verify that each of the following examples satisfies all the axioms for a real linear space.
 
+\begin{example}\label{exam020010301}
+Let $V = \real$, the set of all real numbers, and let $x + y$ and $ax$ be ordinary addition and multiplication of real numbers.
+\end{example}
 
+\begin{example}\label{exam020010302}
+Let $V = \complex$, the set of all complex numbers, define $x + y$ to be ordinary addition of complex numbers, and define $ax$ to be multiplication of the complex number $x$ by the real number $a$. Even though the elements of $V$ are complex numbers, this is a real linear space because the scalars are real.
+\end{example}
 
+\begin{example}\label{exam020010303}
+Let $V = V_n$, the vector space of all $n$-tuples of real numbers, with addition and multiplication by scalars defined in the usual way in terms of components.
+\end{example}
+
+\begin{example}\label{exam020010304}
+Let $V$ be the set of all vectors in $V_n$ orthogonal to a given nonzero vector $N$. If $n=2$, this linear space is a line through $O$ with $N$ as a normal vector. If $n=3$, it is a plane through $O$ with $N$ as normal vector.
+\end{example}
+
+The following examples are called function spaces. The elements of $V$ are real-valued functions, with addition of two functions $f$ and $g$ defined in the usual way:
+\[
+(f + g)(x) = f(x) + g(x)
+\]
+for every real $x$ in the intersection of the domains of $f$ and $g$. Multiplication of a function $f$ by a real scalar $a$ is defined as follows: $af$ is that function whose value at each $x$ in the domain of $f$ is $af(x)$. The zero element is the function whose values are everywhere zero. The reader can easily verify that each of the following sets is a function space.
+
+\begin{example}\label{exam020010305}
+The set of all functions defined on a given interval.
+\end{example}
+
+\begin{example}\label{exam020010306}
+The set of all polynomials.
+\end{example}
+
+\begin{example}\label{exam020010307}
+The set of all polynomials of degree $\le n$, where $n$ is fixed. (Whenever we consider this set it is understood that the zero polynomial is also included.) The set of all polynomials of degree equal to $n$ is not a linear space because the closure axioms are not satisfied. For example, the sum of two polynomials of degree $n$ need not have degree $n$.
+\end{example}
+
+\begin{example}\label{exam020010308}
+The set of all functions continuous on a given interval. If the interval is $[a, b]$, we denote this space by $C(a, b)$.
+\end{example}
+
+\begin{example}\label{exam020010309}
+The set of all functions differentiable at a given point.
+\end{example}
+
+\begin{example}\label{exam020010310}
+The set of all functions integrable on a given interval.
+\end{example}
+
+\begin{example}\label{exam020010311}
+The set of all functions $f$ defined at $1$ with $f(1)=0$. The number $0$ is essential in this example. If we replace $0$ by a nonzero number $c$, we violate the closure axioms.
+\end{example}
+
+\begin{example}\label{exam020010312}
+The set of all solutions of a homogeneous linear differential equation $y'' + ay' + by = 0$, where $a$ and $b$ are given constants. Here again $0$ is essential. The set of solutions of a nonhomogeneous differential equation does not satisfy the closure axioms.
+\end{example}
+
+These examples and many others illustrate how the linear space concept permeates algebra, geometry, and analysis. When a theorem is deduced from the axioms of a linear space, we obtain, in one stroke, a result valid for each concrete example. By unifying diverse examples in this wway we gain a deeper insight into each. Sometimes special knowledge of one particular example helps to anticipate or interpret results valid for other examples and reveals relationships which might otherwise escape notice.
 
 
 \section{Elementary consequences of the axioms}
-
+The following theorems are easily deduced from the axioms for a linear space.
 
 
 \section{Exercises}
