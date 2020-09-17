@@ -979,7 +979,7 @@ f'(a, b) &= \sin'(ab^2) \cdot [b^2(\pi_1)'(a, b) + a([\pi_2]^2)'(a, b)]\\
 幸而我们很快将会发现计算$f'$的一种简单得多的方法。
 
 \begin{problemset}
-\item 利用本节定理求以下的$f'$:
+\item\label{exer009020210} 利用本节定理求以下的$f'$:
 \begin{enumerate}
 \item[(a)] $f(x, y, z) = x^y$.
 \item[(b)] $f(x, y, z) = (x^y, z)$.
@@ -1148,8 +1148,91 @@ f(x, y) = \int_{0}^{x}{g_1(t, 0)dt} + \int_{0}^{y}{g_2(x, t)dt}.
 \item[(c)] 求一函数$f:\real^2 \to \real$使得$D_1f(x, y) = x$, $D_2f(x, y) = y$.再求一个使得$D_1f(x, y) = y$, $D_2f(x, y) = x$.
 \end{enumerate}
 
+\item 如$f:\real^2 \to \real$且$D_2f = 0$,证明$f$与第二个变元无关。如果$D_1f=D_2f =0$，证明$f$是常数。
+
+\item 设$A = \{(x, y):x<0\text{或者}x\ge 0\text{且}y \neq 0\}$.
+\begin{enumerate}
+\item[(a)] 如果$f:A \to \real$且$D_1f=D_2f=0$, 证明$f$是一个常数， 提示：注意，$A$中任两点可用一串直线段联结，每一段平行于坐标轴之一。
+\item[(b)] 求一函数$f:A \to \real$使得$D_2f=0$,但$f$不是与第二变元无关。
+\end{enumerate}
+
+\item 定义$f:\real^2 \to \real$为
+\[
+f(x, y) = \left\{
+\begin{aligned}
+&xy\frac{x^2-y^2}{x^2+y^2}&\quad (x,y) \neq 0,\\
+&0&\quad (x,y)=0,
+\end{aligned}
+\right.
+\]
+\begin{enumerate}
+\item[(a)] 试证：对一切$x$, $D_2f(x, 0) = x$; 对一切$y$, $D_1f(0, y) = -y$.
+\item[(b)] 试证$D_{1,2}f(0,0) \neq D_{2,1}f(0,0)$.
+\end{enumerate}
+
+\item 定义$f:\real \to \real$为
+\[
+f(x) = \left\{
+\begin{aligned}
+&e^{-x^{-2}} &\quad x \neq 0,\\
+&0&\quad x = 0.
+\end{aligned}
+\right.
+\]
+证明$f$是一$C^{\infty}$函数，且对一切$i$, $f^{(i)}(0) = 0$. 提示：极限
+\[
+f'(0) = \lim_{h \to 0}{\frac{e^{-h^{-2}}}{h}} = \lim_{h \to 0}{\frac{1/h}{e^{h^{-2}}}}
+\]
+可用洛必达法则计算。对$x \neq 0$求$f'(x)$非常容易，然后$f''(0)=\lim\limits_{h \to 0}{f'(h)/h}$可用洛必达法则求得。
+
+\item 设
+\[
+f(x) = \left\{
+\begin{aligned}
+e^{-(x-1)^{-2}}\cdot e^{-(x+1)^{-2}} &\quad x \in (-1, 1),\\
+0\quad&\quad x \notin (-1, 1). 
+\end{aligned}
+\right.
+\]
+\begin{enumerate}
+\item[(a)] 证明$f:\real \to \real$是一$C^{\infty}$函数，它在$(-1, 1)$内为正，在其它处为0，
+\item[(b)] 证明存在一$C^{\infty}$函数$g:\real \to [0, 1]$使得当$x \le 0$时$g(x)=0$,当$x \ge \epsilon$时$g(x)=1$. 提示：如果$f$是一个$C^{\infty}$函数，在$(0, \epsilon)$内为正，在其它处为0，令
+\[
+g(x)= \int_{0}^{x}{f}/\int_{0}^{\epsilon}{f}.
+\]
+\item[(c)] 如$a \in \real^n$,定义$g:\real^n \to \real$为
+\[
+g(x) = f([x_1-a_1]/\epsilon) \cdot \cdots \cdot f([x_n - a_n]/\epsilon).
+\]
+证明$g$是一个$C^{\infty}$函数，它在
+\[
+(a_1-\epsilon, a_1+\epsilon) \times \cdots \times (a_n-\epsilon, a_n+\epsilon)
+\]
+内为正，在其它处为零。
+
+\item[(d)] 如$A \subset \real^n$是开的且$C \subset A$是紧的，证明存在一个非负$C^{\infty}$函数$f:A \to \real$使当$x \in C$时$f(x) > 0$,而在含于$A$内的某闭集之外$f = 0$.
+
+\item[(e)] 证明可以选取这样的$f$使得$f:A \to [0, 1]$, 且对$x \in C$, $f(x)=1$. 提示：如果(d)中的函数$f$当$x \in C$时$f(x) \ge \epsilon$, 考察$g \circ f$，其中$g$是(b)中的函数。
+\end{enumerate}
+
+\item\label{exer009020227} 定义$g,h:\{x \in \real^2 : |x| \le 1\} \to \real^3$为
+\begin{equation*}
+g(x, y) = (x, y, \sqrt{1 - x^2 - y^2}),\\
+h(x, y) = (x, y, -\sqrt{1 - x^2 - y^2}).
+\end{equation*}
+证明$f$在$\{x \in \real^2 : |x| = 1\}$上的最大值或者是$\{x \in \real^2:|x| \le 1\}$上$f \circ g$的最大值，或者是它上面$f \circ h$的最大值。
+
+
 \end{problemset}
 
+\section{导数}\label{section0090204}
+比较过习题\ref{exer009020210}和\ref{exer009020217}的读者已经猜到下面的
+\begin{theorem}{}{thm009020207}
+如果$f:\real^n \to \real^m$在$a$点可微，则对于$1 \le i \le m$, $1 \le j \le n$, $D_jf_i(a)$存在，且$f'(a)$是$m \times n$矩阵$(D_jf_i(a))$.
+\end{theorem}
+\begin{proof}
+先假定$m=1$,
+\end{proof}
 
 \chapter{积分}\label{chapter00903}
 \section{基本定义}\label{section0090301}
