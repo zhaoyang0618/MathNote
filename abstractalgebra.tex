@@ -42,6 +42,10 @@
 
 \maketitle
 
+\tableofcontents
+\mainmatter
+\hypersetup{pageanchor=true}
+
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
 This book evolved out of notes by the authors from courses given at various universities over a period of about thirteen years. The backgrounds of students in these courses were 
@@ -71,7 +75,59 @@ We shall use the following notation for some common sets of numbers:
 
 We shall use the notation $f: A \to B$ or $A \stackrel{f}{\rightarrow} B$ to denote a function $f$ from $a$ to $B$ and the value of $f$ at $a$ is denoted $f(a)$ (i.e. we shall apply our functions on the left). We use the words function and map interchangeably. The set $A$ is called the domain of $f$ and $B$ is called the codomain of $f$. The notation $f: a \mapsto b$ or $a \mapsto b$ if $f$ is understood indicates that $f(a)=b$, i.e. the function is being specified on elements.
 
-If the function $f$ is not specified on elements it is important in general to check that $f$ is well defined, i.e. is unambiguously determined.
+If the function $f$ is not specified on elements it is important in general to check that $f$ is well defined, i.e. is unambiguously determined. For example, if the set $A$ is the union of two subsets $A_1$ and $A_2$ then one can try to specify a function from $A$ to the set $\{0, 1\}$ by declaring that $f$ is to map everything in $A_1$ to 0 and is to map everything in $A_2$ to 1. This unabiguously defines $f$ unless $A_1$ and $A_2$ have elements in common (in which case it is not clear whether these elements should map to 0 or to 1). Checking that this $f$ is well defined therefore amounts to checking that $A_1$ and $A_2$ have no intersection.
+
+The set
+\[
+f(A) = \{b \in B | b = f(a), \text{for some } a \in A\}
+\]
+is a subset of $B$, called the range or image of $f$ (or the image of $A$ under $f$). For each subset $C$ of $B$ the set
+\[
+f^{-1}(C) = \{a \in A | f(a) \in C\}
+\]
+consisting of the elements of $A$ mapping into $C$ under $f$ is called the preimage or inverse image of $C$ under $f$. For each $b \in B$, the preimage of $\{b\}$ under $f$ is called the fiber of $f$ over $b$. Note that $f^{-1}$ is not in general a function and that the fibers of $f$ generally contain many elements since there may be many elements of $A$ mapping to the element $b$.
+
+If $f:A \to B$ and $g: B \to C$, then the composite map $g \circ f: A \to C$ is defined by
+\[
+(g \circ f)(a) = g(f(a)).
+\]
+
+Let $f:A \to B$.
+\begin{enumerate}
+\item[(1)] $f$ is injective or is an injection if whenever $a_1 \neq a_2$, then $f(a_1) \neq f(a_2)$.
+
+\item[(2)] $f$ is surjective or is a surjection if for all $b \in B$ there is some $a \in A$ such that $f(a) = b$, i.e. the image of $f$ is all of $B$. Note that since a function always maps onto its range (by definition) it is necessary to specify the codomain $B$ in order for the question of surjectivity to be meaningful.
+
+\item[(3)] $f$ is bijective or is a bijection if it is both injective and surjective, If such a bijection $f$ exists from $A$ to $B$, we say $A$ and $B$ are in bijective correspondence.
+
+\item[(4)] $f$ has a left inverse if there is a function $g:B \to A$ such that $g \circ f:A \to A$ is the identity map on $A$, i.e. $(g \circ f)(a)=a$, for all $a \in A$.
+
+\item[(5)] $f$ has a right inverse if there is a function $h:B \to A$ such that $f \circ h:B \to B$ is the identity map on $B$.
+\end{enumerate}
+
+\begin{proposition}{}{prop00001}
+Let $f:A \to B$.
+\begin{enumerate}
+\item[(1)] The map $f$ is injective if and only if $f$ has a left inverse.
+\item[(2)] The map $f$ is surjective if and only if $f$ has a right inverse.
+\item[(3)] The map $f$ is bijective if and only if there exists $g:B \to A$ such that $f \circ g$ is the identity map on $B$ and $g \circ f$ is the identity map on $A$.
+\item[(4)] If $A$ and $B$ are finite sets with the same number of elements (i.e. $|A|=|B|$). then $f:A \to B$ is bijective if and only if $f$ is injective if and only if $f$ is surjective.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Exercise.
+\end{proof}
+
+In the situation fo part (3) of the proposition above the map $g$ is necessarily unique and we shall say $g$ is the 2-sided iverse (or simply the inverse) of $f$.
+
+A permutation of a set $A$ is simply a bijection from $A$ to itself.
+
+If $A \subset B$ and $f: B \to C$, we denote the restriction of $f$ to $A$ by $f|_A$. When the domain we are  considering is understood we shall occasionally denote $f|_A$ again simply as $f$ even though these are formally different functions (their domains are different).
+
+If $A \subset B$ and $g: A \to C$ and there is a function $f: B \to C$ such that $f|_A = g$, we shall say $f$ is an extension of $g$ to $B$ (such a map $f$ need not exist nor be unique).
+
+Let $A$ be a nonempty set.
 
 \section{Properties of the integers}\label{section00002}
 
@@ -79,10 +135,6 @@ If the function $f$ is not specified on elements it is important in general to c
 
 \section{$\mathbb{Z}/n\mathbb{Z}$: The integers Modulo $n$}\label{section00003}
 
-
-\tableofcontents
-\mainmatter
-\hypersetup{pageanchor=true}
 
 % add preface chapter here if needed
 \part{Group Theory}

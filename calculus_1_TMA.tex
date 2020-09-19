@@ -276,10 +276,35 @@ Two sets $A$ and $B$ are said to be equal (or identical) if they consist of exac
 \end{definition}
 
 \begin{example}
-According to this definition, the two sets
+According to this definition, the two sets $\{2,4,6,8\}$ and $\{2,8,6,4\}$ are equal since they both consist of the four integers $2,4,6$, and 8. Thus, when we use the roster notation to describe a set, the order in which the elements appears is irrelevant.
 \end{example}
 
+\begin{example}
+The sets $\{2,4,6,8\}$ and $\{2,2,4,4,6,8\}$ are equal even though, in the second set, each of the elements $2$ and $4$ is listed twice. Both sets contains the four elements 2,4,6,8 and no others; therefore, the definition requires that we call these sets equal. This example shows that we do not insist that the objects listed in the roster notation be distinct. A similar example is the set of letters in the word Mississippi, which is equal to the set \{M, i, s, p\}, consisting of the four distinct letters M, i, s, and p.
+\end{example}
+
+
 \subsection{Subsets}
+From a given set $S$ we may form new sets, called subsets of $S$. For example, the set consisting of those positive integers less tha 10 which are divisible by 4 (the set $\{4, 8\}$) is a subset of the set of all even integers less than 10. In general, we have the following definition.
+\begin{definition}{DEFINITION OF A SUBSET}{def0010202}
+A set $A$ is said to be a subset of a set $B$, and we write 
+\[
+A \subset B,
+\]
+whenever every element of $A$ also belongs to $B$. We also say that $A$ is contained in $B$ or that $B$ contains $A$. The relation $\subset$ is referred to as set inclusion.
+\end{definition}
+
+The statement $A \subset B$ does not rule out the possibility that $B \subset A$. In fact, we may have both $A \subset B$ and $B \subset A$, but this happens only if $A$ and $B$ have the same elements. In other words,
+\[
+A = B\quad \text{if and only if} \quad A \subset B \text{ and } B \subset A.
+\]
+This theorem is an immediate consequence of the foregoing definitions of equality and inclusion. If $A \subset B$ but $A \neq B$, then we say that $A$ is a proper subset of $B$; we indicate this by writing $A \subsetneqq B$.
+
+In all our applications of set theory, we have a fixed set $S$ given in advance, and we are concerned only with subsets of this given set. The underlying set $S$ may vary from one application to another; it will be referred to as the universal set of each particular discourse. The notation 
+\[
+\{x | x \in S \text{ and } x \text{ satisfies } P\}
+\]
+will designate the set
 
 
 \subsection{Unions, intersections, complements}
