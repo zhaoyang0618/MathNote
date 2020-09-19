@@ -105,7 +105,7 @@ Let $f:A \to B$.
 \item[(5)] $f$ has a right inverse if there is a function $h:B \to A$ such that $f \circ h:B \to B$ is the identity map on $B$.
 \end{enumerate}
 
-\begin{proposition}{}{prop00001}
+\begin{proposition}{}{prop0000101}
 Let $f:A \to B$.
 \begin{enumerate}
 \item[(1)] The map $f$ is injective if and only if $f$ has a left inverse.
@@ -128,6 +128,44 @@ If $A \subset B$ and $f: B \to C$, we denote the restriction of $f$ to $A$ by $f
 If $A \subset B$ and $g: A \to C$ and there is a function $f: B \to C$ such that $f|_A = g$, we shall say $f$ is an extension of $g$ to $B$ (such a map $f$ need not exist nor be unique).
 
 Let $A$ be a nonempty set.
+\begin{enumerate}
+\item[(1)] A binary relation on a set $A$ is a subset $R$ of $A \times A$ and we write $a \sim b$ if $(a, b)\in R$.
+\item[(2)] The relation $\sim$ on $A$ is said to be: 
+\begin{enumerate}
+\item[(a)] reflexive if $a \sim a$, for all $a \in A$,
+\item[(b)] symmetric if $a \sim b$ implies $b \sim a$ for all $a, b \in A$,
+\item[(c)] transitive if $a \sim b$ and $b \sim c$ implies $a \sim c$ for all $a,b,c \in A$.
+\end{enumerate}
+A relation is an equivalence relation if it is reflexive, symmetric and transitive.
+
+\item[(3)] If $\sim$ defined an equivalence relation on $A$, then the equivalence class of $a \in A$ is defined to be $\{x \in A| x \sim a\}$. Elements of the equivalence class of $a$ are said to be equivalent to $a$. If $C$ is an equivalence class, any element of $C$ is called a representative of the class $C$.
+
+\item[(4)] A partition of $A$ is any collection $\{A_i|i\in I\}$ of nonempty subsets of $A$ ($I$ some indexing set) such that
+\begin{enumerate}
+\item[(a)] $A = \cup_{i \in I}{A_i}$, and
+\item[(b)] $A_i \cap A_j = \emptyset$, for all $i, j \in I$ with $i \neq j$.
+\end{enumerate}
+i.e. $A$ is the disjoint union of the sets in the partition.
+\end{enumerate}
+
+The notions of an equivalence relation on $A$ and a partition of $A$ are the same:
+
+\begin{proposition}{}{prop0000102}
+Let $A$ be an nonempty set.
+\begin{enumerate}
+\item[(1)]  If $\sim$ defines an equivalece relation on $A$ then the set of equivalence classes of $\sim$ form a partition of $A$.
+\item[(2)] If $\{A_i | i \in I\}$ is a partition of $A$ then there is an eqivalence relation on $A$ whose equivalence classes are precisely the sets $A_i$, $i \in I$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Omitted.
+\end{proof}
+
+Finally, we shall assume the reader is familiar with proofs by induction.
+
+
+
 
 \section{Properties of the integers}\label{section00002}
 
