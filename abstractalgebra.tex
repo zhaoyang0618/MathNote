@@ -164,11 +164,139 @@ Omitted.
 
 Finally, we shall assume the reader is familiar with proofs by induction.
 
+In Exercises 1 to 4 let $\mathcal{A}$ be the set of $2 \times 2$ matrices with real numbers entries. Recall that matrix multiplication is defined by
+\[
+\begin{pmatrix}a & b\\ c & d\end{pmatrix}\begin{pmatrix}p & q\\r & s\end{pmatrix}=
+\begin{pmatrix}ap+br & aq + bs\\cp+dr& cq + ds\end{pmatrix}
+\]
+Let
+\[
+M = \begin{pmatrix}1 & 1 \\0 & 1\end{pmatrix}
+\]
+and let 
+\[
+\mathcal{B} = \{X \in \mathcal{A} | MX = XM\}.
+\]
+
+\begin{problemset}
+\item Determine which of the following elements of $\mathcal{A}$ lie in $\mathcal{B}$:
+\begin{gather*}
+\begin{pmatrix}
+1 & 1\\
+0 & 1
+\end{pmatrix},
+\begin{pmatrix}
+1 & 1\\
+1 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 0\\
+0 & 0
+\end{pmatrix},
+\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix},
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}.
+\end{gather*}
+
+\item Prove that if $P, Q \in \mathcal{B}$, then $P+Q\in \mathcal{B}$ (where $+$ denotes the usual sum of two matrices).
+
+\item Prove that if $P, Q \in \mathcal{B}$, then $P\cdot Q \in \mathcal{B}$ (where $\cdot$ denotes the usual product of two matrices).
+
+\item Find conditions on $p, q, r, s$ which determine precisely when $\begin{pmatrix}p & q \\r & s\end{pmatrix} \in \mathcal{B}$.
+
+\item Determine whether the following functions $f$ are well defined:
+\begin{enumerate}
+\item[(a)] $f:\mathbb{Q} \to \mathbb{Z}$ defined by $f(a/b) = a$.
+\item[(b)] $f:\mathbb{Q} \to \mathbb{Q}$ defined by $f(a/b) = a^2/b^2$.
+\end{enumerate}
+
+\item Determine whether the function $f:\real^+ \to \mathbb{Z}$ defined by mapping a real number $r$ to the first digit to the right of the decimal point in a decimal expansion of $r$ is well defined.
+
+\item Let $f: A \to B$ be a surjective map of sets. Prove that the relation
+\[
+a \sim b \text{ if and only if } f(a) = f(b)
+\]
+is an equivalence relation whose equivalence classes are the fibers of $f$.
+
+\end{problemset}
 
 
 
 \section{Properties of the integers}\label{section00002}
+The following properties of the integers $\mathbb{Z}$ (many familiar from elementary arithmetic) will be proved in a more general context in the ring theory of Chapter 8, but it will be necessary to use them in Part I (of course, none of the ring theory proofs of these properties will rely on the group theory).
 
+\begin{enumerate}
+\item[(1)] (Well Ordering of $\mathbb{Z}$) If $A$ is any nonempty subset of $\mathbb{Z}^+$, there is some element $m \in A$ such that $m \le a$, for all $a \in A$ ($m$ is called a minimal element of $A$).
+
+\item[(2)] If $a, b \in \mathbb{Z}$ with $a \neq 0$, we say $a$ divides $b$ if there is an element $c \in \mathbb{Z}$ such that $b=ac$. In this case we write $a \mid b$; if $a$ does not divide $b$ we write $a \nmid b$.
+
+\item[(3)] If $a, b \in \mathbb{Z} - \{0\}$, there is a unique positive integer $d$, called the greatest common divisor of $a$ and $b$ (or g.c.d.  of $a$ and $b$), satisfying:
+\begin{enumerate}
+\item[(a)] $d \mid a$ and $d \mid b$ (so $d$ is a common divisor of $a$ and $b$), and
+\item[(b)] if $e \mid a$ and $e \mid b$, then $e \mid d$ (so $d$ is the greatest such divisor).
+\end{enumerate}
+The g.c.d. of $a$ and $b$ will be denoted by $(a, b)$. If $(a, b) = 1$, we say that $a$ and $b$ are relatively prime.
+
+\item[(4)] If $a, b \in \mathbb{Z} - \{0\}$, there is q unique positive integer $l$, called least common multiple of $a$ and $b$ (or l.e.m. of $a$ and $b$), satisfying:
+\begin{enumerate}
+\item[(a)] $a \mid l$ and $b \mid l$ (so $l$ is a common multiple of $a$ and $b$), and
+\item[(b)] if $a \mid m$ and $b \mid m$, then $l \mid m$ (so $l$ is the least such multiple).
+\end{enumerate}
+The connection between the greatest common divisor $d$ and the least common multiple $l$ of two integers $a$ and $b$ is given by $dl=ab$.
+
+\item[(5)] The Division Algorithm: if $a, b \in \mathbb{Z} -\{0\}$, then there exist unique $q, r\in \mathbb{Z}$ such that
+\[
+a = qb + r \quad \text{and} \quad 0 \le r < |b|,
+\]
+where $q$ is the quotient and $r$ the remainder, This is the usual "long division" familiar from elementary arithmetic.
+
+\item[(6)] The Euclidean Algorithm is an important procedure which produces a greatest common divisor of two integers $a$ and $b$ by iterating the Division Algorithm: if $a, b \in \mathbb{Z} - \{0\}$, then we obtain a sequence of quotients and remainders
+\begin{gather}
+a = q_0b + r_0 \tag{0}\\
+b = q_1r_0 + r_1 \tag{1}\\
+r_0 = q_2r_1 + r_2 \tag{2}\\
+r_1 = q_3r_2 + r_3 \tag{3}\\
+\vdots \notag\\
+r_{n-2} = q_nr_{n-1} + r_n \tag{n}\\
+r_{n-1} = q_{n+1}r_n \tag{n+1}
+\end{gather}
+where $r_n$ is the last nonzero remainder. Such an $r_n$ exists since $|b| > |r_0| > |r_1| > \cdots > |r_n|$ is a decreasing sequence of strictly positive integers if the remainders are nonzero and such a sequence cannot continue indefinitely. Then $r_n$ is the g.c.d. (a, b) of $a$ and $b$.
+
+\begin{example}
+Suppose $a = 57970$ and $b=10353$. Then applying the Euclidean Algorithm we obtain:
+\[
+\begin{aligned}
+57970 &= (5)10353 + 6205\\
+10353 &= (1)6205 + 4148\\
+6205 &= (1)4148 + 2057\\
+4148 &= (2)2057 + 34\\
+2057 &= (60)34 + 17\\
+34 &= (2)17
+\end{aligned}
+\]
+which shows that $(57970, 10353) = 17$.
+\end{example}
+
+\item[(7)] One consequence of the Euclidean Algorithm which we shall use regularly is the following: if $a, b, \in \mathbb{Z} - \{0\}$, then there exist $x, y \in \mathbb{Z}$ such that
+\[
+(a, b) = ax + by
+\]
+that is, the g.c.d. of $a$ and $b$ is a $\mathbb{Z}$-linear combination of $a$ and $b$. This follows by recursively writing the element $r_n$ in the Euclidean Algorithm in terms of the previous remainders (namely, use equation (n) above to solve for $r_n = r_{n-2} - q_nr_{n-1}$ in terms of the remainders $r_{n-1}$ and $r_{n-2}$, then use equation (n-1) to write $r_n$ in terms of the remainders $r_{n-2}$ and $r_{n-3}$, etc. eventually writing $r_n$ in terms of $a$ and $b$).
+
+\begin{example}
+Suppose $a = 57970$ and $b=10353$, whose greatest common divisor we computed above to be 17.
+\end{example}
+
+\end{enumerate}
 
 
 \section{$\mathbb{Z}/n\mathbb{Z}$: The integers Modulo $n$}\label{section00003}
