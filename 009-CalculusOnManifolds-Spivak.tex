@@ -1231,7 +1231,66 @@ h(x, y) = (x, y, -\sqrt{1 - x^2 - y^2}).
 如果$f:\real^n \to \real^m$在$a$点可微，则对于$1 \le i \le m$, $1 \le j \le n$, $D_jf_i(a)$存在，且$f'(a)$是$m \times n$矩阵$(D_jf_i(a))$.
 \end{theorem}
 \begin{proof}
-先假定$m=1$,
+先假定$m=1$, 故$f: \real^n \to \real$. 用$h(x)=(a_1, \cdots, x, \cdots, a_n)$定义$h:\real \to \real^n$, 其中$x$在第$j$个位置。则$D_jf(a) = (f \circ h)'(a_j)$.因此，由定理\ref{thm:thm009020202},
+\[
+\begin{aligned}
+(f \circ h)'(a_j) &= f'(a) \cdot h'(a_j)\\
+&= f'(a) \cdot \begin{bmatrix}0 \\\vdots\\1\\\vdots\\0\end{bmatrix}\leftarrow\text{第$j$个位置}.
+\end{aligned}
+\]
+因为$(f \circ h)'(a_j)$有唯一的元素$D_jf(a)$,这就表明$D_jf(a)$存在且就是$1 \times n$矩阵$f'(a)$的第$j$个元素。
+
+因为由定理\ref{thm:thm009020203}，每一$f_i$可微，且$f'(a)$的第$i$行是$(f_i)'(a)$, 所以现在本定理就对任意的$m$都成立。
+\end{proof}
+
+在习题中有几个例子表明定理\ref{thm:thm009020207}的逆不成立。但若添加一个假设，它还是对的。
+
+\begin{theorem}{}{thm009020208}
+如$f:\real^n \to \real^m$, 则若所有$D_jf_i(x)$在包含$a$的一开集中存在且每一函数$D_jf_i$在$a$点连续，则$Df(a)$存在。（这样的函数$f$称为在$a$点连续可微。）
+\end{theorem}
+
+\begin{proof}
+和定理\ref{thm:thm009020207}的证明一样，只要考察$m=1$的情况就够了，所以$f:\real^n \to \real$, 于是
+\[
+\begin{aligned}
+f(a+h) - f(a) &= f(a_1 + h_1, a_2, \cdots, a_n) - f(a_1, \cdots, a_n)\\
+&+ f(a_1+h_1,a_2+h_2,a_3,\cdots,a_n)\\
+&- f(a_1+h_1,a_2,\cdots, a_n) + \cdots\\
+&+ f(a_1+h_1,\cdots, a_n+h_n) \\
+&- f(a_1+h_1, \cdots, a_{n-1} + h_{n-1}, a_n).
+\end{aligned}
+\]
+回想$D_1f$是由$g(x) = f(x, a_2, \cdots, a_n)$定义的函数$g$的导数。对$g$应用中值定理，便得
+\begin{gather*}
+f(a_1+h_1, a_2, \cdots, a_n) - f(a_1, \cdots, a_n) \\
+= h_1 \cdot D_1f(b_1, a_2, \cdots, a_n),
+\end{gather*}
+这里$b_1$是$a_1$与$a_1+h_1$间的某数。同样，在和式中第$i$项等于（对某$c_i$）
+\[
+h_i \cdot D_if(a_1+h_1, \cdots, a_{i-1}+h_{i-1}, b_i, \cdots, a_n) = h_iD_if(c_i).
+\]
+于是，
+\begin{align*}
+&\lim_{h \to 0}{\frac{\left|f(a+h) - f(a) - \sum\limits_{i=1}^{n}{D_if(a) \cdot h_i}\right|}{|h|}}\\
+&\quad = \lim_{h \to 0}{\frac{\left|\sum\limits_{i=1}^{n}{[D_if(c_i) - D_if(a)] \cdot h_i}\right|}{|h|}}\\
+&\quad \le\lim_{h \to 0}{\sum_{i=1}^{n}{|D_if(c_i) - D_if(a)| \cdot \frac{|h_i|}{|h|}}}\\
+&\quad \le\lim_{h \to 0}{\sum_{i=1}^{n}{|D_if(c_i) - D_if(a)|}}\\
+&\quad = 0,
+\end{align*}
+因为$D_if$在$a$点连续。
+\end{proof}
+
+虽然在证明定理\ref{thm:thm009020207}时应用了锁链规则，但能容易地把它去掉。对可微函数有定理\ref{thm:thm009020208}，对它们的导数有定理\ref{thm:thm009020207}，所以锁链规则看来似乎是多余的。但是，它有一个关于偏导数的极端重要的结论。
+
+\begin{theorem}{}{thm009020209}
+设$g_1,\cdots,g_m:\real^n \to \real$在$a$点连续可微，并设$f:\real^m \to \real$在$(g_1(a),\cdots,g_m(a))$点连续可微。用$F(x) = f(g_1(x), \cdots, g_m(x))$定义$F:\real^n \to \real$。则
+\[
+D_iF(a) = \sum_{j=1}^{n}{D_jf(g_1(a),\cdots, g_m(a)) \cdot D_ig_j(a)}.
+\]
+\end{theorem}
+
+\begin{proof}
+函数$F$
 \end{proof}
 
 \chapter{积分}\label{chapter00903}
