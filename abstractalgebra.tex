@@ -232,7 +232,7 @@ is an equivalence relation whose equivalence classes are the fibers of $f$.
 
 
 \section{Properties of the integers}\label{section00002}
-The following properties of the integers $\mathbb{Z}$ (many familiar from elementary arithmetic) will be proved in a more general context in the ring theory of Chapter 8, but it will be necessary to use them in Part I (of course, none of the ring theory proofs of these properties will rely on the group theory).
+The following properties of the integers $\mathbb{Z}$ (many familiar from elementary arithmetic) will be proved in a more general context in the ring theory of Chapter \ref{chapter008}, but it will be necessary to use them in Part I (of course, none of the ring theory proofs of these properties will rely on the group theory).
 
 \begin{enumerate}
 \item[(1)] (Well Ordering of $\mathbb{Z}$) If $A$ is any nonempty subset of $\mathbb{Z}^+$, there is some element $m \in A$ such that $m \le a$, for all $a \in A$ ($m$ is called a minimal element of $A$).
@@ -293,9 +293,20 @@ which shows that $(57970, 10353) = 17$.
 that is, the g.c.d. of $a$ and $b$ is a $\mathbb{Z}$-linear combination of $a$ and $b$. This follows by recursively writing the element $r_n$ in the Euclidean Algorithm in terms of the previous remainders (namely, use equation (n) above to solve for $r_n = r_{n-2} - q_nr_{n-1}$ in terms of the remainders $r_{n-1}$ and $r_{n-2}$, then use equation (n-1) to write $r_n$ in terms of the remainders $r_{n-2}$ and $r_{n-3}$, etc. eventually writing $r_n$ in terms of $a$ and $b$).
 
 \begin{example}
-Suppose $a = 57970$ and $b=10353$, whose greatest common divisor we computed above to be 17.
+Suppose $a = 57970$ and $b=10353$, whose greatest common divisor we computed above to be 17. From the fifth equation (the next to last equation) in the Euclidean Algorithm applied to these two integers we solve for their greatest common divisor: $17 = 2057 - (60)34$. The fourth equation then shows that $34 = 4148 - (2)2057$, so substituting this expression for the previous remainder 34 gives the equation $17 = 2057 - (60)[4148 - (2)2057]$, i.e. $17 = (121)2057 - (60)4148$. Solving the third equation for 2057 and substituting gives $17 = (121)[6205 - (1)4148] - (60)4148 = (121)6205 - (181)4148$. Using the second equation to solve for 4148 and then the first equation to solve for 6205 we finally obtain
+\[
+17 = (302)57970 - (1691)10353
+\]
+as can easily be checked directly. Hence the equation $ax + by = (a, b)$ for the geatest common divisor of $a$ and $b$ in this example has the solution $x = 302$ and $y=-1691$. Note that it is relatively unlikely that this relation would have been found simply by guessing.
 \end{example}
 
+The integers $x$ and $y$ in (7) above are not unique. In the example with $a = 57970$ and $b = 10353$ we determined one solution to be $x = 302$ and $y = -1691$, for instance, and it is relatively simple to check that $x = -307$ and $y = 1719$ also satisfy $57970x + 10353y=17$. The general solution for $x$ and $y$ is known (cf. the exercises below and in Chapter \ref{chapter008}).
+
+\item[(8)] An element $p$ of $\mathbb{Z}^+$ is called a prime if $p > 1$ and the only positive divisors of $p$ are 1 and $p$ (initially, the word prime will refer only to positive integers). An integer $n > 1$ which is not prime is called composite. For example, $2,3,5,7,11,13,17,19, \cdots$ are primes and $4,6,8,9,12,14,15,16,18, \cdots$ are composite.
+
+An important property of primes (which in fact can be used to define the primes (cf. Exercise 3)) is the following: if $p$ is a prime and $p \mid ab$, for some $a, b \in \mathbb{Z}$, then either $p \mid a$ or $p \mid b$.
+
+\item[(9)] The Fundamental Theorem of Arithmetic says:
 \end{enumerate}
 
 
@@ -337,6 +348,7 @@ Suppose $a = 57970$ and $b=10353$, whose greatest common divisor we computed abo
 \section{Definition and Examples}\label{section00201}
 
 
+\chapter{Euclidean Domains, Principal Ideal Domains and Unique Factorization Domains}\label{chapter008}
 
 
 
