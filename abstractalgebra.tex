@@ -306,8 +306,53 @@ The integers $x$ and $y$ in (7) above are not unique. In the example with $a = 5
 
 An important property of primes (which in fact can be used to define the primes (cf. Exercise 3)) is the following: if $p$ is a prime and $p \mid ab$, for some $a, b \in \mathbb{Z}$, then either $p \mid a$ or $p \mid b$.
 
-\item[(9)] The Fundamental Theorem of Arithmetic says:
+\item[(9)] The Fundamental Theorem of Arithmetic says: if $n \in \mathbb{Z}$, $n > 1$, then $n$ can be factored uniquely into the product of primes, i.e. there are distinct primes $p_1, p_2, \cdots, p_s$ and positive integers $\alpha_1, \alpha_2, \cdots, \alpha_s$ such that
+\[
+n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots{}p_s^{\alpha_s},
+\]
+This factorization is unique in the sense that if $q_1, q_2, \cdots, q_t$ are any distinct primes and $\beta_1, \beta_2, \cdots, \beta_t$ positive integers such that
+\[
+n = q_1^{\beta_1}q_2^{\beta_2}\cdots{}q_t^{\beta_t},
+\]
+then $s=t$ and if we arrange the two sets of primes in increasing order, then $q_i = p_i$ and $\alpha_i = \beta_i$, $1 \le i \le s$. For example, $n = 1852423848 = 2^33^211^219^331$ and this decomposition into the product of primes is unique.
+
+Suppose the positive integers $a$ and $b$ are expressed as products of prime powers:
+\[
+a = p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_s^{\alpha_s}, \quad b = p_1^{\beta_1}p_2^{\beta_2}\cdots p_s^{\beta_s}
+\]
+where $p_1,p_2,\cdots,p_s$ are distinct and the exponents are $\ge 0$ (we allow the exponents to be 0 here so that the products are taken over the same set of primes - the exponent will be 0 if that prime is not actually a divisor). Then the greatest common divisor of $a$ and $b$ is
+\[
+(a, b) = p_1^{\min(\alpha_1, \beta_1)}p_2^{\min(\alpha_2, \beta_2)}\cdots{}p_s^{\min(\alpha_s, \beta_s)}
+\]
+(and the least common multiple is obtained by instead taking the maximum of the $\alpha_i$ and $\beta_i$ instead of the minimum).
+
+\begin{example}
+In the example above, $a = 57970$ and $b = 10353$ can be factored as $a = 2 \cdot 5 \cdot 11 \cdot 17 \cdot 31$ and $b = 3 \cdot 7 \cdot 17 \cdot 29$, from which we can immediately conclude that their greatest common divisor is 17. Note, however, that for large integers it is extremely difficult to determine their prime factorizations (several common codes in current use are based on this difficulty, in fact), so that this is not an effective method to determine greatest common divisor in general. The Euclidean Algorithm will produce greatest common divisors quite rapidly without the need for the prime factorization of $a$ and $b$.
+\end{example}
+
+\item[(10)] The Euler $\varphi-$function is defined as follows: for $n \in \mathbb{Z}^+$ let $\varphi(n)$ be the number of positive integers $a \le n$ with $a$ relatively prime to $n$, i.e. $(a, n) = 1$. For example, $\varphi(12) = 4$ since $1,5,7$ and $11$ are the only positive integers less than or equal to 12 which have no factors in common with 12. Similarly, $\varphi(1)=1$, $\varphi(2)=1$, $\varphi(3)=2$, $\varphi(4)=2$, $\varphi(5)=4$, $\varphi(6)=2$, etc. For primes $p$, $\varphi(p) = p - 1$, nd, more generally, for all $a \ge 1$ we have the formula
+\[
+\varphi(p^{\alpha}) = p^{\alpha} - p^{\alpha-1} = p^{\alpha-1}(p-1).
+\]
+The function $\varphi$ is \emph{multiplication} in the sense that 
+\[
+\varphi(ab) = \varphi(a)\varphi(b)\quad \text{if }(a, b) = 1
+\]
+(note that it is important here that $a$ and $b$ be relatively prime). Together with the formula above this gives a general formula for the values of $\varphi$: if $n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots{}p_s^{\alpha_s}$, then
+\[
+\begin{aligned}
+\varphi(n) &= \varphi(p_1^{\alpha_1})\varphi(p_2^{\alpha_2})\cdots\varphi(p_s^{\alpha_s})\\
+&=p_1^{\alpha_1-1}(p_1-1)p_2^{\alpha_2-2}(p_2-1)\cdots{}p_s^{\alpha_s-1}(p_s-1).
+\end{aligned}
+\]
+For example, $\varphi(12) = \varphi(2^2)\varphi(3)=2^1(2-1)3^0(3-1)=4$. The reader should note that we shall use the letter $\varphi$ for many different functions throughout the text so we want this letter to denote Euler's function we shall be careful to indicate this explicitly.
+
+
 \end{enumerate}
+
+\begin{problemset}
+\item For each of the following pairs of integers $a$ and $b$, determine their greatest common divisor, their least common multiple, and write their greatest common divisor on the form $ax + by$ for some integers $x$ and $y$.
+\end{problemset}
 
 
 \section{$\mathbb{Z}/n\mathbb{Z}$: The integers Modulo $n$}\label{section00003}
