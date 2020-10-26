@@ -352,10 +352,59 @@ For example, $\varphi(12) = \varphi(2^2)\varphi(3)=2^1(2-1)3^0(3-1)=4$. The read
 
 \begin{problemset}
 \item For each of the following pairs of integers $a$ and $b$, determine their greatest common divisor, their least common multiple, and write their greatest common divisor on the form $ax + by$ for some integers $x$ and $y$.
+\begin{enumerate}
+\item[(a)] $a = 20$, $b = 13$.
+\item[(b)] $a = 69$, $b = 372$.
+\item[(c)] $a = 792$, $b = 275$.
+\item[(d)] $a = 11391$, $b = 5673$.
+\item[(e)] $a = 1761$, $b = 1567$.
+\item[(f)] $a = 507885$, $b = 60808$.
+\end{enumerate}
+
+\item Prove that if the integer $k$ divides the integers $a$ and $b$ then $k$ divides $as + bt$ for every pair of integers $s$ and $t$.
+
+\item Prove that if $n$ is composite then there are integers $a$ and $b$ such that $n$ divides $ab$ but $n$ does not divide either $a$ or $b$.
+
+\item Let $a$, $b$ and $N$ be fixed integers with $a$ and $b$ nonzero and let $d = (a, b)$ be the greatest common divisor of $a$ and $b$. Suppose $x_0$ and $y_0$ are particular solutions to $ax + by = N$ (i.e. $ax_0 + by_0 = N$). Prove for any integer $t$ that the integers
+\[
+x = x_0 + \frac{b}{d}t \quad\text{and}\quad y = y_0 - \frac{a}{d}t
+\]
+are also solutions to $ax + by = N$ (this is in fact the general solution).
+
+\item Determine the value $\varphi(n)$ for each integer $n \le 30$ where $\varphi$ denotes the Euler $\varphi-$function.
+
+\item Prove the Well Ordering Property of $\mathbb{Z}$ by induction and prove the minimal element is unique.
+
+\item If $p$ is a prime prove that there do not exist nonzero integers $a$ and $b$ such that $a^2 = pb^2$(i.e. $\sqrt{p}$ is not a rational number).
+
+\item Let $p$ be a prime, $n \in \mathbb{Z}^+$. Find a formular for the largest power of $p$ which divides $n!=n(n-1)(n-2)\cdots{}2\cdot{}1$ (it involves the greatest integer function).
+
+\item Write a computer program to determine the greatest common divisor $(a, b)$ of two integers $a$ and $b$ and to express $(a, b)$ in the form $ax + by$ for some integers $x$ and $y$.
+
+\item Prove for any given positive integer $N$ there exist only finitely many integers $n$ with $\varphi(n) = N$ where $\varphi$ denotes Euler's $\varphi-$function. Conclude in particular that $\varphi(n)$ tends to infinity as $n$ tends to infinity.
+
+\item Prove that if $d$ divides $n$ then $\varphi(d)$ divides $\varphi(n)$ where $\varphi$ denotes Euler's $\varphi-$function.
+
 \end{problemset}
 
 
 \section{$\mathbb{Z}/n\mathbb{Z}$: The integers Modulo $n$}\label{section00003}
+Let $n$ be a fixed positive integer. Define a relation on $\mathbb{Z}$ by
+\[
+a \sim b \text{ if and only if }n \mid (b - a).
+\]
+Clearly $a \sim a$, and $a \sim b$ implies $b \sim a$ for any integers $a$ and $b$, so this relation is trivially reflexive and symmetric. If $a \sim b$ and $b \sim c$ then $n$ divides $a-b$ and $n$ divides $b-c$ so $n$ also divides the sum of these two integers, i.e. $n$ divides $(a-b) + (b-c) = a-c$, so $a \sim c$ and the relation is transitive. Hence this is an equivalence relation. Write $a \equiv b \pmod{n}$ (read: $a$ is congruent to $b \bmod{n}$) if $a \sim b$. For any $k \in \mathbb{Z}$ we shall denote the equivalence class of $a$ by $\bar{a}$ - this is called the congruence class or residue class of $a \bmod{n}$ and consists of the integers which differ from $a$ by an integeral multiple of $n$, i.e.
+\[
+\begin{aligned}
+\bar{a} &= \{ a + kn | k \in \mathbb{Z}\}\\
+&= \{a, a \pm n, a \pm{2n}, a \pm{3n},\cdots\}.
+\end{aligned}
+\]
+There are precisely $n$ distinct equivalence classes $\bmod{n}$, namely
+\[
+\bar{0}, \bar{1}, \bar{2}, \cdots, \overline{n-1}
+\]
+determined by the possible remainders after division by $n$ and these residue classes partition the integers $\mathbb{Z}$. The set of equivalence classes under this equivalence relation  will be denoted by $\mathbb{Z}/n\mathbb{Z}$ and called the integers modulo $n$ (or the integers $\bmod{n}$). The motivation for this notation will become clearer when we discuss quotient groups and quotient rings. Note that for different $n$'s the equivalence relation and equivalence classes are different so we shall always be careful to fix
 
 
 % add preface chapter here if needed
