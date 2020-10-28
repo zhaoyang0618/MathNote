@@ -404,7 +404,40 @@ There are precisely $n$ distinct equivalence classes $\bmod{n}$, namely
 \[
 \bar{0}, \bar{1}, \bar{2}, \cdots, \overline{n-1}
 \]
-determined by the possible remainders after division by $n$ and these residue classes partition the integers $\mathbb{Z}$. The set of equivalence classes under this equivalence relation  will be denoted by $\mathbb{Z}/n\mathbb{Z}$ and called the integers modulo $n$ (or the integers $\bmod{n}$). The motivation for this notation will become clearer when we discuss quotient groups and quotient rings. Note that for different $n$'s the equivalence relation and equivalence classes are different so we shall always be careful to fix
+determined by the possible remainders after division by $n$ and these residue classes partition the integers $\mathbb{Z}$. The set of equivalence classes under this equivalence relation  will be denoted by $\mathbb{Z}/n\mathbb{Z}$ and called the integers modulo $n$ (or the integers $\bmod{n}$). The motivation for this notation will become clearer when we discuss quotient groups and quotient rings. Note that for different $n$'s the equivalence relation and equivalence classes are different so we shall always be careful to fix $n$ first before using the bar notation. The process of finding the equivalence class $\bmod{n}$ of some integer $a$ is often referred to as reducing $a \bmod{n}$. This terminology also frequently refers to finding the smallest nonnegative integer congruent to $a \bmod{n}$ (the least residue of $a \bmod{n}$).
+
+We can define an addition and a multiplication for the elements of $\mathbb{Z}/n\mathbb{Z}$, defining modular arithmetic as follows: for $\bar{a}, \bar{b} \in \mathbb{Z}/n\mathbb{Z}$, define their sum and product by
+\[
+\bar{a} + \bar{b} = \overline{a + b} \quad\text{and}\quad \bar{a} \cdot \bar{b} = \overline{ab}.
+\]
+What this means is the following: given any two elements $\bar{a}$ and $\bar{b}$ in $\mathbb{Z}/n\mathbb{Z}$, to compute their sum (respectively, their product) take any representative integer $a$ in the class $\bar{a}$ and any representative integer $b$ in the class $\bar{b}$ and add (respectively, multiply) the integers $a$ and $b$ as usual in $\mathbb{Z}$ and then take the equivalence class containing the result. The following Theorem 3 asserts that this is well defined, i.e. does not depend on the choice of representatives taken for the elements $\bar{a}$ and $\bar{b}$ of $\mathbb{Z}/n\mathbb{Z}$.
+
+\begin{example}
+Suppose $n=12$ and consider $\mathbb{Z}/12\mathbb{Z}$, which consists of the twelve residue classes
+\[
+\bar{0},\bar{1},\bar{2},\cdots,\overline{11}
+\]
+determined by the twelve possible remainders of an integer after division by 12. The elements in the residue class $\bar{5}$, for example, are the integers which leave a remainder of 5 when divided by 12 (the integers congruent to 5 $\bmod{12}$). Any integer congruent to 5 $\bmod{12}$ (such as $5,17, 29, \cdots$ or $-7, -19, \cdots$) will serve as a representative for the residue class $\bar{5}$. Note that $\mathbb{Z}/12\mathbb{Z}$ consists of the twelve elements above (and each of these elements of $\mathbb{Z}/12\mathbb{Z}$ consists of an infinite number of usual integers).
+
+Suppose now that $\bar{a}=\bar{5}$ and $\bar{b} = \bar{8}$. The most obvious representative for $\bar{a}$ is the integer 5 and similarly 8 is the most obvious representative for $\bar{b}$. Using these representatives for the residue classes we obtain $\bar{5} = \bar{8} = \overline{13} = \bar{1}$ since 13 and 1 lie in the same class modulo $n=12$. Had we instead taken the representative 17, say, for $\bar{a}$ (note that 5 and 17 do lie in the same residue class modulo 12) and the representative $-28$, say, for $\bar{b}$, we would obtain $\bar{5} + \bar{8} = \overline{17 - 28} = \overline{-11} = \bar{1}$ and as we mentioned the result does not depend on the choice of representatives chosen. The product of these two classes is $\bar{a} \cdot \bar{b} = \overline{5 \cdot 8} = \overline{40} = \bar{4}$, also independent of the representatives chosen.
+\end{example}
+
+\begin{theorem}{}{thm0000303}
+The operations of addition and multiplication on $\mathbb{Z}/n\mathbb{Z}$ defined above are both well defined, that is, they do not depend on the choices of representatives for the classes involved. More precisely, if $a_1, a_2 \in \mathbb{Z}$ and $b_1, b_2 \in \mathbb{Z}$ with $\overline{a_1} = \overline{b_1}$ and $\overline{a_2} = \overline{b_2}$, then $\overline{a_1 + a_2} = \overline{b_1+b_2}$ and $\overline{a_1a_2} = \overline{b_1b_2}$. i.e. if
+\[
+a_1 \equiv b_1 \pmod{n} \quad \text{and}\quad a_2 \equiv b_2 \pmod{n}
+\]
+then
+\[
+a_1 + a_2 \equiv b_1 + b_2 \pmod{n} \quad \text{and}\quad a_1a_2 \equiv b_1b_2 \pmod{n}
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose $a_1 \equiv b_1\pmod{n}$, i.e. $a_1-b_1$ is divisible by $n$. Then $a_1 = b_1 + sn$ for some integer $s$. Similarly, $a_2\equiv b_2\pmod{n}$ means $a_2 = b_2 + tn$ for some integer $t$. Then $a_1+a_2 = (b_1+b_2) + (s+t)n$ so that $a_1+a_2 \equiv b_1+b_2 \pmod{n}$, which shows that the sum of the residue classes is independent of the representatives chosen. Similarly, $a_1a_2 = (b_1+sn)(b_2+tn) = b_1b_2 + (b_1t + b_2s + st)n$ shows that $a_1a_2 \equiv b_1b_2 \pmod{n}$ and so the product of the residue classes is also independent of the representatives chosen, completing the proof.
+\end{proof}
+
+We shall see later that the process of adding equivalence classes by adding their representatives is a special case of a more gegneral construction
 
 
 % add preface chapter here if needed
