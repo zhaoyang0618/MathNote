@@ -437,8 +437,54 @@ a_1 + a_2 \equiv b_1 + b_2 \pmod{n} \quad \text{and}\quad a_1a_2 \equiv b_1b_2 \
 Suppose $a_1 \equiv b_1\pmod{n}$, i.e. $a_1-b_1$ is divisible by $n$. Then $a_1 = b_1 + sn$ for some integer $s$. Similarly, $a_2\equiv b_2\pmod{n}$ means $a_2 = b_2 + tn$ for some integer $t$. Then $a_1+a_2 = (b_1+b_2) + (s+t)n$ so that $a_1+a_2 \equiv b_1+b_2 \pmod{n}$, which shows that the sum of the residue classes is independent of the representatives chosen. Similarly, $a_1a_2 = (b_1+sn)(b_2+tn) = b_1b_2 + (b_1t + b_2s + st)n$ shows that $a_1a_2 \equiv b_1b_2 \pmod{n}$ and so the product of the residue classes is also independent of the representatives chosen, completing the proof.
 \end{proof}
 
-We shall see later that the process of adding equivalence classes by adding their representatives is a special case of a more gegneral construction
+We shall see later that the process of adding equivalence classes by adding their representatives is a special case of a more general construction (the construction of a quotient). This notion of adding equivalence classes is already a familiar one in the context of adding rational numbers: each rational number $a/b$ is really a class of expressions: $a/b = 2a/2b = -3a/-3b$ etc. and we often change representatives (for instance, take common denominators) in order to add two fractions (for example $1/2 + 1/3$ is computed by taking instead the equivalent representatives $3/6$ for $1/2$ and $2/6$ for $1/3$ to obtain $1/2+1/3=3/6+2/6=5/6$). The notion of modular arithmetic is also familiar: to find the hour of day after adding or subtracting some number of hours we reduce $\bmod{12}$ and find the least residue.
 
+It is important to be able to think of the equivalence classes of some equivalence relation as elements which can be manipulated (as we do, for example, with fractions) rather than as sets. Consistent with this attitude, we shall frequently denote the elements of $\mathbb{Z}/n\mathbb{Z}$ simply by $\{0,1, \cdots, n-1\}$ where addition and multiplication are reduced $\bmod{n}$. It is important to remember, however, that the elements of $\mathbb{Z}/n\mathbb{Z}$ are not integers, but rather collections of usual integers, and the arithmetic is quite different. For example, $5 + 8$ is not 1 in the integers $\mathbb{Z}$ as it was in the example of $\mathbb{Z}/12\mathbb{Z}$ above.
+
+The fact that one can define arithmetic in $\mathbb{Z}/n\mathbb{Z}$ has many important applications in elementary number theory. As one simply example we compute the last two digits in the  number $2^{1000}$. First observe that the last two digits give the remainder of $2^{1000}$ after we divide by 100 so we are interested in the residue class $\bmod{100}$ containing $2^{1000}$. We compute $2^{10} = 1024 \equiv 24 \pmod{100}$, so then $2^{20} = (2^{10})^2 \equiv 24^2 = 576 \equiv 76 \pmod{100}$. Then $2^{40} = (2^{20})^2  \equiv 76^2 = 5776 \equiv 76 \pmod{100}$. Similarly $2^{80} \equiv 2^{160} \equiv 2^{320} \equiv 2^{640} \equiv 76 \pmod{100}$. Finally, $2^{1000} = 2^{640}2^{320}2^{40} \equiv 76 \cdot 76 \cdot 76 \equiv 76 \pmod{100}$ so the final two digits are 76.
+
+An important subset $\mathbb{Z}/n\mathbb{Z}$ consists of the collection of residue classes which have a multiplicative inverse in $\mathbb{Z}/n\mathbb{Z}$:
+\[
+(\mathbb{Z}/n\mathbb{Z})^{\times} = \{\bar{a} \in \mathbb{Z}/n\mathbb{Z} | \text{there exists }\bar{c} \in \mathbb{Z}/n\mathbb{Z} \text{ with } \bar{a} \cdot \bar{c} =\bar{1}\}.
+\]
+Some of the following exercises outline a proof that $(\mathbb{Z}/n\mathbb{Z})^{\times}$ is also the collection of residue classes whose representatives are relatively prime to $n$:
+\begin{proposition}{}{prop0000304}
+$(\mathbb{Z}/n\mathbb{Z})^{\times} = \{\bar{a} \in \mathbb{Z}/n\mathbb{Z} | (a, n) = 1\}$.
+\end{proposition}
+
+It is easy to see that if any representative of $\bar{a}$ is relatively prime to $n$ then all representatives are relatively prime to $n$ so that the set on the right in the proposition is well defined.
+
+\begin{example}
+For $n=9$ we obtain $(\mathbb{Z}/9\mathbb{Z})^{\times} = \{1,2,4,5,7,8\}$ from the proposition. The multiplicative inverses of these elements are $\{1, 5, 7, 2, 4, 8\}$, respectively.
+\end{example}
+
+If $a$ is an integer relatively prime to $n$ then the Euclidean Algorithm produces integers $x$ and $y$ satisfying $ax + ny = 1$, hence $ax \equiv 1 \pmod{n}$, so that $\bar{x}$ is the multiplicative inverse of $\bar{a}$ in $\mathbb{Z}/n\mathbb{Z}$. This gives an efficient method for computing multiplicative inverses in $\mathbb{Z}/n\mathbb{Z}$.
+
+\begin{example}
+Suppose $n = 60$ and $a = 17$. Applying the Euclidean Algorithm we obtain
+\[
+\begin{aligned}
+60 &= (3)17 + 9\\
+17 &= (1)9 + 8\\
+9 &= (1)8 + 1
+\end{aligned}
+\]
+so that $a$ and $n$ are relatively prime, and $(-7)17 + (2)60 = 1$. Hence $\overline{-1} = \overline{53}$ is the multiplicative inverse of $\overline{17}$ in $\mathbb{Z}/60\mathbb{Z}$.
+\end{example}
+
+\begin{problemset}
+\item Write down explicitly all the elements in the residue classes of $\mathbb{Z}/18\mathbb{Z}$.
+
+\item Prove that the distinct equivalence classes in $\mathbb{Z}/n\mathbb{Z}$ are precisely $\bar{0}, \bar{1}, \bar{2}, \cdots, \overline{n-1}$(use the Division Algorithm).
+
+\item Prove that if $a= a_n10^n + a_{n-1}10^{n-1} + \cdots + a_110 + a_0$ is any positive integer then $a \equiv a_n + a_{n-1} + \cdots +a_1+a_0 \pmod{9}$ (note that this is the usual arithmetic rule that the remainder after division by 9 is the same as the sum of the decimal digits $\bmod{9}$ - in particular an integer is divisible by 9 if and only if the sum of its digits is divisible by 9)[note that $10 \equiv 1\pmod{9}$].
+
+\item Compute the remainder when $37^{100}$ is divided by 29.
+
+\item Compute the last two digits of $9^{1500}$.
+
+
+\end{problemset}
 
 % add preface chapter here if needed
 \part{Group Theory}
