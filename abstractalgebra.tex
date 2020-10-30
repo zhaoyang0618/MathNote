@@ -483,11 +483,50 @@ so that $a$ and $n$ are relatively prime, and $(-7)17 + (2)60 = 1$. Hence $\over
 
 \item Compute the last two digits of $9^{1500}$.
 
+\item Prove that the squares of the elements in $\mathbb{Z}/4\mathbb{Z}$ are just $\bar{0}$ and $\bar{1}$.
+
+\item Prove for any integers $a$ and $b$ that $a^2 + b^2$ never leaves a remainder of 3 when divided by 4 (use the previous exercise).
+
+\item Prove that the equation $a^2+b^2=3c^2$ has no solutions in nonzero integers $a$, $b$ and $c$.[Consider the equation $\bmod{4}$ as in the previous two exercises and show that $a$, $b$ and $c$ would all have to be divisible by 2. Then each of $a^2$, $b^2$ and $c^2$ has a factor of 4 and by dividing through by 4 show that there would be a smaller set of solutions to the original equation. Iterate to reach a contradiction.]
+
+\item Prove that the square of any odd integer always leaves a remainder of 1 when divided by 8.
+
+\item Prove that the number of elements of $(\mathbb{Z}/n\mathbb{Z})^{\times}$ is $\varphi(n)$ where $\varphi$ denotes the Euler $\varphi-$function.
+
+\item Prove that if $\bar{a}, \bar{b} \in (\mathbb{Z}/n\mathbb{Z})^{\times}$, then $\bar{a} \cdot \bar{b} \in (\mathbb{Z}/n\mathbb{Z})^{\times}$.
+
+\item Let $n \in \mathbb{Z}$, $n > 1$, and let $a \in \mathbb{Z}$ with $1 \le a \le n$. Prove if $a$ and $n$ are not relatively prime, there exists an integer $b$ with $1 \le b < n$ such that $ab \equiv 0 \pmod{n}$ and deduce that there cannot be an integer $c$ such that $ac \equiv 1 \pmod{n}$.
+
+\item Let $n \in \mathbb{Z}$, $n > 1$, and let $a \in \mathbb{Z}$ with $1 \le a \le n$. Prove if $a$ and $n$ are relatively prime then there is an integer $c$ such that $ac \equiv 1 \pmod{n}$[use the fact that the g.c.d. of two integers is a $\mathbb{Z}-$linear combination of the integers].
+
+\item Conclude from the previous two exercises that $(\mathbb{Z}/n\mathbb{Z})^{\times}$ is the set of elements $\bar{a}$ of $\mathbb{Z}/n\mathbb{Z}$ with $(a, n)=1$ and hence prove Proposition \ref{prop:prop0000304}. Verify this directly in the case $n = 12$.
+
+\item For each of the following pairs of integers $a$ and $n$, show that $a$ is relatively prime to $n$ and determine the multiplicative inverse of $a$ in $\mathbb{Z}/n\mathbb{Z}$.
+\begin{enumerate}
+\item[(a)] $a = 13$, $n = 20$.
+\item[(b)] $a = 69$, $n = 89$.
+\item[(c)] $a = 1891$, $n = 3797$.
+\item[(d)] $a = 6003722857$, $n = 77695236973$. [The Euclidean Algorithm requires only 3 steps for these integers.]
+\end{enumerate}
+
+\item Write a computer program to add and multiply $\bmod{n}$, for any $n$ given as input. The output of these operations should be the least residues of the sums and products of two integers. Also include the feature that if $(a, n) = 1$, an integer $c$ between 1 and $n-1$ such that $\bar{a} \cdot \bar{c} = \bar{1}$ may be printed on request. (Your program should not, of course, simply quote "mod" functions already built into many systems).
 
 \end{problemset}
 
 % add preface chapter here if needed
 \part{Group Theory}
+The modern treatment of abstract algebra begins with the disarmingly simple abstract definition of a group. This simple definition qickly leads to difficult questions involving the structure of such objects. There are many specific examples of groups and the power of the abstract point of view becomes apparent when results for all of these examples are obtained by proving a single result for the abstract group.
+
+The notion of a group did not simply spring into existence, however, but is rather the culmination of a long period of mathematical investigation, the first formal definition of an abstract group in the form in which we use it appearing in 1882.\footnote{For most of the historical comments below, see the excellent book \emph{A History of Algebra}, by B.L.vander Waerden. Springer-Verlag, 1980 and the references there, particularly \emph{The Genesis of the Abstract Group Concept: A Contribution to the History of the Origin of Abstract Group Theory}(translated from the German by Abe Shenitzer), by H. Wussing, MIT Press, 1984. See also \emph{Number Theory: An Approach Through History from Hammurapai to Legendre}, by A. Weil, Birkh\"auser, 1984.} The definition of an abstract group has its origins in extremely old problems in algebraic equations, number theory, and geometry, and arose because very similar techniques were found to be applicable in a variety of situations. As Otto H\"older (1859-1937) observed, one of the essential characteristics of mathematics is that after applying a certain algorithm or method of proof one then considers the scope and limits of the method. As a result, properties possessed by a number of interesting objects are frequently abstracted and the question raised: can one determine all the objects possessing these properties? Attempting to answer such a question also frequently adds considerable understanding of the original objects under consideration. It is in this fashion that the definition of an abstract group evolved into what is, for us, the starting point of abstract algebra.
+
+We illustrate with a few of the disparate situstions in which the ideas later formalized into the notion of an abstract group were used:
+
+1. In number theory the very object of study, the set of integers, is an example of a group. Consider for example what we refer to as "Euler's Theorem" (cf. Exercise 22 of Section 3.2), one extremely simple example of which is that $a^{40}$ has last two digits $01$ if $a$ is any integer not divisible by 2 nor by 5. This was proved in 1761 by Leonhard Euler (1707-1783) using "group-theoretic" ideas of Hoseph Louis Lagrange (1736-1813), long before the first formal definition of a group. From our perspective, one now proves "Lagrange's Theorem" (cf. Theorem 8 of Section 3.2), applying these techniques abstracted to an arbitary group, and then recovers Euler's Theorem (and many others) as a special case.
+
+2. Investigations into the question of rational solutions to algebraic equations of the form $y^2 = x^3 -2x$ (there are infinitely many, for example $(0, 0)$,$(-1,1)$, $(2,2)$, $(9/4, -21/8)$, $(-1/169, 239/2197)$) showed that connecting any two solutions by a straight line and computing the intersection of this line with the curve $y^2 = x^3 -2x$ produces another solution. Such"Diophantine equations", among others, were considered by Pierre de Fermat (1601-1655) (this one was solved by him in 1644), by Euler, by Lagrange around 1777, and others. In 1730 Euler raised the question of determining the indefinite integral $\int{dx/\sqrt{1-x^4}}$ of the "lemniscatic differential" $dx/\sqrt{1-x^4}$, used in determining the arc length along an ellipse (the question had also been considered by Gottfried Wilhelm Leibniz (1646-1716) and Johannes Bernoulli(1667-1748)).
+
+
+
 \chapter{Introduction to Groups}\label{chapter001}
 \section{Basic Axioms and Examples}\label{section00101}
 
