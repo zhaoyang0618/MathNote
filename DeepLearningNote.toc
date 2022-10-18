@@ -1,8 +1,0 @@
-\contentsline {chapter}{前言}{}
-\contentsline {chapter}{\numberline {1}一些基本内容}{1}
-\contentsline {section}{\numberline {1.1}欠拟合和过拟合}{1}
-\contentsline {section}{\numberline {1.2}损失函数}{1}
-\contentsline {section}{\numberline {1.3}优化函数}{1}
-\contentsline {section}{\numberline {1.4}激活函数}{2}
-\contentsline {section}{\numberline {1.5}卷积神经网络（CNN）}{2}
-\contentsline {section}{\numberline {1.6}AlexNet模型}{3}
