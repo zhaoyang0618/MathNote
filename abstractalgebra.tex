@@ -529,10 +529,30 @@ We illustrate with a few of the disparate situstions in which the ideas later fo
 
 The precursors of today's abstract groups can be traced back many years, even before the groups of "substitutions" of Galois. The formal definition of an abstract group which is our starting point appeared in 1882 in the work of Walter Dyck (1856-1934), an assistant to Felix Klein, and also in the work of Heinrich Weber (1842-1913) in the same year.
 
+It is frequently the case in mathematics research to find specific application of an idea before having that idea extracted  and presented as an item of interest in its own right (for example, Galois used the notion of a "quotient group" implicitly in his investigations in 1830 and the definition of an abstract quotient group is due to H\"older in 1889). It is important to realize, with or without the historical context, that the reason the abstract definitions are made is because it is useful to isolate specific characteristics and consider what structure is imposed on an object having these characteristics. The notion of the structure of an algebraic object (which is made more precise by the concept of an isomorphsim --- which considers when two apparently different objects are in some sense the same) is a major theme which will recur throughout the text.
 
 
 \chapter{Introduction to Groups}\label{chapter001}
 \section{Basic Axioms and Examples}\label{section00101}
+In this section the basic algebraic structure to be studied in Part I is introduced and some examples are given.
+
+\begin{definition}{}{def0010101}
+\begin{enumerate}
+\item[(1)] A binary operation $\star$ on a set $G$ is a function $\star$: $G \times G \to G$. For any $a, b \in G$ we shall write $a \star b$ for $\star(a, b)$. 
+
+\item[(2)] A binary operation $\star$ on a set $G$ is associative if for all $a,b, c \in G$, $a \star (b \star c) = (a \star b) \star c$.
+
+\item[(3)] If $\star$ is a binary operation on a set $G$ we say elements $a$ and $b$ of $G$ commute if $a \star b = b \star a$. We say $\star$(or $G$) is commutative if for all $a,b \in G$, $a \star b = b \star a$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+\item[(1)]$+$ (usual addition) is a commutative binary operation on $\mathbb{Z}$ (or on $\mathbb{Q}$, $\real$, $\mathbb{C}$ respectively).
+
+\item[(2)]$\times$ (usual multiplication) is a commutative binary operation on $\mathbb{Z}$ (or on $\mathbb{Q}$, $\real$, $\mathbb{C}$ respectively).
+\end{enumerate}
+\end{example}
 
 
 \section{Dihedral Groups}\label{section00102}

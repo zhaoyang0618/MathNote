@@ -1,0 +1,28 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Historical Introduction}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}The two basic concepts of calculus}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Historical background}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}The method of exhaustion for the area of a parabolic segment}{3}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Exercises}{6}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}A critical analysis of Archimedes' method}{6}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}The approach to calculus to be used in this book}{9}{subsection.1.1.6}%
+\contentsline {section}{\numberline {1.2}Some Basic Concepts of the Theory of Sets}{10}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Introduction to set theory}{10}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Notations for designating sets}{10}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Subsets}{11}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Unions, intersections, complements}{12}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Exercises}{12}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}A Set of Axioms for the Real-Number System}{12}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Introduction}{12}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}The field axioms}{12}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Exercises}{12}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}The order axioms}{12}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Exercises}{12}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Integers and rational numbers}{12}{subsection.1.3.6}%
+\contentsline {subsection}{\numberline {1.3.7}Geometric interpretation of real numbers as points on a line}{12}{subsection.1.3.7}%
+\contentsline {subsection}{\numberline {1.3.8}Upper bound of a set, maximum element, least upper bound (supremum)}{12}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}The least-upper-bound axiom (completeness axiom)}{12}{subsection.1.3.9}%
+\contentsline {section}{\numberline {1.4}Mathematical Induction, Summation Notation, and Related Topics}{12}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}An example of a proof by mathematical induction}{12}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}The principle of mathematical induction}{12}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}The Concepts of Integral Calculus}{13}{chapter.2}%
