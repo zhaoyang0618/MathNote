@@ -1,8 +1,0 @@
-\contentsline {chapter}{Preface}{1}{chapter*.2}%
-\contentsline {part}{第一部分\hspace {1em}理论}{2}{part.1}%
-\contentsline {chapter}{\numberline {1}理论要点}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Basic Axioms and Examples}{3}{section.1.1}%
-\contentsline {part}{第二部分\hspace {1em}问题}{4}{part.2}%
-\contentsline {chapter}{\numberline {2}数学归纳法和组合}{5}{chapter.2}%
-\contentsline {part}{第三部分\hspace {1em}解答}{6}{part.3}%
-\contentsline {chapter}{\numberline {3}解答}{7}{chapter.3}%
