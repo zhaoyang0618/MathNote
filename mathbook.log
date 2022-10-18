@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.5.3)  18 OCT 2022 10:30
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.5.3)  18 OCT 2022 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2239,6 +2239,8 @@ LaTeX Font Warning: Font shape `TU/FangSong(0)/b/n' undefined
 
 ] [227]
 第\nobreakspace {}三十七\nobreakspace {}章 37.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 10.
 [228
 
 ]
@@ -2275,7 +2277,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 87.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `mathbook.out' has not changed.
-(rerunfilecheck)             Checksum: E8E02EF9D7522AD596FABB8BD00DFA40;18885.
+(rerunfilecheck)             Checksum: 74A5E77F1C00780C9E2478F631D3D8D8;18885.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2288,11 +2290,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 42130 strings out of 479418
- 884762 string characters out of 5888106
+ 42137 strings out of 479418
+ 884899 string characters out of 5888106
  1432317 words of memory out of 5000000
- 58735 multiletter control sequences out of 15000+600000
- 599540 words of font info for 153 fonts, out of 8000000 for 9000
+ 58742 multiletter control sequences out of 15000+600000
+ 602334 words of font info for 154 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,16n,126p,916b,1266s stack positions out of 5000i,500n,10000p,200000b,80000s
 

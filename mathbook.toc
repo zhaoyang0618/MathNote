@@ -158,7 +158,7 @@
 \contentsline {chapter}{\numberline {36}调和函数}{225}{chapter.36}%
 \contentsline {part}{第九部分\hspace {1em}数学分析}{226}{part.9}%
 \contentsline {chapter}{\numberline {37}实数系}{228}{chapter.37}%
-\contentsline {section}{\numberline {37.1}证书，有理数与无理数}{228}{section.37.1}%
+\contentsline {section}{\numberline {37.1}整数，有理数与无理数}{228}{section.37.1}%
 \contentsline {section}{\numberline {37.2}Dedekind分割}{228}{section.37.2}%
 \contentsline {section}{\numberline {37.3}不等式}{228}{section.37.3}%
 \contentsline {section}{\numberline {37.4}实数列}{228}{section.37.4}%
