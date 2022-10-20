@@ -31,7 +31,9 @@
 设存在整数$k$满足$n < k < n+1$，则$0 < k-n< 1$，与$1$是最小正整数矛盾。
 \end{proof}
 
-\textbf{注}\ \ 断言“存在最大正整数$n$”是错误的。因为由此将有$n^2=n$, 而这就是说$n$应该等于$1$.
+\begin{remark}
+断言“存在最大正整数$n$”是错误的。因为由此将有$n^2=n$, 而这就是说$n$应该等于$1$.
+\end{remark}
 
 \begin{proposition}{}{}
 数学归纳原理与良序原理等价，即，只要以整数的通常的算术性质为前提，就能从其中之一推出另一个。
@@ -91,7 +93,52 @@ n = ab, 1 < a < n, 1 < b < n.
 \[
 Q = p_1p_2\cdots p_k = q_1q_2\cdots q_j,
 \]
+这里的$p_1,p_2,\cdots,p_k$与$q_1,q_2,\cdots, q_j$都是素数。显然，所有的$p$与所有的$q$都不同，否则可约去某个$p$与某个$q$而得到更小有两种不同分解的整数。设
+\[
+p_1 \le p_2 \le \cdots \le p_k, q_1 \le q_2 \le \cdots \le q_j.
+\]
+由于$p_1 \neq q_1$, 故可设$p_1 < q_1$而不会带来什么不便。考虑
+\[
+P = p_1q_2\cdots q_j.
+\]
+显然, $p_1 \mid P$, $p_1 \mid Q$, 故$p_1 \mid (Q - P)$.但
+\[
+Q-P = (q_1 - p_1)q_2q_3\cdots q_j,
+\]
+因此$Q-P$是正的。把$q_1-p_1$写成素数之积,设为
+\[
+q_1-p_1 = r_1\cdots r_s,
+\]
+则
+\[
+Q-P = r_1\cdots r_s q_2 \cdots q_j.
+\]
+我们已经知道$p_1$与各个$q_i$都不相等。由于$p_1 \nmid (q_1 - p_1)$, 故对所有$i$有$p_1 \nmid r_i$.因此所有的$q$和$r$都与$p_1$不同。另一方面，$Q-P$能被$p_1$整除，因而
+\[
+Q-P = p_1t_1\cdots t_h,
+\]
+这里的各个$t$都是素数。这样，我们得到了$Q-P$的两种不同的因数分解，其中之一出现$p_1$，另一种不出现$p_1$. 这与$Q$的最小性矛盾，因为$0 < Q-P < Q$.证毕。
 \end{proof}
+
+\begin{proposition}{}{}
+任意给定的素数的有限集之外存在另一个素数，即，不存在最大素数。
+\end{proposition}
+
+\begin{proof}
+设$q = 2 \cdot 3 \cdot 5 \cdots p$是所有$\le p$的素数之积。数
+\[
+q + 1 = (2 \cdot 3 \cdot 5 \cdots p) + 1
+\]
+不能被这些素数里的任何一个整除。由于$q + 1 > 1$, 故$q+1$或者是比$p$大的素数，或者能被比$p$大的素数整除。所以素数必是无限个。
+\end{proof}
+
+\begin{remark}
+设$p_n$表示第$n$个素数。由上述命题的证明可知，存在某个$m > n$,使
+\[
+p_m \mid (p_1p_2\cdots p_n + 1),
+\]
+因此$p_{n+1} \le p_m < p_n^n + 1$.
+\end{remark}
 
 \section{Dedekind分割}\label{sec0100102}
 
